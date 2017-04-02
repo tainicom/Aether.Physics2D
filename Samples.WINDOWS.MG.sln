@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testbed.WINDOWS.MG", "Samples\Testbed\Testbed.WINDOWS.MG.csproj", "{7D0489E0-B912-43F8-8859-6C015C5B93F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.DebugView.WINDOWS.MG", "Physics2D.DebugView\DebugView\Aether.Physics2D.DebugView.WINDOWS.MG.csproj", "{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.WINDOWS.MG", "Samples\Samples\Samples.WINDOWS.MG.csproj", "{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.WINDOWS.MG", "Physics2D\Aether.Physics2D.WINDOWS.MG.csproj", "{58A4F378-3FC5-4616-BC62-5FF5DF676627}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{95CC7850-C716-48DC-84EC-4735CDABF818}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugView", "DebugView", "{CC5F7843-BD51-469F-B2F0-9071A7B9202D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aether.Content.Pipeline", "Aether.Content.Pipeline", "{647EE16B-DEB6-4BB0-9383-9F9BF714BEB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D0489E0-B912-43F8-8859-6C015C5B93F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D0489E0-B912-43F8-8859-6C015C5B93F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D0489E0-B912-43F8-8859-6C015C5B93F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D0489E0-B912-43F8-8859-6C015C5B93F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A4F378-3FC5-4616-BC62-5FF5DF676627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A4F378-3FC5-4616-BC62-5FF5DF676627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A4F378-3FC5-4616-BC62-5FF5DF676627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A4F378-3FC5-4616-BC62-5FF5DF676627}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7D0489E0-B912-43F8-8859-6C015C5B93F6} = {95CC7850-C716-48DC-84EC-4735CDABF818}
+		{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D} = {CC5F7843-BD51-469F-B2F0-9071A7B9202D}
+		{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD} = {95CC7850-C716-48DC-84EC-4735CDABF818}
+	EndGlobalSection
+EndGlobal
