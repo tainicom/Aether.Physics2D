@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.WP8_1", "Physics2D\Aether.Physics2D.WP8_1.csproj", "{2C3D9A94-117A-4214-9B3F-B2133737D750}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C3D9A94-117A-4214-9B3F-B2133737D750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3D9A94-117A-4214-9B3F-B2133737D750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3D9A94-117A-4214-9B3F-B2133737D750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3D9A94-117A-4214-9B3F-B2133737D750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.WINDOWS.XNA", "Physics2D\Aether.Physics2D.WINDOWS.XNA.csproj", "{96A2FDD8-E119-4441-B413-C07BF4AB41FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.Diagnostics.WINDOWS.XNA", "Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.XNA.csproj", "{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugViewContent", "Physics2D.Diagnostics\DiagnosticsContent\DiagnosticsContent.contentproj", "{924144D3-C754-4E96-95C4-26E84C10D454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics2DImporters.WINDOWS.XNA", "Content.Pipeline\Physics2DImporters\Physics2DImporters.WINDOWS.XNA.csproj", "{7CB361CC-38D3-4F24-A0B8-10363471F9AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aether.Content.Pipeline", "Aether.Content.Pipeline", "{7878545B-DFDE-4F1B-BAC3-6D2521395432}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{5D6DACB7-4A07-4671-8F1D-CC9F50368C03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96A2FDD8-E119-4441-B413-C07BF4AB41FA}.Debug|x86.ActiveCfg = Debug|x86
+		{96A2FDD8-E119-4441-B413-C07BF4AB41FA}.Debug|x86.Build.0 = Debug|x86
+		{96A2FDD8-E119-4441-B413-C07BF4AB41FA}.Release|x86.ActiveCfg = Release|x86
+		{96A2FDD8-E119-4441-B413-C07BF4AB41FA}.Release|x86.Build.0 = Release|x86
+		{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}.Debug|x86.ActiveCfg = Debug|x86
+		{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}.Debug|x86.Build.0 = Debug|x86
+		{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}.Release|x86.ActiveCfg = Release|x86
+		{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}.Release|x86.Build.0 = Release|x86
+		{924144D3-C754-4E96-95C4-26E84C10D454}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{924144D3-C754-4E96-95C4-26E84C10D454}.Release|x86.ActiveCfg = Debug|Any CPU
+		{7CB361CC-38D3-4F24-A0B8-10363471F9AB}.Debug|x86.ActiveCfg = Debug|x86
+		{7CB361CC-38D3-4F24-A0B8-10363471F9AB}.Debug|x86.Build.0 = Debug|x86
+		{7CB361CC-38D3-4F24-A0B8-10363471F9AB}.Release|x86.ActiveCfg = Release|x86
+		{7CB361CC-38D3-4F24-A0B8-10363471F9AB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{924144D3-C754-4E96-95C4-26E84C10D454} = {5D6DACB7-4A07-4671-8F1D-CC9F50368C03}
+		{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3} = {5D6DACB7-4A07-4671-8F1D-CC9F50368C03}
+		{7CB361CC-38D3-4F24-A0B8-10363471F9AB} = {7878545B-DFDE-4F1B-BAC3-6D2521395432}
+	EndGlobalSection
+EndGlobal

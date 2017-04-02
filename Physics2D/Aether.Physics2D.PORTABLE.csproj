@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{FAA2CCDA-368A-4735-9805-64247D9ABB83}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>tainicom.Aether.Physics2D</RootNamespace>
+    <AssemblyName>tainicom.Aether.Physics2D</AssemblyName>
+    <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\Portable\</OutputPath>
+    <DefineConstants>DEBUG;PORTABLE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\Portable\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DefineConstants>PORTABLE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Collision\Collision.cs" />
+    <Compile Include="Collision\Distance.cs" />
+    <Compile Include="Collision\DynamicTree.cs" />
+    <Compile Include="Collision\DynamicTreeBroadPhase.cs" />
+    <Compile Include="Collision\IBroadPhase.cs" />
+    <Compile Include="Collision\Shapes\ChainShape.cs" />
+    <Compile Include="Collision\Shapes\CircleShape.cs" />
+    <Compile Include="Collision\Shapes\EdgeShape.cs" />
+    <Compile Include="Collision\Shapes\PolygonShape.cs" />
+    <Compile Include="Collision\Shapes\Shape.cs" />
+    <Compile Include="Collision\TimeOfImpact.cs" />
+    <Compile Include="Common\ConvexHull\ChainHull.cs" />
+    <Compile Include="Common\ConvexHull\GiftWrap.cs" />
+    <Compile Include="Common\ConvexHull\Melkman.cs" />
+    <Compile Include="Common\Decomposition\BayazitDecomposer.cs" />
+    <Compile Include="Common\Decomposition\CDTDecomposer.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\DelaunayTriangle.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\AdvancingFront.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\AdvancingFrontNode.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweep.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweepConstraint.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweepContext.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\DTSweepPointComparator.cs" />
+    <Compile Include="Common\Decomposition\CDT\Delaunay\Sweep\PointOnEdgeException.cs" />
+    <Compile Include="Common\Decomposition\CDT\ITriangulatable.cs" />
+    <Compile Include="Common\Decomposition\CDT\Orientation.cs" />
+    <Compile Include="Common\Decomposition\CDT\Polygon\Polygon.cs" />
+    <Compile Include="Common\Decomposition\CDT\Polygon\PolygonPoint.cs" />
+    <Compile Include="Common\Decomposition\CDT\Polygon\PolygonSet.cs" />
+    <Compile Include="Common\Decomposition\CDT\Sets\ConstrainedPointSet.cs" />
+    <Compile Include="Common\Decomposition\CDT\Sets\PointSet.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationConstraint.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationContext.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationMode.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationPoint.cs" />
+    <Compile Include="Common\Decomposition\CDT\TriangulationUtil.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\FixedArray3.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\FixedBitArray3.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\PointGenerator.cs" />
+    <Compile Include="Common\Decomposition\CDT\Util\PolygonGenerator.cs" />
+    <Compile Include="Common\Decomposition\EarclipDecomposer.cs" />
+    <Compile Include="Common\Decomposition\FlipcodeDecomposer.cs" />
+    <Compile Include="Common\Decomposition\SeidelDecomposer.cs" />
+    <Compile Include="Common\Decomposition\Seidel\Edge.cs" />
+    <Compile Include="Common\Decomposition\Seidel\MonotoneMountain.cs" />
+    <Compile Include="Common\Decomposition\Seidel\Node.cs" />
+    <Compile Include="Common\Decomposition\Seidel\Point.cs" />
+    <Compile Include="Common\Decomposition\Seidel\QueryGraph.cs" />
+    <Compile Include="Common\Decomposition\Seidel\Sink.cs" />
+    <Compile Include="Common\Decomposition\Seidel\Trapezoid.cs" />
+    <Compile Include="Common\Decomposition\Seidel\TrapezoidalMap.cs" />
+    <Compile Include="Common\Decomposition\Seidel\Triangulator.cs" />
+    <Compile Include="Common\Decomposition\Seidel\XNode.cs" />
+    <Compile Include="Common\Decomposition\Seidel\YNode.cs" />
+    <Compile Include="Common\Decomposition\Triangulate.cs" />
+    <Compile Include="Common\FixedArray.cs" />
+    <Compile Include="Common\LineTools.cs" />
+    <Compile Include="Common\Math.cs" />
+    <Compile Include="Common\Path.cs" />
+    <Compile Include="Common\PathManager.cs" />
+    <Compile Include="Common\PhysicsLogic\FilterData.cs" />
+    <Compile Include="Common\PhysicsLogic\PhysicsLogic.cs" />
+    <Compile Include="Common\PhysicsLogic\RealExplosion.cs" />
+    <Compile Include="Common\PhysicsLogic\SimpleExplosion.cs" />
+    <Compile Include="Common\PolygonManipulation\CuttingTools.cs" />
+    <Compile Include="Common\PolygonManipulation\SimpleCombiner.cs" />
+    <Compile Include="Common\PolygonManipulation\SimplifyTools.cs" />
+    <Compile Include="Common\PolygonManipulation\YuPengClipper.cs" />
+    <Compile Include="Common\PolygonTools.cs" />
+    <Compile Include="Common\Serialization.cs" />
+    <Compile Include="Common\TextureTools\MarchingSquares.cs" />
+    <Compile Include="Common\TextureTools\Terrain.cs" />
+    <Compile Include="Common\TextureTools\TextureConverter.cs" />
+    <Compile Include="Common\Vertices.cs" />
+    <Compile Include="Content\BodyContainer.cs" />
+    <Compile Include="Content\PolygonContainer.cs" />
+    <Compile Include="ContentReaders\BodyContainerReader.cs" />
+    <Compile Include="ContentReaders\PolygonContainerReader.cs" />
+    <Compile Include="Controllers\AbstractForceController.cs" />
+    <Compile Include="Controllers\BuoyancyController.cs" />
+    <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\GravityController.cs" />
+    <Compile Include="Controllers\SimpleWindForce.cs" />
+    <Compile Include="Controllers\VelocityLimitController.cs" />
+    <Compile Include="ConvertUnits.cs" />
+    <Compile Include="Diagnostics\DebugViewBase.cs" />
+    <Compile Include="Diagnostics\DebugViewFlags.cs" />
+    <Compile Include="Dynamics\Body.cs" />
+    <Compile Include="Dynamics\Body.Factory.cs" />
+    <Compile Include="Dynamics\BodyType.cs" />
+    <Compile Include="Dynamics\BreakableBody.cs" />
+    <Compile Include="Dynamics\Category.cs" />
+    <Compile Include="Dynamics\ContactManager.cs" />
+    <Compile Include="Dynamics\Contacts\Contact.cs" />
+    <Compile Include="Dynamics\Contacts\ContactSolver.cs" />
+    <Compile Include="Dynamics\Fixture.cs" />
+    <Compile Include="Dynamics\FixtureProxy.cs" />
+    <Compile Include="Dynamics\Island.cs" />
+    <Compile Include="Dynamics\Joints\AngleJoint.cs" />
+    <Compile Include="Dynamics\Joints\DistanceJoint.cs" />
+    <Compile Include="Dynamics\Joints\FixedMouseJoint.cs" />
+    <Compile Include="Dynamics\Joints\FrictionJoint.cs" />
+    <Compile Include="Dynamics\Joints\GearJoint.cs" />
+    <Compile Include="Dynamics\Joints\Joint.cs" />
+    <Compile Include="Dynamics\Joints\JointFactory.cs" />
+    <Compile Include="Dynamics\Joints\MotorJoint.cs" />
+    <Compile Include="Dynamics\Joints\PrismaticJoint.cs" />
+    <Compile Include="Dynamics\Joints\PulleyJoint.cs" />
+    <Compile Include="Dynamics\Joints\RevoluteJoint.cs" />
+    <Compile Include="Dynamics\Joints\RopeJoint.cs" />
+    <Compile Include="Dynamics\Joints\WeldJoint.cs" />
+    <Compile Include="Dynamics\Joints\WheelJoint.cs" />
+    <Compile Include="Diagnostics\Stopwatch.cs" />
+    <Compile Include="Dynamics\TimeStep.cs" />
+    <Compile Include="Dynamics\World.cs" />
+    <Compile Include="Dynamics\World.Factory.cs" />
+    <Compile Include="Dynamics\WorldCallbacks.cs" />
+    <Compile Include="Fluids\FluidDefinition.cs" />
+    <Compile Include="Fluids\FluidParticle.cs" />
+    <Compile Include="Fluids\FluidSystem.cs" />
+    <Compile Include="Fluids\FluidSystem2.cs" />
+    <Compile Include="Fluids\HashGrid.cs" />
+    <Compile Include="Fluids\SpartialTable.cs" />
+    <Compile Include="Fluids\Spring.cs" />
+    <Compile Include="Fluids\SpringHash.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.PORTABLE.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\packages\MonoGame.Framework.Portable.3.2.99.1-Beta\lib\portable-net40+sl40+win+wp80\MonoGame.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
