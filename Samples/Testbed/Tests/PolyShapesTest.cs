@@ -25,7 +25,7 @@ using System.Diagnostics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Factories;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
@@ -47,7 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int MaxCount = 4;
 
         internal CircleShape Circle = new CircleShape(0, 0);
-        internal DebugViewXNA DebugDraw;
+        internal DebugView DebugDraw;
         internal Transform Transform;
         private int _count;
 

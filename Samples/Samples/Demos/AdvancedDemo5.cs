@@ -5,7 +5,7 @@ using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.Decomposition;
 using tainicom.Aether.Physics2D.Common.PolygonManipulation;
 using tainicom.Aether.Physics2D.Dynamics;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;

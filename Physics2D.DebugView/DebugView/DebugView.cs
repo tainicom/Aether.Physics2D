@@ -14,13 +14,13 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace tainicom.Aether.Physics2D.DebugView
+namespace tainicom.Aether.Physics2D.Diagnostics
 {
     /// <summary>
     /// A debug view shows you what happens inside the physics engine. You can view
     /// bodies, joints, fixtures and more.
     /// </summary>
-    public class DebugViewXNA : DebugViewBase, IDisposable
+    public class DebugView : DebugViewBase, IDisposable
     {
         //Drawing
         private PrimitiveBatch _primitiveBatch;
@@ -65,7 +65,7 @@ namespace tainicom.Aether.Physics2D.DebugView
         
         public const int CircleSegments = 32;
 
-        public DebugViewXNA(World world)
+        public DebugView(World world)
             : base(world)
         {
             world.ContactManager.PreSolve += PreSolve;

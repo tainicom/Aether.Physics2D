@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.WINDOWS.XNA", "Samp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aether.Content.Pipeline", "Aether.Content.Pipeline", "{30DC422D-90EF-4B22-92BF-F3492B3060FA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugView", "DebugView", "{5669392E-8A2D-4917-9267-6AD0B1DBF554}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{5669392E-8A2D-4917-9267-6AD0B1DBF554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

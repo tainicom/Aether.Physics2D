@@ -1,5 +1,5 @@
 ﻿using System;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Factories;
@@ -11,7 +11,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
     public class PhysicsGameScreen : GameScreen
     {
         public Camera2D Camera;
-        protected DebugViewXNA DebugView;
+        protected DebugView DebugView;
         protected World World;
         protected Body HiddenBody;
 
@@ -52,7 +52,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             if (DebugView == null)
             {
-                DebugView = new DebugViewXNA(World);
+                DebugView = new DebugView(World);
                 DebugView.RemoveFlags(DebugViewFlags.Shape);
                 DebugView.RemoveFlags(DebugViewFlags.Joint);
                 DebugView.DefaultShapeColor = Color.White;

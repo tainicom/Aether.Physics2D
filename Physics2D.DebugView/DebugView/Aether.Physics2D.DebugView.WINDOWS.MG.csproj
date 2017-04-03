@@ -8,8 +8,8 @@
     <ProjectGuid>{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tainicom.Aether.Physics2D.DebugView</RootNamespace>
-    <AssemblyName>Aether.Physics2D.DebugView</AssemblyName>
+    <RootNamespace>tainicom.Aether.Physics2D.Diagnostics</RootNamespace>
+    <AssemblyName>Aether.Physics2D.Diagnostics</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>

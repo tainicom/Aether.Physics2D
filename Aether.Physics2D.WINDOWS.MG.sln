@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.WINDOWS.MG
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aether.Content.Pipeline", "Aether.Content.Pipeline", "{788E0EEB-6271-4629-B92D-0D7FDF0DFE0E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugView", "DebugView", "{2B8995AB-01ED-4023-AABD-5A6C55DA8969}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{2B8995AB-01ED-4023-AABD-5A6C55DA8969}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -22,7 +22,7 @@
 
 using System;
 using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using tainicom.Aether.Physics2D.Samples.Testbed.Tests;
 using Microsoft.Xna.Framework;

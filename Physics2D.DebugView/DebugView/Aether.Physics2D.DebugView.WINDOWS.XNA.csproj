@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tainicom.Aether.Physics2D.DebugView</RootNamespace>
-    <AssemblyName>Aether.Physics2D.DebugView</AssemblyName>
+    <RootNamespace>tainicom.Aether.Physics2D.Diagnostics</RootNamespace>
+    <AssemblyName>Aether.Physics2D.Diagnostics</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>

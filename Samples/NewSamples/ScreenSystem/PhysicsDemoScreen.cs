@@ -1,5 +1,5 @@
 ﻿using System;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using Microsoft.Xna.Framework;
@@ -13,7 +13,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private static bool _flagsChanged;
 
         protected Camera2D Camera;
-        protected DebugViewXNA DebugView;
+        protected DebugView DebugView;
         protected World World;
 
         private float _agentForce;
@@ -64,7 +64,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             if (DebugView == null)
             {
-                DebugView = new DebugViewXNA(World);
+                DebugView = new DebugView(World);
                 DebugView.DefaultShapeColor = Color.White;
                 DebugView.SleepingShapeColor = Color.LightGray;
                 DebugView.LoadContent(Framework.GraphicsDevice, Framework.Content);

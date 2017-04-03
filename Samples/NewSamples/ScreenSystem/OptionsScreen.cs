@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using tainicom.Aether.Physics2D.Samples.MediaSystem;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 

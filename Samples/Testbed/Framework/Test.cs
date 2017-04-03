@@ -24,7 +24,7 @@ using System;
 using System.IO;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.DebugView;
+using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
@@ -35,7 +35,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 {
     public class Test
     {
-        internal DebugViewXNA DebugView;
+        internal DebugView DebugView;
         internal int StepCount;
         internal World World;
         private FixedMouseJoint _fixedMouseJoint;
@@ -58,7 +58,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 
         public virtual void Initialize()
         {
-            DebugView = new DebugViewXNA(World);
+            DebugView = new DebugView(World);
             DebugView.LoadContent(GameInstance.GraphicsDevice, GameInstance.Content);
         }
 
