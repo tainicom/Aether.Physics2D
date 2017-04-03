@@ -164,9 +164,9 @@
       <Name>SamplesContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
-    <ProjectReference Include="..\..\Physics2D.DebugView\DebugView\Aether.Physics2D.DebugView.WINDOWS.XNA.csproj">
+    <ProjectReference Include="..\..\Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.XNA.csproj">
       <Project>{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}</Project>
-      <Name>Aether.Physics2D.DebugView.WINDOWS.XNA</Name>
+      <Name>Aether.Physics2D.Diagnostics.WINDOWS.XNA</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Physics2D\Aether.Physics2D.WINDOWS.XNA.csproj">
       <Project>{96A2FDD8-E119-4441-B413-C07BF4AB41FA}</Project>

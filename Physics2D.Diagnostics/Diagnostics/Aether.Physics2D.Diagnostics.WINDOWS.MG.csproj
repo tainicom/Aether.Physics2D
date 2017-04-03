@@ -58,7 +58,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="..\DebugViewContent\DebugViewContent.mgcb">
+    <MonoGameContentReference Include="..\DiagnosticsContent\DiagnosticsContent.mgcb">
       <Link>Content\SamplesContent.mgcb</Link>
     </MonoGameContentReference>
   </ItemGroup>

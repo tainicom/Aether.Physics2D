@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.WINDOWS.XNA", "Physics2D\Aether.Physics2D.WINDOWS.XNA.csproj", "{96A2FDD8-E119-4441-B413-C07BF4AB41FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.DebugView.WINDOWS.XNA", "Physics2D.DebugView\DebugView\Aether.Physics2D.DebugView.WINDOWS.XNA.csproj", "{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.Diagnostics.WINDOWS.XNA", "Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.XNA.csproj", "{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugViewContent", "Physics2D.DebugView\DebugViewContent\DebugViewContent.contentproj", "{924144D3-C754-4E96-95C4-26E84C10D454}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugViewContent", "Physics2D.Diagnostics\DiagnosticsContent\DiagnosticsContent.contentproj", "{924144D3-C754-4E96-95C4-26E84C10D454}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics2DImporters.WINDOWS.XNA", "Content.Pipeline\Physics2DImporters\Physics2DImporters.WINDOWS.XNA.csproj", "{7CB361CC-38D3-4F24-A0B8-10363471F9AB}"
 EndProject

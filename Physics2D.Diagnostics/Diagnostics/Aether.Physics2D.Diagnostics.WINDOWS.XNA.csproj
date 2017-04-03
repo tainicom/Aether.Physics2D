@@ -141,9 +141,9 @@
       <Project>{96A2FDD8-E119-4441-B413-C07BF4AB41FA}</Project>
       <Name>Aether.Physics2D.WINDOWS.XNA</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DebugViewContent\DebugViewContent.contentproj">
+    <ProjectReference Include="..\DiagnosticsContent\DiagnosticsContent.contentproj">
       <Project>{924144D3-C754-4E96-95C4-26E84C10D454}</Project>
-      <Name>DebugViewContent %28Content%29</Name>
+      <Name>DiagnosticsContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>

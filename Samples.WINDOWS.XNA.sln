@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E662
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBed.WINDOWS.XNA", "Samples\Testbed\TestBed.WINDOWS.XNA.csproj", "{E56EC548-568E-4E68-8E42-A9A7E5E243B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.DebugView.WINDOWS.XNA", "Physics2D.DebugView\DebugView\Aether.Physics2D.DebugView.WINDOWS.XNA.csproj", "{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.Diagnostics.WINDOWS.XNA", "Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.XNA.csproj", "{90A1DCD0-3286-443A-8862-D7CFB6F8FDB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.WINDOWS.XNA", "Samples\HelloWorld\HelloWorld.WINDOWS.XNA.csproj", "{3C85C0C8-1467-4158-ABAE-7D4AD26A55FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugViewContent", "Physics2D.DebugView\DebugViewContent\DebugViewContent.contentproj", "{924144D3-C754-4E96-95C4-26E84C10D454}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagnosticsContent", "Physics2D.Diagnostics\DiagnosticsContent\DiagnosticsContent.contentproj", "{924144D3-C754-4E96-95C4-26E84C10D454}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldContent", "Samples\HelloWorldContent\HelloWorldContent.contentproj", "{86C73808-245F-4DF9-96DE-AF965346E1D1}"
 EndProject

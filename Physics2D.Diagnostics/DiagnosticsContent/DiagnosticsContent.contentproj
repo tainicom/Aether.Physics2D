@@ -31,8 +31,8 @@
     <RootNamespace>Content</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Font.spritefont">
-      <Name>Font</Name>
+    <Compile Include="DiagnosticsFont.spritefont">
+      <Name>DiagnosticsFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>

@@ -767,7 +767,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _device = device;
             _batch = new SpriteBatch(_device);
             _primitiveBatch = new PrimitiveBatch(_device, 1000);
-            _font = content.Load<SpriteFont>("Font");
+            _font = content.Load<SpriteFont>("DiagnosticsFont");
             _stringData = new List<StringData>();
 
             _localProjection = Matrix.CreateOrthographicOffCenter(0f, _device.Viewport.Width, _device.Viewport.Height, 0f, 0f, 1f);

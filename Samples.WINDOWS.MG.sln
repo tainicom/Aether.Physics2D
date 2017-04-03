@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testbed.WINDOWS.MG", "Samples\Testbed\Testbed.WINDOWS.MG.csproj", "{7D0489E0-B912-43F8-8859-6C015C5B93F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.DebugView.WINDOWS.MG", "Physics2D.DebugView\DebugView\Aether.Physics2D.DebugView.WINDOWS.MG.csproj", "{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.Diagnostics.WINDOWS.MG", "Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.MG.csproj", "{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.WINDOWS.MG", "Samples\Samples\Samples.WINDOWS.MG.csproj", "{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}"
 EndProject
