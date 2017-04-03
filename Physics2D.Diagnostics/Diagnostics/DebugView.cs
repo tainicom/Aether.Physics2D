@@ -39,6 +39,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         private Matrix _localProjection;
         private Matrix _localView;
+        private Matrix _localWorld;
 
         //Shapes
         public Color DefaultShapeColor = new Color(0.9f, 0.7f, 0.7f);
@@ -706,9 +707,20 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             BeginCustomDraw(ref projection, ref view);
         }
 
+        public void BeginCustomDraw(Matrix projection, Matrix view, Matrix world)
+        {
+            BeginCustomDraw(ref projection, ref view, ref world);
+        }
+
         public void BeginCustomDraw(ref Matrix projection, ref Matrix view)
         {
-            _primitiveBatch.Begin(ref projection, ref view);
+            Matrix world = Matrix.Identity;
+            _primitiveBatch.Begin(ref projection, ref view, ref world);
+        }
+
+        public void BeginCustomDraw(ref Matrix projection, ref Matrix view, ref Matrix world)
+        {
+            _primitiveBatch.Begin(ref projection, ref view, ref world);
         }
 
         public void EndCustomDraw()
@@ -721,7 +733,21 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             RenderDebugData(ref projection, ref view);
         }
 
+        public void RenderDebugData(Matrix projection, Matrix view, Matrix world)
+        {
+            RenderDebugData(ref projection, ref view, ref world);
+        }
+
         public void RenderDebugData(ref Matrix projection, ref Matrix view)
+        {
+            if (!Enabled)
+                return;
+
+            Matrix world = Matrix.Identity;
+            RenderDebugData(ref projection, ref view, ref world);
+        }
+
+        public void RenderDebugData(ref Matrix projection, ref Matrix view, ref Matrix world)
         {
             if (!Enabled)
                 return;
@@ -733,13 +759,13 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _device.RasterizerState = RasterizerState.CullNone;
             _device.DepthStencilState = DepthStencilState.Default;
 
-            _primitiveBatch.Begin(ref projection, ref view);
+            _primitiveBatch.Begin(ref projection, ref view, ref world);
             DrawDebugData();
             _primitiveBatch.End();
 
             if ((Flags & DebugViewFlags.PerformanceGraph) == DebugViewFlags.PerformanceGraph)
             {
-                _primitiveBatch.Begin(ref _localProjection, ref _localView);
+                _primitiveBatch.Begin(ref _localProjection, ref _localView, ref _localWorld);
                 DrawPerformanceGraph();
                 _primitiveBatch.End();
             }
@@ -765,7 +791,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 return;
 
             Matrix view = Matrix.Identity;
-            RenderDebugData(ref projection, ref view);
+            Matrix world = Matrix.Identity;
+            RenderDebugData(ref projection, ref view, ref world);
         }
 
         public void LoadContent(GraphicsDevice device, ContentManager content)
@@ -779,6 +806,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             _localProjection = Matrix.CreateOrthographicOffCenter(0f, _device.Viewport.Width, _device.Viewport.Height, 0f, 0f, 1f);
             _localView = Matrix.Identity;
+            _localWorld = Matrix.Identity;
         }
 
         #region Nested type: ContactPoint

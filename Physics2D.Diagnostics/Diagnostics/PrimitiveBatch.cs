@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -78,7 +80,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         /// </summary>
         /// <param name="projection">The projection.</param>
         /// <param name="view">The view.</param>
-        public void Begin(ref Matrix projection, ref Matrix view)
+        public void Begin(ref Matrix projection, ref Matrix view, ref Matrix world)
         {
             if (_hasBegun)
                 throw new InvalidOperationException("End must be called before Begin can be called again.");
@@ -86,6 +88,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             //tell our basic effect to begin.
             _basicEffect.Projection = projection;
             _basicEffect.View = view;
+            _basicEffect.World = world;
             _basicEffect.CurrentTechnique.Passes[0].Apply();
 
             // flip the error checking boolean. It's now ok to call AddVertex, Flush,
