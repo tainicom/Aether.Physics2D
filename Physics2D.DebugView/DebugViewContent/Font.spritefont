@@ -11,7 +11,8 @@
          and "Bold, Italic", and are case sensitive. -->
     <Style>Regular</Style>
 
-    <DefaultCharacter>�</DefaultCharacter>
+    <!-- <DefaultCharacter>�</DefaultCharacter> -->
+    <DefaultCharacter>*</DefaultCharacter>
 
     <CharacterRegions>
       <CharacterRegion>
