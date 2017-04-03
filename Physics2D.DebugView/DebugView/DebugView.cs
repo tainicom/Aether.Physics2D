@@ -549,17 +549,16 @@ namespace tainicom.Aether.Physics2D.DebugView
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
             const double increment = Math.PI * 2.0 / CircleSegments;
-            double theta = 0.0;
+            Rot rot = new Rot((float)increment);
+            Vector2 v2 = Vector2.UnitX * radius;
 
             for (int i = 0; i < CircleSegments; i++)
             {
-                Vector2 v1 = center + radius * new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
-                Vector2 v2 = center + radius * new Vector2((float)Math.Cos(theta + increment), (float)Math.Sin(theta + increment));
+                Vector2 v1 = v2;
+                v2 = MathUtils.Mul(ref rot, v1);
 
-                _primitiveBatch.AddVertex(v1, color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(v2, color, PrimitiveType.LineList);
-
-                theta += increment;
+                _primitiveBatch.AddVertex(center + v1, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(center + v2, color, PrimitiveType.LineList);
             }
         }
 
@@ -574,23 +573,20 @@ namespace tainicom.Aether.Physics2D.DebugView
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
             const double increment = Math.PI * 2.0 / CircleSegments;
-            double theta = 0.0;
+            Rot rot = new Rot((float)increment);
+            Vector2 v0 = Vector2.UnitX * radius;
+            Vector2 v2 = MathUtils.Mul(ref rot, v0);
 
             Color colorFill = color * 0.5f;
 
-            Vector2 v0 = center + radius * new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
-            theta += increment;
-
             for (int i = 1; i < CircleSegments - 1; i++)
             {
-                Vector2 v1 = center + radius * new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
-                Vector2 v2 = center + radius * new Vector2((float)Math.Cos(theta + increment), (float)Math.Sin(theta + increment));
+                Vector2 v1 = v2;
+                v2 = MathUtils.Mul(ref rot, v1);
 
-                _primitiveBatch.AddVertex(v0, colorFill, PrimitiveType.TriangleList);
-                _primitiveBatch.AddVertex(v1, colorFill, PrimitiveType.TriangleList);
-                _primitiveBatch.AddVertex(v2, colorFill, PrimitiveType.TriangleList);
-
-                theta += increment;
+                _primitiveBatch.AddVertex(center + v0, colorFill, PrimitiveType.TriangleList);
+                _primitiveBatch.AddVertex(center + v1, colorFill, PrimitiveType.TriangleList);
+                _primitiveBatch.AddVertex(center + v2, colorFill, PrimitiveType.TriangleList);
             }
 
             DrawCircle(center, radius, color);
