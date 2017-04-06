@@ -117,7 +117,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ((PolygonShape)shape).Vertices.AttachedToBody = true;
 #endif
 
-            RegisterFixture(this);
+            RegisterFixture(body, this);
         }
 
         /// <summary>
@@ -333,27 +333,33 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 broadPhase.TouchProxy(Proxies[i].ProxyId);
         }
 
-        private static void RegisterFixture(Fixture fixture)
+        private static void RegisterFixture(Body body, Fixture fixture)
         {
-            if (fixture.Body.Enabled)
+            fixture.Body = body;
+#if DEBUG
+            if (fixture.Shape.ShapeType == ShapeType.Polygon)
+                ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
+#endif
+
+            if (body.Enabled)
             {
-                IBroadPhase broadPhase = fixture.Body.World.ContactManager.BroadPhase;
-                fixture.CreateProxies(broadPhase, ref fixture.Body._xf);
+                IBroadPhase broadPhase = body.World.ContactManager.BroadPhase;
+                fixture.CreateProxies(broadPhase, ref body._xf);
             }
 
-            fixture.Body.FixtureList.Add(fixture);
+            body.FixtureList.Add(fixture);
 
             // Adjust mass properties if needed.
             if (fixture.Shape._density > 0.0f)
-                fixture.Body.ResetMassData();
+                body.ResetMassData();
 
             // Let the world know we have a new fixture. This will cause new contacts
             // to be created at the beginning of the next time step.
-            fixture.Body.World._worldHasNewFixture = true;
+            body.World._worldHasNewFixture = true;
 
             //FPE: Added event
-            if (fixture.Body.World.FixtureAdded != null)
-                fixture.Body.World.FixtureAdded(this);
+            if (body.World.FixtureAdded != null)
+                body.World.FixtureAdded(this);
         }
 
         /// <summary>
