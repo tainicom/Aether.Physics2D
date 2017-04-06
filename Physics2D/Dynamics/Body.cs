@@ -574,6 +574,35 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _linearVelocity = Vector2.Zero;
         }
 
+        internal static void RegisterFixture(Body body, Fixture fixture)
+        {
+            fixture.Body = body;
+#if DEBUG
+            if (fixture.Shape.ShapeType == ShapeType.Polygon)
+                ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
+#endif
+
+            if (body.Enabled)
+            {
+                IBroadPhase broadPhase = body._world.ContactManager.BroadPhase;
+                fixture.CreateProxies(broadPhase, ref body._xf);
+            }
+
+            body.FixtureList.Add(fixture);
+
+            // Adjust mass properties if needed.
+            if (fixture.Shape._density > 0.0f)
+                body.ResetMassData();
+
+            // Let the world know we have a new fixture. This will cause new contacts
+            // to be created at the beginning of the next time step.
+            body._world._worldHasNewFixture = true;
+
+            //FPE: Added event
+            if (body._world.FixtureAdded != null)
+                body._world.FixtureAdded(fixture);
+        }
+
         /// <summary>
         /// Destroy a fixture. This removes the fixture from the broad-phase and
         /// destroys all contacts associated with this fixture. This will

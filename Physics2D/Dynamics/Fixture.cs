@@ -327,35 +327,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 broadPhase.TouchProxy(Proxies[i].ProxyId);
         }
 
-        private static void RegisterFixture(Body body, Fixture fixture)
-        {
-            fixture.Body = body;
-#if DEBUG
-            if (fixture.Shape.ShapeType == ShapeType.Polygon)
-                ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
-#endif
-
-            if (body.Enabled)
-            {
-                IBroadPhase broadPhase = body.World.ContactManager.BroadPhase;
-                fixture.CreateProxies(broadPhase, ref body._xf);
-            }
-
-            body.FixtureList.Add(fixture);
-
-            // Adjust mass properties if needed.
-            if (fixture.Shape._density > 0.0f)
-                body.ResetMassData();
-
-            // Let the world know we have a new fixture. This will cause new contacts
-            // to be created at the beginning of the next time step.
-            body.World._worldHasNewFixture = true;
-
-            //FPE: Added event
-            if (body.World.FixtureAdded != null)
-                body.World.FixtureAdded(this);
-        }
-
         /// <summary>
         /// Test a point for containment in this fixture.
         /// </summary>
@@ -501,7 +472,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             foreach (Fixture ignore in _collisionIgnores)
                 fixture._collisionIgnores.Add(ignore);
 
-            RegisterFixture(fixture);
+            Body.RegisterFixture(body, fixture);
             return fixture;
         }
     }
