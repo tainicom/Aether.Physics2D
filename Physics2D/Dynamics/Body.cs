@@ -574,33 +574,44 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _linearVelocity = Vector2.Zero;
         }
 
-        internal static void RegisterFixture(Body body, Fixture fixture)
+        public void Add(Fixture fixture)
         {
-            fixture.Body = body;
+            if (fixture == null)
+                throw new ArgumentNullException("fixture");
+            if (fixture.Body != null)
+            {
+                if (fixture.Body == this)
+                    throw new ArgumentException("You are adding the same fixture more than once.", "fixture");
+                else
+                    throw new ArgumentException("fixture belongs to another body.", "fixture");
+            }
+
+            fixture.Body = this;
+            this.FixtureList.Add(fixture);
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
 #endif
 
-            if (body.Enabled)
-            {
-                IBroadPhase broadPhase = body._world.ContactManager.BroadPhase;
-                fixture.CreateProxies(broadPhase, ref body._xf);
-            }
-
-            body.FixtureList.Add(fixture);
-
             // Adjust mass properties if needed.
             if (fixture.Shape._density > 0.0f)
-                body.ResetMassData();
+                ResetMassData();
+
+            if (World.IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
+            if (Enabled)
+            {
+                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
+                fixture.CreateProxies(broadPhase, ref _xf);
+            }
 
             // Let the world know we have a new fixture. This will cause new contacts
             // to be created at the beginning of the next time step.
-            body._world._worldHasNewFixture = true;
+            World._worldHasNewFixture = true;
 
-            //FPE: Added event
-            if (body._world.FixtureAdded != null)
-                body._world.FixtureAdded(fixture);
+            if (World.FixtureAdded != null)
+                World.FixtureAdded(fixture);
         }
 
         /// <summary>
@@ -614,16 +625,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="fixture">The fixture to be removed.</param>
         public virtual void Remove(Fixture fixture)
         {
-            if (World != null && World.IsStepping)
+            if (fixture == null)
+                throw new ArgumentNullException("fixture");
+            if (fixture.Body != this)
+                throw new ArgumentException("You are removing a fixture that does not belong to this Body.", "fixture");
+
+            if (World.IsStepping)
                 throw new InvalidOperationException("World is stepping.");
-
-            Debug.Assert(fixture.Body == this);
-
-            // Remove the fixture from this body's singly linked list.
-            Debug.Assert(FixtureList.Count > 0);
-
-            // You tried to remove a fixture that not present in the fixturelist.
-            Debug.Assert(FixtureList.Contains(fixture));
 
             // Destroy any contacts associated with the fixture.
             ContactEdge edge = ContactList;
@@ -643,13 +651,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
             }
 
-            if (_enabled)
+            if (Enabled)
             {
                 IBroadPhase broadPhase = World.ContactManager.BroadPhase;
                 fixture.DestroyProxies(broadPhase);
             }
 
             FixtureList.Remove(fixture);
+
             fixture.Destroy();
             if (World.FixtureRemoved != null)
                 World.FixtureRemoved(fixture);

@@ -472,7 +472,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             foreach (Fixture ignore in _collisionIgnores)
                 fixture._collisionIgnores.Add(ignore);
 
-            Body.RegisterFixture(body, fixture);
+            body.Add(fixture);
             return fixture;
         }
     }
