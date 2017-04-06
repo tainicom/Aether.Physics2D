@@ -117,7 +117,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ((PolygonShape)shape).Vertices.AttachedToBody = true;
 #endif
 
-            RegisterFixture();
+            RegisterFixture(this);
         }
 
         /// <summary>
@@ -333,29 +333,27 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 broadPhase.TouchProxy(Proxies[i].ProxyId);
         }
 
-        private void RegisterFixture()
+        private static void RegisterFixture(Fixture fixture)
         {
-            if (Body.Enabled)
+            if (fixture.Body.Enabled)
             {
-                IBroadPhase broadPhase = Body.World.ContactManager.BroadPhase;
-                CreateProxies(broadPhase, ref Body._xf);
+                IBroadPhase broadPhase = fixture.Body.World.ContactManager.BroadPhase;
+                fixture.CreateProxies(broadPhase, ref fixture.Body._xf);
             }
 
-            Body.FixtureList.Add(this);
+            fixture.Body.FixtureList.Add(fixture);
 
             // Adjust mass properties if needed.
-            if (Shape._density > 0.0f)
-            {
-                Body.ResetMassData();
-            }
+            if (fixture.Shape._density > 0.0f)
+                fixture.Body.ResetMassData();
 
             // Let the world know we have a new fixture. This will cause new contacts
             // to be created at the beginning of the next time step.
-            Body.World._worldHasNewFixture = true;
+            fixture.Body.World._worldHasNewFixture = true;
 
             //FPE: Added event
-            if (Body.World.FixtureAdded != null)
-                Body.World.FixtureAdded(this);
+            if (fixture.Body.World.FixtureAdded != null)
+                fixture.Body.World.FixtureAdded(this);
         }
 
         /// <summary>
@@ -503,7 +501,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             foreach (Fixture ignore in _collisionIgnores)
                 fixture._collisionIgnores.Add(ignore);
 
-            fixture.RegisterFixture();
+            RegisterFixture(fixture);
             return fixture;
         }
     }
