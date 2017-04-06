@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -168,15 +170,22 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
                 ContactList = null;
 
-                // Touch the proxies so that new contacts will be created (when appropriate)
-                IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
-                foreach (Fixture fixture in FixtureList)
+                TouchProxies();
+            }
+        }
+
+        /// <summary>
+        /// Touch the proxies so that new contacts will be created (when appropriate)
+        /// </summary>
+        private void TouchProxies()
+        {
+            IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+            foreach (Fixture fixture in FixtureList)
+            {
+                int proxyCount = fixture.ProxyCount;
+                for (int j = 0; j < proxyCount; j++)
                 {
-                    int proxyCount = fixture.ProxyCount;
-                    for (int j = 0; j < proxyCount; j++)
-                    {
-                        broadPhase.TouchProxy(fixture.Proxies[j].ProxyId);
-                    }
+                    broadPhase.TouchProxy(fixture.Proxies[j].ProxyId);
                 }
             }
         }
@@ -337,46 +346,51 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
         public bool Enabled
         {
+            get { return _enabled; }
             set
             {
                 if (value == _enabled)
                     return;
 
-                if (value)
-                {
-                    // Create all proxies.
-                    IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
-                    for (int i = 0; i < FixtureList.Count; i++)
-                    {
-                        FixtureList[i].CreateProxies(broadPhase, ref _xf);
-                    }
-
-                    // Contacts are created the next time step.
-                }
-                else
-                {
-                    // Destroy all proxies.
-                    IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
-
-                    for (int i = 0; i < FixtureList.Count; i++)
-                    {
-                        FixtureList[i].DestroyProxies(broadPhase);
-                    }
-
-                    // Destroy the attached contacts.
-                    ContactEdge ce = ContactList;
-                    while (ce != null)
-                    {
-                        ContactEdge ce0 = ce;
-                        ce = ce.Next;
-                        _world.ContactManager.Destroy(ce0.Contact);
-                    }
-                    ContactList = null;
-                }
+                UpdateProxies(value);
 
                 _enabled = value;
             }
-            get { return _enabled; }
+        }
+
+        private void UpdateProxies(bool enabled)
+        {
+            if (enabled)
+            {
+                // Create all proxies.
+                IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+                for (int i = 0; i < FixtureList.Count; i++)
+                {
+                    FixtureList[i].CreateProxies(broadPhase, ref _xf);
+                }
+
+                // Contacts are created the next time step.
+            }
+            else
+            {
+                // Destroy all proxies.
+                IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+
+                for (int i = 0; i < FixtureList.Count; i++)
+                {
+                    FixtureList[i].DestroyProxies(broadPhase);
+                }
+
+                // Destroy the attached contacts.
+                ContactEdge ce = ContactList;
+                while (ce != null)
+                {
+                    ContactEdge ce0 = ce;
+                    ce = ce.Next;
+                    _world.ContactManager.Destroy(ce0.Contact);
+                }
+                ContactList = null;
+            }
         }
 
         /// <summary>
@@ -775,9 +789,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
             for (int i = 0; i < FixtureList.Count; i++)
-            {
                 FixtureList[i].Synchronize(broadPhase, ref _xf, ref _xf);
-            }
         }
 
         /// <summary>
