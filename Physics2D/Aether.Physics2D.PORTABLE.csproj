@@ -157,6 +157,7 @@
     <Compile Include="Fluids\SpartialTable.cs" />
     <Compile Include="Fluids\Spring.cs" />
     <Compile Include="Fluids\SpringHash.cs" />
+    <Compile Include="Maths\Complex.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
