@@ -28,6 +28,7 @@
 using System;
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Dynamics.Joints
@@ -230,8 +231,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 BodyA.GetTransform(out xf1);
                 BodyB.GetTransform(out xf2);
 
-                Vector2 r1 = MathUtils.Mul(ref xf1.q, LocalAnchorA - BodyA.LocalCenter);
-                Vector2 r2 = MathUtils.Mul(ref xf2.q, LocalAnchorB - BodyB.LocalCenter);
+                Vector2 r1 = Complex.Multiply(LocalAnchorA - BodyA.LocalCenter, ref xf1.q);
+                Vector2 r2 = Complex.Multiply(LocalAnchorB - BodyB.LocalCenter, ref xf2.q);
                 Vector2 p1 = BodyA._sweep.C + r1;
                 Vector2 p2 = BodyB._sweep.C + r2;
                 Vector2 d = p2 - p1;
@@ -432,11 +433,12 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 vB = data.velocities[_indexB].v;
             float wB = data.velocities[_indexB].w;
 
-            Rot qA = new Rot(aA), qB = new Rot(aB);
+            Complex qA = Complex.FromAngle(aA);
+            Complex qB = Complex.FromAngle(aB);
 
             // Compute the effective masses.
-            Vector2 rA = MathUtils.Mul(qA, LocalAnchorA - _localCenterA);
-            Vector2 rB = MathUtils.Mul(qB, LocalAnchorB - _localCenterB);
+            Vector2 rA = Complex.Multiply(LocalAnchorA - _localCenterA, ref qA);
+            Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d = (cB - cA) + rB - rA;
 
             float mA = _invMassA, mB = _invMassB;
@@ -444,7 +446,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Compute motor Jacobian and effective mass.
             {
-                _axis = MathUtils.Mul(qA, LocalXAxis);
+                _axis = Complex.Multiply(LocalXAxis, ref qA);
                 _a1 = MathUtils.Cross(d + rA, _axis);
                 _a2 = MathUtils.Cross(rB, _axis);
 
@@ -457,7 +459,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Prismatic constraint.
             {
-                _perp = MathUtils.Mul(qA, _localYAxisA);
+                _perp = Complex.Multiply(_localYAxisA, ref qA);
 
                 _s1 = MathUtils.Cross(d + rA, _perp);
                 _s2 = MathUtils.Cross(rB, _perp);
@@ -652,20 +654,21 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 cB = data.positions[_indexB].c;
             float aB = data.positions[_indexB].a;
 
-            Rot qA = new Rot(aA), qB = new Rot(aB);
+            Complex qA = Complex.FromAngle(aA);
+            Complex qB = Complex.FromAngle(aB);
 
             float mA = _invMassA, mB = _invMassB;
             float iA = _invIA, iB = _invIB;
 
             // Compute fresh Jacobians
-            Vector2 rA = MathUtils.Mul(qA, LocalAnchorA - _localCenterA);
-            Vector2 rB = MathUtils.Mul(qB, LocalAnchorB - _localCenterB);
+            Vector2 rA = Complex.Multiply(LocalAnchorA - _localCenterA, ref qA);
+            Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d = cB + rB - cA - rA;
 
-            Vector2 axis = MathUtils.Mul(qA, LocalXAxis);
+            Vector2 axis = Complex.Multiply(LocalXAxis, ref qA);
             float a1 = MathUtils.Cross(d + rA, axis);
             float a2 = MathUtils.Cross(rB, axis);
-            Vector2 perp = MathUtils.Mul(qA, _localYAxisA);
+            Vector2 perp = Complex.Multiply(_localYAxisA, ref qA);
 
             float s1 = MathUtils.Cross(d + rA, perp);
             float s2 = MathUtils.Cross(rB, perp);

@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Collision
@@ -910,7 +911,7 @@ namespace tainicom.Aether.Physics2D.Collision
             Vector2 localNormal = new Vector2(localTangent.Y, -localTangent.X);
             Vector2 planePoint = 0.5f * (v11 + v12);
 
-            Vector2 tangent = MathUtils.Mul(xf1.q, localTangent);
+            Vector2 tangent = Complex.Multiply(localTangent, ref xf1.q);
 
             float normalx = tangent.Y;
             float normaly = -tangent.X;
@@ -1362,7 +1363,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 for (int i = 0; i < polygonB.Vertices.Count; ++i)
                 {
                     _polygonB.Vertices[i] = MathUtils.Mul(ref _xf, polygonB.Vertices[i]);
-                    _polygonB.Normals[i] = MathUtils.Mul(_xf.q, polygonB.Normals[i]);
+                    _polygonB.Normals[i] = Complex.Multiply(polygonB.Normals[i], ref _xf.q);
                 }
 
                 _radius = 2.0f * Settings.PolygonRadius;
@@ -1701,8 +1702,8 @@ namespace tainicom.Aether.Physics2D.Collision
             Debug.Assert(0 <= edge1 && edge1 < poly1.Vertices.Count);
 
             // Convert normal from poly1's frame into poly2's frame.
-            Vector2 normal1World = MathUtils.Mul(xf1.q, normals1[edge1]);
-            Vector2 normal1 = MathUtils.MulT(xf2.q, normal1World);
+            Vector2 normal1World = Complex.Multiply(normals1[edge1], ref xf1.q);
+            Vector2 normal1 = Complex.Divide(normal1World, ref xf2.q);
 
             // Find support vertex on poly2 for -normal.
             int index = 0;
@@ -1740,7 +1741,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             // Vector pointing from the centroid of poly1 to the centroid of poly2.
             Vector2 d = MathUtils.Mul(ref xf2, poly2.MassData.Centroid) - MathUtils.Mul(ref xf1, poly1.MassData.Centroid);
-            Vector2 dLocal1 = MathUtils.MulT(xf1.q, d);
+            Vector2 dLocal1 = Complex.Divide(d, ref xf1.q);
 
             // Find edge normal on poly1 that has the largest projection onto d.
             int edge = 0;
@@ -1825,7 +1826,7 @@ namespace tainicom.Aether.Physics2D.Collision
             Debug.Assert(0 <= edge1 && edge1 < poly1.Vertices.Count);
 
             // Get the normal of the reference edge in poly2's frame.
-            Vector2 normal1 = MathUtils.MulT(xf2.q, MathUtils.Mul(xf1.q, normals1[edge1]));
+            Vector2 normal1 = Complex.Divide(Complex.Multiply(normals1[edge1], ref xf1.q), ref xf2.q);
 
 
             // Find the incident edge on poly2.

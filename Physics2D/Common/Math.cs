@@ -29,6 +29,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Microsoft.Xna.Framework;
+using tainicom.Aether.Physics2D.Maths;
 
 namespace tainicom.Aether.Physics2D.Common
 {
@@ -82,8 +83,8 @@ namespace tainicom.Aether.Physics2D.Common
 
         public static Vector2 Mul(ref Transform T, ref Vector2 v)
         {
-            float x = (T.q.c * v.X - T.q.s * v.Y) + T.p.X;
-            float y = (T.q.s * v.X + T.q.c * v.Y) + T.p.Y;
+            float x = (T.q.Real * v.X - T.q.Imaginary * v.Y) + T.p.X;
+            float y = (T.q.Imaginary * v.X + T.q.Real * v.Y) + T.p.Y;
 
             return new Vector2(x, y);
         }
@@ -107,8 +108,8 @@ namespace tainicom.Aether.Physics2D.Common
         {
             float px = v.X - T.p.X;
             float py = v.Y - T.p.Y;
-            float x = (T.q.c * px + T.q.s * py);
-            float y = (-T.q.s * px + T.q.c * py);
+            float x = (T.q.Real * px + T.q.Imaginary * py);
+            float y = (-T.q.Imaginary * px + T.q.Real * py);
 
             return new Vector2(x, y);
         }
@@ -134,8 +135,8 @@ namespace tainicom.Aether.Physics2D.Common
         public static Transform Mul(Transform A, Transform B)
         {
             Transform C = new Transform();
-            C.q = Mul(A.q, B.q);
-            C.p = Mul(A.q, B.p) + A.p;
+            C.q = Complex.Multiply(ref B.q, ref A.q);
+            C.p = Complex.Multiply(B.p, ref A.q) + A.p;
             return C;
         }
 
@@ -144,8 +145,8 @@ namespace tainicom.Aether.Physics2D.Common
         public static void MulT(ref Transform A, ref Transform B, out Transform C)
         {
             C = new Transform();
-            C.q = MulT(A.q, B.q);
-            C.p = MulT(A.q, B.p - A.p);
+            C.q = Complex.Divide(ref B.q, ref A.q);
+            C.p = Complex.Divide(B.p - A.p, ref A.q);
         }
 
         public static void Swap<T>(ref T a, ref T b)
@@ -161,62 +162,26 @@ namespace tainicom.Aether.Physics2D.Common
             return new Vector2(A.ex.X * v.X + A.ey.X * v.Y, A.ex.Y * v.X + A.ey.Y * v.Y);
         }
 
-        /// Multiply two rotations: q * r
-        public static Rot Mul(Rot q, Rot r)
-        {
-            // [qc -qs] * [rc -rs] = [qc*rc-qs*rs -qc*rs-qs*rc]
-            // [qs  qc]   [rs  rc]   [qs*rc+qc*rs -qs*rs+qc*rc]
-            // s = qs * rc + qc * rs
-            // c = qc * rc - qs * rs
-            Rot qr;
-            qr.s = q.s * r.c + q.c * r.s;
-            qr.c = q.c * r.c - q.s * r.s;
-            return qr;
-        }
 
         public static Vector2 MulT(Transform T, Vector2 v)
         {
             float px = v.X - T.p.X;
             float py = v.Y - T.p.Y;
-            float x = (T.q.c * px + T.q.s * py);
-            float y = (-T.q.s * px + T.q.c * py);
+            float x = (T.q.Real * px + T.q.Imaginary * py);
+            float y = (-T.q.Imaginary * px + T.q.Real * py);
 
             return new Vector2(x, y);
         }
 
-        /// Transpose multiply two rotations: qT * r
-        public static Rot MulT(Rot q, Rot r)
-        {
-            // [ qc qs] * [rc -rs] = [qc*rc+qs*rs -qc*rs+qs*rc]
-            // [-qs qc]   [rs  rc]   [-qs*rc+qc*rs qs*rs+qc*rc]
-            // s = qc * rs - qs * rc
-            // c = qc * rc + qs * rs
-            Rot qr;
-            qr.s = q.c * r.s - q.s * r.c;
-            qr.c = q.c * r.c + q.s * r.s;
-            return qr;
-        }
 
         // v2 = A.q' * (B.q * v1 + B.p - A.p)
         //    = A.q' * B.q * v1 + A.q' * (B.p - A.p)
         public static Transform MulT(Transform A, Transform B)
         {
             Transform C = new Transform();
-            C.q = MulT(A.q, B.q);
-            C.p = MulT(A.q, B.p - A.p);
+            C.q = Complex.Divide(ref B.q, ref A.q);
+            C.p = Complex.Divide(B.p - A.p, ref A.q);
             return C;
-        }
-
-        /// Rotate a vector
-        public static Vector2 Mul(Rot q, Vector2 v)
-        {
-            return new Vector2(q.c * v.X - q.s * v.Y, q.s * v.X + q.c * v.Y);
-        }
-
-        /// Inverse rotate a vector
-        public static Vector2 MulT(Rot q, Vector2 v)
-        {
-            return new Vector2(q.c * v.X + q.s * v.Y, -q.s * v.X + q.c * v.Y);
         }
 
         /// Get the skew vector such that dot(skew_vec, other) == cross(vec, other)
@@ -397,15 +362,6 @@ namespace tainicom.Aether.Physics2D.Common
 
         #endregion
 
-        public static Vector2 Mul(ref Rot rot, Vector2 axis)
-        {
-            return Mul(rot, axis);
-        }
-
-        public static Vector2 MulT(ref Rot rot, Vector2 axis)
-        {
-            return MulT(rot, axis);
-        }
     }
 
     /// <summary>
@@ -630,79 +586,7 @@ namespace tainicom.Aether.Physics2D.Common
         }
     }
 
-    /// <summary>
-    /// Rotation
-    /// </summary>
-    public struct Rot
-    {
-        /// Sine and cosine
-        public float s, c;
-
-        /// <summary>
-        /// Initialize from an angle in radians
-        /// </summary>
-        /// <param name="angle">Angle in radians</param>
-        public Rot(float angle)
-        {
-            // TODO_ERIN optimize
-            s = (float)Math.Sin(angle);
-            c = (float)Math.Cos(angle);
-        }
-
-        /// <summary>
-        /// Set using an angle in radians.
-        /// </summary>
-        /// <param name="angle"></param>
-        public void Set(float angle)
-        {
-            //FPE: Optimization
-            if (angle == 0)
-            {
-                s = 0;
-                c = 1;
-            }
-            else
-            {
-                // TODO_ERIN optimize
-                s = (float)Math.Sin(angle);
-                c = (float)Math.Cos(angle);
-            }
-        }
-
-        /// <summary>
-        /// Set to the identity rotation
-        /// </summary>
-        public void SetIdentity()
-        {
-            s = 0.0f;
-            c = 1.0f;
-        }
-
-        /// <summary>
-        /// Get the angle in radians
-        /// </summary>
-        public float GetAngle()
-        {
-            return (float)Math.Atan2(s, c);
-        }
-
-        /// <summary>
-        /// Get the x-axis
-        /// </summary>
-        public Vector2 GetXAxis()
-        {
-            return new Vector2(c, s);
-        }
-
-        /// <summary>
-        /// Get the y-axis
-        /// </summary>
-        public Vector2 GetYAxis()
-        {
-            return new Vector2(-s, c);
-        }
-    }
-
+    
     /// <summary>
     /// A transform contains translation and rotation. It is used to represent
     /// the position and orientation of rigid frames.
@@ -710,14 +594,14 @@ namespace tainicom.Aether.Physics2D.Common
     public struct Transform
     {
         public Vector2 p;
-        public Rot q;
+        public Complex q;
 
         /// <summary>
         /// Initialize using a position vector and a rotation matrix.
         /// </summary>
         /// <param name="position">The position.</param>
         /// <param name="rotation">The r.</param>
-        public Transform(ref Vector2 position, ref Rot rotation)
+        public Transform(ref Vector2 position, ref Complex rotation)
         {
             p = position;
             q = rotation;
@@ -729,7 +613,7 @@ namespace tainicom.Aether.Physics2D.Common
         public void SetIdentity()
         {
             p = Vector2.Zero;
-            q.SetIdentity();
+            q = Complex.One;
         }
 
         /// <summary>
@@ -740,7 +624,7 @@ namespace tainicom.Aether.Physics2D.Common
         public void Set(Vector2 position, float angle)
         {
             p = position;
-            q.Set(angle);
+            q.Phase = angle;
         }
     }
 
@@ -788,10 +672,10 @@ namespace tainicom.Aether.Physics2D.Common
             xfb.p.X = (1.0f - beta) * C0.X + beta * C.X;
             xfb.p.Y = (1.0f - beta) * C0.Y + beta * C.Y;
             float angle = (1.0f - beta) * A0 + beta * A;
-            xfb.q.Set(angle);
+            xfb.q.Phase = angle;
 
             // Shift to origin
-            xfb.p -= MathUtils.Mul(xfb.q, LocalCenter);
+            xfb.p -= Complex.Multiply(LocalCenter, ref xfb.q);
         }
 
         /// <summary>

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common.TextureTools;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Common
@@ -42,7 +43,7 @@ namespace tainicom.Aether.Physics2D.Common
 
             Transform xf = new Transform();
             xf.p = center;
-            xf.q.Set(angle);
+            xf.q.Phase = angle;
 
             // Transform vertices
             for (int i = 0; i < 4; ++i)

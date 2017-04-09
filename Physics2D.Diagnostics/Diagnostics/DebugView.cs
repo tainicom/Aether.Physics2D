@@ -17,6 +17,7 @@ using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -449,7 +450,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                         Vector2 center = MathUtils.Mul(ref xf, circle.Position);
                         float radius = circle.Radius;
-                        Vector2 axis = MathUtils.Mul(xf.q, new Vector2(1.0f, 0.0f));
+                        Vector2 axis = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf.q);
 
                         DrawSolidCircle(center, radius, axis, color);
                     }
@@ -557,13 +558,13 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
             const double increment = Math.PI * 2.0 / CircleSegments;
-            Rot rot = new Rot((float)increment);
+            Complex rot = Complex.FromAngle((float)increment);
             Vector2 v2 = Vector2.UnitX * radius;
 
             for (int i = 0; i < CircleSegments; i++)
             {
                 Vector2 v1 = v2;
-                v2 = MathUtils.Mul(ref rot, v1);
+                v2 = Complex.Multiply(v1, ref rot);
 
                 _primitiveBatch.AddVertex(center + v1, color, PrimitiveType.LineList);
                 _primitiveBatch.AddVertex(center + v2, color, PrimitiveType.LineList);
@@ -581,16 +582,16 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
             const double increment = Math.PI * 2.0 / CircleSegments;
-            Rot rot = new Rot((float)increment);
+            Complex rot = Complex.FromAngle((float)increment);
             Vector2 v0 = Vector2.UnitX * radius;
-            Vector2 v2 = MathUtils.Mul(ref rot, v0);
+            Vector2 v2 = Complex.Multiply(v0, ref rot);
 
             Color colorFill = color * 0.5f;
 
             for (int i = 1; i < CircleSegments - 1; i++)
             {
                 Vector2 v1 = v2;
-                v2 = MathUtils.Mul(ref rot, v1);
+                v2 = Complex.Multiply(v1, ref rot);
 
                 _primitiveBatch.AddVertex(center + v0, colorFill, PrimitiveType.TriangleList);
                 _primitiveBatch.AddVertex(center + v1, colorFill, PrimitiveType.TriangleList);
@@ -620,10 +621,12 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             const float axisScale = 0.4f;
             Vector2 p1 = transform.p;
 
-            Vector2 p2 = p1 + axisScale * transform.q.GetXAxis();
+            var xAxis = transform.q.ToVector2();
+            Vector2 p2 = p1 + axisScale * xAxis;
             DrawSegment(p1, p2, Color.Red);
-
-            p2 = p1 + axisScale * transform.q.GetYAxis();
+            
+            var yAxis = new Vector2(-transform.q.Imaginary, transform.q.Real);
+            p2 = p1 + axisScale * yAxis;
             DrawSegment(p1, p2, Color.Green);
         }
 

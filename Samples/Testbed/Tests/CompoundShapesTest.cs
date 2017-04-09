@@ -28,6 +28,7 @@
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
+using tainicom.Aether.Physics2D.Maths;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
 
@@ -83,8 +84,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             {
                 Transform xf1 = new Transform();
-                xf1.q.Set(0.3524f * Settings.Pi);
-                xf1.p = MathUtils.Mul(ref xf1.q, new Vector2(1.0f, 0.0f));
+                xf1.q.Phase = (0.3524f * Settings.Pi);
+                xf1.p = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf1.q);
 
                 Vertices vertices = new Vertices(3);
 
@@ -95,8 +96,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 PolygonShape triangle1 = new PolygonShape(vertices, 2);
 
                 Transform xf2 = new Transform();
-                xf2.q.Set(-0.3524f * Settings.Pi);
-                xf2.p = MathUtils.Mul(ref xf2.q, new Vector2(-1.0f, 0.0f));
+                xf2.q.Phase = (-0.3524f * Settings.Pi);
+                xf2.p = Complex.Multiply(new Vector2(-1.0f, 0.0f), ref xf2.q);
 
                 vertices[0] = MathUtils.Mul(ref xf2, new Vector2(-1.0f, 0.0f));
                 vertices[1] = MathUtils.Mul(ref xf2, new Vector2(1.0f, 0.0f));

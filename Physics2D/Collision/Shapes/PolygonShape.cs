@@ -28,6 +28,7 @@
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.ConvexHull;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Collision.Shapes
@@ -223,7 +224,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
         public override bool TestPoint(ref Transform transform, ref Vector2 point)
         {
-            Vector2 pLocal = MathUtils.MulT(transform.q, point - transform.p);
+            Vector2 pLocal = Complex.Divide(point - transform.p, ref transform.q);
 
             for (int i = 0; i < Vertices.Count; ++i)
             {
@@ -242,8 +243,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             output = new RayCastOutput();
 
             // Put the ray into the polygon's frame of reference.
-            Vector2 p1 = MathUtils.MulT(transform.q, input.Point1 - transform.p);
-            Vector2 p2 = MathUtils.MulT(transform.q, input.Point2 - transform.p);
+            Vector2 p1 = Complex.Divide(input.Point1 - transform.p, ref transform.q);
+            Vector2 p2 = Complex.Divide(input.Point2 - transform.p, ref transform.q);
             Vector2 d = p2 - p1;
 
             float lower = 0.0f, upper = input.MaxFraction;
@@ -301,7 +302,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             if (index >= 0)
             {
                 output.Fraction = lower;
-                output.Normal = MathUtils.Mul(transform.q, Normals[index]);
+                output.Normal = Complex.Multiply(Normals[index], ref transform.q);
                 return true;
             }
 
@@ -336,7 +337,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             sc = Vector2.Zero;
 
             //Transform plane into shape co-ordinates
-            Vector2 normalL = MathUtils.MulT(xf.q, normal);
+            Vector2 normalL = Complex.Divide(normal, ref xf.q);
             float offsetL = offset - Vector2.Dot(normal, xf.p);
 
             float[] depths = new float[Settings.MaxPolygonVertices];

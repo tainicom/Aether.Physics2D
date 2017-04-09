@@ -28,6 +28,7 @@
 using System;
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Collision.Shapes
@@ -83,7 +84,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
         public override bool TestPoint(ref Transform transform, ref Vector2 point)
         {
-            Vector2 center = transform.p + MathUtils.Mul(transform.q, Position);
+            Vector2 center = transform.p + Complex.Multiply(Position, ref transform.q);
             Vector2 d = point - center;
             return Vector2.Dot(d, d) <= _2radius;
         }
@@ -97,7 +98,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
             output = new RayCastOutput();
 
-            Vector2 position = transform.p + MathUtils.Mul(transform.q, Position);
+            Vector2 position = transform.p + Complex.Multiply(Position, ref transform.q);
             Vector2 s = input.Point1 - position;
             float b = Vector2.Dot(s, s) - _2radius;
 
@@ -133,7 +134,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
-            Vector2 p = transform.p + MathUtils.Mul(transform.q, Position);
+            Vector2 p = transform.p + Complex.Multiply(Position, ref transform.q);
             aabb.LowerBound = new Vector2(p.X - Radius, p.Y - Radius);
             aabb.UpperBound = new Vector2(p.X + Radius, p.Y + Radius);
         }
