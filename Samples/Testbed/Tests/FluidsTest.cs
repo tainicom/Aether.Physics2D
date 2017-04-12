@@ -29,11 +29,10 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             Random random = new Random();
 
-            //for (int i = 0; i < 500; i++)
-            //{
-            //    //World.Fluid.AddParticle(new Vector2(-14.0f + 28.0f * (float)random.NextDouble(), 10.0f + 20.0f * (float)random.NextDouble()));
-            //    World.Fluid.AddParticle(new Vec2(-14.0f + 28.0f * (float)random.NextDouble(), 10.0f + 20.0f * (float)random.NextDouble()));
-            //}
+            for (int i = 0; i < 2000; i++)
+            {
+                World.Fluid.AddParticle(new Vector2(-14.0f + 28.0f * (float)random.NextDouble(), 10.0f + 20.0f * (float)random.NextDouble()));
+            }
         }
 
         public override void Initialize()
@@ -68,7 +67,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
                 for (int i = 0; i < 5; i++)
                 {
-                    World.Fluid.AddParticle(new Vec2(mousePosition.X + i, mousePosition.Y));
+                    World.Fluid.AddParticle(new Vector2(mousePosition.X + i, mousePosition.Y));
                 }
             }
 
