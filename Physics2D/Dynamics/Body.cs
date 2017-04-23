@@ -70,7 +70,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public PhysicsLogicFilter PhysicsLogicFilter;
         public ControllerFilter ControllerFilter;
 
-        public Body(World world, Vector2 position = new Vector2(), float rotation = 0, BodyType bodyType = BodyType.Static, object userdata = null)
+        public Body(World world, Vector2 position = new Vector2(), float rotation = 0, BodyType bodyType = BodyType.Static)
         {
             FixtureList = new List<Fixture>();
 
@@ -79,7 +79,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _awake = true;
             _sleepingAllowed = true;
 
-            Tag = userdata;
             GravityScale = 1.0f;
             BodyType = bodyType;
 

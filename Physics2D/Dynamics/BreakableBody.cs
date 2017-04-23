@@ -124,7 +124,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
                 MainBody.Remove(oldFixture);
 
-                Body body = _world.CreateBody(MainBody.Position, MainBody.Rotation, BodyType.Dynamic, MainBody.Tag);
+                Body body = _world.CreateBody(MainBody.Position, MainBody.Rotation, BodyType.Dynamic);
+                body.Tag = MainBody.Tag;
                 
                 Fixture newFixture = body.CreateFixture(shape);
                 newFixture.Tag = fixtureTag;
