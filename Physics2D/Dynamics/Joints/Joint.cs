@@ -167,7 +167,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
         /// Set the user data pointer.
         /// </summary>
         /// <value>The data.</value>
-        public object Tag { get; set; }
+        public object Tag;
 
         /// <summary>
         /// Set this flag to true if the attached bodies should collide.

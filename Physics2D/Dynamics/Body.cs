@@ -117,7 +117,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Set the user data. Use this to store your application specific data.
         /// </summary>
         /// <value>The user data.</value>
-        public object Tag { get; set; }
+        public object Tag;
 
         /// <summary>
         /// Gets the total number revolutions the body has made.
