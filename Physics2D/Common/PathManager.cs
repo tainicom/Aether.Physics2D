@@ -125,20 +125,14 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="copies">The copies.</param>
         /// <param name="userData">The user data.</param>
         /// <returns></returns>
-        public static List<Body> EvenlyDistributeShapesAlongPath(World world, Path path, Shape shape, BodyType type,
-                                                                 int copies, object userData)
+        public static List<Body> EvenlyDistributeShapesAlongPath(World world, Path path, Shape shape, BodyType type, int copies, object userData = null)
         {
             List<Shape> shapes = new List<Shape>(1);
             shapes.Add(shape);
 
             return EvenlyDistributeShapesAlongPath(world, path, shapes, type, copies, userData);
         }
-
-        public static List<Body> EvenlyDistributeShapesAlongPath(World world, Path path, Shape shape, BodyType type, int copies)
-        {
-            return EvenlyDistributeShapesAlongPath(world, path, shape, type, copies, null);
-        }
-
+        
         /// <summary>
         /// Moves the given body along the defined path.
         /// </summary>

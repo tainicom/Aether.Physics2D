@@ -100,7 +100,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Restitution = 0f;
         }
 
-        internal Fixture(Body body, Shape shape, object userData = null)
+        internal Fixture(Body body, Shape shape)
             : this()
         {
 #if DEBUG
@@ -109,7 +109,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
 
             Body = body;
-            Tag = userData;
             Shape = shape.Clone();
 
             RegisterFixture();
@@ -216,7 +215,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Set the user data. Use this to store your application specific data.
         /// </summary>
         /// <value>The user data.</value>
-        public object Tag { get; set; }
+        public object Tag;
 
         /// <summary>
         /// Set the coefficient of friction. This will _not_ change the friction of
