@@ -100,7 +100,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Restitution = 0f;
         }
 
-        internal Fixture(Body body, Shape shape, object userData = null)
+        internal Fixture(Body body, Shape shape)
             : this()
         {
 #if DEBUG
@@ -109,7 +109,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
 
             Body = body;
-            Tag = userData;
             Shape = shape.Clone();
 
             RegisterFixture();

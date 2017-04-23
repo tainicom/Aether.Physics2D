@@ -120,14 +120,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 Fixture oldFixture = Parts[i];
 
                 Shape shape = oldFixture.Shape.Clone();
-                object userData = oldFixture.Tag;
+                object fixtureTag = oldFixture.Tag;
 
                 MainBody.Remove(oldFixture);
 
                 Body body = _world.CreateBody(MainBody.Position, MainBody.Rotation, BodyType.Dynamic, MainBody.Tag);
                 
                 Fixture newFixture = body.CreateFixture(shape);
-                newFixture.Tag = userData;
+                newFixture.Tag = fixtureTag;
                 Parts[i] = newFixture;
 
                 body.AngularVelocity = _angularVelocitiesCache[i];

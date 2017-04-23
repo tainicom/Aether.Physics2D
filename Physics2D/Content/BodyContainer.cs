@@ -35,7 +35,8 @@ namespace tainicom.Aether.Physics2D.Content
 
             foreach (FixtureTemplate fixtureTemplate in Fixtures)
             {
-                Fixture fixture = body.CreateFixture(fixtureTemplate.Shape, fixtureTemplate.Name);
+                Fixture fixture = body.CreateFixture(fixtureTemplate.Shape);
+                fixture.Tag = fixtureTemplate.Name;
                 fixture.Restitution = fixtureTemplate.Restitution;
                 fixture.Friction = fixtureTemplate.Friction;
             }
