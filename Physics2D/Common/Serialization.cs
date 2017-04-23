@@ -700,7 +700,7 @@ namespace tainicom.Aether.Physics2D.Common
                                 case "restitution":
                                     fixture.Restitution = float.Parse(sn.Value);
                                     break;
-                                case "userdata":
+                                case "tag":
                                     fixture.Tag = ReadSimpleType(sn, null, false);
                                     break;
                             }
@@ -769,7 +769,7 @@ namespace tainicom.Aether.Physics2D.Common
                                         body.SetTransformIgnoreContacts(ref position, rotation);
                                     }
                                     break;
-                                case "userdata":
+                                case "tag":
                                     body.Tag = ReadSimpleType(sn, null, false);
                                     break;
                                 case "bindings":
@@ -806,7 +806,7 @@ namespace tainicom.Aether.Physics2D.Common
 
                         int bodyAIndex = -1, bodyBIndex = -1;
                         bool collideConnected = false;
-                        object userData = null;
+                        object jointTag = null;
 
                         foreach (XMLFragmentElement sn in n.Elements)
                         {
@@ -821,8 +821,8 @@ namespace tainicom.Aether.Physics2D.Common
                                 case "collideconnected":
                                     collideConnected = bool.Parse(sn.Value);
                                     break;
-                                case "userdata":
-                                    userData = ReadSimpleType(sn, null, false);
+                                case "tag":
+                                    jointTag = ReadSimpleType(sn, null, false);
                                     break;
                             }
                         }
@@ -884,7 +884,7 @@ namespace tainicom.Aether.Physics2D.Common
                         }
 
                         joint.CollideConnected = collideConnected;
-                        joint.Tag = userData;
+                        joint.Tag = jointTag;
                         joint.BodyA = bodyA;
                         joint.BodyB = bodyB;
                         joints.Add(joint);
