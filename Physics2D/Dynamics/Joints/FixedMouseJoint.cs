@@ -27,6 +27,7 @@
 
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Dynamics.Joints
@@ -173,7 +174,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 vA = data.velocities[_indexA].v;
             float wA = data.velocities[_indexA].w;
 
-            Rot qA = new Rot(aA);
+            Complex qA = Complex.FromAngle(aA);
 
             float mass = BodyA.Mass;
 
@@ -200,7 +201,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             _beta = h * k * _gamma;
 
             // Compute the effective mass matrix.
-            _rA = MathUtils.Mul(qA, LocalAnchorA - _localCenterA);
+            _rA = Complex.Multiply(LocalAnchorA - _localCenterA, ref qA);
             // K    = [(1/m1 + 1/m2) * eye(2) - skew(r1) * invI1 * skew(r1) - skew(r2) * invI2 * skew(r2)]
             //      = [1/m1+1/m2     0    ] + invI1 * [r1.Y*r1.Y -r1.X*r1.Y] + invI2 * [r1.Y*r1.Y -r1.X*r1.Y]
             //        [    0     1/m1+1/m2]           [-r1.X*r1.Y r1.X*r1.X]           [-r1.X*r1.Y r1.X*r1.X]

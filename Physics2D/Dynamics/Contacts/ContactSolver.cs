@@ -30,6 +30,7 @@ using System.Diagnostics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Dynamics.Contacts
@@ -231,10 +232,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                 Transform xfA = new Transform();
                 Transform xfB = new Transform();
-                xfA.q.Set(aA);
-                xfB.q.Set(aB);
-                xfA.p = cA - MathUtils.Mul(xfA.q, localCenterA);
-                xfB.p = cB - MathUtils.Mul(xfB.q, localCenterB);
+                xfA.q.Phase = aA;
+                xfB.q.Phase = aB;
+                xfA.p = cA - Complex.Multiply(localCenterA, ref xfA.q);
+                xfB.p = cB - Complex.Multiply(localCenterB, ref xfB.q);
 
                 Vector2 normal;
                 FixedArray2<Vector2> points;
@@ -707,10 +708,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 {
                     Transform xfA = new Transform();
                     Transform xfB = new Transform();
-                    xfA.q.Set(aA);
-                    xfB.q.Set(aB);
-                    xfA.p = cA - MathUtils.Mul(xfA.q, localCenterA);
-                    xfB.p = cB - MathUtils.Mul(xfB.q, localCenterB);
+                    xfA.q.Phase = aA;
+                    xfB.q.Phase = aB;
+                    xfA.p = cA - Complex.Multiply(localCenterA, ref xfA.q);
+                    xfB.p = cB - Complex.Multiply(localCenterB, ref xfB.q);
 
                     Vector2 normal;
                     Vector2 point;
@@ -798,10 +799,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 {
                     Transform xfA = new Transform();
                     Transform xfB = new Transform();
-                    xfA.q.Set(aA);
-                    xfB.q.Set(aB);
-                    xfA.p = cA - MathUtils.Mul(xfA.q, localCenterA);
-                    xfB.p = cB - MathUtils.Mul(xfB.q, localCenterB);
+                    xfA.q.Phase = aA;
+                    xfB.q.Phase = aB;
+                    xfA.p = cA - Complex.Multiply(localCenterA, ref xfA.q);
+                    xfB.p = cB - Complex.Multiply(localCenterB, ref xfB.q);
 
                     Vector2 normal;
                     Vector2 point;
@@ -893,7 +894,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     case ManifoldType.FaceA:
                         {
-                            normal = MathUtils.Mul(xfA.q, manifold.LocalNormal);
+                            normal = Complex.Multiply(manifold.LocalNormal, ref xfA.q);
                             Vector2 planePoint = MathUtils.Mul(ref xfA, manifold.LocalPoint);
 
                             for (int i = 0; i < manifold.PointCount; ++i)
@@ -908,7 +909,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     case ManifoldType.FaceB:
                         {
-                            normal = MathUtils.Mul(xfB.q, manifold.LocalNormal);
+                            normal = Complex.Multiply(manifold.LocalNormal, ref xfB.q);
                             Vector2 planePoint = MathUtils.Mul(ref xfB, manifold.LocalPoint);
 
                             for (int i = 0; i < manifold.PointCount; ++i)
@@ -952,7 +953,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     case ManifoldType.FaceA:
                         {
-                            normal = MathUtils.Mul(xfA.q, pc.localNormal);
+                            normal = Complex.Multiply(pc.localNormal, ref xfA.q);
                             Vector2 planePoint = MathUtils.Mul(ref xfA, pc.localPoint);
 
                             Vector2 clipPoint = MathUtils.Mul(ref xfB, pc.localPoints[index]);
@@ -963,7 +964,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     case ManifoldType.FaceB:
                         {
-                            normal = MathUtils.Mul(xfB.q, pc.localNormal);
+                            normal = Complex.Multiply(pc.localNormal, ref xfB.q);
                             Vector2 planePoint = MathUtils.Mul(ref xfB, pc.localPoint);
 
                             Vector2 clipPoint = MathUtils.Mul(ref xfA, pc.localPoints[index]);

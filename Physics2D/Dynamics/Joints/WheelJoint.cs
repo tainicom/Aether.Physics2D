@@ -27,6 +27,7 @@
 
 using System;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Dynamics.Joints
@@ -287,16 +288,17 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 vB = data.velocities[_indexB].v;
             float wB = data.velocities[_indexB].w;
 
-            Rot qA = new Rot(aA), qB = new Rot(aB);
+            Complex qA = Complex.FromAngle(aA);
+            Complex qB = Complex.FromAngle(aB);
 
             // Compute the effective masses.
-            Vector2 rA = MathUtils.Mul(qA, LocalAnchorA - _localCenterA);
-            Vector2 rB = MathUtils.Mul(qB, LocalAnchorB - _localCenterB);
+            Vector2 rA = Complex.Multiply(LocalAnchorA - _localCenterA, ref qA);
+            Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d1 = cB + rB - cA - rA;
 
             // Point to line constraint
             {
-                _ay = MathUtils.Mul(qA, _localYAxis);
+                _ay = Complex.Multiply(_localYAxis, ref qA);
                 _sAy = MathUtils.Cross(d1 + rA, _ay);
                 _sBy = MathUtils.Cross(rB, _ay);
 
@@ -314,7 +316,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             _gamma = 0.0f;
             if (Frequency > 0.0f)
             {
-                _ax = MathUtils.Mul(qA, LocalXAxis);
+                _ax = Complex.Multiply(LocalXAxis, ref qA);
                 _sAx = MathUtils.Cross(d1 + rA, _ax);
                 _sBx = MathUtils.Cross(rB, _ax);
 
@@ -473,13 +475,14 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 cB = data.positions[_indexB].c;
             float aB = data.positions[_indexB].a;
 
-            Rot qA = new Rot(aA), qB = new Rot(aB);
+            Complex qA = Complex.FromAngle(aA);
+            Complex qB = Complex.FromAngle(aB);
 
-            Vector2 rA = MathUtils.Mul(qA, LocalAnchorA - _localCenterA);
-            Vector2 rB = MathUtils.Mul(qB, LocalAnchorB - _localCenterB);
+            Vector2 rA = Complex.Multiply(LocalAnchorA - _localCenterA, ref qA);
+            Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d = (cB - cA) + rB - rA;
 
-            Vector2 ay = MathUtils.Mul(qA, _localYAxis);
+            Vector2 ay = Complex.Multiply(_localYAxis, ref qA);
 
             float sAy = MathUtils.Cross(d + rA, ay);
             float sBy = MathUtils.Cross(rB, ay);

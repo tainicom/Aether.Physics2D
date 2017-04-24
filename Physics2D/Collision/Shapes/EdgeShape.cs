@@ -26,6 +26,7 @@
 */
 
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Collision.Shapes
@@ -148,8 +149,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             output = new RayCastOutput();
 
             // Put the ray into the edge's frame of reference.
-            Vector2 p1 = MathUtils.MulT(transform.q, input.Point1 - transform.p);
-            Vector2 p2 = MathUtils.MulT(transform.q, input.Point2 - transform.p);
+            Vector2 p1 = Complex.Divide(input.Point1 - transform.p, ref transform.q);
+            Vector2 p2 = Complex.Divide(input.Point2 - transform.p, ref transform.q);
             Vector2 d = p2 - p1;
 
             Vector2 v1 = _vertex1;
