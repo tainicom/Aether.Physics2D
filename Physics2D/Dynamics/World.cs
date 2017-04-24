@@ -145,7 +145,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _queryAABBCallbackWrapper = QueryAABBCallbackWrapper;
             _rayCastCallbackWrapper = RayCastCallbackWrapper;
 
-            Fluid = new FluidSystem2(new Vec2(0, -1), 5000, 150, 150);
+            Fluid = new FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
 
             ContactManager = new ContactManager(new DynamicTreeBroadPhase());
             Gravity = gravity;
