@@ -203,8 +203,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Complex qB = Complex.FromAngle(aB);
 
             // Compute the effective mass matrix.
-            _rA = Complex.Multiply(-_localCenterA, ref qA);
-            _rB = Complex.Multiply(-_localCenterB, ref qB);
+            _rA = -Complex.Multiply(ref _localCenterA, ref qA);
+            _rB = -Complex.Multiply(ref _localCenterB, ref qB);
 
             // J = [-I -r1_skew I r2_skew]
             //     [ 0       -1 0       1]

@@ -167,8 +167,8 @@ namespace tainicom.Aether.Physics2D.Collision
             {
                 case SeparationFunctionType.Points:
                     {
-                        Vector2 axisA = Complex.Divide(ref _axis, ref xfA.q);
-                        Vector2 axisB = Complex.Divide(-_axis, ref xfB.q);
+                        Vector2 axisA =  Complex.Divide(ref _axis, ref xfA.q);
+                        Vector2 axisB = -Complex.Divide(ref _axis, ref xfB.q);
 
                         indexA = _proxyA.GetSupport(axisA);
                         indexB = _proxyB.GetSupport(axisB);
@@ -188,7 +188,7 @@ namespace tainicom.Aether.Physics2D.Collision
                         Vector2 normal = Complex.Multiply(ref _axis, ref xfA.q);
                         Vector2 pointA = MathUtils.Mul(ref xfA, _localPoint);
 
-                        Vector2 axisB = Complex.Divide(-normal, ref xfB.q);
+                        Vector2 axisB = -Complex.Divide(ref normal, ref xfB.q);
 
                         indexA = -1;
                         indexB = _proxyB.GetSupport(axisB);
@@ -205,7 +205,7 @@ namespace tainicom.Aether.Physics2D.Collision
                         Vector2 normal = Complex.Multiply(ref _axis, ref xfB.q);
                         Vector2 pointB = MathUtils.Mul(ref xfB, _localPoint);
 
-                        Vector2 axisA = Complex.Divide(-normal, ref xfA.q);
+                        Vector2 axisA = -Complex.Divide(ref normal, ref xfA.q);
 
                         indexB = -1;
                         indexA = _proxyA.GetSupport(axisA);
