@@ -564,7 +564,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             for (int i = 0; i < CircleSegments; i++)
             {
                 Vector2 v1 = v2;
-                v2 = Complex.Multiply(v1, ref rot);
+                v2 = Complex.Multiply(ref v1, ref rot);
 
                 _primitiveBatch.AddVertex(center + v1, color, PrimitiveType.LineList);
                 _primitiveBatch.AddVertex(center + v2, color, PrimitiveType.LineList);
@@ -584,14 +584,14 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             const double increment = Math.PI * 2.0 / CircleSegments;
             Complex rot = Complex.FromAngle((float)increment);
             Vector2 v0 = Vector2.UnitX * radius;
-            Vector2 v2 = Complex.Multiply(v0, ref rot);
+            Vector2 v2 = Complex.Multiply(ref v0, ref rot);
 
             Color colorFill = color * 0.5f;
 
             for (int i = 1; i < CircleSegments - 1; i++)
             {
                 Vector2 v1 = v2;
-                v2 = Complex.Multiply(v1, ref rot);
+                v2 = Complex.Multiply(ref v1, ref rot);
 
                 _primitiveBatch.AddVertex(center + v0, colorFill, PrimitiveType.TriangleList);
                 _primitiveBatch.AddVertex(center + v1, colorFill, PrimitiveType.TriangleList);

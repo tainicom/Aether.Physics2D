@@ -726,7 +726,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 vertex.IndexA = input.ProxyA.GetSupport(Complex.Divide(-d, ref input.TransformA.q));
                 vertex.WA = MathUtils.Mul(ref input.TransformA, input.ProxyA.Vertices[vertex.IndexA]);
 
-                vertex.IndexB = input.ProxyB.GetSupport(Complex.Divide(d, ref input.TransformB.q));
+                vertex.IndexB = input.ProxyB.GetSupport(Complex.Divide(ref d, ref input.TransformB.q));
                 vertex.WB = MathUtils.Mul(ref input.TransformB, input.ProxyB.Vertices[vertex.IndexB]);
                 vertex.W = vertex.WB - vertex.WA;
                 simplex.V[simplex.Count] = vertex;

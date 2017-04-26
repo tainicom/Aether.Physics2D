@@ -911,7 +911,7 @@ namespace tainicom.Aether.Physics2D.Collision
             Vector2 localNormal = new Vector2(localTangent.Y, -localTangent.X);
             Vector2 planePoint = 0.5f * (v11 + v12);
 
-            Vector2 tangent = Complex.Multiply(localTangent, ref xf1.q);
+            Vector2 tangent = Complex.Multiply(ref localTangent, ref xf1.q);
 
             float normalx = tangent.Y;
             float normaly = -tangent.X;
@@ -1703,7 +1703,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             // Convert normal from poly1's frame into poly2's frame.
             Vector2 normal1World = Complex.Multiply(normals1[edge1], ref xf1.q);
-            Vector2 normal1 = Complex.Divide(normal1World, ref xf2.q);
+            Vector2 normal1 = Complex.Divide(ref normal1World, ref xf2.q);
 
             // Find support vertex on poly2 for -normal.
             int index = 0;
@@ -1741,7 +1741,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             // Vector pointing from the centroid of poly1 to the centroid of poly2.
             Vector2 d = MathUtils.Mul(ref xf2, poly2.MassData.Centroid) - MathUtils.Mul(ref xf1, poly1.MassData.Centroid);
-            Vector2 dLocal1 = Complex.Divide(d, ref xf1.q);
+            Vector2 dLocal1 = Complex.Divide(ref d, ref xf1.q);
 
             // Find edge normal on poly1 that has the largest projection onto d.
             int edge = 0;

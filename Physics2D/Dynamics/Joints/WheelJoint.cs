@@ -298,7 +298,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Point to line constraint
             {
-                _ay = Complex.Multiply(_localYAxis, ref qA);
+                _ay = Complex.Multiply(ref _localYAxis, ref qA);
                 _sAy = MathUtils.Cross(d1 + rA, _ay);
                 _sBy = MathUtils.Cross(rB, _ay);
 
@@ -482,7 +482,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d = (cB - cA) + rB - rA;
 
-            Vector2 ay = Complex.Multiply(_localYAxis, ref qA);
+            Vector2 ay = Complex.Multiply(ref _localYAxis, ref qA);
 
             float sAy = MathUtils.Cross(d + rA, ay);
             float sBy = MathUtils.Cross(rB, ay);

@@ -459,7 +459,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Prismatic constraint.
             {
-                _perp = Complex.Multiply(_localYAxisA, ref qA);
+                _perp = Complex.Multiply(ref _localYAxisA, ref qA);
 
                 _s1 = MathUtils.Cross(d + rA, _perp);
                 _s2 = MathUtils.Cross(rB, _perp);
@@ -668,7 +668,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 axis = Complex.Multiply(LocalXAxis, ref qA);
             float a1 = MathUtils.Cross(d + rA, axis);
             float a2 = MathUtils.Cross(rB, axis);
-            Vector2 perp = Complex.Multiply(_localYAxisA, ref qA);
+            Vector2 perp = Complex.Multiply(ref _localYAxisA, ref qA);
 
             float s1 = MathUtils.Cross(d + rA, perp);
             float s2 = MathUtils.Cross(rB, perp);

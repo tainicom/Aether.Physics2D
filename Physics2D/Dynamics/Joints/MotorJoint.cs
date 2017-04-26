@@ -232,7 +232,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _angularMass = 1.0f / _angularMass;
             }
 
-            _linearError = cB + _rB - cA - _rA - Complex.Multiply(_linearOffset, ref qA);
+            _linearError = cB + _rB - cA - _rA - Complex.Multiply(ref _linearOffset, ref qA);
             _angularError = aB - aA - _angularOffset;
 
             if (Settings.EnableWarmstarting)
