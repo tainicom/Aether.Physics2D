@@ -113,6 +113,9 @@ namespace tainicom.Aether.Physics2D.Fluids
         /// </summary>
         public void Rehash()
         {
+            if (_table.Count == 0)
+                return;
+
             for (int i = 0; i < _column; i++)
             {
                 for (int j = 0; j < _row; j++)
