@@ -136,7 +136,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             Transform C = new Transform();
             C.q = Complex.Multiply(ref B.q, ref A.q);
-            C.p = Complex.Multiply(B.p, ref A.q) + A.p;
+            C.p = Complex.Multiply(ref B.p, ref A.q) + A.p;
             return C;
         }
 
@@ -675,7 +675,7 @@ namespace tainicom.Aether.Physics2D.Common
             xfb.q.Phase = angle;
 
             // Shift to origin
-            xfb.p -= Complex.Multiply(LocalCenter, ref xfb.q);
+            xfb.p -= Complex.Multiply(ref LocalCenter, ref xfb.q);
         }
 
         /// <summary>

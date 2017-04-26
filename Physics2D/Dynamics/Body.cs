@@ -1066,7 +1066,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns>The same vector expressed in world coordinates.</returns>
         public Vector2 GetWorldVector(ref Vector2 localVector)
         {
-            return Complex.Multiply(localVector, ref _xf.q);
+            return Complex.Multiply(ref localVector, ref _xf.q);
         }
 
         /// <summary>
@@ -1108,7 +1108,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns>The corresponding local vector.</returns>
         public Vector2 GetLocalVector(ref Vector2 worldVector)
         {
-            return Complex.Divide(worldVector, ref _xf.q);
+            return Complex.Divide(ref worldVector, ref _xf.q);
         }
 
         /// <summary>
@@ -1168,7 +1168,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             Transform xf1 = new Transform();
             xf1.q.Phase = _sweep.A0;
-            xf1.p = _sweep.C0 - Complex.Multiply(_sweep.LocalCenter, ref xf1.q);
+            xf1.p = _sweep.C0 - Complex.Multiply(ref _sweep.LocalCenter, ref xf1.q);
 
             IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1180,7 +1180,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal void SynchronizeTransform()
         {
             _xf.q.Phase = _sweep.A;
-            _xf.p = _sweep.C - Complex.Multiply(_sweep.LocalCenter, ref _xf.q);
+            _xf.p = _sweep.C - Complex.Multiply(ref _sweep.LocalCenter, ref _xf.q);
         }
 
         /// <summary>
@@ -1219,7 +1219,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _sweep.C = _sweep.C0;
             _sweep.A = _sweep.A0;
             _xf.q.Phase = _sweep.A;
-            _xf.p = _sweep.C - Complex.Multiply(_sweep.LocalCenter, ref _xf.q);
+            _xf.p = _sweep.C - Complex.Multiply(ref _sweep.LocalCenter, ref _xf.q);
         }
 
         public event OnCollisionEventHandler OnCollision

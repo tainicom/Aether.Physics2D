@@ -203,8 +203,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Complex qB = Complex.FromAngle(aB);
 
             // Compute the effective mass matrix.
-            _rA = Complex.Multiply(-_localCenterA, ref qA);
-            _rB = Complex.Multiply(-_localCenterB, ref qB);
+            _rA = -Complex.Multiply(ref _localCenterA, ref qA);
+            _rB = -Complex.Multiply(ref _localCenterB, ref qB);
 
             // J = [-I -r1_skew I r2_skew]
             //     [ 0       -1 0       1]
@@ -232,7 +232,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _angularMass = 1.0f / _angularMass;
             }
 
-            _linearError = cB + _rB - cA - _rA - Complex.Multiply(_linearOffset, ref qA);
+            _linearError = cB + _rB - cA - _rA - Complex.Multiply(ref _linearOffset, ref qA);
             _angularError = aB - aA - _angularOffset;
 
             if (Settings.EnableWarmstarting)

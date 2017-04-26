@@ -337,7 +337,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             sc = Vector2.Zero;
 
             //Transform plane into shape co-ordinates
-            Vector2 normalL = Complex.Divide(normal, ref xf.q);
+            Vector2 normalL = Complex.Divide(ref normal, ref xf.q);
             float offsetL = offset - Vector2.Dot(normal, xf.p);
 
             float[] depths = new float[Settings.MaxPolygonVertices];

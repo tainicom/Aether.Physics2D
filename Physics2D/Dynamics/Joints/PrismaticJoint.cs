@@ -104,6 +104,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
     /// </summary>
     public class PrismaticJoint : Joint
     {
+        private Vector2 _localXAxis;
         private Vector2 _localYAxisA;
         private Vector3 _impulse;
         private float _lowerTranslation;
@@ -213,7 +214,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             get
             {
                 Vector2 d = BodyB.GetWorldPoint(LocalAnchorB) - BodyA.GetWorldPoint(LocalAnchorA);
-                Vector2 axis = BodyA.GetWorldVector(LocalXAxis);
+                Vector2 axis = BodyA.GetWorldVector(ref _localXAxis);
 
                 return Vector2.Dot(d, axis);
             }
@@ -236,7 +237,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 p1 = BodyA._sweep.C + r1;
                 Vector2 p2 = BodyB._sweep.C + r2;
                 Vector2 d = p2 - p1;
-                Vector2 axis = BodyA.GetWorldVector(LocalXAxis);
+                Vector2 axis = BodyA.GetWorldVector(ref _localXAxis);
 
                 Vector2 v1 = BodyA._linearVelocity;
                 Vector2 v2 = BodyB._linearVelocity;
@@ -386,16 +387,16 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             set
             {
                 _axis1 = value;
-                LocalXAxis = BodyA.GetLocalVector(_axis1);
-                LocalXAxis.Normalize();
-                _localYAxisA = MathUtils.Cross(1.0f, LocalXAxis);
+                _localXAxis = BodyA.GetLocalVector(_axis1);
+                _localXAxis.Normalize();
+                _localYAxisA = MathUtils.Cross(1.0f, _localXAxis);
             }
         }
 
         /// <summary>
         /// The axis in local coordinates relative to BodyA
         /// </summary>
-        public Vector2 LocalXAxis { get; private set; }
+        public Vector2 LocalXAxis { get { return _localXAxis; } }
 
         /// <summary>
         /// The reference angle.
@@ -446,7 +447,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Compute motor Jacobian and effective mass.
             {
-                _axis = Complex.Multiply(LocalXAxis, ref qA);
+                _axis = Complex.Multiply(ref _localXAxis, ref qA);
                 _a1 = MathUtils.Cross(d + rA, _axis);
                 _a2 = MathUtils.Cross(rB, _axis);
 
@@ -459,7 +460,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Prismatic constraint.
             {
-                _perp = Complex.Multiply(_localYAxisA, ref qA);
+                _perp = Complex.Multiply(ref _localYAxisA, ref qA);
 
                 _s1 = MathUtils.Cross(d + rA, _perp);
                 _s2 = MathUtils.Cross(rB, _perp);
@@ -665,10 +666,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d = cB + rB - cA - rA;
 
-            Vector2 axis = Complex.Multiply(LocalXAxis, ref qA);
+            Vector2 axis = Complex.Multiply(ref _localXAxis, ref qA);
             float a1 = MathUtils.Cross(d + rA, axis);
             float a2 = MathUtils.Cross(rB, axis);
-            Vector2 perp = Complex.Multiply(_localYAxisA, ref qA);
+            Vector2 perp = Complex.Multiply(ref _localYAxisA, ref qA);
 
             float s1 = MathUtils.Cross(d + rA, perp);
             float s2 = MathUtils.Cross(rB, perp);

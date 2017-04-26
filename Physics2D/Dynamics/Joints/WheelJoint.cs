@@ -58,6 +58,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
     public class WheelJoint : Joint
     {
         // Solver shared
+        private Vector2 _localXAxis;
         private Vector2 _localYAxis;
 
         private float _impulse;
@@ -153,15 +154,15 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             set
             {
                 _axis = value;
-                LocalXAxis = BodyA.GetLocalVector(_axis);
-                _localYAxis = MathUtils.Cross(1.0f, LocalXAxis);
+                _localXAxis = BodyA.GetLocalVector(_axis);
+                _localYAxis = MathUtils.Cross(1.0f, _localXAxis);
             }
         }
 
         /// <summary>
         /// The axis in local coordinates relative to BodyA
         /// </summary>
-        public Vector2 LocalXAxis { get; private set; }
+        public Vector2 LocalXAxis { get { return _localXAxis; } }
 
         /// <summary>
         /// The desired motor speed in radians per second.
@@ -212,7 +213,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 pA = bA.GetWorldPoint(LocalAnchorA);
                 Vector2 pB = bB.GetWorldPoint(LocalAnchorB);
                 Vector2 d = pB - pA;
-                Vector2 axis = bA.GetWorldVector(LocalXAxis);
+                Vector2 axis = bA.GetWorldVector(ref _localXAxis);
 
                 float translation = Vector2.Dot(d, axis);
                 return translation;
@@ -298,7 +299,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Point to line constraint
             {
-                _ay = Complex.Multiply(_localYAxis, ref qA);
+                _ay = Complex.Multiply(ref _localYAxis, ref qA);
                 _sAy = MathUtils.Cross(d1 + rA, _ay);
                 _sBy = MathUtils.Cross(rB, _ay);
 
@@ -316,7 +317,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             _gamma = 0.0f;
             if (Frequency > 0.0f)
             {
-                _ax = Complex.Multiply(LocalXAxis, ref qA);
+                _ax = Complex.Multiply(ref _localXAxis, ref qA);
                 _sAx = MathUtils.Cross(d1 + rA, _ax);
                 _sBx = MathUtils.Cross(rB, _ax);
 
@@ -482,7 +483,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
             Vector2 d = (cB - cA) + rB - rA;
 
-            Vector2 ay = Complex.Multiply(_localYAxis, ref qA);
+            Vector2 ay = Complex.Multiply(ref _localYAxis, ref qA);
 
             float sAy = MathUtils.Cross(d + rA, ay);
             float sBy = MathUtils.Cross(rB, ay);

@@ -87,10 +87,21 @@ namespace tainicom.Aether.Physics2D.Maths
                                 right.Real * left.Imaginary - right.Imaginary * left.Real);
         }
 
+        public static Vector2 Multiply(ref Vector2 left, ref Complex right)
+        {
+            return new Vector2(left.X * right.Real - left.Y * right.Imaginary,
+                               left.Y * right.Real + left.X * right.Imaginary);
+        }
         public static Vector2 Multiply(Vector2 left, ref Complex right)
         {
             return new Vector2(left.X * right.Real - left.Y * right.Imaginary,
                                left.Y * right.Real + left.X * right.Imaginary);
+        }
+
+        public static Vector2 Divide(ref Vector2 left, ref Complex right)
+        {
+            return new Vector2(left.X * right.Real + left.Y * right.Imaginary,
+                               left.Y * right.Real - left.X * right.Imaginary);
         }
 
         public static Vector2 Divide(Vector2 left, ref Complex right)
