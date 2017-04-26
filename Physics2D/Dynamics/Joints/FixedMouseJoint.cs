@@ -240,7 +240,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             float wA = data.velocities[_indexA].w;
 
             // Cdot = v + cross(w, r)
-            Vector2 Cdot = vA + MathUtils.Cross(wA, _rA);
+            Vector2 Cdot = vA + MathUtils.Cross(wA, ref _rA);
             Vector2 impulse = MathUtils.Mul(ref _mass, -(Cdot + _C + _gamma * _impulse));
 
             Vector2 oldImpulse = _impulse;

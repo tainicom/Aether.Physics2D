@@ -244,7 +244,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 float w1 = BodyA._angularVelocity;
                 float w2 = BodyB._angularVelocity;
 
-                float speed = Vector2.Dot(d, MathUtils.Cross(w1, axis)) + Vector2.Dot(axis, v2 + MathUtils.Cross(w2, r2) - v1 - MathUtils.Cross(w1, r1));
+                float speed = Vector2.Dot(d, MathUtils.Cross(w1, ref axis)) + Vector2.Dot(axis, v2 + MathUtils.Cross(w2, ref r2) - v1 - MathUtils.Cross(w1, ref r1));
                 return speed;
             }
         }
@@ -389,7 +389,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _axis1 = value;
                 _localXAxis = BodyA.GetLocalVector(_axis1);
                 _localXAxis.Normalize();
-                _localYAxisA = MathUtils.Cross(1.0f, _localXAxis);
+                _localYAxisA = MathUtils.Cross(1.0f, ref _localXAxis);
             }
         }
 

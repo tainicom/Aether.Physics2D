@@ -155,7 +155,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             {
                 _axis = value;
                 _localXAxis = BodyA.GetLocalVector(_axis);
-                _localYAxis = MathUtils.Cross(1.0f, _localXAxis);
+                _localYAxis = MathUtils.Cross(1.0f, ref _localXAxis);
             }
         }
 

@@ -269,7 +269,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     // Setup a velocity bias for restitution.
                     vcp.velocityBias = 0.0f;
-                    float vRel = Vector2.Dot(vc.normal, vB + MathUtils.Cross(wB, vcp.rB) - vA - MathUtils.Cross(wA, vcp.rA));
+                    float vRel = Vector2.Dot(vc.normal, vB + MathUtils.Cross(wB, ref vcp.rB) - vA - MathUtils.Cross(wA, ref vcp.rA));
                     if (vRel < -Settings.VelocityThreshold)
                     {
                         vcp.velocityBias = -vc.restitution * vRel;
@@ -382,7 +382,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     VelocityConstraintPoint vcp = vc.points[j];
 
                     // Relative velocity at contact
-                    Vector2 dv = vB + MathUtils.Cross(wB, vcp.rB) - vA - MathUtils.Cross(wA, vcp.rA);
+                    Vector2 dv = vB + MathUtils.Cross(wB, ref vcp.rB) - vA - MathUtils.Cross(wA, ref vcp.rA);
 
                     // Compute tangent force
                     float vt = Vector2.Dot(dv, tangent) - vc.tangentSpeed;
@@ -410,7 +410,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     VelocityConstraintPoint vcp = vc.points[0];
 
                     // Relative velocity at contact
-                    Vector2 dv = vB + MathUtils.Cross(wB, vcp.rB) - vA - MathUtils.Cross(wA, vcp.rA);
+                    Vector2 dv = vB + MathUtils.Cross(wB, ref vcp.rB) - vA - MathUtils.Cross(wA, ref vcp.rA);
 
                     // Compute normal impulse
                     float vn = Vector2.Dot(dv, normal);
@@ -471,8 +471,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Debug.Assert(a.X >= 0.0f && a.Y >= 0.0f);
 
                     // Relative velocity at contact
-                    Vector2 dv1 = vB + MathUtils.Cross(wB, cp1.rB) - vA - MathUtils.Cross(wA, cp1.rA);
-                    Vector2 dv2 = vB + MathUtils.Cross(wB, cp2.rB) - vA - MathUtils.Cross(wA, cp2.rA);
+                    Vector2 dv1 = vB + MathUtils.Cross(wB, ref cp1.rB) - vA - MathUtils.Cross(wA, ref cp1.rA);
+                    Vector2 dv2 = vB + MathUtils.Cross(wB, ref cp2.rB) - vA - MathUtils.Cross(wA, ref cp2.rA);
 
                     // Compute normal velocity
                     float vn1 = Vector2.Dot(dv1, normal);
