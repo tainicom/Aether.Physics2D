@@ -46,9 +46,11 @@ namespace tainicom.Aether.Physics2D.Common
         }
 
         /// Perform the cross product on two vectors.
-        public static Vector3 Cross(Vector3 a, Vector3 b)
+        public static Vector3 Cross(ref Vector3 a, ref Vector3 b)
         {
-            return new Vector3(a.Y * b.Z - a.Z * b.Y, a.Z * b.X - a.X * b.Z, a.X * b.Y - a.Y * b.X);
+            return new Vector3( a.Y * b.Z - a.Z * b.Y, 
+                                a.Z * b.X - a.X * b.Z, 
+                                a.X * b.Y - a.Y * b.X);
         }
 
         public static Vector2 Cross(Vector2 a, float s)
@@ -562,7 +564,7 @@ namespace tainicom.Aether.Physics2D.Common
         /// Returns the zero matrix if singular.
         public void GetSymInverse33(ref Mat33 M)
         {
-            float det = MathUtils.Dot(ex, MathUtils.Cross(ey, ez));
+            float det = MathUtils.Dot(ex, MathUtils.Cross(ref ey, ref ez));
             if (det != 0.0f)
             {
                 det = 1.0f / det;
