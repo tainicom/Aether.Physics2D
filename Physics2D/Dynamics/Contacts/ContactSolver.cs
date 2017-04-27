@@ -483,7 +483,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     b.Y = vn2 - cp2.velocityBias;
 
                     // Compute b'
-                    b -= MathUtils.Mul(ref vc.K, a);
+                    b -= MathUtils.Mul(ref vc.K, ref a);
 
                     const float k_errorTol = 1e-3f;
                     //B2_NOT_USED(k_errorTol);
@@ -499,7 +499,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                         //
                         // x = - inv(A) * b'
                         //
-                        Vector2 x = -MathUtils.Mul(ref vc.normalMass, b);
+                        Vector2 x = -MathUtils.Mul(ref vc.normalMass, ref b);
 
                         if (x.X >= 0.0f && x.Y >= 0.0f)
                         {
