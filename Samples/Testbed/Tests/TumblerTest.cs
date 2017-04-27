@@ -34,7 +34,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class TumblerTest : Test
     {
-        private const int Count = 800;
+        private const int Count = 150;
         private int _count;
 
         TumblerTest()
