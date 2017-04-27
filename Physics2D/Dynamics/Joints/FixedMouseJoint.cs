@@ -87,7 +87,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Debug.Assert(worldAnchor.IsValid());
 
             _worldAnchor = worldAnchor;
-            LocalAnchorA = MathUtils.MulT(BodyA._xf, worldAnchor);
+            LocalAnchorA = MathUtils.MulT(ref BodyA._xf, ref worldAnchor);
         }
 
         /// <summary>
