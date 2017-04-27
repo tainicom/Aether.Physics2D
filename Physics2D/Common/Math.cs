@@ -58,6 +58,11 @@ namespace tainicom.Aether.Physics2D.Common
             return new Vector2(s * a.Y, -s * a.X);
         }
 
+        public static Vector2 Rot270(ref Vector2 a)
+        {
+            return new Vector2(a.Y, -a.X);
+        }
+
         public static Vector2 Cross(float s, ref Vector2 a)
         {
             return new Vector2(-s * a.Y, s * a.X);

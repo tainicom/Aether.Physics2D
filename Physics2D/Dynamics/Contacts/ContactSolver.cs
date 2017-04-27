@@ -242,6 +242,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 WorldManifold.Initialize(ref manifold, ref xfA, radiusA, ref xfB, radiusB, out normal, out points);
 
                 vc.normal = normal;
+                Vector2 tangent = MathUtils.Rot270(ref vc.normal);
 
                 int pointCount = vc.pointCount;
                 for (int j = 0; j < pointCount; ++j)
@@ -258,7 +259,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     vcp.normalMass = kNormal > 0.0f ? 1.0f / kNormal : 0.0f;
 
-                    Vector2 tangent = MathUtils.Cross(vc.normal, 1.0f);
 
                     float rtA = MathUtils.Cross(ref vcp.rA, ref tangent);
                     float rtB = MathUtils.Cross(ref vcp.rB, ref tangent);
@@ -331,7 +331,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 float wB = _velocities[indexB].w;
 
                 Vector2 normal = vc.normal;
-                Vector2 tangent = MathUtils.Cross(normal, 1.0f);
+                Vector2 tangent = MathUtils.Rot270(ref normal);
 
                 for (int j = 0; j < pointCount; ++j)
                 {
@@ -370,7 +370,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 float wB = _velocities[indexB].w;
 
                 Vector2 normal = vc.normal;
-                Vector2 tangent = MathUtils.Cross(normal, 1.0f);
+                Vector2 tangent = MathUtils.Rot270(ref normal);
                 float friction = vc.friction;
 
                 Debug.Assert(pointCount == 1 || pointCount == 2);
