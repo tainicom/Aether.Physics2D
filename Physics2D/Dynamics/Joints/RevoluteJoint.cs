@@ -412,10 +412,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 P = new Vector2(_impulse.X, _impulse.Y);
 
                 vA -= mA * P;
-                wA -= iA * (MathUtils.Cross(_rA, P) + MotorImpulse + _impulse.Z);
+                wA -= iA * (MathUtils.Cross(ref _rA, ref P) + MotorImpulse + _impulse.Z);
 
                 vB += mB * P;
-                wB += iB * (MathUtils.Cross(_rB, P) + MotorImpulse + _impulse.Z);
+                wB += iB * (MathUtils.Cross(ref _rB, ref P) + MotorImpulse + _impulse.Z);
             }
             else
             {
@@ -458,7 +458,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             // Solve limit constraint.
             if (_enableLimit && _limitState != LimitState.Inactive && fixedRotation == false)
             {
-                Vector2 Cdot1 = vB + MathUtils.Cross(wB, _rB) - vA - MathUtils.Cross(wA, _rA);
+                Vector2 Cdot1 = vB + MathUtils.Cross(wB, ref _rB) - vA - MathUtils.Cross(wA, ref _rA);
                 float Cdot2 = wB - wA;
                 Vector3 Cdot = new Vector3(Cdot1.X, Cdot1.Y, Cdot2);
 
@@ -510,25 +510,25 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 P = new Vector2(impulse.X, impulse.Y);
 
                 vA -= mA * P;
-                wA -= iA * (MathUtils.Cross(_rA, P) + impulse.Z);
+                wA -= iA * (MathUtils.Cross(ref _rA, ref P) + impulse.Z);
 
                 vB += mB * P;
-                wB += iB * (MathUtils.Cross(_rB, P) + impulse.Z);
+                wB += iB * (MathUtils.Cross(ref _rB, ref P) + impulse.Z);
             }
             else
             {
                 // Solve point-to-point constraint
-                Vector2 Cdot = vB + MathUtils.Cross(wB, _rB) - vA - MathUtils.Cross(wA, _rA);
+                Vector2 Cdot = vB + MathUtils.Cross(wB, ref _rB) - vA - MathUtils.Cross(wA, ref _rA);
                 Vector2 impulse = _mass.Solve22(-Cdot);
 
                 _impulse.X += impulse.X;
                 _impulse.Y += impulse.Y;
 
                 vA -= mA * impulse;
-                wA -= iA * MathUtils.Cross(_rA, impulse);
+                wA -= iA * MathUtils.Cross(ref _rA, ref impulse);
 
                 vB += mB * impulse;
-                wB += iB * MathUtils.Cross(_rB, impulse);
+                wB += iB * MathUtils.Cross(ref _rB, ref impulse);
             }
 
             data.velocities[_indexA].v = vA;
@@ -610,10 +610,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 impulse = -K.Solve(C);
 
                 cA -= mA * impulse;
-                aA -= iA * MathUtils.Cross(rA, impulse);
+                aA -= iA * MathUtils.Cross(ref rA, ref impulse);
 
                 cB += mB * impulse;
-                aB += iB * MathUtils.Cross(rB, impulse);
+                aB += iB * MathUtils.Cross(ref rB, ref impulse);
             }
 
             data.positions[_indexA].c = cA;

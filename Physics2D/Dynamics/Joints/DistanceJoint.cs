@@ -211,8 +211,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _u = Vector2.Zero;
             }
 
-            float crAu = MathUtils.Cross(_rA, _u);
-            float crBu = MathUtils.Cross(_rB, _u);
+            float crAu = MathUtils.Cross(ref _rA, ref _u);
+            float crBu = MathUtils.Cross(ref _rB, ref _u);
             float invMass = _invMassA + _invIA * crAu * crAu + _invMassB + _invIB * crBu * crBu;
 
             // Compute the effective mass matrix.
@@ -253,9 +253,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
                 Vector2 P = _impulse * _u;
                 vA -= _invMassA * P;
-                wA -= _invIA * MathUtils.Cross(_rA, P);
+                wA -= _invIA * MathUtils.Cross(ref _rA, ref P);
                 vB += _invMassB * P;
-                wB += _invIB * MathUtils.Cross(_rB, P);
+                wB += _invIB * MathUtils.Cross(ref _rB, ref P);
             }
             else
             {
@@ -276,8 +276,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             float wB = data.velocities[_indexB].w;
 
             // Cdot = dot(u, v + cross(w, r))
-            Vector2 vpA = vA + MathUtils.Cross(wA, _rA);
-            Vector2 vpB = vB + MathUtils.Cross(wB, _rB);
+            Vector2 vpA = vA + MathUtils.Cross(wA, ref _rA);
+            Vector2 vpB = vB + MathUtils.Cross(wB, ref _rB);
             float Cdot = Vector2.Dot(_u, vpB - vpA);
 
             float impulse = -_mass * (Cdot + _bias + _gamma * _impulse);
@@ -285,9 +285,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             Vector2 P = impulse * _u;
             vA -= _invMassA * P;
-            wA -= _invIA * MathUtils.Cross(_rA, P);
+            wA -= _invIA * MathUtils.Cross(ref _rA, ref P);
             vB += _invMassB * P;
-            wB += _invIB * MathUtils.Cross(_rB, P);
+            wB += _invIB * MathUtils.Cross(ref _rB, ref P);
 
             data.velocities[_indexA].v = vA;
             data.velocities[_indexA].w = wA;
@@ -324,9 +324,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 P = impulse * u;
 
             cA -= _invMassA * P;
-            aA -= _invIA * MathUtils.Cross(rA, P);
+            aA -= _invIA * MathUtils.Cross(ref rA, ref P);
             cB += _invMassB * P;
-            aB += _invIB * MathUtils.Cross(rB, P);
+            aB += _invIB * MathUtils.Cross(ref rB, ref P);
 
             data.positions[_indexA].c = cA;
             data.positions[_indexA].a = aA;

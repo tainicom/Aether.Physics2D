@@ -297,8 +297,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 rC = Complex.Multiply(_localAnchorC - _lcC, ref qC);
                 Vector2 rA = Complex.Multiply(_localAnchorA - _lcA, ref qA);
                 _JvAC = u;
-                _JwC = MathUtils.Cross(rC, u);
-                _JwA = MathUtils.Cross(rA, u);
+                _JwC = MathUtils.Cross(ref rC, ref u);
+                _JwA = MathUtils.Cross(ref rA, ref u);
                 _mass += _mC + _mA + _iC * _JwC * _JwC + _iA * _JwA * _JwA;
             }
 
@@ -315,8 +315,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 rD = Complex.Multiply(_localAnchorD - _lcD, ref qD);
                 Vector2 rB = Complex.Multiply(_localAnchorB - _lcB, ref qB);
                 _JvBD = _ratio * u;
-                _JwD = _ratio * MathUtils.Cross(rD, u);
-                _JwB = _ratio * MathUtils.Cross(rB, u);
+                _JwD = _ratio * MathUtils.Cross(ref rD, ref u);
+                _JwB = _ratio * MathUtils.Cross(ref rB, ref u);
                 _mass += _ratio * _ratio * (_mD + _mB) + _iD * _JwD * _JwD + _iB * _JwB * _JwB;
             }
 
@@ -424,8 +424,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 rC = Complex.Multiply(_localAnchorC - _lcC, ref qC);
                 Vector2 rA = Complex.Multiply(_localAnchorA - _lcA, ref qA);
                 JvAC = u;
-                JwC = MathUtils.Cross(rC, u);
-                JwA = MathUtils.Cross(rA, u);
+                JwC = MathUtils.Cross(ref rC, ref u);
+                JwA = MathUtils.Cross(ref rA, ref u);
                 mass += _mC + _mA + _iC * JwC * JwC + _iA * JwA * JwA;
 
                 Vector2 pC = _localAnchorC - _lcC;
@@ -448,8 +448,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 rD = Complex.Multiply(_localAnchorD - _lcD, ref qD);
                 Vector2 rB = Complex.Multiply(_localAnchorB - _lcB, ref qB);
                 JvBD = _ratio * u;
-                JwD = _ratio * MathUtils.Cross(rD, u);
-                JwB = _ratio * MathUtils.Cross(rB, u);
+                JwD = _ratio * MathUtils.Cross(ref rD, ref u);
+                JwB = _ratio * MathUtils.Cross(ref rB, ref u);
                 mass += _ratio * _ratio * (_mD + _mB) + _iD * JwD * JwD + _iB * JwB * JwB;
 
                 Vector2 pD = _localAnchorD - _lcD;

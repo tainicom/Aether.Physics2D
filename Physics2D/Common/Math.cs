@@ -46,9 +46,11 @@ namespace tainicom.Aether.Physics2D.Common
         }
 
         /// Perform the cross product on two vectors.
-        public static Vector3 Cross(Vector3 a, Vector3 b)
+        public static Vector3 Cross(ref Vector3 a, ref Vector3 b)
         {
-            return new Vector3(a.Y * b.Z - a.Z * b.Y, a.Z * b.X - a.X * b.Z, a.X * b.Y - a.Y * b.X);
+            return new Vector3( a.Y * b.Z - a.Z * b.Y, 
+                                a.Z * b.X - a.X * b.Z, 
+                                a.X * b.Y - a.Y * b.X);
         }
 
         public static Vector2 Cross(Vector2 a, float s)
@@ -56,9 +58,19 @@ namespace tainicom.Aether.Physics2D.Common
             return new Vector2(s * a.Y, -s * a.X);
         }
 
-        public static Vector2 Cross(float s, Vector2 a)
+        public static Vector2 Rot270(ref Vector2 a)
+        {
+            return new Vector2(a.Y, -a.X);
+        }
+
+        public static Vector2 Cross(float s, ref Vector2 a)
         {
             return new Vector2(-s * a.Y, s * a.X);
+        }
+
+        public static Vector2 Rot90(ref Vector2 a)
+        {
+            return new Vector2(-a.Y, a.X);
         }
 
         public static Vector2 Abs(Vector2 v)
@@ -144,9 +156,8 @@ namespace tainicom.Aether.Physics2D.Common
         //    = A.q' * B.q * v1 + A.q' * (B.p - A.p)
         public static void MulT(ref Transform A, ref Transform B, out Transform C)
         {
-            C = new Transform();
-            C.q = Complex.Divide(ref B.q, ref A.q);
-            C.p = Complex.Divide(B.p - A.p, ref A.q);
+            C = new Transform(  Complex.Divide(B.p - A.p, ref A.q),
+                                Complex.Divide(ref B.q, ref A.q));
         }
 
         public static void Swap<T>(ref T a, ref T b)
@@ -562,7 +573,7 @@ namespace tainicom.Aether.Physics2D.Common
         /// Returns the zero matrix if singular.
         public void GetSymInverse33(ref Mat33 M)
         {
-            float det = MathUtils.Dot(ex, MathUtils.Cross(ey, ez));
+            float det = MathUtils.Dot(ex, MathUtils.Cross(ref ey, ref ez));
             if (det != 0.0f)
             {
                 det = 1.0f / det;
@@ -595,6 +606,17 @@ namespace tainicom.Aether.Physics2D.Common
     {
         public Vector2 p;
         public Complex q;
+
+        /// <summary>
+        /// Initialize using a position vector and a rotation matrix.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        /// <param name="rotation">The r.</param>
+        public Transform(Vector2 position, Complex rotation)
+        {
+            p = position;
+            q = rotation;
+        }
 
         /// <summary>
         /// Initialize using a position vector and a rotation matrix.

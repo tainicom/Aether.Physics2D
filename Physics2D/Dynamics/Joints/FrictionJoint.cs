@@ -198,9 +198,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
                 Vector2 P = new Vector2(_linearImpulse.X, _linearImpulse.Y);
                 vA -= mA * P;
-                wA -= iA * (MathUtils.Cross(_rA, P) + _angularImpulse);
+                wA -= iA * (MathUtils.Cross(ref _rA, ref P) + _angularImpulse);
                 vB += mB * P;
-                wB += iB * (MathUtils.Cross(_rB, P) + _angularImpulse);
+                wB += iB * (MathUtils.Cross(ref _rB, ref P) + _angularImpulse);
             }
             else
             {
@@ -242,9 +242,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Solve linear friction
             {
-                Vector2 Cdot = vB + MathUtils.Cross(wB, _rB) - vA - MathUtils.Cross(wA, _rA);
+                Vector2 Cdot = vB + MathUtils.Cross(wB, ref _rB) - vA - MathUtils.Cross(wA, ref _rA);
 
-                Vector2 impulse = -MathUtils.Mul(ref _linearMass, Cdot);
+                Vector2 impulse = -MathUtils.Mul(ref _linearMass, ref Cdot);
                 Vector2 oldImpulse = _linearImpulse;
                 _linearImpulse += impulse;
 
@@ -259,10 +259,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 impulse = _linearImpulse - oldImpulse;
 
                 vA -= mA * impulse;
-                wA -= iA * MathUtils.Cross(_rA, impulse);
+                wA -= iA * MathUtils.Cross(ref _rA, ref impulse);
 
                 vB += mB * impulse;
-                wB += iB * MathUtils.Cross(_rB, impulse);
+                wB += iB * MathUtils.Cross(ref _rB, ref impulse);
             }
 
             data.velocities[_indexA].v = vA;

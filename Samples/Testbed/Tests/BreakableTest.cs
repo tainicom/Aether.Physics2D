@@ -138,8 +138,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Vector2 center1 = body1.WorldCenter;
             Vector2 center2 = body2.WorldCenter;
 
-            Vector2 velocity1 = _velocity + MathUtils.Cross(_angularVelocity, center1 - center);
-            Vector2 velocity2 = _velocity + MathUtils.Cross(_angularVelocity, center2 - center);
+            Vector2 center1Diff = center1 - center;
+            Vector2 center2Diff = center2 - center;
+
+            Vector2 velocity1 = _velocity + MathUtils.Cross(_angularVelocity, ref center1Diff);
+            Vector2 velocity2 = _velocity + MathUtils.Cross(_angularVelocity, ref center2Diff);
 
             body1.AngularVelocity = _angularVelocity;
             body1.LinearVelocity = velocity1;

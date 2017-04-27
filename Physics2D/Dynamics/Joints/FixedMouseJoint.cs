@@ -87,7 +87,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Debug.Assert(worldAnchor.IsValid());
 
             _worldAnchor = worldAnchor;
-            LocalAnchorA = MathUtils.MulT(BodyA._xf, worldAnchor);
+            LocalAnchorA = MathUtils.MulT(ref BodyA._xf, ref worldAnchor);
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             {
                 _impulse *= data.step.dtRatio;
                 vA += _invMassA * _impulse;
-                wA += _invIA * MathUtils.Cross(_rA, _impulse);
+                wA += _invIA * MathUtils.Cross(ref _rA, ref _impulse);
             }
             else
             {
@@ -240,7 +240,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             float wA = data.velocities[_indexA].w;
 
             // Cdot = v + cross(w, r)
-            Vector2 Cdot = vA + MathUtils.Cross(wA, _rA);
+            Vector2 Cdot = vA + MathUtils.Cross(wA, ref _rA);
             Vector2 impulse = MathUtils.Mul(ref _mass, -(Cdot + _C + _gamma * _impulse));
 
             Vector2 oldImpulse = _impulse;
@@ -253,7 +253,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             impulse = _impulse - oldImpulse;
 
             vA += _invMassA * impulse;
-            wA += _invIA * MathUtils.Cross(_rA, impulse);
+            wA += _invIA * MathUtils.Cross(ref _rA, ref impulse);
 
             data.velocities[_indexA].v = vA;
             data.velocities[_indexA].w = wA;
