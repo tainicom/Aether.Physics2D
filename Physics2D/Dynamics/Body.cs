@@ -1087,7 +1087,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns>The corresponding local point relative to the body's origin.</returns>
         public Vector2 GetLocalPoint(ref Vector2 worldPoint)
         {
-            return MathUtils.MulT(ref _xf, worldPoint);
+            return MathUtils.MulT(ref _xf, ref worldPoint);
         }
 
         /// <summary>

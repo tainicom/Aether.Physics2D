@@ -710,7 +710,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             // Compute circle position in the frame of the polygon.
             Vector2 c = MathUtils.Mul(ref xfB, circleB.Position);
-            Vector2 cLocal = MathUtils.MulT(ref xfA, c);
+            Vector2 cLocal = MathUtils.MulT(ref xfA, ref c);
 
             // Find the min separating edge.
             int normalIndex = 0;
