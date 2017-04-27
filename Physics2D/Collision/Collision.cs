@@ -1164,7 +1164,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 // 7. Return if _any_ axis indicates separation
                 // 8. Clip
 
-                _xf = MathUtils.MulT(xfA, xfB);
+                MathUtils.MulT(ref xfA, ref xfB, out _xf);
 
                 _centroidB = MathUtils.Mul(ref _xf, polygonB.MassData.Centroid);
 
