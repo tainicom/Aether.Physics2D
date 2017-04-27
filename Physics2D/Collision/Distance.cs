@@ -520,11 +520,11 @@ namespace tainicom.Aether.Physics2D.Collision
             float d23_2 = -w2e23;
 
             // Triangle123
-            float n123 = MathUtils.Cross(e12, e13);
+            float n123 = MathUtils.Cross(ref e12, ref e13);
 
-            float d123_1 = n123 * MathUtils.Cross(w2, w3);
-            float d123_2 = n123 * MathUtils.Cross(w3, w1);
-            float d123_3 = n123 * MathUtils.Cross(w1, w2);
+            float d123_1 = n123 * MathUtils.Cross(ref w2, ref w3);
+            float d123_2 = n123 * MathUtils.Cross(ref w3, ref w1);
+            float d123_3 = n123 * MathUtils.Cross(ref w1, ref w2);
 
             // w1 region
             if (d12_2 <= 0.0f && d13_2 <= 0.0f)

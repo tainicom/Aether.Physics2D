@@ -301,7 +301,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             {
                 _ay = Complex.Multiply(ref _localYAxis, ref qA);
                 _sAy = MathUtils.Cross(d1 + rA, _ay);
-                _sBy = MathUtils.Cross(rB, _ay);
+                _sBy = MathUtils.Cross(ref rB, ref _ay);
 
                 _mass = mA + mB + iA * _sAy * _sAy + iB * _sBy * _sBy;
 
@@ -319,7 +319,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             {
                 _ax = Complex.Multiply(ref _localXAxis, ref qA);
                 _sAx = MathUtils.Cross(d1 + rA, _ax);
-                _sBx = MathUtils.Cross(rB, _ax);
+                _sBx = MathUtils.Cross(ref rB, ref _ax);
 
                 float invMass = mA + mB + iA * _sAx * _sAx + iB * _sBx * _sBx;
 
@@ -486,7 +486,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 ay = Complex.Multiply(ref _localYAxis, ref qA);
 
             float sAy = MathUtils.Cross(d + rA, ay);
-            float sBy = MathUtils.Cross(rB, ay);
+            float sBy = MathUtils.Cross(ref rB, ref ay);
 
             float C = Vector2.Dot(d, ay);
 

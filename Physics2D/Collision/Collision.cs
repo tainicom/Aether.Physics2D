@@ -1189,7 +1189,7 @@ namespace tainicom.Aether.Physics2D.Collision
                     Vector2 edge0 = _v1 - _v0;
                     edge0.Normalize();
                     _normal0 = new Vector2(edge0.Y, -edge0.X);
-                    convex1 = MathUtils.Cross(edge0, edge1) >= 0.0f;
+                    convex1 = MathUtils.Cross(ref edge0, ref edge1) >= 0.0f;
                     offset0 = Vector2.Dot(_normal0, _centroidB - _v0);
                 }
 
@@ -1199,7 +1199,7 @@ namespace tainicom.Aether.Physics2D.Collision
                     Vector2 edge2 = _v3 - _v2;
                     edge2.Normalize();
                     _normal2 = new Vector2(edge2.Y, -edge2.X);
-                    convex2 = MathUtils.Cross(edge1, edge2) > 0.0f;
+                    convex2 = MathUtils.Cross(ref edge1, ref edge2) > 0.0f;
                     offset2 = Vector2.Dot(_normal2, _centroidB - _v2);
                 }
 

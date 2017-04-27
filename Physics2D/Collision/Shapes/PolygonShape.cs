@@ -185,7 +185,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
                 Vector2 e1 = Vertices[i] - s;
                 Vector2 e2 = i + 1 < Vertices.Count ? Vertices[i + 1] - s : Vertices[0] - s;
 
-                float D = MathUtils.Cross(e1, e2);
+                float D = MathUtils.Cross(ref e1, ref e2);
 
                 float triangleArea = 0.5f * D;
                 area += triangleArea;
@@ -427,7 +427,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
                     Vector2 e1 = p2 - intoVec;
                     Vector2 e2 = p3 - intoVec;
 
-                    float D = MathUtils.Cross(e1, e2);
+                    float D = MathUtils.Cross(ref e1, ref e2);
 
                     float triangleArea = 0.5f * D;
 

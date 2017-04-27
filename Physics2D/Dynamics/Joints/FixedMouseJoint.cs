@@ -223,7 +223,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             {
                 _impulse *= data.step.dtRatio;
                 vA += _invMassA * _impulse;
-                wA += _invIA * MathUtils.Cross(_rA, _impulse);
+                wA += _invIA * MathUtils.Cross(ref _rA, ref _impulse);
             }
             else
             {
@@ -253,7 +253,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             impulse = _impulse - oldImpulse;
 
             vA += _invMassA * impulse;
-            wA += _invIA * MathUtils.Cross(_rA, impulse);
+            wA += _invIA * MathUtils.Cross(ref _rA, ref impulse);
 
             data.velocities[_indexA].v = vA;
             data.velocities[_indexA].w = wA;

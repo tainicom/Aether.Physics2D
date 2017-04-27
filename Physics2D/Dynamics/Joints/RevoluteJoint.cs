@@ -412,10 +412,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 P = new Vector2(_impulse.X, _impulse.Y);
 
                 vA -= mA * P;
-                wA -= iA * (MathUtils.Cross(_rA, P) + MotorImpulse + _impulse.Z);
+                wA -= iA * (MathUtils.Cross(ref _rA, ref P) + MotorImpulse + _impulse.Z);
 
                 vB += mB * P;
-                wB += iB * (MathUtils.Cross(_rB, P) + MotorImpulse + _impulse.Z);
+                wB += iB * (MathUtils.Cross(ref _rB, ref P) + MotorImpulse + _impulse.Z);
             }
             else
             {
@@ -510,10 +510,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 P = new Vector2(impulse.X, impulse.Y);
 
                 vA -= mA * P;
-                wA -= iA * (MathUtils.Cross(_rA, P) + impulse.Z);
+                wA -= iA * (MathUtils.Cross(ref _rA, ref P) + impulse.Z);
 
                 vB += mB * P;
-                wB += iB * (MathUtils.Cross(_rB, P) + impulse.Z);
+                wB += iB * (MathUtils.Cross(ref _rB, ref P) + impulse.Z);
             }
             else
             {
@@ -525,10 +525,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _impulse.Y += impulse.Y;
 
                 vA -= mA * impulse;
-                wA -= iA * MathUtils.Cross(_rA, impulse);
+                wA -= iA * MathUtils.Cross(ref _rA, ref impulse);
 
                 vB += mB * impulse;
-                wB += iB * MathUtils.Cross(_rB, impulse);
+                wB += iB * MathUtils.Cross(ref _rB, ref impulse);
             }
 
             data.velocities[_indexA].v = vA;
@@ -610,10 +610,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 impulse = -K.Solve(C);
 
                 cA -= mA * impulse;
-                aA -= iA * MathUtils.Cross(rA, impulse);
+                aA -= iA * MathUtils.Cross(ref rA, ref impulse);
 
                 cB += mB * impulse;
-                aB += iB * MathUtils.Cross(rB, impulse);
+                aB += iB * MathUtils.Cross(ref rB, ref impulse);
             }
 
             data.positions[_indexA].c = cA;

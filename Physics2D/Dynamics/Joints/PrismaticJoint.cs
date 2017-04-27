@@ -449,7 +449,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             {
                 _axis = Complex.Multiply(ref _localXAxis, ref qA);
                 _a1 = MathUtils.Cross(d + rA, _axis);
-                _a2 = MathUtils.Cross(rB, _axis);
+                _a2 = MathUtils.Cross(ref rB, ref _axis);
 
                 _motorMass = mA + mB + iA * _a1 * _a1 + iB * _a2 * _a2;
                 if (_motorMass > 0.0f)
@@ -463,7 +463,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _perp = Complex.Multiply(ref _localYAxisA, ref qA);
 
                 _s1 = MathUtils.Cross(d + rA, _perp);
-                _s2 = MathUtils.Cross(rB, _perp);
+                _s2 = MathUtils.Cross(ref rB, ref _perp);
 
                 float k11 = mA + mB + iA * _s1 * _s1 + iB * _s2 * _s2;
                 float k12 = iA * _s1 + iB * _s2;
@@ -668,11 +668,11 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             Vector2 axis = Complex.Multiply(ref _localXAxis, ref qA);
             float a1 = MathUtils.Cross(d + rA, axis);
-            float a2 = MathUtils.Cross(rB, axis);
+            float a2 = MathUtils.Cross(ref rB, ref axis);
             Vector2 perp = Complex.Multiply(ref _localYAxisA, ref qA);
 
             float s1 = MathUtils.Cross(d + rA, perp);
-            float s2 = MathUtils.Cross(rB, perp);
+            float s2 = MathUtils.Cross(ref rB, ref perp);
 
             Vector3 impulse;
             Vector2 C1 = new Vector2();

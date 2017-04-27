@@ -251,8 +251,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     vcp.rA = points[j] - cA;
                     vcp.rB = points[j] - cB;
 
-                    float rnA = MathUtils.Cross(vcp.rA, vc.normal);
-                    float rnB = MathUtils.Cross(vcp.rB, vc.normal);
+                    float rnA = MathUtils.Cross(ref vcp.rA, ref vc.normal);
+                    float rnB = MathUtils.Cross(ref vcp.rB, ref vc.normal);
 
                     float kNormal = mA + mB + iA * rnA * rnA + iB * rnB * rnB;
 
@@ -260,8 +260,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     Vector2 tangent = MathUtils.Cross(vc.normal, 1.0f);
 
-                    float rtA = MathUtils.Cross(vcp.rA, tangent);
-                    float rtB = MathUtils.Cross(vcp.rB, tangent);
+                    float rtA = MathUtils.Cross(ref vcp.rA, ref tangent);
+                    float rtB = MathUtils.Cross(ref vcp.rB, ref tangent);
 
                     float kTangent = mA + mB + iA * rtA * rtA + iB * rtB * rtB;
 
@@ -282,10 +282,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     VelocityConstraintPoint vcp1 = vc.points[0];
                     VelocityConstraintPoint vcp2 = vc.points[1];
 
-                    float rn1A = MathUtils.Cross(vcp1.rA, vc.normal);
-                    float rn1B = MathUtils.Cross(vcp1.rB, vc.normal);
-                    float rn2A = MathUtils.Cross(vcp2.rA, vc.normal);
-                    float rn2B = MathUtils.Cross(vcp2.rB, vc.normal);
+                    float rn1A = MathUtils.Cross(ref vcp1.rA, ref vc.normal);
+                    float rn1B = MathUtils.Cross(ref vcp1.rB, ref vc.normal);
+                    float rn2A = MathUtils.Cross(ref vcp2.rA, ref vc.normal);
+                    float rn2B = MathUtils.Cross(ref vcp2.rB, ref vc.normal);
 
                     float k11 = mA + mB + iA * rn1A * rn1A + iB * rn1B * rn1B;
                     float k22 = mA + mB + iA * rn2A * rn2A + iB * rn2B * rn2B;
@@ -337,9 +337,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 {
                     VelocityConstraintPoint vcp = vc.points[j];
                     Vector2 P = vcp.normalImpulse * normal + vcp.tangentImpulse * tangent;
-                    wA -= iA * MathUtils.Cross(vcp.rA, P);
+                    wA -= iA * MathUtils.Cross(ref vcp.rA, ref P);
                     vA -= mA * P;
-                    wB += iB * MathUtils.Cross(vcp.rB, P);
+                    wB += iB * MathUtils.Cross(ref vcp.rB, ref P);
                     vB += mB * P;
                 }
 
@@ -398,10 +398,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Vector2 P = lambda * tangent;
 
                     vA -= mA * P;
-                    wA -= iA * MathUtils.Cross(vcp.rA, P);
+                    wA -= iA * MathUtils.Cross(ref vcp.rA, ref P);
 
                     vB += mB * P;
-                    wB += iB * MathUtils.Cross(vcp.rB, P);
+                    wB += iB * MathUtils.Cross(ref vcp.rB, ref P);
                 }
 
                 // Solve normal constraints
@@ -424,10 +424,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     // Apply contact impulse
                     Vector2 P = lambda * normal;
                     vA -= mA * P;
-                    wA -= iA * MathUtils.Cross(vcp.rA, P);
+                    wA -= iA * MathUtils.Cross(ref vcp.rA, ref P);
 
                     vB += mB * P;
-                    wB += iB * MathUtils.Cross(vcp.rB, P);
+                    wB += iB * MathUtils.Cross(ref vcp.rB, ref P);
                 }
                 else
                 {
@@ -510,10 +510,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                             Vector2 P1 = d.X * normal;
                             Vector2 P2 = d.Y * normal;
                             vA -= mA * (P1 + P2);
-                            wA -= iA * (MathUtils.Cross(cp1.rA, P1) + MathUtils.Cross(cp2.rA, P2));
+                            wA -= iA * (MathUtils.Cross(ref cp1.rA, ref P1) + MathUtils.Cross(ref cp2.rA, ref P2));
 
                             vB += mB * (P1 + P2);
-                            wB += iB * (MathUtils.Cross(cp1.rB, P1) + MathUtils.Cross(cp2.rB, P2));
+                            wB += iB * (MathUtils.Cross(ref cp1.rB, ref P1) + MathUtils.Cross(ref cp2.rB, ref P2));
 
                             // Accumulate
                             cp1.normalImpulse = x.X;
@@ -554,10 +554,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                             Vector2 P1 = d.X * normal;
                             Vector2 P2 = d.Y * normal;
                             vA -= mA * (P1 + P2);
-                            wA -= iA * (MathUtils.Cross(cp1.rA, P1) + MathUtils.Cross(cp2.rA, P2));
+                            wA -= iA * (MathUtils.Cross(ref cp1.rA, ref P1) + MathUtils.Cross(ref cp2.rA, ref P2));
 
                             vB += mB * (P1 + P2);
-                            wB += iB * (MathUtils.Cross(cp1.rB, P1) + MathUtils.Cross(cp2.rB, P2));
+                            wB += iB * (MathUtils.Cross(ref cp1.rB, ref P1) + MathUtils.Cross(ref cp2.rB, ref P2));
 
                             // Accumulate
                             cp1.normalImpulse = x.X;
@@ -596,10 +596,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                             Vector2 P1 = d.X * normal;
                             Vector2 P2 = d.Y * normal;
                             vA -= mA * (P1 + P2);
-                            wA -= iA * (MathUtils.Cross(cp1.rA, P1) + MathUtils.Cross(cp2.rA, P2));
+                            wA -= iA * (MathUtils.Cross(ref cp1.rA, ref P1) + MathUtils.Cross(ref cp2.rA, ref P2));
 
                             vB += mB * (P1 + P2);
-                            wB += iB * (MathUtils.Cross(cp1.rB, P1) + MathUtils.Cross(cp2.rB, P2));
+                            wB += iB * (MathUtils.Cross(ref cp1.rB, ref P1) + MathUtils.Cross(ref cp2.rB, ref P2));
 
                             // Accumulate
                             cp1.normalImpulse = x.X;
@@ -636,10 +636,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                             Vector2 P1 = d.X * normal;
                             Vector2 P2 = d.Y * normal;
                             vA -= mA * (P1 + P2);
-                            wA -= iA * (MathUtils.Cross(cp1.rA, P1) + MathUtils.Cross(cp2.rA, P2));
+                            wA -= iA * (MathUtils.Cross(ref cp1.rA, ref P1) + MathUtils.Cross(ref cp2.rA, ref P2));
 
                             vB += mB * (P1 + P2);
-                            wB += iB * (MathUtils.Cross(cp1.rB, P1) + MathUtils.Cross(cp2.rB, P2));
+                            wB += iB * (MathUtils.Cross(ref cp1.rB, ref P1) + MathUtils.Cross(ref cp2.rB, ref P2));
 
                             // Accumulate
                             cp1.normalImpulse = x.X;
@@ -729,8 +729,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     float C = MathUtils.Clamp(Settings.Baumgarte * (separation + Settings.LinearSlop), -Settings.MaxLinearCorrection, 0.0f);
 
                     // Compute the effective mass.
-                    float rnA = MathUtils.Cross(rA, normal);
-                    float rnB = MathUtils.Cross(rB, normal);
+                    float rnA = MathUtils.Cross(ref rA, ref normal);
+                    float rnB = MathUtils.Cross(ref rB, ref normal);
                     float K = mA + mB + iA * rnA * rnA + iB * rnB * rnB;
 
                     // Compute normal impulse
@@ -739,10 +739,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Vector2 P = impulse * normal;
 
                     cA -= mA * P;
-                    aA -= iA * MathUtils.Cross(rA, P);
+                    aA -= iA * MathUtils.Cross(ref rA, ref P);
 
                     cB += mB * P;
-                    aB += iB * MathUtils.Cross(rB, P);
+                    aB += iB * MathUtils.Cross(ref rB, ref P);
                 }
 
                 _positions[indexA].c = cA;
@@ -820,8 +820,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     float C = MathUtils.Clamp(Settings.Baumgarte * (separation + Settings.LinearSlop), -Settings.MaxLinearCorrection, 0.0f);
 
                     // Compute the effective mass.
-                    float rnA = MathUtils.Cross(rA, normal);
-                    float rnB = MathUtils.Cross(rB, normal);
+                    float rnA = MathUtils.Cross(ref rA, ref normal);
+                    float rnB = MathUtils.Cross(ref rB, ref normal);
                     float K = mA + mB + iA * rnA * rnA + iB * rnB * rnB;
 
                     // Compute normal impulse
@@ -830,10 +830,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Vector2 P = impulse * normal;
 
                     cA -= mA * P;
-                    aA -= iA * MathUtils.Cross(rA, P);
+                    aA -= iA * MathUtils.Cross(ref rA, ref P);
 
                     cB += mB * P;
-                    aB += iB * MathUtils.Cross(rB, P);
+                    aB += iB * MathUtils.Cross(ref rB, ref P);
                 }
 
                 _positions[indexA].c = cA;

@@ -263,8 +263,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             }
 
             // Compute effective mass.
-            float ruA = MathUtils.Cross(_rA, _uA);
-            float ruB = MathUtils.Cross(_rB, _uB);
+            float ruA = MathUtils.Cross(ref _rA, ref _uA);
+            float ruB = MathUtils.Cross(ref _rB, ref _uB);
 
             float mA = _invMassA + _invIA * ruA * ruA;
             float mB = _invMassB + _invIB * ruB * ruB;
@@ -286,9 +286,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 Vector2 PB = (-Ratio * _impulse) * _uB;
 
                 vA += _invMassA * PA;
-                wA += _invIA * MathUtils.Cross(_rA, PA);
+                wA += _invIA * MathUtils.Cross(ref _rA, ref PA);
                 vB += _invMassB * PB;
-                wB += _invIB * MathUtils.Cross(_rB, PB);
+                wB += _invIB * MathUtils.Cross(ref _rB, ref PB);
             }
             else
             {
@@ -318,9 +318,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 PA = -impulse * _uA;
             Vector2 PB = -Ratio * impulse * _uB;
             vA += _invMassA * PA;
-            wA += _invIA * MathUtils.Cross(_rA, PA);
+            wA += _invIA * MathUtils.Cross(ref _rA, ref PA);
             vB += _invMassB * PB;
-            wB += _invIB * MathUtils.Cross(_rB, PB);
+            wB += _invIB * MathUtils.Cross(ref _rB, ref PB);
 
             data.velocities[_indexA].v = vA;
             data.velocities[_indexA].w = wA;
@@ -367,8 +367,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             }
 
             // Compute effective mass.
-            float ruA = MathUtils.Cross(rA, uA);
-            float ruB = MathUtils.Cross(rB, uB);
+            float ruA = MathUtils.Cross(ref rA, ref uA);
+            float ruB = MathUtils.Cross(ref rB, ref uB);
 
             float mA = _invMassA + _invIA * ruA * ruA;
             float mB = _invMassB + _invIB * ruB * ruB;
@@ -389,9 +389,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 PB = -Ratio * impulse * uB;
 
             cA += _invMassA * PA;
-            aA += _invIA * MathUtils.Cross(rA, PA);
+            aA += _invIA * MathUtils.Cross(ref rA, ref PA);
             cB += _invMassB * PB;
-            aB += _invIB * MathUtils.Cross(rB, PB);
+            aB += _invIB * MathUtils.Cross(ref rB, ref PB);
 
             data.positions[_indexA].c = cA;
             data.positions[_indexA].a = aA;
