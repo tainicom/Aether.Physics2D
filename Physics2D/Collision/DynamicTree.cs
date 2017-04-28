@@ -413,8 +413,8 @@ namespace tainicom.Aether.Physics2D.Collision
                         // Update segment bounding box.
                         maxFraction = value;
                         Vector2 t = p1 + maxFraction * (p2 - p1);
-                        segmentAABB.LowerBound = Vector2.Min(p1, t);
-                        segmentAABB.UpperBound = Vector2.Max(p1, t);
+                        Vector2.Min(ref p1, ref t, out segmentAABB.LowerBound);
+                        Vector2.Max(ref p1, ref t, out segmentAABB.UpperBound);
                     }
                 }
                 else
