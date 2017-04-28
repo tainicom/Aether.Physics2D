@@ -207,8 +207,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
-            Vector2 v1 = MathUtils.Mul(ref transform, _vertex1);
-            Vector2 v2 = MathUtils.Mul(ref transform, _vertex2);
+            Vector2 v1 = MathUtils.Mul(ref transform, ref _vertex1);
+            Vector2 v2 = MathUtils.Mul(ref transform, ref _vertex2);
 
             Vector2 lower = Vector2.Min(v1, v2);
             Vector2 upper = Vector2.Max(v1, v2);

@@ -154,7 +154,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
         {
             sc = Vector2.Zero;
 
-            Vector2 p = MathUtils.Mul(ref xf, Position);
+            Vector2 p = MathUtils.Mul(ref xf, ref _position);
             float l = -(Vector2.Dot(normal, p) - offset);
             if (l < -Radius + Settings.Epsilon)
             {

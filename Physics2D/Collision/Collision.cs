@@ -672,8 +672,8 @@ namespace tainicom.Aether.Physics2D.Collision
         {
             manifold.PointCount = 0;
 
-            Vector2 pA = MathUtils.Mul(ref xfA, circleA.Position);
-            Vector2 pB = MathUtils.Mul(ref xfB, circleB.Position);
+            Vector2 pA = MathUtils.Mul(ref xfA, ref circleA._position);
+            Vector2 pB = MathUtils.Mul(ref xfB, ref circleB._position);
 
             Vector2 d = pB - pA;
             float distSqr = Vector2.Dot(d, d);
@@ -709,7 +709,7 @@ namespace tainicom.Aether.Physics2D.Collision
             manifold.PointCount = 0;
 
             // Compute circle position in the frame of the polygon.
-            Vector2 c = MathUtils.Mul(ref xfB, circleB.Position);
+            Vector2 c = MathUtils.Mul(ref xfB, ref circleB._position);
             Vector2 cLocal = MathUtils.MulT(ref xfA, ref c);
 
             // Find the min separating edge.
@@ -916,8 +916,8 @@ namespace tainicom.Aether.Physics2D.Collision
             float normalx = tangent.Y;
             float normaly = -tangent.X;
 
-            v11 = MathUtils.Mul(ref xf1, v11);
-            v12 = MathUtils.Mul(ref xf1, v12);
+            v11 = MathUtils.Mul(ref xf1, ref v11);
+            v12 = MathUtils.Mul(ref xf1, ref v12);
 
             // Face offset.
             float frontOffset = normalx * v11.X + normaly * v11.Y;

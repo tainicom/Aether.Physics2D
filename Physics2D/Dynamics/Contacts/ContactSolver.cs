@@ -878,7 +878,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     case ManifoldType.Circles:
                         {
                             normal = new Vector2(1.0f, 0.0f);
-                            Vector2 pointA = MathUtils.Mul(ref xfA, manifold.LocalPoint);
+                            Vector2 pointA = MathUtils.Mul(ref xfA, ref manifold.LocalPoint);
                             Vector2 pointB = MathUtils.Mul(ref xfB, manifold.Points[0].LocalPoint);
                             if (Vector2.DistanceSquared(pointA, pointB) > Settings.Epsilon * Settings.Epsilon)
                             {
@@ -895,7 +895,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     case ManifoldType.FaceA:
                         {
                             normal = Complex.Multiply(ref manifold.LocalNormal, ref xfA.q);
-                            Vector2 planePoint = MathUtils.Mul(ref xfA, manifold.LocalPoint);
+                            Vector2 planePoint = MathUtils.Mul(ref xfA, ref manifold.LocalPoint);
 
                             for (int i = 0; i < manifold.PointCount; ++i)
                             {
@@ -910,7 +910,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     case ManifoldType.FaceB:
                         {
                             normal = Complex.Multiply(ref manifold.LocalNormal, ref xfB.q);
-                            Vector2 planePoint = MathUtils.Mul(ref xfB, manifold.LocalPoint);
+                            Vector2 planePoint = MathUtils.Mul(ref xfB, ref manifold.LocalPoint);
 
                             for (int i = 0; i < manifold.PointCount; ++i)
                             {
@@ -938,7 +938,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 {
                     case ManifoldType.Circles:
                         {
-                            Vector2 pointA = MathUtils.Mul(ref xfA, pc.localPoint);
+                            Vector2 pointA = MathUtils.Mul(ref xfA, ref pc.localPoint);
                             Vector2 pointB = MathUtils.Mul(ref xfB, pc.localPoints[0]);
                             normal = pointB - pointA;
 
@@ -954,7 +954,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     case ManifoldType.FaceA:
                         {
                             normal = Complex.Multiply(ref pc.localNormal, ref xfA.q);
-                            Vector2 planePoint = MathUtils.Mul(ref xfA, pc.localPoint);
+                            Vector2 planePoint = MathUtils.Mul(ref xfA, ref pc.localPoint);
 
                             Vector2 clipPoint = MathUtils.Mul(ref xfB, pc.localPoints[index]);
                             separation = Vector2.Dot(clipPoint - planePoint, normal) - pc.radiusA - pc.radiusB;
@@ -965,7 +965,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     case ManifoldType.FaceB:
                         {
                             normal = Complex.Multiply(ref pc.localNormal, ref xfB.q);
-                            Vector2 planePoint = MathUtils.Mul(ref xfB, pc.localPoint);
+                            Vector2 planePoint = MathUtils.Mul(ref xfB, ref pc.localPoint);
 
                             Vector2 clipPoint = MathUtils.Mul(ref xfA, pc.localPoints[index]);
                             separation = Vector2.Dot(clipPoint - planePoint, normal) - pc.radiusA - pc.radiusB;

@@ -781,7 +781,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _xf.q.Phase = angle;
             _xf.p = position;
 
-            _sweep.C = MathUtils.Mul(ref _xf, _sweep.LocalCenter);
+            _sweep.C = MathUtils.Mul(ref _xf, ref _sweep.LocalCenter);
             _sweep.A = angle;
 
             _sweep.C0 = _sweep.C;

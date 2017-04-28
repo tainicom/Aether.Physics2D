@@ -102,8 +102,8 @@ namespace tainicom.Aether.Physics2D.Collision
                 _type = SeparationFunctionType.Points;
                 Vector2 localPointA = _proxyA.Vertices[cache.IndexA[0]];
                 Vector2 localPointB = _proxyB.Vertices[cache.IndexB[0]];
-                Vector2 pointA = MathUtils.Mul(ref xfA, localPointA);
-                Vector2 pointB = MathUtils.Mul(ref xfB, localPointB);
+                Vector2 pointA = MathUtils.Mul(ref xfA, ref localPointA);
+                Vector2 pointB = MathUtils.Mul(ref xfB, ref localPointB);
                 _axis = pointB - pointA;
                 _axis.Normalize();
             }
@@ -120,10 +120,10 @@ namespace tainicom.Aether.Physics2D.Collision
                 Vector2 normal = Complex.Multiply(ref _axis, ref xfB.q);
 
                 _localPoint = 0.5f * (localPointB1 + localPointB2);
-                Vector2 pointB = MathUtils.Mul(ref xfB, _localPoint);
+                Vector2 pointB = MathUtils.Mul(ref xfB, ref _localPoint);
 
                 Vector2 localPointA = proxyA.Vertices[cache.IndexA[0]];
-                Vector2 pointA = MathUtils.Mul(ref xfA, localPointA);
+                Vector2 pointA = MathUtils.Mul(ref xfA, ref localPointA);
 
                 float s = Vector2.Dot(pointA - pointB, normal);
                 if (s < 0.0f)
@@ -144,10 +144,10 @@ namespace tainicom.Aether.Physics2D.Collision
                 Vector2 normal = Complex.Multiply(ref _axis, ref xfA.q);
 
                 _localPoint = 0.5f * (localPointA1 + localPointA2);
-                Vector2 pointA = MathUtils.Mul(ref xfA, _localPoint);
+                Vector2 pointA = MathUtils.Mul(ref xfA, ref _localPoint);
 
                 Vector2 localPointB = _proxyB.Vertices[cache.IndexB[0]];
-                Vector2 pointB = MathUtils.Mul(ref xfB, localPointB);
+                Vector2 pointB = MathUtils.Mul(ref xfB, ref localPointB);
 
                 float s = Vector2.Dot(pointB - pointA, normal);
                 if (s < 0.0f)
@@ -176,8 +176,8 @@ namespace tainicom.Aether.Physics2D.Collision
                         Vector2 localPointA = _proxyA.Vertices[indexA];
                         Vector2 localPointB = _proxyB.Vertices[indexB];
 
-                        Vector2 pointA = MathUtils.Mul(ref xfA, localPointA);
-                        Vector2 pointB = MathUtils.Mul(ref xfB, localPointB);
+                        Vector2 pointA = MathUtils.Mul(ref xfA, ref localPointA);
+                        Vector2 pointB = MathUtils.Mul(ref xfB, ref localPointB);
 
                         float separation = Vector2.Dot(pointB - pointA, _axis);
                         return separation;
@@ -186,7 +186,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 case SeparationFunctionType.FaceA:
                     {
                         Vector2 normal = Complex.Multiply(ref _axis, ref xfA.q);
-                        Vector2 pointA = MathUtils.Mul(ref xfA, _localPoint);
+                        Vector2 pointA = MathUtils.Mul(ref xfA, ref _localPoint);
 
                         Vector2 axisB = -Complex.Divide(ref normal, ref xfB.q);
 
@@ -194,7 +194,7 @@ namespace tainicom.Aether.Physics2D.Collision
                         indexB = _proxyB.GetSupport(axisB);
 
                         Vector2 localPointB = _proxyB.Vertices[indexB];
-                        Vector2 pointB = MathUtils.Mul(ref xfB, localPointB);
+                        Vector2 pointB = MathUtils.Mul(ref xfB, ref localPointB);
 
                         float separation = Vector2.Dot(pointB - pointA, normal);
                         return separation;
@@ -203,7 +203,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 case SeparationFunctionType.FaceB:
                     {
                         Vector2 normal = Complex.Multiply(ref _axis, ref xfB.q);
-                        Vector2 pointB = MathUtils.Mul(ref xfB, _localPoint);
+                        Vector2 pointB = MathUtils.Mul(ref xfB, ref _localPoint);
 
                         Vector2 axisA = -Complex.Divide(ref normal, ref xfA.q);
 
@@ -211,7 +211,7 @@ namespace tainicom.Aether.Physics2D.Collision
                         indexA = _proxyA.GetSupport(axisA);
 
                         Vector2 localPointA = _proxyA.Vertices[indexA];
-                        Vector2 pointA = MathUtils.Mul(ref xfA, localPointA);
+                        Vector2 pointA = MathUtils.Mul(ref xfA, ref localPointA);
 
                         float separation = Vector2.Dot(pointA - pointB, normal);
                         return separation;
@@ -238,8 +238,8 @@ namespace tainicom.Aether.Physics2D.Collision
                         Vector2 localPointA = _proxyA.Vertices[indexA];
                         Vector2 localPointB = _proxyB.Vertices[indexB];
 
-                        Vector2 pointA = MathUtils.Mul(ref xfA, localPointA);
-                        Vector2 pointB = MathUtils.Mul(ref xfB, localPointB);
+                        Vector2 pointA = MathUtils.Mul(ref xfA, ref localPointA);
+                        Vector2 pointB = MathUtils.Mul(ref xfB, ref localPointB);
                         float separation = Vector2.Dot(pointB - pointA, _axis);
 
                         return separation;
@@ -247,10 +247,10 @@ namespace tainicom.Aether.Physics2D.Collision
                 case SeparationFunctionType.FaceA:
                     {
                         Vector2 normal = Complex.Multiply(ref _axis, ref xfA.q);
-                        Vector2 pointA = MathUtils.Mul(ref xfA, _localPoint);
+                        Vector2 pointA = MathUtils.Mul(ref xfA, ref _localPoint);
 
                         Vector2 localPointB = _proxyB.Vertices[indexB];
-                        Vector2 pointB = MathUtils.Mul(ref xfB, localPointB);
+                        Vector2 pointB = MathUtils.Mul(ref xfB, ref localPointB);
 
                         float separation = Vector2.Dot(pointB - pointA, normal);
                         return separation;
@@ -258,10 +258,10 @@ namespace tainicom.Aether.Physics2D.Collision
                 case SeparationFunctionType.FaceB:
                     {
                         Vector2 normal = Complex.Multiply(ref _axis, ref xfB.q);
-                        Vector2 pointB = MathUtils.Mul(ref xfB, _localPoint);
+                        Vector2 pointB = MathUtils.Mul(ref xfB, ref _localPoint);
 
                         Vector2 localPointA = _proxyA.Vertices[indexA];
-                        Vector2 pointA = MathUtils.Mul(ref xfA, localPointA);
+                        Vector2 pointA = MathUtils.Mul(ref xfA, ref localPointA);
 
                         float separation = Vector2.Dot(pointA - pointB, normal);
                         return separation;
