@@ -215,8 +215,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             Vector2 v1 = MathUtils.Mul(ref transform, Vertices[i1]);
             Vector2 v2 = MathUtils.Mul(ref transform, Vertices[i2]);
 
-            aabb.LowerBound = Vector2.Min(v1, v2);
-            aabb.UpperBound = Vector2.Max(v1, v2);
+            Vector2.Min(ref v1, ref v2, out aabb.LowerBound);
+            Vector2.Max(ref v1, ref v2, out aabb.UpperBound);
         }
 
         protected override void ComputeProperties()
