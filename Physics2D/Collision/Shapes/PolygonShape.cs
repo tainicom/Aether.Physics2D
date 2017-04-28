@@ -323,8 +323,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             for (int i = 1; i < Vertices.Count; ++i)
             {
                 Vector2 v = MathUtils.Mul(ref transform, Vertices[i]);
-                lower = Vector2.Min(lower, v);
-                upper = Vector2.Max(upper, v);
+                Vector2.Min(ref lower, ref v, out lower);
+                Vector2.Max(ref upper, ref v, out upper);
             }
 
             Vector2 r = new Vector2(Radius, Radius);

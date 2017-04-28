@@ -388,8 +388,8 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <param name="aabb">The aabb.</param>
         public void Combine(ref AABB aabb)
         {
-            LowerBound = Vector2.Min(LowerBound, aabb.LowerBound);
-            UpperBound = Vector2.Max(UpperBound, aabb.UpperBound);
+            Vector2.Min(ref LowerBound, ref aabb.LowerBound, out LowerBound);
+            Vector2.Max(ref UpperBound, ref aabb.UpperBound, out UpperBound);
         }
 
         /// <summary>
@@ -399,8 +399,8 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <param name="aabb2">The aabb2.</param>
         public void Combine(ref AABB aabb1, ref AABB aabb2)
         {
-            LowerBound = Vector2.Min(aabb1.LowerBound, aabb2.LowerBound);
-            UpperBound = Vector2.Max(aabb1.UpperBound, aabb2.UpperBound);
+            Vector2.Min(ref aabb1.LowerBound, ref aabb2.LowerBound, out LowerBound);
+            Vector2.Max(ref aabb1.UpperBound, ref aabb2.UpperBound, out UpperBound);
         }
 
         /// <summary>
