@@ -437,8 +437,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 Body._world.FixtureRemoved(this);
             }
 
-            Body._world.FixtureAdded = null;
-            Body._world.FixtureRemoved = null;
             OnSeparation = null;
             OnCollision = null;
         }
