@@ -260,8 +260,8 @@ namespace tainicom.Aether.Physics2D.Collision
                 v.IndexB = cache.IndexB[i];
                 Vector2 wALocal = proxyA.Vertices[v.IndexA];
                 Vector2 wBLocal = proxyB.Vertices[v.IndexB];
-                v.WA = MathUtils.Mul(ref transformA, wALocal);
-                v.WB = MathUtils.Mul(ref transformB, wBLocal);
+                v.WA = MathUtils.Mul(ref transformA, ref wALocal);
+                v.WB = MathUtils.Mul(ref transformB, ref wBLocal);
                 v.W = v.WB - v.WA;
                 v.A = 0.0f;
                 V[i] = v;
@@ -288,8 +288,8 @@ namespace tainicom.Aether.Physics2D.Collision
                 v.IndexB = 0;
                 Vector2 wALocal = proxyA.Vertices[0];
                 Vector2 wBLocal = proxyB.Vertices[0];
-                v.WA = MathUtils.Mul(ref transformA, wALocal);
-                v.WB = MathUtils.Mul(ref transformB, wBLocal);
+                v.WA = MathUtils.Mul(ref transformA, ref wALocal);
+                v.WB = MathUtils.Mul(ref transformB, ref wBLocal);
                 v.W = v.WB - v.WA;
                 v.A = 1.0f;
                 V[0] = v;

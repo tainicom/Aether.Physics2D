@@ -443,7 +443,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             //Normalize and transform centroid
             center *= 1.0f / area;
 
-            sc = MathUtils.Mul(ref xf, center);
+            sc = MathUtils.Mul(ref xf, ref center);
 
             return area;
         }
