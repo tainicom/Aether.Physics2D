@@ -317,12 +317,12 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
         /// <param name="childIndex">The child shape index.</param>
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
-            Vector2 lower = MathUtils.Mul(ref transform, Vertices[0]);
+            Vector2 lower = Transform.Multiply(Vertices[0], ref transform);
             Vector2 upper = lower;
 
             for (int i = 1; i < Vertices.Count; ++i)
             {
-                Vector2 v = MathUtils.Mul(ref transform, Vertices[i]);
+                Vector2 v = Transform.Multiply(Vertices[i], ref transform);
                 Vector2.Min(ref lower, ref v, out lower);
                 Vector2.Max(ref upper, ref v, out upper);
             }
@@ -378,7 +378,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
                     if (lastSubmerged)
                     {
                         //Completely submerged
-                        sc = MathUtils.Mul(ref xf, MassData.Centroid);
+                        sc = Transform.Multiply(MassData.Centroid, ref xf);
                         return MassData.Mass / Density;
                     }
 
@@ -443,7 +443,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
             //Normalize and transform centroid
             center *= 1.0f / area;
 
-            sc = MathUtils.Mul(ref xf, ref center);
+            sc = Transform.Multiply(ref center, ref xf);
 
             return area;
         }

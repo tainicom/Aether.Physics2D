@@ -90,7 +90,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             sweepA.GetTransform(out transformA, 0.0f);
             for (int i = 0; i < _shapeA.Vertices.Count; ++i)
             {
-                vertices[i] = MathUtils.Mul(ref transformA, _shapeA.Vertices[i]);
+                vertices[i] = Transform.Multiply(_shapeA.Vertices[i], ref transformA);
             }
             DebugView.DrawPolygon(vertices, _shapeA.Vertices.Count, new Color(0.9f, 0.9f, 0.9f));
 
@@ -99,21 +99,21 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             for (int i = 0; i < _shapeB.Vertices.Count; ++i)
             {
-                vertices[i] = MathUtils.Mul(ref transformB, _shapeB.Vertices[i]);
+                vertices[i] = Transform.Multiply(_shapeB.Vertices[i], ref transformB);
             }
             DebugView.DrawPolygon(vertices, _shapeB.Vertices.Count, new Color(0.5f, 0.9f, 0.5f));
 
             sweepB.GetTransform(out transformB, output.T);
             for (int i = 0; i < _shapeB.Vertices.Count; ++i)
             {
-                vertices[i] = MathUtils.Mul(ref transformB, _shapeB.Vertices[i]);
+                vertices[i] = Transform.Multiply(_shapeB.Vertices[i], ref transformB);
             }
             DebugView.DrawPolygon(vertices, _shapeB.Vertices.Count, new Color(0.5f, 0.7f, 0.9f));
 
             sweepB.GetTransform(out transformB, 1.0f);
             for (int i = 0; i < _shapeB.Vertices.Count; ++i)
             {
-                vertices[i] = MathUtils.Mul(ref transformB, _shapeB.Vertices[i]);
+                vertices[i] = Transform.Multiply(_shapeB.Vertices[i], ref transformB);
             }
             DebugView.DrawPolygon(vertices, _shapeB.Vertices.Count, new Color(0.9f, 0.5f, 0.5f));
             DebugView.EndCustomDraw();

@@ -77,9 +77,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 xf1.p = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf1.q);
 
                 Vertices vertices = new Vertices(3);
-                vertices.Add(MathUtils.Mul(ref xf1, new Vector2(-1.0f, 0.0f)));
-                vertices.Add(MathUtils.Mul(ref xf1, new Vector2(1.0f, 0.0f)));
-                vertices.Add(MathUtils.Mul(ref xf1, new Vector2(0.0f, 0.5f)));
+                vertices.Add(Transform.Multiply(new Vector2(-1.0f, 0.0f), ref xf1));
+                vertices.Add(Transform.Multiply(new Vector2( 1.0f, 0.0f), ref xf1));
+                vertices.Add(Transform.Multiply(new Vector2( 0.0f, 0.5f), ref xf1));
 
                 PolygonShape poly1 = new PolygonShape(vertices, 4);
 
@@ -87,9 +87,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 xf2.q.Phase= (-0.3524f * Settings.Pi);
                 xf2.p = Complex.Multiply(new Vector2(-1.0f, 0.0f), ref xf2.q);
 
-                vertices[0] = MathUtils.Mul(ref xf2, new Vector2(-1.0f, 0.0f));
-                vertices[1] = MathUtils.Mul(ref xf2, new Vector2(1.0f, 0.0f));
-                vertices[2] = MathUtils.Mul(ref xf2, new Vector2(0.0f, 0.5f));
+                vertices[0] = Transform.Multiply(new Vector2(-1.0f, 0.0f), ref xf2);
+                vertices[1] = Transform.Multiply(new Vector2( 1.0f, 0.0f), ref xf2);
+                vertices[2] = Transform.Multiply(new Vector2( 0.0f, 0.5f), ref xf2);
 
                 PolygonShape poly2 = new PolygonShape(vertices, 2);
 

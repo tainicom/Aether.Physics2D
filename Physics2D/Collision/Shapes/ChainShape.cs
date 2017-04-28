@@ -212,8 +212,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
                 i2 = 0;
             }
 
-            Vector2 v1 = MathUtils.Mul(ref transform, Vertices[i1]);
-            Vector2 v2 = MathUtils.Mul(ref transform, Vertices[i2]);
+            Vector2 v1 = Transform.Multiply(Vertices[i1], ref transform);
+            Vector2 v2 = Transform.Multiply(Vertices[i2], ref transform);
 
             Vector2.Min(ref v1, ref v2, out aabb.LowerBound);
             Vector2.Max(ref v1, ref v2, out aabb.UpperBound);

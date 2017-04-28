@@ -260,8 +260,8 @@ namespace tainicom.Aether.Physics2D.Collision
                 v.IndexB = cache.IndexB[i];
                 Vector2 wALocal = proxyA.Vertices[v.IndexA];
                 Vector2 wBLocal = proxyB.Vertices[v.IndexB];
-                v.WA = MathUtils.Mul(ref transformA, ref wALocal);
-                v.WB = MathUtils.Mul(ref transformB, ref wBLocal);
+                v.WA = Transform.Multiply(ref wALocal, ref transformA);
+                v.WB = Transform.Multiply(ref wBLocal, ref transformB);
                 v.W = v.WB - v.WA;
                 v.A = 0.0f;
                 V[i] = v;
@@ -288,8 +288,8 @@ namespace tainicom.Aether.Physics2D.Collision
                 v.IndexB = 0;
                 Vector2 wALocal = proxyA.Vertices[0];
                 Vector2 wBLocal = proxyB.Vertices[0];
-                v.WA = MathUtils.Mul(ref transformA, ref wALocal);
-                v.WB = MathUtils.Mul(ref transformB, ref wBLocal);
+                v.WA = Transform.Multiply(ref wALocal, ref transformA);
+                v.WB = Transform.Multiply(ref wBLocal, ref transformB);
                 v.W = v.WB - v.WA;
                 v.A = 1.0f;
                 V[0] = v;
@@ -724,10 +724,10 @@ namespace tainicom.Aether.Physics2D.Collision
                 // Compute a tentative new simplex vertex using support points.
                 SimplexVertex vertex = simplex.V[simplex.Count];
                 vertex.IndexA = input.ProxyA.GetSupport(-Complex.Divide(ref d, ref input.TransformA.q));
-                vertex.WA = MathUtils.Mul(ref input.TransformA, input.ProxyA.Vertices[vertex.IndexA]);
+                vertex.WA = Transform.Multiply(input.ProxyA.Vertices[vertex.IndexA], ref input.TransformA);
 
                 vertex.IndexB = input.ProxyB.GetSupport( Complex.Divide(ref d, ref input.TransformB.q));
-                vertex.WB = MathUtils.Mul(ref input.TransformB, input.ProxyB.Vertices[vertex.IndexB]);
+                vertex.WB = Transform.Multiply(input.ProxyB.Vertices[vertex.IndexB], ref input.TransformB);
                 vertex.W = vertex.WB - vertex.WA;
                 simplex.V[simplex.Count] = vertex;
 

@@ -46,7 +46,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private DistanceTest()
         {
             {
-                _transformA.SetIdentity();
+                _transformA = Transform.Identity;
                 _transformA.p = new Vector2(0.0f, -0.2f);
                 Vertices vertices = PolygonTools.CreateRectangle(10.0f, 0.2f);
                 _polygonA = new PolygonShape(vertices, 0);
@@ -55,7 +55,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 _positionB = new Vector2(12.017401f, 0.13678508f);
                 _angleB = -0.0109265f;
-                _transformB.Set(_positionB, _angleB);
+                _transformB = new Transform(_positionB, _angleB);
 
                 Vertices vertices = PolygonTools.CreateRectangle(2.0f, 0.1f);
                 _polygonB = new PolygonShape(vertices, 0);
@@ -86,13 +86,13 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Vector2[] v = new Vector2[Settings.MaxPolygonVertices];
                 for (int i = 0; i < _polygonA.Vertices.Count; ++i)
                 {
-                    v[i] = MathUtils.Mul(ref _transformA, _polygonA.Vertices[i]);
+                    v[i] = Transform.Multiply(_polygonA.Vertices[i], ref _transformA);
                 }
                 DebugView.DrawPolygon(v, _polygonA.Vertices.Count, color);
 
                 for (int i = 0; i < _polygonB.Vertices.Count; ++i)
                 {
-                    v[i] = MathUtils.Mul(ref _transformB, _polygonB.Vertices[i]);
+                    v[i] = Transform.Multiply(_polygonB.Vertices[i], ref _transformB);
                 }
                 DebugView.DrawPolygon(v, _polygonB.Vertices.Count, color);
             }
@@ -122,7 +122,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             if (keyboardManager.IsNewKeyPress(Keys.E))
                 _angleB -= 0.1f * Settings.Pi;
 
-            _transformB.Set(_positionB, _angleB);
+            _transformB = new Transform(_positionB, _angleB);
         }
 
         internal static Test Create()
