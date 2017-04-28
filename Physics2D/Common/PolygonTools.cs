@@ -48,7 +48,7 @@ namespace tainicom.Aether.Physics2D.Common
             // Transform vertices
             for (int i = 0; i < 4; ++i)
             {
-                vertices[i] = MathUtils.Mul(ref xf, vertices[i]);
+                vertices[i] = Transform.Multiply(vertices[i], ref xf);
             }
 
             return vertices;

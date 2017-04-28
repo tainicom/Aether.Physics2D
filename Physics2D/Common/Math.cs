@@ -87,20 +87,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             return new Vector2(A.ex.X * v.X + A.ey.X * v.Y, A.ex.Y * v.X + A.ey.Y * v.Y);
         }
-
-        public static Vector2 Mul(ref Transform T, Vector2 v)
-        {
-            return Mul(ref T, ref v);
-        }
-
-        public static Vector2 Mul(ref Transform T, ref Vector2 v)
-        {
-            float x = (T.q.Real * v.X - T.q.Imaginary * v.Y) + T.p.X;
-            float y = (T.q.Imaginary * v.X + T.q.Real * v.Y) + T.p.Y;
-
-            return new Vector2(x, y);
-        }
-
+        
         public static Vector2 MulT(ref Mat22 A, Vector2 v)
         {
             return MulT(ref A, ref v);
@@ -111,20 +98,6 @@ namespace tainicom.Aether.Physics2D.Common
             return new Vector2(v.X * A.ex.X + v.Y * A.ex.Y, v.X * A.ey.X + v.Y * A.ey.Y);
         }
 
-        public static Vector2 MulT(ref Transform T, Vector2 v)
-        {
-            return MulT(ref T, ref v);
-        }
-
-        public static Vector2 MulT(ref Transform T, ref Vector2 v)
-        {
-            float px = v.X - T.p.X;
-            float py = v.Y - T.p.Y;
-            float x = (T.q.Real * px + T.q.Imaginary * py);
-            float y = (-T.q.Imaginary * px + T.q.Real * py);
-
-            return new Vector2(x, y);
-        }
 
         // A^T * B
         public static void MulT(ref Mat22 A, ref Mat22 B, out Mat22 C)
@@ -141,25 +114,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             return v.X * A.ex + v.Y * A.ey + v.Z * A.ez;
         }
-
-        // v2 = A.q.Rot(B.q.Rot(v1) + B.p) + A.p
-        //    = (A.q * B.q).Rot(v1) + A.q.Rot(B.p) + A.p
-        public static Transform Mul(Transform A, Transform B)
-        {
-            Transform C = new Transform();
-            C.q = Complex.Multiply(ref B.q, ref A.q);
-            C.p = Complex.Multiply(ref B.p, ref A.q) + A.p;
-            return C;
-        }
-
-        // v2 = A.q' * (B.q * v1 + B.p - A.p)
-        //    = A.q' * B.q * v1 + A.q' * (B.p - A.p)
-        public static void MulT(ref Transform A, ref Transform B, out Transform C)
-        {
-            C = new Transform(  Complex.Divide(B.p - A.p, ref A.q),
-                                Complex.Divide(ref B.q, ref A.q));
-        }
-
+        
         public static void Swap<T>(ref T a, ref T b)
         {
             T tmp = a;
@@ -172,29 +127,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             return new Vector2(A.ex.X * v.X + A.ey.X * v.Y, A.ex.Y * v.X + A.ey.Y * v.Y);
         }
-
-
-        public static Vector2 MulT(Transform T, Vector2 v)
-        {
-            float px = v.X - T.p.X;
-            float py = v.Y - T.p.Y;
-            float x = (T.q.Real * px + T.q.Imaginary * py);
-            float y = (-T.q.Imaginary * px + T.q.Real * py);
-
-            return new Vector2(x, y);
-        }
-
-
-        // v2 = A.q' * (B.q * v1 + B.p - A.p)
-        //    = A.q' * B.q * v1 + A.q' * (B.p - A.p)
-        public static Transform MulT(Transform A, Transform B)
-        {
-            Transform C = new Transform();
-            C.q = Complex.Divide(ref B.q, ref A.q);
-            C.p = Complex.Divide(B.p - A.p, ref A.q);
-            return C;
-        }
-
+        
         /// Get the skew vector such that dot(skew_vec, other) == cross(vec, other)
         public static Vector2 Skew(Vector2 input)
         {
@@ -604,49 +537,80 @@ namespace tainicom.Aether.Physics2D.Common
     /// </summary>
     public struct Transform
     {
-        public Vector2 p;
+        private static readonly Transform _identity = new Transform(Vector2.Zero, Complex.One);
+
         public Complex q;
+        public Vector2 p;
+
+        public static Transform Identity { get { return _identity; } }
 
         /// <summary>
-        /// Initialize using a position vector and a rotation matrix.
+        /// Initialize using a position vector and a Complex rotation.
         /// </summary>
         /// <param name="position">The position.</param>
-        /// <param name="rotation">The r.</param>
+        /// <param name="rotation">The rotation</param>
         public Transform(Vector2 position, Complex rotation)
         {
-            p = position;
             q = rotation;
+            p = position;
         }
 
         /// <summary>
-        /// Initialize using a position vector and a rotation matrix.
+        /// Initialize using a position vector and a rotation.
         /// </summary>
         /// <param name="position">The position.</param>
-        /// <param name="rotation">The r.</param>
-        public Transform(ref Vector2 position, ref Complex rotation)
+        /// <param name="angle">The rotation angle</param>
+        public Transform(Vector2 position, float angle)
+            : this(position, Complex.FromAngle(angle))
         {
-            p = position;
-            q = rotation;
+        }
+                
+        public static Vector2 Multiply(Vector2 left, ref Transform right)
+        {
+            return Multiply(ref left, ref right);
         }
 
-        /// <summary>
-        /// Set this to the identity transform.
-        /// </summary>
-        public void SetIdentity()
+        public static Vector2 Multiply(ref Vector2 left, ref Transform right)
         {
-            p = Vector2.Zero;
-            q = Complex.One;
+            // Opt: var result = Complex.Multiply(left, right) + right.p;
+            return new Vector2(
+                (left.X * right.q.Real - left.Y * right.q.Imaginary) + right.p.X,
+                (left.Y * right.q.Real + left.X * right.q.Imaginary) + right.p.Y);
         }
 
-        /// <summary>
-        /// Set this based on the position and angle.
-        /// </summary>
-        /// <param name="position">The position.</param>
-        /// <param name="angle">The angle.</param>
-        public void Set(Vector2 position, float angle)
+        public static Vector2 Divide(Vector2 left, ref Transform right)
         {
-            p = position;
-            q.Phase = angle;
+            return Divide(ref left, ref right);
+        }
+
+        public static Vector2 Divide(ref Vector2 left, ref Transform right)
+        {
+            // Opt: var result = Complex.Divide(left - right.p, right);
+            float px = left.X - right.p.X;
+            float py = left.Y - right.p.Y;
+            return new Vector2(
+                (px * right.q.Real + py * right.q.Imaginary),
+                (py * right.q.Real - px * right.q.Imaginary));
+        }
+
+        public static Transform Multiply(ref Transform left, ref Transform right)
+        {
+            return new Transform(
+                    Complex.Multiply(ref left.p, ref right.q) + right.p,
+                    Complex.Multiply(ref left.q, ref right.q));
+        }
+
+        public static Transform Divide(ref Transform left, ref Transform right)
+        {
+            return new Transform(
+                Complex.Divide(left.p - right.p, ref right.q),
+                Complex.Divide(ref left.q, ref right.q));
+        }
+        
+        public static void Divide(ref Transform left, ref Transform right, out Transform result)
+        {
+            result.p = Complex.Divide(left.p - right.p, ref right.q);
+            result.q = Complex.Divide(ref left.q, ref right.q);
         }
     }
 

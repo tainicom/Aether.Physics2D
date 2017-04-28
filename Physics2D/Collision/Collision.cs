@@ -672,8 +672,8 @@ namespace tainicom.Aether.Physics2D.Collision
         {
             manifold.PointCount = 0;
 
-            Vector2 pA = MathUtils.Mul(ref xfA, ref circleA._position);
-            Vector2 pB = MathUtils.Mul(ref xfB, ref circleB._position);
+            Vector2 pA = Transform.Multiply(ref circleA._position, ref xfA);
+            Vector2 pB = Transform.Multiply(ref circleB._position, ref xfB);
 
             Vector2 d = pB - pA;
             float distSqr = Vector2.Dot(d, d);
@@ -709,8 +709,8 @@ namespace tainicom.Aether.Physics2D.Collision
             manifold.PointCount = 0;
 
             // Compute circle position in the frame of the polygon.
-            Vector2 c = MathUtils.Mul(ref xfB, ref circleB._position);
-            Vector2 cLocal = MathUtils.MulT(ref xfA, ref c);
+            Vector2 c = Transform.Multiply(ref circleB._position, ref xfB);
+            Vector2 cLocal = Transform.Divide(ref c, ref xfA);
 
             // Find the min separating edge.
             int normalIndex = 0;
@@ -916,8 +916,8 @@ namespace tainicom.Aether.Physics2D.Collision
             float normalx = tangent.Y;
             float normaly = -tangent.X;
 
-            v11 = MathUtils.Mul(ref xf1, ref v11);
-            v12 = MathUtils.Mul(ref xf1, ref v12);
+            v11 = Transform.Multiply(ref v11, ref xf1);
+            v12 = Transform.Multiply(ref v12, ref xf1);
 
             // Face offset.
             float frontOffset = normalx * v11.X + normaly * v11.Y;
@@ -957,7 +957,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 if (separation <= totalRadius)
                 {
                     ManifoldPoint cp = manifold.Points[pointCount];
-                    cp.LocalPoint = MathUtils.MulT(ref xf2, clipPoints2[i].V);
+                    cp.LocalPoint = Transform.Divide(clipPoints2[i].V, ref xf2);
                     cp.Id = clipPoints2[i].ID;
 
                     if (flip)
@@ -993,7 +993,7 @@ namespace tainicom.Aether.Physics2D.Collision
             manifold.PointCount = 0;
 
             // Compute circle in frame of edge
-            Vector2 Q = MathUtils.MulT(ref transformA, MathUtils.Mul(ref transformB, ref circleB._position));
+            Vector2 Q = Transform.Divide(Transform.Multiply(ref circleB._position, ref transformB), ref transformA);
 
             Vector2 A = edgeA.Vertex1, B = edgeA.Vertex2;
             Vector2 e = B - A;
@@ -1164,9 +1164,9 @@ namespace tainicom.Aether.Physics2D.Collision
                 // 7. Return if _any_ axis indicates separation
                 // 8. Clip
 
-                MathUtils.MulT(ref xfA, ref xfB, out _xf);
+                Transform.Divide(ref xfB, ref xfA, out _xf);
 
-                _centroidB = MathUtils.Mul(ref _xf, polygonB.MassData.Centroid);
+                _centroidB = Transform.Multiply(polygonB.MassData.Centroid, ref _xf);
 
                 _v0 = edgeA.Vertex0;
                 _v1 = edgeA._vertex1;
@@ -1362,7 +1362,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 _polygonB.Count = polygonB.Vertices.Count;
                 for (int i = 0; i < polygonB.Vertices.Count; ++i)
                 {
-                    _polygonB.Vertices[i] = MathUtils.Mul(ref _xf, polygonB.Vertices[i]);
+                    _polygonB.Vertices[i] = Transform.Multiply(polygonB.Vertices[i], ref _xf);
                     _polygonB.Normals[i] = Complex.Multiply(polygonB.Normals[i], ref _xf.q);
                 }
 
@@ -1537,7 +1537,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
                         if (primaryAxis.Type == EPAxisType.EdgeA)
                         {
-                            cp.LocalPoint = MathUtils.MulT(ref _xf, clipPoints2[i].V);
+                            cp.LocalPoint = Transform.Divide(clipPoints2[i].V, ref _xf);
                             cp.Id = clipPoints2[i].ID;
                         }
                         else
@@ -1719,8 +1719,8 @@ namespace tainicom.Aether.Physics2D.Collision
                 }
             }
 
-            Vector2 v1 = MathUtils.Mul(ref xf1, vertices1[edge1]);
-            Vector2 v2 = MathUtils.Mul(ref xf2, vertices2[index]);
+            Vector2 v1 = Transform.Multiply(vertices1[edge1], ref xf1);
+            Vector2 v2 = Transform.Multiply(vertices2[index], ref xf2);
             float separation = Vector2.Dot(v2 - v1, normal1World);
             return separation;
         }
@@ -1740,7 +1740,7 @@ namespace tainicom.Aether.Physics2D.Collision
             List<Vector2> normals1 = poly1.Normals;
 
             // Vector pointing from the centroid of poly1 to the centroid of poly2.
-            Vector2 d = MathUtils.Mul(ref xf2, poly2.MassData.Centroid) - MathUtils.Mul(ref xf1, poly1.MassData.Centroid);
+            Vector2 d = Transform.Multiply(poly2.MassData.Centroid, ref xf2) - Transform.Multiply(poly1.MassData.Centroid, ref xf1);
             Vector2 dLocal1 = Complex.Divide(ref d, ref xf1.q);
 
             // Find edge normal on poly1 that has the largest projection onto d.
@@ -1848,7 +1848,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             ClipVertex cv0 = c[0];
 
-            cv0.V = MathUtils.Mul(ref xf2, vertices2[i1]);
+            cv0.V = Transform.Multiply(vertices2[i1], ref xf2);
             cv0.ID.Features.IndexA = (byte)edge1;
             cv0.ID.Features.IndexB = (byte)i1;
             cv0.ID.Features.TypeA = (byte)ContactFeatureType.Face;
@@ -1857,7 +1857,7 @@ namespace tainicom.Aether.Physics2D.Collision
             c[0] = cv0;
 
             ClipVertex cv1 = c[1];
-            cv1.V = MathUtils.Mul(ref xf2, vertices2[i2]);
+            cv1.V = Transform.Multiply(vertices2[i2], ref xf2);
             cv1.ID.Features.IndexA = (byte)edge1;
             cv1.ID.Features.IndexB = (byte)i2;
             cv1.ID.Features.TypeA = (byte)ContactFeatureType.Face;

@@ -49,7 +49,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             {
                 _polygonA.Vertices = PolygonTools.CreateRectangle(0.2f, 0.4f);
-                _transformA.Set(Vector2.Zero, 0.0f);
+                _transformA = Transform.Identity;
             }
 
             {
@@ -58,7 +58,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _positionB = new Vector2(0.345284f, 0.5632932f);
 
                 _angleB = 1.9160721f;
-                _transformB.Set(_positionB, _angleB);
+                _transformB = new Transform(_positionB, _angleB);
             }
         }
 
@@ -84,13 +84,13 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Vector2[] v = new Vector2[Settings.MaxPolygonVertices];
                 for (int i = 0; i < _polygonA.Vertices.Count; ++i)
                 {
-                    v[i] = MathUtils.Mul(ref _transformA, _polygonA.Vertices[i]);
+                    v[i] = Transform.Multiply(_polygonA.Vertices[i], ref _transformA);
                 }
                 DebugView.DrawPolygon(v, _polygonA.Vertices.Count, color);
 
                 for (int i = 0; i < _polygonB.Vertices.Count; ++i)
                 {
-                    v[i] = MathUtils.Mul(ref _transformB, _polygonB.Vertices[i]);
+                    v[i] = Transform.Multiply(_polygonB.Vertices[i], ref _transformB);
                 }
                 DebugView.DrawPolygon(v, _polygonB.Vertices.Count, color);
             }
@@ -130,7 +130,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _angleB -= 0.1f * Settings.Pi;
             }
 
-            _transformB.Set(_positionB, _angleB);
+            _transformB = new Transform(_positionB, _angleB);
         }
     }
 }

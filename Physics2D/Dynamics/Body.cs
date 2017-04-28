@@ -513,7 +513,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 // Move center of mass.
                 Vector2 oldCenter = _sweep.C;
                 _sweep.LocalCenter = value;
-                _sweep.C0 = _sweep.C = MathUtils.Mul(ref _xf, ref _sweep.LocalCenter);
+                _sweep.C0 = _sweep.C = Transform.Multiply(ref _sweep.LocalCenter, ref _xf);
 
                 // Update center of mass velocity.
                 Vector2 a = _sweep.C - oldCenter;
@@ -781,7 +781,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _xf.q.Phase = angle;
             _xf.p = position;
 
-            _sweep.C = MathUtils.Mul(ref _xf, ref _sweep.LocalCenter);
+            _sweep.C = Transform.Multiply(ref _sweep.LocalCenter, ref _xf);
             _sweep.A = angle;
 
             _sweep.C0 = _sweep.C;
@@ -1031,7 +1031,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Move center of mass.
             Vector2 oldCenter = _sweep.C;
             _sweep.LocalCenter = localCenter;
-            _sweep.C0 = _sweep.C = MathUtils.Mul(ref _xf, ref _sweep.LocalCenter);
+            _sweep.C0 = _sweep.C = Transform.Multiply(ref _sweep.LocalCenter, ref _xf);
 
             // Update center of mass velocity.
             Vector2 a = _sweep.C - oldCenter;
@@ -1045,7 +1045,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns>The same point expressed in world coordinates.</returns>
         public Vector2 GetWorldPoint(ref Vector2 localPoint)
         {
-            return MathUtils.Mul(ref _xf, ref localPoint);
+            return Transform.Multiply(ref localPoint, ref _xf);
         }
 
         /// <summary>
@@ -1087,7 +1087,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns>The corresponding local point relative to the body's origin.</returns>
         public Vector2 GetLocalPoint(ref Vector2 worldPoint)
         {
-            return MathUtils.MulT(ref _xf, ref worldPoint);
+            return Transform.Divide(ref worldPoint, ref _xf);
         }
 
         /// <summary>

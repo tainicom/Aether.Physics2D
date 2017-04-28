@@ -67,7 +67,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     {
                         CircleShape circle = (CircleShape)fixture.Shape;
 
-                        Vector2 center = MathUtils.Mul(ref xf, circle.Position);
+                        Vector2 center = Transform.Multiply(circle.Position, ref xf);
                         float radius = circle.Radius;
 
                         DebugDraw.DrawSolidCircle(center, radius, Vector2.Zero, color);
@@ -83,7 +83,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
                         for (int i = 0; i < vertexCount; ++i)
                         {
-                            vertices[i] = MathUtils.Mul(ref xf, poly.Vertices[i]);
+                            vertices[i] = Transform.Multiply(poly.Vertices[i], ref xf);
                         }
 
                         DebugDraw.DrawSolidPolygon(vertices, vertexCount, color);
@@ -278,7 +278,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             PolyShapesCallback callback = new PolyShapesCallback();
             callback.Circle.Radius = 2.0f;
             callback.Circle.Position = new Vector2(0.0f, 1.1f);
-            callback.Transform.SetIdentity();
+            callback.Transform = Transform.Identity;
             callback.DebugDraw = DebugView;
 
             AABB aabb;

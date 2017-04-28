@@ -192,7 +192,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                             for (int i = 0; i < polygon.Vertices.Count; i++)
                             {
-                                Vector2 tmp = MathUtils.Mul(ref xf, polygon.Vertices[i]);
+                                Vector2 tmp = Transform.Multiply(polygon.Vertices[i], ref xf);
                                 DrawPoint(tmp, 0.1f, Color.Red);
                             }
                         }
@@ -448,7 +448,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                     {
                         CircleShape circle = (CircleShape)fixture.Shape;
 
-                        Vector2 center = MathUtils.Mul(ref xf, circle.Position);
+                        Vector2 center = Transform.Multiply(circle.Position, ref xf);
                         float radius = circle.Radius;
                         Vector2 axis = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf.q);
 
@@ -464,7 +464,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                         for (int i = 0; i < vertexCount; ++i)
                         {
-                            _tempVertices[i] = MathUtils.Mul(ref xf, poly.Vertices[i]);
+                            _tempVertices[i] = Transform.Multiply(poly.Vertices[i], ref xf);
                         }
 
                         DrawSolidPolygon(_tempVertices, vertexCount, color);
@@ -475,8 +475,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 case ShapeType.Edge:
                     {
                         EdgeShape edge = (EdgeShape)fixture.Shape;
-                        Vector2 v1 = MathUtils.Mul(ref xf, edge.Vertex1);
-                        Vector2 v2 = MathUtils.Mul(ref xf, edge.Vertex2);
+                        Vector2 v1 = Transform.Multiply(edge.Vertex1, ref xf);
+                        Vector2 v2 = Transform.Multiply(edge.Vertex2, ref xf);
                         DrawSegment(v1, v2, color);
                     }
                     break;
@@ -487,8 +487,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                         for (int i = 0; i < chain.Vertices.Count - 1; ++i)
                         {
-                            Vector2 v1 = MathUtils.Mul(ref xf, chain.Vertices[i]);
-                            Vector2 v2 = MathUtils.Mul(ref xf, chain.Vertices[i + 1]);
+                            Vector2 v1 = Transform.Multiply(chain.Vertices[i], ref xf);
+                            Vector2 v2 = Transform.Multiply(chain.Vertices[i + 1], ref xf);
                             DrawSegment(v1, v2, color);
                         }
                     }
