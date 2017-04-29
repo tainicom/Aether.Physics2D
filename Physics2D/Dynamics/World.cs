@@ -151,257 +151,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Gravity = gravity;
         }
 
-        private void ProcessRemovedJoints()
-        {
-            if (_jointRemoveList.Count > 0)
-            {
-                foreach (Joint joint in _jointRemoveList)
-                {
-                    bool collideConnected = joint.CollideConnected;
-
-                    // Remove from the world list.
-                    JointList.Remove(joint);
-
-                    // Disconnect from island graph.
-                    Body bodyA = joint.BodyA;
-                    Body bodyB = joint.BodyB;
-
-                    // Wake up connected bodies.
-                    bodyA.Awake = true;
-
-                    // WIP David
-                    if (!joint.IsFixedType())
-                    {
-                        bodyB.Awake = true;
-                    }
-
-                    // Remove from body 1.
-                    if (joint.EdgeA.Prev != null)
-                    {
-                        joint.EdgeA.Prev.Next = joint.EdgeA.Next;
-                    }
-
-                    if (joint.EdgeA.Next != null)
-                    {
-                        joint.EdgeA.Next.Prev = joint.EdgeA.Prev;
-                    }
-
-                    if (joint.EdgeA == bodyA.JointList)
-                    {
-                        bodyA.JointList = joint.EdgeA.Next;
-                    }
-
-                    joint.EdgeA.Prev = null;
-                    joint.EdgeA.Next = null;
-
-                    // WIP David
-                    if (!joint.IsFixedType())
-                    {
-                        // Remove from body 2
-                        if (joint.EdgeB.Prev != null)
-                        {
-                            joint.EdgeB.Prev.Next = joint.EdgeB.Next;
-                        }
-
-                        if (joint.EdgeB.Next != null)
-                        {
-                            joint.EdgeB.Next.Prev = joint.EdgeB.Prev;
-                        }
-
-                        if (joint.EdgeB == bodyB.JointList)
-                        {
-                            bodyB.JointList = joint.EdgeB.Next;
-                        }
-
-                        joint.EdgeB.Prev = null;
-                        joint.EdgeB.Next = null;
-                    }
-
-                    // WIP David
-                    if (!joint.IsFixedType())
-                    {
-                        // If the joint prevents collisions, then flag any contacts for filtering.
-                        if (collideConnected == false)
-                        {
-                            ContactEdge edge = bodyB.ContactList;
-                            while (edge != null)
-                            {
-                                if (edge.Other == bodyA)
-                                {
-                                    // Flag the contact for filtering at the next time step (where either
-                                    // body is awake).
-                                    edge.Contact.FilterFlag = true;
-                                }
-
-                                edge = edge.Next;
-                            }
-                        }
-                    }
-
-                    if (JointRemoved != null)
-                    {
-                        JointRemoved(joint);
-                    }
-                }
-
-                _jointRemoveList.Clear();
-            }
-        }
-
-        private void ProcessAddedJoints()
-        {
-            if (_jointAddList.Count > 0)
-            {
-                foreach (Joint joint in _jointAddList)
-                {
-                    // Connect to the world list.
-                    JointList.Add(joint);
-
-                    // Connect to the bodies' doubly linked lists.
-                    joint.EdgeA.Joint = joint;
-                    joint.EdgeA.Other = joint.BodyB;
-                    joint.EdgeA.Prev = null;
-                    joint.EdgeA.Next = joint.BodyA.JointList;
-
-                    if (joint.BodyA.JointList != null)
-                        joint.BodyA.JointList.Prev = joint.EdgeA;
-
-                    joint.BodyA.JointList = joint.EdgeA;
-
-                    // WIP David
-                    if (!joint.IsFixedType())
-                    {
-                        joint.EdgeB.Joint = joint;
-                        joint.EdgeB.Other = joint.BodyA;
-                        joint.EdgeB.Prev = null;
-                        joint.EdgeB.Next = joint.BodyB.JointList;
-
-                        if (joint.BodyB.JointList != null)
-                            joint.BodyB.JointList.Prev = joint.EdgeB;
-
-                        joint.BodyB.JointList = joint.EdgeB;
-
-                        Body bodyA = joint.BodyA;
-                        Body bodyB = joint.BodyB;
-
-                        // If the joint prevents collisions, then flag any contacts for filtering.
-                        if (joint.CollideConnected == false)
-                        {
-                            ContactEdge edge = bodyB.ContactList;
-                            while (edge != null)
-                            {
-                                if (edge.Other == bodyA)
-                                {
-                                    // Flag the contact for filtering at the next time step (where either
-                                    // body is awake).
-                                    edge.Contact.FilterFlag = true;
-                                }
-
-                                edge = edge.Next;
-                            }
-                        }
-                    }
-
-                    if (JointAdded != null)
-                        JointAdded(joint);
-
-                    // Note: creating a joint doesn't wake the bodies.
-                }
-
-                _jointAddList.Clear();
-            }
-        }
-
-        private void ProcessAddedBodies()
-        {
-            if (_bodyAddList.Count > 0)
-            {
-                foreach (Body body in _bodyAddList)
-                {
-#if USE_AWAKE_BODY_SET
-                    Debug.Assert(!body.IsDisposed);
-                    if (body.Awake)
-                    {
-                        if (!AwakeBodySet.Contains(body))
-                            AwakeBodySet.Add(body);
-                    }
-                    else
-                    {
-                        if (AwakeBodySet.Contains(body))
-                            AwakeBodySet.Remove(body);
-                    }
-#endif
-                    // Add to world list.
-                    BodyList.Add(body);
-
-                    if (BodyAdded != null)
-                        BodyAdded(body);
-                }
-
-                _bodyAddList.Clear();
-            }
-        }
-
-        private void ProcessRemovedBodies()
-        {
-            if (_bodyRemoveList.Count > 0)
-            {
-                foreach (Body body in _bodyRemoveList)
-                {
-                    Debug.Assert(BodyList.Count > 0);
-
-                    // You tried to remove a body that is not contained in the BodyList.
-                    // Are you removing the body more than once?
-                    Debug.Assert(BodyList.Contains(body));
-
-#if USE_AWAKE_BODY_SET
-                    Debug.Assert(!AwakeBodySet.Contains(body));
-#endif
-                    // Delete the attached joints.
-                    JointEdge je = body.JointList;
-                    while (je != null)
-                    {
-                        JointEdge je0 = je;
-                        je = je.Next;
-
-                        Remove(je0.Joint, false);
-                    }
-                    body.JointList = null;
-
-                    // Delete the attached contacts.
-                    ContactEdge ce = body.ContactList;
-                    while (ce != null)
-                    {
-                        ContactEdge ce0 = ce;
-                        ce = ce.Next;
-                        ContactManager.Destroy(ce0.Contact);
-                    }
-                    body.ContactList = null;
-
-                    // Delete the attached fixtures. This destroys broad-phase proxies.
-                    for (int i = 0; i < body.FixtureList.Count; i++)
-                    {
-                        body.FixtureList[i].DestroyProxies(ContactManager.BroadPhase);
-                        body.FixtureList[i].Destroy();
-                    }
-
-                    body.FixtureList = null;
-
-                    // Remove world body list.
-                    BodyList.Remove(body);
-
-                    if (BodyRemoved != null)
-                        BodyRemoved(body);
-
-#if USE_AWAKE_BODY_SET
-                    Debug.Assert(!AwakeBodySet.Contains(body));
-#endif
-                }
-
-                _bodyRemoveList.Clear();
-            }
-        }
-
         private bool QueryAABBCallbackWrapper(int proxyId)
         {
             FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
@@ -1137,6 +886,28 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _bodyAddList.Add(body);
         }
 
+        private void Add_Immediate(Body body)
+        {
+#if USE_AWAKE_BODY_SET
+                    Debug.Assert(!body.IsDisposed);
+                    if (body.Awake)
+                    {
+                        if (!AwakeBodySet.Contains(body))
+                            AwakeBodySet.Add(body);
+                    }
+                    else
+                    {
+                        if (AwakeBodySet.Contains(body))
+                            AwakeBodySet.Remove(body);
+                    }
+#endif
+            // Add to world list.
+            BodyList.Add(body);
+
+            if (BodyAdded != null)
+                BodyAdded(body);
+        }
+
         /// <summary>
         /// Destroy a rigid body.
         /// Warning: This automatically deletes all associated shapes and joints.
@@ -1157,6 +928,58 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
         }
 
+        private void Remove_Immediate(Body body)
+        {
+            Debug.Assert(BodyList.Count > 0);
+
+            // You tried to remove a body that is not contained in the BodyList.
+            // Are you removing the body more than once?
+            Debug.Assert(BodyList.Contains(body));
+
+#if USE_AWAKE_BODY_SET
+                    Debug.Assert(!AwakeBodySet.Contains(body));
+#endif
+            // Delete the attached joints.
+            JointEdge je = body.JointList;
+            while (je != null)
+            {
+                JointEdge je0 = je;
+                je = je.Next;
+
+                Remove_Immediate(je0.Joint);
+            }
+            body.JointList = null;
+
+            // Delete the attached contacts.
+            ContactEdge ce = body.ContactList;
+            while (ce != null)
+            {
+                ContactEdge ce0 = ce;
+                ce = ce.Next;
+                ContactManager.Destroy(ce0.Contact);
+            }
+            body.ContactList = null;
+
+            // Delete the attached fixtures. This destroys broad-phase proxies.
+            for (int i = 0; i < body.FixtureList.Count; i++)
+            {
+                body.FixtureList[i].DestroyProxies(ContactManager.BroadPhase);
+                body.FixtureList[i].Destroy();
+            }
+
+            body.FixtureList = null;
+
+            // Remove world body list.
+            BodyList.Remove(body);
+
+            if (BodyRemoved != null)
+                BodyRemoved(body);
+
+#if USE_AWAKE_BODY_SET
+                    Debug.Assert(!AwakeBodySet.Contains(body));
+#endif
+        }
+        
         /// <summary>
         /// Create a joint to constrain bodies together. This may cause the connected bodies to cease colliding.
         /// </summary>
@@ -1169,25 +992,159 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _jointAddList.Add(joint);
         }
 
-        private void Remove(Joint joint, bool doCheck)
+        private void Add_Immediate(Joint joint)
         {
-            if (doCheck)
+            // Connect to the world list.
+            JointList.Add(joint);
+
+            // Connect to the bodies' doubly linked lists.
+            joint.EdgeA.Joint = joint;
+            joint.EdgeA.Other = joint.BodyB;
+            joint.EdgeA.Prev = null;
+            joint.EdgeA.Next = joint.BodyA.JointList;
+
+            if (joint.BodyA.JointList != null)
+                joint.BodyA.JointList.Prev = joint.EdgeA;
+
+            joint.BodyA.JointList = joint.EdgeA;
+
+            // WIP David
+            if (!joint.IsFixedType())
             {
-                Debug.Assert(!_jointRemoveList.Contains(joint),
-                             "The joint is already marked for removal. You are removing the joint more than once.");
+                joint.EdgeB.Joint = joint;
+                joint.EdgeB.Other = joint.BodyA;
+                joint.EdgeB.Prev = null;
+                joint.EdgeB.Next = joint.BodyB.JointList;
+
+                if (joint.BodyB.JointList != null)
+                    joint.BodyB.JointList.Prev = joint.EdgeB;
+
+                joint.BodyB.JointList = joint.EdgeB;
+
+                Body bodyA = joint.BodyA;
+                Body bodyB = joint.BodyB;
+
+                // If the joint prevents collisions, then flag any contacts for filtering.
+                if (joint.CollideConnected == false)
+                {
+                    ContactEdge edge = bodyB.ContactList;
+                    while (edge != null)
+                    {
+                        if (edge.Other == bodyA)
+                        {
+                            // Flag the contact for filtering at the next time step (where either
+                            // body is awake).
+                            edge.Contact.FilterFlag = true;
+                        }
+
+                        edge = edge.Next;
+                    }
+                }
             }
 
-            if (!_jointRemoveList.Contains(joint))
-                _jointRemoveList.Add(joint);
-        }
+            if (JointAdded != null)
+                JointAdded(joint);
 
+            // Note: creating a joint doesn't wake the bodies.
+        }
+        
         /// <summary>
         /// Destroy a joint. This may cause the connected bodies to begin colliding.
         /// </summary>
         /// <param name="joint">The joint.</param>
         public void Remove(Joint joint)
         {
-            Remove(joint, true);
+            Debug.Assert(!_jointRemoveList.Contains(joint), "The joint is already marked for removal. You are removing the joint more than once.");
+
+            if (!_jointRemoveList.Contains(joint))
+                _jointRemoveList.Add(joint);
+        }
+        
+        private void Remove_Immediate(Joint joint)
+        {
+            bool collideConnected = joint.CollideConnected;
+
+            // Remove from the world list.
+            JointList.Remove(joint);
+
+            // Disconnect from island graph.
+            Body bodyA = joint.BodyA;
+            Body bodyB = joint.BodyB;
+
+            // Wake up connected bodies.
+            bodyA.Awake = true;
+
+            // WIP David
+            if (!joint.IsFixedType())
+            {
+                bodyB.Awake = true;
+            }
+
+            // Remove from body 1.
+            if (joint.EdgeA.Prev != null)
+            {
+                joint.EdgeA.Prev.Next = joint.EdgeA.Next;
+            }
+
+            if (joint.EdgeA.Next != null)
+            {
+                joint.EdgeA.Next.Prev = joint.EdgeA.Prev;
+            }
+
+            if (joint.EdgeA == bodyA.JointList)
+            {
+                bodyA.JointList = joint.EdgeA.Next;
+            }
+
+            joint.EdgeA.Prev = null;
+            joint.EdgeA.Next = null;
+
+            // WIP David
+            if (!joint.IsFixedType())
+            {
+                // Remove from body 2
+                if (joint.EdgeB.Prev != null)
+                {
+                    joint.EdgeB.Prev.Next = joint.EdgeB.Next;
+                }
+
+                if (joint.EdgeB.Next != null)
+                {
+                    joint.EdgeB.Next.Prev = joint.EdgeB.Prev;
+                }
+
+                if (joint.EdgeB == bodyB.JointList)
+                {
+                    bodyB.JointList = joint.EdgeB.Next;
+                }
+
+                joint.EdgeB.Prev = null;
+                joint.EdgeB.Next = null;
+            }
+
+            // WIP David
+            if (!joint.IsFixedType())
+            {
+                // If the joint prevents collisions, then flag any contacts for filtering.
+                if (collideConnected == false)
+                {
+                    ContactEdge edge = bodyB.ContactList;
+                    while (edge != null)
+                    {
+                        if (edge.Other == bodyA)
+                        {
+                            // Flag the contact for filtering at the next time step (where either
+                            // body is awake).
+                            edge.Contact.FilterFlag = true;
+                        }
+
+                        edge = edge.Next;
+                    }
+                }
+            }
+
+            if (JointRemoved != null)
+                JointRemoved(joint);
         }
 
         /// <summary>
@@ -1196,11 +1153,38 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public void ProcessChanges()
         {
-            ProcessAddedBodies();
-            ProcessAddedJoints();
+            // ProcessAddedBodies
+            if (_bodyAddList.Count > 0)
+            {
+                foreach (Body body in _bodyAddList)
+                    Add_Immediate(body);
+                _bodyAddList.Clear();
+            }
+            
+            // ProcessAddedJoints
+            if (_jointAddList.Count > 0)
+            {
+                foreach (Joint joint in _jointAddList)
+                    Add_Immediate(joint);
+                _jointAddList.Clear();
+            }
 
-            ProcessRemovedBodies();
-            ProcessRemovedJoints();
+            // ProcessRemovedBodies
+            if (_bodyRemoveList.Count > 0)
+            {
+                foreach (Body body in _bodyRemoveList)
+                    Remove_Immediate(body);
+                _bodyRemoveList.Clear();
+            }
+
+            // ProcessRemovedJoints
+            if (_jointRemoveList.Count > 0)
+            {
+                foreach (Joint joint in _jointRemoveList)
+                    Remove_Immediate(joint);
+                _jointRemoveList.Clear();
+            }
+
 #if DEBUG && USE_AWAKE_BODY_SET
             foreach (var b in AwakeBodySet)
             {
