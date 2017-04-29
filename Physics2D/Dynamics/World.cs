@@ -824,6 +824,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <value>The gravity.</value>
         public Vector2 Gravity;
+        
+        /// <summary>
+        /// Is the world running (in the middle of a time step).
+        /// </summary>        
+        public bool IsStepping { get; private set; }
 
         /// <summary>
         /// Get the contact manager for testing.
@@ -888,6 +893,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private void Add_Immediate(Body body)
         {
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
 #if USE_AWAKE_BODY_SET
                     Debug.Assert(!body.IsDisposed);
                     if (body.Awake)
@@ -930,6 +938,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private void Remove_Immediate(Body body)
         {
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             Debug.Assert(BodyList.Count > 0);
 
             // You tried to remove a body that is not contained in the BodyList.
@@ -994,6 +1005,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private void Add_Immediate(Joint joint)
         {
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             // Connect to the world list.
             JointList.Add(joint);
 
@@ -1062,6 +1076,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         
         private void Remove_Immediate(Joint joint)
         {
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             bool collideConnected = joint.CollideConnected;
 
             // Remove from the world list.
@@ -1200,6 +1217,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="dt">The amount of time to simulate, this should not vary.</param>
         public void Step(float dt)
         {
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             if (!Enabled)
                 return;
 
@@ -1227,40 +1247,48 @@ namespace tainicom.Aether.Physics2D.Dynamics
             step.dt = dt;
             step.dtRatio = _invDt0 * dt;
 
-            //Update controllers
-            for (int i = 0; i < ControllerList.Count; i++)
+            IsStepping = true;
+            try
             {
-                ControllerList[i].Update(dt);
+                //Update controllers
+                for (int i = 0; i < ControllerList.Count; i++)
+                {
+                    ControllerList[i].Update(dt);
+                }
+
+                if (Settings.EnableDiagnostics)
+                    ControllersUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime);
+
+                // Update contacts. This is where some contacts are destroyed.
+                ContactManager.Collide();
+
+                if (Settings.EnableDiagnostics)
+                    ContactsUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
+
+                // Integrate velocities, solve velocity raints, and integrate positions.
+                Solve(ref step);
+
+                if (Settings.EnableDiagnostics)
+                    SolveUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
+
+                // Handle TOI events.
+                if (Settings.ContinuousPhysics)
+                {
+                    SolveTOI(ref step);
+                }
+
+                if (Settings.EnableDiagnostics)
+                    ContinuousPhysicsTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
+
+                Fluid.Update(dt);
+
+                if (Settings.AutoClearForces)
+                    ClearForces();
             }
-
-            if (Settings.EnableDiagnostics)
-                ControllersUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime);
-
-            // Update contacts. This is where some contacts are destroyed.
-            ContactManager.Collide();
-
-            if (Settings.EnableDiagnostics)
-                ContactsUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
-
-            // Integrate velocities, solve velocity raints, and integrate positions.
-            Solve(ref step);
-
-            if (Settings.EnableDiagnostics)
-                SolveUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
-
-            // Handle TOI events.
-            if (Settings.ContinuousPhysics)
+            finally
             {
-                SolveTOI(ref step);
+                IsStepping = false;
             }
-
-            if (Settings.EnableDiagnostics)
-                ContinuousPhysicsTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
-
-            Fluid.Update(dt);
-
-            if (Settings.AutoClearForces)
-                ClearForces();
 
             for (int i = 0; i < BreakableBodyList.Count; i++)
             {
@@ -1487,11 +1515,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public void Clear()
         {
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             ProcessChanges();
 
             for (int i = BodyList.Count - 1; i >= 0; i--)
             {
-                Remove(BodyList[i]);
+                Remove_Immediate(BodyList[i]);
             }
 
             for (int i = ControllerList.Count - 1; i >= 0; i--)
@@ -1503,8 +1534,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 Remove(BreakableBodyList[i]);
             }
-
-            ProcessChanges();
         }
     }
 }
