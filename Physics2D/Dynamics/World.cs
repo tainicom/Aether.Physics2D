@@ -882,13 +882,18 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns></returns>
         protected internal virtual void Add(Body body)
         {
-            Debug.Assert(!_bodyAddList.Contains(body), "You are adding the same body more than once.");
-
             // TODO: check body.World to see if body belongs to another world,
             //       or if it's allready added to this World.
 
-            if (!_bodyAddList.Contains(body))
-                _bodyAddList.Add(body);
+            if (IsStepping)
+            {
+                if (!_bodyAddList.Contains(body))
+                    _bodyAddList.Add(body);
+                else
+                    Debug.WriteLine("You are adding the same body more than once.");
+            }
+            else
+                Add_Immediate(body);
         }
 
         private void Add_Immediate(Body body)
@@ -923,10 +928,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="body">The body.</param>
         public virtual void Remove(Body body)
         {
-            Debug.Assert(!_bodyRemoveList.Contains(body), "The body is already marked for removal. You are removing the body more than once.");
-
-            if (!_bodyRemoveList.Contains(body))
-                _bodyRemoveList.Add(body);
+            if (IsStepping)
+            {
+                if (!_bodyRemoveList.Contains(body))
+                    _bodyRemoveList.Add(body);
+                else
+                    Debug.WriteLine("The body is already marked for removal. You are removing the body more than once.");
+            }
+            else
+                Remove_Immediate(body);
 
 #if USE_AWAKE_BODY_SET
             if (AwakeBodySet.Contains(body))
@@ -997,10 +1007,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="joint">The joint.</param>
         public void Add(Joint joint)
         {
-            Debug.Assert(!_jointAddList.Contains(joint), "You are adding the same joint more than once.");
-
-            if (!_jointAddList.Contains(joint))
-                _jointAddList.Add(joint);
+            if (IsStepping)
+            {
+                if (!_jointAddList.Contains(joint))
+                    _jointAddList.Add(joint);
+                else
+                    Debug.WriteLine("You are adding the same joint more than once.");
+            }
+            else
+                Add_Immediate(joint);
         }
 
         private void Add_Immediate(Joint joint)
@@ -1068,10 +1083,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="joint">The joint.</param>
         public void Remove(Joint joint)
         {
-            Debug.Assert(!_jointRemoveList.Contains(joint), "The joint is already marked for removal. You are removing the joint more than once.");
-
-            if (!_jointRemoveList.Contains(joint))
-                _jointRemoveList.Add(joint);
+            if (IsStepping)
+            {
+                if (!_jointRemoveList.Contains(joint))
+                    _jointRemoveList.Add(joint);
+                else
+                    Debug.WriteLine("The joint is already marked for removal. You are removing the joint more than once.");
+            }
+            else
+                Remove_Immediate(joint);
         }
         
         private void Remove_Immediate(Joint joint)
