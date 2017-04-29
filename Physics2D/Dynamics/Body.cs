@@ -165,7 +165,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 {
                     ContactEdge ce0 = ce;
                     ce = ce.Next;
-                    _world.ContactManager.Destroy(ce0.Contact);
+                    World.ContactManager.Destroy(ce0.Contact);
                 }
 
                 ContactList = null;
@@ -179,7 +179,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         private void TouchProxies()
         {
-            IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+            IBroadPhase broadPhase = World.ContactManager.BroadPhase;
             foreach (Fixture fixture in FixtureList)
             {
                 int proxyCount = fixture.ProxyCount;
@@ -299,7 +299,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (!_awake)
                     {
                         _sleepTime = 0.0f;
-                        _world.ContactManager.UpdateContacts(ContactList, true);
+                        World.ContactManager.UpdateContacts(ContactList, true);
 #if USE_AWAKE_BODY_SET
 						if (InWorld && !World.AwakeBodySet.Contains(this))
 						{
@@ -320,7 +320,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
                     ResetDynamics();
                     _sleepTime = 0.0f;
-                    _world.ContactManager.UpdateContacts(ContactList, false);
+                    World.ContactManager.UpdateContacts(ContactList, false);
                 }
 
                 _awake = value;
@@ -363,7 +363,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (enabled)
             {
                 // Create all proxies.
-                IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
                 for (int i = 0; i < FixtureList.Count; i++)
                 {
                     FixtureList[i].CreateProxies(broadPhase, ref _xf);
@@ -374,7 +374,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             else
             {
                 // Destroy all proxies.
-                IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
 
                 for (int i = 0; i < FixtureList.Count; i++)
                 {
@@ -387,7 +387,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 {
                     ContactEdge ce0 = ce;
                     ce = ce.Next;
-                    _world.ContactManager.Destroy(ce0.Contact);
+                    World.ContactManager.Destroy(ce0.Contact);
                 }
                 ContactList = null;
             }
@@ -728,13 +728,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 {
                     // This destroys the contact and removes it from
                     // this body's contact list.
-                    _world.ContactManager.Destroy(c);
+                    World.ContactManager.Destroy(c);
                 }
             }
 
             if (_enabled)
             {
-                IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
                 fixture.DestroyProxies(broadPhase);
             }
 
@@ -756,7 +756,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             SetTransformIgnoreContacts(ref position, rotation);
 
-            _world.ContactManager.FindNewContacts();
+            World.ContactManager.FindNewContacts();
         }
 
         /// <summary>
@@ -787,7 +787,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _sweep.C0 = _sweep.C;
             _sweep.A0 = angle;
 
-            IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+            IBroadPhase broadPhase = World.ContactManager.BroadPhase;
             for (int i = 0; i < FixtureList.Count; i++)
                 FixtureList[i].Synchronize(broadPhase, ref _xf, ref _xf);
         }
@@ -1170,7 +1170,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             xf1.q.Phase = _sweep.A0;
             xf1.p = _sweep.C0 - Complex.Multiply(ref _sweep.LocalCenter, ref xf1.q);
 
-            IBroadPhase broadPhase = _world.ContactManager.BroadPhase;
+            IBroadPhase broadPhase = World.ContactManager.BroadPhase;
             for (int i = 0; i < FixtureList.Count; i++)
             {
                 FixtureList[i].Synchronize(broadPhase, ref xf1, ref _xf);
@@ -1288,7 +1288,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             if (!IsDisposed)
             {
-                _world.Remove(this);
+                World.Remove(this);
                 IsDisposed = true;
                 GC.SuppressFinalize(this);
             }
@@ -1304,7 +1304,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns></returns>
         public Body Clone(World world = null)
         {
-            world = world ?? _world;
+            world = world ?? World;
             Body body = world.CreateBody(Position, Rotation);
             body._bodyType = _bodyType;
             body._linearVelocity = _linearVelocity;
@@ -1332,7 +1332,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns></returns>
         public Body DeepClone(World world = null)
         {
-            Body body = Clone(world ?? _world);
+            Body body = Clone(world ?? World);
 
             int count = FixtureList.Count; //Make a copy of the count. Otherwise it causes an infinite loop.
             for (int i = 0; i < count; i++)

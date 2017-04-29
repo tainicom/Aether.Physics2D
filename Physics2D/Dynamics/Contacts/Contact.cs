@@ -419,7 +419,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Debug.Assert(ShapeType.Unknown < type2 && type2 < ShapeType.TypeCount);
 
             Contact c;
-            Queue<Contact> pool = fixtureA.Body._world._contactPool;
+            Queue<Contact> pool = fixtureA.Body.World._contactPool;
             if (pool.Count > 0)
             {
                 c = pool.Dequeue();
@@ -455,7 +455,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 #if USE_ACTIVE_CONTACT_SET
             FixtureA.Body.World.ContactManager.RemoveActiveContact(this);
 #endif
-            FixtureA.Body._world._contactPool.Enqueue(this);
+            FixtureA.Body.World._contactPool.Enqueue(this);
 
             if (Manifold.PointCount > 0 && FixtureA.IsSensor == false && FixtureB.IsSensor == false)
             {

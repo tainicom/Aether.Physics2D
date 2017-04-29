@@ -331,7 +331,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 edge = edge.Next;
             }
 
-            World world = Body._world;
+            World world = Body.World;
 
             if (world == null)
             {
@@ -354,7 +354,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             if (Body.Enabled)
             {
-                IBroadPhase broadPhase = Body._world.ContactManager.BroadPhase;
+                IBroadPhase broadPhase = Body.World.ContactManager.BroadPhase;
                 CreateProxies(broadPhase, ref Body._xf);
             }
 
@@ -368,11 +368,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Let the world know we have a new fixture. This will cause new contacts
             // to be created at the beginning of the next time step.
-            Body._world._worldHasNewFixture = true;
+            Body.World._worldHasNewFixture = true;
 
             //FPE: Added event
-            if (Body._world.FixtureAdded != null)
-                Body._world.FixtureAdded(this);
+            if (Body.World.FixtureAdded != null)
+                Body.World.FixtureAdded(this);
         }
 
         /// <summary>
@@ -432,10 +432,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
             OnSeparation = null;
             AfterCollision = null;
 
-            if (Body._world.FixtureRemoved != null)
-            {
-                Body._world.FixtureRemoved(this);
-            }
+            if (Body.World.FixtureRemoved != null)
+                Body.World.FixtureRemoved(this);
 
             OnSeparation = null;
             OnCollision = null;
