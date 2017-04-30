@@ -40,6 +40,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //_rectangle.Inertia = 40;
             //_rectangle.LocalCenter = new Vector2(-1, -1);
             //_rectangle.Mass = 10;
+            //_rectangle.World.Clear();
             _rectangle.Enabled = false;
             return false;
         }

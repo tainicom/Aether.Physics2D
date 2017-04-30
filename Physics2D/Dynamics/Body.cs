@@ -507,6 +507,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             get { return _sweep.LocalCenter; }
             set
             {
+                if (World != null && World.IsStepping)
+                    throw new InvalidOperationException("World is stepping.");
+
                 if (_bodyType != BodyType.Dynamic)
                     return;
 
@@ -530,6 +533,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             get { return _mass; }
             set
             {
+                if (World != null && World.IsStepping)
+                    throw new InvalidOperationException("World is stepping.");
+
                 Debug.Assert(!float.IsNaN(value));
 
                 if (_bodyType != BodyType.Dynamic) //Make an assert
@@ -553,6 +559,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             get { return _inertia + Mass * Vector2.Dot(_sweep.LocalCenter, _sweep.LocalCenter); }
             set
             {
+                if (World != null && World.IsStepping)
+                    throw new InvalidOperationException("World is stepping.");
+
                 Debug.Assert(!float.IsNaN(value));
 
                 if (_bodyType != BodyType.Dynamic) //Make an assert
@@ -706,6 +715,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="fixture">The fixture to be removed.</param>
         public virtual void Remove(Fixture fixture)
         {
+            if (World != null && World.IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             Debug.Assert(fixture.Body == this);
 
             // Remove the fixture from this body's singly linked list.
@@ -778,6 +790,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="angle">The angle.</param>
         public void SetTransformIgnoreContacts(ref Vector2 position, float angle)
         {
+            if (World !=null && World.IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+
             _xf.q.Phase = angle;
             _xf.p = position;
 
