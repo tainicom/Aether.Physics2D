@@ -22,6 +22,12 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         // the device that we will issue draw calls to.
         private GraphicsDevice _device;
 
+        // states
+        BlendState _blendState;
+        SamplerState _samplerState;
+        DepthStencilState _depthStencilState;
+        RasterizerState _rasterizerState;	
+
         // hasBegun is flipped to true once Begin is called, and is used to make
         // sure users don't call End before Begin is called.
         private bool _hasBegun;
@@ -80,12 +86,19 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         /// </summary>
         /// <param name="projection">The projection.</param>
         /// <param name="view">The view.</param>
-        public void Begin(ref Matrix projection, ref Matrix view, ref Matrix world)
+        public void Begin(  ref Matrix projection, ref Matrix view, ref Matrix world,
+                            BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
             if (_hasBegun)
                 throw new InvalidOperationException("End must be called before Begin can be called again.");
 
+            _blendState = blendState ?? BlendState.AlphaBlend;
+            _samplerState = samplerState ?? SamplerState.LinearClamp;
+            _depthStencilState = depthStencilState ?? DepthStencilState.Default;
+            _rasterizerState = rasterizerState ?? RasterizerState.CullNone;
+
             //tell our basic effect to begin.
+            _basicEffect.Alpha = alpha;
             _basicEffect.Projection = projection;
             _basicEffect.View = view;
             _basicEffect.World = world;
@@ -159,7 +172,10 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 int primitiveCount = _triangleVertsCount / 3;
                 // submit the draw call to the graphics card
-                _device.SamplerStates[0] = SamplerState.AnisotropicClamp;
+                _device.BlendState = _blendState;
+                _device.SamplerStates[0] = _samplerState;
+                _device.DepthStencilState = _depthStencilState;
+                _device.RasterizerState = _rasterizerState;
                 _device.DrawUserPrimitives(PrimitiveType.TriangleList, _triangleVertices, 0, primitiveCount);
                 _triangleVertsCount -= primitiveCount * 3;
             }
@@ -175,7 +191,10 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 int primitiveCount = _lineVertsCount / 2;
                 // submit the draw call to the graphics card
-                _device.SamplerStates[0] = SamplerState.AnisotropicClamp;
+                _device.BlendState = _blendState;
+                _device.SamplerStates[0]    = _samplerState;
+                _device.DepthStencilState   = _depthStencilState;
+                _device.RasterizerState     = _rasterizerState;
                 _device.DrawUserPrimitives(PrimitiveType.LineList, _lineVertices, 0, primitiveCount);
                 _lineVertsCount -= primitiveCount * 2;
             }

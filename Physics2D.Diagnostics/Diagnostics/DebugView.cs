@@ -705,25 +705,29 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             }
         }
 
-        public void BeginCustomDraw(Matrix projection, Matrix view)
+        public void BeginCustomDraw(Matrix projection, Matrix view,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
-            BeginCustomDraw(ref projection, ref view);
+            BeginCustomDraw(ref projection, ref view, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void BeginCustomDraw(Matrix projection, Matrix view, Matrix world)
+        public void BeginCustomDraw(Matrix projection, Matrix view, Matrix world,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
-            BeginCustomDraw(ref projection, ref view, ref world);
+            BeginCustomDraw(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void BeginCustomDraw(ref Matrix projection, ref Matrix view)
+        public void BeginCustomDraw(ref Matrix projection, ref Matrix view,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
             Matrix world = Matrix.Identity;
-            _primitiveBatch.Begin(ref projection, ref view, ref world);
+            _primitiveBatch.Begin(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void BeginCustomDraw(ref Matrix projection, ref Matrix view, ref Matrix world)
+        public void BeginCustomDraw(ref Matrix projection, ref Matrix view, ref Matrix world,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
-            _primitiveBatch.Begin(ref projection, ref view, ref world);
+            _primitiveBatch.Begin(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
         public void EndCustomDraw()
@@ -731,26 +735,30 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _primitiveBatch.End();
         }
 
-        public void RenderDebugData(Matrix projection, Matrix view)
+        public void RenderDebugData(Matrix projection, Matrix view,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
-            RenderDebugData(ref projection, ref view);
+            RenderDebugData(ref projection, ref view, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void RenderDebugData(Matrix projection, Matrix view, Matrix world)
+        public void RenderDebugData(Matrix projection, Matrix view, Matrix world,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
-            RenderDebugData(ref projection, ref view, ref world);
+            RenderDebugData(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void RenderDebugData(ref Matrix projection, ref Matrix view)
+        public void RenderDebugData(ref Matrix projection, ref Matrix view,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
             if (!Enabled)
                 return;
 
             Matrix world = Matrix.Identity;
-            RenderDebugData(ref projection, ref view, ref world);
+            RenderDebugData(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void RenderDebugData(ref Matrix projection, ref Matrix view, ref Matrix world)
+        public void RenderDebugData(ref Matrix projection, ref Matrix view, ref Matrix world,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
             if (!Enabled)
                 return;
@@ -759,16 +767,13 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             if (Flags == 0)
                 return;
 
-            _device.RasterizerState = RasterizerState.CullNone;
-            _device.DepthStencilState = DepthStencilState.Default;
-
-            _primitiveBatch.Begin(ref projection, ref view, ref world);
+            _primitiveBatch.Begin(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
             DrawDebugData();
             _primitiveBatch.End();
 
             if ((Flags & DebugViewFlags.PerformanceGraph) == DebugViewFlags.PerformanceGraph)
             {
-                _primitiveBatch.Begin(ref _localProjection, ref _localView, ref _localWorld);
+                _primitiveBatch.Begin(ref _localProjection, ref _localView, ref _localWorld, blendState, samplerState, depthStencilState, rasterizerState, alpha);
                 DrawPerformanceGraph();
                 _primitiveBatch.End();
             }
@@ -788,14 +793,15 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _stringData.Clear();
         }
 
-        public void RenderDebugData(ref Matrix projection)
+        public void RenderDebugData(ref Matrix projection,
+                                    BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, float alpha = 1.0f)
         {
             if (!Enabled)
                 return;
 
             Matrix view = Matrix.Identity;
             Matrix world = Matrix.Identity;
-            RenderDebugData(ref projection, ref view, ref world);
+            RenderDebugData(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
         public void LoadContent(GraphicsDevice device, ContentManager content)
