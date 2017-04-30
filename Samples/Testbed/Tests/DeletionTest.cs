@@ -27,7 +27,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         private void OnSeparation(Fixture fixtureA, Fixture fixtureB)
         {
-            fixtureB.Body.Dispose();
+            fixtureB.Body.World.Remove(fixtureB.Body);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)
