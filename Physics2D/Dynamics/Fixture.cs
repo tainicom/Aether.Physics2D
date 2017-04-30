@@ -44,7 +44,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
     /// Fixtures are created via Body.CreateFixture.
     /// Warning: You cannot reuse fixtures.
     /// </summary>
-    public class Fixture : IDisposable
+    public class Fixture
     {
         private static int _fixtureIdCounter;
         private bool _isSensor;
@@ -255,21 +255,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <value>The fixture id.</value>
         public int FixtureId { get; internal set; }
 
-        #region IDisposable Members
-
-        public bool IsDisposed { get; set; }
-
-        public void Dispose()
-        {
-            if (!IsDisposed)
-            {
-                Body.Remove(this);
-                IsDisposed = true;
-                GC.SuppressFinalize(this);
-            }
-        }
-
-        #endregion
 
         /// <summary>
         /// Restores collisions between this fixture and the provided fixture.
