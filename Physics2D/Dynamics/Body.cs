@@ -44,7 +44,7 @@ using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Dynamics
 {
-    public partial class Body : IDisposable
+    public partial class Body
     {
         private float _angularDamping;
         private BodyType _bodyType;
@@ -1294,22 +1294,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
             }
         }
-
-        #region IDisposable Members
-
-        public bool IsDisposed { get; set; }
-
-        public void Dispose()
-        {
-            if (!IsDisposed)
-            {
-                World.Remove(this);
-                IsDisposed = true;
-                GC.SuppressFinalize(this);
-            }
-        }
-
-        #endregion
 
         /// <summary>
         /// Makes a clone of the body. Fixtures and therefore shapes are not included.
