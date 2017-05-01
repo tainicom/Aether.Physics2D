@@ -108,16 +108,15 @@ namespace tainicom.Aether.Physics2D.Common
             _writer.WriteEndElement();
         }
 
-        private static void SerializeFixture(Fixture fixture)
+        private static void SerializeFixture(List<Fixture> fixtures, Fixture fixture)
         {
             _writer.WriteStartElement("Fixture");
-            _writer.WriteAttributeString("Id", fixture.FixtureId.ToString());
+            _writer.WriteAttributeString("Id", fixtures.IndexOf(fixture).ToString());
 
             _writer.WriteStartElement("FilterData");
             _writer.WriteElementString("CategoryBits", ((int)fixture.CollisionCategories).ToString());
             _writer.WriteElementString("MaskBits", ((int)fixture.CollidesWith).ToString());
             _writer.WriteElementString("GroupIndex", fixture.CollisionGroup.ToString());
-            _writer.WriteElementString("CollisionIgnores", Join("|", fixture._collisionIgnores));
             _writer.WriteEndElement();
 
             _writer.WriteElementString("Friction", fixture.Friction.ToString());
@@ -131,6 +130,21 @@ namespace tainicom.Aether.Physics2D.Common
                 _writer.WriteEndElement();
             }
 
+            _writer.WriteEndElement();
+        }
+
+        private static void SerializeFixtureCollisionIgnores(List<Fixture> fixtures, Fixture fixture)
+        {
+            if (fixture._collisionIgnores.Count == 0)
+                return;
+
+            _writer.WriteStartElement("Fixture");
+            _writer.WriteAttributeString("Id", fixtures.IndexOf(fixture).ToString());
+
+            _writer.WriteStartElement("FilterData");
+            _writer.WriteElementString("CollisionIgnores", Join(fixtures, fixture._collisionIgnores));
+            _writer.WriteEndElement();
+            
             _writer.WriteEndElement();
         }
 
@@ -161,8 +175,8 @@ namespace tainicom.Aether.Physics2D.Common
             for (int i = 0; i < body.FixtureList.Count; i++)
             {
                 _writer.WriteStartElement("Pair");
-                _writer.WriteAttributeString("FixtureId", FindIndex(fixtures, body.FixtureList[i]).ToString());
-                _writer.WriteAttributeString("ShapeId", FindIndex(shapes, body.FixtureList[i].Shape).ToString());
+                _writer.WriteAttributeString("FixtureId", fixtures.IndexOf(body.FixtureList[i]).ToString());
+                _writer.WriteAttributeString("ShapeId", shapes.IndexOf(body.FixtureList[i].Shape).ToString());
                 _writer.WriteEndElement();
             }
 
@@ -175,8 +189,8 @@ namespace tainicom.Aether.Physics2D.Common
             _writer.WriteStartElement("Joint");
             _writer.WriteAttributeString("Type", joint.JointType.ToString());
 
-            WriteElement("BodyA", FindIndex(bodies, joint.BodyA));
-            WriteElement("BodyB", FindIndex(bodies, joint.BodyB));
+            WriteElement("BodyA", bodies.IndexOf(joint.BodyA));
+            WriteElement("BodyB", bodies.IndexOf(joint.BodyB));
 
             WriteElement("CollideConnected", joint.CollideConnected);
 
@@ -344,36 +358,9 @@ namespace tainicom.Aether.Physics2D.Common
             _writer.WriteElementString(name, val.ToString());
         }
 
-        private static int FindIndex(List<Body> list, Body item)
+        private static String Join(List<Fixture> fixtures, IEnumerable<Fixture> values)
         {
-            for (int i = 0; i < list.Count; ++i)
-                if (list[i] == item)
-                    return i;
-
-            return -1;
-        }
-
-        private static int FindIndex(List<Fixture> list, Fixture item)
-        {
-            for (int i = 0; i < list.Count; ++i)
-                if (list[i].CompareTo(item))
-                    return i;
-
-            return -1;
-        }
-
-        private static int FindIndex(List<Shape> list, Shape item)
-        {
-            for (int i = 0; i < list.Count; ++i)
-                if (list[i].CompareTo(item))
-                    return i;
-
-            return -1;
-        }
-
-        private static String Join<T>(String separator, IEnumerable<T> values)
-        {
-            using (IEnumerator<T> en = values.GetEnumerator())
+            using (var en = values.GetEnumerator())
             {
                 if (!en.MoveNext())
                     return String.Empty;
@@ -381,24 +368,18 @@ namespace tainicom.Aether.Physics2D.Common
                 StringBuilder result = new StringBuilder();
                 if (en.Current != null)
                 {
-                    // handle the case that the enumeration has null entries
-                    // and the case where their ToString() override is broken
-                    string value = en.Current.ToString();
-                    if (value != null)
-                        result.Append(value);
+                    var fixture = en.Current;
+                    var fixtureId = fixtures.IndexOf(fixture);
+                    result.Append(fixtureId.ToString());
                 }
 
                 while (en.MoveNext())
                 {
-                    result.Append(separator);
-                    if (en.Current != null)
-                    {
-                        // handle the case that the enumeration has null entries
-                        // and the case where their ToString() override is broken
-                        string value = en.Current.ToString();
-                        if (value != null)
-                            result.Append(value);
-                    }
+                    result.Append("|");
+
+                    var fixture = en.Current;
+                    var fixtureId = fixtures.IndexOf(fixture);
+                    result.Append(fixtureId.ToString());
                 }
                 return result.ToString();
             }
@@ -427,10 +408,10 @@ namespace tainicom.Aether.Physics2D.Common
             {
                 foreach (Fixture fixture in body.FixtureList)
                 {
-                    if (!shapes.Any(s2 => fixture.Shape.CompareTo(s2)))
+                    if (!shapes.Contains(fixture.Shape))
                     {
-                        SerializeShape(fixture.Shape);
                         shapes.Add(fixture.Shape);
+                        SerializeShape(fixture.Shape);
                     }
                 }
             }
@@ -442,12 +423,20 @@ namespace tainicom.Aether.Physics2D.Common
             {
                 foreach (Fixture fixture in body.FixtureList)
                 {
-                    if (!fixtures.Any(f2 => fixture.CompareTo(f2)))
+                    if (!fixtures.Contains(fixture))
                     {
-                        SerializeFixture(fixture);
                         fixtures.Add(fixture);
+                        SerializeFixture(fixtures, fixture);
                     }
                 }
+            }
+
+            _writer.WriteEndElement();
+            _writer.WriteStartElement("FixturesCollisionIgnores");
+
+            foreach (Fixture fixture in fixtures)
+            {
+                SerializeFixtureCollisionIgnores(fixtures, fixture);
             }
 
             _writer.WriteEndElement();
@@ -492,6 +481,8 @@ namespace tainicom.Aether.Physics2D.Common
         {
             List<Body> bodies = new List<Body>();
             List<Fixture> fixtures = new List<Fixture>();
+            Dictionary<int, Fixture> fixturesRefs = new Dictionary<int, Fixture>();
+
             List<Joint> joints = new List<Joint>();
             List<Shape> shapes = new List<Shape>();
 
@@ -660,7 +651,7 @@ namespace tainicom.Aether.Physics2D.Common
                         if (element.Name.ToLower() != "fixture")
                             throw new Exception();
 
-                        fixture.FixtureId = int.Parse(element.Attributes[0].Value);
+                        int fixtureId = int.Parse(element.Attributes[0].Value);
 
                         foreach (XMLFragmentElement sn in element.Elements)
                         {
@@ -679,13 +670,6 @@ namespace tainicom.Aether.Physics2D.Common
                                                 break;
                                             case "groupindex":
                                                 fixture._collisionGroup = short.Parse(ssn.Value);
-                                                break;
-                                            case "CollisionIgnores":
-                                                string[] split = ssn.Value.Split('|');
-                                                foreach (string s in split)
-                                                {
-                                                    fixture._collisionIgnores.Add(int.Parse(s));
-                                                }
                                                 break;
                                         }
                                     }
@@ -707,11 +691,55 @@ namespace tainicom.Aether.Physics2D.Common
                         }
 
                         fixtures.Add(fixture);
+                        fixturesRefs[fixtureId] = fixture;
+                    }
+                }
+            }
+
+            //Read fixtures CollisionIgnores
+            foreach (XMLFragmentElement fixtureElement in root.Elements)
+            {
+                if (fixtureElement.Name.ToLower() == "fixturescollisionignores")
+                {
+                    foreach (XMLFragmentElement element in fixtureElement.Elements)
+                    {
+                        if (element.Name.ToLower() != "fixture")
+                            throw new Exception();
+
+                        int fixtureId = int.Parse(element.Attributes[0].Value);
+                        Fixture fixture = fixturesRefs[fixtureId];
+
+                        foreach (XMLFragmentElement sn in element.Elements)
+                        {
+                            switch (sn.Name.ToLower())
+                            {
+                                case "filterdata":
+                                    foreach (XMLFragmentElement ssn in sn.Elements)
+                                    {
+                                        switch (ssn.Name.ToLower())
+                                        {
+                                            case "collisionignores":
+                                                if (ssn.Value == null)
+                                                    break;
+                                                string[] split = ssn.Value.Split('|');
+                                                foreach (string s in split)
+                                                {
+                                                    int ignoreFixtureId = int.Parse(s);
+                                                    var ignoreFixture = fixturesRefs[ignoreFixtureId];
+                                                    fixture._collisionIgnores.Add(ignoreFixture);
+                                                }
+                                                break;
+                                        }
+                                    }
+                                    break;
+                            }
+                        }
                     }
                 }
             }
 
             //Read bodies
+            Dictionary<Fixture, Fixture> mapFixtureClones = new Dictionary<Fixture,Fixture>();
             foreach (XMLFragmentElement bodyElement in root.Elements)
             {
                 if (bodyElement.Name.ToLower() == "bodies")
@@ -778,7 +806,8 @@ namespace tainicom.Aether.Physics2D.Common
                                         {
                                             Fixture fix = fixtures[int.Parse(pair.Attributes[0].Value)];
                                             fix.Shape = shapes[int.Parse(pair.Attributes[1].Value)].Clone();
-                                            fix.CloneOnto(body);
+                                            var clone = fix.CloneOnto(body);
+                                            mapFixtureClones[fix] = clone;
                                         }
                                         break;
                                     }
@@ -787,6 +816,17 @@ namespace tainicom.Aether.Physics2D.Common
 
                         bodies.Add(body);
                     }
+                }
+            }
+            //remap fixtures
+            foreach (var body in bodies)
+            {
+                foreach (var fixture in body.FixtureList)
+                {
+                    var tmp = new HashSet<Fixture>(fixture._collisionIgnores);
+                    fixture._collisionIgnores.Clear();
+                    foreach(var orig in tmp)
+                        fixture._collisionIgnores.Add(mapFixtureClones[orig]);
                 }
             }
 
