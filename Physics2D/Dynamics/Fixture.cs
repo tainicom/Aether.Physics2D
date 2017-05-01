@@ -46,7 +46,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
     /// </summary>
     public class Fixture
     {
-        private static int _fixtureIdCounter;
         private bool _isSensor;
         private float _friction;
         private float _restitution;
@@ -54,7 +53,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal Category _collidesWith;
         internal Category _collisionCategories;
         internal short _collisionGroup;
-        internal HashSet<int> _collisionIgnores;
+        internal HashSet<Fixture> _collisionIgnores;
 
         public FixtureProxy[] Proxies;
         public int ProxyCount;
@@ -86,12 +85,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal Fixture()
         {   
-            FixtureId = System.Threading.Interlocked.Increment(ref _fixtureIdCounter);
-
             _collisionCategories = Settings.DefaultFixtureCollisionCategories;
             _collidesWith = Settings.DefaultFixtureCollidesWith;
             _collisionGroup = 0;
-            _collisionIgnores = new HashSet<int>();
+            _collisionIgnores = new HashSet<Fixture>();
 
             IgnoreCCDWith = Settings.DefaultFixtureIgnoreCCDWith;
 
@@ -248,13 +245,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _restitution = value;
             }
         }
-
-        /// <summary>
-        /// Gets a unique ID for this fixture.
-        /// </summary>
-        /// <value>The fixture id.</value>
-        public int FixtureId { get; internal set; }
-
+        
 
         /// <summary>
         /// Restores collisions between this fixture and the provided fixture.
@@ -262,9 +253,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="fixture">The fixture.</param>
         public void RestoreCollisionWith(Fixture fixture)
         {
-            if (_collisionIgnores.Contains(fixture.FixtureId))
+            if (_collisionIgnores.Contains(fixture))
             {
-                _collisionIgnores.Remove(fixture.FixtureId);
+                _collisionIgnores.Remove(fixture);
                 Refilter();
             }
         }
@@ -275,9 +266,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="fixture">The fixture.</param>
         public void IgnoreCollisionWith(Fixture fixture)
         {
-            if (!_collisionIgnores.Contains(fixture.FixtureId))
+            if (!_collisionIgnores.Contains(fixture))
             {
-                _collisionIgnores.Add(fixture.FixtureId);
+                _collisionIgnores.Add(fixture);
                 Refilter();
             }
         }
@@ -291,7 +282,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </returns>
         public bool IsFixtureIgnored(Fixture fixture)
         {
-            return _collisionIgnores.Contains(fixture.FixtureId);
+            return _collisionIgnores.Contains(fixture);
         }
 
         /// <summary>
@@ -483,46 +474,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         /// <summary>
-        /// Only compares the values of this fixture, and not the attached shape or body.
-        /// This is used for deduplication in serialization only.
-        /// </summary>
-        internal bool CompareTo(Fixture fixture)
-        {
-            return (_collidesWith == fixture._collidesWith &&
-                    _collisionCategories == fixture._collisionCategories &&
-                    _collisionGroup == fixture._collisionGroup &&
-                    Friction == fixture.Friction &&
-                    IsSensor == fixture.IsSensor &&
-                    Restitution == fixture.Restitution &&
-                    Tag == fixture.Tag &&
-                    IgnoreCCDWith == fixture.IgnoreCCDWith &&
-                    SequenceEqual(_collisionIgnores, fixture._collisionIgnores));
-        }
-
-        private bool SequenceEqual<T>(HashSet<T> first, HashSet<T> second)
-        {
-            if (first.Count != second.Count)
-                return false;
-
-            using (IEnumerator<T> enumerator1 = first.GetEnumerator())
-            {
-                using (IEnumerator<T> enumerator2 = second.GetEnumerator())
-                {
-                    while (enumerator1.MoveNext())
-                    {
-                        if (!enumerator2.MoveNext() || !Equals(enumerator1.Current, enumerator2.Current))
-                            return false;
-                    }
-
-                    if (enumerator2.MoveNext())
-                        return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
         /// Clones the fixture and attached shape onto the specified body.
         /// </summary>
         /// <param name="body">The body you wish to clone the fixture onto.</param>
@@ -541,7 +492,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             fixture._collidesWith = _collidesWith;
             fixture.IgnoreCCDWith = IgnoreCCDWith;
 
-            foreach (int ignore in _collisionIgnores)
+            foreach (Fixture ignore in _collisionIgnores)
             {
                 fixture._collisionIgnores.Add(ignore);
             }
