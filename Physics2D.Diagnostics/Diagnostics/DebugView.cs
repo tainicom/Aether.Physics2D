@@ -31,7 +31,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
     public class DebugView : DebugViewBase, IDisposable
     {
         //Drawing
-        private PrimitiveBatch _primitiveBatch;
+        private IPrimitiveBatch _primitiveBatch;
         private SpriteBatch _batch;
         private SpriteFont _font;
         private GraphicsDevice _device;
@@ -804,12 +804,12 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             RenderDebugData(ref projection, ref view, ref world, blendState, samplerState, depthStencilState, rasterizerState, alpha);
         }
 
-        public void LoadContent(GraphicsDevice device, ContentManager content)
+        public void LoadContent(GraphicsDevice device, ContentManager content, IPrimitiveBatch primitiveBatch = null)
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             _device = device;
             _batch = new SpriteBatch(_device);
-            _primitiveBatch = new PrimitiveBatch(_device, 1000);
+            _primitiveBatch = (primitiveBatch != null) ? primitiveBatch : new PrimitiveBatch(_device, 1000);
             _font = content.Load<SpriteFont>("DiagnosticsFont");
             _stringData = new List<StringData>();
 

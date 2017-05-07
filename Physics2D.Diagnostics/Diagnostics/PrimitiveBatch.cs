@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Diagnostics
 {
-    public class PrimitiveBatch : IDisposable
+    public class PrimitiveBatch : IPrimitiveBatch, IDisposable
     {
         private const int DefaultBufferSize = 500;
 
