@@ -806,8 +806,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         public void LoadContent(GraphicsDevice device, ContentManager content, IPrimitiveBatch primitiveBatch = null)
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             _device = device;
+            // Create a new SpriteBatch, which can be used to draw textures.
             _batch = new SpriteBatch(_device);
             _primitiveBatch = (primitiveBatch != null) ? primitiveBatch : new PrimitiveBatch(_device, 1000);
             _font = content.Load<SpriteFont>("DiagnosticsFont");
