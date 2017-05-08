@@ -74,7 +74,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             Texture2D cursorTexture;
             cursorTexture = ContentWrapper.GetTexture("Cursor");
-            _cursorSprite = new Sprite(cursorTexture, Vector2.One);
+            _cursorSprite = new Sprite(cursorTexture, Vector2.Zero);
+
             _viewport = viewport;
         }
 
