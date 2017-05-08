@@ -228,7 +228,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public override void Draw(GameTime gameTime)
         {
-            DebugView.RenderDebugData(ref Camera.SimProjection, ref Camera.SimView);
+            DebugView.RenderDebugData(ref Camera.DebugProjection, ref Camera.DebugView);
             base.Draw(gameTime);
         }
     }
