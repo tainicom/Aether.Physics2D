@@ -217,8 +217,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public override void Draw(GameTime gameTime)
         {
-            Matrix projection = Camera.SimProjection;
-            Matrix view = Camera.SimView;
+            Matrix projection = Camera.DebugProjection;
+            Matrix view = Camera.DebugView;
 
             if (RenderDebug)
             {

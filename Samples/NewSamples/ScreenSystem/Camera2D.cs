@@ -19,9 +19,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private Matrix _batchView;
 
         private Vector2 _currentPosition;
-
         private float _currentRotation;
-
         private float _currentZoom;
         private Vector2 _maxPosition;
         private float _maxRotation;
@@ -34,7 +32,11 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private float _targetRotation;
         private Body _trackingBody;
         private Vector2 _translateCenter;
+
         private Matrix _view;
+
+        public Matrix DebugProjection;
+        public Matrix DebugView;
 
         /// <summary>
         /// The constructor for the Camera2D class.
@@ -43,6 +45,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public Camera2D(GraphicsDevice graphics)
         {
             _graphics = graphics;
+            DebugProjection = Matrix.CreateOrthographic(_graphics.Viewport.Width, _graphics.Viewport.Height, 0f, 1f);
+            DebugView = Matrix.CreateScale(ConvertUnits.ToDisplayUnits(1f), -ConvertUnits.ToDisplayUnits(1f), 1f);
+
             _projection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(_graphics.Viewport.Width),
                                                              ConvertUnits.ToSimUnits(_graphics.Viewport.Height), 0f, 0f,
                                                              1f);

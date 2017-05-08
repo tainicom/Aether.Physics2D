@@ -31,6 +31,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private Body _trackingBody;
         private Vector2 _translateCenter;
 
+        public Matrix DebugProjection;
+        public Matrix DebugView;
         public Matrix SimProjection;
         public Matrix SimView;
         public Matrix View;
@@ -43,6 +45,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public Camera2D(GraphicsDevice graphics)
         {
             _graphics = graphics;
+            DebugProjection = Matrix.CreateOrthographic(_graphics.Viewport.Width, _graphics.Viewport.Height, 0f, 1f);
+            DebugView = Matrix.CreateScale(ConvertUnits.ToDisplayUnits(1f), -ConvertUnits.ToDisplayUnits(1f), 1f);
+            
             SimProjection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(_graphics.Viewport.Width), ConvertUnits.ToSimUnits(_graphics.Viewport.Height), 0f, 0f, 1f);
             SimView = Matrix.Identity;
             View = Matrix.Identity;
