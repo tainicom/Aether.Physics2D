@@ -544,8 +544,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             Vector2 cB = data.positions[_indexB].c;
             float aB = data.positions[_indexB].a;
 
-            Complex qA = Complex.FromAngle(aA);
-            Complex qB = Complex.FromAngle(aB);
 
             float angularError = 0.0f;
             float positionError;
@@ -590,8 +588,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             // Solve point-to-point constraint.
             {
-                qA.Phase = aA;
-                qB.Phase = aB;
+                Complex qA = Complex.FromAngle(aA);
+                Complex qB = Complex.FromAngle(aB);
                 Vector2 rA = Complex.Multiply(LocalAnchorA - _localCenterA, ref qA);
                 Vector2 rB = Complex.Multiply(LocalAnchorB - _localCenterB, ref qB);
 
