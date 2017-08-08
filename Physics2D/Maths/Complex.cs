@@ -33,7 +33,7 @@ namespace tainicom.Aether.Physics2D.Maths
 
         public float Magnitude
         {
-            get { return (float)Math.Sqrt(MagnitudeSquared()); }
+            get { return (float)Math.Round(Math.Sqrt(MagnitudeSquared())); }
         }
 
 
@@ -121,5 +121,9 @@ namespace tainicom.Aether.Physics2D.Maths
             return new Complex(value.Real / mag, -value.Imaginary / mag);
         }
         
+        public override string ToString()
+        {
+            return String.Format("{{Real: {0} Imaginary: {1} Phase: {2} Magnitude: {3}}}", Real, Imaginary, Phase, Magnitude);
+        }
     }
 }
