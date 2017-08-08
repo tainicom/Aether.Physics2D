@@ -66,9 +66,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             base.Update(settings, gameTime);
 
-            DistanceInput input = new DistanceInput();
-            input.ProxyA.Set(_polygonA, 0);
-            input.ProxyB.Set(_polygonB, 0);
+            DistanceInput input;
+            input.ProxyA = new DistanceProxy(_polygonA, 0);
+            input.ProxyB = new DistanceProxy(_polygonB, 0);
             input.TransformA = _transformA;
             input.TransformB = _transformB;
             input.UseRadii = true;

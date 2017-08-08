@@ -567,14 +567,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
                         Debug.Assert(alpha0 < 1.0f);
 
                         // Compute the time of impact in interval [0, minTOI]
-                        _input.ProxyA.Set(fA.Shape, c.ChildIndexA);
-                        _input.ProxyB.Set(fB.Shape, c.ChildIndexB);
+                        _input.ProxyA = new DistanceProxy(fA.Shape, c.ChildIndexA);
+                        _input.ProxyB = new DistanceProxy(fB.Shape, c.ChildIndexB);
                         _input.SweepA = bA._sweep;
                         _input.SweepB = bB._sweep;
                         _input.TMax = 1.0f;
 
                         TOIOutput output;
-                        TimeOfImpact.CalculateTimeOfImpact(out output, _input);
+                        TimeOfImpact.CalculateTimeOfImpact(out output, ref _input);
 
                         // Beta is the fraction of the remaining portion of the .
                         float beta = output.T;

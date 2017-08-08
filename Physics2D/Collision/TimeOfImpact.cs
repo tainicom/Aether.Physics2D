@@ -38,8 +38,8 @@ namespace tainicom.Aether.Physics2D.Collision
     /// </summary>
     public class TOIInput
     {
-        public DistanceProxy ProxyA = new DistanceProxy();
-        public DistanceProxy ProxyB = new DistanceProxy();
+        public DistanceProxy ProxyA;
+        public DistanceProxy ProxyB;
         public Sweep SweepA;
         public Sweep SweepB;
         public float TMax; // defines sweep interval [0, tMax]
@@ -282,8 +282,6 @@ namespace tainicom.Aether.Physics2D.Collision
         public static int TOICalls, TOIIters, TOIMaxIters;
         [ThreadStatic]
         public static int TOIRootIters, TOIMaxRootIters;
-        [ThreadStatic]
-        private static DistanceInput _distanceInput;
 
         /// <summary>
         /// Compute the upper bound on time before two shapes penetrate. Time is represented as
@@ -294,7 +292,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="output">The output.</param>
         /// <param name="input">The input.</param>
-        public static void CalculateTimeOfImpact(out TOIOutput output, TOIInput input)
+        public static void CalculateTimeOfImpact(out TOIOutput output, ref TOIInput input)
         {
             if (Settings.EnableDiagnostics) //FPE: We only gather diagnostics when enabled
                 ++TOICalls;
@@ -323,10 +321,10 @@ namespace tainicom.Aether.Physics2D.Collision
             int iter = 0;
 
             // Prepare input for distance query.
-            _distanceInput = _distanceInput ?? new DistanceInput();
-            _distanceInput.ProxyA = input.ProxyA;
-            _distanceInput.ProxyB = input.ProxyB;
-            _distanceInput.UseRadii = false;
+            DistanceInput distanceInput = new DistanceInput();
+            distanceInput.ProxyA = input.ProxyA;
+            distanceInput.ProxyB = input.ProxyB;
+            distanceInput.UseRadii = false;
 
             // The outer loop progressively attempts to compute new separating axes.
             // This loop terminates when an axis is repeated (no progress is made).
@@ -338,11 +336,11 @@ namespace tainicom.Aether.Physics2D.Collision
 
                 // Get the distance between shapes. We can also use the results
                 // to get a separating axis.
-                _distanceInput.TransformA = xfA;
-                _distanceInput.TransformB = xfB;
+                distanceInput.TransformA = xfA;
+                distanceInput.TransformB = xfB;
                 DistanceOutput distanceOutput;
                 SimplexCache cache;
-                Distance.ComputeDistance(out distanceOutput, out cache, _distanceInput);
+                Distance.ComputeDistance(out distanceOutput, out cache, distanceInput);
 
                 // If the shapes are overlapped, we give up on continuous collision.
                 if (distanceOutput.Distance <= 0.0f)

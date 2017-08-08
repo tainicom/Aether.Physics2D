@@ -71,14 +71,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //sweepB.a -= 300.0f * b2_pi;
 
             TOIInput input = new TOIInput();
-            input.ProxyA.Set(_shapeA, 0);
-            input.ProxyB.Set(_shapeB, 0);
+            input.ProxyA = new DistanceProxy(_shapeA, 0);
+            input.ProxyB = new DistanceProxy(_shapeB, 0);
             input.SweepA = sweepA;
             input.SweepB = sweepB;
             input.TMax = 1.0f;
 
             TOIOutput output;
-            TimeOfImpact.CalculateTimeOfImpact(out output, input);
+            TimeOfImpact.CalculateTimeOfImpact(out output, ref input);
 
             DrawString("TOI = " + output.T);
             DrawString(string.Format("Max TOI iters = {0:n}, Max root iters = {1:n}", TimeOfImpact.TOIMaxIters, TimeOfImpact.TOIMaxRootIters));

@@ -596,9 +596,6 @@ namespace tainicom.Aether.Physics2D.Collision
     /// </summary>
     public static class Collision
     {
-        [ThreadStatic]
-        private static DistanceInput _input;
-
         /// <summary>
         /// Test overlap between the two shapes.
         /// </summary>
@@ -611,9 +608,9 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <returns></returns>
         public static bool TestOverlap(Shape shapeA, int indexA, Shape shapeB, int indexB, ref Transform xfA, ref Transform xfB)
         {
-            _input = _input ?? new DistanceInput();
-            _input.ProxyA.Set(shapeA, indexA);
-            _input.ProxyB.Set(shapeB, indexB);
+            DistanceInput _input = new DistanceInput();
+            _input.ProxyA = new DistanceProxy(shapeA, indexA);
+            _input.ProxyB = new DistanceProxy(shapeB, indexB);
             _input.TransformA = xfA;
             _input.TransformB = xfB;
             _input.UseRadii = true;

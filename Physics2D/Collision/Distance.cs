@@ -51,7 +51,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="shape">The shape.</param>
         /// <param name="index">The index.</param>
-        public void Set(Shape shape, int index)
+        public DistanceProxy(Shape shape, int index)
         {
             switch (shape.ShapeType)
             {
@@ -177,10 +177,10 @@ namespace tainicom.Aether.Physics2D.Collision
     /// Input for Distance.ComputeDistance().
     /// You have to option to use the shape radii in the computation. 
     /// </summary>
-    public class DistanceInput
+    public struct DistanceInput
     {
-        public DistanceProxy ProxyA = new DistanceProxy();
-        public DistanceProxy ProxyB = new DistanceProxy();
+        public DistanceProxy ProxyA;
+        public DistanceProxy ProxyB;
         public Transform TransformA;
         public Transform TransformB;
         public bool UseRadii;
