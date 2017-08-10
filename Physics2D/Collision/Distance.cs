@@ -38,10 +38,10 @@ namespace tainicom.Aether.Physics2D.Collision
     /// A distance proxy is used by the GJK algorithm.
     /// It encapsulates any shape.
     /// </summary>
-    public class DistanceProxy
+    public struct DistanceProxy
     {
         internal float Radius;
-        internal Vertices Vertices = new Vertices();
+        internal Vertices Vertices;
 
         // GJK using Voronoi regions (Christer Ericson) and Barycentric coordinates.
 
@@ -53,6 +53,8 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <param name="index">The index.</param>
         public DistanceProxy(Shape shape, int index)
         {
+            Vertices = new Vertices();
+
             switch (shape.ShapeType)
             {
                 case ShapeType.Circle:
@@ -99,6 +101,7 @@ namespace tainicom.Aether.Physics2D.Collision
                     break;
 
                 default:
+                    Radius = 0;
                     Debug.Assert(false);
                     break;
             }
@@ -247,7 +250,7 @@ namespace tainicom.Aether.Physics2D.Collision
         internal int Count;
         internal FixedArray3<SimplexVertex> V;
 
-        internal void ReadCache(ref SimplexCache cache, DistanceProxy proxyA, ref Transform transformA, DistanceProxy proxyB, ref Transform transformB)
+        internal void ReadCache(ref SimplexCache cache, ref DistanceProxy proxyA, ref Transform transformA, ref DistanceProxy proxyB, ref Transform transformB)
         {
             Debug.Assert(cache.Count <= 3);
 
@@ -652,7 +655,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             // Initialize the simplex.
             Simplex simplex = new Simplex();
-            simplex.ReadCache(ref cache, input.ProxyA, ref input.TransformA, input.ProxyB, ref input.TransformB);
+            simplex.ReadCache(ref cache, ref input.ProxyA, ref input.TransformA, ref input.ProxyB, ref input.TransformB);
 
             // These store the vertices of the last simplex so that we
             // can check for duplicates and prevent cycling.
