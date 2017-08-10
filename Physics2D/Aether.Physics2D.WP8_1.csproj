@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>tainicom.Aether.Physics2D</RootNamespace>
-    <AssemblyName>tainicom.Aether.Physics2D</AssemblyName>
+    <AssemblyName>Aether.Physics2D</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>

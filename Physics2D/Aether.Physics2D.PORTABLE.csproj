@@ -7,7 +7,7 @@
     <ProjectGuid>{FAA2CCDA-368A-4735-9805-64247D9ABB83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>tainicom.Aether.Physics2D</RootNamespace>
-    <AssemblyName>tainicom.Aether.Physics2D</AssemblyName>
+    <AssemblyName>Aether.Physics2D</AssemblyName>
     <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
