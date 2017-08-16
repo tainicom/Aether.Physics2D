@@ -74,8 +74,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             IsMouseVisible = true;
 
             IsFixedTimeStep = true;
-
-            _graphics.SynchronizeWithVerticalRetrace = false;
+            _graphics.SynchronizeWithVerticalRetrace = true;
         }
 
         public float ViewZoom
