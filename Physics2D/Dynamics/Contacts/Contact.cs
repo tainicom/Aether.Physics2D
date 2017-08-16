@@ -425,6 +425,11 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
 
+        internal static Contact Create()
+        {            
+            return new Contact(null, 0, null, 0);
+        }
+
         internal static Contact Create(Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
         {
             ShapeType type1 = fixtureA.Shape.ShapeType;

@@ -88,7 +88,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal ContactManager(IBroadPhase broadPhase)
         {
-            ContactList = null;
+            ContactList = Contact.Create();
+            ContactList.Prev = ContactList;
+            ContactList.Next = ContactList;
             ContactCount = 0;
 
             BroadPhase = broadPhase;
@@ -172,11 +174,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             bodyB = fixtureB.Body;
 
             // Insert into the world.
-            c.Prev = null;
-            c.Next = ContactList;
-            if (ContactList != null)
-                ContactList.Prev = c;
-            ContactList = c;
+            c.Prev = ContactList;
+            c.Next = c.Prev.Next;
+            c.Prev.Next = c;
+            c.Next.Prev = c;
             ContactCount++;
 
 #if USE_ACTIVE_CONTACT_SET
@@ -244,12 +245,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             // Remove from the world.
-            if (contact.Prev != null)
-                contact.Prev.Next = contact.Next;
-            if (contact.Next != null)
-                contact.Next.Prev = contact.Prev;
-            if (contact == ContactList)
-                ContactList = contact.Next;
+            contact.Prev.Next = contact.Next;
+            contact.Next.Prev = contact.Prev;
+            contact.Next = null;
+            contact.Prev = null;
             ContactCount--;
 
             // Remove from body 1
@@ -302,7 +301,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 			foreach (var c in ActiveList)
 			{
 #else
-            for (Contact c = ContactList; c != null;)
+            for (Contact c = ContactList.Next; c != ContactList;)
             {
 #endif
                 Fixture fixtureA = c.FixtureA;

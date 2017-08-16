@@ -199,7 +199,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 c.Flags &= ~ContactFlags.Island;
             }
 #else
-            for (Contact c = ContactManager.ContactList; c != null; c = c.Next)
+            for (Contact c = ContactManager.ContactList.Next; c != ContactManager.ContactList; c = c.Next)
             {
                 c.IslandFlag = false;
             }
@@ -450,7 +450,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 foreach (var c in ContactManager.ActiveContacts)
                 {
 #else
-                for (Contact c = ContactManager.ContactList; c != null; c = c.Next)
+                for (Contact c = ContactManager.ContactList.Next; c != ContactManager.ContactList; c = c.Next)
                 {
 #endif
                     // Invalidate TOI
@@ -472,7 +472,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 foreach (var c in ContactManager.ActiveContacts)
                 {
 #else
-                for (Contact c = ContactManager.ContactList; c != null; c = c.Next)
+                for (Contact c = ContactManager.ContactList.Next; c != ContactManager.ContactList; c = c.Next)
                 {
 #endif
 
@@ -867,10 +867,12 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public List<Joint> JointList { get; private set; }
 
         /// <summary>
-        /// Get the world contact list. With the returned contact, use Contact.GetNext to get
-        /// the next contact in the world list. A null contact indicates the end of the list.
+        /// Get the world contact list. 
+        /// ContactList is the head of a circular linked list. Use Contact.Next to get
+        /// the next contact in the world list. A contact equal to ContactList indicates the end of the list.
         /// </summary>
         /// <value>The head of the world contact list.</value>
+        /// <example>for (Contact c = World.ContactList.Next; c != World..ContactList; c = c.Next)</example>
         public Contact ContactList
         {
             get { return ContactManager.ContactList; }
