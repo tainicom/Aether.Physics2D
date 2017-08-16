@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -306,6 +308,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (bodyB.ShouldCollide(bodyA) == false)
                     {
                         Contact cNuke = c;
+                        i--;
                         Destroy(cNuke);
                         continue;
                     }
@@ -314,6 +317,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (ShouldCollide(fixtureA, fixtureB) == false)
                     {
                         Contact cNuke = c;
+                        i--;
                         Destroy(cNuke);
                         continue;
                     }
@@ -322,6 +326,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
                     {
                         Contact cNuke = c;
+                        i--;
                         Destroy(cNuke);
                         continue;
                     }
@@ -351,6 +356,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 if (overlap == false)
                 {
                     Contact cNuke = c;
+                    i--;
                     Destroy(cNuke);
                     continue;
                 }
