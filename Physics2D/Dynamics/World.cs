@@ -179,7 +179,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             // Size the island for the worst case.
             Island.Reset(BodyList.Count,
-                         ContactManager.ContactList.Count,
+                         ContactManager.ContactCount,
                          JointList.Count,
                          ContactManager);
 
@@ -199,7 +199,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 c.Flags &= ~ContactFlags.Island;
             }
 #else
-            foreach (Contact c in ContactManager.ContactList)
+            for (Contact c = ContactManager.ContactList; c != null; c = c.Next)
             {
                 c.IslandFlag = false;
             }
@@ -450,9 +450,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 foreach (var c in ContactManager.ActiveContacts)
                 {
 #else
-                for (int i = 0; i < ContactManager.ContactList.Count; i++)
+                for (Contact c = ContactManager.ContactList; c != null; c = c.Next)
                 {
-                    Contact c = ContactManager.ContactList[i];
 #endif
                     // Invalidate TOI
                     c.IslandFlag = false;
@@ -473,9 +472,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 foreach (var c in ContactManager.ActiveContacts)
                 {
 #else
-                for (int i = 0; i < ContactManager.ContactList.Count; i++)
+                for (Contact c = ContactManager.ContactList; c != null; c = c.Next)
                 {
-                    Contact c = ContactManager.ContactList[i];
 #endif
 
                     // Is this contact disabled?
@@ -820,6 +818,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         /// <summary>
+        /// Get the number of contacts (each may have 0 or more contact points).
+        /// </summary>
+        /// <value>The contact count.</value>
+        public int ContactCount
+        {
+            get { return ContactManager.ContactCount; }
+        }
+
+        /// <summary>
         /// Change the global gravity vector.
         /// </summary>
         /// <value>The gravity.</value>
@@ -864,7 +871,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// the next contact in the world list. A null contact indicates the end of the list.
         /// </summary>
         /// <value>The head of the world contact list.</value>
-        public List<Contact> ContactList
+        public Contact ContactList
         {
             get { return ContactManager.ContactList; }
         }

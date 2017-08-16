@@ -331,7 +331,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _debugPanelSb.AppendLine("Objects:");
             _debugPanelSb.Append("- Bodies: ").AppendLine(World.BodyList.Count.ToString());
             _debugPanelSb.Append("- Fixtures: ").AppendLine(fixtureCount.ToString());
-            _debugPanelSb.Append("- Contacts: ").AppendLine(World.ContactList.Count.ToString());
+            _debugPanelSb.Append("- Contacts: ").AppendLine(World.ContactCount.ToString());
             _debugPanelSb.Append("- Joints: ").AppendLine(World.JointList.Count.ToString());
             _debugPanelSb.Append("- Controllers: ").AppendLine(World.ControllerList.Count.ToString());
             _debugPanelSb.Append("\n- Particles: ").AppendLine(World.Fluid.Particles.Count.ToString());

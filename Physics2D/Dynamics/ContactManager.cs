@@ -43,12 +43,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public IBroadPhase BroadPhase;
 
+        public int ContactCount { get; private set; }
+
         /// <summary>
         /// The filter used by the contact manager.
         /// </summary>
         public CollisionFilterDelegate ContactFilter;
 
-        public List<Contact> ContactList = new List<Contact>(128);
+        public Contact ContactList;
 
 #if USE_ACTIVE_CONTACT_SET
         /// <summary>
@@ -86,6 +88,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal ContactManager(IBroadPhase broadPhase)
         {
+            ContactList = null;
+            ContactCount = 0;
+
             BroadPhase = broadPhase;
             OnBroadphaseCollision = AddPair;
         }
@@ -167,7 +172,12 @@ namespace tainicom.Aether.Physics2D.Dynamics
             bodyB = fixtureB.Body;
 
             // Insert into the world.
-            ContactList.Add(c);
+            c.Prev = null;
+            c.Next = ContactList;
+            if (ContactList != null)
+                ContactList.Prev = c;
+            ContactList = c;
+            ContactCount++;
 
 #if USE_ACTIVE_CONTACT_SET
 			ActiveContacts.Add(c);
@@ -234,7 +244,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             // Remove from the world.
-            ContactList.Remove(contact);
+            if (contact.Prev != null)
+                contact.Prev.Next = contact.Next;
+            if (contact.Next != null)
+                contact.Next.Prev = contact.Prev;
+            if (contact == ContactList)
+                ContactList = contact.Next;
+            ContactCount--;
 
             // Remove from body 1
             if (contact._nodeA.Prev != null)
@@ -286,9 +302,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 			foreach (var c in ActiveList)
 			{
 #else
-            for (int i = 0; i < ContactList.Count; i++)
+            for (Contact c = ContactList; c != null;)
             {
-                Contact c = ContactList[i];
 #endif
                 Fixture fixtureA = c.FixtureA;
                 Fixture fixtureB = c.FixtureB;
@@ -299,7 +314,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
                 //Do no try to collide disabled bodies
                 if (!bodyA.Enabled || !bodyB.Enabled)
+                {
+                    c = c.Next;
                     continue;
+                }
 
                 // Is this contact flagged for filtering?
                 if (c.FilterFlag)
@@ -308,7 +326,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (bodyB.ShouldCollide(bodyA) == false)
                     {
                         Contact cNuke = c;
-                        i--;
+                        c = c.Next;
                         Destroy(cNuke);
                         continue;
                     }
@@ -317,7 +335,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (ShouldCollide(fixtureA, fixtureB) == false)
                     {
                         Contact cNuke = c;
-                        i--;
+                        c = c.Next;
                         Destroy(cNuke);
                         continue;
                     }
@@ -326,7 +344,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
                     {
                         Contact cNuke = c;
-                        i--;
+                        c = c.Next;
                         Destroy(cNuke);
                         continue;
                     }
@@ -344,6 +362,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #if USE_ACTIVE_CONTACT_SET
 					ActiveContacts.Remove(c);
 #endif
+                    c = c.Next;
                     continue;
                 }
 
@@ -356,13 +375,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 if (overlap == false)
                 {
                     Contact cNuke = c;
-                    i--;
+                    c = c.Next;
                     Destroy(cNuke);
                     continue;
                 }
 
                 // The contact persists.
                 c.Update(this);
+
+                c = c.Next;
             }
 
 #if USE_ACTIVE_CONTACT_SET
