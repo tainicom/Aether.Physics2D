@@ -1285,7 +1285,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 if (Settings.EnableDiagnostics)
                     ContactsUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
 
-                // Integrate velocities, solve velocity raints, and integrate positions.
+                // Integrate velocities, solve velocity constraints, and integrate positions.
                 Solve(ref step);
 
                 if (Settings.EnableDiagnostics)
