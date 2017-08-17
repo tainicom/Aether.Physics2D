@@ -57,6 +57,12 @@ namespace tainicom.Aether.Physics2D.Maths
         {
             Imaginary = -Imaginary;
         }
+                
+        public void Negate()
+        {
+            Real = -Real;
+            Imaginary = -Imaginary;
+        }
 
         public float MagnitudeSquared()
         {
@@ -113,6 +119,11 @@ namespace tainicom.Aether.Physics2D.Maths
         public static Complex Conjugate(ref Complex value)
         {
             return new Complex(value.Real, -value.Imaginary);
+        }
+
+        public static Complex Negate(ref Complex value)
+        {
+            return new Complex(-value.Real, -value.Real);
         }
 
         public static Complex Normalize(ref Complex value)

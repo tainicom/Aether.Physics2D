@@ -612,6 +612,18 @@ namespace tainicom.Aether.Physics2D.Common
             result.p = Complex.Divide(left.p - right.p, ref right.q);
             result.q = Complex.Divide(ref left.q, ref right.q);
         }
+            
+        public static void Multiply(ref Transform left, Complex right, out Transform result)
+        {
+            result.p = Complex.Multiply(ref left.p, ref right);
+            result.q = Complex.Multiply(ref left.q, ref right);
+        }
+        
+        public static void Divide(ref Transform left, Complex right, out Transform result)
+        {
+            result.p = Complex.Divide(ref left.p, ref right);
+            result.q = Complex.Divide(ref left.q, ref right);
+        }
     }
 
     /// <summary>

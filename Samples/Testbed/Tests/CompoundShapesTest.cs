@@ -83,9 +83,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
 
             {
-                Transform xf1 = new Transform();
-                xf1.q.Phase = (0.3524f * MathHelper.Pi);
-                xf1.p = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf1.q);
+                Transform xf1 = new Transform(new Vector2(1.0f, 0.0f), Complex.One);
+                Transform.Multiply(ref xf1, Complex.FromAngle(0.3524f * MathHelper.Pi), out xf1);
 
                 Vertices vertices = new Vertices(3);
 
@@ -95,9 +94,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
                 PolygonShape triangle1 = new PolygonShape(vertices, 2);
 
-                Transform xf2 = new Transform();
-                xf2.q.Phase = (-0.3524f * MathHelper.Pi);
-                xf2.p = Complex.Multiply(new Vector2(-1.0f, 0.0f), ref xf2.q);
+                Transform xf2 = new Transform(new Vector2(-1.0f, 0.0f), Complex.One);
+                Transform.Multiply(ref xf2, Complex.FromAngle(-0.3524f * MathHelper.Pi), out xf2);
 
                 vertices[0] = Transform.Multiply(new Vector2(-1.0f, 0.0f), ref xf2);
                 vertices[1] = Transform.Multiply(new Vector2( 1.0f, 0.0f), ref xf2);

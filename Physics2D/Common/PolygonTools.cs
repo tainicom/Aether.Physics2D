@@ -41,9 +41,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             Vertices vertices = CreateRectangle(hx, hy);
 
-            Transform xf = new Transform();
-            xf.p = center;
-            xf.q.Phase = angle;
+            Transform xf = new Transform(center, angle);
 
             // Transform vertices
             for (int i = 0; i < 4; ++i)
