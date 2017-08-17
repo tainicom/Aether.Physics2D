@@ -572,7 +572,7 @@ namespace tainicom.Aether.Physics2D.Common
 
         public static Vector2 Multiply(ref Vector2 left, ref Transform right)
         {
-            // Opt: var result = Complex.Multiply(left, right) + right.p;
+            // Opt: var result = Complex.Multiply(left, right.q) + right.p;
             return new Vector2(
                 (left.X * right.q.Real - left.Y * right.q.Imaginary) + right.p.X,
                 (left.Y * right.q.Real + left.X * right.q.Imaginary) + right.p.Y);
@@ -591,6 +591,15 @@ namespace tainicom.Aether.Physics2D.Common
             return new Vector2(
                 (px * right.q.Real + py * right.q.Imaginary),
                 (py * right.q.Real - px * right.q.Imaginary));
+        }
+
+        public static void Divide(Vector2 left, ref Transform right, out Vector2 result)
+        {
+            // Opt: var result = Complex.Divide(left - right.p, right);
+            float px = left.X - right.p.X;
+            float py = left.Y - right.p.Y;
+            result.X = (px * right.q.Real + py * right.q.Imaginary);
+            result.Y = (py * right.q.Real - px * right.q.Imaginary);
         }
 
         public static Transform Multiply(ref Transform left, ref Transform right)

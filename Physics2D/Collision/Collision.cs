@@ -944,7 +944,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 if (separation <= totalRadius)
                 {
                     ManifoldPoint cp = manifold.Points[pointCount];
-                    cp.LocalPoint = Transform.Divide(clipPoints2[i].V, ref xf2);
+                    Transform.Divide(clipPoints2[i].V, ref xf2, out cp.LocalPoint);
                     cp.Id = clipPoints2[i].ID;
 
                     if (flip)
@@ -1541,7 +1541,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
                         if (primaryAxis.Type == EPAxisType.EdgeA)
                         {
-                            cp.LocalPoint = Transform.Divide(clipPoints2[i].V, ref xf);
+                            Transform.Divide(clipPoints2[i].V, ref xf, out cp.LocalPoint);
                             cp.Id = clipPoints2[i].ID;
                         }
                         else
