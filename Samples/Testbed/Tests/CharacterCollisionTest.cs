@@ -64,7 +64,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 vs.Add(new Vector2(8.0f, 7.0f));
 
                 Body body = World.CreateChainShape(vs);
-                body.Rotation = 0.25f * Settings.Pi;
+                body.Rotation = 0.25f * MathHelper.Pi;
             }
 
             // Square tiles. This shows that adjacency shapes may
@@ -117,7 +117,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             // Hexagon character
             float angle = 0.0f;
-            const float delta = Settings.Pi / 3.0f;
+            const float delta = MathHelper.Pi / 3.0f;
             vertices = new Vertices(6);
 
             for (int i = 0; i < 6; ++i)

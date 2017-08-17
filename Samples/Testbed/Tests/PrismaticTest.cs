@@ -49,7 +49,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Body body = World.CreateBody();
             body.BodyType = BodyType.Dynamic;
             body.Position = new Vector2(-10.0f, 10.0f);
-            body.Rotation = 0.5f * Settings.Pi;
+            body.Rotation = 0.5f * MathHelper.Pi;
             body.CreateFixture(shape);
 
             // Bouncy limit

@@ -57,7 +57,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _body1 = World.CreateBody();
             _body1.BodyType = BodyType.Dynamic;
             _body1.Position = new Vector2(0.0f, 40.0f);
-            _body1.Rotation = 0.25f * Settings.Pi;
+            _body1.Rotation = 0.25f * MathHelper.Pi;
 
             Vertices box = PolygonTools.CreateRectangle(0.5f, 0.5f, new Vector2(-0.5f, 0.0f), 0.0f);
 

@@ -293,7 +293,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             if (advanceRay)
             {
-                _angle += 0.25f * Settings.Pi / 180.0f;
+                _angle += 0.25f * MathHelper.Pi / 180.0f;
             }
         }
 
@@ -311,7 +311,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _bodies[_bodyIndex] = World.CreateBody();
 
             _bodies[_bodyIndex].Position = new Vector2(x, y);
-            _bodies[_bodyIndex].Rotation = Rand.RandomFloat(-Settings.Pi, Settings.Pi);
+            _bodies[_bodyIndex].Rotation = Rand.RandomFloat(-MathHelper.Pi, MathHelper.Pi);
             _bodies[_bodyIndex].Tag = index;
 
             if (index == 4)

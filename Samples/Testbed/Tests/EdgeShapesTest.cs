@@ -233,7 +233,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             if (advanceRay)
             {
-                _angle += 0.25f * Settings.Pi / 180.0f;
+                _angle += 0.25f * MathHelper.Pi / 180.0f;
             }
         }
 

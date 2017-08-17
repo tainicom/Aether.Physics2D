@@ -79,7 +79,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 Body body = World.CreateRectangle(2, 2, 5, new Vector2(-10.0f, 10.0f));
                 body.BodyType = BodyType.Dynamic;
-                body.Rotation = 0.5f * Settings.Pi;
+                body.Rotation = 0.5f * MathHelper.Pi;
 
                 Vector2 axis = new Vector2(2.0f, 1.0f);
                 axis.Normalize();
@@ -119,8 +119,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 polygonBody.IsBullet = true;
 
                 RevoluteJoint joint = JointFactory.CreateRevoluteJoint(World, ground, polygonBody, new Vector2(10, 0));
-                joint.LowerLimit = -0.25f * Settings.Pi;
-                joint.UpperLimit = 0.0f * Settings.Pi;
+                joint.LowerLimit = -0.25f * MathHelper.Pi;
+                joint.UpperLimit = 0.0f * MathHelper.Pi;
                 joint.LimitEnabled = true;
             }
 

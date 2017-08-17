@@ -52,11 +52,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 bodyB.LinearVelocity = new Vector2(-8.0f * w, 0.0f);
 
                 _joint = new RevoluteJoint(ground, bodyB, new Vector2(-10.0f, 12.0f), true);
-                _joint.MotorSpeed = 1.0f * Settings.Pi;
+                _joint.MotorSpeed = 1.0f * MathHelper.Pi;
                 _joint.MaxMotorTorque = 10000.0f;
                 _joint.MotorEnabled = false;
-                _joint.LowerLimit = -0.25f * Settings.Pi;
-                _joint.UpperLimit = 0.5f * Settings.Pi;
+                _joint.LowerLimit = -0.25f * MathHelper.Pi;
+                _joint.UpperLimit = 0.5f * MathHelper.Pi;
                 _joint.LimitEnabled = true;
                 _joint.CollideConnected = true;
 
@@ -75,8 +75,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 polygonBody.IsBullet = true;
 
                 RevoluteJoint joint = new RevoluteJoint(ground, polygonBody, new Vector2(20, 10), true);
-                joint.LowerLimit = -0.25f * Settings.Pi;
-                joint.UpperLimit = 0.0f * Settings.Pi;
+                joint.LowerLimit = -0.25f * MathHelper.Pi;
+                joint.UpperLimit = 0.0f * MathHelper.Pi;
                 joint.LimitEnabled = true;
 
                 World.Add(joint);

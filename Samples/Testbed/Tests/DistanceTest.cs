@@ -118,9 +118,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             if (keyboardManager.IsNewKeyPress(Keys.W))
                 _positionB.Y += 0.1f;
             if (keyboardManager.IsNewKeyPress(Keys.Q))
-                _angleB += 0.1f * Settings.Pi;
+                _angleB += 0.1f * MathHelper.Pi;
             if (keyboardManager.IsNewKeyPress(Keys.E))
-                _angleB -= 0.1f * Settings.Pi;
+                _angleB -= 0.1f * MathHelper.Pi;
 
             _transformB = new Transform(_positionB, _angleB);
         }

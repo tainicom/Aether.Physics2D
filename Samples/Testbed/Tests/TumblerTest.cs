@@ -52,7 +52,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             RevoluteJoint joint = JointFactory.CreateRevoluteJoint(World, ground, tumblerBody, new Vector2(0, 10), Vector2.Zero);
             joint.ReferenceAngle = 0.0f;
-            joint.MotorSpeed = 0.05f * Settings.Pi;
+            joint.MotorSpeed = 0.05f * MathHelper.Pi;
             joint.MaxMotorTorque = 1e8f;
             joint.MotorEnabled = true;
         }

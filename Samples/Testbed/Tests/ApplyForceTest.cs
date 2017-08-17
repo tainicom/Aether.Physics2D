@@ -73,7 +73,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             {
                 Transform xf1 = new Transform();
-                xf1.q.Phase = (0.3524f * Settings.Pi);
+                xf1.q.Phase = (0.3524f * MathHelper.Pi);
                 xf1.p = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf1.q);
 
                 Vertices vertices = new Vertices(3);
@@ -84,7 +84,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 PolygonShape poly1 = new PolygonShape(vertices, 4);
 
                 Transform xf2 = new Transform();
-                xf2.q.Phase= (-0.3524f * Settings.Pi);
+                xf2.q.Phase= (-0.3524f * MathHelper.Pi);
                 xf2.p = Complex.Multiply(new Vector2(-1.0f, 0.0f), ref xf2.q);
 
                 vertices[0] = Transform.Multiply(new Vector2(-1.0f, 0.0f), ref xf2);
@@ -96,7 +96,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _body = World.CreateBody();
                 _body.BodyType = BodyType.Dynamic;
                 _body.Position = new Vector2(0.0f, 2.0f);
-                _body.Rotation = Settings.Pi;
+                _body.Rotation = MathHelper.Pi;
                 _body.AngularDamping = 5.0f;
                 _body.LinearDamping = 0.8f;
                 _body.SleepingAllowed = true;

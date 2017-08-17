@@ -54,7 +54,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     Body body = World.CreateBody();
                     body.BodyType = BodyType.Dynamic;
                     body.Position = new Vector2(x + 5.0f, 1.05f + 2.5f * i);
-                    body.Rotation = Rand.RandomFloat(-Settings.Pi, Settings.Pi);
+                    body.Rotation = Rand.RandomFloat(-MathHelper.Pi, MathHelper.Pi);
 
                     body.CreateFixture(circle1);
                     body.CreateFixture(circle2);
@@ -65,7 +65,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Vertices box = PolygonTools.CreateRectangle(0.25f, 0.5f);
                 PolygonShape polygon1 = new PolygonShape(box, 2);
 
-                box = PolygonTools.CreateRectangle(0.25f, 0.5f, new Vector2(0.0f, -0.5f), 0.5f * Settings.Pi);
+                box = PolygonTools.CreateRectangle(0.25f, 0.5f, new Vector2(0.0f, -0.5f), 0.5f * MathHelper.Pi);
                 PolygonShape polygon2 = new PolygonShape(box, 2);
 
                 for (int i = 0; i < 10; ++i)
@@ -75,7 +75,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     Body body = World.CreateBody();
                     body.BodyType = BodyType.Dynamic;
                     body.Position = new Vector2(x - 5.0f, 1.05f + 2.5f * i);
-                    body.Rotation = Rand.RandomFloat(-Settings.Pi, Settings.Pi);
+                    body.Rotation = Rand.RandomFloat(-MathHelper.Pi, MathHelper.Pi);
 
                     body.CreateFixture(polygon1);
                     body.CreateFixture(polygon2);
@@ -84,7 +84,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             {
                 Transform xf1 = new Transform();
-                xf1.q.Phase = (0.3524f * Settings.Pi);
+                xf1.q.Phase = (0.3524f * MathHelper.Pi);
                 xf1.p = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf1.q);
 
                 Vertices vertices = new Vertices(3);
@@ -96,7 +96,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 PolygonShape triangle1 = new PolygonShape(vertices, 2);
 
                 Transform xf2 = new Transform();
-                xf2.q.Phase = (-0.3524f * Settings.Pi);
+                xf2.q.Phase = (-0.3524f * MathHelper.Pi);
                 xf2.p = Complex.Multiply(new Vector2(-1.0f, 0.0f), ref xf2.q);
 
                 vertices[0] = Transform.Multiply(new Vector2(-1.0f, 0.0f), ref xf2);
