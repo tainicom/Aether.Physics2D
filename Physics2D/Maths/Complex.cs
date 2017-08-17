@@ -92,6 +92,11 @@ namespace tainicom.Aether.Physics2D.Maths
             return new Complex( right.Real * left.Real + right.Imaginary * left.Imaginary,
                                 right.Real * left.Imaginary - right.Imaginary * left.Real);
         }
+        public static void Divide(ref Complex left, ref Complex right, out Complex result)
+        {
+            result = new Complex(right.Real * left.Real + right.Imaginary * left.Imaginary,
+                                 right.Real * left.Imaginary - right.Imaginary * left.Real);
+        }
 
         public static Vector2 Multiply(ref Vector2 left, ref Complex right)
         {
@@ -114,6 +119,11 @@ namespace tainicom.Aether.Physics2D.Maths
         {
             return new Vector2(left.X * right.Real + left.Y * right.Imaginary,
                                left.Y * right.Real - left.X * right.Imaginary);
+        }
+        public static void Divide(Vector2 left, ref Complex right, out Vector2 result)
+        {
+            result = new Vector2(left.X * right.Real + left.Y * right.Imaginary,
+                                 left.Y * right.Real - left.X * right.Imaginary);
         }
         
         public static Complex Conjugate(ref Complex value)
