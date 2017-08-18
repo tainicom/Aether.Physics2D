@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -1694,7 +1696,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <param name="poly2">The poly2.</param>
         /// <param name="xf2">The XF2.</param>
         /// <returns></returns>
-        private static float EdgeSeparation(PolygonShape poly1, ref Transform xf1, int edge1, PolygonShape poly2, ref Transform xf2)
+        private static float EdgeSeparation(PolygonShape poly1, ref Transform xf1To2, int edge1, PolygonShape poly2)
         {
             List<Vector2> vertices1 = poly1.Vertices;
             List<Vector2> normals1 = poly1.Normals;
@@ -1705,8 +1707,7 @@ namespace tainicom.Aether.Physics2D.Collision
             Debug.Assert(0 <= edge1 && edge1 < poly1.Vertices.Count);
 
             // Convert normal from poly1's frame into poly2's frame.
-            Vector2 normal1World = Complex.Multiply(normals1[edge1], ref xf1.q);
-            Vector2 normal1 = Complex.Divide(ref normal1World, ref xf2.q);
+            Vector2 normal1 = Complex.Multiply(normals1[edge1], ref xf1To2.q);
 
             // Find support vertex on poly2 for -normal.
             int index = 0;
@@ -1722,9 +1723,10 @@ namespace tainicom.Aether.Physics2D.Collision
                 }
             }
 
-            Vector2 v1 = Transform.Multiply(vertices1[edge1], ref xf1);
-            Vector2 v2 = Transform.Multiply(vertices2[index], ref xf2);
-            float separation = Vector2.Dot(v2 - v1, normal1World);
+            Vector2 v1 = Transform.Multiply(vertices1[edge1], ref xf1To2);
+            Vector2 v2 = vertices2[index];
+            float separation = Vector2.Dot(v2 - v1, normal1);
+
             return separation;
         }
 
@@ -1742,9 +1744,11 @@ namespace tainicom.Aether.Physics2D.Collision
             int count1 = poly1.Vertices.Count;
             List<Vector2> normals1 = poly1.Normals;
 
+            var xf1To2 = Transform.Divide(ref xf1, ref xf2);
+
             // Vector pointing from the centroid of poly1 to the centroid of poly2.
-            Vector2 d = Transform.Multiply(poly2.MassData.Centroid, ref xf2) - Transform.Multiply(poly1.MassData.Centroid, ref xf1);
-            Vector2 dLocal1 = Complex.Divide(ref d, ref xf1.q);
+            Vector2 c2local = Transform.Divide(poly2.MassData.Centroid, ref xf1To2);
+            Vector2 dLocal1 = c2local - poly1.MassData.Centroid;            
 
             // Find edge normal on poly1 that has the largest projection onto d.
             int edge = 0;
@@ -1760,15 +1764,15 @@ namespace tainicom.Aether.Physics2D.Collision
             }
 
             // Get the separation for the edge normal.
-            float s = EdgeSeparation(poly1, ref  xf1, edge, poly2, ref xf2);
+            float s = EdgeSeparation(poly1, ref xf1To2, edge, poly2);
 
             // Check the separation for the previous edge normal.
             int prevEdge = edge - 1 >= 0 ? edge - 1 : count1 - 1;
-            float sPrev = EdgeSeparation(poly1, ref  xf1, prevEdge, poly2, ref xf2);
+            float sPrev = EdgeSeparation(poly1, ref xf1To2, prevEdge, poly2);
 
             // Check the separation for the next edge normal.
             int nextEdge = edge + 1 < count1 ? edge + 1 : 0;
-            float sNext = EdgeSeparation(poly1, ref xf1, nextEdge, poly2, ref xf2);
+            float sNext = EdgeSeparation(poly1, ref xf1To2, nextEdge, poly2);
 
             // Find the best edge and the search direction.
             int bestEdge;
@@ -1800,7 +1804,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 else
                     edge = bestEdge + 1 < count1 ? bestEdge + 1 : 0;
 
-                s = EdgeSeparation(poly1, ref xf1, edge, poly2, ref xf2);
+                s = EdgeSeparation(poly1, ref xf1To2, edge, poly2);
 
                 if (s > bestSeparation)
                 {
