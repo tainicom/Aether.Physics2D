@@ -1138,7 +1138,6 @@ namespace tainicom.Aether.Physics2D.Collision
 
                 internal TempPolygon(int maxPolygonVertices)
                 {
-                    FixedArray8<Vector2> v = new FixedArray8<Vector2>();
                     Vertices = new Vector2[maxPolygonVertices];
                     Normals = new Vector2[maxPolygonVertices];
                     Count = 0;
