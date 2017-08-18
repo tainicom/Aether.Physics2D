@@ -717,7 +717,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Vector2 point;
                     float separation;
 
-                    PositionSolverManifold.Initialize(pc, xfA, xfB, j, out normal, out point, out separation);
+                    PositionSolverManifold.Initialize(pc, ref xfA, ref xfB, j, out normal, out point, out separation);
 
                     Vector2 rA = point - cA;
                     Vector2 rB = point - cB;
@@ -808,7 +808,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Vector2 point;
                     float separation;
 
-                    PositionSolverManifold.Initialize(pc, xfA, xfB, j, out normal, out point, out separation);
+                    PositionSolverManifold.Initialize(pc, ref xfA, ref xfB, j, out normal, out point, out separation);
 
                     Vector2 rA = point - cA;
                     Vector2 rB = point - cB;
@@ -930,7 +930,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         private static class PositionSolverManifold
         {
-            public static void Initialize(ContactPositionConstraint pc, Transform xfA, Transform xfB, int index, out Vector2 normal, out Vector2 point, out float separation)
+            public static void Initialize(ContactPositionConstraint pc, ref Transform xfA, ref Transform xfB, int index, out Vector2 normal, out Vector2 point, out float separation)
             {
                 Debug.Assert(pc.pointCount > 0);
 
@@ -953,7 +953,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     case ManifoldType.FaceA:
                         {
-                            normal = Complex.Multiply(ref pc.localNormal, ref xfA.q);
+                            Complex.Multiply(ref pc.localNormal, ref xfA.q, out normal);
                             Vector2 planePoint = Transform.Multiply(ref pc.localPoint, ref xfA);
 
                             Vector2 clipPoint = Transform.Multiply(pc.localPoints[index], ref xfB);
@@ -964,7 +964,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     case ManifoldType.FaceB:
                         {
-                            normal = Complex.Multiply(ref pc.localNormal, ref xfB.q);
+                            Complex.Multiply(ref pc.localNormal, ref xfB.q, out normal);
                             Vector2 planePoint = Transform.Multiply(ref pc.localPoint, ref xfB);
 
                             Vector2 clipPoint = Transform.Multiply(pc.localPoints[index], ref xfA);

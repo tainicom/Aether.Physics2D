@@ -103,6 +103,11 @@ namespace tainicom.Aether.Physics2D.Maths
             return new Vector2(left.X * right.Real - left.Y * right.Imaginary,
                                left.Y * right.Real + left.X * right.Imaginary);
         }
+        public static void Multiply(ref Vector2 left, ref Complex right, out Vector2 result)
+        {
+            result = new Vector2(left.X * right.Real - left.Y * right.Imaginary,
+                                 left.Y * right.Real + left.X * right.Imaginary);
+        }
         public static Vector2 Multiply(Vector2 left, ref Complex right)
         {
             return new Vector2(left.X * right.Real - left.Y * right.Imaginary,
