@@ -20,8 +20,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 
             Body box = World.CreateRectangle(5, 5, 5);
-            box.Restitution = 0.8f;
-            box.Friction = 0.9f;
+            box.SetRestitution(0.8f);
+            box.SetFriction(0.9f);
             box.BodyType = BodyType.Dynamic;
             box.Position = new Vector2(10, 10);
             box.SleepingAllowed = false;

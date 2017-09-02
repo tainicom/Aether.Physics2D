@@ -52,11 +52,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
                 Body wheel1 = World.CreateCircle(0.4f, 1, new Vector2(-1.0f, 0.35f));
                 wheel1.BodyType = BodyType.Dynamic;
-                wheel1.Friction = 0.9f;
+                wheel1.SetFriction(0.9f);
 
                 Body wheel2 = World.CreateCircle(0.4f, 1, new Vector2(1.0f, 0.4f));
                 wheel2.BodyType = BodyType.Dynamic;
-                wheel2.Friction = 0.9f;
+                wheel2.SetFriction(0.9f);
 
                 Vector2 axis = new Vector2(0.0f, 1.0f);
 
@@ -169,7 +169,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 Body body = World.CreateRectangle(4, 1, 2, new Vector2(0, 35));
                 body.BodyType = BodyType.Dynamic;
-                body.Friction = 0.6f;
+                body.SetFriction(0.6f);
 
                 MotorJoint motorJoint = JointFactory.CreateMotorJoint(World, ground, body);
                 motorJoint.MaxForce = 1000.0f;

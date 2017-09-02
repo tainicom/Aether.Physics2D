@@ -45,7 +45,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             // Define motorized body
             Body body = World.CreateRectangle(4, 1, 2, new Vector2(0, 8));
             body.BodyType = BodyType.Dynamic;
-            body.Friction = 0.6f;
+            body.SetFriction(0.6f);
 
             _joint = new MotorJoint(ground, body);
             _joint.MaxForce = 1000.0f;

@@ -45,7 +45,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                                                                       new Vector2(x * 2 - countX, y * 2 + 5));
                     //Fixture currentFixture = World.CreateCircle(0.2f, 10f, new Vector2(x - countX, y  + 5));
                     currentFixture.BodyType = BodyType.Dynamic;
-                    currentFixture.Friction = 0.5f;
+                    currentFixture.SetFriction(0.5f);
                     currentFixture.SetTransform(currentFixture.Position, 0.6f);
                     //currentFixture.CollidesWith = Category.Cat10;
                 }
@@ -56,10 +56,10 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Body right = World.CreateRectangle(1, 100, 1, new Vector2(35, 0));
             Body left = World.CreateRectangle(1, 100, 1, new Vector2(-35, 0));
 
-            floor.Friction = 0.2f;
-            ceiling.Friction = 0.2f;
-            right.Friction = 0.2f;
-            left.Friction = 0.2f;
+            floor.SetFriction(0.2f);
+            ceiling.SetFriction(0.2f);
+            right.SetFriction(0.2f);
+            left.SetFriction(0.2f);
         }
 
         public void DrawPointForce()

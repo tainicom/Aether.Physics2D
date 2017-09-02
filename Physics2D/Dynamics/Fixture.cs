@@ -225,7 +225,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             set
             {
                 Debug.Assert(!float.IsNaN(value));
-
                 _friction = value;
             }
         }
@@ -241,7 +240,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             set
             {
                 Debug.Assert(!float.IsNaN(value));
-
                 _restitution = value;
             }
         }

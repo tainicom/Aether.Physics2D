@@ -576,54 +576,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
         }
 
-        public float Restitution
-        {
-            get
-            {
-                float res = 0;
-
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    res += f.Restitution;
-                }
-
-                return FixtureList.Count > 0 ? res / FixtureList.Count : 0;
-            }
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.Restitution = value;
-                }
-            }
-        }
-
-        public float Friction
-        {
-            get
-            {
-                float res = 0;
-
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    res += f.Friction;
-                }
-
-                return FixtureList.Count > 0 ? res / FixtureList.Count : 0;
-            }
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.Friction = value;
-                }
-            }
-        }
-
         public Category CollisionCategories
         {
             set
@@ -1293,6 +1245,26 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     FixtureList[i].RestoreCollisionWith(other.FixtureList[j]);
                 }
             }
+        }
+
+        /// <summary>
+        /// Set restitution on all fixtures.
+        /// </summary>
+        /// <param name="restitution"></param>
+        public void SetRestitution(float restitution)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].Restitution = restitution;
+        }
+
+        /// <summary>
+        /// Set friction on all fixtures.
+        /// </summary>
+        /// <param name="friction"></param>
+        public void SetFriction(float friction)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].Friction = friction;
         }
 
         /// <summary>

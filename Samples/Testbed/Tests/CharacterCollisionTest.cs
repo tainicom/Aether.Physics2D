@@ -140,7 +140,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             // Circle character
             _character = World.CreateCircle(0.25f, 20, new Vector2(-7.0f, 6.0f));
             _character.BodyType = BodyType.Dynamic;
-            _character.Friction = 1.0f;
+            _character.SetFriction(1.0f);
             _character.SleepingAllowed = false;
         }
 

@@ -123,7 +123,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 for (int i = 0; i < terrain.Count - 1; ++i)
                     _ground.CreateEdge(terrain[i], terrain[i + 1]);
 
-                _ground.Friction = 0.6f;
+                _ground.SetFriction(0.6f);
             }
 
             // teeter board
@@ -219,7 +219,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _wheelBack.BodyType = BodyType.Dynamic;
                 _wheelBack.Position = new Vector2(-1.709f, -0.78f);
                 _wheelBack.CreateFixture(wheelShape);
-                _wheelBack.Friction = 0.9f;
+                _wheelBack.SetFriction(0.9f);
 
                 wheelShape.Density = 1;
                 _wheelFront = World.CreateBody();

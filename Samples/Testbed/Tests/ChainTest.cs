@@ -46,7 +46,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 {
                     Body body = World.CreateRectangle(1.2f, 0.25f, 20, new Vector2(0.5f + i, y));
                     body.BodyType = BodyType.Dynamic;
-                    body.Friction = 0.2f;
+                    body.SetFriction(0.2f);
 
                     Vector2 anchor = new Vector2(i, y);
                     RevoluteJoint joint = new RevoluteJoint(prevBody, body, anchor, true);

@@ -45,8 +45,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             Body circle = World.CreateCircle(0.32f, 1);
             circle.BodyType = BodyType.Dynamic;
-            circle.Restitution = 1f;
-            circle.Friction = 0;
+            circle.SetRestitution(1f);
+            circle.SetFriction(0);
 
             circle.ApplyLinearImpulse(new Vector2(200, 50));
         }

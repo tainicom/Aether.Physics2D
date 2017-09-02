@@ -86,7 +86,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 x += 40.0f;
                 ground.CreateEdge(new Vector2(x, 0.0f), new Vector2(x, 20.0f));
 
-                ground.Friction = 0.6f;
+                ground.SetFriction(0.6f);
             }
 
             // Teeter
@@ -186,13 +186,13 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _wheel1.BodyType = BodyType.Dynamic;
                 _wheel1.Position = new Vector2(-1.0f, 0.35f);
                 _wheel1.CreateFixture(circle);
-                _wheel1.Friction = 0.9f;
+                _wheel1.SetFriction(0.9f);
 
                 _wheel2 = World.CreateBody();
                 _wheel2.BodyType = BodyType.Dynamic;
                 _wheel2.Position = new Vector2(1.0f, 0.4f);
                 _wheel2.CreateFixture(circle);
-                _wheel2.Friction = 0.9f;
+                _wheel2.SetFriction(0.9f);
 
                 Vector2 axis = new Vector2(0.0f, 1.0f);
                 _spring1 = new WheelJoint(_car, _wheel1, _wheel1.Position, axis, true);

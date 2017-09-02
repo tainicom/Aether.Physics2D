@@ -44,7 +44,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 Body body = World.CreateCircle(1.0f, 1, new Vector2(-10.0f + 3.0f * i, 20.0f));
                 body.BodyType = BodyType.Dynamic;
-                body.Restitution = restitution[i];
+                body.SetRestitution(restitution[i]);
             }
         }
 

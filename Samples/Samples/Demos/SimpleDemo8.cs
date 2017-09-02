@@ -63,7 +63,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             {
                 _circle[i] = World.CreateCircle(1.5f, 1f, position);
                 _circle[i].BodyType = BodyType.Dynamic;
-                _circle[i].Restitution = restitution;
+                _circle[i].SetRestitution(restitution);
                 position.X += 6f;
                 restitution += 0.2f;
             }

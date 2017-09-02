@@ -61,8 +61,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 Body body = _bodies[i];
                 body.BodyType = BodyType.Dynamic;
                 body.Position = Vector2.Lerp(startPosition, endPosition, i / (float)(count - 1));
-                body.Restitution = .7f;
-                body.Friction = .2f;
+                body.SetRestitution(.7f);
+                body.SetFriction(.2f);
                 body.CollisionCategories = CollisionCategories;
                 body.CollidesWith = CollidesWith;
             }

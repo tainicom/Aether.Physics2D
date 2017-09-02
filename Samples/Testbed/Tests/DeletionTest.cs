@@ -35,7 +35,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Body body = World.CreateCircle(0.4f, 1);
             body.Position = new Vector2(Rand.RandomFloat(-35, 35), 10);
             body.BodyType = BodyType.Dynamic;
-            body.Restitution = 1f;
+            body.SetRestitution(1f);
 
             base.Update(settings, gameTime);
         }
