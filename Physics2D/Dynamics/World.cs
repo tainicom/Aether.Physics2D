@@ -927,7 +927,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             BodyList.Add(body);
 
             if (BodyAdded != null)
-                BodyAdded(body);
+                BodyAdded(this, body);
         }
 
         /// <summary>
@@ -998,11 +998,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
             body.FixtureList.Clear();
 
-            // Remove world body list.
+            body._world = null;
             BodyList.Remove(body);
 
             if (BodyRemoved != null)
-                BodyRemoved(body);
+                BodyRemoved(this, body);
 
 #if USE_AWAKE_BODY_SET
                     Debug.Assert(!AwakeBodySet.Contains(body));
@@ -1080,7 +1080,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             if (JointAdded != null)
-                JointAdded(joint);
+                JointAdded(this, joint);
 
             // Note: creating a joint doesn't wake the bodies.
         }
@@ -1189,7 +1189,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             if (JointRemoved != null)
-                JointRemoved(joint);
+                JointRemoved(this, joint);
         }
 
         /// <summary>
@@ -1430,7 +1430,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ControllerList.Add(controller);
 
             if (ControllerAdded != null)
-                ControllerAdded(controller);
+                ControllerAdded(this, controller);
         }
 
         public void Remove(Controller controller)
@@ -1440,10 +1440,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             if (ControllerList.Contains(controller))
             {
+                controller.World = null;
                 ControllerList.Remove(controller);
 
                 if (ControllerRemoved != null)
-                    ControllerRemoved(controller);
+                    ControllerRemoved(this, controller);
             }
         }
 
