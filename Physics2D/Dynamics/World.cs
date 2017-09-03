@@ -790,9 +790,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
         }
 
-        public List<Controller> ControllerList { get; private set; }
+        public readonly List<Controller> ControllerList;
 
-        public List<BreakableBody> BreakableBodyList { get; private set; }
+        public readonly List<BreakableBody> BreakableBodyList;
 
         public float UpdateTime { get; private set; }
 
@@ -841,13 +841,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Get the contact manager for testing.
         /// </summary>
         /// <value>The contact manager.</value>
-        public ContactManager ContactManager { get; private set; }
+        public readonly ContactManager ContactManager;
 
         /// <summary>
         /// Get the world body list.
         /// </summary>
-        /// <value>Thehead of the world body list.</value>
-        public List<Body> BodyList { get; private set; }
+        /// <value>The head of the world body list.</value>
+        public readonly List<Body> BodyList;
 
 #if USE_AWAKE_BODY_SET
         public HashSet<Body> AwakeBodySet { get; private set; }
@@ -864,7 +864,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Get the world joint list. 
         /// </summary>
         /// <value>The joint list.</value>
-        public List<Joint> JointList { get; private set; }
+        public readonly List<Joint> JointList;
 
         /// <summary>
         /// Get the world contact list. 
@@ -996,8 +996,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 body.FixtureList[i].DestroyProxies(ContactManager.BroadPhase);
                 body.FixtureList[i].Destroy();
             }
-
-            body.FixtureList = null;
+            body.FixtureList.Clear();
 
             // Remove world body list.
             BodyList.Remove(body);

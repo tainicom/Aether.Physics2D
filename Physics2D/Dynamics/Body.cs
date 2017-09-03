@@ -417,7 +417,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Gets all the fixtures attached to this body.
         /// </summary>
         /// <value>The fixture list.</value>
-        public List<Fixture> FixtureList { get; internal set; }
+        public readonly List<Fixture> FixtureList;
 
         /// <summary>
         /// Get the list of all joints attached to this body.
