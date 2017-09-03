@@ -909,6 +909,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
+            if (body == null)
+                throw new ArgumentNullException("body");
+            if (BodyList.Contains(body))
+                throw new ArgumentException("You are adding the same body more than once.", "body");
 
 #if USE_AWAKE_BODY_SET
                     Debug.Assert(!body.IsDisposed);
@@ -959,12 +963,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
-
-            Debug.Assert(BodyList.Count > 0);
-
-            // You tried to remove a body that is not contained in the BodyList.
-            // Are you removing the body more than once?
-            Debug.Assert(BodyList.Contains(body));
+            if (body == null)
+                throw new ArgumentNullException("body");
+                if (body.World != this)
+                throw new ArgumentException("You are removing a body that is not in the simulation.", "body");
 
 #if USE_AWAKE_BODY_SET
                     Debug.Assert(!AwakeBodySet.Contains(body));
@@ -1030,6 +1032,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
+            if (joint == null)
+                throw new ArgumentNullException("joint");
+            if (JointList.Contains(joint))
+                throw new ArgumentException("You are adding the same joint more than once.", "joint");
 
             // Connect to the world list.
             JointList.Add(joint);
@@ -1106,6 +1112,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
+            if (joint == null)
+                throw new ArgumentNullException("joint");
+            if (!JointList.Contains(joint))
+                throw new ArgumentException("You are removing a joint that is not in the simulation.", "joint");
 
             bool collideConnected = joint.CollideConnected;
 
@@ -1424,7 +1434,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public void Add(Controller controller)
         {
-            Debug.Assert(!ControllerList.Contains(controller), "You are adding the same controller more than once.");
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+            if (controller == null)
+                throw new ArgumentNullException("controller");
+            if (controller.World != null)
+            {
+                if (controller.World == this)
+                    throw new ArgumentException("You are adding the same controller more than once.", "controller");
+                else
+                    throw new ArgumentException("Controller belongs to another world.", "controller");
+            }
 
             controller.World = this;
             ControllerList.Add(controller);
@@ -1435,28 +1455,36 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public void Remove(Controller controller)
         {
-            Debug.Assert(ControllerList.Contains(controller),
-                         "You are removing a controller that is not in the simulation.");
+            if (IsStepping)
+                throw new InvalidOperationException("World is stepping.");
+            if (controller == null)
+                throw new ArgumentNullException("controller");
+            if (controller.World != this)
+                    throw new ArgumentException("You are removing a controller that is not in the simulation.", "controller");
 
-            if (ControllerList.Contains(controller))
-            {
-                controller.World = null;
-                ControllerList.Remove(controller);
+            controller.World = null;
+            ControllerList.Remove(controller);
 
-                if (ControllerRemoved != null)
-                    ControllerRemoved(this, controller);
-            }
+            if (ControllerRemoved != null)
+                ControllerRemoved(this, controller);
         }
 
         public void Add(BreakableBody breakableBody)
         {
+            if (breakableBody == null)
+                throw new ArgumentNullException("breakableBody");
+            if (BreakableBodyList.Contains(breakableBody))
+                throw new ArgumentException("You are adding the same BreakableBodyList more than once.", "breakableBody");
+
             BreakableBodyList.Add(breakableBody);
         }
 
         public void Remove(BreakableBody breakableBody)
         {
-            //The breakable body list does not contain the body you tried to remove.
-            Debug.Assert(BreakableBodyList.Contains(breakableBody));
+            if (breakableBody == null)
+                throw new ArgumentNullException("breakableBody");
+            if (!BreakableBodyList.Contains(breakableBody))
+                throw new ArgumentException("You are removing a breakableBody that is not in the simulation.", "breakableBody");
 
             BreakableBodyList.Remove(breakableBody);
         }
