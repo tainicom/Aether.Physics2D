@@ -67,7 +67,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
             DebugView.LoadContent(GameInstance.GraphicsDevice, GameInstance.Content);
         }
 
-        protected virtual void JointRemoved(Joint joint)
+        protected virtual void JointRemoved(World sender, Joint joint)
         {
             if (_fixedMouseJoint == joint)
                 _fixedMouseJoint = null;

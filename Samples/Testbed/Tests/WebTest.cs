@@ -114,12 +114,12 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        private void BodyRemovedFired(Body body)
+        private void BodyRemovedFired(World sender, Body body)
         {
             _removedBodies++;
         }
 
-        private void JointRemovedFired(Joint joint)
+        private void JointRemovedFired(World sender, Joint joint)
         {
             if (joint is DistanceJoint)
                 _removedJoints++;
@@ -168,7 +168,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Joints removed: " + _removedJoints);
         }
 
-        protected override void JointRemoved(Joint joint)
+        protected override void JointRemoved(World sender, Joint joint)
         {
             for (int i = 0; i < 8; ++i)
             {
@@ -179,7 +179,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 }
             }
 
-            base.JointRemoved(joint);
+            base.JointRemoved(sender, joint);
         }
 
         internal static Test Create()

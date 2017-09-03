@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -48,11 +50,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
     public delegate void FixtureDelegate(Fixture fixture);
 
-    public delegate void JointDelegate(Joint joint);
+    public delegate void JointDelegate(World sender, Joint joint);
 
-    public delegate void BodyDelegate(Body body);
+    public delegate void BodyDelegate(World sender, Body body);
 
-    public delegate void ControllerDelegate(Controller controller);
+    public delegate void ControllerDelegate(World sender, Controller controller);
 
     public delegate bool CollisionFilterDelegate(Fixture fixtureA, Fixture fixtureB);
 
