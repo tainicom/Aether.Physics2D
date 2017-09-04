@@ -20,14 +20,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             ground.OnSeparation += OnSeparation;
         }
 
-        private bool OnCollision(Fixture fixtureA, Fixture fixtureB, Contact contact)
+        private bool OnCollision(Fixture sender, Fixture other, Contact contact)
         {
             return true;
         }
 
-        private void OnSeparation(Fixture fixtureA, Fixture fixtureB)
+        private void OnSeparation(Fixture sender, Fixture other, Contact Contact)
         {
-            fixtureB.Body.World.Remove(fixtureB.Body);
+            other.Body.World.Remove(other.Body);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

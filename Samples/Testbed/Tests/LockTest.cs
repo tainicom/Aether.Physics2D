@@ -33,7 +33,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //Fixture()
         }
 
-        private bool OnCollision(Fixture fixturea, Fixture fixtureb, Contact manifold)
+        private bool OnCollision(Fixture sender, Fixture other, Contact contact)
         {
             //_rectangle.CreateFixture(_rectangle.Shape); //Calls the constructor in Fixture
             //_rectangle.Remove(_rectangle);

@@ -348,12 +348,13 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 {
                     //Report the separation to both participants:
                     if (FixtureA != null && FixtureA.OnSeparation != null)
-                        FixtureA.OnSeparation(FixtureA, FixtureB);
+                        FixtureA.OnSeparation(FixtureA, FixtureB, this);
 
                     //Reverse the order of the reported fixtures. The first fixture is always the one that the
                     //user subscribed to.
                     if (FixtureB != null && FixtureB.OnSeparation != null)
-                        FixtureB.OnSeparation(FixtureB, FixtureA);
+                        FixtureB.OnSeparation(FixtureB, FixtureA, this);
+
 
                     if (contactManager.EndContact != null)
                         contactManager.EndContact(this);
