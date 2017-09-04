@@ -1189,40 +1189,18 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _xf.p = _sweep.C - Complex.Multiply(ref _sweep.LocalCenter, ref _xf.q);
         }
 
+        internal OnCollisionEventHandler onCollisionEventHandler;
         public event OnCollisionEventHandler OnCollision
         {
-            add
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    FixtureList[i].OnCollision += value;
-                }
-            }
-            remove
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    FixtureList[i].OnCollision -= value;
-                }
-            }
+            add { onCollisionEventHandler += value; }
+            remove { onCollisionEventHandler -= value; }
         }
 
+        internal OnSeparationEventHandler onSeparationEventHandler;
         public event OnSeparationEventHandler OnSeparation
         {
-            add
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    FixtureList[i].OnSeparation += value;
-                }
-            }
-            remove
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    FixtureList[i].OnSeparation -= value;
-                }
-            }
+            add { onSeparationEventHandler += value; }
+            remove { onSeparationEventHandler -= value; }
         }
 
         public void IgnoreCollisionWith(Body other)
