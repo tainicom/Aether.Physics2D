@@ -1009,6 +1009,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 body.FixtureList[i].DestroyProxies(ContactManager.BroadPhase);
                 body.FixtureList[i].Destroy();
+                if (FixtureRemoved != null)
+                    FixtureRemoved(body.FixtureList[i]);
             }
             body.FixtureList.Clear();
 

@@ -638,6 +638,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             FixtureList.Remove(fixture);
             fixture.Destroy();
+            if (World.FixtureRemoved != null)
+                World.FixtureRemoved(fixture);
             fixture.Body = null;
 
             ResetMassData();

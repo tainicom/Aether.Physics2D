@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -405,12 +407,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             OnCollision = null;
             OnSeparation = null;
             AfterCollision = null;
-
-            if (Body.World.FixtureRemoved != null)
-                Body.World.FixtureRemoved(this);
-
-            OnSeparation = null;
-            OnCollision = null;
         }
 
         // These support body activation/deactivation.
