@@ -35,8 +35,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             borders.Add(new Vector2(-halfWidth, -halfHeight));
 
             _anchor = world.CreateLoopShape(borders);
-            _anchor.CollisionCategories = Category.All;
-            _anchor.CollidesWith = Category.All;
+            _anchor.SetCollisionCategories(Category.All);
+            _anchor.SetCollidesWith(Category.All);
 
             _basicEffect = new BasicEffect(screenManager.GraphicsDevice);
             _basicEffect.VertexColorEnabled = true;

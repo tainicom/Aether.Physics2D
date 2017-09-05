@@ -576,72 +576,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
         }
 
-        public Category CollisionCategories
-        {
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.CollisionCategories = value;
-                }
-            }
-        }
-
-        public Category CollidesWith
-        {
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.CollidesWith = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Body objects can define which categories of bodies they wish to ignore CCD with. 
-        /// This allows certain bodies to be configured to ignore CCD with objects that
-        /// aren't a penetration problem due to the way content has been prepared.
-        /// This is compared against the other Body's fixture CollisionCategories within World.SolveTOI().
-        /// </summary>
-        public Category IgnoreCCDWith
-        {
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.IgnoreCCDWith = value;
-                }
-            }
-        }
-
-        public short CollisionGroup
-        {
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.CollisionGroup = value;
-                }
-            }
-        }
-
-        public bool IsSensor
-        {
-            set
-            {
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    Fixture f = FixtureList[i];
-                    f.IsSensor = value;
-                }
-            }
-        }
-
         public bool IgnoreCCD { get; set; }
 
         /// <summary>
@@ -1202,7 +1136,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             add { onSeparationEventHandler += value; }
             remove { onSeparationEventHandler -= value; }
         }
-
+        
+        /// <summary>
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
         public void IgnoreCollisionWith(Body other)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1214,6 +1151,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
         }
 
+        /// <summary>
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
         public void RestoreCollisionWith(Body other)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1227,6 +1167,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Set restitution on all fixtures.
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
         /// <param name="restitution"></param>
         public void SetRestitution(float restitution)
@@ -1237,12 +1178,62 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Set friction on all fixtures.
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
         /// <param name="friction"></param>
         public void SetFriction(float friction)
         {
             for (int i = 0; i < FixtureList.Count; i++)
                 FixtureList[i].Friction = friction;
+        }
+
+        /// <summary>
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
+        public void SetCollisionCategories(Category category)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].CollisionCategories = category;
+        }
+
+        /// <summary>
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
+        public void SetCollidesWith(Category category)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].CollidesWith = category;
+        }
+
+        /// <summary>
+        /// Body objects can define which categories of bodies they wish to ignore CCD with. 
+        /// This allows certain bodies to be configured to ignore CCD with objects that
+        /// aren't a penetration problem due to the way content has been prepared.
+        /// This is compared against the other Body's fixture CollisionCategories within World.SolveTOI().
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
+        public void SetIgnoreCCDWith(Category category)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].IgnoreCCDWith = category;
+        }
+
+        /// <summary>
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
+        public void SetCollisionGroup(short collisionGroup)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].CollisionGroup = collisionGroup;
+        }
+
+        /// <summary>
+        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
+        /// </summary>
+        public void SetIsSensor(bool isSensor)
+        {
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].IsSensor = isSensor;
         }
 
         /// <summary>
