@@ -71,34 +71,19 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public PhysicsLogicFilter PhysicsLogicFilter;
         public ControllerFilter ControllerFilter;
 
-        internal Body(World world, Vector2 position = new Vector2(), float rotation = 0, BodyType bodyType = BodyType.Static)
+        internal Body(World world)
         {
             FixtureList = new List<Fixture>();
 
             _world = world;
+
             _enabled = true;
             _awake = true;
             _sleepingAllowed = true;
+            _xf.q = Complex.One;
 
-            BodyType = bodyType;
-
-            _xf.q.Phase = rotation;
-
-            //FPE: optimization
-            if (position != Vector2.Zero)
-            {
-                _xf.p = position;
-                _sweep.C0 = _xf.p;
-                _sweep.C = _xf.p;
-            }
-
-            //FPE: optimization
-            if (rotation != 0)
-            {
-                _sweep.A0 = rotation;
-                _sweep.A = rotation;
-            }
-
+            BodyType = BodyType.Static;
+            
             world.AddAsync(this); //FPE note: bodies can't live without a World
         }
 

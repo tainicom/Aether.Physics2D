@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -17,7 +19,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
     {
         public virtual Body CreateBody(Vector2 position = new Vector2(), float rotation = 0, BodyType bodyType = BodyType.Static)
         {
-            Body body = new Body(this, position, rotation, bodyType);
+            Body body = new Body(this);
+            body.Position = position;
+            body.Rotation = rotation;
+            body.BodyType = bodyType;
+
             return body;
         }
 
