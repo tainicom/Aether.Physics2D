@@ -28,7 +28,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private void OnSeparation(Fixture sender, Fixture other, Contact contact)
         {
             if (other.Body.World.IsStepping)
-                other.Body.World.Remove(other.Body);
+                other.Body.World.RemoveAsync(other.Body);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

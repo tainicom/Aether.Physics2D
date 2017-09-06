@@ -891,26 +891,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Add a rigid body.
         /// </summary>
         /// <returns></returns>
-        protected internal virtual void Add(Body body)
-        {
-            if (body == null)
-                throw new ArgumentNullException("body");
-
-            // TODO: check body.World to see if body belongs to another world,
-            //       or if it's allready added to this World.
-
-            if (IsStepping)
-            {
-                if (!_bodyAddList.Contains(body))
-                    _bodyAddList.Add(body);
-                else
-                    Debug.WriteLine("You are adding the same body more than once.");
-            }
-            else
-                Add_Immediate(body);
-        }
-
-        private void Add_Immediate(Body body)
+        protected virtual void Add(Body body)
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
@@ -946,29 +927,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="body">The body.</param>
         public virtual void Remove(Body body)
         {
-            if (body == null)
-                throw new ArgumentNullException("body");
-
-            if (IsStepping)
-            {
-                if (!_bodyRemoveList.Contains(body))
-                    _bodyRemoveList.Add(body);
-                else
-                    Debug.WriteLine("The body is already marked for removal. You are removing the body more than once.");
-            }
-            else
-                Remove_Immediate(body);
-
-#if USE_AWAKE_BODY_SET
-            if (AwakeBodySet.Contains(body))
-            {
-                AwakeBodySet.Remove(body);
-            }
-#endif
-        }
-
-        private void Remove_Immediate(Body body)
-        {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
             if (body == null)
@@ -986,7 +944,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 JointEdge je0 = je;
                 je = je.Next;
 
-                Remove_Immediate(je0.Joint);
+                Remove(je0.Joint);
             }
             body.JointList = null;
 
@@ -1030,22 +988,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="joint">The joint.</param>
         public void Add(Joint joint)
-        {
-            if (joint == null)
-                throw new ArgumentNullException("joint");
-
-            if (IsStepping)
-            {
-                if (!_jointAddList.Contains(joint))
-                    _jointAddList.Add(joint);
-                else
-                    Debug.WriteLine("You are adding the same joint more than once.");
-            }
-            else
-                Add_Immediate(joint);
-        }
-
-        private void Add_Immediate(Joint joint)
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
@@ -1113,22 +1055,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="joint">The joint.</param>
         public void Remove(Joint joint)
-        {
-            if (joint == null)
-                throw new ArgumentNullException("joint");
-
-            if (IsStepping)
-            {
-                if (!_jointRemoveList.Contains(joint))
-                    _jointRemoveList.Add(joint);
-                else
-                    Debug.WriteLine("The joint is already marked for removal. You are removing the joint more than once.");
-            }
-            else
-                Remove_Immediate(joint);
-        }
-        
-        private void Remove_Immediate(Joint joint)
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
@@ -1222,8 +1148,100 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 JointRemoved(this, joint);
         }
 
+
         /// <summary>
-        /// All adds and removes are cached by the World duing a World step.
+        /// Add a rigid body.
+        /// </summary>
+        /// <returns></returns>
+        internal void AddAsync(Body body)
+        {
+            if (body == null)
+                throw new ArgumentNullException("body");
+
+            // TODO: check body.World to see if body belongs to another world,
+            //       or if it's allready added to this World.
+
+            if (IsStepping)
+            {
+                if (!_bodyAddList.Contains(body))
+                    _bodyAddList.Add(body);
+                else
+                    Debug.WriteLine("You are adding the same body more than once.");
+            }
+            else
+                Add(body);
+        }
+
+        /// <summary>
+        /// Destroy a rigid body.
+        /// Warning: This automatically deletes all associated shapes and joints.
+        /// </summary>
+        /// <param name="body">The body.</param>
+        public void RemoveAsync(Body body)
+        {
+            if (body == null)
+                throw new ArgumentNullException("body");
+
+            if (IsStepping)
+            {
+                if (!_bodyRemoveList.Contains(body))
+                    _bodyRemoveList.Add(body);
+                else
+                    Debug.WriteLine("The body is already marked for removal. You are removing the body more than once.");
+            }
+            else
+                Remove(body);
+
+#if USE_AWAKE_BODY_SET
+            if (AwakeBodySet.Contains(body))
+            {
+                AwakeBodySet.Remove(body);
+            }
+#endif
+        }
+
+        /// <summary>
+        /// Create a joint to constrain bodies together. This may cause the connected bodies to cease colliding.
+        /// </summary>
+        /// <param name="joint">The joint.</param>
+        public void AddAsync(Joint joint)
+        {
+            if (joint == null)
+                throw new ArgumentNullException("joint");
+
+            if (IsStepping)
+            {
+                if (!_jointAddList.Contains(joint))
+                    _jointAddList.Add(joint);
+                else
+                    Debug.WriteLine("You are adding the same joint more than once.");
+            }
+            else
+                Add(joint);
+        }
+        
+        /// <summary>
+        /// Destroy a joint. This may cause the connected bodies to begin colliding.
+        /// </summary>
+        /// <param name="joint">The joint.</param>
+        public void RemoveAsync(Joint joint)
+        {
+            if (joint == null)
+                throw new ArgumentNullException("joint");
+
+            if (IsStepping)
+            {
+                if (!_jointRemoveList.Contains(joint))
+                    _jointRemoveList.Add(joint);
+                else
+                    Debug.WriteLine("The joint is already marked for removal. You are removing the joint more than once.");
+            }
+            else
+                Remove(joint);
+        }
+        
+        /// <summary>
+        /// All Async adds and removes are cached by the World during a World step.
         /// To process the changes before the world updates again, call this method.
         /// </summary>
         public void ProcessChanges()
@@ -1232,7 +1250,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (_bodyAddList.Count > 0)
             {
                 foreach (Body body in _bodyAddList)
-                    Add_Immediate(body);
+                    Add(body);
                 _bodyAddList.Clear();
             }
             
@@ -1240,7 +1258,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (_jointAddList.Count > 0)
             {
                 foreach (Joint joint in _jointAddList)
-                    Add_Immediate(joint);
+                    Add(joint);
                 _jointAddList.Clear();
             }
 
@@ -1248,7 +1266,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (_bodyRemoveList.Count > 0)
             {
                 foreach (Body body in _bodyRemoveList)
-                    Remove_Immediate(body);
+                    Remove(body);
                 _bodyRemoveList.Clear();
             }
 
@@ -1256,7 +1274,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (_jointRemoveList.Count > 0)
             {
                 foreach (Joint joint in _jointRemoveList)
-                    Remove_Immediate(joint);
+                    Remove(joint);
                 _jointRemoveList.Clear();
             }
 
@@ -1599,7 +1617,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             for (int i = BodyList.Count - 1; i >= 0; i--)
             {
-                Remove_Immediate(BodyList[i]);
+                Remove(BodyList[i]);
             }
 
             for (int i = ControllerList.Count - 1; i >= 0; i--)

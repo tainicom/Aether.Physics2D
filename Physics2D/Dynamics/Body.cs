@@ -99,7 +99,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _sweep.A = rotation;
             }
 
-            world.Add(this); //FPE note: bodies can't live without a World
+            world.AddAsync(this); //FPE note: bodies can't live without a World
         }
 
         public World World { get {return _world; } }
