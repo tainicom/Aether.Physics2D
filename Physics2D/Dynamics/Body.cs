@@ -162,24 +162,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
 
                 ContactList = null;
-
-                TouchProxies();
-            }
-        }
-
-        /// <summary>
-        /// Touch the proxies so that new contacts will be created (when appropriate)
-        /// </summary>
-        private void TouchProxies()
-        {
-            IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-            foreach (Fixture fixture in FixtureList)
-            {
-                int proxyCount = fixture.ProxyCount;
-                for (int j = 0; j < proxyCount; j++)
-                {
-                    broadPhase.TouchProxy(fixture.Proxies[j].ProxyId);
-                }
+                
+                // Touch the proxies so that new contacts will be created (when appropriate)
+                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
+                foreach (Fixture fixture in FixtureList)
+                    fixture.TouchProxies(broadPhase);
             }
         }
 
@@ -345,46 +332,57 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 if (value == _enabled)
                     return;
 
-                UpdateProxies(value);
-
                 _enabled = value;
+
+                if (Enabled)
+                {
+                    CreateProxies();
+
+                    // Contacts are created the next time step.
+                }
+                else
+                {
+                    DestroyProxies();
+                    DestroyContacts();
+                }
             }
         }
 
-        private void UpdateProxies(bool enabled)
+        /// <summary>
+        /// Create all proxies.
+        /// </summary>
+        private void CreateProxies()
+        {   
+            IBroadPhase broadPhase = World.ContactManager.BroadPhase;
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].CreateProxies(broadPhase, ref _xf);
+        }
+
+        /// <summary>
+        /// Destroy all proxies.
+        /// </summary>
+        internal void DestroyProxies()
         {
-            if (enabled)
-            {
-                // Create all proxies.
-                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    FixtureList[i].CreateProxies(broadPhase, ref _xf);
-                }
-
-                // Contacts are created the next time step.
-            }
-            else
-            {
-                // Destroy all proxies.
-                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-
-                for (int i = 0; i < FixtureList.Count; i++)
-                {
-                    FixtureList[i].DestroyProxies(broadPhase);
-                }
-
-                // Destroy the attached contacts.
-                ContactEdge ce = ContactList;
-                while (ce != null)
-                {
-                    ContactEdge ce0 = ce;
-                    ce = ce.Next;
-                    World.ContactManager.Destroy(ce0.Contact);
-                }
-                ContactList = null;
-            }
+            IBroadPhase broadPhase = World.ContactManager.BroadPhase;
+            for (int i = 0; i < FixtureList.Count; i++)
+                FixtureList[i].DestroyProxies(broadPhase);
         }
+
+        /// <summary>
+        /// Destroy the attached contacts.
+        /// </summary>
+        private void DestroyContacts()
+        {            
+            ContactEdge ce = ContactList;
+            while (ce != null)
+            {
+                ContactEdge ce0 = ce;
+                ce = ce.Next;
+                World.ContactManager.Destroy(ce0.Contact);
+            }
+            ContactList = null;
+        }
+
 
         /// <summary>
         /// Set this body to have fixed rotation. This causes the mass

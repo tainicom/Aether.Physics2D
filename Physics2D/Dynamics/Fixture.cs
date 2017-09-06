@@ -57,8 +57,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal short _collisionGroup;
         internal HashSet<Fixture> _collisionIgnores;
 
-        public FixtureProxy[] Proxies;
-        public int ProxyCount;
+        public FixtureProxy[] Proxies { get; private set; }
+        public int ProxyCount { get; private set; }
+
         public Category IgnoreCCDWith;
 
         /// <summary>
@@ -312,16 +313,21 @@ namespace tainicom.Aether.Physics2D.Dynamics
             World world = Body.World;
 
             if (world == null)
-            {
                 return;
-            }
 
             // Touch each proxy so that new pairs may be created
             IBroadPhase broadPhase = world.ContactManager.BroadPhase;
+            TouchProxies(broadPhase);
+        }
+
+        /// <summary>
+        /// Touch each proxy so that new pairs may be created
+        /// </summary>
+        /// <param name="broadPhase"></param>
+        internal void TouchProxies(IBroadPhase broadPhase)
+        {
             for (int i = 0; i < ProxyCount; ++i)
-            {
                 broadPhase.TouchProxy(Proxies[i].ProxyId);
-            }
         }
 
         private void RegisterFixture()
@@ -395,8 +401,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ((PolygonShape)Shape).Vertices.AttachedToBody = false;
 #endif
 
-            // The proxies must be destroyed before calling this.
-            Debug.Assert(ProxyCount == 0);
+            if (ProxyCount > 0)
+                throw new InvalidOperationException("The proxies must be destroyed before calling Destroy().");
 
             // Free the proxy array.
             Proxies = null;
@@ -414,7 +420,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         // These support body activation/deactivation.
         internal void CreateProxies(IBroadPhase broadPhase, ref Transform xf)
         {
-            Debug.Assert(ProxyCount == 0);
+            if (ProxyCount != 0)
+                throw new InvalidOperationException("Proxies allready created for this Fixture.");
 
             // Create proxies in the broad-phase.
             ProxyCount = Shape.ChildCount;
@@ -448,9 +455,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal void Synchronize(IBroadPhase broadPhase, ref Transform transform1, ref Transform transform2)
         {
             if (ProxyCount == 0)
-            {
                 return;
-            }
 
             for (int i = 0; i < ProxyCount; ++i)
             {

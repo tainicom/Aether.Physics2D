@@ -963,9 +963,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body.onSeparationEventHandler = null;
 
             // Delete the attached fixtures. This destroys broad-phase proxies.
+            body.DestroyProxies();
             for (int i = 0; i < body.FixtureList.Count; i++)
             {
-                body.FixtureList[i].DestroyProxies(ContactManager.BroadPhase);
                 body.FixtureList[i].Destroy();
                 if (FixtureRemoved != null)
                     FixtureRemoved(body.FixtureList[i]);
