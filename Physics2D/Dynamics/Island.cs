@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -124,7 +126,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (b.IgnoreGravity)
                         v += h * (b._invMass * b._force);
                     else
-                        v += h * (b.GravityScale * gravity + b._invMass * b._force);
+                        v += h * (gravity + b._invMass * b._force);
 
                     w += h * b._invI * b._torque;
 

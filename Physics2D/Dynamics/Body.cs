@@ -80,7 +80,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _awake = true;
             _sleepingAllowed = true;
 
-            GravityScale = 1.0f;
             BodyType = bodyType;
 
             _xf.q.Phase = rotation;
@@ -106,12 +105,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public World World { get {return _world; } }
         
         public int IslandIndex { get; set; }
-
-        /// <summary>
-        /// Scale the gravity applied to this body.
-        /// Defaults to 1. A value of 2 means double the gravity is applied to this body.
-        /// </summary>
-        public float GravityScale { get; set; }
 
         /// <summary>
         /// Set the user data. Use this to store your application specific data.
@@ -1251,7 +1244,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body._bodyType = _bodyType;
             body._linearVelocity = _linearVelocity;
             body._angularVelocity = _angularVelocity;
-            body.GravityScale = GravityScale;
             body.Tag = Tag;
             body._enabled = _enabled;
             body._fixedRotation = _fixedRotation;
