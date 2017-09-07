@@ -71,11 +71,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public PhysicsLogicFilter PhysicsLogicFilter;
         public ControllerFilter ControllerFilter;
 
-        internal Body(World world)
+        internal Body()
         {
             FixtureList = new List<Fixture>();
-
-            _world = world;
 
             _enabled = true;
             _awake = true;
@@ -83,8 +81,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _xf.q = Complex.One;
 
             BodyType = BodyType.Static;
-            
-            world.AddAsync(this); //FPE note: bodies can't live without a World
         }
 
         public World World { get {return _world; } }
@@ -145,13 +141,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     ce = ce.Next;
                     World.ContactManager.Destroy(ce0.Contact);
                 }
-
                 ContactList = null;
                 
-                // Touch the proxies so that new contacts will be created (when appropriate)
-                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-                foreach (Fixture fixture in FixtureList)
-                    fixture.TouchProxies(broadPhase);
+                if (World != null)
+                {
+                    // Touch the proxies so that new contacts will be created (when appropriate)
+                    IBroadPhase broadPhase = World.ContactManager.BroadPhase;
+                    foreach (Fixture fixture in FixtureList)
+                        fixture.TouchProxies(broadPhase);
+                }
             }
         }
 
@@ -321,14 +319,18 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
                 if (Enabled)
                 {
-                    CreateProxies();
+                    if (World != null)
+                        CreateProxies();
 
                     // Contacts are created the next time step.
                 }
                 else
                 {
-                    DestroyProxies();
-                    DestroyContacts();
+                    if (World != null)
+                    {
+                        DestroyProxies();
+                        DestroyContacts();
+                    }
                 }
             }
         }
