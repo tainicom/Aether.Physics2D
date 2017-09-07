@@ -99,16 +99,18 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Restitution = 0f;
         }
 
-        internal Fixture(Body body, Shape shape)
-            : this()
+        private Fixture(Shape shape) : this()
         {
+            Shape = shape.Clone();
+        }
+
+        internal Fixture(Body body, Shape shape) : this(shape)
+        {
+            Body = body;
 #if DEBUG
             if (shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)shape).Vertices.AttachedToBody = true;
 #endif
-
-            Body = body;
-            Shape = shape.Clone();
 
             RegisterFixture();
         }
