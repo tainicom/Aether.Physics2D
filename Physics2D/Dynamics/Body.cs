@@ -422,7 +422,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 Debug.Assert(!float.IsNaN(value.X) && !float.IsNaN(value.Y));
 
-                SetTransform(ref value, Rotation);
+                if (World == null)
+                    _xf.p = value;
+                else
+                    SetTransform(ref value, Rotation);
             }
         }
 
@@ -437,7 +440,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 Debug.Assert(!float.IsNaN(value));
 
-                SetTransform(ref _xf.p, value);
+                if (World == null)
+                    _sweep.A = value;
+                else
+                    SetTransform(ref _xf.p, value);
             }
         }
 
@@ -656,7 +662,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="angle">The angle.</param>
         public void SetTransformIgnoreContacts(ref Vector2 position, float angle)
         {
-            if (World !=null && World.IsStepping)
+            Debug.Assert(World != null);
+            if (World.IsStepping)
                 throw new InvalidOperationException("World is stepping.");
 
             _xf.q.Phase = angle;

@@ -20,13 +20,12 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public virtual Body CreateBody(Vector2 position = new Vector2(), float rotation = 0, BodyType bodyType = BodyType.Static)
         {
             Body body = new Body();
+            body.Position = position;
+            body.Rotation = rotation;            
+            body.BodyType = bodyType;
             
             body._world = this; // TODO: move this inside Add(Body) and make sure proxies are created. Make Body() and World.Add(body) public.
             AddAsync(body);
-
-            body.Position = position;
-            body.Rotation = rotation;
-            body.BodyType = bodyType;
 
             return body;
         }

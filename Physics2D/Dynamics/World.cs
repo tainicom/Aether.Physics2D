@@ -916,6 +916,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Add to world list.
             BodyList.Add(body);
 
+            // Update transform
+            body.SetTransform(ref body._xf.p, body.Rotation);
+
             if (BodyAdded != null)
                 BodyAdded(this, body);
         }
