@@ -338,7 +338,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Create all proxies.
         /// </summary>
-        private void CreateProxies()
+        internal void CreateProxies()
         {   
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
             for (int i = 0; i < FixtureList.Count; i++)
@@ -597,21 +597,24 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (fixture.Shape._density > 0.0f)
                 ResetMassData();
 
-            if (World.IsStepping)
-                throw new InvalidOperationException("World is stepping.");
-
-            if (Enabled)
+            if (World != null)
             {
-                IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-                fixture.CreateProxies(broadPhase, ref _xf);
+                if (World.IsStepping)
+                    throw new InvalidOperationException("World is stepping.");
+
+                if (Enabled)
+                {
+                    IBroadPhase broadPhase = World.ContactManager.BroadPhase;
+                    fixture.CreateProxies(broadPhase, ref _xf);
+                }
+
+                // Let the world know we have a new fixture. This will cause new contacts
+                // to be created at the beginning of the next time step.
+                World._worldHasNewFixture = true;
+
+                if (World.FixtureAdded != null)
+                    World.FixtureAdded(World, this, fixture);
             }
-
-            // Let the world know we have a new fixture. This will cause new contacts
-            // to be created at the beginning of the next time step.
-            World._worldHasNewFixture = true;
-
-            if (World.FixtureAdded != null)
-                World.FixtureAdded(World, this, fixture);
         }
 
         /// <summary>

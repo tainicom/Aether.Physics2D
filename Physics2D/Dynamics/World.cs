@@ -917,11 +917,25 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body._world = this;
             BodyList.Add(body);
 
+
             // Update transform
-            body.SetTransform(ref body._xf.p, body.Rotation);
+            body.SetTransformIgnoreContacts(ref body._xf.p, body.Rotation);
+
+            // Create proxies
+            if (Enabled)
+                body.CreateProxies();
+
+            ContactManager.FindNewContacts();
+
+
+            // Fire World events:
 
             if (BodyAdded != null)
                 BodyAdded(this, body);
+            
+            if (FixtureAdded != null)
+                for (int i = 0; i < body.FixtureList.Count; i++)
+                    FixtureAdded(this, body, body.FixtureList[i]);
         }
 
         /// <summary>
