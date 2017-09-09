@@ -984,12 +984,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body.DestroyProxies();
             for (int i = 0; i < body.FixtureList.Count; i++)
             {
-                body.FixtureList[i].Destroy();
-                body.FixtureList[i].Body = null;
                 if (FixtureRemoved != null)
                     FixtureRemoved(this, body, body.FixtureList[i]);
             }
-            body.FixtureList.Clear();
 
             body._world = null;
             BodyList.Remove(body);
