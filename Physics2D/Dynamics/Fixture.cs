@@ -111,13 +111,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal Fixture(Body body, Shape shape) : this(shape)
         {
-            Body = body;
-#if DEBUG
-            if (shape.ShapeType == ShapeType.Polygon)
-                ((PolygonShape)shape).Vertices.AttachedToBody = true;
-#endif
-
-            RegisterFixture(body, this);
+            body.Add(this);
         }
 
         /// <summary>
