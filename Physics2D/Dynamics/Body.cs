@@ -667,7 +667,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = false;
 #endif
 
-            fixture.Destroy();
             if (World.FixtureRemoved != null)
                 World.FixtureRemoved(World, this, fixture);
 
