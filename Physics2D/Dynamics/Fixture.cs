@@ -449,7 +449,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal Fixture CloneOnto(Body body, Shape shape)
         {
             Fixture fixture = new Fixture(shape.Clone());
-            fixture.Body = body;
             fixture.Tag = Tag;
             fixture.Restitution = Restitution;
             fixture.Friction = Friction;
