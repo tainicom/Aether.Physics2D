@@ -24,7 +24,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body.Rotation = rotation;            
             body.BodyType = bodyType;
             
-            body._world = this; // TODO: move this inside Add(Body) and make sure proxies are created. Make Body() and World.Add(body) public.
             AddAsync(body);
 
             return body;

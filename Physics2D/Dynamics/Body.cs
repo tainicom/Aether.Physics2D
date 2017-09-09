@@ -71,7 +71,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public PhysicsLogicFilter PhysicsLogicFilter;
         public ControllerFilter ControllerFilter;
 
-        internal Body()
+        public Body()
         {
             FixtureList = new List<Fixture>();
 

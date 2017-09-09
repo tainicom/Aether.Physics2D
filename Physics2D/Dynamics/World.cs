@@ -891,7 +891,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Add a rigid body.
         /// </summary>
         /// <returns></returns>
-        protected virtual void Add(Body body)
+        public virtual void Add(Body body)
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
@@ -913,7 +913,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                             AwakeBodySet.Remove(body);
                     }
 #endif
-            // Add to world list.
+
+            body._world = this;
             BodyList.Add(body);
 
             // Update transform
@@ -1157,7 +1158,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Add a rigid body.
         /// </summary>
         /// <returns></returns>
-        internal void AddAsync(Body body)
+        public void AddAsync(Body body)
         {
             if (body == null)
                 throw new ArgumentNullException("body");
