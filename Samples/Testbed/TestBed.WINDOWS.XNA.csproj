@@ -103,6 +103,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Tests\AddPairTest.cs" />
     <Compile Include="Tests\ApplyForceTest.cs" />
+    <Compile Include="Tests\BodyPoolTest.cs" />
     <Compile Include="Tests\BodyTypesTest.cs" />
     <Compile Include="Tests\BreakableTest.cs" />
     <Compile Include="Tests\BridgeTest.cs" />
