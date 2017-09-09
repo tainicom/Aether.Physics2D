@@ -100,7 +100,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Restitution = 0f;
         }
 
-        private Fixture(Shape shape) : this()
+        public Fixture(Shape shape) : this()
         {
             Shape = shape.Clone();
             
@@ -108,12 +108,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Proxies = new FixtureProxy[Shape.ChildCount];
             ProxyCount = 0;
         }
-
-        internal Fixture(Body body, Shape shape) : this(shape)
-        {
-            body.Add(this);
-        }
-
+        
         /// <summary>
         /// Defaults to 0
         /// 
