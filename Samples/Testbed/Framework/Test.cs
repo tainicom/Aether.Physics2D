@@ -101,11 +101,19 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
         public virtual void Keyboard(KeyboardManager keyboardManager)
         {
             if (keyboardManager.IsNewKeyPress(Keys.F11))
-                WorldSerializer.Serialize(World, "out.xml");
+            {
+                using (Stream stream = new FileStream("out.xml", FileMode.Create))
+                {
+                    WorldSerializer.Serialize(World, stream);
+                }
+            }
 
             if (keyboardManager.IsNewKeyPress(Keys.F12))
             {
-                World = WorldSerializer.Deserialize("out.xml");
+                using (Stream stream = new FileStream("out.xml", FileMode.Open))
+                {
+                    World = WorldSerializer.Deserialize(stream);
+                }
                 Initialize();
             }
         }

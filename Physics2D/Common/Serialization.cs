@@ -23,28 +23,22 @@ namespace tainicom.Aether.Physics2D.Common
     public static class WorldSerializer
     {
         /// <summary>
-        /// Serialize the world to an XML file
+        /// Serialize the world to a stream in XML format
         /// </summary>
         /// <param name="world"></param>
-        /// <param name="filename"></param>
-        public static void Serialize(World world, string filename)
+        /// <param name="stream"></param>
+        public static void Serialize(World world, Stream stream)
         {
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
-            {
-                WorldXmlSerializer.Serialize(world, fs);
-            }
+            WorldXmlSerializer.Serialize(world, stream);
         }
 
         /// <summary>
-        /// Deserialize the world from an XML file
+        /// Deserialize the world from a stream XML
         /// </summary>
-        /// <param name="filename"></param>
-        public static World Deserialize(string filename)
+        /// <param name="stream"></param>
+        public static World Deserialize(Stream stream)
         {
-            using (FileStream fs = new FileStream(filename, FileMode.Open))
-            {
-                return WorldXmlDeserializer.Deserialize(fs);
-            }
+            return WorldXmlDeserializer.Deserialize(stream);
         }
     }
 
@@ -332,9 +326,7 @@ namespace tainicom.Aether.Physics2D.Common
 
             _writer.WriteStartElement("Value");
             XmlSerializer serializer = new XmlSerializer(type);
-            XmlSerializerNamespaces xmlnsEmpty = new XmlSerializerNamespaces();
-            xmlnsEmpty.Add("", "");
-            serializer.Serialize(_writer, val, xmlnsEmpty);
+            serializer.Serialize(_writer, val);
             _writer.WriteEndElement();
         }
 
@@ -460,11 +452,6 @@ namespace tainicom.Aether.Physics2D.Common
             _writer.WriteEndElement();
 
             _writer.Flush();
-#if W10
-            _writer.Dispose();
-#else
-            _writer.Close();
-#endif
         }
     }
 
@@ -1301,13 +1288,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             Load(stream);
         }
-
-        public XMLFragmentParser(string fileName)
-        {
-            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-                Load(fs);
-        }
-
+        
         public XMLFragmentElement RootNode
         {
             get { return _rootNode; }
