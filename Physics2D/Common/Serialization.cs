@@ -805,8 +805,8 @@ namespace tainicom.Aether.Physics2D.Common
                                         foreach (XMLFragmentElement pair in sn.Elements)
                                         {
                                             Fixture fix = fixtures[int.Parse(pair.Attributes[0].Value)];
-                                            fix.Shape = shapes[int.Parse(pair.Attributes[1].Value)].Clone();
-                                            var clone = fix.CloneOnto(body);
+                                            var shape = shapes[int.Parse(pair.Attributes[1].Value)].Clone();
+                                            var clone = fix.CloneOnto(body, shape);
                                             mapFixtureClones[fix] = clone;
                                         }
                                         break;

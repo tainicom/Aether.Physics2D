@@ -86,7 +86,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public OnSeparationEventHandler OnSeparation;
 
-        internal Fixture()
+        internal Fixture() // Note: This is internal because it's used by Deserialization.
         {   
             _collisionCategories = Settings.DefaultFixtureCollisionCategories;
             _collidesWith = Settings.DefaultFixtureCollidesWith;
@@ -103,6 +103,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private Fixture(Shape shape) : this()
         {
             Shape = shape.Clone();
+            
+            // Reserve proxy space
+            Proxies = new FixtureProxy[Shape.ChildCount];
+            ProxyCount = 0;
         }
 
         internal Fixture(Body body, Shape shape) : this(shape)
@@ -185,11 +189,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         /// <summary>
-        /// Get the child Shape. You can modify the child Shape, however you should not change the
-        /// number of vertices because this will crash some collision caching mechanisms.
+        /// Get the child Shape.
         /// </summary>
         /// <value>The shape.</value>
-        public Shape Shape { get; internal set; }
+        public Shape Shape { get; private set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this fixture is a sensor.
@@ -332,10 +335,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private void RegisterFixture()
         {
-            // Reserve proxy space
-            Proxies = new FixtureProxy[Shape.ChildCount];
-            ProxyCount = 0;
-
             if (Body.Enabled)
             {
                 IBroadPhase broadPhase = Body.World.ContactManager.BroadPhase;
@@ -404,8 +403,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (ProxyCount > 0)
                 throw new InvalidOperationException("The proxies must be destroyed before calling Destroy().");
 
-            // Free the proxy array.
-            Proxies = null;
             Shape = null;
 
             //FPE: We set the userdata to null here to help prevent bugs related to stale references in GC
@@ -475,15 +472,25 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         /// <summary>
-        /// Clones the fixture and attached shape onto the specified body.
+        /// Clones the fixture onto the specified body.
         /// </summary>
         /// <param name="body">The body you wish to clone the fixture onto.</param>
         /// <returns>The cloned fixture.</returns>
         public Fixture CloneOnto(Body body)
         {
-            Fixture fixture = new Fixture();
+            return CloneOnto(body, this.Shape);
+        }
+        
+        /// <summary>
+        /// Clones the fixture and attached shape onto the specified body.
+        /// Note: This is used only by Deserialization.
+        /// </summary>
+        /// <param name="body">The body you wish to clone the fixture onto.</param>
+        /// <returns>The cloned fixture.</returns>
+        internal Fixture CloneOnto(Body body, Shape shape)
+        {
+            Fixture fixture = new Fixture(shape.Clone());
             fixture.Body = body;
-            fixture.Shape = Shape.Clone();
             fixture.Tag = Tag;
             fixture.Restitution = Restitution;
             fixture.Friction = Friction;
@@ -494,9 +501,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             fixture.IgnoreCCDWith = IgnoreCCDWith;
 
             foreach (Fixture ignore in _collisionIgnores)
-            {
                 fixture._collisionIgnores.Add(ignore);
-            }
 
             fixture.RegisterFixture();
             return fixture;
