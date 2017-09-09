@@ -357,22 +357,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             aabb = Proxies[childIndex].AABB;
         }
 
-        internal void Destroy()
-        {
-            if (ProxyCount > 0)
-                throw new InvalidOperationException("The proxies must be destroyed before calling Destroy().");
-
-            Shape = null;
-
-            //FPE: We set the userdata to null here to help prevent bugs related to stale references in GC
-            Tag = null;
-
-            BeforeCollision = null;
-            OnCollision = null;
-            OnSeparation = null;
-            AfterCollision = null;
-        }
-
         // These support body activation/deactivation.
         internal void CreateProxies(IBroadPhase broadPhase, ref Transform xf)
         {

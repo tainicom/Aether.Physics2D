@@ -891,7 +891,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Add a rigid body.
         /// </summary>
         /// <returns></returns>
-        protected virtual void Add(Body body)
+        public virtual void Add(Body body)
         {
             if (IsStepping)
                 throw new InvalidOperationException("World is stepping.");
@@ -913,14 +913,29 @@ namespace tainicom.Aether.Physics2D.Dynamics
                             AwakeBodySet.Remove(body);
                     }
 #endif
-            // Add to world list.
+
+            body._world = this;
             BodyList.Add(body);
 
+
             // Update transform
-            body.SetTransform(ref body._xf.p, body.Rotation);
+            body.SetTransformIgnoreContacts(ref body._xf.p, body.Rotation);
+
+            // Create proxies
+            if (Enabled)
+                body.CreateProxies();
+
+            ContactManager.FindNewContacts();
+
+
+            // Fire World events:
 
             if (BodyAdded != null)
                 BodyAdded(this, body);
+            
+            if (FixtureAdded != null)
+                for (int i = 0; i < body.FixtureList.Count; i++)
+                    FixtureAdded(this, body, body.FixtureList[i]);
         }
 
         /// <summary>
@@ -969,12 +984,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body.DestroyProxies();
             for (int i = 0; i < body.FixtureList.Count; i++)
             {
-                body.FixtureList[i].Destroy();
-                body.FixtureList[i].Body = null;
                 if (FixtureRemoved != null)
                     FixtureRemoved(this, body, body.FixtureList[i]);
             }
-            body.FixtureList.Clear();
 
             body._world = null;
             BodyList.Remove(body);
@@ -1157,7 +1169,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Add a rigid body.
         /// </summary>
         /// <returns></returns>
-        internal void AddAsync(Body body)
+        public void AddAsync(Body body)
         {
             if (body == null)
                 throw new ArgumentNullException("body");
