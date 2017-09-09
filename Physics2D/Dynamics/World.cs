@@ -1307,6 +1307,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// and consraint solution.
         /// </summary>
         /// <param name="dt">The amount of time to simulate, this should not vary.</param>
+        public void Step(TimeSpan dt)
+        {
+            Step((float)dt.TotalSeconds);
+        }
+
+        /// <summary>
+        /// Take a time step. This performs collision detection, integration,
+        /// and consraint solution.
+        /// </summary>
+        /// <param name="dt">The amount of time to simulate in seconds, this should not vary.</param>
         public void Step(float dt)
         {
             if (IsStepping)
