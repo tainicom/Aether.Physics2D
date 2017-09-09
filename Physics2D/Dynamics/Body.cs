@@ -611,7 +611,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             World._worldHasNewFixture = true;
 
             if (World.FixtureAdded != null)
-                World.FixtureAdded(fixture);
+                World.FixtureAdded(World, this, fixture);
         }
 
         /// <summary>
@@ -657,12 +657,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 fixture.DestroyProxies(broadPhase);
             }
 
+            fixture.Body = null;
             FixtureList.Remove(fixture);
+#if DEBUG
+            if (fixture.Shape.ShapeType == ShapeType.Polygon)
+                ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = false;
+#endif
 
             fixture.Destroy();
             if (World.FixtureRemoved != null)
-                World.FixtureRemoved(fixture);
-            fixture.Body = null;
+                World.FixtureRemoved(World, this, fixture);
 
             ResetMassData();
         }

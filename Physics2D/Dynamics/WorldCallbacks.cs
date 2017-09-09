@@ -48,7 +48,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
     public delegate void PostSolveDelegate(Contact contact, ContactVelocityConstraint impulse);
 
-    public delegate void FixtureDelegate(Fixture fixture);
+    public delegate void FixtureDelegate(World sender, Body body, Fixture fixture);
 
     public delegate void JointDelegate(World sender, Joint joint);
 

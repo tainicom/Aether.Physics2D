@@ -970,8 +970,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             for (int i = 0; i < body.FixtureList.Count; i++)
             {
                 body.FixtureList[i].Destroy();
+                body.FixtureList[i].Body = null;
                 if (FixtureRemoved != null)
-                    FixtureRemoved(body.FixtureList[i]);
+                    FixtureRemoved(this, body, body.FixtureList[i]);
             }
             body.FixtureList.Clear();
 

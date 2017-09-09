@@ -359,11 +359,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal void Destroy()
         {
-#if DEBUG
-            if (Shape.ShapeType == ShapeType.Polygon)
-                ((PolygonShape)Shape).Vertices.AttachedToBody = false;
-#endif
-
             if (ProxyCount > 0)
                 throw new InvalidOperationException("The proxies must be destroyed before calling Destroy().");
 
