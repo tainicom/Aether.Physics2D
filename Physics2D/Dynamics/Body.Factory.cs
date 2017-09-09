@@ -29,7 +29,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <returns></returns>
         public virtual Fixture CreateFixture(Shape shape)
         {
-            return new Fixture(this, shape);
+            Fixture fixture = new Fixture(shape);
+            Add(fixture);
+            return fixture;
         }
 
         public Fixture CreateEdge(Vector2 start, Vector2 end)
