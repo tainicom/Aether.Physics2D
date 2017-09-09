@@ -10,6 +10,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
@@ -188,11 +189,17 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _time = 0;
                 if (_save)
                 {
-                    WorldSerializer.Serialize(World, "out.xml");
+                    using (Stream stream = new FileStream("out.xml", FileMode.Create))
+                    {
+                        WorldSerializer.Serialize(World, stream);
+                    }
                 }
                 else
                 {
-                    World = WorldSerializer.Deserialize("out.xml");
+                    using (Stream stream = new FileStream("out.xml", FileMode.Open))
+                    {
+                        World = WorldSerializer.Deserialize(stream);
+                    }
                     base.Initialize(); //To initialize the debug view
                 }
 
