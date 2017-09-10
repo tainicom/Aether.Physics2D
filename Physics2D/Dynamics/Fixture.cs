@@ -55,7 +55,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal Category _collidesWith;
         internal Category _collisionCategories;
         internal short _collisionGroup;
-        internal HashSet<Fixture> _collisionIgnores;
 
         public FixtureProxy[] Proxies { get; private set; }
         public int ProxyCount { get; private set; }
@@ -91,7 +90,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _collisionCategories = Settings.DefaultFixtureCollisionCategories;
             _collidesWith = Settings.DefaultFixtureCollidesWith;
             _collisionGroup = 0;
-            _collisionIgnores = new HashSet<Fixture>();
 
             IgnoreCCDWith = Settings.DefaultFixtureIgnoreCCDWith;
 
@@ -241,45 +239,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
         }
         
-
-        /// <summary>
-        /// Restores collisions between this fixture and the provided fixture.
-        /// </summary>
-        /// <param name="fixture">The fixture.</param>
-        public void RestoreCollisionWith(Fixture fixture)
-        {
-            if (_collisionIgnores.Contains(fixture))
-            {
-                _collisionIgnores.Remove(fixture);
-                Refilter();
-            }
-        }
-
-        /// <summary>
-        /// Ignores collisions between this fixture and the provided fixture.
-        /// </summary>
-        /// <param name="fixture">The fixture.</param>
-        public void IgnoreCollisionWith(Fixture fixture)
-        {
-            if (!_collisionIgnores.Contains(fixture))
-            {
-                _collisionIgnores.Add(fixture);
-                Refilter();
-            }
-        }
-
-        /// <summary>
-        /// Determines whether collisions are ignored between this fixture and the provided fixture.
-        /// </summary>
-        /// <param name="fixture">The fixture.</param>
-        /// <returns>
-        /// 	<c>true</c> if the fixture is ignored; otherwise, <c>false</c>.
-        /// </returns>
-        public bool IsFixtureIgnored(Fixture fixture)
-        {
-            return _collisionIgnores.Contains(fixture);
-        }
-
+        
         /// <summary>
         /// Contacts are persistant and will keep being persistant unless they are
         /// flagged for filtering.
@@ -441,10 +401,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             fixture._collisionCategories = _collisionCategories;
             fixture._collidesWith = _collidesWith;
             fixture.IgnoreCCDWith = IgnoreCCDWith;
-
-            foreach (Fixture ignore in _collisionIgnores)
-                fixture._collisionIgnores.Add(ignore);
-
+            
             body.Add(fixture);
             return fixture;
         }
