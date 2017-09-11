@@ -31,6 +31,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
+using tainicom.Aether.Physics2D.Dynamics.Contacts;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
@@ -54,6 +55,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const Category TriangleMask = Category.All;
         private const Category BoxMask = Category.All ^ TriangleCategory;
         private const Category CircleMask = Category.All;
+
+        Fixture circleFixture3;
 
         private CollisionFilteringTest()
         {
@@ -167,13 +170,21 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 circleBody3.Position = new Vector2(6.0f, 9.0f);
 
                 //Another large circle. This one uses IgnoreCollisionWith() logic instead of categories.
-                Fixture circleFixture3 = circleBody3.CreateFixture(circle);
+                circleFixture3 = circleBody3.CreateFixture(circle);
                 circleFixture3.CollisionGroup = LargeGroup;
                 circleFixture3.CollisionCategories = CircleCategory;
                 circleFixture3.CollidesWith = CircleMask;
 
-                circleFixture3.IgnoreCollisionWith(circleFixture2);
+                circleFixture3.BeforeCollision = circleFixture3_BeforeCollision;
             }
+        }
+
+        bool circleFixture3_BeforeCollision(Fixture sender, Fixture other)
+        {
+            if (other == circleFixture3)
+                return false;
+
+            return true;
         }
 
         internal static Test Create()
