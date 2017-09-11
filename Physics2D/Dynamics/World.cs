@@ -124,7 +124,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Initializes a new instance of the <see cref="World"/> class.
         /// </summary>
-        public World(Vector2 gravity)
+        public World()
         {
             Island = new Island();
             Enabled = true;
@@ -150,6 +150,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Fluid = new FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
 
             ContactManager = new ContactManager(new DynamicTreeBroadPhase());
+            Gravity = new Vector2(0f, -9.80665f);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="World"/> class.
+        /// </summary>
+        /// <param name="gravity">The gravity.</param>
+        public World(Vector2 gravity) : this()
+        {
             Gravity = gravity;
         }
 
