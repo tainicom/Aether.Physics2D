@@ -60,11 +60,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
     public delegate void BroadphaseDelegate(ref FixtureProxy proxyA, ref FixtureProxy proxyB);
 
-    public delegate bool BeforeCollisionEventHandler(Fixture fixtureA, Fixture fixtureB);
+    public delegate bool BeforeCollisionEventHandler(Fixture sender, Fixture other);
 
     public delegate bool OnCollisionEventHandler(Fixture sender, Fixture other, Contact contact);
 
-    public delegate void AfterCollisionEventHandler(Fixture fixtureA, Fixture fixtureB, Contact contact, ContactVelocityConstraint impulse);
+    public delegate void AfterCollisionEventHandler(Fixture sender, Fixture other, Contact contact, ContactVelocityConstraint impulse);
 
     public delegate void OnSeparationEventHandler(Fixture sender, Fixture other, Contact contact);
 }
