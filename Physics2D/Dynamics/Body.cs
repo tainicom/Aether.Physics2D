@@ -1168,34 +1168,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             remove { onSeparationEventHandler -= value; }
         }
         
-        /// <summary>
-        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
-        /// </summary>
-        public void IgnoreCollisionWith(Body other)
-        {
-            for (int i = 0; i < FixtureList.Count; i++)
-            {
-                for (int j = 0; j < other.FixtureList.Count; j++)
-                {
-                    FixtureList[i].IgnoreCollisionWith(other.FixtureList[j]);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
-        /// </summary>
-        public void RestoreCollisionWith(Body other)
-        {
-            for (int i = 0; i < FixtureList.Count; i++)
-            {
-                for (int j = 0; j < other.FixtureList.Count; j++)
-                {
-                    FixtureList[i].RestoreCollisionWith(other.FixtureList[j]);
-                }
-            }
-        }
-
+        
         /// <summary>
         /// Set restitution on all fixtures.
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.

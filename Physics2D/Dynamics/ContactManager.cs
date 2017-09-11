@@ -413,10 +413,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                      Category.None))
                     return false;
 
-                if (fixtureA.IsFixtureIgnored(fixtureB) ||
-                    fixtureB.IsFixtureIgnored(fixtureA))
-                    return false;
-
                 return true;
             }
 
@@ -428,15 +424,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             bool collide = (fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0 &&
                            (fixtureA.CollisionCategories & fixtureB.CollidesWith) != 0;
-
-            if (collide)
-            {
-                if (fixtureA.IsFixtureIgnored(fixtureB) ||
-                    fixtureB.IsFixtureIgnored(fixtureA))
-                {
-                    return false;
-                }
-            }
 
             return collide;
         }

@@ -126,22 +126,7 @@ namespace tainicom.Aether.Physics2D.Common
 
             _writer.WriteEndElement();
         }
-
-        private static void SerializeFixtureCollisionIgnores(List<Fixture> fixtures, Fixture fixture)
-        {
-            if (fixture._collisionIgnores.Count == 0)
-                return;
-
-            _writer.WriteStartElement("Fixture");
-            _writer.WriteAttributeString("Id", fixtures.IndexOf(fixture).ToString());
-
-            _writer.WriteStartElement("FilterData");
-            _writer.WriteElementString("CollisionIgnores", Join(fixtures, fixture._collisionIgnores));
-            _writer.WriteEndElement();
-            
-            _writer.WriteEndElement();
-        }
-
+        
         private static void SerializeBody(List<Fixture> fixtures, List<Shape> shapes, Body body)
         {
             _writer.WriteStartElement("Body");
@@ -424,14 +409,6 @@ namespace tainicom.Aether.Physics2D.Common
             }
 
             _writer.WriteEndElement();
-            _writer.WriteStartElement("FixturesCollisionIgnores");
-
-            foreach (Fixture fixture in fixtures)
-            {
-                SerializeFixtureCollisionIgnores(fixtures, fixture);
-            }
-
-            _writer.WriteEndElement();
             _writer.WriteStartElement("Bodies");
 
             foreach (Body body in world.BodyList)
@@ -468,7 +445,6 @@ namespace tainicom.Aether.Physics2D.Common
         {
             List<Body> bodies = new List<Body>();
             List<Fixture> fixtures = new List<Fixture>();
-            Dictionary<int, Fixture> fixturesRefs = new Dictionary<int, Fixture>();
 
             List<Joint> joints = new List<Joint>();
             List<Shape> shapes = new List<Shape>();
@@ -678,53 +654,10 @@ namespace tainicom.Aether.Physics2D.Common
                         }
 
                         fixtures.Add(fixture);
-                        fixturesRefs[fixtureId] = fixture;
                     }
                 }
             }
-
-            //Read fixtures CollisionIgnores
-            foreach (XMLFragmentElement fixtureElement in root.Elements)
-            {
-                if (fixtureElement.Name.ToLower() == "fixturescollisionignores")
-                {
-                    foreach (XMLFragmentElement element in fixtureElement.Elements)
-                    {
-                        if (element.Name.ToLower() != "fixture")
-                            throw new Exception();
-
-                        int fixtureId = int.Parse(element.Attributes[0].Value);
-                        Fixture fixture = fixturesRefs[fixtureId];
-
-                        foreach (XMLFragmentElement sn in element.Elements)
-                        {
-                            switch (sn.Name.ToLower())
-                            {
-                                case "filterdata":
-                                    foreach (XMLFragmentElement ssn in sn.Elements)
-                                    {
-                                        switch (ssn.Name.ToLower())
-                                        {
-                                            case "collisionignores":
-                                                if (ssn.Value == null)
-                                                    break;
-                                                string[] split = ssn.Value.Split('|');
-                                                foreach (string s in split)
-                                                {
-                                                    int ignoreFixtureId = int.Parse(s);
-                                                    var ignoreFixture = fixturesRefs[ignoreFixtureId];
-                                                    fixture._collisionIgnores.Add(ignoreFixture);
-                                                }
-                                                break;
-                                        }
-                                    }
-                                    break;
-                            }
-                        }
-                    }
-                }
-            }
-
+            
             //Read bodies
             Dictionary<Fixture, Fixture> mapFixtureClones = new Dictionary<Fixture,Fixture>();
             foreach (XMLFragmentElement bodyElement in root.Elements)
@@ -803,17 +736,6 @@ namespace tainicom.Aether.Physics2D.Common
 
                         bodies.Add(body);
                     }
-                }
-            }
-            //remap fixtures
-            foreach (var body in bodies)
-            {
-                foreach (var fixture in body.FixtureList)
-                {
-                    var tmp = new HashSet<Fixture>(fixture._collisionIgnores);
-                    fixture._collisionIgnores.Clear();
-                    foreach(var orig in tmp)
-                        fixture._collisionIgnores.Add(mapFixtureClones[orig]);
                 }
             }
 
