@@ -159,6 +159,7 @@
     <Compile Include="Tests\PyramidTest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tests\QuadTreeTest.cs" />
     <Compile Include="Tests\RaycastTest.cs" />
     <Compile Include="Tests\RevoluteTest.cs" />
     <Compile Include="Tests\SensorTest.cs" />
