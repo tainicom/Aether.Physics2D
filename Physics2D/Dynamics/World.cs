@@ -162,6 +162,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Gravity = gravity;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="World"/> class.
+        /// </summary>
+        public World(AABB span) : this()
+        {            
+            ContactManager = new ContactManager(new QuadTreeBroadPhase(span));
+        }
+
         private bool QueryAABBCallbackWrapper(int proxyId)
         {
             FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);

@@ -105,6 +105,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Buoyancy test", CreateTest = BuoyancyTest.Create},
             new TestEntry {Name = "Convex hull test", CreateTest = ConvexHullTest2.Create},
             new TestEntry {Name = "Simple Wind Force Test", CreateTest = SimpleWindForceTest.Create},
+            new TestEntry {Name = "Quad Tree BroadPhase test", CreateTest = QuadTreeTest.Create},
             new TestEntry {Name = "Simplification", CreateTest = SimplificationTest.Create},
 #if WINDOWS
             new TestEntry {Name = "Triangulation", CreateTest = TriangulationTest.Create},
