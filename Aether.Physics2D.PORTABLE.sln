@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aether.Content.Pipeline", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.PORTABLE", "Physics2D\Aether.Physics2D.PORTABLE.csproj", "{FAA2CCDA-368A-4735-9805-64247D9ABB83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.Diagnostics.PORTABLE", "Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.PORTABLE.csproj", "{3C8713CA-1E4C-45BA-8BB0-3073C25DA312}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{6C0295F4-60D4-43DF-8D1F-3EFAF57628E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +21,15 @@ Global
 		{FAA2CCDA-368A-4735-9805-64247D9ABB83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAA2CCDA-368A-4735-9805-64247D9ABB83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAA2CCDA-368A-4735-9805-64247D9ABB83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8713CA-1E4C-45BA-8BB0-3073C25DA312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8713CA-1E4C-45BA-8BB0-3073C25DA312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8713CA-1E4C-45BA-8BB0-3073C25DA312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8713CA-1E4C-45BA-8BB0-3073C25DA312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C8713CA-1E4C-45BA-8BB0-3073C25DA312} = {6C0295F4-60D4-43DF-8D1F-3EFAF57628E3}
 	EndGlobalSection
 EndGlobal
