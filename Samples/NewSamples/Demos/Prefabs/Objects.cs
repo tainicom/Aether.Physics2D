@@ -58,8 +58,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 Body body = _bodies[i];
                 body.BodyType = BodyType.Dynamic;
                 body.Position = Vector2.Lerp(startPosition, endPosition, i / (float)(count - 1));
-                body.Restitution = 0.7f;
-                body.Friction = 0.2f;
+                body.SetRestitution(0.7f);
+                body.SetFriction(0.2f);
             }
 
             //GFX
@@ -88,9 +88,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 _collisionCategories = value;
 
                 foreach (Body body in _bodies)
-                {
-                    body.CollisionCategories = _collisionCategories;
-                }
+                    body.SetCollisionCategories(_collisionCategories);
             }
         }
 
@@ -102,9 +100,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 _collidesWith = value;
 
                 foreach (Body body in _bodies)
-                {
-                    body.CollidesWith = _collidesWith;
-                }
+                    body.SetCollidesWith(_collidesWith);
             }
         }
 

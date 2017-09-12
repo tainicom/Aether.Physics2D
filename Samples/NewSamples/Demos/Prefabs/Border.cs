@@ -38,8 +38,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             borders.Add(new Vector2(-halfWidth, -halfHeight)); // Upper left
 
             _anchor = world.CreateLoopShape(borders);
-            _anchor.CollisionCategories = Category.All;
-            _anchor.CollidesWith = Category.All;
+            _anchor.SetCollisionCategories(Category.All);
+            _anchor.SetCollidesWith(Category.All);
 
             // GFX
             _basicEffect = new BasicEffect(graphics);

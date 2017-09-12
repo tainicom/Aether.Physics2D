@@ -73,7 +73,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _rectangle[i] = World.CreateRectangle(1.5f, 1.5f, 1f);
                 _rectangle[i].BodyType = BodyType.Dynamic;
                 _rectangle[i].Position = new Vector2(-18f + 5.2f * i, -13.0f + 1.282f * i);
-                _rectangle[i].Friction = friction[i];
+                _rectangle[i].SetFriction(friction[i]);
             }
 
             // create sprite based on body

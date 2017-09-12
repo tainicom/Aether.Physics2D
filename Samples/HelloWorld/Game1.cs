@@ -87,8 +87,8 @@ namespace tainicom.Aether.Physics2D.Samples
             _circleBody = _world.CreateCircle(ConvertUnits.ToSimUnits(96 / 2f), 1f, circlePosition, BodyType.Dynamic);
 
             // Give it some bounce and friction
-            _circleBody.Restitution = 0.3f;
-            _circleBody.Friction = 0.5f;
+            _circleBody.SetRestitution(0.3f);
+            _circleBody.SetFriction(0.5f);
 
             /* Ground */
             Vector2 groundPosition = ConvertUnits.ToSimUnits(_screenCenter) + new Vector2(0, 1.25f);
@@ -96,8 +96,8 @@ namespace tainicom.Aether.Physics2D.Samples
             // Create the ground fixture
             _groundBody = _world.CreateRectangle(ConvertUnits.ToSimUnits(512f), ConvertUnits.ToSimUnits(64f), 1f, groundPosition);
             _groundBody.IsStatic = true;
-            _groundBody.Restitution = 0.3f;
-            _groundBody.Friction = 0.5f;
+            _groundBody.SetRestitution(0.3f);
+            _groundBody.SetFriction(0.5f);
         }
 
         /// <summary>

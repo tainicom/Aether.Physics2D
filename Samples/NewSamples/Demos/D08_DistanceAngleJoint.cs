@@ -76,15 +76,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             _angleBody[0] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _angleBody[0].BodyType = BodyType.Dynamic;
-            _angleBody[0].Friction = 0.7f;
+            _angleBody[0].SetFriction(0.7f);
             _angleBody[0].Position = new Vector2(-15f, -5f);
             _angleBody[1] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _angleBody[1].BodyType = BodyType.Dynamic;
-            _angleBody[1].Friction = 0.7f;
+            _angleBody[1].SetFriction(0.7f);
             _angleBody[1].Position = new Vector2(-18f, 5f);
             _angleBody[2] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _angleBody[2].BodyType = BodyType.Dynamic;
-            _angleBody[2].Friction = 0.7f;
+            _angleBody[2].SetFriction(0.7f);
             _angleBody[2].Position = new Vector2(-10f, 5f);
 
             World.Add(new AngleJoint(_angleBody[0], _angleBody[1]));
@@ -92,19 +92,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             _distanceBody[0] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[0].BodyType = BodyType.Dynamic;
-            _distanceBody[0].Friction = 0.7f;
+            _distanceBody[0].SetFriction(0.7f);
             _distanceBody[0].Position = new Vector2(11.5f, -4f);
             _distanceBody[1] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[1].BodyType = BodyType.Dynamic;
-            _distanceBody[1].Friction = 0.7f;
+            _distanceBody[1].SetFriction(0.7f);
             _distanceBody[1].Position = new Vector2(16.5f, -4f);
             _distanceBody[2] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[2].BodyType = BodyType.Dynamic;
-            _distanceBody[2].Friction = 0.7f;
+            _distanceBody[2].SetFriction(0.7f);
             _distanceBody[2].Position = new Vector2(11.5f, -6f);
             _distanceBody[3] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[3].BodyType = BodyType.Dynamic;
-            _distanceBody[3].Friction = 0.7f;
+            _distanceBody[3].SetFriction(0.7f);
             _distanceBody[3].Position = new Vector2(16.5f, -6f);
 
             DistanceJoint softDistance = new DistanceJoint(_distanceBody[0], _distanceBody[1], Vector2.Zero, Vector2.Zero, false);

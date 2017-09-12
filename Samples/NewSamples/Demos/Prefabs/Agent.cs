@@ -60,7 +60,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             set
             {
                 _collisionCategories = value;
-                Body.CollisionCategories = value;
+                Body.SetCollisionCategories(value);
             }
         }
 
@@ -70,7 +70,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             set
             {
                 _collidesWith = value;
-                Body.CollidesWith = value;
+                Body.SetCollidesWith(value);
             }
         }
 

@@ -131,7 +131,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                     _ground.CreateEdge(terrain[i], terrain[i + 1]);
                 }
 
-                _ground.Friction = 0.6f;
+                _ground.SetFriction(0.6f);
             }
 
             // teeter board
@@ -147,8 +147,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _board.CreateFixture(box);
 
                 RevoluteJoint teeterAxis = JointFactory.CreateRevoluteJoint(World, _ground, _board, Vector2.Zero);
-                teeterAxis.LowerLimit = -8.0f * Settings.Pi / 180.0f;
-                teeterAxis.UpperLimit = 8.0f * Settings.Pi / 180.0f;
+                teeterAxis.LowerLimit = -8.0f * MathHelper.Pi / 180.0f;
+                teeterAxis.UpperLimit = 8.0f * MathHelper.Pi / 180.0f;
                 teeterAxis.LimitEnabled = true;
 
                 _board.ApplyAngularImpulse(-100.0f);
