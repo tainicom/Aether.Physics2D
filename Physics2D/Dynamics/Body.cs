@@ -312,6 +312,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             get { return _enabled; }
             set
             {
+                if (World != null && World.IsStepping)
+                    throw new InvalidOperationException("World is stepping.");
+
                 if (value == _enabled)
                     return;
 

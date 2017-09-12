@@ -88,7 +88,6 @@
     <Compile Include="Tests\FluidsTest.cs" />
     <Compile Include="Tests\GearsTest.cs" />
     <Compile Include="Tests\GravityControllerTest.cs" />
-    <Compile Include="Tests\LockTest.cs" />
     <Compile Include="Tests\MobileBalancedTest.cs" />
     <Compile Include="Tests\MobileTest.cs" />
     <Compile Include="Tests\MotorJointTest.cs" />

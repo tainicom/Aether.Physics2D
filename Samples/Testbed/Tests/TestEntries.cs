@@ -94,7 +94,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Rounded rectangle", CreateTest = RoundedRectangle.Create},
             new TestEntry {Name = "Angle Joint", CreateTest = AngleJointTest.Create},
             new TestEntry {Name = "Explosion", CreateTest = ExplosionTest.Create},
-            new TestEntry {Name = "Lock Test", CreateTest = LockTest.Create},
             new TestEntry {Name = "Sphere benchmark", CreateTest = CircleBenchmarkTest.Create},
             new TestEntry {Name = "Edgeshape benchmark", CreateTest = EdgeShapeBenchmarkTest.Create},
             new TestEntry {Name = "Circle penetration", CreateTest = CirclePenetrationTest.Create},
