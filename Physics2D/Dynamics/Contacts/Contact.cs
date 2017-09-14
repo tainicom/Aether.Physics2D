@@ -113,8 +113,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         internal int _toiCount;
         internal float _toi;
 
-        public Fixture FixtureA;
-        public Fixture FixtureB;
+        public Fixture FixtureA { get; internal set; }
+        public Fixture FixtureB { get; internal set; }
+
         public float Friction { get; set; }
         public float Restitution { get; set; }
 
