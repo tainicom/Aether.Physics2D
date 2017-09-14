@@ -3,7 +3,7 @@
   <metadata>
     <id>Aether.Physics2D.Diagnostics</id>
     <title>Aether.Physics2D.Diagnostics</title>
-    <version>0.2.0.0</version>
+    <version>1.0.0.0</version>
     <authors>Kastellanos Nikolaos</authors>
     <owners>Kastellanos Nikolaos</owners>
     <licenseUrl>https://github.com/tainicom/Aether.Physics2D/blob/master/LICENSE</licenseUrl>
@@ -16,7 +16,7 @@
     <tags>C# Physics 2D monogame XNA game farseerPhysics farseer</tags>
 
     <dependencies>
-      <dependency id="Aether.Physics2D" version="0.2" />
+      <dependency id="Aether.Physics2D" version="1.0" />
     </dependencies>
   </metadata>
 
