@@ -95,8 +95,9 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         private void UpdateParticleVelocity(float deltaTime)
         {
-            foreach (Particle particle in Particles)
+            for(int i = 0; i < Particles.Count; i++)
             {
+                Particle particle = Particles[i];
                 particle.PreviousPosition = particle.Position;
                 particle.Position = new Vector2(particle.Position.X + (deltaTime * particle.Velocity.X), particle.Position.Y + (deltaTime * particle.Velocity.Y));
             }
@@ -380,8 +381,9 @@ namespace tainicom.Aether.Physics2D.Fluids
 
             DoubleDensityRelaxation();
 
-            foreach (Particle particle in Particles)
+            for(int i = 0; i < Particles.Count; i++)
             {
+                Particle particle = Particles[i];
                 particle.Velocity = new Vector2((particle.Position.X - particle.PreviousPosition.X) / deltaTime, (particle.Position.Y - particle.PreviousPosition.Y) / deltaTime);
                 ApplyGravity(particle);
                 WallCollision(particle);
