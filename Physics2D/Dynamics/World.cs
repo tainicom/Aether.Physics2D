@@ -813,19 +813,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public readonly List<BreakableBody> BreakableBodyList;
 
-        public float UpdateTime { get; private set; }
-
-        public float ContinuousPhysicsTime { get; private set; }
-
-        public float ControllersUpdateTime { get; private set; }
-
-        public float AddRemoveTime { get; private set; }
-
-        public float NewContactsTime { get; private set; }
-
-        public float ContactsUpdateTime { get; private set; }
-
-        public float SolveUpdateTime { get; private set; }
+        public TimeSpan UpdateTime { get; private set; }
+        public TimeSpan ContinuousPhysicsTime { get; private set; }
+        public TimeSpan ControllersUpdateTime { get; private set; }
+        public TimeSpan AddRemoveTime { get; private set; }
+        public TimeSpan NewContactsTime { get; private set; }
+        public TimeSpan ContactsUpdateTime { get; private set; }
+        public TimeSpan SolveUpdateTime { get; private set; }
 
         /// <summary>
         /// Get the number of broad-phase proxies.
@@ -1348,7 +1342,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ProcessChanges();
 
             if (Settings.EnableDiagnostics)
-                AddRemoveTime = _watch.ElapsedTicks;
+                AddRemoveTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
 
             // If new fixtures were added, we need to find the new contacts.
             if (_worldHasNewFixture)
@@ -1358,7 +1352,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             if (Settings.EnableDiagnostics)
-                NewContactsTime = _watch.ElapsedTicks - AddRemoveTime;
+                NewContactsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - AddRemoveTime;
 
             //FPE only: moved position and velocity iterations into Settings.cs
             TimeStep step;
@@ -1376,19 +1370,19 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
 
                 if (Settings.EnableDiagnostics)
-                    ControllersUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime);
+                    ControllersUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime);
 
                 // Update contacts. This is where some contacts are destroyed.
                 ContactManager.Collide();
 
                 if (Settings.EnableDiagnostics)
-                    ContactsUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
+                    ContactsUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
 
                 // Integrate velocities, solve velocity constraints, and integrate positions.
                 Solve(ref step);
 
                 if (Settings.EnableDiagnostics)
-                    SolveUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
+                    SolveUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
 
                 // Handle TOI events.
                 if (Settings.ContinuousPhysics)
@@ -1397,7 +1391,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
 
                 if (Settings.EnableDiagnostics)
-                    ContinuousPhysicsTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
+                    ContinuousPhysicsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
 
                 Fluid.Update(dt);
 
@@ -1419,7 +1413,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (Settings.EnableDiagnostics)
             {
                 _watch.Stop();
-                UpdateTime = _watch.ElapsedTicks;
+                UpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
                 _watch.Reset();
             }
         }

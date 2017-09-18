@@ -62,7 +62,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public int BodyCapacity;
         public int ContactCapacity;
         public int JointCapacity;
-        public float JointUpdateTime;
+        public TimeSpan JointUpdateTime;
 
         public void Reset(int bodyCapacity, int contactCapacity, int jointCapacity, ContactManager contactManager)
         {
@@ -268,7 +268,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             if (Settings.EnableDiagnostics)
             {
-                JointUpdateTime = _watch.ElapsedTicks;
+                JointUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
                 _watch.Reset();
             }
 

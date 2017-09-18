@@ -6,7 +6,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 {
     class Stopwatch
     {
-        public float ElapsedTicks { get; private set; }
+        public long ElapsedTicks { get; private set; }
 
         public void Start()
         {

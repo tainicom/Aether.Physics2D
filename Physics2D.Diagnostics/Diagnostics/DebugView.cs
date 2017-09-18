@@ -56,9 +56,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         //Debug panel
         public Vector2 DebugPanelPosition = new Vector2(55, 100);
-        private float _max;
-        private float _avg;
-        private float _min;
+        private TimeSpan _min;
+        private TimeSpan _max;
+        private TimeSpan _avg;
         private StringBuilder _graphSbMax = new StringBuilder();   
         private StringBuilder _graphSbAvg = new StringBuilder();   
         private StringBuilder _graphSbMin = new StringBuilder();   
@@ -68,9 +68,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         //Performance graph
         public bool AdaptiveLimits = true;
         public int ValuesToGraph = 500;
-        public float MinimumValue;
-        public float MaximumValue = 10;
-        private List<float> _graphValues = new List<float>(500);
+        public TimeSpan MinimumValue;
+        public TimeSpan MaximumValue = TimeSpan.FromMilliseconds(10);
+        private List<TimeSpan> _graphValues = new List<TimeSpan>(500);
         public Rectangle PerformancePanelBounds = new Rectangle(330, 100, 200, 100);
         private Vector2[] _background = new Vector2[4];
         public bool Enabled = true;
@@ -268,7 +268,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         private void DrawPerformanceGraph()
         {
-            _graphValues.Add(World.UpdateTime / TimeSpan.TicksPerMillisecond);
+            _graphValues.Add(World.UpdateTime);
 
             if (_graphValues.Count > ValuesToGraph + 1)
                 _graphValues.RemoveAt(0);
@@ -280,30 +280,30 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             // we must have at least 2 values to start rendering
             if (_graphValues.Count > 2)
             {
-                _min = float.MaxValue;
-                _max = 0;
-                _avg = 0;
+                _min = TimeSpan.MaxValue;
+                _max = TimeSpan.Zero;
+                _avg = TimeSpan.Zero;
                 for (int i = 0; i<_graphValues.Count; i++)
                 {
-                    var val = _graphValues[i];                    
-                    _min = MathHelper.Min(_min, val);
-                    _max = MathHelper.Max(_max, val);
+                    var val = _graphValues[i];
+                    _min = TimeSpan.FromTicks(Math.Min(_min.Ticks, val.Ticks));
+                    _max = TimeSpan.FromTicks(Math.Max(_max.Ticks, val.Ticks));
                     _avg += val;
                 }
-                _avg /= _graphValues.Count;
+                _avg = TimeSpan.FromTicks(_avg.Ticks / _graphValues.Count);
 
                 if (AdaptiveLimits)
                 {
                     MaximumValue = _max;
-                    MinimumValue = 0;
+                    MinimumValue = TimeSpan.Zero;
                 }
 
                 // start at last value (newest value added)
                 // continue until no values are left
                 for (int i = _graphValues.Count - 1; i > 0; i--)
                 {
-                    float y1 = PerformancePanelBounds.Bottom - ((_graphValues[i] / (MaximumValue - MinimumValue)) * yScale);
-                    float y2 = PerformancePanelBounds.Bottom - ((_graphValues[i - 1] / (MaximumValue - MinimumValue)) * yScale);
+                    float y1 = PerformancePanelBounds.Bottom - (((yScale * _graphValues[i].Ticks) / (MaximumValue - MinimumValue).Ticks));
+                    float y2 = PerformancePanelBounds.Bottom - (((yScale * _graphValues[i - 1].Ticks) / (MaximumValue - MinimumValue).Ticks));
 
                     Vector2 x1 = new Vector2(MathHelper.Clamp(x, PerformancePanelBounds.Left, PerformancePanelBounds.Right), MathHelper.Clamp(y1, PerformancePanelBounds.Top, PerformancePanelBounds.Bottom));
                     Vector2 x2 = new Vector2(MathHelper.Clamp(x + deltaX, PerformancePanelBounds.Left, PerformancePanelBounds.Right), MathHelper.Clamp(y2, PerformancePanelBounds.Top, PerformancePanelBounds.Bottom));
@@ -315,9 +315,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             }
 
             _graphSbMax.Clear(); _graphSbAvg.Clear(); _graphSbMin.Clear();
-            DrawString(PerformancePanelBounds.Right + 10, PerformancePanelBounds.Top, _graphSbMax.Append("Max: ").AppendNumber(_max, 3).Append(" ms"));
-            DrawString(PerformancePanelBounds.Right + 10, PerformancePanelBounds.Center.Y - 7, _graphSbAvg.Append("Avg: ").AppendNumber(_avg, 3).Append(" ms"));
-            DrawString(PerformancePanelBounds.Right + 10, PerformancePanelBounds.Bottom - 15, _graphSbMin.Append("Min: ").AppendNumber(_min, 3).Append(" ms"));
+            DrawString(PerformancePanelBounds.Right + 10, PerformancePanelBounds.Top, _graphSbMax.Append("Max: ").AppendNumber((float)_max.TotalMilliseconds, 3).Append(" ms"));
+            DrawString(PerformancePanelBounds.Right + 10, PerformancePanelBounds.Center.Y - 7, _graphSbAvg.Append("Avg: ").AppendNumber((float)_avg.TotalMilliseconds, 3).Append(" ms"));
+            DrawString(PerformancePanelBounds.Right + 10, PerformancePanelBounds.Bottom - 15, _graphSbMin.Append("Min: ").AppendNumber((float)_min.TotalMilliseconds, 3).Append(" ms"));
 
             //Draw background.
             _background[0] = new Vector2(PerformancePanelBounds.X, PerformancePanelBounds.Y);
@@ -352,12 +352,12 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             
             _debugPanelSbUpdate.Clear();
             _debugPanelSbUpdate.Append("Update time:").AppendLine();
-            _debugPanelSbUpdate.Append("- Body:    ").AppendNumber(World.SolveUpdateTime / TimeSpan.TicksPerMillisecond, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Contact: ").AppendNumber(World.ContactsUpdateTime / TimeSpan.TicksPerMillisecond, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- CCD:     ").AppendNumber(World.ContinuousPhysicsTime / TimeSpan.TicksPerMillisecond, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Joint:   ").AppendNumber(World.Island.JointUpdateTime / TimeSpan.TicksPerMillisecond, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Controller:").AppendNumber(World.ControllersUpdateTime / TimeSpan.TicksPerMillisecond, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Total:   ").AppendNumber(World.UpdateTime / TimeSpan.TicksPerMillisecond, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Body:    ").AppendNumber(  (float)World.SolveUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Contact: ").AppendNumber(  (float)World.ContactsUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- CCD:     ").AppendNumber(  (float)World.ContinuousPhysicsTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Joint:   ").AppendNumber(  (float)World.Island.JointUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Controller:").AppendNumber((float)World.ControllersUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Total:   ").AppendNumber(  (float)World.UpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
             DrawString(x + 110, y, _debugPanelSbUpdate);
         }
 
