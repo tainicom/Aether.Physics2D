@@ -56,6 +56,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
             _spriteBatch.End();
 
+            DrawString("Particles: " + World.Fluid.Particles.Count);
+            
             base.Update(settings, gameTime);
         }
 

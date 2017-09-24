@@ -347,7 +347,6 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _debugPanelSbObjects.Append("- Proxies:  ").AppendNumber(World.ProxyCount).AppendLine();  
             _debugPanelSbObjects.Append("- Joints:   ").AppendNumber(World.JointList.Count).AppendLine();
             _debugPanelSbObjects.Append("- Controllers: ").AppendNumber(World.ControllerList.Count).AppendLine();
-            _debugPanelSbObjects.Append("- Particles: ").AppendNumber(World.Fluid.Particles.Count).AppendLine();
             DrawString(x, y, _debugPanelSbObjects);
             
             _debugPanelSbUpdate.Clear();
