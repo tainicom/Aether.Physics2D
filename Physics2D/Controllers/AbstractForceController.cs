@@ -92,8 +92,6 @@ namespace tainicom.Aether.Physics2D.Controllers
         public AbstractForceController()
             : base(ControllerType.AbstractForceController)
         {
-            Enabled = true;
-
             Strength = 1.0f;
             Position = new Vector2(0, 0);
             MaximumSpeed = 100.0f;

@@ -55,11 +55,15 @@ namespace tainicom.Aether.Physics2D.Controllers
 
     public abstract class Controller : FilterData
     {
-        public bool Enabled;
+        public bool Enabled = true;
         public World World { get; internal set; }
         private ControllerType _type;
 
-        public Controller(ControllerType controllerType)
+        public Controller()
+        {
+        }
+
+        public Controller(ControllerType controllerType): base()
         {
             _type = controllerType;
         }
