@@ -54,6 +54,9 @@
     </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\DiagnosticsFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
