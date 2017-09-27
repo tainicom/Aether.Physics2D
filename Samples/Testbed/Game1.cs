@@ -135,10 +135,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private void StartTest(int index)
         {
+            // save previous flags
+            DebugViewFlags flags = (DebugViewFlags)0;
+            if (_test != null)
+                flags = _test.DebugView.Flags;
+
             _entry = TestEntries.TestList[index];
             _test = _entry.CreateTest();
             _test.GameInstance = this;
             _test.Initialize();
+
+            // re-enable previous flags
+            _test.DebugView.Flags |= flags;
         }
 
         /// <summary>
