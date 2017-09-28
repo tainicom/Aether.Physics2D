@@ -186,6 +186,17 @@ namespace tainicom.Aether.Physics2D
         /// velocity below this threshold will be treated as inelastic.
         /// </summary>
         public const float VelocityThreshold = 1.0f;
+        
+        /// <summary>
+        /// A threshold for activating multiple cores to solve VelocityConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve VelocityConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        /// <remarks>
+        /// The multithreading algorithm might generate garbage. This can hurt the performance on platforms with poor GC performance.
+        /// </remarks>
+        public static int VelocityConstraintsMultithreadThreshold = int.MaxValue;
 
         /// <summary>
         /// The maximum linear position correction used when solving constraints. This helps to

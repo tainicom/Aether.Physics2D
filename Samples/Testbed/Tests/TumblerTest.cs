@@ -29,6 +29,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
@@ -61,12 +62,34 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             base.Update(settings, gameTime);
 
+            DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 4-(256), 5-(int.MaxValue - Always OFF))");
+            var threshold = Settings.VelocityConstraintsMultithreadThreshold;
+            if (threshold == 0) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 0");
+            else if (threshold == 128) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 128");
+            else if (threshold == 256) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 256");
+            else if (threshold == int.MaxValue) DrawString("VelocityConstraintsMultithreadThreshold is Currently: int.MaxValue");
+            else DrawString("VelocityConstraintsMultithreadThreshold is Currently: " + threshold);
+
             if (_count < Count)
             {
                 Body box = World.CreateRectangle(0.125f * 2, 0.125f * 2, 1, new Vector2(0, 10));
                 box.BodyType = BodyType.Dynamic;
                 ++_count;
             }
+        }
+
+        public override void Keyboard(KeyboardManager keyboardManager)
+        {
+            base.Keyboard(keyboardManager);
+
+            if (keyboardManager.IsNewKeyPress(Keys.D1))
+                Settings.VelocityConstraintsMultithreadThreshold = 0;
+            if (keyboardManager.IsNewKeyPress(Keys.D2))
+                Settings.VelocityConstraintsMultithreadThreshold = 128;
+            if (keyboardManager.IsNewKeyPress(Keys.D3))
+                Settings.VelocityConstraintsMultithreadThreshold = 256;
+            if (keyboardManager.IsNewKeyPress(Keys.D4))
+                Settings.VelocityConstraintsMultithreadThreshold = int.MaxValue;
         }
 
         public static Test Create()
