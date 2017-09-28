@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\Windows\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WINDOWS;MG</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WINDOWS;MG;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -31,7 +31,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\Windows\</OutputPath>
-    <DefineConstants>TRACE;WINDOWS;MG</DefineConstants>
+    <DefineConstants>TRACE;WINDOWS;MG;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
