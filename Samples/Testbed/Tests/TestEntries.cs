@@ -46,6 +46,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Gears", CreateTest = GearsTest.Create},
             new TestEntry {Name = "ConvexHull", CreateTest = ConvexHullTest.Create},
             new TestEntry {Name = "Varying Restitution", CreateTest = VaryingRestitutionTest.Create},
+            new TestEntry {Name = "Multithread SolveVelocityConstraints()", CreateTest = MultithreadTest.Create},
             new TestEntry {Name = "Tumbler", CreateTest = TumblerTest.Create},
             new TestEntry {Name = "Tiles", CreateTest = TilesTest.Create},
             new TestEntry {Name = "Cantilever", CreateTest = CantileverTest.Create},
