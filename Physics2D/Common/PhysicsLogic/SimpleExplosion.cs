@@ -5,9 +5,9 @@
 
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 {
@@ -16,8 +16,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
     /// </summary>
     public sealed class SimpleExplosion : PhysicsLogic
     {
-        public SimpleExplosion(World world)
-            : base(world, PhysicsLogicType.Explosion)
+        public SimpleExplosion(World world): base(world)
         {
             Power = 1; //linear
         }

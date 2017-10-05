@@ -4,10 +4,11 @@
  */
 
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Controllers
 {
@@ -51,7 +52,6 @@ namespace tainicom.Aether.Physics2D.Controllers
         /// <param name="rotationalDragCoefficient">Rotational drag coefficient of the fluid</param>
         /// <param name="gravity">The direction gravity acts. Buoyancy force will act in opposite direction of gravity.</param>
         public BuoyancyController(AABB container, float density, float linearDragCoefficient, float rotationalDragCoefficient, Vector2 gravity)
-            : base(ControllerType.BuoyancyController)
         {
             Container = container;
             _normal = new Vector2(0, 1);

@@ -6,10 +6,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 {
@@ -103,8 +103,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
         private List<ShapeData> _data = new List<ShapeData>();
         private RayDataComparer _rdc;
 
-        public RealExplosion(World world)
-            : base(world, PhysicsLogicType.Explosion)
+        public RealExplosion(World world) : base(world)
         {
             _rdc = new RayDataComparer();
             _data = new List<ShapeData>();
