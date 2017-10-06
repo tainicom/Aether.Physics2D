@@ -1,5 +1,3 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
-
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -27,53 +25,49 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
+using tainicom.Aether.Physics2D.Dynamics;
+using tainicom.Aether.Physics2D.Dynamics.Joints;
+using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using tainicom.Aether.Physics2D.Collision.Shapes;
-using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.Dynamics;
-using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
-    public class MultithreadTest : Test
+    public class Multithread2Test : Test
     {
-        private const int Count = 32;
+        private const int Count = 600;
+        private int _count;
 
-        private MultithreadTest()
+        Multithread2Test()
         {
-            //Create ground
-            World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
+            Body ground = World.CreateBody();
 
-            Vertices box = PolygonTools.CreateRectangle(0.5f, 0.5f);
-            PolygonShape shape = new PolygonShape(box, 5);
+            Body tumblerBody = World.CreateBody(new Vector2(0, 10));
+            tumblerBody.SleepingAllowed = false;
+            tumblerBody.BodyType = BodyType.Dynamic;
 
-            Vector2 x = new Vector2(-7.0f, 0.75f);
-            Vector2 deltaX = new Vector2(0.5625f, 1.25f);
-            Vector2 deltaY = new Vector2(1.125f, 0.0f);
+            tumblerBody.CreateRectangle(1, 20, 5, new Vector2(10, 0));
+            tumblerBody.CreateRectangle(1, 20, 5, new Vector2(-10, 0));
+            tumblerBody.CreateRectangle(20, 1, 5, new Vector2(0, 10));
+            tumblerBody.CreateRectangle(20, 1, 5, new Vector2(0, -10));
 
-            for (int i = 0; i < Count; ++i)
-            {
-                Vector2 y = x;
-
-                for (int j = i; j < Count; ++j)
-                {
-                    Body body = World.CreateBody();
-                    body.BodyType = BodyType.Dynamic;
-                    body.Position = y;
-                    body.CreateFixture(shape);
-                    body.SleepingAllowed = false;
-
-                    y += deltaY;
-                }
-
-                x += deltaX;
-            }
+            RevoluteJoint joint = JointFactory.CreateRevoluteJoint(World, ground, tumblerBody, new Vector2(0, 10), Vector2.Zero);
+            joint.ReferenceAngle = 0.0f;
+            joint.MotorSpeed = 0.05f * MathHelper.Pi;
+            joint.MaxMotorTorque = 1e8f;
+            joint.MotorEnabled = true;
         }
-        
+
         public override void Update(GameSettings settings, GameTime gameTime)
         {
             base.Update(settings, gameTime);
+
+            if (_count < Count)
+            {
+                Body box = World.CreateRectangle(0.125f * 2, 0.125f * 2, 1, new Vector2(0, 10));
+                box.BodyType = BodyType.Dynamic;
+                ++_count;
+            }
 
             DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 4-(256), 5-(int.MaxValue - Always OFF))");
             var threshold = Settings.VelocityConstraintsMultithreadThreshold;
@@ -83,6 +77,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             else if (threshold == int.MaxValue) DrawString("VelocityConstraintsMultithreadThreshold is Currently: int.MaxValue");
             else DrawString("VelocityConstraintsMultithreadThreshold is Currently: " + threshold);
 
+            if (gameTime.IsRunningSlowly)
+                DrawString("[IsRunningSlowly]");
         }
 
         public override void Keyboard(KeyboardManager keyboardManager)
@@ -101,7 +97,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         public static Test Create()
         {
-            return new MultithreadTest();
+            return new Multithread2Test();
         }
     }
 }

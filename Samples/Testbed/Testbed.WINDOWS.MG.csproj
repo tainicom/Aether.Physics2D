@@ -91,7 +91,8 @@
     <Compile Include="Tests\MobileBalancedTest.cs" />
     <Compile Include="Tests\MobileTest.cs" />
     <Compile Include="Tests\MotorJointTest.cs" />
-    <Compile Include="Tests\MultithreadTest.cs" />
+    <Compile Include="Tests\Multithread1Test.cs" />
+    <Compile Include="Tests\Multithread2Test.cs" />
     <Compile Include="Tests\OneSidedPlatformTest.cs" />
     <Compile Include="Tests\PathTest.cs" />
     <Compile Include="Tests\PinballTest.cs" />

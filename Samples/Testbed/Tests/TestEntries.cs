@@ -46,7 +46,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Gears", CreateTest = GearsTest.Create},
             new TestEntry {Name = "ConvexHull", CreateTest = ConvexHullTest.Create},
             new TestEntry {Name = "Varying Restitution", CreateTest = VaryingRestitutionTest.Create},
-            new TestEntry {Name = "Multithread SolveVelocityConstraints()", CreateTest = MultithreadTest.Create},
             new TestEntry {Name = "Tumbler", CreateTest = TumblerTest.Create},
             new TestEntry {Name = "Tiles", CreateTest = TilesTest.Create},
             new TestEntry {Name = "Cantilever", CreateTest = CantileverTest.Create},
@@ -86,6 +85,12 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 #if WINDOWS
             //new TestEntry {Name = "Add Pair Stress Test", CreateTest = AddPairTest.Create},
 #endif
+
+            // AetherPhysics2D tests
+            new TestEntry {Name = "Multithread SolveVelocityConstraints() Test 1", CreateTest = Multithread1Test.Create},            
+            new TestEntry {Name = "Multithread SolveVelocityConstraints() Test 2", CreateTest = Multithread2Test.Create},
+            new TestEntry {Name = "Body Pool", CreateTest = BodyPoolTest.Create},
+
             //FPE tests
             new TestEntry {Name = "YuPeng Polygon", CreateTest = YuPengPolygonTest.Create},
             new TestEntry {Name = "Path Test", CreateTest = PathTest.Create},
@@ -113,6 +118,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 #endif
             new TestEntry {Name = "Check polygon", CreateTest = CheckPolygonTest.Create},
             new TestEntry {Name = "Fluids", CreateTest = FluidsTest.Create},
+
             new TestEntry {Name = null, CreateTest = null}
         };
     }
