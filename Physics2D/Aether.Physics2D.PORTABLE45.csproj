@@ -4,20 +4,20 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{FAA2CCDA-368A-4735-9805-64247D9ABB83}</ProjectGuid>
+    <ProjectGuid>{D7449C73-0922-4CB8-B83A-F5CE2904BE14}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>tainicom.Aether.Physics2D</RootNamespace>
     <AssemblyName>Aether.Physics2D</AssemblyName>
-    <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\Portable\</OutputPath>
-    <DefineConstants>DEBUG;PORTABLE</DefineConstants>
+    <OutputPath>..\bin\Debug\Portable45\</OutputPath>
+    <DefineConstants>DEBUG;PORTABLE45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -25,11 +25,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\Portable\</OutputPath>
+    <OutputPath>..\bin\Release\Portable45\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DefineConstants>PORTABLE</DefineConstants>
+    <DefineConstants>PORTABLE45</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Collision\Collision.cs" />
@@ -147,7 +147,6 @@
     <Compile Include="Dynamics\Joints\RopeJoint.cs" />
     <Compile Include="Dynamics\Joints\WeldJoint.cs" />
     <Compile Include="Dynamics\Joints\WheelJoint.cs" />
-    <Compile Include="Diagnostics\Stopwatch.cs" />
     <Compile Include="Dynamics\TimeStep.cs" />
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />
