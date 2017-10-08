@@ -34,7 +34,7 @@ using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
-#if NET40 || NET45
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
 using System.Threading;
 using System.Threading.Tasks;
 #endif
@@ -356,23 +356,15 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
 
-        volatile int SolveVelocityConstraintsWaitLock;
         public void SolveVelocityConstraints()
         {
-#if NET40 || NET45
             if (_count >= Settings.VelocityConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
             {
                 if (_count == 0) return;
                 var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);
                 var batches = (int)Math.Ceiling((float)_count / batchSize);
 
-                //Parallel.For(0, batches, (i) =>
-                //    {
-                //        var start = i * batchSize;
-                //        var end = Math.Min(start + batchSize, _count);
-                //        SolveVelocityConstraints(start, end);
-                //    });
-
+#if NET40 || NET45
                 SolveVelocityConstraintsWaitLock = batches;
                 for (int i = 0; i < batches; i++)
                 {
@@ -382,9 +374,18 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 }
                 while (SolveVelocityConstraintsWaitLock > 0)
                     Thread.Sleep(0);
+#elif PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                Parallel.For(0, batches, (i) =>
+                {
+                    var start = i * batchSize;
+                    var end = Math.Min(start + batchSize, _count);
+                    SolveVelocityConstraints(start, end);
+                });
+#else
+                SolveVelocityConstraints(0, _count);
+#endif
             }
             else
-#endif
             {                
                 SolveVelocityConstraints(0, _count);
             }
@@ -393,6 +394,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         }
 
 #if NET40 || NET45
+        volatile int SolveVelocityConstraintsWaitLock;
         static void SolveVelocityConstraintsCallback(object state)
         {
             var svcState = (SolveVelocityConstraintsState)state;
@@ -400,6 +402,37 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             svcState.ContactSolver.SolveVelocityConstraints(svcState.Start, svcState.End);
             SolveVelocityConstraintsState.Return(svcState);
             Interlocked.Decrement(ref svcState.ContactSolver.SolveVelocityConstraintsWaitLock);
+        }
+
+        private class SolveVelocityConstraintsState
+        {
+            private static System.Collections.Concurrent.ConcurrentQueue<SolveVelocityConstraintsState> _queue = new System.Collections.Concurrent.ConcurrentQueue<SolveVelocityConstraintsState>(); // pool
+
+            public ContactSolver ContactSolver;
+            public int Start { get; private set; }
+            public int End { get; private set; }
+
+            private SolveVelocityConstraintsState()
+            {
+            }
+
+            internal static object Get(ContactSolver contactSolver, int start, int end)
+            {
+                SolveVelocityConstraintsState result;
+                if (!_queue.TryDequeue(out result))
+                    result = new SolveVelocityConstraintsState();
+
+                result.ContactSolver = contactSolver;
+                result.Start = start;
+                result.End = end;
+
+                return result;
+            }
+
+            internal static void Return(object state)
+            {
+                _queue.Enqueue((SolveVelocityConstraintsState)state);
+            }
         }
 #endif
 
@@ -409,7 +442,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             {
                 ContactVelocityConstraint vc = _velocityConstraints[i];
 
-#if NET40 || NET45
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 // find lower order item
                 int orderedIndexA = vc.indexA;
                 int orderedIndexB = vc.indexB;
@@ -427,7 +460,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                             break;
                         _velocities[orderedIndexA].Lock = 0;
                     }
+#if NET40 || NET45
                     Thread.Sleep(0);
+#endif
                 }
 #endif
 
@@ -733,7 +768,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _velocities[indexB].v = vB;
                 _velocities[indexB].w = wB;
 
-#if NET40 || NET45
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 _velocities[orderedIndexB].Lock = 0;
                 _velocities[orderedIndexA].Lock = 0;
 #endif
@@ -1065,39 +1100,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
     }
-        
-#if NET40 || NET45
-    internal class SolveVelocityConstraintsState
-    {
-        internal static System.Collections.Concurrent.ConcurrentQueue<SolveVelocityConstraintsState> _queue  = new System.Collections.Concurrent.ConcurrentQueue<SolveVelocityConstraintsState>(); // pool
 
-        public ContactSolver ContactSolver;
-        public int Start;
-        public int End;
-
-        private SolveVelocityConstraintsState()
-        {
-        }
-        
-        internal static object Get(ContactSolver contactSolver, int start, int end)
-        {
-            SolveVelocityConstraintsState result;
-            if(!_queue.TryDequeue(out result))
-                result = new SolveVelocityConstraintsState();
-
-            result.ContactSolver = contactSolver;
-            result.Start = start;
-            result.End = end;
-
-            return result;
-        }
-                
-        internal static void Return(object state)
-        {
-            _queue.Enqueue((SolveVelocityConstraintsState)state);
-        }
-
-    }
-#endif
 
 }
