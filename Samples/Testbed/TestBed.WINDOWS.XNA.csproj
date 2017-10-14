@@ -112,6 +112,7 @@
     <Compile Include="Tests\CharacterCollisionTest.cs" />
     <Compile Include="Tests\CollisionFilteringTest.cs" />
     <Compile Include="Tests\CollisionProcessingTest.cs" />
+    <Compile Include="Tests\CollisionTest.cs" />
     <Compile Include="Tests\CompoundShapesTest.cs" />
     <Compile Include="Tests\ConfinedTest.cs" />
     <Compile Include="Tests\ContinuousTest.cs" />
