@@ -45,6 +45,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Inverse time step (0 if dt == 0).
         /// </summary>
         public float inv_dt;
+
+        public bool warmStarting;
     }
 
     /// This is an internal structure.

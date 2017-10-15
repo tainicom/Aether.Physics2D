@@ -245,7 +245,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _bias = 0.0f;
             }
 
-            if (Settings.EnableWarmstarting)
+            if (data.step.warmStarting)
             {
                 // Scale impulses to support a variable time step.
                 _impulse *= data.step.dtRatio;

@@ -153,10 +153,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             solverData.positions = _positions;
             solverData.velocities = _velocities;
 
-            _contactSolver.Reset(step, true, ContactCount, _contacts, _positions, _velocities);
+            _contactSolver.Reset(step, ContactCount, _contacts, _positions, _velocities);
             _contactSolver.InitializeVelocityConstraints();
 
-            if (Settings.EnableWarmstarting)
+            if (step.warmStarting)
             {
                 _contactSolver.WarmStart();
             }
@@ -319,7 +319,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
         }
 
-        internal void SolveTOI(ref TimeStep subStep, bool warmstarting, int toiIndexA, int toiIndexB)
+        internal void SolveTOI(ref TimeStep subStep, int toiIndexA, int toiIndexB)
         {
             Debug.Assert(toiIndexA < BodyCount);
             Debug.Assert(toiIndexB < BodyCount);
@@ -334,7 +334,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _velocities[i].w = b._angularVelocity;
             }
 
-            _contactSolver.Reset(subStep, warmstarting, ContactCount, _contacts, _positions, _velocities);
+            _contactSolver.Reset(subStep, ContactCount, _contacts, _positions, _velocities);
 
             // Solve position constraints.
             for (int i = 0; i < Settings.TOIPositionIterations; ++i)

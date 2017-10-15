@@ -219,7 +219,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             // Cheat with some damping
             wA *= 0.98f;
 
-            if (Settings.EnableWarmstarting)
+            if (data.step.warmStarting)
             {
                 _impulse *= data.step.dtRatio;
                 vA += _invMassA * _impulse;

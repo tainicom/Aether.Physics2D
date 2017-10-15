@@ -102,7 +102,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         public Contact[] _contacts;
         public int _count;
 
-        public void Reset(TimeStep step, bool warmstarting, int count, Contact[] contacts, Position[] positions, Velocity[] velocities)
+        public void Reset(TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities)
         {
             _step = step;
             _count = count;
@@ -181,7 +181,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     ManifoldPoint cp = manifold.Points[j];
                     VelocityConstraintPoint vcp = vc.points[j];
 
-                    if (warmstarting)
+                    if (step.warmStarting)
                     {
                         vcp.normalImpulse = _step.dtRatio * cp.NormalImpulse;
                         vcp.tangentImpulse = _step.dtRatio * cp.TangentImpulse;

@@ -52,6 +52,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
     /// </summary>
     public partial class World
     {
+        #region These are for debugging the solver.
+        /// <summary>This is only for debugging the solver</summary>
+        private const bool _warmStarting = true;
+        /// <summary>This is only for debugging the solver</summary>
+        private const bool _subStepping = false;
+        #endregion
+
         private float _invDt0;
         private Body[] _stack = new Body[64];
         private bool _stepComplete;
@@ -768,7 +775,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 subStep.dt = (1.0f - minAlpha) * step.dt;
                 subStep.inv_dt = 1.0f / subStep.dt;
                 subStep.dtRatio = 1.0f;
-                Island.SolveTOI(ref subStep, false, bA0.IslandIndex, bB0.IslandIndex);
+                subStep.warmStarting = false;
+                Island.SolveTOI(ref subStep, bA0.IslandIndex, bB0.IslandIndex);
 
                 // Reset island flags and synchronize broad-phase proxies.
                 for (int i = 0; i < Island.BodyCount; ++i)
@@ -795,7 +803,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 // Also, some contacts can be destroyed.
                 ContactManager.FindNewContacts();
 
-                if (Settings.EnableSubStepping)
+                if (_subStepping)
                 {
                     _stepComplete = false;
                     break;
@@ -1359,6 +1367,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             step.inv_dt = dt > 0.0f ? 1.0f / dt : 0.0f;
             step.dt = dt;
             step.dtRatio = _invDt0 * dt;
+            step.warmStarting = _warmStarting;
 
             IsStepping = true;
             try

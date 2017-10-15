@@ -203,7 +203,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
             _mass = invMass != 0.0f ? 1.0f / invMass : 0.0f;
 
-            if (Settings.EnableWarmstarting)
+            if (data.step.warmStarting)
             {
                 // Scale the impulse to support a variable time step.
                 _impulse *= data.step.dtRatio;
