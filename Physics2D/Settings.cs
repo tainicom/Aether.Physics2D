@@ -93,11 +93,6 @@ namespace tainicom.Aether.Physics2D
         public const int MaxSubSteps = 8;
 
         /// <summary>
-        /// Enable/Disable warmstarting
-        /// </summary>
-        public const bool EnableWarmstarting = true;
-
-        /// <summary>
         /// Enable/Disable sleeping
         /// </summary>
         public static bool AllowSleep = true;
@@ -253,11 +248,6 @@ namespace tainicom.Aether.Physics2D
         /// Defines the maximum number of iterations made by the GJK algorithm.
         /// </summary>
         public const int MaxGJKIterations = 20;
-
-        /// <summary>
-        /// This is only for debugging the solver
-        /// </summary>
-        public const bool EnableSubStepping = false;
 
         /// <summary>
         /// By default, forces are cleared automatically after each call to Step.

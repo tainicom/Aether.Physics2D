@@ -523,7 +523,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 MotorImpulse = 0.0f;
             }
 
-            if (Settings.EnableWarmstarting)
+            if (data.step.warmStarting)
             {
                 // Account for variable time step.
                 _impulse *= data.step.dtRatio;
