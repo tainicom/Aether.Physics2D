@@ -18,16 +18,40 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
     /// </summary>
     public class BreakableBody
     {
-        private float[] _angularVelocitiesCache = new float[8];
-        private bool _break;
-        private Vector2[] _velocitiesCache = new Vector2[8];
-        private World _world;
+        public enum BreakableBodyState
+        {            	
+            Unbroken,
+            ShouldBreak,
+            Broken,
+        }
 
-        public BreakableBody(World world, IEnumerable<Vertices> vertices, float density, Vector2 position = new Vector2(), float rotation = 0)
+        private float[] _angularVelocitiesCache = new float[8];
+        private Vector2[] _velocitiesCache = new Vector2[8];
+        
+        public List<Fixture> Parts = new List<Fixture>(8);
+
+        public World World { get; private set; }
+        public Body MainBody { get; private set; }
+        
+        /// <summary>
+        /// The force needed to break the body apart.
+        /// Default: 500
+        /// </summary>
+        public float Strength = 500.0f;
+
+        public BreakableBodyState State { get; private set; }
+                
+        private BreakableBody(World world)
         {
-            _world = world;
-            _world.ContactManager.PostSolve += PostSolve;
-            MainBody = _world.CreateBody(position, rotation, BodyType.Dynamic);
+            World = world;
+            World.ContactManager.PostSolve += PostSolve;
+
+            State = BreakableBodyState.Unbroken;
+        }
+
+        public BreakableBody(World world, IEnumerable<Vertices> vertices, float density, Vector2 position = new Vector2(), float rotation = 0) : this(world)
+        {
+            MainBody = World.CreateBody(position, rotation, BodyType.Dynamic);
 
             foreach (Vertices part in vertices)
             {
@@ -37,11 +61,9 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
             }
         }
 
-        public BreakableBody(World world, IEnumerable<Shape> shapes, Vector2 position = new Vector2(), float rotation = 0)
+        public BreakableBody(World world, IEnumerable<Shape> shapes, Vector2 position = new Vector2(), float rotation = 0) : this(world)
         {
-            _world = world;
-            _world.ContactManager.PostSolve += PostSolve;
-            MainBody = _world.CreateBody(position, rotation, BodyType.Dynamic);
+            MainBody = World.CreateBody(position, rotation, BodyType.Dynamic);
 
             foreach (Shape part in shapes)
             {
@@ -50,11 +72,9 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
             }
         }
         
-        public BreakableBody(World world, Vertices vertices, float density, Vector2 position = new Vector2(), float rotation = 0)
-        {   
-            _world = world;
-            _world.ContactManager.PostSolve += PostSolve;
-            MainBody = _world.CreateBody(position, rotation, BodyType.Dynamic);
+        public BreakableBody(World world, Vertices vertices, float density, Vector2 position = new Vector2(), float rotation = 0) : this(world)
+        {
+            MainBody = World.CreateBody(position, rotation, BodyType.Dynamic);
             
             //TODO: Implement a Voronoi diagram algorithm to split up the vertices
             List<Vertices> triangles = Triangulate.ConvexPartition(vertices, TriangulationAlgorithm.Earclip);
@@ -66,20 +86,10 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
                 Parts.Add(fixture);
             }
         }
-
-        public bool Broken;
-        public Body MainBody;
-        public List<Fixture> Parts = new List<Fixture>(8);
-
-        /// <summary>
-        /// The force needed to break the body apart.
-        /// Default: 500
-        /// </summary>
-        public float Strength = 500.0f;
-
+        
         private void PostSolve(Contact contact, ContactVelocityConstraint impulse)
         {
-            if (!Broken)
+            if (State != BreakableBodyState.Broken)
             {
                 if (Parts.Contains(contact.FixtureA) || Parts.Contains(contact.FixtureB))
                 {
@@ -94,7 +104,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
                     if (maxImpulse > Strength)
                     {
                         // Flag the body for breaking.
-                        _break = true;
+                        State = BreakableBodyState.ShouldBreak;
                     }
                 }
             }
@@ -102,36 +112,42 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 
         public void Update()
         {
-            if (_break)
+            switch (State)
             {
-                Decompose();
-                Broken = true;
-                _break = false;
+                case BreakableBodyState.Unbroken:
+                    CacheVelocities();
+                    break;
+                case BreakableBodyState.ShouldBreak:
+                    Decompose();
+                    break;
+            }
+        }
+        
+        // Cache velocities to improve movement on breakage.
+        private void CacheVelocities()
+        {
+            //Enlarge the cache if needed
+            if (Parts.Count > _angularVelocitiesCache.Length)
+            {
+                _velocitiesCache = new Vector2[Parts.Count];
+                _angularVelocitiesCache = new float[Parts.Count];
             }
 
-            // Cache velocities to improve movement on breakage.
-            if (Broken == false)
+            //Cache the linear and angular velocities.
+            for (int i = 0; i < Parts.Count; i++)
             {
-                //Enlarge the cache if needed
-                if (Parts.Count > _angularVelocitiesCache.Length)
-                {
-                    _velocitiesCache = new Vector2[Parts.Count];
-                    _angularVelocitiesCache = new float[Parts.Count];
-                }
-
-                //Cache the linear and angular velocities.
-                for (int i = 0; i < Parts.Count; i++)
-                {
-                    _velocitiesCache[i] = Parts[i].Body.LinearVelocity;
-                    _angularVelocitiesCache[i] = Parts[i].Body.AngularVelocity;
-                }
+                _velocitiesCache[i] = Parts[i].Body.LinearVelocity;
+                _angularVelocitiesCache[i] = Parts[i].Body.AngularVelocity;
             }
         }
 
         private void Decompose()
         {
+            if (State == BreakableBodyState.Broken)
+                throw new InvalidOperationException("BreakableBody is allready broken");
+
             //Unsubsribe from the PostSolve delegate
-            _world.ContactManager.PostSolve -= PostSolve;
+            World.ContactManager.PostSolve -= PostSolve;
 
             for (int i = 0; i < Parts.Count; i++)
             {
@@ -142,7 +158,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 
                 MainBody.Remove(oldFixture);
 
-                Body body = _world.CreateBody(MainBody.Position, MainBody.Rotation, BodyType.Dynamic);
+                Body body = World.CreateBody(MainBody.Position, MainBody.Rotation, BodyType.Dynamic);
                 body.Tag = MainBody.Tag;
                 
                 Fixture newFixture = body.CreateFixture(shape);
@@ -153,12 +169,10 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
                 body.LinearVelocity = _velocitiesCache[i];
             }
 
-            _world.Remove(MainBody);
+            World.Remove(MainBody);
+            
+            State = BreakableBodyState.Broken;
         }
 
-        public void Break()
-        {
-            _break = true;
-        }
     }
 }

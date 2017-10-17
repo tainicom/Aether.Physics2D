@@ -136,7 +136,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             Sprites.Begin(0, null, null, null, null, null, Camera.View);
             for (int i = 0; i < 3; i++)
             {
-                if (_breakableCookie[i].Broken)
+                if (_breakableCookie[i].State == BreakableBody.BreakableBodyState.Broken)
                 {
                     for (int j = 0; j < _breakableCookie[i].Parts.Count; j++)
                     {
