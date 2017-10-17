@@ -23,8 +23,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public BackgroundScreen()
         {
-            TransitionOnTime = TimeSpan.FromSeconds(0.5);
-            TransitionOffTime = TimeSpan.FromSeconds(0.5);
+            TransitionOnTime = TimeSpan.FromSeconds(0.4);
+            TransitionOffTime = TimeSpan.FromSeconds(0.3);
         }
 
         public override void LoadContent()

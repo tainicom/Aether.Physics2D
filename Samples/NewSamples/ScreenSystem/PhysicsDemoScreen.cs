@@ -40,8 +40,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         protected PhysicsDemoScreen()
         {
-            TransitionOnTime = TimeSpan.FromSeconds(0.75);
-            TransitionOffTime = TimeSpan.FromSeconds(0.75);
+            TransitionOnTime = TimeSpan.FromSeconds(0.4);
+            TransitionOffTime = TimeSpan.FromSeconds(0.3);
             HasCursor = true;
             EnableCameraControl = true;
             _userAgent = null;
