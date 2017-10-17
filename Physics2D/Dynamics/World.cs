@@ -136,7 +136,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Island = new Island();
             Enabled = true;
             ControllerList = new List<Controller>();
-            BreakableBodyList = new List<BreakableBody>();
+            BreakableBodyList = new List<tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody>();
             BodyList = new List<Body>(32);
             JointList = new List<Joint>(32);
 
@@ -819,7 +819,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public readonly List<Controller> ControllerList;
 
-        public readonly List<BreakableBody> BreakableBodyList;
+        public readonly List<tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody> BreakableBodyList;
 
         public TimeSpan UpdateTime { get; private set; }
         public TimeSpan ContinuousPhysicsTime { get; private set; }
@@ -1553,7 +1553,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ControllerRemoved(this, controller);
         }
 
-        public void Add(BreakableBody breakableBody)
+        public void Add(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody)
         {
             if (breakableBody == null)
                 throw new ArgumentNullException("breakableBody");
@@ -1563,7 +1563,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             BreakableBodyList.Add(breakableBody);
         }
 
-        public void Remove(BreakableBody breakableBody)
+        public void Remove(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody)
         {
             if (breakableBody == null)
                 throw new ArgumentNullException("breakableBody");

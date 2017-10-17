@@ -5,12 +5,12 @@
 
 using System;
 using System.Collections.Generic;
-using tainicom.Aether.Physics2D.Collision.Shapes;
-using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using Microsoft.Xna.Framework;
+using tainicom.Aether.Physics2D.Collision.Shapes;
+using tainicom.Aether.Physics2D.Dynamics;
+using tainicom.Aether.Physics2D.Dynamics.Contacts;
 
-namespace tainicom.Aether.Physics2D.Dynamics
+namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 {
     /// <summary>
     /// A type of body that supports multiple fixtures that can break apart.

@@ -94,6 +94,7 @@
     <Compile Include="Common\Math.cs" />
     <Compile Include="Common\Path.cs" />
     <Compile Include="Common\PathManager.cs" />
+    <Compile Include="Common\PhysicsLogic\BreakableBody.cs" />
     <Compile Include="Common\PhysicsLogic\ControllerFilter.cs" />
     <Compile Include="Common\PhysicsLogic\FilterData.cs" />
     <Compile Include="Common\PhysicsLogic\PhysicsLogic.cs" />
@@ -125,7 +126,6 @@
     <Compile Include="Dynamics\Body.cs" />
     <Compile Include="Dynamics\Body.Factory.cs" />
     <Compile Include="Dynamics\BodyType.cs" />
-    <Compile Include="Dynamics\BreakableBody.cs" />
     <Compile Include="Dynamics\Category.cs" />
     <Compile Include="Dynamics\ContactManager.cs" />
     <Compile Include="Dynamics\Contacts\Contact.cs" />
