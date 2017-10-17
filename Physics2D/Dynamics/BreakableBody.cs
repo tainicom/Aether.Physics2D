@@ -135,7 +135,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 body.LinearVelocity = _velocitiesCache[i];
             }
 
-            _world.RemoveAsync(MainBody);
+            _world.Remove(MainBody);
             _world.Remove(this);
         }
 
