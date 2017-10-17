@@ -136,7 +136,6 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
             }
 
             _world.Remove(MainBody);
-            _world.Remove(this);
         }
 
         public void Break()

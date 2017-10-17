@@ -23,6 +23,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
     internal class AdvancedDemo5 : PhysicsGameScreen, IDemoScreen
     {
         private Border _border;
+        private List<BreakableBody> _breakableBodies;
 
         #region IDemoScreen Members
 
@@ -64,6 +65,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             World.Gravity = Vector2.Zero;
 
             _border = new Border(World, ScreenManager, Camera);
+            _breakableBodies = new List<BreakableBody>();
 
             Texture2D alphabet = ScreenManager.Content.Load<Texture2D>("Samples/alphabet");
 
@@ -104,13 +106,21 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                     vertices.Scale(ref vertScale);
                 }
 
-                BreakableBody breakableBody = new BreakableBody(World, triangulated, 1);
+                var breakableBody = new BreakableBody(World, triangulated, 1);
                 breakableBody.MainBody.Position = new Vector2(xOffset, yOffset);
                 breakableBody.Strength = 100;
-                World.Add(breakableBody);
+                _breakableBodies.Add(breakableBody);
 
                 xOffset += 3.5f;
             }
+        }
+
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+        {
+            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            foreach(var breakableBody in _breakableBodies)
+                breakableBody.Update();
         }
 
         public override void HandleInput(InputHelper input, GameTime gameTime)

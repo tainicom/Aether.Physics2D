@@ -86,6 +86,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             _completeSprite = new Sprite(ContentWrapper.GetTexture("Cookie"), Vector2.Zero);
         }
 
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+        {
+            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            for (int i = 0; i < 3; i++)
+            {
+                _breakableCookie[i].Update();
+            }
+        }
+
         public override void HandleInput(InputHelper input, GameTime gameTime)
         {
             if (input.IsNewMouseButtonPress(MouseButtons.RightButton) ||

@@ -136,7 +136,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Island = new Island();
             Enabled = true;
             ControllerList = new List<Controller>();
-            BreakableBodyList = new List<tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody>();
             BodyList = new List<Body>(32);
             JointList = new List<Joint>(32);
 
@@ -819,8 +818,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public readonly List<Controller> ControllerList;
 
-        public readonly List<tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody> BreakableBodyList;
-
         public TimeSpan UpdateTime { get; private set; }
         public TimeSpan ContinuousPhysicsTime { get; private set; }
         public TimeSpan ControllersUpdateTime { get; private set; }
@@ -1412,11 +1409,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 IsStepping = false;
             }
 
-            for (int i = 0; i < BreakableBodyList.Count; i++)
-            {
-                BreakableBodyList[i].Update();
-            }
-
             _invDt0 = step.inv_dt;
 
             if (Settings.EnableDiagnostics)
@@ -1553,26 +1545,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ControllerRemoved(this, controller);
         }
 
-        public void Add(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody)
-        {
-            if (breakableBody == null)
-                throw new ArgumentNullException("breakableBody");
-            if (BreakableBodyList.Contains(breakableBody))
-                throw new ArgumentException("You are adding the same BreakableBodyList more than once.", "breakableBody");
-
-            BreakableBodyList.Add(breakableBody);
-        }
-
-        public void Remove(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody)
-        {
-            if (breakableBody == null)
-                throw new ArgumentNullException("breakableBody");
-            if (!BreakableBodyList.Contains(breakableBody))
-                throw new ArgumentException("You are removing a breakableBody that is not in the simulation.", "breakableBody");
-
-            BreakableBodyList.Remove(breakableBody);
-        }
-
         public Fixture TestPoint(Vector2 point)
         {
             AABB aabb;
@@ -1671,10 +1643,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 Remove(ControllerList[i]);
             }
 
-            for (int i = BreakableBodyList.Count - 1; i >= 0; i--)
-            {
-                Remove(BreakableBodyList[i]);
-            }
         }
     }
 }

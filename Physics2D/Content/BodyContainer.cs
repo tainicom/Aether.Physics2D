@@ -56,7 +56,6 @@ namespace tainicom.Aether.Physics2D.Content
             }
 
             tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody body = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(world, shapes);
-            world.Add(body);
 
             return body;
         }

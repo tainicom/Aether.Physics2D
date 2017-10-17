@@ -41,6 +41,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private float _angularVelocity;
         private Body _body1;
+        private tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody _breakableBody;
         private bool _break;
         private bool _broke;
         private Fixture _piece1;
@@ -88,7 +89,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Vector2 scale = new Vector2(0.07f, 0.07f);
             verts.Scale(ref scale);
 
-            World.CreateBreakableBody(verts, 50, new Vector2(-10, 25));
+            _breakableBody = World.CreateBreakableBody(verts, 50, new Vector2(-10, 25));
 
             base.Initialize();
         }
@@ -168,6 +169,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
 
             base.Update(settings, gameTime);
+
+            _breakableBody.Update();
         }
 
         internal static Test Create()

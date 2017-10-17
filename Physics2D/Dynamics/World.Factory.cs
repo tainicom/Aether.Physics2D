@@ -187,7 +187,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(this, triangles, density, position, rotation);
             breakableBody.MainBody.Position = position;
-            this.Add(breakableBody);
             return breakableBody;
         }
 
@@ -195,7 +194,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(this, shapes, position, rotation);
             breakableBody.MainBody.Position = position;
-            this.Add(breakableBody);
             return breakableBody;
         }
 
