@@ -16,6 +16,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.MediaSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
+using tainicom.Aether.Physics2D.Collision.Shapes;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -67,7 +68,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             _border = new Border(World, Lines, Framework.GraphicsDevice);
             for (int i = 0; i < 3; i++)
             {
-                _breakableCookie[i] = Framework.Content.Load<BodyContainer>("Pipeline/BreakableBody")["Cookie"].CreateBreakable(World);
+                BodyContainer bodyContainer = Framework.Content.Load<BodyContainer>("Pipeline/BreakableBody");
+                BodyTemplate bodyTemplate = bodyContainer["Cookie"];
+
+                List<Shape> shapes = new List<Shape>();
+                foreach (FixtureTemplate f in bodyTemplate.Fixtures)
+                {
+                    shapes.Add(f.Shape);
+                }
+                _breakableCookie[i] = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(World, shapes);
+
                 _breakableCookie[i].Strength = 120f;
                 _breakableCookie[i].MainBody.Position = new Vector2(-20.33f + 15f * i, -5.33f);
             }

@@ -47,18 +47,6 @@ namespace tainicom.Aether.Physics2D.Content
             return body;
         }
 
-        public tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody CreateBreakable(World world)
-        {
-            List<Shape> shapes = new List<Shape>();
-            foreach (FixtureTemplate f in Fixtures)
-            {
-                shapes.Add(f.Shape);
-            }
-
-            tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody body = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(world, shapes);
-
-            return body;
-        }
     }
 
     public class BodyContainer : Dictionary<string, BodyTemplate> { }
