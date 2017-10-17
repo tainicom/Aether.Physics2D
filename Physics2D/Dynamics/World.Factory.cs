@@ -180,23 +180,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return body;
         }
 
-        public tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody CreateBreakableBody(Vertices vertices, float density, Vector2 position = new Vector2(), float rotation = 0)
-        {
-            //TODO: Implement a Voronoi diagram algorithm to split up the vertices
-            List<Vertices> triangles = Triangulate.ConvexPartition(vertices, TriangulationAlgorithm.Earclip);
-
-            tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(this, triangles, density, position, rotation);
-            breakableBody.MainBody.Position = position;
-            return breakableBody;
-        }
-
-        public tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody CreateBreakableBody(IEnumerable<Shape> shapes, Vector2 position = new Vector2(), float rotation = 0)
-        {
-            tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody breakableBody = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(this, shapes, position, rotation);
-            breakableBody.MainBody.Position = position;
-            return breakableBody;
-        }
-
         /// <summary>
         /// Creates a chain.
         /// </summary>

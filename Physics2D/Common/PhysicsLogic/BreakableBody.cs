@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
+using tainicom.Aether.Physics2D.Common.Decomposition;
 
 namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 {
@@ -45,6 +46,23 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
             foreach (Shape part in shapes)
             {
                 Fixture fixture = MainBody.CreateFixture(part);
+                Parts.Add(fixture);
+            }
+        }
+        
+        public BreakableBody(World world, Vertices vertices, float density, Vector2 position = new Vector2(), float rotation = 0)
+        {   
+            _world = world;
+            _world.ContactManager.PostSolve += PostSolve;
+            MainBody = _world.CreateBody(position, rotation, BodyType.Dynamic);
+            
+            //TODO: Implement a Voronoi diagram algorithm to split up the vertices
+            List<Vertices> triangles = Triangulate.ConvexPartition(vertices, TriangulationAlgorithm.Earclip);
+         
+            foreach (Vertices part in triangles)
+            {
+                PolygonShape polygonShape = new PolygonShape(part, density);
+                Fixture fixture = MainBody.CreateFixture(polygonShape);
                 Parts.Add(fixture);
             }
         }

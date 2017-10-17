@@ -89,7 +89,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Vector2 scale = new Vector2(0.07f, 0.07f);
             verts.Scale(ref scale);
 
-            _breakableBody = World.CreateBreakableBody(verts, 50, new Vector2(-10, 25));
+            _breakableBody = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(World, verts, 50, new Vector2(-10, 25));
 
             base.Initialize();
         }
