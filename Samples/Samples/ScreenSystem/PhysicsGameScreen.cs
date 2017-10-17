@@ -50,9 +50,14 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             base.LoadContent();
 
             if (World == null)
+            {
                 World = new World(Vector2.Zero);
+                World.JointRemoved += JointRemoved;
+            }
             else
+            {
                 World.Clear();
+            }
 
             if (DebugView == null)
             {
@@ -73,6 +78,12 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             // Loading may take a while... so prevent the game from "catching up" once we finished loading
             ScreenManager.Game.ResetElapsedTime();
+        }
+        
+        protected virtual void JointRemoved(World sender, Joint joint)
+        {
+            if (_fixedMouseJoint == joint)
+                _fixedMouseJoint = null;
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
