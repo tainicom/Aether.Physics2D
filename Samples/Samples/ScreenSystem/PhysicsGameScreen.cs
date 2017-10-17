@@ -18,10 +18,10 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         protected DebugView DebugView;
         protected World World;
         protected Body HiddenBody;
+        protected FixedMouseJoint _fixedMouseJoint;
 
         private float _agentForce;
         private float _agentTorque;
-        private FixedMouseJoint _fixedMouseJoint;
         private Body _userAgent;
 
         protected PhysicsGameScreen()

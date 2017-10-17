@@ -98,6 +98,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Cutting of polygons", CreateTest = CuttingTest.Create},
             new TestEntry {Name = "Gravity Controller Test", CreateTest = GravityControllerTest.Create},
             new TestEntry {Name = "Texture to Vertices", CreateTest = TextureVerticesTest.Create},
+            new TestEntry {Name = "BreakableBody test", CreateTest = BreakableBodyTest.Create},
             new TestEntry {Name = "Rounded rectangle", CreateTest = RoundedRectangle.Create},
             new TestEntry {Name = "Angle Joint", CreateTest = AngleJointTest.Create},
             new TestEntry {Name = "Explosion", CreateTest = ExplosionTest.Create},

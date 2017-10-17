@@ -55,6 +55,7 @@
     <Compile Include="Tests\ApplyForceTest.cs" />
     <Compile Include="Tests\BodyPoolTest.cs" />
     <Compile Include="Tests\BodyTypesTest.cs" />
+    <Compile Include="Tests\BreakableBodyTest.cs" />
     <Compile Include="Tests\BreakableTest.cs" />
     <Compile Include="Tests\BridgeTest.cs" />
     <Compile Include="Tests\BulletTest.cs" />

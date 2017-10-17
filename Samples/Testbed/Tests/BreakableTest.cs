@@ -26,14 +26,13 @@
 */
 
 using System;
+using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
@@ -72,27 +71,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _break = false;
             _broke = false;
         }
-
-        public override void Initialize()
-        {
-            //load texture that will represent the physics body
-            Texture2D polygonTexture = GameInstance.Content.Load<Texture2D>("Rock");
-
-            //Create an array to hold the data from the texture
-            uint[] data = new uint[polygonTexture.Width * polygonTexture.Height];
-
-            //Transfer the texture data to the array
-            polygonTexture.GetData(data);
-
-            Vertices verts = PolygonTools.CreatePolygon(data, polygonTexture.Width);
-            Vector2 scale = new Vector2(0.07f, 0.07f);
-            verts.Scale(ref scale);
-
-            World.CreateBreakableBody(verts, 50, new Vector2(-10, 25));
-
-            base.Initialize();
-        }
-
+        
         protected override void PostSolve(Contact contact, ContactVelocityConstraint impulse)
         {
             if (_broke)

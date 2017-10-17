@@ -5,16 +5,19 @@
 
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 using tainicom.Aether.Physics2D.Content;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.MediaSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
+using tainicom.Aether.Physics2D.Collision.Shapes;
+using tainicom.Aether.Physics2D.Dynamics.Joints;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -66,7 +69,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             _border = new Border(World, Lines, Framework.GraphicsDevice);
             for (int i = 0; i < 3; i++)
             {
-                _breakableCookie[i] = Framework.Content.Load<BodyContainer>("Pipeline/BreakableBody")["Cookie"].CreateBreakable(World);
+                BodyContainer bodyContainer = Framework.Content.Load<BodyContainer>("Pipeline/BreakableBody");
+                BodyTemplate bodyTemplate = bodyContainer["Cookie"];
+
+                List<Shape> shapes = new List<Shape>();
+                foreach (FixtureTemplate f in bodyTemplate.Fixtures)
+                {
+                    shapes.Add(f.Shape);
+                }
+                _breakableCookie[i] = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(World, shapes);
+
                 _breakableCookie[i].Strength = 120f;
                 _breakableCookie[i].MainBody.Position = new Vector2(-20.33f + 15f * i, -5.33f);
             }
@@ -83,6 +95,47 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _breakableSprite.Add(new Sprite(textures[i], origin));
             }
             _completeSprite = new Sprite(ContentWrapper.GetTexture("Cookie"), Vector2.Zero);
+        }
+
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+        {
+            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (_breakableCookie[i].State == BreakableBody.BreakableBodyState.ShouldBreak)
+                {
+                    // save MouseJoint position
+                    Vector2? worldAnchor = null;
+                    for (JointEdge je = _breakableCookie[i].MainBody.JointList; je != null; je = je.Next)
+                    {
+                        if (je.Joint == _fixedMouseJoint)
+                        {
+                            worldAnchor = _fixedMouseJoint.WorldAnchorA;
+                            break;
+                        }
+                    }
+
+                    // break body
+                    _breakableCookie[i].Update();
+
+                    // restore MouseJoint
+                    if (worldAnchor != null && _fixedMouseJoint == null)
+                    {
+                        var ficture = World.TestPoint(worldAnchor.Value);
+                        if (ficture != null)
+                        {
+                            _fixedMouseJoint = new FixedMouseJoint(ficture.Body, worldAnchor.Value);
+                            _fixedMouseJoint.MaxForce = 1000.0f * ficture.Body.Mass;
+                            World.Add(_fixedMouseJoint);
+                        }
+                    }
+                }
+                else
+                {
+                    _breakableCookie[i].Update();
+                }
+            }
         }
 
         public override void HandleInput(InputHelper input, GameTime gameTime)
@@ -115,7 +168,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             Sprites.Begin(0, null, null, null, null, null, Camera.View);
             for (int i = 0; i < 3; i++)
             {
-                if (_breakableCookie[i].Broken)
+                if (_breakableCookie[i].State == BreakableBody.BreakableBodyState.Broken)
                 {
                     for (int j = 0; j < _breakableCookie[i].Parts.Count; j++)
                     {

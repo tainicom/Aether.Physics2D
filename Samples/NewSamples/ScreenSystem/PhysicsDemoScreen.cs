@@ -20,10 +20,10 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         protected Camera2D Camera;
         protected DebugView DebugView;
         protected World World;
+        protected FixedMouseJoint _fixedMouseJoint;
 
         private float _agentForce;
         private float _agentTorque;
-        private FixedMouseJoint _fixedMouseJoint;
         private Body _userAgent;
 
         public static DebugViewFlags Flags

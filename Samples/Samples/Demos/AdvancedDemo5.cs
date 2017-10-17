@@ -5,23 +5,26 @@
 
 using System.Collections.Generic;
 using System.Text;
-using tainicom.Aether.Physics2D.Collision;
-using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.Common.Decomposition;
-using tainicom.Aether.Physics2D.Common.PolygonManipulation;
-using tainicom.Aether.Physics2D.Dynamics;
-using tainicom.Aether.Physics2D.Diagnostics;
-using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
-using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using tainicom.Aether.Physics2D.Collision;
+using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Common.Decomposition;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
+using tainicom.Aether.Physics2D.Common.PolygonManipulation;
+using tainicom.Aether.Physics2D.Diagnostics;
+using tainicom.Aether.Physics2D.Dynamics;
+using tainicom.Aether.Physics2D.Dynamics.Joints;
+using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
     internal class AdvancedDemo5 : PhysicsGameScreen, IDemoScreen
     {
         private Border _border;
+        private List<BreakableBody> _breakableBodies;
 
         #region IDemoScreen Members
 
@@ -63,6 +66,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             World.Gravity = Vector2.Zero;
 
             _border = new Border(World, ScreenManager, Camera);
+            _breakableBodies = new List<BreakableBody>();
 
             Texture2D alphabet = ScreenManager.Content.Load<Texture2D>("Samples/alphabet");
 
@@ -103,12 +107,53 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                     vertices.Scale(ref vertScale);
                 }
 
-                BreakableBody breakableBody = new BreakableBody(World, triangulated, 1);
+                var breakableBody = new BreakableBody(World, triangulated, 1);
                 breakableBody.MainBody.Position = new Vector2(xOffset, yOffset);
                 breakableBody.Strength = 100;
-                World.Add(breakableBody);
+                _breakableBodies.Add(breakableBody);
 
                 xOffset += 3.5f;
+            }
+        }
+
+        public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
+        {
+            base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            foreach (var breakableBody in _breakableBodies)
+            {
+                if (breakableBody.State == BreakableBody.BreakableBodyState.ShouldBreak)
+                {
+                    // save MouseJoint position
+                    Vector2? worldAnchor = null;
+                    for (JointEdge je = breakableBody.MainBody.JointList; je != null; je = je.Next)
+                    {
+                        if (je.Joint == _fixedMouseJoint)
+                        {
+                            worldAnchor = _fixedMouseJoint.WorldAnchorA;
+                            break;
+                        }
+                    }
+
+                    // break body
+                    breakableBody.Update();
+
+                    // restore MouseJoint
+                    if (worldAnchor != null && _fixedMouseJoint == null)
+                    {
+                        var ficture = World.TestPoint(worldAnchor.Value);
+                        if (ficture != null)
+                        {
+                            _fixedMouseJoint = new FixedMouseJoint(ficture.Body, worldAnchor.Value);
+                            _fixedMouseJoint.MaxForce = 1000.0f * ficture.Body.Mass;
+                            World.Add(_fixedMouseJoint);
+                        }
+                    }
+                }
+                else
+                {
+                    breakableBody.Update();
+                }
             }
         }
 

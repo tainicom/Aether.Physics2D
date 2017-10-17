@@ -340,7 +340,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             return null;
         }
 
-        public static List<Texture2D> BreakableTextureFragments(BreakableBody body, string textureName)
+        public static List<Texture2D> BreakableTextureFragments(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody body, string textureName)
         {
             List<Texture2D> result = new List<Texture2D>();
             if (_contentWrapper != null)
