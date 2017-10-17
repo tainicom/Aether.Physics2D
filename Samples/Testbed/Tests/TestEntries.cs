@@ -107,7 +107,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Clone Test", CreateTest = CloneTest.Create},
             new TestEntry {Name = "Serialization Test", CreateTest = SerializationTest.Create},
             new TestEntry {Name = "Deletion test", CreateTest = DeletionTest.Create},
-            new TestEntry {Name = "Body Pool", CreateTest = BodyPoolTest.Create},
             new TestEntry {Name = "Buoyancy test", CreateTest = BuoyancyTest.Create},
             new TestEntry {Name = "Convex hull test", CreateTest = ConvexHullTest2.Create},
             new TestEntry {Name = "Simple Wind Force Test", CreateTest = SimpleWindForceTest.Create},
