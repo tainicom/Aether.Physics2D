@@ -17,6 +17,7 @@ using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.MediaSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using tainicom.Aether.Physics2D.Collision.Shapes;
+using tainicom.Aether.Physics2D.Dynamics.Joints;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -102,7 +103,38 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             for (int i = 0; i < 3; i++)
             {
-                _breakableCookie[i].Update();
+                if (_breakableCookie[i].State == BreakableBody.BreakableBodyState.ShouldBreak)
+                {
+                    // save MouseJoint position
+                    Vector2? worldAnchor = null;
+                    for (JointEdge je = _breakableCookie[i].MainBody.JointList; je != null; je = je.Next)
+                    {
+                        if (je.Joint == _fixedMouseJoint)
+                        {
+                            worldAnchor = _fixedMouseJoint.WorldAnchorA;
+                            break;
+                        }
+                    }
+
+                    // break body
+                    _breakableCookie[i].Update();
+
+                    // restore MouseJoint
+                    if (worldAnchor != null && _fixedMouseJoint == null)
+                    {
+                        var ficture = World.TestPoint(worldAnchor.Value);
+                        if (ficture != null)
+                        {
+                            _fixedMouseJoint = new FixedMouseJoint(ficture.Body, worldAnchor.Value);
+                            _fixedMouseJoint.MaxForce = 1000.0f * ficture.Body.Mass;
+                            World.Add(_fixedMouseJoint);
+                        }
+                    }
+                }
+                else
+                {
+                    _breakableCookie[i].Update();
+                }
             }
         }
 

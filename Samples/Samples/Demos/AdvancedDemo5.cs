@@ -15,6 +15,7 @@ using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 using tainicom.Aether.Physics2D.Common.PolygonManipulation;
 using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Dynamics;
+using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
@@ -119,8 +120,41 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 
-            foreach(var breakableBody in _breakableBodies)
-                breakableBody.Update();
+            foreach (var breakableBody in _breakableBodies)
+            {
+                if (breakableBody.State == BreakableBody.BreakableBodyState.ShouldBreak)
+                {
+                    // save MouseJoint position
+                    Vector2? worldAnchor = null;
+                    for (JointEdge je = breakableBody.MainBody.JointList; je != null; je = je.Next)
+                    {
+                        if (je.Joint == _fixedMouseJoint)
+                        {
+                            worldAnchor = _fixedMouseJoint.WorldAnchorA;
+                            break;
+                        }
+                    }
+
+                    // break body
+                    breakableBody.Update();
+
+                    // restore MouseJoint
+                    if (worldAnchor != null && _fixedMouseJoint == null)
+                    {
+                        var ficture = World.TestPoint(worldAnchor.Value);
+                        if (ficture != null)
+                        {
+                            _fixedMouseJoint = new FixedMouseJoint(ficture.Body, worldAnchor.Value);
+                            _fixedMouseJoint.MaxForce = 1000.0f * ficture.Body.Mass;
+                            World.Add(_fixedMouseJoint);
+                        }
+                    }
+                }
+                else
+                {
+                    breakableBody.Update();
+                }
+            }
         }
 
         public override void HandleInput(InputHelper input, GameTime gameTime)
