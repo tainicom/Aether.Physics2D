@@ -1345,7 +1345,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _watch.Start();
 
             ProcessChanges();
-
             if (Settings.EnableDiagnostics)
                 AddRemoveTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
 
@@ -1355,14 +1354,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ContactManager.FindNewContacts();
                 _worldHasNewFixture = false;
             }
-
             if (Settings.EnableDiagnostics)
                 NewContactsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - AddRemoveTime;
 
             //FPE only: moved position and velocity iterations into Settings.cs
             TimeStep step;
-            step.inv_dt = dt > 0.0f ? 1.0f / dt : 0.0f;
             step.dt = dt;
+            step.inv_dt = (dt > 0.0f) ? (1.0f / dt) : 0.0f;
             step.dtRatio = _invDt0 * dt;
             step.warmStarting = _warmStarting;
 
@@ -1374,32 +1372,32 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 {
                     ControllerList[i].Update(dt);
                 }
-
                 if (Settings.EnableDiagnostics)
                     ControllersUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime);
 
                 // Update contacts. This is where some contacts are destroyed.
                 ContactManager.Collide();
-
                 if (Settings.EnableDiagnostics)
                     ContactsUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
 
                 // Integrate velocities, solve velocity constraints, and integrate positions.
-                Solve(ref step);
-
+                if (step.dt > 0.0f)
+                {
+                    Solve(ref step);
+                }
                 if (Settings.EnableDiagnostics)
                     SolveUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
 
                 // Handle TOI events.
-                if (Settings.ContinuousPhysics)
+                if (Settings.ContinuousPhysics && step.dt > 0.0f)
                 {
                     SolveTOI(ref step);
                 }
-
                 if (Settings.EnableDiagnostics)
                     ContinuousPhysicsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
 
-                Fluid.Update(dt);
+                if (step.dt > 0.0f)
+                    Fluid.Update(dt);
 
                 if (Settings.AutoClearForces)
                     ClearForces();
@@ -1409,7 +1407,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 IsStepping = false;
             }
 
-            _invDt0 = step.inv_dt;
+            if (step.dt > 0.0f)
+                _invDt0 = step.inv_dt;
 
             if (Settings.EnableDiagnostics)
             {
