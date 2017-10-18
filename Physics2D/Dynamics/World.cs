@@ -59,9 +59,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private const bool _subStepping = false;
         #endregion
 
+        private bool _stepComplete = true;
+
         private float _invDt0;
         private Body[] _stack = new Body[64];
-        private bool _stepComplete;
         private HashSet<Body> _bodyAddList = new HashSet<Body>();
         private HashSet<Body> _bodyRemoveList = new HashSet<Body>();
         private HashSet<Joint> _jointAddList = new HashSet<Joint>();
@@ -1381,7 +1382,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     ContactsUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
 
                 // Integrate velocities, solve velocity constraints, and integrate positions.
-                if (step.dt > 0.0f)
+                if (_stepComplete && step.dt > 0.0f)
                 {
                     Solve(ref step);
                 }
