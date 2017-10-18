@@ -3,7 +3,7 @@
   <metadata>
     <id>Aether.Physics2D</id>
     <title>Aether.Physics2D</title>
-    <version>1.0.0.0</version>
+    <version>1.1.0.0</version>
     <authors>Kastellanos Nikolaos</authors>
     <owners>Kastellanos Nikolaos</owners>
     <licenseUrl>https://github.com/tainicom/Aether.Physics2D/blob/master/LICENSE</licenseUrl>
@@ -27,7 +27,8 @@
     <file src="..\bin\Release\Windows\Aether.Physics2D.dll"    target="lib\net40\Aether.Physics2D.dll" />
     <file src="..\bin\Release\W10\AnyCPU\Aether.Physics2D.dll" target="lib\netcore50\Aether.Physics2D.dll" />
 
-    <file src="..\bin\Release\Portable\Aether.Physics2D.dll"   target="lib\portable-net40+sl5+win8+wpa81+wp8\Aether.Physics2D.dll" />
+    <file src="..\bin\Release\Portable40\Aether.Physics2D.dll"   target="lib\portable-net40+win8\Aether.Physics2D.dll" />
+    <file src="..\bin\Release\Portable45\Aether.Physics2D.dll"   target="lib\portable-net45+win8+wpa81\Aether.Physics2D.dll" />
   </files>
 
 </package>

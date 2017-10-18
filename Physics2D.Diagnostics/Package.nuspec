@@ -3,7 +3,7 @@
   <metadata>
     <id>Aether.Physics2D.Diagnostics</id>
     <title>Aether.Physics2D.Diagnostics</title>
-    <version>1.0.0.0</version>
+    <version>1.1.0.0</version>
     <authors>Kastellanos Nikolaos</authors>
     <owners>Kastellanos Nikolaos</owners>
     <licenseUrl>https://github.com/tainicom/Aether.Physics2D/blob/master/LICENSE</licenseUrl>
@@ -16,7 +16,7 @@
     <tags>C# Physics 2D monogame XNA game farseerPhysics farseer</tags>
 
     <dependencies>
-      <dependency id="Aether.Physics2D" version="1.0" />
+      <dependency id="Aether.Physics2D" version="1.1" />
     </dependencies>
   </metadata>
 
@@ -24,7 +24,8 @@
     <!-- C# Assemblies -->
     <file src="..\bin\Release\Windows\Aether.Physics2D.Diagnostics.dll"  target="lib\net40\Aether.Physics2D.Diagnostics.dll" />
 
-    <file src="..\bin\Release\Portable\Aether.Physics2D.Diagnostics.dll"   target="lib\portable-net40+sl5+win8+wpa81+wp8\Aether.Physics2D.Diagnostics.dll" />
+    <file src="..\bin\Release\Portable40\Aether.Physics2D.Diagnostics.dll"   target="lib\portable-net40+win8\Aether.Physics2D.Diagnostics.dll" />
+    <file src="..\bin\Release\Portable45\Aether.Physics2D.Diagnostics.dll"   target="lib\portable-net45+win8+wpa81\Aether.Physics2D.Diagnostics.dll" />
 
     <!-- content -->
     <file src="..\bin\Release\Windows\Content\*.xnb" target="Content\Content" />
