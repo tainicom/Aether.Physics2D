@@ -94,7 +94,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
     public class ContactSolver
     {
-        public TimeStep _step;
         public Position[] _positions;
         public Velocity[] _velocities;
         public ContactPositionConstraint[] _positionConstraints;
@@ -102,9 +101,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         public Contact[] _contacts;
         public int _count;
 
-        public void Reset(TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities)
+        public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities)
         {
-            _step = step;
             _count = count;
             _positions = positions;
             _velocities = velocities;
@@ -183,8 +181,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     if (step.warmStarting)
                     {
-                        vcp.normalImpulse = _step.dtRatio * cp.NormalImpulse;
-                        vcp.tangentImpulse = _step.dtRatio * cp.TangentImpulse;
+                        vcp.normalImpulse = step.dtRatio * cp.NormalImpulse;
+                        vcp.tangentImpulse = step.dtRatio * cp.TangentImpulse;
                     }
                     else
                     {
