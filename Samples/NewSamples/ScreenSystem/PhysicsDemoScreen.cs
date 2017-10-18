@@ -20,10 +20,10 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         protected Camera2D Camera;
         protected DebugView DebugView;
         protected World World;
+        protected FixedMouseJoint _fixedMouseJoint;
 
         private float _agentForce;
         private float _agentTorque;
-        private FixedMouseJoint _fixedMouseJoint;
         private Body _userAgent;
 
         public static DebugViewFlags Flags
@@ -40,8 +40,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         protected PhysicsDemoScreen()
         {
-            TransitionOnTime = TimeSpan.FromSeconds(0.75);
-            TransitionOffTime = TimeSpan.FromSeconds(0.75);
+            TransitionOnTime = TimeSpan.FromSeconds(0.4);
+            TransitionOffTime = TimeSpan.FromSeconds(0.3);
             HasCursor = true;
             EnableCameraControl = true;
             _userAgent = null;
@@ -63,9 +63,14 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public override void LoadContent()
         {
             if (World == null)
+            {
                 World = new World(Vector2.Zero);
+                World.JointRemoved += JointRemoved;
+            }
             else
+            {
                 World.Clear();
+            }
 
             if (DebugView == null)
             {
@@ -84,6 +89,12 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 Camera.ResetCamera();
 
             base.LoadContent();
+        }
+
+        protected virtual void JointRemoved(World sender, Joint joint)
+        {
+            if (_fixedMouseJoint == joint)
+                _fixedMouseJoint = null;
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)

@@ -55,6 +55,8 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         private int _worldWidth;
         private int _worldHeight;
+        
+        public int ParticlesCount { get { return Particles.Count; } }
 
         public FluidSystem2(Vector2 gravity, int maxParticleLimit, int worldWidth, int worldHeight)
         {
@@ -63,7 +65,6 @@ namespace tainicom.Aether.Physics2D.Fluids
             Particles = new SpatialTable(worldWidth, worldHeight, CellSize);
             MaxParticleLimit = maxParticleLimit;
             Gravity = gravity;
-            Particles.Initialize();
         }
 
         public Vector2 Gravity { get; set; }
@@ -95,8 +96,9 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         private void UpdateParticleVelocity(float deltaTime)
         {
-            foreach (Particle particle in Particles)
+            for(int i = 0; i < Particles.Count; i++)
             {
+                Particle particle = Particles[i];
                 particle.PreviousPosition = particle.Position;
                 particle.Position = new Vector2(particle.Position.X + (deltaTime * particle.Velocity.X), particle.Position.Y + (deltaTime * particle.Velocity.Y));
             }
@@ -363,6 +365,9 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         public void Update(float deltaTime)
         {
+            if (deltaTime == 0)
+                return;
+
             _deltaTime2 = deltaTime * deltaTime;
 
             ApplyViscosity(deltaTime);
@@ -380,8 +385,9 @@ namespace tainicom.Aether.Physics2D.Fluids
 
             DoubleDensityRelaxation();
 
-            foreach (Particle particle in Particles)
+            for(int i = 0; i < Particles.Count; i++)
             {
+                Particle particle = Particles[i];
                 particle.Velocity = new Vector2((particle.Position.X - particle.PreviousPosition.X) / deltaTime, (particle.Position.Y - particle.PreviousPosition.Y) / deltaTime);
                 ApplyGravity(particle);
                 WallCollision(particle);
@@ -389,10 +395,11 @@ namespace tainicom.Aether.Physics2D.Fluids
             }
         }
 
-        public void AddParticle(Vector2 vec2)
+        public void AddParticle(Vector2 position)
         {
-            Particles.Add(new Particle(vec2.X, vec2.Y));
+            Particles.Add(new Particle(position.X, position.Y));
         }
+
     }
 
     public class Particle

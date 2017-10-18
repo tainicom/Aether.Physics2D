@@ -15,6 +15,7 @@ namespace tainicom.Aether.Physics2D.Fluids
         private List<Particle> _table;
         private List<Particle> _voidList = new List<Particle>(1);
         private List<Particle>[][] _nearby;
+        bool _initialized;
 
         private int _row;
         private int _column;
@@ -25,12 +26,13 @@ namespace tainicom.Aether.Physics2D.Fluids
             _row = row;
             _cellSize = cellSize;
             _column = column;
-            _table = new List<Particle>((row * column) / 2);
-            _nearby = new List<Particle>[column][];
         }
 
         public void Initialize()
         {
+            _table = new List<Particle>((_row * _column) / 2);
+            _nearby = new List<Particle>[_column][];
+
             for (int i = 0; i < _column; ++i)
             {
                 _nearby[i] = new List<Particle>[_row];
@@ -40,6 +42,7 @@ namespace tainicom.Aether.Physics2D.Fluids
                     _nearby[i][j] = new List<Particle>(DefaultNearbySize);
                 }
             }
+            _initialized = true;
         }
 
         /// <summary>
@@ -48,6 +51,9 @@ namespace tainicom.Aether.Physics2D.Fluids
         /// <param name="value"></param>
         public void Add(Particle value)
         {
+            if (!_initialized)
+                Initialize();
+
             AddInterRadius(value);
             _table.Add(value);
         }
@@ -78,7 +84,7 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         public int Count
         {
-            get { return _table.Count; }
+            get { return (_table == null)? 0 : _table.Count; }
         }
 
         public List<Particle> GetNearby(Particle value)
@@ -113,7 +119,7 @@ namespace tainicom.Aether.Physics2D.Fluids
         /// </summary>
         public void Rehash()
         {
-            if (_table.Count == 0)
+            if (_table == null || _table.Count == 0)
                 return;
 
             for (int i = 0; i < _column; i++)

@@ -235,7 +235,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             _linearError = cB + _rB - cA - _rA - Complex.Multiply(ref _linearOffset, ref qA);
             _angularError = aB - aA - _angularOffset;
 
-            if (Settings.EnableWarmstarting)
+            if (data.step.warmStarting)
             {
                 // Scale impulses to support a variable time step.
                 _linearImpulse *= data.step.dtRatio;

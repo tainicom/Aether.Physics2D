@@ -60,11 +60,11 @@ namespace tainicom.Aether.Physics2D.Fluids
             Velocity += impulse;
         }
 
-        public void Update(float timeStep)
+        public void Update(float deltaTime)
         {
-            Velocity += Acceleration * timeStep;
+            Velocity += Acceleration * deltaTime;
 
-            Vector2 delta = (1.0f - Damping) * Velocity * timeStep;
+            Vector2 delta = (1.0f - Damping) * Velocity * deltaTime;
 
             PreviousPosition = Position;
             Position += delta;
@@ -72,9 +72,9 @@ namespace tainicom.Aether.Physics2D.Fluids
             Acceleration = Vector2.Zero;
         }
 
-        public void UpdateVelocity(float timeStep)
+        public void UpdateVelocity(float deltaTime)
         {
-            Velocity = (Position - PreviousPosition) / timeStep;
+            Velocity = (Position - PreviousPosition) / deltaTime;
         }
     }
 }

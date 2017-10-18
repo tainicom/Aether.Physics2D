@@ -62,7 +62,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public int BodyCapacity;
         public int ContactCapacity;
         public int JointCapacity;
-        public float JointUpdateTime;
+        public TimeSpan JointUpdateTime;
 
         public void Reset(int bodyCapacity, int contactCapacity, int jointCapacity, ContactManager contactManager)
         {
@@ -153,10 +153,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             solverData.positions = _positions;
             solverData.velocities = _velocities;
 
-            _contactSolver.Reset(step, ContactCount, _contacts, _positions, _velocities);
+            _contactSolver.Reset(ref step, ContactCount, _contacts, _positions, _velocities);
             _contactSolver.InitializeVelocityConstraints();
 
-            if (Settings.EnableWarmstarting)
+            if (step.warmStarting)
             {
                 _contactSolver.WarmStart();
             }
@@ -268,7 +268,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             if (Settings.EnableDiagnostics)
             {
-                JointUpdateTime = _watch.ElapsedTicks;
+                JointUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
                 _watch.Reset();
             }
 
@@ -319,7 +319,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
         }
 
-        internal void SolveTOI(ref TimeStep subStep, int toiIndexA, int toiIndexB, bool warmstarting)
+        internal void SolveTOI(ref TimeStep subStep, int toiIndexA, int toiIndexB)
         {
             Debug.Assert(toiIndexA < BodyCount);
             Debug.Assert(toiIndexB < BodyCount);
@@ -334,7 +334,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _velocities[i].w = b._angularVelocity;
             }
 
-            _contactSolver.Reset(subStep, ContactCount, _contacts, _positions, _velocities, warmstarting);
+            _contactSolver.Reset(ref subStep, ContactCount, _contacts, _positions, _velocities);
 
             // Solve position constraints.
             for (int i = 0; i < Settings.TOIPositionIterations; ++i)

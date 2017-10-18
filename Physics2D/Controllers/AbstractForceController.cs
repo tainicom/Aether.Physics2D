@@ -4,8 +4,9 @@
  */
 
 using System;
-using tainicom.Aether.Physics2D.Dynamics;
 using Microsoft.Xna.Framework;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
+using tainicom.Aether.Physics2D.Dynamics;
 
 namespace tainicom.Aether.Physics2D.Controllers
 {
@@ -90,10 +91,7 @@ namespace tainicom.Aether.Physics2D.Controllers
         /// Constructor
         /// </summary>
         public AbstractForceController()
-            : base(ControllerType.AbstractForceController)
         {
-            Enabled = true;
-
             Strength = 1.0f;
             Position = new Vector2(0, 0);
             MaximumSpeed = 100.0f;
@@ -120,7 +118,6 @@ namespace tainicom.Aether.Physics2D.Controllers
         /// </summary>
         /// <param name="mode"></param>
         public AbstractForceController(TimingModes mode)
-            : base(ControllerType.AbstractForceController)
         {
             TimingMode = mode;
             switch (mode)

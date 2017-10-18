@@ -55,6 +55,7 @@
     <Compile Include="Tests\ApplyForceTest.cs" />
     <Compile Include="Tests\BodyPoolTest.cs" />
     <Compile Include="Tests\BodyTypesTest.cs" />
+    <Compile Include="Tests\BreakableBodyTest.cs" />
     <Compile Include="Tests\BreakableTest.cs" />
     <Compile Include="Tests\BridgeTest.cs" />
     <Compile Include="Tests\BulletTest.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Tests\CloneTest.cs" />
     <Compile Include="Tests\CollisionFilteringTest.cs" />
     <Compile Include="Tests\CollisionProcessingTest.cs" />
+    <Compile Include="Tests\CollisionTest.cs" />
     <Compile Include="Tests\CompoundShapesTest.cs" />
     <Compile Include="Tests\ConfinedTest.cs" />
     <Compile Include="Tests\ContinuousTest.cs" />
@@ -91,6 +93,8 @@
     <Compile Include="Tests\MobileBalancedTest.cs" />
     <Compile Include="Tests\MobileTest.cs" />
     <Compile Include="Tests\MotorJointTest.cs" />
+    <Compile Include="Tests\Multithread1Test.cs" />
+    <Compile Include="Tests\Multithread2Test.cs" />
     <Compile Include="Tests\OneSidedPlatformTest.cs" />
     <Compile Include="Tests\PathTest.cs" />
     <Compile Include="Tests\PinballTest.cs" />

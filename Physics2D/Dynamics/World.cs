@@ -52,9 +52,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
     /// </summary>
     public partial class World
     {
+        #region These are for debugging the solver.
+        /// <summary>This is only for debugging the solver</summary>
+        private const bool _warmStarting = true;
+        /// <summary>This is only for debugging the solver</summary>
+        private const bool _subStepping = false;
+        #endregion
+
+        private bool _stepComplete = true;
+
         private float _invDt0;
         private Body[] _stack = new Body[64];
-        private bool _stepComplete;
         private HashSet<Body> _bodyAddList = new HashSet<Body>();
         private HashSet<Body> _bodyRemoveList = new HashSet<Body>();
         private HashSet<Joint> _jointAddList = new HashSet<Joint>();
@@ -72,6 +80,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal Queue<Contact> _contactPool = new Queue<Contact>(256);
         internal bool _worldHasNewFixture;
+
+        public FluidSystem2 Fluid { get; private set; }
 
         /// <summary>
         /// Set the user data. Use this to store your application specific data.
@@ -114,8 +124,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public ControllerDelegate ControllerAdded;
 
-        public FluidSystem2 Fluid { get; private set; }
-
         /// <summary>
         /// Fires every time a controlelr is removed form the World.
         /// </summary>
@@ -129,7 +137,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Island = new Island();
             Enabled = true;
             ControllerList = new List<Controller>();
-            BreakableBodyList = new List<BreakableBody>();
             BodyList = new List<Body>(32);
             JointList = new List<Joint>(32);
 
@@ -768,7 +775,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 subStep.dt = (1.0f - minAlpha) * step.dt;
                 subStep.inv_dt = 1.0f / subStep.dt;
                 subStep.dtRatio = 1.0f;
-                Island.SolveTOI(ref subStep, bA0.IslandIndex, bB0.IslandIndex, false);
+                subStep.warmStarting = false;
+                Island.SolveTOI(ref subStep, bA0.IslandIndex, bB0.IslandIndex);
 
                 // Reset island flags and synchronize broad-phase proxies.
                 for (int i = 0; i < Island.BodyCount; ++i)
@@ -795,7 +803,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 // Also, some contacts can be destroyed.
                 ContactManager.FindNewContacts();
 
-                if (Settings.EnableSubStepping)
+                if (_subStepping)
                 {
                     _stepComplete = false;
                     break;
@@ -811,21 +819,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public readonly List<Controller> ControllerList;
 
-        public readonly List<BreakableBody> BreakableBodyList;
-
-        public float UpdateTime { get; private set; }
-
-        public float ContinuousPhysicsTime { get; private set; }
-
-        public float ControllersUpdateTime { get; private set; }
-
-        public float AddRemoveTime { get; private set; }
-
-        public float NewContactsTime { get; private set; }
-
-        public float ContactsUpdateTime { get; private set; }
-
-        public float SolveUpdateTime { get; private set; }
+        public TimeSpan UpdateTime { get; private set; }
+        public TimeSpan ContinuousPhysicsTime { get; private set; }
+        public TimeSpan ControllersUpdateTime { get; private set; }
+        public TimeSpan AddRemoveTime { get; private set; }
+        public TimeSpan NewContactsTime { get; private set; }
+        public TimeSpan ContactsUpdateTime { get; private set; }
+        public TimeSpan SolveUpdateTime { get; private set; }
 
         /// <summary>
         /// Get the number of broad-phase proxies.
@@ -1346,9 +1346,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _watch.Start();
 
             ProcessChanges();
-
             if (Settings.EnableDiagnostics)
-                AddRemoveTime = _watch.ElapsedTicks;
+                AddRemoveTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
 
             // If new fixtures were added, we need to find the new contacts.
             if (_worldHasNewFixture)
@@ -1356,15 +1355,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ContactManager.FindNewContacts();
                 _worldHasNewFixture = false;
             }
-
             if (Settings.EnableDiagnostics)
-                NewContactsTime = _watch.ElapsedTicks - AddRemoveTime;
+                NewContactsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - AddRemoveTime;
 
             //FPE only: moved position and velocity iterations into Settings.cs
             TimeStep step;
-            step.inv_dt = dt > 0.0f ? 1.0f / dt : 0.0f;
             step.dt = dt;
+            step.inv_dt = (dt > 0.0f) ? (1.0f / dt) : 0.0f;
             step.dtRatio = _invDt0 * dt;
+            step.warmStarting = _warmStarting;
 
             IsStepping = true;
             try
@@ -1374,32 +1373,32 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 {
                     ControllerList[i].Update(dt);
                 }
-
                 if (Settings.EnableDiagnostics)
-                    ControllersUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime);
+                    ControllersUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime);
 
                 // Update contacts. This is where some contacts are destroyed.
                 ContactManager.Collide();
-
                 if (Settings.EnableDiagnostics)
-                    ContactsUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
+                    ContactsUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime);
 
                 // Integrate velocities, solve velocity constraints, and integrate positions.
-                Solve(ref step);
-
+                if (_stepComplete && step.dt > 0.0f)
+                {
+                    Solve(ref step);
+                }
                 if (Settings.EnableDiagnostics)
-                    SolveUpdateTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
+                    SolveUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime);
 
                 // Handle TOI events.
-                if (Settings.ContinuousPhysics)
+                if (Settings.ContinuousPhysics && step.dt > 0.0f)
                 {
                     SolveTOI(ref step);
                 }
-
                 if (Settings.EnableDiagnostics)
-                    ContinuousPhysicsTime = _watch.ElapsedTicks - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
+                    ContinuousPhysicsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
 
-                Fluid.Update(dt);
+                if (step.dt > 0.0f)
+                    Fluid.Update(dt);
 
                 if (Settings.AutoClearForces)
                     ClearForces();
@@ -1409,17 +1408,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 IsStepping = false;
             }
 
-            for (int i = 0; i < BreakableBodyList.Count; i++)
-            {
-                BreakableBodyList[i].Update();
-            }
-
-            _invDt0 = step.inv_dt;
+            if (step.dt > 0.0f)
+                _invDt0 = step.inv_dt;
 
             if (Settings.EnableDiagnostics)
             {
                 _watch.Stop();
-                UpdateTime = _watch.ElapsedTicks;
+                UpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
                 _watch.Reset();
             }
         }
@@ -1550,26 +1545,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ControllerRemoved(this, controller);
         }
 
-        public void Add(BreakableBody breakableBody)
-        {
-            if (breakableBody == null)
-                throw new ArgumentNullException("breakableBody");
-            if (BreakableBodyList.Contains(breakableBody))
-                throw new ArgumentException("You are adding the same BreakableBodyList more than once.", "breakableBody");
-
-            BreakableBodyList.Add(breakableBody);
-        }
-
-        public void Remove(BreakableBody breakableBody)
-        {
-            if (breakableBody == null)
-                throw new ArgumentNullException("breakableBody");
-            if (!BreakableBodyList.Contains(breakableBody))
-                throw new ArgumentException("You are removing a breakableBody that is not in the simulation.", "breakableBody");
-
-            BreakableBodyList.Remove(breakableBody);
-        }
-
         public Fixture TestPoint(Vector2 point)
         {
             AABB aabb;
@@ -1668,10 +1643,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 Remove(ControllerList[i]);
             }
 
-            for (int i = BreakableBodyList.Count - 1; i >= 0; i--)
-            {
-                Remove(BreakableBodyList[i]);
-            }
         }
     }
 }

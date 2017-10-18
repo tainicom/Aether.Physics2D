@@ -5,8 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using tainicom.Aether.Physics2D.Dynamics;
 using Microsoft.Xna.Framework;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
+using tainicom.Aether.Physics2D.Dynamics;
 
 namespace tainicom.Aether.Physics2D.Controllers
 {
@@ -19,7 +20,6 @@ namespace tainicom.Aether.Physics2D.Controllers
     public class GravityController : Controller
     {
         public GravityController(float strength)
-            : base(ControllerType.GravityController)
         {
             Strength = strength;
             MaxRadius = float.MaxValue;
@@ -29,7 +29,6 @@ namespace tainicom.Aether.Physics2D.Controllers
         }
 
         public GravityController(float strength, float maxRadius, float minRadius)
-            : base(ControllerType.GravityController)
         {
             MinRadius = minRadius;
             MaxRadius = maxRadius;

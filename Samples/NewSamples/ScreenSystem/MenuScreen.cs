@@ -54,8 +54,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public MenuScreen()
         {
-            TransitionOnTime = TimeSpan.FromSeconds(0.7);
-            TransitionOffTime = TimeSpan.FromSeconds(0.7);
+            TransitionOnTime = TimeSpan.FromSeconds(0.4);
+            TransitionOffTime = TimeSpan.FromSeconds(0.3);
             HasCursor = true;
             _menuEntrySize = Vector2.Zero;
             _hoverEntry = -1;

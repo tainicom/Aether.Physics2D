@@ -16,7 +16,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\Android\</OutputPath>
-    <DefineConstants>DEBUG;ANDROID</DefineConstants>
+    <DefineConstants>DEBUG;ANDROID PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\Android\</OutputPath>
-    <DefineConstants>ANDROID</DefineConstants>
+    <DefineConstants>ANDROID PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -94,6 +94,8 @@
     <Compile Include="Common\Math.cs" />
     <Compile Include="Common\Path.cs" />
     <Compile Include="Common\PathManager.cs" />
+    <Compile Include="Common\PhysicsLogic\BreakableBody.cs" />
+    <Compile Include="Common\PhysicsLogic\ControllerFilter.cs" />
     <Compile Include="Common\PhysicsLogic\FilterData.cs" />
     <Compile Include="Common\PhysicsLogic\PhysicsLogic.cs" />
     <Compile Include="Common\PhysicsLogic\RealExplosion.cs" />
@@ -123,7 +125,6 @@
     <Compile Include="Dynamics\Body.cs" />
     <Compile Include="Dynamics\Body.Factory.cs" />
     <Compile Include="Dynamics\BodyType.cs" />
-    <Compile Include="Dynamics\BreakableBody.cs" />
     <Compile Include="Dynamics\Category.cs" />
     <Compile Include="Dynamics\ContactManager.cs" />
     <Compile Include="Dynamics\Contacts\Contact.cs" />
@@ -149,14 +150,14 @@
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />
     <Compile Include="Dynamics\WorldCallbacks.cs" />
-    <Compile Include="Fluids\FluidDefinition.cs" />
-    <Compile Include="Fluids\FluidParticle.cs" />
-    <Compile Include="Fluids\FluidSystem.cs" />
-    <Compile Include="Fluids\FluidSystem2.cs" />
-    <Compile Include="Fluids\HashGrid.cs" />
-    <Compile Include="Fluids\SpartialTable.cs" />
-    <Compile Include="Fluids\Spring.cs" />
-    <Compile Include="Fluids\SpringHash.cs" />
+    <Compile Include="Fluids\1\FluidDefinition.cs" />
+    <Compile Include="Fluids\1\FluidParticle.cs" />
+    <Compile Include="Fluids\1\FluidSystem1.cs" />
+    <Compile Include="Fluids\1\Spring.cs" />
+    <Compile Include="Fluids\1\SpringHash.cs" />
+    <Compile Include="Fluids\1\HashGrid.cs" />
+    <Compile Include="Fluids\2\FluidSystem2.cs" />
+    <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Maths\Complex.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>

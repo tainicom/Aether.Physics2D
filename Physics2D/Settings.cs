@@ -93,11 +93,6 @@ namespace tainicom.Aether.Physics2D
         public const int MaxSubSteps = 8;
 
         /// <summary>
-        /// Enable/Disable warmstarting
-        /// </summary>
-        public const bool EnableWarmstarting = true;
-
-        /// <summary>
         /// Enable/Disable sleeping
         /// </summary>
         public static bool AllowSleep = true;
@@ -186,6 +181,17 @@ namespace tainicom.Aether.Physics2D
         /// velocity below this threshold will be treated as inelastic.
         /// </summary>
         public const float VelocityThreshold = 1.0f;
+        
+        /// <summary>
+        /// A threshold for activating multiple cores to solve VelocityConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve VelocityConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        /// <remarks>
+        /// The multithreading algorithm might generate garbage. This can hurt the performance on platforms with poor GC performance.
+        /// </remarks>
+        public static int VelocityConstraintsMultithreadThreshold = int.MaxValue;
 
         /// <summary>
         /// The maximum linear position correction used when solving constraints. This helps to
@@ -242,11 +248,6 @@ namespace tainicom.Aether.Physics2D
         /// Defines the maximum number of iterations made by the GJK algorithm.
         /// </summary>
         public const int MaxGJKIterations = 20;
-
-        /// <summary>
-        /// This is only for debugging the solver
-        /// </summary>
-        public const bool EnableSubStepping = false;
 
         /// <summary>
         /// By default, forces are cleared automatically after each call to Step.

@@ -14,8 +14,8 @@
 #---------------------------------- Content ---------------------------------#
 
 #begin DiagnosticsFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:TextureFormat=Color
-/build:DiagnosticsFont.spritefont
+#/importer:FontDescriptionImporter
+#/processor:FontDescriptionProcessor
+#/processorParam:TextureFormat=Color
+#/build:DiagnosticsFont.spritefont
 

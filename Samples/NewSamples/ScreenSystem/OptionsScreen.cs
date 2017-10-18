@@ -46,8 +46,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             IsPopup = true;
             HasCursor = true;
 
-            TransitionOnTime = TimeSpan.FromSeconds(0.4);
-            TransitionOffTime = TimeSpan.FromSeconds(0.4);
+            TransitionOnTime = TimeSpan.FromSeconds(0.3);
+            TransitionOffTime = TimeSpan.FromSeconds(0.2);
 
             _optionEntrySize = Vector2.Zero;
             _hoverEntry = -1;

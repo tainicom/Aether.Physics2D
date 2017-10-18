@@ -21,5 +21,10 @@ Aether.Physics2D is a 2D collision detection system.
 - Factories to simplify the creation of bodies
 - Fluid dynamics
 
-** Fork of Farseer Physics Engine from https://farseerphysics.codeplex.com/
+# Downloads
 
+https://www.nuget.org/packages/Aether.Physics2D
+
+https://www.nuget.org/packages/Aether.Physics2D.Diagnostics
+
+https://github.com/tainicom/Aether.Physics2D/releases/tag/v1.0

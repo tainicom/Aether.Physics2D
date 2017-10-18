@@ -190,7 +190,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 _angularMass = 1.0f / _angularMass;
             }
 
-            if (Settings.EnableWarmstarting)
+            if (data.step.warmStarting)
             {
                 // Scale impulses to support a variable time step.
                 _linearImpulse *= data.step.dtRatio;

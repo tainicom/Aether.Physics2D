@@ -30,6 +30,7 @@ using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
@@ -46,6 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             gravity.EnabledOnGroup = 2;
             gravity.DisabledOnCategories = Category.Cat2;
             gravity.EnabledOnCategories = Category.Cat3;
+            gravity.ControllerCategory = ControllerCategory.Cat14; // set ControllerCategory to a unique category
             gravity.GravityType = GravityType.Linear;
 
             World.Add(gravity);
@@ -77,7 +79,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 fix.CollisionGroup = 2;
 
                 if (i == 4)
-                    circle.ControllerFilter.IgnoreController(ControllerType.GravityController);
+                    circle.ControllerFilter.IgnoreController(gravity.ControllerCategory);
 
                 if (i == 5)
                 {

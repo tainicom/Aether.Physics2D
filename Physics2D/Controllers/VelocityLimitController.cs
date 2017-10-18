@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 using tainicom.Aether.Physics2D.Dynamics;
 
 namespace tainicom.Aether.Physics2D.Controllers
@@ -29,7 +30,6 @@ namespace tainicom.Aether.Physics2D.Controllers
         /// Sets the max angular velocity to Settings.MaxRotation
         /// </summary>
         public VelocityLimitController()
-            : base(ControllerType.VelocityLimitController)
         {
             MaxLinearVelocity = Settings.MaxTranslation;
             MaxAngularVelocity = Settings.MaxRotation;
@@ -43,7 +43,6 @@ namespace tainicom.Aether.Physics2D.Controllers
         /// <param name="maxLinearVelocity">The max linear velocity.</param>
         /// <param name="maxAngularVelocity">The max angular velocity.</param>
         public VelocityLimitController(float maxLinearVelocity, float maxAngularVelocity)
-            : base(ControllerType.VelocityLimitController)
         {
             if (maxLinearVelocity == 0 || maxLinearVelocity == float.MaxValue)
                 LimitLinearVelocity = false;

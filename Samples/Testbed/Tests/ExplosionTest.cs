@@ -24,6 +24,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vector2 _mousePos;
         private float _force;
         private float _radius;
+        private const ControllerCategory _realExplosionCategory = ControllerCategory.Cat17;
 
         private ExplosionTest()
         {
@@ -56,7 +57,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     //First column is unaffected by the explosion
                     if (j == 0)
                     {
-                        body.PhysicsLogicFilter.IgnorePhysicsLogic(PhysicsLogicType.Explosion);
+                        body.ControllerFilter.IgnoreController(_realExplosionCategory);
                     }
                 }
             }
@@ -64,6 +65,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _radius = 5;
             _force = 3;
             _realExplosion = new RealExplosion(World);
+            _realExplosion.ControllerCategory = _realExplosionCategory;
         }
 
         public override void Mouse(MouseState state, MouseState oldState)

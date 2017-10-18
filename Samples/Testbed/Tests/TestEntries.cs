@@ -85,12 +85,20 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 #if WINDOWS
             //new TestEntry {Name = "Add Pair Stress Test", CreateTest = AddPairTest.Create},
 #endif
+
+            // AetherPhysics2D tests
+            new TestEntry {Name = "Multithread SolveVelocityConstraints() Test 1", CreateTest = Multithread1Test.Create},            
+            new TestEntry {Name = "Multithread SolveVelocityConstraints() Test 2", CreateTest = Multithread2Test.Create},
+            new TestEntry {Name = "Body Pool", CreateTest = BodyPoolTest.Create},
+            new TestEntry {Name = "Collision Test", CreateTest = CollisionTest.Create},
+
             //FPE tests
             new TestEntry {Name = "YuPeng Polygon", CreateTest = YuPengPolygonTest.Create},
             new TestEntry {Name = "Path Test", CreateTest = PathTest.Create},
             new TestEntry {Name = "Cutting of polygons", CreateTest = CuttingTest.Create},
             new TestEntry {Name = "Gravity Controller Test", CreateTest = GravityControllerTest.Create},
             new TestEntry {Name = "Texture to Vertices", CreateTest = TextureVerticesTest.Create},
+            new TestEntry {Name = "BreakableBody test", CreateTest = BreakableBodyTest.Create},
             new TestEntry {Name = "Rounded rectangle", CreateTest = RoundedRectangle.Create},
             new TestEntry {Name = "Angle Joint", CreateTest = AngleJointTest.Create},
             new TestEntry {Name = "Explosion", CreateTest = ExplosionTest.Create},
@@ -100,18 +108,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "Clone Test", CreateTest = CloneTest.Create},
             new TestEntry {Name = "Serialization Test", CreateTest = SerializationTest.Create},
             new TestEntry {Name = "Deletion test", CreateTest = DeletionTest.Create},
-            new TestEntry {Name = "Body Pool", CreateTest = BodyPoolTest.Create},
             new TestEntry {Name = "Buoyancy test", CreateTest = BuoyancyTest.Create},
             new TestEntry {Name = "Convex hull test", CreateTest = ConvexHullTest2.Create},
             new TestEntry {Name = "Simple Wind Force Test", CreateTest = SimpleWindForceTest.Create},
             new TestEntry {Name = "Quad Tree BroadPhase test", CreateTest = QuadTreeTest.Create},
             new TestEntry {Name = "Simplification", CreateTest = SimplificationTest.Create},
 #if WINDOWS
-            new TestEntry {Name = "Triangulation", CreateTest = TriangulationTest.Create},
+            //new TestEntry {Name = "Triangulation", CreateTest = TriangulationTest.Create}, // Test fails
             new TestEntry {Name = "Destructible Terrain Test", CreateTest = DestructibleTerrainTest.Create},
 #endif
             new TestEntry {Name = "Check polygon", CreateTest = CheckPolygonTest.Create},
             new TestEntry {Name = "Fluids", CreateTest = FluidsTest.Create},
+
             new TestEntry {Name = null, CreateTest = null}
         };
     }

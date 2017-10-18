@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -32,6 +34,10 @@ using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Maths;
 using Microsoft.Xna.Framework;
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+using System.Threading;
+using System.Threading.Tasks;
+#endif
 
 namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 {
@@ -88,7 +94,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
     public class ContactSolver
     {
-        public TimeStep _step;
         public Position[] _positions;
         public Velocity[] _velocities;
         public ContactPositionConstraint[] _positionConstraints;
@@ -96,9 +101,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         public Contact[] _contacts;
         public int _count;
 
-        public void Reset(TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities, bool warmstarting = Settings.EnableWarmstarting)
+        public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities)
         {
-            _step = step;
             _count = count;
             _positions = positions;
             _velocities = velocities;
@@ -175,10 +179,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     ManifoldPoint cp = manifold.Points[j];
                     VelocityConstraintPoint vcp = vc.points[j];
 
-                    if (Settings.EnableWarmstarting)
+                    if (step.warmStarting)
                     {
-                        vcp.normalImpulse = _step.dtRatio * cp.NormalImpulse;
-                        vcp.tangentImpulse = _step.dtRatio * cp.TangentImpulse;
+                        vcp.normalImpulse = step.dtRatio * cp.NormalImpulse;
+                        vcp.tangentImpulse = step.dtRatio * cp.TangentImpulse;
                     }
                     else
                     {
@@ -352,9 +356,113 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         public void SolveVelocityConstraints()
         {
-            for (int i = 0; i < _count; ++i)
+            if (_count >= Settings.VelocityConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
+            {
+                if (_count == 0) return;
+                var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);
+                var batches = (int)Math.Ceiling((float)_count / batchSize);
+
+#if NET40 || NET45
+                SolveVelocityConstraintsWaitLock = batches;
+                for (int i = 0; i < batches; i++)
+                {
+                    var start = i * batchSize;
+                    var end = Math.Min(start + batchSize, _count);
+                    ThreadPool.QueueUserWorkItem( SolveVelocityConstraintsCallback, SolveVelocityConstraintsState.Get(this, start,end));                    
+                }
+                while (SolveVelocityConstraintsWaitLock > 0)
+                    Thread.Sleep(0);
+#elif PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                Parallel.For(0, batches, (i) =>
+                {
+                    var start = i * batchSize;
+                    var end = Math.Min(start + batchSize, _count);
+                    SolveVelocityConstraints(start, end);
+                });
+#else
+                SolveVelocityConstraints(0, _count);
+#endif
+            }
+            else
+            {                
+                SolveVelocityConstraints(0, _count);
+            }
+
+            return;
+        }
+
+#if NET40 || NET45
+        volatile int SolveVelocityConstraintsWaitLock;
+        static void SolveVelocityConstraintsCallback(object state)
+        {
+            var svcState = (SolveVelocityConstraintsState)state;
+
+            svcState.ContactSolver.SolveVelocityConstraints(svcState.Start, svcState.End);
+            SolveVelocityConstraintsState.Return(svcState);
+            Interlocked.Decrement(ref svcState.ContactSolver.SolveVelocityConstraintsWaitLock);
+        }
+
+        private class SolveVelocityConstraintsState
+        {
+            private static System.Collections.Concurrent.ConcurrentQueue<SolveVelocityConstraintsState> _queue = new System.Collections.Concurrent.ConcurrentQueue<SolveVelocityConstraintsState>(); // pool
+
+            public ContactSolver ContactSolver;
+            public int Start { get; private set; }
+            public int End { get; private set; }
+
+            private SolveVelocityConstraintsState()
+            {
+            }
+
+            internal static object Get(ContactSolver contactSolver, int start, int end)
+            {
+                SolveVelocityConstraintsState result;
+                if (!_queue.TryDequeue(out result))
+                    result = new SolveVelocityConstraintsState();
+
+                result.ContactSolver = contactSolver;
+                result.Start = start;
+                result.End = end;
+
+                return result;
+            }
+
+            internal static void Return(object state)
+            {
+                _queue.Enqueue((SolveVelocityConstraintsState)state);
+            }
+        }
+#endif
+
+        private void SolveVelocityConstraints(int start, int end)
+        {
+            for (int i = start; i < end; ++i)
             {
                 ContactVelocityConstraint vc = _velocityConstraints[i];
+
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                // find lower order item
+                int orderedIndexA = vc.indexA;
+                int orderedIndexB = vc.indexB;
+                if (orderedIndexB < orderedIndexA)
+                {
+                    orderedIndexA = vc.indexB;
+                    orderedIndexB = vc.indexA;
+                }
+                
+                for (; ; )
+                {
+                    if (Interlocked.CompareExchange(ref _velocities[orderedIndexA].Lock, 1, 0) == 0)
+                    {
+                        if (Interlocked.CompareExchange(ref _velocities[orderedIndexB].Lock, 1, 0) == 0)
+                            break;
+                        _velocities[orderedIndexA].Lock = 0;
+                    }
+#if NET40 || NET45
+                    Thread.Sleep(0);
+#endif
+                }
+#endif
 
                 int indexA = vc.indexA;
                 int indexB = vc.indexB;
@@ -657,6 +765,11 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _velocities[indexA].w = wA;
                 _velocities[indexB].v = vB;
                 _velocities[indexB].w = wB;
+
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                _velocities[orderedIndexB].Lock = 0;
+                _velocities[orderedIndexA].Lock = 0;
+#endif
             }
         }
 
@@ -985,4 +1098,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
     }
+
+
 }

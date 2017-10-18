@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Fluids
 {
-    public class FluidSystem
+    public class FluidSystem1
     {
         private float _influenceRadiusSquared;
         private HashGrid _hashGrid = new HashGrid();
@@ -17,7 +17,7 @@ namespace tainicom.Aether.Physics2D.Fluids
         private List<SpringHash> _springsToRemove = new List<SpringHash>();
         private Vector2 _totalForce;
 
-        public FluidSystem(Vector2 gravity)
+        public FluidSystem1(Vector2 gravity)
         {
             Gravity = gravity;
             Particles = new List<FluidParticle>();
@@ -26,6 +26,7 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         public FluidDefinition Definition { get; private set; }
         public List<FluidParticle> Particles { get; private set; }
+        public int ParticlesCount { get { return Particles.Count; } }
         public Vector2 Gravity { get; set; }
 
         public void DefaultDefinition()
@@ -40,9 +41,9 @@ namespace tainicom.Aether.Physics2D.Fluids
             _influenceRadiusSquared = Definition.InfluenceRadius * Definition.InfluenceRadius;
         }
 
-        public FluidParticle AddParticle(Vector2 p)
+        public FluidParticle AddParticle(Vector2 position)
         {
-            FluidParticle particle = new FluidParticle(p) { Index = Particles.Count };
+            FluidParticle particle = new FluidParticle(position) { Index = Particles.Count };
             Particles.Add(particle);
             return particle;
         }
@@ -135,7 +136,6 @@ namespace tainicom.Aether.Physics2D.Fluids
         private float _pressure;
         private float _pressureNear;
         private float[] _distanceCache = new float[MaxNeighbors];
-        private float _timeStep2;
 
         //private void DoubleDensityRelaxation1(FluidParticle p, float timeStep)
         //{
@@ -185,7 +185,7 @@ namespace tainicom.Aether.Physics2D.Fluids
         //    p.Position += _dx;
         //}
 
-        private void DoubleDensityRelaxation(FluidParticle particle)
+        private void DoubleDensityRelaxation(FluidParticle particle, float deltaTime2)
         {
             _density = 0.0f;
             _densityNear = 0.0f;
@@ -239,7 +239,7 @@ namespace tainicom.Aether.Physics2D.Fluids
 
                 q = 1.0f - (float)Math.Sqrt(q) / Definition.InfluenceRadius;
 
-                float dispFactor = _timeStep2 * (q * (_pressure + _pressureNear * q));
+                float dispFactor = deltaTime2 * (q * (_pressure + _pressureNear * q));
 
                 Vector2 direction;
                 Vector2.Subtract(ref neighbour.Position, ref particle.Position, out direction);
@@ -345,9 +345,12 @@ namespace tainicom.Aether.Physics2D.Fluids
             }
         }
 
-        public void Update(float timeStep)
+        public void Update(float deltaTime)
         {
-            _timeStep2 = 0.5f * timeStep * timeStep;
+            if (deltaTime == 0)
+                return;
+
+            float deltaTime2 = 0.5f * deltaTime * deltaTime;
 
             ComputeNeighbours();
             ApplyForces();
@@ -359,7 +362,7 @@ namespace tainicom.Aether.Physics2D.Fluids
                     FluidParticle p = Particles[i];
                     if (p.IsActive)
                     {
-                        ApplyViscosity(p, timeStep);
+                        ApplyViscosity(p, deltaTime);
                     }
                 }
             }
@@ -369,7 +372,7 @@ namespace tainicom.Aether.Physics2D.Fluids
                 FluidParticle p = Particles[i];
                 if (p.IsActive)
                 {
-                    p.Update(timeStep);
+                    p.Update(deltaTime);
                 }
             }
 
@@ -378,7 +381,7 @@ namespace tainicom.Aether.Physics2D.Fluids
                 FluidParticle p = Particles[i];
                 if (p.IsActive)
                 {
-                    DoubleDensityRelaxation(p);
+                    DoubleDensityRelaxation(p, deltaTime2);
                 }
             }
 
@@ -394,9 +397,9 @@ namespace tainicom.Aether.Physics2D.Fluids
                 }
             }
 
-            AdjustSprings(timeStep);
+            AdjustSprings(deltaTime);
 
-            UpdateVelocities(timeStep);
+            UpdateVelocities(deltaTime);
         }
 
         internal void UpdateVelocities(float timeStep)
