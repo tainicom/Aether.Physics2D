@@ -80,6 +80,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal Queue<Contact> _contactPool = new Queue<Contact>(256);
         internal bool _worldHasNewFixture;
 
+        public FluidSystem2 Fluid { get; private set; }
+
         /// <summary>
         /// Set the user data. Use this to store your application specific data.
         /// </summary>
@@ -120,8 +122,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Fires every time a controller is added to the World.
         /// </summary>
         public ControllerDelegate ControllerAdded;
-
-        public FluidSystem2 Fluid { get; private set; }
 
         /// <summary>
         /// Fires every time a controlelr is removed form the World.
