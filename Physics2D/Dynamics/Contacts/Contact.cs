@@ -24,7 +24,6 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_ACTIVE_CONTACT_SET
 
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -475,9 +474,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         internal void Destroy()
         {
-#if USE_ACTIVE_CONTACT_SET
-            FixtureA.Body.World.ContactManager.RemoveActiveContact(this);
-#endif
             FixtureA.Body.World._contactPool.Enqueue(this);
 
             if (Manifold.PointCount > 0 && FixtureA.IsSensor == false && FixtureB.IsSensor == false)

@@ -26,7 +26,6 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_ACTIVE_CONTACT_SET
 
 using System.Collections.Generic;
 using tainicom.Aether.Physics2D.Collision;
@@ -294,9 +293,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
 #if USE_ACTIVE_CONTACT_SET
 			if (ActiveContacts.Contains(contact))
-			{
 				ActiveContacts.Remove(contact);
-			}
 #endif
             contact.Destroy();
         }
@@ -305,10 +302,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             // Update awake contacts.
 #if USE_ACTIVE_CONTACT_SET
-			ActiveList.AddRange(ActiveContacts);
-
-			foreach (var c in ActiveList)
-			{
+            ActiveList.AddRange(ActiveContacts);
+            foreach (var tmpc in ActiveList)
+            {
+                Contact c = tmpc;
 #else
             for (Contact c = ContactList.Next; c != ContactList;)
             {
@@ -428,45 +425,29 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return collide;
         }
 
-        internal void UpdateContacts(ContactEdge contactEdge, bool value)
+#if USE_ACTIVE_CONTACT_SET
+        internal void UpdateActiveContacts(ContactEdge ContactList, bool value)
         {
-#if USE_ACTIVE_CONTACT_SET
-			if(value)
-			{
-				while(contactEdge != null)
-				{
-					var c = contactEdge.Contact;
-					if (!ActiveContacts.Contains(c))
-					{
-						ActiveContacts.Add(c);
-					}
-					contactEdge = contactEdge.Next;
-				}
-			}
-			else
-			{
-				while (contactEdge != null)
-				{
-					var c = contactEdge.Contact;
-					if (!contactEdge.Other.Awake)
-					{
-						if (ActiveContacts.Contains(c))
-						{
-							ActiveContacts.Remove(c);
-						}
-					}
-					contactEdge = contactEdge.Next;
-				}
-			}
-#endif
+            if(value)
+            {
+                for (var contactEdge = ContactList; contactEdge != null; contactEdge = contactEdge.Next)
+                {
+                    if (!ActiveContacts.Contains(contactEdge.Contact))
+                        ActiveContacts.Add(contactEdge.Contact);
+                }
+            }
+            else
+            {
+                for (var contactEdge = ContactList; contactEdge != null; contactEdge = contactEdge.Next)
+                {
+                    if (!contactEdge.Other.Awake)
+                    {
+                        if (ActiveContacts.Contains(contactEdge.Contact))
+                            ActiveContacts.Remove(contactEdge.Contact);
+                    }
+                }
+            }
         }
-
-#if USE_ACTIVE_CONTACT_SET
-		internal void RemoveActiveContact(Contact contact)
-		{
-			if (ActiveContacts.Contains(contact))
-				ActiveContacts.Remove(contact);
-		}
 #endif
     }
 }

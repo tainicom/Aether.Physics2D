@@ -26,7 +26,6 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_IGNORE_CCD_CATEGORIES
 
 using System;
 using System.Collections.Generic;
@@ -59,7 +58,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public FixtureProxy[] Proxies { get; private set; }
         public int ProxyCount { get; private set; }
 
+#if USE_IGNORE_CCD_CATEGORIES
         public Category IgnoreCCDWith;
+#endif
 
         /// <summary>
         /// Fires after two shapes has collided and are solved. This gives you a chance to get the impact force.
@@ -87,11 +88,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal Fixture() // Note: This is internal because it's used by Deserialization.
         {   
-            _collisionCategories = Settings.DefaultFixtureCollisionCategories;
-            _collidesWith = Settings.DefaultFixtureCollidesWith;
+            _collisionCategories = (Settings.UseFPECollisionCategories)? Category.All : Category.Cat1;
+            _collidesWith = Category.All;
             _collisionGroup = 0;
 
-            IgnoreCCDWith = Settings.DefaultFixtureIgnoreCCDWith;
+#if USE_IGNORE_CCD_CATEGORIES
+            IgnoreCCDWith = Category.None;
+#endif
 
             //Fixture defaults
             Friction = 0.2f;
@@ -400,7 +403,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             fixture._collisionGroup = _collisionGroup;
             fixture._collisionCategories = _collisionCategories;
             fixture._collidesWith = _collidesWith;
+#if USE_IGNORE_CCD_CATEGORIES
             fixture.IgnoreCCDWith = IgnoreCCDWith;
+#endif
             
             body.Add(fixture);
             return fixture;

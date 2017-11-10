@@ -27,7 +27,6 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
-//#define USE_AWAKE_BODY_SET
 
 using System;
 using System.Collections.Generic;
@@ -261,12 +260,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (!_awake)
                     {
                         _sleepTime = 0.0f;
-                        World.ContactManager.UpdateContacts(ContactList, true);
+                        
+#if USE_ACTIVE_CONTACT_SET
+                        World.ContactManager.UpdateActiveContacts(ContactList, true);
+#endif
+
 #if USE_AWAKE_BODY_SET
 						if (InWorld && !World.AwakeBodySet.Contains(this))
-						{
 							World.AwakeBodySet.Add(this);
-						}
 #endif
                     }
                 }
@@ -276,13 +277,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
 					// Check even for BodyType.Static because if this body had just been changed to Static it will have
 					// set Awake = false in the process.
 					if (InWorld && World.AwakeBodySet.Contains(this))
-					{
 						World.AwakeBodySet.Remove(this);
-					}
 #endif
                     ResetDynamics();
                     _sleepTime = 0.0f;
-                    World.ContactManager.UpdateContacts(ContactList, false);
+                    
+#if USE_ACTIVE_CONTACT_SET
+                    World.ContactManager.UpdateActiveContacts(ContactList, false);
+#endif
                 }
 
                 _awake = value;
@@ -1211,6 +1213,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 FixtureList[i].CollidesWith = category;
         }
 
+#if USE_IGNORE_CCD_CATEGORIES
         /// <summary>
         /// Body objects can define which categories of bodies they wish to ignore CCD with. 
         /// This allows certain bodies to be configured to ignore CCD with objects that
@@ -1223,6 +1226,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             for (int i = 0; i < FixtureList.Count; i++)
                 FixtureList[i].IgnoreCCDWith = category;
         }
+#endif
 
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
