@@ -181,7 +181,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Friction = Settings.MixFriction(FixtureA.Friction, FixtureB.Friction);
         }
 
-        private Contact(Fixture fA, int indexA, Fixture fB, int indexB)
+        protected Contact(Fixture fA, int indexA, Fixture fB, int indexB)
         {
             Reset(fA, indexA, fB, indexB);
         }
@@ -425,11 +425,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     Collision.Collision.CollideCircles(ref manifold, (CircleShape)FixtureA.Shape, ref transformA, (CircleShape)FixtureB.Shape, ref transformB);
                     break;
             }
-        }
-
-        internal static Contact Create()
-        {            
-            return new Contact(null, 0, null, 0);
         }
 
         internal static Contact Create(Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
