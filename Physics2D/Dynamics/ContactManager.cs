@@ -42,6 +42,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public IBroadPhase BroadPhase;
 
+        public readonly ContactListHead ContactList;
         public int ContactCount { get; private set; }
 
         /// <summary>
@@ -49,7 +50,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public CollisionFilterDelegate ContactFilter;
 
-        public Contact ContactList;
 
 #if USE_ACTIVE_CONTACT_SET
         /// <summary>
@@ -87,9 +87,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal ContactManager(IBroadPhase broadPhase)
         {
-            ContactList = Contact.Create();
-            ContactList.Prev = ContactList;
-            ContactList.Next = ContactList;
+            ContactList = new ContactListHead();
             ContactCount = 0;
 
             BroadPhase = broadPhase;

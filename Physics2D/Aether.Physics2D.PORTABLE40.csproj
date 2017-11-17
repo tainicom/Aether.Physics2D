@@ -129,6 +129,7 @@
     <Compile Include="Dynamics\Category.cs" />
     <Compile Include="Dynamics\ContactManager.cs" />
     <Compile Include="Dynamics\Contacts\Contact.cs" />
+    <Compile Include="Dynamics\Contacts\ContactListHead.cs" />
     <Compile Include="Dynamics\Contacts\ContactSolver.cs" />
     <Compile Include="Dynamics\Fixture.cs" />
     <Compile Include="Dynamics\FixtureProxy.cs" />

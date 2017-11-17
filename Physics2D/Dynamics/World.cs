@@ -899,7 +899,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <value>The head of the world contact list.</value>
         /// <example>for (Contact c = World.ContactList.Next; c != World..ContactList; c = c.Next)</example>
-        public Contact ContactList
+        public ContactListHead ContactList
         {
             get { return ContactManager.ContactList; }
         }
