@@ -218,6 +218,12 @@ namespace tainicom.Aether.Physics2D.Common
             return a.X * b.X + a.Y * b.Y + a.Z * b.Z;
         }
 
+        /// Perform the dot product on two vectors.
+        public static float Dot(Vector2 a, ref Vector2 b)
+        {
+            return a.X * b.X + a.Y * b.Y;
+        }
+
         public static double VectorAngle(Vector2 p1, Vector2 p2)
         {
             return VectorAngle(ref p1, ref p2);

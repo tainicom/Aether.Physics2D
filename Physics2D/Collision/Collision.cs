@@ -1712,7 +1712,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             for (int i = 0; i < count2; ++i)
             {
-                float dot = Vector2.Dot(vertices2[i], normal1);
+                float dot = MathUtils.Dot(vertices2[i], ref normal1);
                 if (dot < minDot)
                 {
                     minDot = dot;
@@ -1722,7 +1722,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             Vector2 v1 = Transform.Multiply(vertices1[edge1], ref xf1To2);
             Vector2 v2 = vertices2[index];
-            float separation = Vector2.Dot(v2 - v1, normal1);
+            float separation = MathUtils.Dot(v2 - v1, ref normal1);
 
             return separation;
         }
@@ -1752,7 +1752,7 @@ namespace tainicom.Aether.Physics2D.Collision
             float maxDot = -Settings.MaxFloat;
             for (int i = 0; i < count1; ++i)
             {
-                float dot = Vector2.Dot(normals1[i], dLocal1);
+                float dot = MathUtils.Dot(normals1[i], ref dLocal1);
                 if (dot > maxDot)
                 {
                     maxDot = dot;
