@@ -444,13 +444,10 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <returns>True if they are overlapping.</returns>
         public static bool TestOverlap(ref AABB a, ref AABB b)
         {
-            Vector2 d1 = b.LowerBound - a.UpperBound;
-            Vector2 d2 = a.LowerBound - b.UpperBound;
-
-            if (d1.X > 0.0f || d1.Y > 0.0f)
+            if (b.LowerBound.X > a.UpperBound.X || b.LowerBound.Y > a.UpperBound.Y)
                 return false;
 
-            if (d2.X > 0.0f || d2.Y > 0.0f)
+            if (a.LowerBound.X > b.UpperBound.X || a.LowerBound.Y > b.UpperBound.Y)
                 return false;
 
             return true;
