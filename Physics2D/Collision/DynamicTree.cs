@@ -293,6 +293,29 @@ namespace tainicom.Aether.Physics2D.Collision
         }
 
         /// <summary>
+        /// Get the fat AABB for a proxy.
+        /// </summary>
+        /// <param name="proxyId">The proxy id.</param>
+        /// <returns>The fat AABB.</returns>
+        public AABB GetFatAABB(int proxyId)
+        {
+            Debug.Assert(0 <= proxyId && proxyId < _nodeCapacity);
+            return _nodes[proxyId].AABB;
+        }
+
+        /// <summary>
+        /// Test overlap of fat AABBs.
+        /// </summary>
+        /// <param name="proxyIdA">The proxy id A.</param>
+        /// <param name="proxyIdB">The proxy id B.</param>
+        public bool TestFatAABBOverlap(int proxyIdA, int proxyIdB)
+        {
+            Debug.Assert(0 <= proxyIdA && proxyIdA < _nodeCapacity);
+            Debug.Assert(0 <= proxyIdB && proxyIdB < _nodeCapacity);
+            return AABB.TestOverlap(ref _nodes[proxyIdA].AABB, ref _nodes[proxyIdB].AABB);
+        }
+
+        /// <summary>
         /// Query an AABB for overlapping proxies. The callback class
         /// is called for each proxy that overlaps the supplied AABB.
         /// </summary>

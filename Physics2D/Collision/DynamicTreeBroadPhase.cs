@@ -229,10 +229,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <returns></returns>
         public bool TestOverlap(int proxyIdA, int proxyIdB)
         {
-            AABB aabbA, aabbB;
-            _tree.GetFatAABB(proxyIdA, out aabbA);
-            _tree.GetFatAABB(proxyIdB, out aabbB);
-            return AABB.TestOverlap(ref aabbA, ref aabbB);
+            return _tree.TestFatAABBOverlap(proxyIdA, proxyIdB);
         }
 
         /// <summary>
@@ -255,8 +252,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
                 // We have to query the tree with the fat AABB so that
                 // we don't fail to create a pair that may touch later.
-                AABB fatAABB;
-                _tree.GetFatAABB(_queryProxyId, out fatAABB);
+                AABB fatAABB = _tree.GetFatAABB(_queryProxyId);
 
                 // Query tree, create pairs and add them pair buffer.
                 _tree.Query(_queryCallback, ref fatAABB);
