@@ -398,29 +398,28 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             if (Settings.UseFPECollisionCategories)
             {
-                if ((fixtureA.CollisionGroup == fixtureB.CollisionGroup) &&
-                    fixtureA.CollisionGroup != 0 && fixtureB.CollisionGroup != 0)
+                if (fixtureA.CollisionGroup != 0 && fixtureA.CollisionGroup == fixtureB.CollisionGroup)
+                {
                     return false;
+                }
 
-                if (((fixtureA.CollisionCategories & fixtureB.CollidesWith) ==
-                     Category.None) &
-                    ((fixtureB.CollisionCategories & fixtureA.CollidesWith) ==
-                     Category.None))
-                    return false;
+                bool collide = ((fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0) ||
+                               ((fixtureB.CollidesWith & fixtureA.CollisionCategories) != 0);
 
-                return true;
+                return collide;
             }
-
-            if (fixtureA.CollisionGroup == fixtureB.CollisionGroup &&
-                fixtureA.CollisionGroup != 0)
+            else
             {
-                return fixtureA.CollisionGroup > 0;
+                if (fixtureA.CollisionGroup != 0 && fixtureA.CollisionGroup == fixtureB.CollisionGroup)
+                {
+                    return (fixtureA.CollisionGroup > 0);
+                }
+
+                bool collide = ((fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0) &&
+                               ((fixtureB.CollidesWith & fixtureA.CollisionCategories) != 0);
+
+                return collide;
             }
-
-            bool collide = (fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0 &&
-                           (fixtureA.CollisionCategories & fixtureB.CollidesWith) != 0;
-
-            return collide;
         }
 
 #if USE_ACTIVE_CONTACT_SET
