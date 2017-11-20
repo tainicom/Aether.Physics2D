@@ -1213,21 +1213,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 FixtureList[i].CollidesWith = category;
         }
 
-#if USE_IGNORE_CCD_CATEGORIES
-        /// <summary>
-        /// Body objects can define which categories of bodies they wish to ignore CCD with. 
-        /// This allows certain bodies to be configured to ignore CCD with objects that
-        /// aren't a penetration problem due to the way content has been prepared.
-        /// This is compared against the other Body's fixture CollisionCategories within World.SolveTOI().
-        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
-        /// </summary>
-        public void SetIgnoreCCDWith(Category category)
-        {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].IgnoreCCDWith = category;
-        }
-#endif
-
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>

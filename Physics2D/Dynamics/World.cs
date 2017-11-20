@@ -34,7 +34,6 @@
 // USE_AWAKE_BODY_SET
 // USE_ISLAND_SET
 // OPTIMIZE_TOI
-// USE_IGNORE_CCD_CATEGORIES
 
 using System;
 using System.Collections.Generic;
@@ -550,13 +549,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                             continue;
                         }
 
-#if USE_IGNORE_CCD_CATEGORIES
-                        bool collideA = (bA.IsBullet || typeA != BodyType.Dynamic) && ((fA.IgnoreCCDWith & fB.CollisionCategories) == 0) && !bA.IgnoreCCD;
-                        bool collideB = (bB.IsBullet || typeB != BodyType.Dynamic) && ((fB.IgnoreCCDWith & fA.CollisionCategories) == 0) && !bB.IgnoreCCD;
-#else
                         bool collideA = (bA.IsBullet || typeA != BodyType.Dynamic) && !bA.IgnoreCCD;
                         bool collideB = (bB.IsBullet || typeB != BodyType.Dynamic) && !bB.IgnoreCCD;
-#endif
 
                         // Are these two non-bullet dynamic bodies?
                         if (collideA == false && collideB == false)
