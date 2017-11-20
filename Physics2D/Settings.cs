@@ -103,13 +103,6 @@ namespace tainicom.Aether.Physics2D
         public static int MaxPolygonVertices = 8;
 
         /// <summary>
-        /// Farseer Physics Engine has a different way of filtering fixtures than Box2d.
-        /// We have both FPE and Box2D filtering in the engine. If you are upgrading
-        /// from earlier versions of FPE, set this to true.
-        /// </summary>
-        public static bool UseFPECollisionCategories;
-
-        /// <summary>
         /// The maximum number of contact points between two convex shapes.
         /// DO NOT CHANGE THIS VALUE!
         /// </summary>

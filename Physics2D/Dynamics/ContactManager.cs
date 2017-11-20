@@ -396,30 +396,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private static bool ShouldCollide(Fixture fixtureA, Fixture fixtureB)
         {
-            if (Settings.UseFPECollisionCategories)
+            if (fixtureA.CollisionGroup != 0 && fixtureA.CollisionGroup == fixtureB.CollisionGroup)
             {
-                if (fixtureA.CollisionGroup != 0 && fixtureA.CollisionGroup == fixtureB.CollisionGroup)
-                {
-                    return false;
-                }
-
-                bool collide = ((fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0) ||
-                               ((fixtureB.CollidesWith & fixtureA.CollisionCategories) != 0);
-
-                return collide;
+                return (fixtureA.CollisionGroup > 0);
             }
-            else
-            {
-                if (fixtureA.CollisionGroup != 0 && fixtureA.CollisionGroup == fixtureB.CollisionGroup)
-                {
-                    return (fixtureA.CollisionGroup > 0);
-                }
 
-                bool collide = ((fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0) &&
-                               ((fixtureB.CollidesWith & fixtureA.CollisionCategories) != 0);
+            bool collide = ((fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0) &&
+                            ((fixtureB.CollidesWith & fixtureA.CollisionCategories) != 0);
 
-                return collide;
-            }
+            return collide;
         }
 
 #if USE_ACTIVE_CONTACT_SET
