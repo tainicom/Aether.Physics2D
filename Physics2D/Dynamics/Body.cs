@@ -1102,8 +1102,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal void SynchronizeFixtures()
         {
-            Transform xf1 = new Transform();
-            xf1.q.Phase = _sweep.A0;
+            Transform xf1 = new Transform(Vector2.Zero, _sweep.A0);
             xf1.p = _sweep.C0 - Complex.Multiply(ref _sweep.LocalCenter, ref xf1.q);
 
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;

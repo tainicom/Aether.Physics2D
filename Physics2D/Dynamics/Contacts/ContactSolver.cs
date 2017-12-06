@@ -234,10 +234,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                 Debug.Assert(manifold.PointCount > 0);
 
-                Transform xfA = new Transform();
-                Transform xfB = new Transform();
-                xfA.q.Phase = aA;
-                xfB.q.Phase = aB;
+                Transform xfA = new Transform(Vector2.Zero, aA);
+                Transform xfB = new Transform(Vector2.Zero, aB);
                 xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
                 xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
 
@@ -816,10 +814,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 Vector2 cB = _positions[indexB].c;
                 float aB = _positions[indexB].a;
 
-                Transform xfA = new Transform();
-                Transform xfB = new Transform();
-                xfA.q.Phase = aA;
-                xfB.q.Phase = aB;
+                Transform xfA = new Transform(Vector2.Zero, aA);
+                Transform xfB = new Transform(Vector2.Zero, aB);
                 xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
                 xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
 
@@ -906,11 +902,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                 Vector2 cB = _positions[indexB].c;
                 float aB = _positions[indexB].a;
-                
-                Transform xfA = new Transform();
-                Transform xfB = new Transform();
-                xfA.q.Phase = aA;
-                xfB.q.Phase = aB;
+
+                Transform xfA = new Transform(Vector2.Zero, aA);
+                Transform xfB = new Transform(Vector2.Zero, aB);
                 xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
                 xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
 
