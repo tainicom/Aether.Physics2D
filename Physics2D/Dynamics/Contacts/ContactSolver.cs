@@ -816,16 +816,16 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 Vector2 cB = _positions[indexB].c;
                 float aB = _positions[indexB].a;
 
+                Transform xfA = new Transform();
+                Transform xfB = new Transform();
+                xfA.q.Phase = aA;
+                xfB.q.Phase = aB;
+                xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
+                xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
+
                 // Solve normal constraints
                 for (int j = 0; j < pointCount; ++j)
                 {
-                    Transform xfA = new Transform();
-                    Transform xfB = new Transform();
-                    xfA.q.Phase = aA;
-                    xfB.q.Phase = aB;
-                    xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
-                    xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
-
                     Vector2 normal;
                     Vector2 point;
                     float separation;
@@ -906,17 +906,17 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                 Vector2 cB = _positions[indexB].c;
                 float aB = _positions[indexB].a;
+                
+                Transform xfA = new Transform();
+                Transform xfB = new Transform();
+                xfA.q.Phase = aA;
+                xfB.q.Phase = aB;
+                xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
+                xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
 
                 // Solve normal constraints
                 for (int j = 0; j < pointCount; ++j)
                 {
-                    Transform xfA = new Transform();
-                    Transform xfB = new Transform();
-                    xfA.q.Phase = aA;
-                    xfB.q.Phase = aB;
-                    xfA.p = cA - Complex.Multiply(ref localCenterA, ref xfA.q);
-                    xfB.p = cB - Complex.Multiply(ref localCenterB, ref xfB.q);
-
                     Vector2 normal;
                     Vector2 point;
                     float separation;
