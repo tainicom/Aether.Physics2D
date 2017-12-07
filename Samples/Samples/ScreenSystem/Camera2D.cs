@@ -29,14 +29,13 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         private Vector2 _targetPosition;
         private float _targetRotation;
         private Body _trackingBody;
-        private Vector2 _translateCenter;
 
         public Matrix DebugProjection;
         public Matrix DebugView;
+
         public Matrix SimProjection;
         public Matrix SimView;
         public Matrix View;
-
 
         /// <summary>
         /// The constructor for the Camera2D class.
@@ -48,11 +47,11 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             DebugProjection = Matrix.CreateOrthographic(_graphics.Viewport.Width, _graphics.Viewport.Height, 0f, 1f);
             DebugView = Matrix.CreateScale(ConvertUnits.ToDisplayUnits(1f), -ConvertUnits.ToDisplayUnits(1f), 1f);
             
-            SimProjection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(_graphics.Viewport.Width), ConvertUnits.ToSimUnits(_graphics.Viewport.Height), 0f, 0f, 1f);
+            SimProjection = Matrix.CreateOrthographicOffCenter(0f, ConvertUnits.ToSimUnits(_graphics.Viewport.Width),
+                                                               ConvertUnits.ToSimUnits(_graphics.Viewport.Height), 0f,
+                                                               0f, 1f);
             SimView = Matrix.Identity;
             View = Matrix.Identity;
-
-            _translateCenter = new Vector2(ConvertUnits.ToSimUnits(_graphics.Viewport.Width / 2f), ConvertUnits.ToSimUnits(_graphics.Viewport.Height / 2f));
 
             ResetCamera();
         }
@@ -62,10 +61,10 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public Vector2 Position
         {
-            get { return ConvertUnits.ToDisplayUnits(_currentPosition); }
+            get { return _currentPosition; }
             set
             {
-                _targetPosition = ConvertUnits.ToSimUnits(value);
+                _targetPosition = value;
                 if (_minPosition != _maxPosition)
                 {
                     Vector2.Clamp(ref _targetPosition, ref _minPosition, ref _maxPosition, out _targetPosition);
@@ -80,8 +79,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public Vector2 MinPosition
         {
-            get { return ConvertUnits.ToDisplayUnits(_minPosition); }
-            set { _minPosition = ConvertUnits.ToSimUnits(value); }
+            get { return _minPosition; }
+            set { _minPosition = value; }
         }
 
         /// <summary>
@@ -91,8 +90,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public Vector2 MaxPosition
         {
-            get { return ConvertUnits.ToDisplayUnits(_maxPosition); }
-            set { _maxPosition = ConvertUnits.ToSimUnits(value); }
+            get { return _maxPosition; }
+            set { _maxPosition = value; }
         }
 
         /// <summary>
@@ -259,17 +258,25 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         private void SetView()
         {
+            var vpCenter = new Vector2(_graphics.Viewport.Width, _graphics.Viewport.Height) / 2f;
+
             Matrix matRotation = Matrix.CreateRotationZ(_currentRotation);
             Matrix matZoom = Matrix.CreateScale(_currentZoom);
-            Vector3 translateCenter = new Vector3(_translateCenter, 0f);
+            Vector3 translateCenter = new Vector3(ConvertUnits.ToSimUnits(vpCenter), 0f);
             Vector3 translateBody = new Vector3(-_currentPosition, 0f);
 
-            SimView = Matrix.CreateTranslation(translateBody) * matRotation * matZoom * Matrix.CreateTranslation(translateCenter);
+            SimView = Matrix.CreateTranslation(translateBody) *
+                      matRotation * 
+                      matZoom * 
+                      Matrix.CreateTranslation(translateCenter);
 
-            translateCenter = new Vector3(ConvertUnits.ToDisplayUnits( _translateCenter), 0f);
+            translateCenter = new Vector3(vpCenter, 0f);
             translateBody   = new Vector3(ConvertUnits.ToDisplayUnits(-_currentPosition), 0f);
 
-            View = Matrix.CreateTranslation(translateBody) * matRotation * matZoom * Matrix.CreateTranslation(translateCenter);
+            View = Matrix.CreateTranslation(translateBody) *
+                   matRotation * 
+                   matZoom * 
+                   Matrix.CreateTranslation(translateCenter);
         }
 
         /// <summary>
