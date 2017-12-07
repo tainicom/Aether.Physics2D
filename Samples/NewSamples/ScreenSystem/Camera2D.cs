@@ -287,8 +287,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     matZoom *
                     Matrix.CreateTranslation(translateCenter);
 
-            translateCenter = ConvertUnits.ToDisplayUnits(translateCenter);
-            translateBody = ConvertUnits.ToDisplayUnits(translateBody);
+            translateCenter = new Vector3(ConvertUnits.ToDisplayUnits( _translateCenter), 0f);
+            translateBody   = new Vector3(ConvertUnits.ToDisplayUnits(-_currentPosition), 0f);
 
             _batchView = Matrix.CreateTranslation(translateBody) *
                          matRotation *
