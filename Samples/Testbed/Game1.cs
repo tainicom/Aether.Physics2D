@@ -169,9 +169,19 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             MouseState newMouseState = Mouse.GetState();
 
             if (_keyboardManager.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
-                ViewZoom = Math.Min(1.1f * ViewZoom, 20.0f);
+                ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
             else if (_keyboardManager.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
-                ViewZoom = Math.Max(0.9f * ViewZoom, 0.02f);
+                ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
+            else if (_keyboardManager.IsKeyDown(Keys.Subtract)) // Press '-' to zoom out.
+                ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
+            else if (_keyboardManager.IsKeyDown(Keys.Add)) // Press 'x' to zoom in.
+                ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
+            else if (newMouseState.ScrollWheelValue != _oldMouseState.ScrollWheelValue) // Mouse Wheel to Zoom.
+            {
+                var wheelDelta = (newMouseState.ScrollWheelValue - _oldMouseState.ScrollWheelValue)/120f;
+                var zoomFactor = (float)Math.Pow(Math.E, 0.05f * wheelDelta);
+                ViewZoom = Math.Min(Math.Max(zoomFactor * ViewZoom, 0.02f), 20.0f);
+            }
             else if (_keyboardManager.IsNewKeyPress(Keys.R)) // Press 'r' to reset.
                 Restart();
             else if (_keyboardManager.IsNewKeyPress(Keys.P) || newGamePad.IsButtonDown(Buttons.Start) && _oldGamePad.IsButtonUp(Buttons.Start)) // Press I to prev test.
@@ -188,15 +198,15 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 if (_testSelection == _testCount)
                     _testSelection = 0;
             }
-            else if (_keyboardManager.IsKeyDown(Keys.Left)) // Press left to pan left.
+            if (_keyboardManager.IsKeyDown(Keys.Left)) // Press left to pan left.
                 ViewCenter = new Vector2(ViewCenter.X - 0.5f, ViewCenter.Y);
             else if (_keyboardManager.IsKeyDown(Keys.Right)) // Press right to pan right.
                 ViewCenter = new Vector2(ViewCenter.X + 0.5f, ViewCenter.Y);
-            else if (_keyboardManager.IsKeyDown(Keys.Down)) // Press down to pan down.
+            if (_keyboardManager.IsKeyDown(Keys.Down)) // Press down to pan down.
                 ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y - 0.5f);
             else if (_keyboardManager.IsKeyDown(Keys.Up)) // Press up to pan up.
                 ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y + 0.5f);
-            else if (_keyboardManager.IsNewKeyPress(Keys.Home)) // Press home to reset the view.
+            if (_keyboardManager.IsNewKeyPress(Keys.Home)) // Press home to reset the view.
                 ResetCamera();
             else if (_keyboardManager.IsNewKeyPress(Keys.F1))
                 EnableOrDisableFlag(DebugViewFlags.Shape);
