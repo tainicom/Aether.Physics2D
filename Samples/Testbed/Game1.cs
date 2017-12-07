@@ -61,9 +61,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         public Game1()
         {
-            //Default view
-            ResetView();
-
             _graphics = new GraphicsDeviceManager(this);
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
             _graphics.PreferMultiSampling = true;
@@ -83,7 +80,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             set
             {
                 _viewZoom = value;
-                Resize();
+                UpdateProjection();
             }
         }
 
@@ -93,7 +90,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             set
             {
                 _viewCenter = value;
-                Resize();
+                UpdateView();
             }
         }
 
@@ -111,7 +108,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += WindowClientSizeChanged;
 
-            CreateProjection();
+            //Default projection and view
+            ResetCamera();
 
             _testCount = 0;
             while (TestEntries.TestList[_testCount].CreateTest != null)
@@ -124,14 +122,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             StartTest(_testIndex);
         }
 
-        private void CreateProjection()
-        {
-            _lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f);
-            _upper = new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f);
-
-            // L/R/B/T
-            Projection = Matrix.CreateOrthographicOffCenter(_lower.X, _upper.X, _lower.Y, _upper.Y, -1, 1);
-        }
 
         private void StartTest(int index)
         {
@@ -178,7 +168,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             GamePadState newGamePad = GamePad.GetState(PlayerIndex.One);
             MouseState newMouseState = Mouse.GetState();
 
-
             if (_keyboardManager.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
                 ViewZoom = Math.Min(1.1f * ViewZoom, 20.0f);
             else if (_keyboardManager.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
@@ -208,7 +197,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             else if (_keyboardManager.IsKeyDown(Keys.Up)) // Press up to pan up.
                 ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y + 0.5f);
             else if (_keyboardManager.IsNewKeyPress(Keys.Home)) // Press home to reset the view.
-                ResetView();
+                ResetCamera();
             else if (_keyboardManager.IsNewKeyPress(Keys.F1))
                 EnableOrDisableFlag(DebugViewFlags.Shape);
             else if (_keyboardManager.IsNewKeyPress(Keys.F2))
@@ -275,7 +264,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             {
                 _testIndex = _testSelection;
                 StartTest(_testIndex);
-                ResetView();
+                ResetCamera();
             }
 
             _test.DebugView.RenderDebugData(ref Projection, ref View);
@@ -283,16 +272,24 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             base.Draw(gameTime);
         }
 
-        private void ResetView()
+        private void ResetCamera()
         {
-            _viewZoom = 0.8f;
-            _viewCenter = new Vector2(0.0f, 20.0f);
-            Resize();
+            ViewZoom = 0.8f;
+            ViewCenter = new Vector2(0.0f, 20.0f);
         }
 
-        private void Resize()
+        private void UpdateProjection()
         {
-            View = Matrix.CreateTranslation(new Vector3(-ViewCenter.X, -ViewCenter.Y, 0)) * Matrix.CreateScale(ViewZoom);
+            _lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+            _upper =  new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+
+            // L/R/B/T
+            Projection = Matrix.CreateOrthographicOffCenter(_lower.X, _upper.X, _lower.Y, _upper.Y, 0f, 2f);
+        }
+
+        private void UpdateView()
+        {
+            View = Matrix.CreateLookAt(new Vector3(ViewCenter, 1), new Vector3(ViewCenter, 0), Vector3.Up);
         }
 
         public Vector2 ConvertWorldToScreen(Vector2 position)
@@ -321,7 +318,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             }
 
             //We want to keep aspec ratio. Recalcuate the projection matrix.
-            CreateProjection();
+            UpdateProjection();
         }
     }
 }
