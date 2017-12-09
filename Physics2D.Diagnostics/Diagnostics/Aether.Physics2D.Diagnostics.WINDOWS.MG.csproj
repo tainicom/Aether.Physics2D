@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="..\DiagnosticsContent\DiagnosticsContent.mgcb">
-      <Link>Content\SamplesContent.mgcb</Link>
+      <Link>Content\DiagnosticsContent.mgcb</Link>
     </MonoGameContentReference>
   </ItemGroup>
   <ItemGroup>
