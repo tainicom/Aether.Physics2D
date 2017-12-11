@@ -218,11 +218,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (leftStick != Vector2.Zero)
                 leftStick.Normalize();
             
-#if !MG // TODO: fix MonoGame GamePadState
             return new GamePadState(leftStick, Vector2.Zero, 0f, 0f, buttons.ToArray());
-#else
-            return new GamePadState(leftStick, Vector2.Zero, 0f, 0f, ((Buttons)0));
-#endif
         }
 
         private GamePadState HandleVirtualStickWP7()
@@ -249,11 +245,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             }
             stick = _phoneStick.StickPosition;
 #endif
-#if !MG // TODO: fix MonoGame GamePadState
             return new GamePadState(stick, Vector2.Zero, 0f, 0f, buttons.ToArray());
-#else
-            return new GamePadState(stick, Vector2.Zero, 0f, 0f, ((Buttons)0));
-#endif
         }
 
         /// <summary>
