@@ -166,6 +166,15 @@ namespace tainicom.Aether.Physics2D
         public static int VelocityConstraintsMultithreadThreshold = int.MaxValue;
 
         /// <summary>
+        /// A threshold for activating multiple cores to solve PositionConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve PositionConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public static int PositionConstraintsMultithreadThreshold = int.MaxValue;
+
+
+        /// <summary>
         /// The maximum linear position correction used when solving constraints. This helps to
         /// prevent overshoot.
         /// </summary>
