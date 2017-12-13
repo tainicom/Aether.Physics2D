@@ -75,7 +75,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             base.Update(settings, gameTime);
 
-            DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 4-(256), 5-(int.MaxValue - Always OFF))");
+            DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 3-(256), 4-(int.MaxValue - Always OFF))");
             var threshold = Settings.VelocityConstraintsMultithreadThreshold;
             if (threshold == 0) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 0");
             else if (threshold == 128) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 128");

@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -25,11 +27,11 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
@@ -69,7 +71,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 ++_count;
             }
 
-            DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 4-(256), 5-(int.MaxValue - Always OFF))");
+            DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 3-(256), 4-(int.MaxValue - Always OFF))");
             var threshold = Settings.VelocityConstraintsMultithreadThreshold;
             if (threshold == 0) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 0");
             else if (threshold == 128) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 128");
