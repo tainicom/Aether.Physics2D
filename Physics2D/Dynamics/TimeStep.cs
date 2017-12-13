@@ -54,6 +54,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
     {
         public Vector2 c;
         public float a;
+        internal volatile int Lock;
     }
 
     /// This is an internal structure.

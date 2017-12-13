@@ -792,11 +792,70 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         public bool SolvePositionConstraints()
         {
+            bool contactsOkay = false;
+
+            if (_count >= Settings.PositionConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
+            {
+                if (_count == 0) return true;
+                var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);
+                var batches = (int)Math.Ceiling((float)_count / batchSize);
+                
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                Parallel.For(0, batches, (i) =>
+                {
+                    var start = i * batchSize;
+                    var end = Math.Min(start + batchSize, _count);
+                    var res = SolvePositionConstraints(start, end);
+                    lock (this)
+                    {
+                        contactsOkay = contactsOkay || res;
+                    }
+                });
+#else            
+                contactsOkay = SolvePositionConstraints(0, _count);
+#endif
+            }
+            else
+            {
+                contactsOkay = SolvePositionConstraints(0, _count);
+            }
+            
+            return contactsOkay;
+        }
+
+        private bool SolvePositionConstraints(int start, int end)
+        {
             float minSeparation = 0.0f;
 
-            for (int i = 0; i < _count; ++i)
+            for (int i = start; i < end; ++i)
             {
                 ContactPositionConstraint pc = _positionConstraints[i];
+                
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                // Find lower order item.
+                int orderedIndexA = pc.indexA;
+                int orderedIndexB = pc.indexB;
+                if (orderedIndexB < orderedIndexA)
+                {
+                    orderedIndexA = pc.indexB;
+                    orderedIndexB = pc.indexA;
+                }
+                
+                // Lock bodies.
+                for (; ; )
+                {
+                    if (Interlocked.CompareExchange(ref _positions[orderedIndexA].Lock, 1, 0) == 0)
+                    {
+                        if (Interlocked.CompareExchange(ref _positions[orderedIndexB].Lock, 1, 0) == 0)
+                            break;
+                        _positions[orderedIndexA].Lock = 0;
+                    }
+#if NET40 || NET45
+                    Thread.Sleep(0);
+#endif
+                }
+#endif
+
 
                 int indexA = pc.indexA;
                 int indexB = pc.indexB;
@@ -810,7 +869,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                 Vector2 cA = _positions[indexA].c;
                 float aA = _positions[indexA].a;
-
                 Vector2 cB = _positions[indexB].c;
                 float aB = _positions[indexB].a;
 
@@ -856,9 +914,14 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                 _positions[indexA].c = cA;
                 _positions[indexA].a = aA;
-
                 _positions[indexB].c = cB;
                 _positions[indexB].a = aB;
+
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                // Unlock bodies.
+                _positions[orderedIndexB].Lock = 0;
+                _positions[orderedIndexA].Lock = 0;
+#endif
             }
 
             // We can't expect minSpeparation >= -b2_linearSlop because we don't
