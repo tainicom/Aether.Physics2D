@@ -10,12 +10,12 @@
 
 using Microsoft.Xna.Framework;
 
-namespace tainicom.Aether.Physics2D
+namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 {
     /// <summary>
     /// Convert units between display and simulation units.
     /// </summary>
-    public static class ConvertUnits
+    internal static class ConvertUnits
     {
         private static float _displayUnitsToSimUnitsRatio = 100f;
         private static float _simUnitsToDisplayUnitsRatio = 1 / _displayUnitsToSimUnitsRatio;
