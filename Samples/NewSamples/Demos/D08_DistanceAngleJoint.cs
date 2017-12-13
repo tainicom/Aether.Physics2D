@@ -129,7 +129,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             }
 
             Lines.End();
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
+            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
 
             for (int i = 0; i < 3; i++)
             {

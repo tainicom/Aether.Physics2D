@@ -75,7 +75,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
+            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
             
             for (int i = 0; i < 6; ++i)
             {

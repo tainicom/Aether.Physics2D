@@ -67,7 +67,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.View);
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
             _agent.Draw();
             _pyramid.Draw();
             ScreenManager.SpriteBatch.End();

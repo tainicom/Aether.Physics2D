@@ -223,12 +223,12 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
         public void Draw(SpriteBatch batch, LineBatch lines, Camera2D camera)
         {
-            batch.Begin(0, null, null, null, null, null, camera.View);
+            batch.Begin(0, null, null, null, null, null, camera.SpriteBatchTransform);
             batch.Draw(_body.Image, ConvertUnits.ToDisplayUnits(_chassis.Position), null, Color.White, _chassis.Rotation, _body.Origin, 1f, SpriteEffects.None, 0f);
             batch.End();
             for (int i = 0; i < 3; i++)
             {
-                batch.Begin(0, null, null, null, null, null, camera.View);
+                batch.Begin(0, null, null, null, null, null, camera.SpriteBatchTransform);
                 batch.Draw(_leftLeg.Image, ConvertUnits.ToDisplayUnits(_leftLegs[i].Position), null, _walkerColors[i], _leftLegs[i].Rotation, _leftLeg.Origin, 1f, SpriteEffects.None, 0f);
                 batch.Draw(_leftShoulder.Image, ConvertUnits.ToDisplayUnits(_leftShoulders[i].Position), null, _walkerColors[i], _leftShoulders[i].Rotation, _leftShoulder.Origin, 1f, SpriteEffects.None, 0f);
                 batch.Draw(_rightLeg.Image, ConvertUnits.ToDisplayUnits(_rightLegs[i].Position), null, _walkerColors[i], _rightLegs[i].Rotation, _rightLeg.Origin, 1f, SpriteEffects.None, 0f);
@@ -241,7 +241,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 }
                 lines.End();
             }
-            batch.Begin(0, null, null, null, null, null, camera.View);
+            batch.Begin(0, null, null, null, null, null, camera.SpriteBatchTransform);
             batch.Draw(_engine.Image, ConvertUnits.ToDisplayUnits(_wheel.Position), null, Color.White, _wheel.Rotation, _engine.Origin, 1f, SpriteEffects.None, 0f);
             batch.End();
         }

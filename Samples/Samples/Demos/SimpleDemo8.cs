@@ -74,7 +74,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.View);
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
             for (int i = 0; i < 6; ++i)
             {
                 ScreenManager.SpriteBatch.Draw(_circleSprite.Texture, ConvertUnits.ToDisplayUnits(_circle[i].Position), null, Color.White, _circle[i].Rotation, _circleSprite.Origin, 1f, SpriteEffects.None, 0f);

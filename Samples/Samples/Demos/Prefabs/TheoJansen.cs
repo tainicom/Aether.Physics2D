@@ -263,7 +263,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
         public void Draw()
         {
-            _spriteBatch.Begin(0, null, null, null, null, null, _camera.View);
+            _spriteBatch.Begin(0, null, null, null, null, null, _camera.SpriteBatchTransform);
             _spriteBatch.Draw(_body.Texture, ConvertUnits.ToDisplayUnits(_chassis.Position), null, Color.White, _chassis.Rotation, _body.Origin, 1f, SpriteEffects.None, 0f);
             _spriteBatch.End();
 
@@ -274,7 +274,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             }
             _lineBatch.End();
 
-            _spriteBatch.Begin(0, null, null, null, null, null, _camera.View);
+            _spriteBatch.Begin(0, null, null, null, null, null, _camera.SpriteBatchTransform);
             for (int i = 0; i < 3; ++i)
             {
                 _spriteBatch.Draw(_leftLeg.Texture, ConvertUnits.ToDisplayUnits(_leftLegs[i].Position), null, Color.White, _leftLegs[i].Rotation, _leftLeg.Origin, 1f, SpriteEffects.None, 0f);

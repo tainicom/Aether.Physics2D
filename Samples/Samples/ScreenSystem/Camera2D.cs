@@ -35,7 +35,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public Matrix SimProjection;
         public Matrix SimView;
-        public Matrix View;
+        public Matrix SpriteBatchTransform;
 
         /// <summary>
         /// The constructor for the Camera2D class.
@@ -51,7 +51,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                                                                ConvertUnits.ToSimUnits(_graphics.Viewport.Height), 0f,
                                                                0f, 1f);
             SimView = Matrix.Identity;
-            View = Matrix.Identity;
+            SpriteBatchTransform = Matrix.Identity;
 
             ResetCamera();
         }
@@ -273,7 +273,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             translateCenter = new Vector3(vpCenter, 0f);
             translateBody   = new Vector3(ConvertUnits.ToDisplayUnits(-_currentPosition), 0f);
 
-            View = Matrix.CreateTranslation(translateBody) *
+            SpriteBatchTransform = Matrix.CreateTranslation(translateBody) *
                    matRotation * 
                    matZoom * 
                    Matrix.CreateTranslation(translateCenter);

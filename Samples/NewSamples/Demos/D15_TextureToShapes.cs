@@ -75,7 +75,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
+            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
             Sprites.Draw(_objectSprite.Image, ConvertUnits.ToDisplayUnits(_compound.Position), null, Color.White, _compound.Rotation, _objectSprite.Origin, 1f, SpriteEffects.None, 0f);
             Sprites.End();
 
