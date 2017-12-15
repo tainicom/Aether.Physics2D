@@ -41,7 +41,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
         /// <returns></returns>
         public virtual bool IsActiveOn(Body body)
         {
-            if (body == null || !body.Enabled || body.IsStatic)
+            if (body == null || !body.Enabled || body.BodyType == BodyType.Static)
                 return false;
 
             if (body.FixtureList == null)
