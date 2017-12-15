@@ -455,6 +455,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Gets or sets a value indicating whether this body is static.
         /// </summary>
         /// <value><c>true</c> if this instance is static; otherwise, <c>false</c>.</value>
+        /// <remarks>Deprecated in version 1.2</remarks>
+        [Obsolete("Use BodyType")]
         public bool IsStatic
         {
             get { return _bodyType == BodyType.Static; }
@@ -464,6 +466,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Gets or sets a value indicating whether this body is kinematic.
         /// </summary>
         /// <value><c>true</c> if this instance is kinematic; otherwise, <c>false</c>.</value>
+        /// <remarks>Deprecated in version 1.2</remarks>
+        [Obsolete("Use BodyType")]
         public bool IsKinematic
         {
             get { return _bodyType == BodyType.Kinematic; }
