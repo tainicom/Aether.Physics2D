@@ -122,7 +122,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (_cursorIsVisible && IsCursorValid)
             {
                 batch.Begin();
-                batch.Draw(_cursorSprite.Image, Cursor, null, Color.White, 0f, _cursorSprite.Origin, 1f, SpriteEffects.None, 0f);
+                batch.Draw(_cursorSprite.Texture, Cursor, null, Color.White, 0f, _cursorSprite.Origin, 1f, SpriteEffects.None, 0f);
                 batch.End();
             }
         }

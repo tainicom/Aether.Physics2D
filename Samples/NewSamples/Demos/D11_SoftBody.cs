@@ -63,18 +63,18 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0, 9.82f);
+            World.Gravity = new Vector2(0, -9.82f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             // Bridge
             // We make a path using 2 points.
             Path bridgePath = new Path();
-            bridgePath.Add(new Vector2(-15, 5));
-            bridgePath.Add(new Vector2(15, 5));
+            bridgePath.Add(new Vector2(-15, -5));
+            bridgePath.Add(new Vector2(15, -5));
             bridgePath.Closed = false;
 
-            Vertices box = PolygonTools.CreateRectangle(0.125f, 0.5f);
+            Vertices box = PolygonTools.CreateRectangle(0.25f/2f, 1.0f/2f);
             PolygonShape shape = new PolygonShape(box, 20);
 
             _bridgeBodies = PathManager.EvenlyDistributeShapesAlongPath(World, bridgePath, shape, BodyType.Dynamic, 29);
@@ -90,52 +90,54 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             // Soft body
             // We make a rectangular path.
             Path rectanglePath = new Path();
-            rectanglePath.Add(new Vector2(-6, -11));
-            rectanglePath.Add(new Vector2(-6, 1));
-            rectanglePath.Add(new Vector2(6, 1));
-            rectanglePath.Add(new Vector2(6, -11));
+            rectanglePath.Add(new Vector2(-6, 11));
+            rectanglePath.Add(new Vector2(-6, -1));
+            rectanglePath.Add(new Vector2(6, -1));
+            rectanglePath.Add(new Vector2(6, 11));
             rectanglePath.Closed = true;
 
             // Creating two shapes. A circle to form the circle and a rectangle to stabilize the soft body.
             Shape[] shapes = new Shape[2];
-            shapes[0] = new PolygonShape(PolygonTools.CreateRectangle(0.5f, 0.5f, new Vector2(-0.1f, 0f), 0f), 1f);
+            shapes[0] = new PolygonShape(PolygonTools.CreateRectangle(1f/2f, 1f/2f, new Vector2(-0.1f, 0f), 0f), 1f);
             shapes[1] = new CircleShape(0.5f, 1f);
 
             // We distribute the shapes in the rectangular path.
             _softBodies = PathManager.EvenlyDistributeShapesAlongPath(World, rectanglePath, shapes, BodyType.Dynamic, 30);
 
             // Attach the bodies together with revolute joints. The rectangular form will converge to a circular form.
-            PathManager.AttachBodiesWithRevoluteJoint(World, _softBodies, new Vector2(0f, -0.5f), new Vector2(0f, 0.5f), true, true);
+            PathManager.AttachBodiesWithRevoluteJoint(World, _softBodies, new Vector2(0f, 0.5f), new Vector2(0f, -0.5f), true, true);
 
             // GFX
-            _bridgeBox = new Sprite(ContentWrapper.TextureFromShape(shape, ContentWrapper.Orange, ContentWrapper.Brown));
-            _softBodyBox = new Sprite(ContentWrapper.TextureFromShape(shapes[0], ContentWrapper.Green, ContentWrapper.Black));
-            _softBodyBox.Origin += new Vector2(ConvertUnits.ToDisplayUnits(0.1f), 0f);
-            _softBodyCircle = new Sprite(ContentWrapper.TextureFromShape(shapes[1], ContentWrapper.Lime, ContentWrapper.Grey));
+            _bridgeBox = new Sprite(ContentWrapper.TextureFromShape(shape, ContentWrapper.Orange, ContentWrapper.Brown, 24f));
+            _softBodyBox = new Sprite(ContentWrapper.TextureFromShape(shapes[0], ContentWrapper.Green, ContentWrapper.Black, 24f));
+            _softBodyBox.Origin += new Vector2(2.4f, 0f);
+            _softBodyCircle = new Sprite(ContentWrapper.TextureFromShape(shapes[1], ContentWrapper.Lime, ContentWrapper.Grey, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
             
             foreach (Body body in _softBodies)
             {
-                Sprites.Draw(_softBodyBox.Image, ConvertUnits.ToDisplayUnits(body.Position), null, Color.White, body.Rotation, _softBodyBox.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_softBodyBox.Texture, body.Position, null, Color.White, body.Rotation, _softBodyBox.Origin, new Vector2(1f, 1f) * _softBodyBox.TexelSize, SpriteEffects.None, 0f);
             }
 
             foreach (Body body in _softBodies)
             {
-                Sprites.Draw(_softBodyCircle.Image, ConvertUnits.ToDisplayUnits(body.Position), null, Color.White, body.Rotation, _softBodyCircle.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_softBodyCircle.Texture, body.Position, null, Color.White, body.Rotation, _softBodyCircle.Origin, new Vector2(1f, 1f) * _softBodyCircle.TexelSize, SpriteEffects.None, 0f);
             }
 
             foreach (Body body in _bridgeBodies)
             {
-                Sprites.Draw(_bridgeBox.Image, ConvertUnits.ToDisplayUnits(body.Position), null, Color.White, body.Rotation, _bridgeBox.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_bridgeBox.Texture, body.Position, null, Color.White, body.Rotation, _bridgeBox.Origin, new Vector2(0.25f, 1f) * _bridgeBox.TexelSize, SpriteEffects.None, 0f);
             }
 
-            Sprites.End();
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

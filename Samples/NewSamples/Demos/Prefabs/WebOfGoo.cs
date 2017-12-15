@@ -16,6 +16,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 {
     public class WebOfGoo
     {
+        private World _world;
+        private float _radius;
+
         private const float Breakpoint = 100f;
 
         private List<List<Body>> _ringBodys;
@@ -26,6 +29,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
         public WebOfGoo(World world, Vector2 position, float radius, int rings, int sides)
         {
+            _world = world;
+            _radius = radius;
+
             _ringBodys = new List<List<Body>>(rings);
             _ringJoints = new List<DistanceJoint>();
 
@@ -107,16 +113,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
         public void Draw(SpriteBatch batch)
         {
-            foreach (DistanceJoint joint in _ringJoints)
+            foreach (DistanceJoint j in _ringJoints)
             {
-                if (joint.Enabled)
+                if (j.Enabled)
                 {
-                    Vector2 pos = ConvertUnits.ToDisplayUnits((joint.WorldAnchorA + joint.WorldAnchorB) / 2f);
-                    Vector2 AtoB = joint.WorldAnchorB - joint.WorldAnchorA;
-                    float distance = ConvertUnits.ToDisplayUnits(AtoB.Length()) + 8f;
-                    Vector2 scale = new Vector2(distance / _link.Image.Width, 1f);
+                    Vector2 pos = (j.WorldAnchorA + j.WorldAnchorB) / 2f;
+                    Vector2 AtoB = j.WorldAnchorB - j.WorldAnchorA;
                     float angle = (float)MathUtils.VectorAngle(Vector2.UnitX, AtoB);
-                    batch.Draw(_link.Image, pos, null, Color.White, angle, _link.Origin, scale, SpriteEffects.None, 0f);
+                    float distance = AtoB.Length() + _radius * 2f / 3f;
+
+                    batch.Draw(_link.Texture, pos, null, Color.White, angle, _link.Origin, new Vector2(distance, _radius) * _link.TexelSize, SpriteEffects.FlipVertically, 0f);
                 }
             }
 
@@ -124,7 +130,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             {
                 foreach (Body body in bodyList)
                 {
-                    batch.Draw(_goo.Image, ConvertUnits.ToDisplayUnits(body.Position), null, Color.White, 0f, _goo.Origin, 1f, SpriteEffects.None, 0f);
+                    batch.Draw(_goo.Texture, body.Position, null, Color.White, 0f, _goo.Origin, new Vector2(2f * _radius) * _goo.TexelSize, SpriteEffects.FlipVertically, 0f);
                 }
             }
         }

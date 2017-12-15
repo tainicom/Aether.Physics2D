@@ -8,6 +8,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -73,32 +74,32 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             _agent.CollisionCategories = Category.All & ~Category.Cat4;
             _agent.CollidesWith = Category.All & ~Category.Cat4;
 
-            Vector2 startPosition = new Vector2(-20f, -11f);
-            Vector2 endPosition = new Vector2(20, -11f);
+            Vector2 startPosition = new Vector2(-20f, 11f);
+            Vector2 endPosition = new Vector2(20, 11f);
             _circles = new Objects(World, ScreenManager, startPosition, endPosition, 15, 0.6f, ObjectType.Circle);
 
             //Collide with itself only
             _circles.CollisionCategories = Category.Cat1;
             _circles.CollidesWith = Category.Cat1;
 
-            startPosition = new Vector2(-20, 11f);
-            endPosition = new Vector2(20, 11f);
+            startPosition = new Vector2(-20, -11f);
+            endPosition = new Vector2(20, -11f);
             _rectangles = new Objects(World, ScreenManager, startPosition, endPosition, 15, 1.2f, ObjectType.Rectangle);
 
             //Collides with itself only
             _rectangles.CollisionCategories = Category.Cat2;
             _rectangles.CollidesWith = Category.Cat2;
 
-            startPosition = new Vector2(-20, 7);
-            endPosition = new Vector2(-20, -7);
+            startPosition = new Vector2(-20, -7);
+            endPosition = new Vector2(-20, 7);
             _gears = new Objects(World, ScreenManager, startPosition, endPosition, 5, 0.6f, ObjectType.Gear);
 
             //Collides with stars
             _gears.CollisionCategories = Category.Cat3;
             _gears.CollidesWith = Category.Cat3 | Category.Cat4;
 
-            startPosition = new Vector2(20, 7);
-            endPosition = new Vector2(20, -7);
+            startPosition = new Vector2(20, -7);
+            endPosition = new Vector2(20, 7);
             _stars = new Objects(World, ScreenManager, startPosition, endPosition, 5, 0.6f, ObjectType.Star);
 
             //Collides with gears
@@ -110,7 +111,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             _agent.Draw();
             _circles.Draw();
             _rectangles.Draw();

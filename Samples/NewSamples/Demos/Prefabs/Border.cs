@@ -30,8 +30,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             _lines = lines;
 
             // Physics
-            float halfWidth = ConvertUnits.ToSimUnits(graphics.Viewport.Width) / 2f - 0.75f;
-            float halfHeight = ConvertUnits.ToSimUnits(graphics.Viewport.Height) / 2f - 0.75f;
+            var vp = graphics.Viewport;
+            float height = 30f; // 30 meters height
+            float width = height * vp.AspectRatio;
+            width -= 1.5f; // 1.5 meters border
+            height -= 1.5f;
+            float halfWidth = width / 2f;
+            float halfHeight = height / 2f;
 
             Vertices borders = new Vertices(4);
             borders.Add(new Vector2(-halfWidth, halfHeight));  // Lower left

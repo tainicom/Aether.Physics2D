@@ -7,6 +7,7 @@ using System.Text;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -48,23 +49,22 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0, 9.82f);
+            World.Gravity = new Vector2(0, -9.82f);
 
             _border = new Border(World, ScreenManager, Camera);
 
-#if WINDOWS
-            _spiderweb = new Spiderweb(World, HiddenBody, Vector2.Zero, ConvertUnits.ToSimUnits(12), 5, 12);
-#elif WINDOWS_PHONE
-            _spiderweb = new Spiderweb(World, HiddenBody, Vector2.Zero, ConvertUnits.ToSimUnits(8), 5, 12);
-#endif
+            _spiderweb = new Spiderweb(World, HiddenBody, Vector2.Zero, 0.5f, 5, 12);
             _spiderweb.LoadContent(ScreenManager.Content);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             _spiderweb.Draw(ScreenManager.SpriteBatch);
             ScreenManager.SpriteBatch.End();
+
             _border.Draw();
             base.Draw(gameTime);
         }

@@ -21,13 +21,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
         public Pyramid(World world, Vector2 position, int count, float density)
         {
-            Vertices rect = PolygonTools.CreateRectangle(0.5f, 0.5f);
+            Vertices rect = PolygonTools.CreateRectangle(1f/2f, 1f/2f);
             PolygonShape shape = new PolygonShape(rect, density);
 
             Vector2 rowStart = position;
             rowStart.Y -= 0.5f + count * 1.1f;
 
-            Vector2 deltaRow = new Vector2(-0.625f, 1.1f);
+            Vector2 deltaRow = new Vector2(-0.625f, -1.1f);
             const float spacing = 1.25f;
 
             // Physics
@@ -51,14 +51,14 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             }
 
             //GFX
-            _box = new Sprite(ContentWrapper.PolygonTexture(rect, "Square", ContentWrapper.Blue, ContentWrapper.Gold, ContentWrapper.Black, 1f));
+            _box = new Sprite(ContentWrapper.PolygonTexture(rect, "Square", ContentWrapper.Blue, ContentWrapper.Gold, ContentWrapper.Black, 1f, 24f));
         }
 
         public void Draw(SpriteBatch batch)
         {
             foreach (Body body in _boxes)
             {
-                batch.Draw(_box.Image, ConvertUnits.ToDisplayUnits(body.Position), null, Color.White, body.Rotation, _box.Origin, 1f, SpriteEffects.None, 0f);
+                batch.Draw(_box.Texture, body.Position, null, Color.White, body.Rotation, _box.Origin, new Vector2(1f, 1f) * _box.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
         }
     }

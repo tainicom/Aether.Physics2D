@@ -54,6 +54,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public LineBatch LineBatch { get; private set; }
 
+        public BasicEffect BatchEffect { get; private set; }
+
         public ContentManager Content { get; private set; }
 
         public SpriteFonts Fonts { get; private set; }
@@ -78,6 +80,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             LineBatch = new LineBatch(GraphicsDevice);
+            BatchEffect = new BasicEffect(GraphicsDevice);
+            BatchEffect.VertexColorEnabled = true;
+            BatchEffect.TextureEnabled = true;
             Assets = new AssetCreator(GraphicsDevice);
             Assets.LoadContent(Content);
             _input.LoadContent();

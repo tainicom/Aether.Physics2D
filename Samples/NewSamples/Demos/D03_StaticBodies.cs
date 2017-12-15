@@ -60,11 +60,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            _agent = new Agent(World, new Vector2(-6.9f, -11f));
+            _agent = new Agent(World, new Vector2(-6.9f, 11f));
 
             // Obstacles
             for (int i = 0; i < 5; i++)
@@ -75,31 +75,33 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _obstacles[i].SetFriction(0.2f);
             }
 
-            _obstacles[0].Position = new Vector2(-5f, 9f);
-            _obstacles[1].Position = new Vector2(15f, 6f);
-            _obstacles[2].Position = new Vector2(10f, -3f);
-            _obstacles[3].Position = new Vector2(-10f, -9f);
+            _obstacles[0].Position = new Vector2(-5f, -9f);
+            _obstacles[1].Position = new Vector2(15f, -6f);
+            _obstacles[2].Position = new Vector2(10f, 3f);
+            _obstacles[3].Position = new Vector2(-10f, 9f);
             _obstacles[4].Position = new Vector2(-17f, 0f);
 
             // create sprite based on body
-            _obstacle = new Sprite(ContentWrapper.TextureFromShape(_obstacles[0].FixtureList[0].Shape, "Stripe", ContentWrapper.Gold, ContentWrapper.Black, ContentWrapper.Black, 1.5f));
+            _obstacle = new Sprite(ContentWrapper.TextureFromShape(_obstacles[0].FixtureList[0].Shape, "Stripe", ContentWrapper.Gold, ContentWrapper.Black, ContentWrapper.Black, 1.5f, 24f));
 
             SetUserAgent(_agent.Body, 1000f, 400f);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
 
             for (int i = 0; i < 5; ++i)
             {
-                Sprites.Draw(_obstacle.Image, ConvertUnits.ToDisplayUnits(_obstacles[i].Position), null, Color.White, _obstacles[i].Rotation, _obstacle.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_obstacle.Texture, _obstacles[i].Position, null, Color.White, _obstacles[i].Rotation, _obstacle.Origin, new Vector2(5f, 1f) * _obstacle.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
 
-            _agent.Draw(Sprites);
-            Sprites.End();
+            _agent.Draw(SpriteBatch);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

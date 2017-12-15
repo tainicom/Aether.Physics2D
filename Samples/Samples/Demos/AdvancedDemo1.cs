@@ -21,8 +21,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         private Border _border;
         private Body _compound;
         private Vector2 _origin;
+        private Vector2 _polygonSize;
         private Texture2D _polygonTexture;
-        private float _scale;
 
         #region IDemoScreen Members
 
@@ -82,25 +82,23 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             //2. To draw the texture the correct place.
             _origin = -centroid;
+            var aabb = textureVertices.GetAABB();
+            _polygonSize = new Vector2(aabb.Width, aabb.Height);
 
-            //We simplify the vertices found in the texture.
-            textureVertices = SimplifyTools.ReduceByDistance(textureVertices, 4f);
+               //We simplify the vertices found in the texture.
+               textureVertices = SimplifyTools.ReduceByDistance(textureVertices, 4f);
 
             //Since it is a concave polygon, we need to partition it into several smaller convex polygons
             List<Vertices> list = Triangulate.ConvexPartition(textureVertices, TriangulationAlgorithm.Bayazit);
 
-            //Adjust the scale of the object for WP7's lower resolution
-#if WINDOWS_PHONE
-            _scale = 0.6f;
-#else
-            _scale = 1f;
-#endif
-
             //scale the vertices from graphics space to sim space
-            Vector2 vertScale = new Vector2(ConvertUnits.ToSimUnits(1)) * _scale;
+            Vector2 vertScale = new Vector2(1f / 24f);
+            _polygonSize *= vertScale;
             foreach (Vertices vertices in list)
             {
-                vertices.Scale(ref vertScale);
+                vertices.Scale(new Vector2(1f, -1f));
+                vertices.Translate(new Vector2(0f, 30f));
+                vertices.Scale(vertScale);
             }
 
             //Create a single body with multiple fixtures
@@ -110,8 +108,10 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
-            ScreenManager.SpriteBatch.Draw(_polygonTexture, ConvertUnits.ToDisplayUnits(_compound.Position), null, Color.Tomato, _compound.Rotation, _origin, _scale, SpriteEffects.None, 0f);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
+            ScreenManager.SpriteBatch.Draw(_polygonTexture, _compound.Position, null, Color.Tomato, _compound.Rotation, _origin, _polygonSize / new Vector2(_polygonTexture.Width, _polygonTexture.Height), SpriteEffects.FlipVertically, 0f);
             ScreenManager.SpriteBatch.End();
             _border.Draw();
             base.Draw(gameTime);

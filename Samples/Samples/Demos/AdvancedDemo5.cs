@@ -74,6 +74,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             alphabet.GetData(data);
 
             List<Vertices> list = PolygonTools.CreatePolygon(data, alphabet.Width, 3.5f, 20, true, true);
+            
+            for (int i = 0; i < list.Count; i++)
+                list[i].Scale(new Vector2(1f,-1f)); // flip Vert
 
             float yOffset = -5f;
             float xOffset = -14f;
@@ -96,16 +99,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 polygon = SimplifyTools.ReduceByDistance(polygon, 4);
                 List<Vertices> triangulated = Triangulate.ConvexPartition(polygon, TriangulationAlgorithm.Bayazit);
 
-#if WINDOWS_PHONE
-                const float scale = 0.6f;
-#else
-                const float scale = 1f;
-#endif
-                Vector2 vertScale = new Vector2(ConvertUnits.ToSimUnits(1)) * scale;
+                Vector2 vertScale = new Vector2(13.916667f, 23.25f) / new Vector2(alphabet.Width, alphabet.Height);
                 foreach (Vertices vertices in triangulated)
-                {
                     vertices.Scale(ref vertScale);
-                }
 
                 var breakableBody = new BreakableBody(World, triangulated, 1);
                 breakableBody.MainBody.Position = new Vector2(xOffset, yOffset);
