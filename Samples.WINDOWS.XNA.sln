@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBedContent", "Samples\T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics2DImporters.WINDOWS.XNA", "Content.Pipeline\Physics2DImporters\Physics2DImporters.WINDOWS.XNA.csproj", "{7CB361CC-38D3-4F24-A0B8-10363471F9AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "New Samples.WINDOWS.XNA", "Samples\NewSamples\New Samples.WINDOWS.XNA.csproj", "{E3B97377-0ED5-4565-B822-42C48FDEE213}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewSamples.WINDOWS.XNA", "Samples\NewSamples\NewSamples.WINDOWS.XNA.csproj", "{E3B97377-0ED5-4565-B822-42C48FDEE213}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewSamplesContent", "Samples\NewSamplesContent\NewSamplesContent.contentproj", "{2A3200B4-22C2-4E10-801D-075CC602D291}"
 EndProject

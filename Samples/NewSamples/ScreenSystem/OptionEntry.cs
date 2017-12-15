@@ -15,7 +15,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
     /// </summary>
     public sealed class OptionEntry
     {
-        private const double HighlightTime = 0.3;
+        private const double HighlightTime = 0.15;
         private const double FadeTime = 0.1;
 
         private Vector2 _position;
