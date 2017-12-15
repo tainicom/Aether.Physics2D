@@ -27,10 +27,12 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         private Category _collidesWith;
         private Category _collisionCategories;
         private Sprite _object;
+        private float _bodyRadius;
 
         public Objects(World world, Vector2 startPosition, Vector2 endPosition, int count, float radius, ObjectType type)
         {
             _bodies = new List<Body>(count);
+            _bodyRadius = radius;
             CollidesWith = Category.All;
             CollisionCategories = Category.All;
 
@@ -44,12 +46,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                         break;
                     case ObjectType.Rectangle:
                         _bodies.Add(world.CreateRectangle(radius, radius, 1f));
+                        _bodyRadius = radius/2f;
                         break;
                     case ObjectType.Star:
                         _bodies.Add(world.CreateGear(radius, 10, 0f, 1f, 1f));
+                        _bodyRadius = radius * 2.7f;
                         break;
                     case ObjectType.Gear:
                         _bodies.Add(world.CreateGear(radius, 10, 100f, 1f, 1f));
+                        _bodyRadius = radius * 2.7f;
                         break;
                 }
             }
@@ -67,16 +72,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             switch (type)
             {
                 case ObjectType.Circle:
-                    _object = new Sprite(ContentWrapper.CircleTexture(radius, ContentWrapper.Gold, ContentWrapper.Grey));
+                    _object = new Sprite(ContentWrapper.CircleTexture(radius, ContentWrapper.Gold, ContentWrapper.Grey, 24f));
                     break;
                 case ObjectType.Rectangle:
-                    _object = new Sprite(ContentWrapper.PolygonTexture(PolygonTools.CreateRectangle(radius / 2f, radius / 2f), ContentWrapper.Red, ContentWrapper.Grey));
+                    _object = new Sprite(ContentWrapper.PolygonTexture(PolygonTools.CreateRectangle(radius / 2f, radius / 2f), ContentWrapper.Red, ContentWrapper.Grey, 24f));
                     break;
                 case ObjectType.Star:
-                    _object = new Sprite(ContentWrapper.PolygonTexture(PolygonTools.CreateGear(radius, 10, 0f, 1f), ContentWrapper.Brown, ContentWrapper.Black));
+                    _object = new Sprite(ContentWrapper.PolygonTexture(PolygonTools.CreateGear(radius, 10, 0f, 1f), ContentWrapper.Brown, ContentWrapper.Black, 24f));
                     break;
                 case ObjectType.Gear:
-                    _object = new Sprite(ContentWrapper.PolygonTexture(PolygonTools.CreateGear(radius, 10, 100f, 1f), ContentWrapper.Orange, ContentWrapper.Grey));
+                    _object = new Sprite(ContentWrapper.PolygonTexture(PolygonTools.CreateGear(radius, 10, 100f, 1f), ContentWrapper.Orange, ContentWrapper.Grey, 24f));
                     break;
             }
         }
@@ -109,7 +114,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         {
             foreach (Body body in _bodies)
             {
-                batch.Draw(_object.Image, ConvertUnits.ToDisplayUnits(body.Position), null, Color.White, body.Rotation, _object.Origin, 1f, SpriteEffects.None, 0f);
+                batch.Draw(_object.Texture, body.Position, null, Color.White, body.Rotation, _object.Origin, new Vector2(2f * _bodyRadius) * _object.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
         }
     }

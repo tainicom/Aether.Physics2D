@@ -52,11 +52,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
             _border = new Border(World, ScreenManager, Camera);
 
-            Vector2 position = new Vector2(-15f, -8f);
+            Vector2 position = new Vector2(-15f, 8f);
             float restitution = 0f;
 
             for (int i = 0; i < 6; ++i)
@@ -74,10 +74,12 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             for (int i = 0; i < 6; ++i)
             {
-                ScreenManager.SpriteBatch.Draw(_circleSprite.Texture, ConvertUnits.ToDisplayUnits(_circle[i].Position), null, Color.White, _circle[i].Rotation, _circleSprite.Origin, 1f, SpriteEffects.None, 0f);
+                ScreenManager.SpriteBatch.Draw(_circleSprite.Texture, _circle[i].Position, null, Color.White, _circle[i].Rotation, _circleSprite.Origin, new Vector2(2f * 1.5f) * _circleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
             ScreenManager.SpriteBatch.End();
             _border.Draw();

@@ -29,7 +29,6 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         private Body _car;
         private Body _ground;
 
-        private float _scale;
         private Body _wheelBack;
         private Body _wheelFront;
         private WheelJoint _springBack;
@@ -69,56 +68,50 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 10f);
+            World.Gravity = new Vector2(0f, -10f);
 
             HasCursor = false;
             EnableCameraControl = true;
             HasVirtualStick = true;
 
-#if WINDOWS_PHONE
-            _scale = 2f / 3f;
-#else
-            _scale = 1f;
-#endif
-
             // terrain
             _ground = World.CreateBody();
             {
                 Vertices terrain = new Vertices();
-                terrain.Add(new Vector2(-20f, -5f));
+                terrain.Add(new Vector2(-20f, 5f));
                 terrain.Add(new Vector2(-20f, 0f));
                 terrain.Add(new Vector2(20f, 0f));
-                terrain.Add(new Vector2(25f, -0.25f));
-                terrain.Add(new Vector2(30f, -1f));
-                terrain.Add(new Vector2(35f, -4f));
+                terrain.Add(new Vector2(25f, 0.25f));
+                terrain.Add(new Vector2(30f, 1f));
+                terrain.Add(new Vector2(35f, 4f));
                 terrain.Add(new Vector2(40f, 0f));
                 terrain.Add(new Vector2(45f, 0f));
-                terrain.Add(new Vector2(50f, 1f));
-                terrain.Add(new Vector2(55f, 2f));
-                terrain.Add(new Vector2(60f, 2f));
-                terrain.Add(new Vector2(65f, 1.25f));
+                terrain.Add(new Vector2(50f, -1f));
+                terrain.Add(new Vector2(55f, -2f));
+                terrain.Add(new Vector2(60f, -2f));
+                terrain.Add(new Vector2(65f, -1.25f));
                 terrain.Add(new Vector2(70f, 0f));
-                terrain.Add(new Vector2(75f, -0.3f));
-                terrain.Add(new Vector2(80f, -1.5f));
-                terrain.Add(new Vector2(85f, -3.5f));
+                terrain.Add(new Vector2(75f, 0.3f));
+                terrain.Add(new Vector2(80f, 1.5f));
+                terrain.Add(new Vector2(85f, 3.5f));
                 terrain.Add(new Vector2(90f, 0f));
-                terrain.Add(new Vector2(95f, 0.5f));
-                terrain.Add(new Vector2(100f, 1f));
-                terrain.Add(new Vector2(105f, 2f));
-                terrain.Add(new Vector2(110f, 2.5f));
-                terrain.Add(new Vector2(115f, 1.3f));
+                terrain.Add(new Vector2(95f, -0.5f));
+                terrain.Add(new Vector2(100f, -1f));
+                terrain.Add(new Vector2(105f, -2f));
+                terrain.Add(new Vector2(110f, -2.5f));
+                terrain.Add(new Vector2(115f, -1.3f));
                 terrain.Add(new Vector2(120f, 0f));
                 terrain.Add(new Vector2(160f, 0f));
-                terrain.Add(new Vector2(159f, 10f));
-                terrain.Add(new Vector2(201f, 10f));
+                terrain.Add(new Vector2(159f, -10f));
+                terrain.Add(new Vector2(201f, -10f));
                 terrain.Add(new Vector2(200f, 0f));
                 terrain.Add(new Vector2(240f, 0f));
-                terrain.Add(new Vector2(250f, -5f));
-                terrain.Add(new Vector2(250f, 10f));
-                terrain.Add(new Vector2(270f, 10f));
+                terrain.Add(new Vector2(250f, 5f));
+                terrain.Add(new Vector2(250f, -10f));
+                terrain.Add(new Vector2(270f, -10f));
                 terrain.Add(new Vector2(270f, 0));
                 terrain.Add(new Vector2(310f, 0));
-                terrain.Add(new Vector2(310f, -5));
+                terrain.Add(new Vector2(310f, 5));
 
                 for (int i = 0; i < terrain.Count - 1; ++i)
                     _ground.CreateEdge(terrain[i], terrain[i + 1]);
@@ -130,9 +123,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             {
                 _board = World.CreateBody();
                 _board.BodyType = BodyType.Dynamic;
-                _board.Position = new Vector2(140.0f, -1.0f);
+                _board.Position = new Vector2(140.0f, 1.0f);
 
-                PolygonShape box = new PolygonShape(PolygonTools.CreateRectangle(10, 0.25f), 1);
+                PolygonShape box = new PolygonShape(PolygonTools.CreateRectangle(20.0f/2f, 0.5f/2f), 1);
                 _teeter =
                     new Sprite(ScreenManager.Assets.TextureFromShape(box, MaterialType.Pavement, Color.LightGray, 1.2f));
 
@@ -143,7 +136,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 teeterAxis.UpperLimit = 8.0f * MathHelper.Pi / 180.0f;
                 teeterAxis.LimitEnabled = true;
 
-                _board.ApplyAngularImpulse(-100.0f);
+                _board.ApplyAngularImpulse(100.0f);
             }
 
             // bridge
@@ -159,7 +152,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 {
                     Body body = World.CreateBody();
                     body.BodyType = BodyType.Dynamic;
-                    body.Position = new Vector2(161f + 2f * i, 0.125f);
+                    body.Position = new Vector2(161f + 2f * i, -0.125f);
                     Fixture fix = body.CreateFixture(shape);
                     fix.Friction = 0.6f;
                     JointFactory.CreateRevoluteJoint(World, prevBody, body, -Vector2.UnitX);
@@ -178,19 +171,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
                 Body body = World.CreateBody();
                 body.BodyType = BodyType.Dynamic;
-                body.Position = new Vector2(220f, -0.5f);
+                body.Position = new Vector2(220f, 0.5f);
                 body.CreateFixture(box);
                 _boxes.Add(body);
 
                 body = World.CreateBody();
                 body.BodyType = BodyType.Dynamic;
-                body.Position = new Vector2(220f, -1.5f);
+                body.Position = new Vector2(220f, 1.5f);
                 body.CreateFixture(box);
                 _boxes.Add(body);
 
                 body = World.CreateBody();
                 body.BodyType = BodyType.Dynamic;
-                body.Position = new Vector2(220f, -2.5f);
+                body.Position = new Vector2(220f, 2.5f);
                 body.CreateFixture(box);
                 _boxes.Add(body);
             }
@@ -198,36 +191,36 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             // car
             {
                 Vertices vertices = new Vertices(8);
-                vertices.Add(new Vector2(-2.5f, 0.08f));
-                vertices.Add(new Vector2(-2.375f, -0.46f));
-                vertices.Add(new Vector2(-0.58f, -0.92f));
-                vertices.Add(new Vector2(0.46f, -0.92f));
-                vertices.Add(new Vector2(2.5f, -0.17f));
-                vertices.Add(new Vector2(2.5f, 0.205f));
-                vertices.Add(new Vector2(2.3f, 0.33f));
-                vertices.Add(new Vector2(-2.25f, 0.35f));
+                vertices.Add(new Vector2(-2.5f, -0.08f));
+                vertices.Add(new Vector2(-2.375f, 0.46f));
+                vertices.Add(new Vector2(-0.58f, 0.92f));
+                vertices.Add(new Vector2(0.46f, 0.92f));
+                vertices.Add(new Vector2(2.5f, 0.17f));
+                vertices.Add(new Vector2(2.5f, -0.205f));
+                vertices.Add(new Vector2(2.3f, -0.33f));
+                vertices.Add(new Vector2(-2.25f, -0.35f));
 
                 PolygonShape chassis = new PolygonShape(vertices, 2);
                 CircleShape wheelShape = new CircleShape(0.5f, 0.8f);
 
                 _car = World.CreateBody();
                 _car.BodyType = BodyType.Dynamic;
-                _car.Position = new Vector2(0.0f, -1.0f);
+                _car.Position = new Vector2(0.0f, 1.0f);
                 _car.CreateFixture(chassis);
 
                 _wheelBack = World.CreateBody();
                 _wheelBack.BodyType = BodyType.Dynamic;
-                _wheelBack.Position = new Vector2(-1.709f, -0.78f);
+                _wheelBack.Position = new Vector2(-1.709f, 0.78f);
                 _wheelBack.CreateFixture(wheelShape);
                 _wheelBack.SetFriction(0.9f);
 
                 wheelShape.Density = 1;
                 _wheelFront = World.CreateBody();
                 _wheelFront.BodyType = BodyType.Dynamic;
-                _wheelFront.Position = new Vector2(1.54f, -0.8f);
+                _wheelFront.Position = new Vector2(1.54f, 0.8f);
                 _wheelFront.CreateFixture(wheelShape);
 
-                Vector2 axis = new Vector2(0.0f, -1.2f);
+                Vector2 axis = new Vector2(0.0f, 1.2f);
                 _springBack = new WheelJoint(_car, _wheelBack, _wheelBack.Position, axis, true);
                 _springBack.MotorSpeed = 0.0f;
                 _springBack.MaxMotorTorque = 20.0f;
@@ -244,7 +237,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _springFront.DampingRatio = 0.7f;
                 World.Add(_springFront);
 
-                _carBody = new Sprite(ScreenManager.Content.Load<Texture2D>("Samples/car"), AssetCreator.CalculateOrigin(_car) / _scale);
+                _carBody = new Sprite(ScreenManager.Content.Load<Texture2D>("Samples/car"), AssetCreator.CalculateOrigin(_car, 24f));
                 _wheel = new Sprite(ScreenManager.Content.Load<Texture2D>("Samples/wheel"));
             }
 
@@ -285,29 +278,31 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             // draw car
-            ScreenManager.SpriteBatch.Draw(_wheel.Texture, ConvertUnits.ToDisplayUnits(_wheelBack.Position), null, Color.White, _wheelBack.Rotation, _wheel.Origin, _scale, SpriteEffects.None, 0f);
-            ScreenManager.SpriteBatch.Draw(_wheel.Texture, ConvertUnits.ToDisplayUnits(_wheelFront.Position), null, Color.White, _wheelFront.Rotation, _wheel.Origin, _scale, SpriteEffects.None, 0f);
-            ScreenManager.SpriteBatch.Draw(_carBody.Texture, ConvertUnits.ToDisplayUnits(_car.Position), null, Color.White, _car.Rotation, _carBody.Origin, _scale, SpriteEffects.None, 0f);
+            ScreenManager.SpriteBatch.Draw(_wheel.Texture, _wheelBack.Position, null, Color.White, _wheelBack.Rotation, _wheel.Origin, new Vector2(0.5f) * _wheel.TexelSize, SpriteEffects.FlipVertically, 0f);
+            ScreenManager.SpriteBatch.Draw(_wheel.Texture, _wheelFront.Position, null, Color.White, _wheelFront.Rotation, _wheel.Origin, new Vector2(0.5f) * _wheel.TexelSize, SpriteEffects.FlipVertically, 0f);
+            ScreenManager.SpriteBatch.Draw(_carBody.Texture, _car.Position, null, Color.White, _car.Rotation, _carBody.Origin, new Vector2(5f, 1.27f) * _carBody.TexelSize, SpriteEffects.FlipVertically, 0f);
 
             // draw teeter
-            ScreenManager.SpriteBatch.Draw(_teeter.Texture, ConvertUnits.ToDisplayUnits(_board.Position), null, Color.White, _board.Rotation, _teeter.Origin, 1f, SpriteEffects.None, 0f);
+            ScreenManager.SpriteBatch.Draw(_teeter.Texture, _board.Position, null, Color.White, _board.Rotation, _teeter.Origin, new Vector2(20f, 0.5f) * _teeter.TexelSize, SpriteEffects.FlipVertically, 0f);
 
             // draw bridge
             for (int i = 0; i < _bridgeSegments.Count; ++i)
             {
-                ScreenManager.SpriteBatch.Draw(_bridge.Texture, ConvertUnits.ToDisplayUnits(_bridgeSegments[i].Position), null, Color.White, _bridgeSegments[i].Rotation, _bridge.Origin, 1f, SpriteEffects.None, 0f);
+                ScreenManager.SpriteBatch.Draw(_bridge.Texture, _bridgeSegments[i].Position, null, Color.White, _bridgeSegments[i].Rotation, _bridge.Origin, new Vector2(2.0f, 0.25f) * _bridge.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
 
             // draw boxes
             for (int i = 0; i < _boxes.Count; ++i)
             {
-                ScreenManager.SpriteBatch.Draw(_box.Texture, ConvertUnits.ToDisplayUnits(_boxes[i].Position), null, Color.White, _boxes[i].Rotation, _box.Origin, 1f, SpriteEffects.None, 0f);
+                ScreenManager.SpriteBatch.Draw(_box.Texture, _boxes[i].Position, null, Color.White, _boxes[i].Rotation, _box.Origin, new Vector2(1f, 1f) * _box.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
             ScreenManager.SpriteBatch.End();
 
-            ScreenManager.LineBatch.Begin(Camera.SimProjection, Camera.SimView);
+            ScreenManager.LineBatch.Begin(Camera.Projection, Camera.View);
             // draw ground
             for (int i = 0; i < _ground.FixtureList.Count; ++i)
             {

@@ -297,19 +297,19 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                          ContentWrapper.Grey * TransitionAlpha, _menuSlider.TileColor * TransitionAlpha);
             Quads.End();
 
-            Sprites.Begin();
+            SpriteBatch.Begin();
             foreach (MenuEntry entry in _menuEntries)
             {
-                Sprites.DrawString(_font, entry.Text, entry.Position + Vector2.One, ContentWrapper.Black * entry.Alpha * entry.Alpha * TransitionAlpha,
+                SpriteBatch.DrawString(_font, entry.Text, entry.Position + Vector2.One, ContentWrapper.Black * entry.Alpha * entry.Alpha * TransitionAlpha,
                                    0f, entry.Origin, entry.Scale, SpriteEffects.None, 0f);
-                Sprites.DrawString(_font, entry.Text, entry.Position, entry.TextColor * entry.Alpha * TransitionAlpha,
+                SpriteBatch.DrawString(_font, entry.Text, entry.Position, entry.TextColor * entry.Alpha * TransitionAlpha,
                                    0f, entry.Origin, entry.Scale, SpriteEffects.None, 0f);
                 if (entry.Fade > 0f)
                 {
-                    Sprites.Draw(entry.Preview, _previewPosition, null, Color.White * Math.Max((TransitionAlpha - 0.8f) / 0.2f, 0f) * entry.Fade, 0f, _previewOrigin, 1f, SpriteEffects.None, 0f);
+                    SpriteBatch.Draw(entry.Preview, _previewPosition, null, Color.White * Math.Max((TransitionAlpha - 0.8f) / 0.2f, 0f) * entry.Fade, 0f, _previewOrigin, 1f, SpriteEffects.None, 0f);
                 }
             }
-            Sprites.End();
+            SpriteBatch.End();
 
             Quads.Begin();
             Quads.Render(Vector2.Zero, new Vector2(Framework.GraphicsDevice.Viewport.Width, TitleBarHeight), null, ContentWrapper.Grey * 0.7f * TransitionAlpha);
@@ -318,9 +318,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             // Make the menu slide into place during transitions, using a
             // power curve to make things look more interesting (this makes
             // the movement slow down as it nears the end).
-            Sprites.Begin();
-            Sprites.Draw(_samplesLogo, _titlePosition - transitionOffset, null, Color.White, 0f, _titleOrigin, 1f, SpriteEffects.None, 0f);
-            Sprites.End();
+            SpriteBatch.Begin();
+            SpriteBatch.Draw(_samplesLogo, _titlePosition - transitionOffset, null, Color.White, 0f, _titleOrigin, 1f, SpriteEffects.None, 0f);
+            SpriteBatch.End();
         }
     }
 }

@@ -11,6 +11,7 @@ using tainicom.Aether.Physics2D.Samples.MediaSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using tainicom.Aether.Physics2D.Collision.Shapes;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -49,39 +50,59 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         private Sprite _club;
         private Sprite _spade;
         private Sprite _diamond;
+        private bool _flipped = false;
 
         public override void LoadContent()
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 10f);
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            World.Gravity = new Vector2(0f, -10f);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             _BodyContainer = Framework.Content.Load<BodyContainer>("Pipeline/Body");
+            
+            _heart = new Sprite(ContentWrapper.GetTexture("Heart"));
+            _club = new Sprite(ContentWrapper.GetTexture("Club"));
+            _spade = new Sprite(ContentWrapper.GetTexture("Spade"));
+            _diamond = new Sprite(ContentWrapper.GetTexture("Diamond"));
 
+            if (!_flipped)
+            {
+                foreach (var b in _BodyContainer.Values)
+                {
+                    foreach (var f in b.Fixtures)
+                    {
+                        var shape = (PolygonShape)f.Shape;
+                        shape.Vertices.Scale(new Vector2(1f, -1f)); // flip Vertices
+                    }
+                }
+                
+                _flipped = true;
+            }
+            
             _heartBody = _BodyContainer["Heart"].Create(World);
-            _heart = new Sprite(ContentWrapper.GetTexture("Heart"), ContentWrapper.CalculateOrigin(_heartBody));
-
             _clubBody = _BodyContainer["Club"].Create(World);
-            _club = new Sprite(ContentWrapper.GetTexture("Club"), ContentWrapper.CalculateOrigin(_clubBody));
-
             _spadeBody = _BodyContainer["Spade"].Create(World);
-            _spade = new Sprite(ContentWrapper.GetTexture("Spade"), ContentWrapper.CalculateOrigin(_spadeBody));
-
             _diamondBody = _BodyContainer["Diamond"].Create(World);
-            _diamond = new Sprite(ContentWrapper.GetTexture("Diamond"), ContentWrapper.CalculateOrigin(_diamondBody));
+            
+            _heart.Origin = ContentWrapper.CalculateOrigin(_heartBody, 24f);
+            _club.Origin = ContentWrapper.CalculateOrigin(_clubBody, 24f);
+            _spade.Origin = ContentWrapper.CalculateOrigin(_spadeBody, 24f);
+            _diamond.Origin = ContentWrapper.CalculateOrigin(_diamondBody, 24f);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
-            Sprites.Draw(_heart.Image, ConvertUnits.ToDisplayUnits(_heartBody.Position), null, Color.White, _heartBody.Rotation, _heart.Origin, 1f, SpriteEffects.None, 0f);
-            Sprites.Draw(_club.Image, ConvertUnits.ToDisplayUnits(_clubBody.Position), null, Color.White, _clubBody.Rotation, _club.Origin, 1f, SpriteEffects.None, 0f);
-            Sprites.Draw(_spade.Image, ConvertUnits.ToDisplayUnits(_spadeBody.Position), null, Color.White, _spadeBody.Rotation, _spade.Origin, 1f, SpriteEffects.None, 0f);
-            Sprites.Draw(_diamond.Image, ConvertUnits.ToDisplayUnits(_diamondBody.Position), null, Color.White, _diamondBody.Rotation, _diamond.Origin, 1f, SpriteEffects.None, 0f);
-            Sprites.End();
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Draw(_heart.Texture, _heartBody.Position, null, Color.White, _heartBody.Rotation, _heart.Origin, new Vector2(5.3f) * _heart.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.Draw(_club.Texture, _clubBody.Position, null, Color.White, _clubBody.Rotation, _club.Origin, new Vector2(5.3f) * _club.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.Draw(_spade.Texture, _spadeBody.Position, null, Color.White, _spadeBody.Rotation, _spade.Origin, new Vector2(5.3f) * _spade.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.Draw(_diamond.Texture, _diamondBody.Position, null, Color.White, _diamondBody.Rotation, _diamond.Origin, new Vector2(5.3f) * _diamond.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
             base.Draw(gameTime);
         }
     }

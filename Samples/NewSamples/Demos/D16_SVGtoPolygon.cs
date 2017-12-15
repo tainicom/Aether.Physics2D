@@ -43,12 +43,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             World.Gravity = Vector2.Zero;
 
-            _farseerPoly = Framework.Content.Load<PolygonContainer>("Pipeline/Polygon");
+            if (_farseerPoly == null) // flip once
+            {
+                _farseerPoly = Framework.Content.Load<PolygonContainer>("Pipeline/Polygon");
+
+                foreach (Polygon p in _farseerPoly.Values)
+                    p.Vertices.Scale(new Vector2(1f, -1f)); // flip Vertices
+            }
+
         }
 
         public override void Draw(GameTime gameTime)
         {
-            DebugView.BeginCustomDraw(Camera.SimProjection, Camera.SimView);
+            DebugView.BeginCustomDraw(Camera.Projection, Camera.View);
             foreach (Polygon p in _farseerPoly.Values)
             {
                 DebugView.DrawPolygon(p.Vertices.ToArray(), p.Vertices.Count, Color.Black, p.Closed);

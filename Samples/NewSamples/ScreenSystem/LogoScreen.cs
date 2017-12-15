@@ -62,9 +62,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             Framework.GraphicsDevice.Clear(Color.White);
 
-            Sprites.Begin();
-            Sprites.Draw(_logoTexture, _logoPosition, Color.White);
-            Sprites.End();
+            SpriteBatch.Begin();
+            SpriteBatch.Draw(_logoTexture, _logoPosition, Color.White);
+            SpriteBatch.End();
         }
     }
 }

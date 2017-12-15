@@ -24,13 +24,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         {
             _batch = screenManager.SpriteBatch;
 
-            Vertices rect = PolygonTools.CreateRectangle(0.5f, 0.5f);
+            Vertices rect = PolygonTools.CreateRectangle(1f/2f, 1f/2f);
             PolygonShape shape = new PolygonShape(rect, density);
 
             Vector2 rowStart = position;
             rowStart.Y -= 0.5f + count * 1.1f;
 
-            Vector2 deltaRow = new Vector2(-0.625f, 1.1f);
+            Vector2 deltaRow = new Vector2(-0.625f, -1.1f);
             const float spacing = 1.25f;
 
             _boxes = new List<Body>();
@@ -56,14 +56,14 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
             //GFX
             AssetCreator creator = screenManager.Assets;
-            _box = new Sprite(creator.TextureFromVertices(rect, MaterialType.Dots, Color.SaddleBrown, 2f));
+            _box = new Sprite(creator.TextureFromVertices(rect, MaterialType.Dots, Color.SaddleBrown, 2f, 24f));
         }
 
         public void Draw()
         {
             for (int i = 0; i < _boxes.Count; ++i)
             {
-                _batch.Draw(_box.Texture, ConvertUnits.ToDisplayUnits(_boxes[i].Position), null, Color.White, _boxes[i].Rotation, _box.Origin, 1f, SpriteEffects.None, 0f);
+                _batch.Draw(_box.Texture, _boxes[i].Position, null, Color.White, _boxes[i].Rotation, _box.Origin, new Vector2(1f, 1f) * _box.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
         }
     }

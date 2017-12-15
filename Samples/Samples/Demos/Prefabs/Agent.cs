@@ -52,9 +52,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             _agentBody.CreateCircle(0.5f, 0.5f, new Vector2(0f, -2f));
 
             //GFX
-            _box = new Sprite(screenManager.Assets.TextureFromVertices(PolygonTools.CreateRectangle(1.75f, 0.2f), MaterialType.Blank, Color.White, 1f));
-            _knob = new Sprite(screenManager.Assets.CircleTexture(0.5f, MaterialType.Blank, Color.Orange, 1f));
-            _offset = ConvertUnits.ToDisplayUnits(2f);
+            _box = new Sprite(screenManager.Assets.TextureFromVertices(PolygonTools.CreateRectangle(2.5f / 2f, 0.4f / 2f), MaterialType.Blank, Color.White, 1f, 24f));
+            _knob = new Sprite(screenManager.Assets.CircleTexture(0.5f, MaterialType.Blank, Color.Orange, 1f, 24f));
+            _offset = (2f);
         }
 
         public Category CollisionCategories
@@ -85,15 +85,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         public void Draw()
         {
             //cross
-            _batch.Draw(_box.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation, _box.Origin, 1f, SpriteEffects.None, 0f);
-            _batch.Draw(_box.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation + MathHelper.Pi / 2f, _box.Origin, 1f, SpriteEffects.None, 0f);
+            _batch.Draw(_box.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation, _box.Origin, new Vector2(4f, 0.4f) * _box.TexelSize, SpriteEffects.FlipVertically, 0f);
+            _batch.Draw(_box.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation + MathHelper.Pi / 2f, _box.Origin, new Vector2(4f, 0.4f) * _box.TexelSize, SpriteEffects.FlipVertically, 0f);
 
             //knobs
-            _batch.Draw(_knob.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation, _knob.Origin, 1f, SpriteEffects.None, 0f);
-            _batch.Draw(_knob.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation, _knob.Origin + new Vector2(0f, _offset), 1f, SpriteEffects.None, 0f);
-            _batch.Draw(_knob.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation, _knob.Origin - new Vector2(0f, _offset), 1f, SpriteEffects.None, 0f);
-            _batch.Draw(_knob.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation, _knob.Origin + new Vector2(_offset, 0f), 1f, SpriteEffects.None, 0f);
-            _batch.Draw(_knob.Texture, ConvertUnits.ToDisplayUnits(_agentBody.Position), null, Color.White, _agentBody.Rotation, _knob.Origin - new Vector2(_offset, 0f), 1f, SpriteEffects.None, 0f);
+            _batch.Draw(_knob.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation, _knob.Origin, new Vector2(2f * 0.5f) * _knob.TexelSize, SpriteEffects.FlipVertically, 0f);
+            _batch.Draw(_knob.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation, _knob.Origin + new Vector2(0f, _offset) * _knob.Size / new Vector2(2f * 0.5f), new Vector2(2f * 0.5f) * _knob.TexelSize, SpriteEffects.FlipVertically, 0f);
+            _batch.Draw(_knob.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation, _knob.Origin - new Vector2(0f, _offset) * _knob.Size / new Vector2(2f * 0.5f), new Vector2(2f * 0.5f) * _knob.TexelSize, SpriteEffects.FlipVertically, 0f);
+            _batch.Draw(_knob.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation, _knob.Origin + new Vector2(_offset, 0f) * _knob.Size / new Vector2(2f * 0.5f), new Vector2(2f * 0.5f) * _knob.TexelSize, SpriteEffects.FlipVertically, 0f);
+            _batch.Draw(_knob.Texture, _agentBody.Position, null, Color.White, _agentBody.Rotation, _knob.Origin - new Vector2(_offset, 0f) * _knob.Size / new Vector2(2f * 0.5f), new Vector2(2f * 0.5f) * _knob.TexelSize, SpriteEffects.FlipVertically, 0f);
         }
     }
 }

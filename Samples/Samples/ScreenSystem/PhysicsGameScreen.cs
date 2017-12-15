@@ -215,11 +215,11 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (input.KeyboardState.IsKeyDown(Keys.A))
                 force += new Vector2(-forceAmount, 0);
             if (input.KeyboardState.IsKeyDown(Keys.S))
-                force += new Vector2(0, forceAmount);
+                force += new Vector2(0, -forceAmount);
             if (input.KeyboardState.IsKeyDown(Keys.D))
                 force += new Vector2(forceAmount, 0);
             if (input.KeyboardState.IsKeyDown(Keys.W))
-                force += new Vector2(0, -forceAmount);
+                force += new Vector2(0, forceAmount);
             if (input.KeyboardState.IsKeyDown(Keys.Q))
                 torque -= _agentTorque;
             if (input.KeyboardState.IsKeyDown(Keys.E))
@@ -239,7 +239,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public override void Draw(GameTime gameTime)
         {
-            DebugView.RenderDebugData(ref Camera.DebugProjection, ref Camera.DebugView);
+            DebugView.RenderDebugData(Camera.Projection, Camera.View);
             base.Draw(gameTime);
         }
     }

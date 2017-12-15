@@ -18,6 +18,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         private Border _border;
         private Body _rectangle;
         private Sprite _rectangleSprite;
+        private Vector2 _rectangleSize = new Vector2(5f, 5f);
 
         #region Demo description
         public override string GetTitle()
@@ -61,24 +62,26 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             World.Gravity = Vector2.Zero;
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            _rectangle = World.CreateRectangle(5f, 5f, 1f);
+            _rectangle = World.CreateRectangle(_rectangleSize.X, _rectangleSize.Y, 1f);
             _rectangle.BodyType = BodyType.Dynamic;
 
             SetUserAgent(_rectangle, 100f, 100f);
 
             // create sprite based on body
-            _rectangleSprite = new Sprite(ContentWrapper.TextureFromShape(_rectangle.FixtureList[0].Shape, "Square", ContentWrapper.Blue, ContentWrapper.Gold, ContentWrapper.Black, 1f));
+            _rectangleSprite = new Sprite(ContentWrapper.TextureFromShape(_rectangle.FixtureList[0].Shape, "Square", ContentWrapper.Blue, ContentWrapper.Gold, ContentWrapper.Black, 1f, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
-            Sprites.Draw(_rectangleSprite.Image, ConvertUnits.ToDisplayUnits(_rectangle.Position), null, Color.White, _rectangle.Rotation, _rectangleSprite.Origin, 1f, SpriteEffects.None, 0f);
-            Sprites.End();
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Draw(_rectangleSprite.Texture, _rectangle.Position, null, Color.White, _rectangle.Rotation, _rectangleSprite.Origin, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

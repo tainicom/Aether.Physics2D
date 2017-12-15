@@ -7,6 +7,7 @@ using System.Text;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -56,10 +57,10 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
             _border = new Border(World, ScreenManager, Camera);
-            _agent = new Agent(World, ScreenManager, new Vector2(5f, -10f));
+            _agent = new Agent(World, ScreenManager, new Vector2(5f, 10f));
             _pyramid = new Pyramid(World, ScreenManager, new Vector2(0f, 15f), PyramidBaseBodyCount, 1f);
 
             SetUserAgent(_agent.Body, 1000f, 400f);
@@ -67,7 +68,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             _agent.Draw();
             _pyramid.Draw();
             ScreenManager.SpriteBatch.End();

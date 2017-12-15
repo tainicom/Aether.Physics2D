@@ -54,23 +54,23 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
             _border = new Border(World, ScreenManager, Camera);
 
             _ramps = new List<Body>();
-            _ramps.Add(World.CreateEdge(new Vector2(-20f, -11.2f), new Vector2(10f, -3.8f)));
-            _ramps.Add(World.CreateEdge(new Vector2(12f, -5.6f), new Vector2(12f, -3.2f)));
-            _ramps.Add(World.CreateEdge(new Vector2(-10f, 4.4f), new Vector2(20f, -1.4f)));
-            _ramps.Add(World.CreateEdge(new Vector2(-12f, 2.6f), new Vector2(-12f, 5f)));
-            _ramps.Add(World.CreateEdge(new Vector2(-20f, 6.8f), new Vector2(10f, 11.5f)));
+            _ramps.Add(World.CreateEdge(new Vector2(-20f, 11.2f), new Vector2(10f, 3.8f)));
+            _ramps.Add(World.CreateEdge(new Vector2(12f, 5.6f), new Vector2(12f, 3.2f)));
+            _ramps.Add(World.CreateEdge(new Vector2(-10f, -4.4f), new Vector2(20f, 1.4f)));
+            _ramps.Add(World.CreateEdge(new Vector2(-12f, -2.6f), new Vector2(-12f, -5f)));
+            _ramps.Add(World.CreateEdge(new Vector2(-20f, -6.8f), new Vector2(10f, -11.5f)));
 
             float[] friction = { 0.75f, 0.45f, 0.28f, 0.17f, 0.0f };
             for (int i = 0; i < 5; ++i)
             {
                 _rectangle[i] = World.CreateRectangle(1.5f, 1.5f, 1f);
                 _rectangle[i].BodyType = BodyType.Dynamic;
-                _rectangle[i].Position = new Vector2(-18f + 5.2f * i, -13.0f + 1.282f * i);
+                _rectangle[i].Position = new Vector2(-18f + 5.2f * i, 13.0f - 1.282f * i);
                 _rectangle[i].SetFriction(friction[i]);
             }
 
@@ -80,14 +80,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             for (int i = 0; i < 5; ++i)
             {
-                ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, ConvertUnits.ToDisplayUnits(_rectangle[i].Position), null, Color.White, _rectangle[i].Rotation, _rectangleSprite.Origin, 1f, SpriteEffects.None, 0f);
+                ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, _rectangle[i].Position, null, Color.White, _rectangle[i].Rotation, _rectangleSprite.Origin, new Vector2(1.5f, 1.5f) * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
             ScreenManager.SpriteBatch.End();
             
-            ScreenManager.LineBatch.Begin(Camera.SimProjection, Camera.SimView);
+            ScreenManager.LineBatch.Begin(Camera.Projection, Camera.View);
             for (int i = 0; i < _ramps.Count; ++i)
             {
                 ScreenManager.LineBatch.DrawLineShape(_ramps[i].FixtureList[0].Shape, Color.Black);
