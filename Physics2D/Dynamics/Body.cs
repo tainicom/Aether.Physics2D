@@ -458,7 +458,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public bool IsStatic
         {
             get { return _bodyType == BodyType.Static; }
-            set { BodyType = value ? BodyType.Static : BodyType.Dynamic; }
         }
 
         /// <summary>
@@ -468,7 +467,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public bool IsKinematic
         {
             get { return _bodyType == BodyType.Kinematic; }
-            set { BodyType = value ? BodyType.Kinematic : BodyType.Dynamic; }
         }
 
         /// <summary>

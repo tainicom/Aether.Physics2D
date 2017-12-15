@@ -75,7 +75,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             for (int i = 0; i < 5; ++i)
             {
                 _obstacles[i] = World.CreateRectangle(5f, 1f, 1f);
-                _obstacles[i].IsStatic = true;
+                _obstacles[i].BodyType = BodyType.Static;
                 _obstacles[i].SetRestitution(0.2f);
                 _obstacles[i].SetFriction(0.2f);
             }

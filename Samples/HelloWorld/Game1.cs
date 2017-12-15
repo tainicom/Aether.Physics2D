@@ -103,7 +103,7 @@ namespace tainicom.Aether.Physics2D.Samples
 
             // Create the ground fixture
             _groundBody = _world.CreateRectangle(_groundBodySize.X, _groundBodySize.Y, 1f, groundPosition);
-            _groundBody.IsStatic = true;
+            _groundBody.BodyType = BodyType.Static;
             _groundBody.SetRestitution(0.3f);
             _groundBody.SetFriction(0.5f);
         }

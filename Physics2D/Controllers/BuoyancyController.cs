@@ -76,7 +76,7 @@ namespace tainicom.Aether.Physics2D.Controllers
             _uniqueBodies.Clear();
             World.QueryAABB(fixture =>
                                 {
-                                    if (fixture.Body.IsStatic || !fixture.Body.Awake)
+                                    if (fixture.Body.BodyType == BodyType.Static || !fixture.Body.Awake)
                                         return true;
 
                                     if (!_uniqueBodies.Contains(fixture.Body))

@@ -82,7 +82,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             //Fix each of the body of the outer ring
             for (int j = 0; j < lastRingBodies.Count; ++j)
             {
-                lastRingBodies[j].IsStatic = true;
+                lastRingBodies[j].BodyType = BodyType.Static;
             }
 
             //Interconnect the rings
