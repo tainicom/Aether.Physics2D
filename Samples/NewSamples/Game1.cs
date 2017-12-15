@@ -14,20 +14,6 @@ using Microsoft.Xna.Framework.Input;
 
 namespace tainicom.Aether.Physics2D.Samples
 {
-    internal static class Program
-    {
-        /// <summary>
-        /// The main entry point for the samples
-        /// </summary>
-        private static void Main(string[] args)
-        {
-            using(Game1 game = new Game1())
-            {
-                game.Run();
-            }
-        }
-    }
-
     /// <summary>
     /// This is the main type for the samples
     /// </summary>
