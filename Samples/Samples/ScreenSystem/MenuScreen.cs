@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -148,7 +150,10 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     ScreenManager.AddScreen(_menuEntries[_selectedEntry].Screen);
 
                     if (_menuEntries[_selectedEntry].Screen is IDemoScreen)
-                        ScreenManager.AddScreen(new MessageBoxScreen((_menuEntries[_selectedEntry].Screen as IDemoScreen).GetDetails()));
+                    {
+                        var demoScreen = _menuEntries[_selectedEntry].Screen as IDemoScreen;
+                        ScreenManager.AddScreen(new MessageBoxScreen(demoScreen.GetTitle(), demoScreen.GetDetails()));
+                    }
                 }
             }
             else if (input.IsMenuCancel())
@@ -171,6 +176,13 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     _scrollLock = true;
                 }
             }
+
+            if (input.WheelDelta != 0)
+            {
+                _menuOffset = MathHelper.Clamp(_menuOffset - 32f * (input.WheelDelta / 120f), 0f, _maxOffset);
+                _scrollLock = false;
+            }
+
 
             if (input.IsMenuReleased())
                 _scrollLock = false;

@@ -49,23 +49,14 @@
 /processorParam:TextureFormat=Color
 /build:Common/logo.png
 
-#begin Fonts/detailsFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:TextureFormat=Compressed
-/build:Fonts/detailsFont.spritefont
+#begin Fonts/detailsFont.xnb
+/copy:Fonts/detailsFont.xnb
 
-#begin Fonts/frameRateCounterFont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:TextureFormat=Compressed
-/build:Fonts/frameRateCounterFont.spritefont
+#begin Fonts/frameRateCounterFont.xnb
+/copy:Fonts/frameRateCounterFont.xnb
 
-#begin Fonts/menufont.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:TextureFormat=Compressed
-/build:Fonts/menufont.spritefont
+#begin Fonts/menufont.xnb
+/copy:Fonts/menufont.xnb
 
 #begin Materials/dots.png
 /importer:TextureImporter

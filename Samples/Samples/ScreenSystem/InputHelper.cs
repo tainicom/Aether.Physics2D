@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -295,8 +297,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     return false;
             }
         }
-
-
+        
         /// <summary>
         /// Checks if the requested mouse button is released.
         /// </summary>
@@ -320,6 +321,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             }
         }
 
+        public float WheelDelta { get { return MouseState.ScrollWheelValue - PreviousMouseState.ScrollWheelValue; } }
+        
         /// <summary>
         ///   Checks for a "menu select" input action.
         /// </summary>
