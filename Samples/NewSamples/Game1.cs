@@ -21,6 +21,7 @@ namespace tainicom.Aether.Physics2D.Samples
     {
         private SpriteBatch _spriteBatch;
         private LineBatch _lineBatch;
+        private BasicEffect _batchEffect;
         private QuadRenderer _quadRenderer;
         private InputHelper _input;
         private List<GameScreen> _screens = new List<GameScreen>();
@@ -72,6 +73,9 @@ namespace tainicom.Aether.Physics2D.Samples
 
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _lineBatch = new LineBatch(GraphicsDevice);
+            _batchEffect = new BasicEffect(GraphicsDevice);
+            _batchEffect.VertexColorEnabled = true;
+            _batchEffect.TextureEnabled = true;
             _quadRenderer = new QuadRenderer(GraphicsDevice);
 
             _input.LoadContent(GraphicsDevice.Viewport);
@@ -107,8 +111,9 @@ namespace tainicom.Aether.Physics2D.Samples
                 demoScreen.Framework = this;
                 demoScreen.IsExiting = false;
 
-                demoScreen.Sprites = _spriteBatch;
-                demoScreen.Lines = _lineBatch;
+                demoScreen.SpriteBatch = _spriteBatch;
+                demoScreen.LineBatch = _lineBatch;
+                demoScreen.BatchEffect = _batchEffect;
                 demoScreen.Quads = _quadRenderer;
 
                 demoScreen.LoadContent();
@@ -306,8 +311,9 @@ namespace tainicom.Aether.Physics2D.Samples
             screen.Framework = this;
             screen.IsExiting = false;
 
-            screen.Sprites = _spriteBatch;
-            screen.Lines = _lineBatch;
+            screen.SpriteBatch = _spriteBatch;
+            screen.LineBatch = _lineBatch;
+            screen.BatchEffect = _batchEffect;
             screen.Quads = _quadRenderer;
 
             // Tell the screen to load content.

@@ -49,7 +49,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             HasCursor = false;
 
-            World.Gravity = new Vector2(0, 9.82f);
+            World.Gravity = new Vector2(0, -9.82f);
 
             _border = new Border(World, ScreenManager, Camera);
             _walker = new TheoJansenWalker(World, ScreenManager, Camera, Vector2.Zero);
@@ -65,7 +65,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            _walker.Draw();
+            _walker.Draw(ScreenManager.BatchEffect, Camera);
             _border.Draw();
             base.Draw(gameTime);
         }

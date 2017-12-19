@@ -8,21 +8,27 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
 {
-    public struct Sprite
+    public class Sprite
     {
+        public readonly Texture2D Texture;
+        public readonly Vector2 Size;
+        public readonly Vector2 TexelSize;
         public Vector2 Origin;
-        public Texture2D Texture;
 
         public Sprite(Texture2D texture, Vector2 origin)
         {
             Texture = texture;
+            Size = new Vector2(Texture.Width, Texture.Height);
+            TexelSize = Vector2.One / Size;
             Origin = origin;
         }
 
-        public Sprite(Texture2D sprite)
+        public Sprite(Texture2D texture)
         {
-            Texture = sprite;
-            Origin = new Vector2(sprite.Width / 2f, sprite.Height / 2f);
+            Texture = texture;
+            Size = new Vector2(Texture.Width, Texture.Height);
+            TexelSize = Vector2.One / Size;
+            Origin = Size / 2f;
         }
     }
 }

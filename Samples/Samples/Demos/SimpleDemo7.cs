@@ -57,7 +57,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
             _border = new Border(World, ScreenManager, Camera);
             _ragdoll = new Ragdoll(World, ScreenManager, Vector2.Zero);
@@ -74,10 +74,10 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 _obstacles[i].BodyType = BodyType.Static;
             }
 
-            _obstacles[0].Position = new Vector2(-9f, 5f);
-            _obstacles[1].Position = new Vector2(-8f, -7f);
-            _obstacles[2].Position = new Vector2(9f, 7f);
-            _obstacles[3].Position = new Vector2(7f, -5f);
+            _obstacles[0].Position = new Vector2(-9f, -5f);
+            _obstacles[1].Position = new Vector2(-8f, 7f);
+            _obstacles[2].Position = new Vector2(9f, -7f);
+            _obstacles[3].Position = new Vector2(7f, 5f);
 
             // create sprite based on body
             _obstacle = new Sprite(ScreenManager.Assets.TextureFromShape(_obstacles[0].FixtureList[0].Shape, MaterialType.Dots, Color.SandyBrown, 0.8f));
@@ -85,10 +85,12 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             for (int i = 0; i < 4; ++i)
             {
-                ScreenManager.SpriteBatch.Draw(_obstacle.Texture, ConvertUnits.ToDisplayUnits(_obstacles[i].Position), null, Color.White, _obstacles[i].Rotation, _obstacle.Origin, 1f, SpriteEffects.None, 0f);
+                ScreenManager.SpriteBatch.Draw(_obstacle.Texture, _obstacles[i].Position, null, Color.White, _obstacles[i].Rotation, _obstacle.Origin, new Vector2(5f, 1.5f) * _obstacle.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
             _ragdoll.Draw();
             ScreenManager.SpriteBatch.End();

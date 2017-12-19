@@ -112,8 +112,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public Game1 Framework { get; internal set; }
 
-        public SpriteBatch Sprites { get; protected internal set; }
-        public LineBatch Lines { get; protected internal set; }
+        public SpriteBatch SpriteBatch { get; protected internal set; }
+        public LineBatch LineBatch { get; protected internal set; }
+        public BasicEffect BatchEffect { get; internal set; }
         public QuadRenderer Quads { get; protected internal set; }
 
         /// <summary>

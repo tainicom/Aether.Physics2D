@@ -19,8 +19,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
     {
         private Border _border;
         private Sprite _rectangleSprite;
+        private Vector2 _rectangleSize = new Vector2(4f, 4f);
         private Body _rectangles;
-        private Vector2 _offset;
+        private Vector2 _offset = new Vector2(2f, 0f);
 
         #region Demo description
         public override string GetTitle()
@@ -64,15 +65,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             World.Gravity = Vector2.Zero;
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            Vertices rectangle1 = PolygonTools.CreateRectangle(2f, 2f);
-            Vertices rectangle2 = PolygonTools.CreateRectangle(2f, 2f);
+            Vertices rectangle1 = PolygonTools.CreateRectangle(_rectangleSize.X/2f, _rectangleSize.Y/2f);
+            Vertices rectangle2 = PolygonTools.CreateRectangle(_rectangleSize.X/2f, _rectangleSize.Y/2f);
 
-            Vector2 translation = new Vector2(-2f, 0f);
-            rectangle1.Translate(ref translation);
-            translation = new Vector2(2f, 0f);
-            rectangle2.Translate(ref translation);
+            rectangle1.Translate(-_offset);
+            rectangle2.Translate(_offset);
 
             List<Vertices> vertices = new List<Vertices>(2);
             vertices.Add(rectangle1);
@@ -84,21 +83,22 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             SetUserAgent(_rectangles, 200f, 200f);
 
             // create sprite based on rectangle fixture
-            _rectangleSprite = new Sprite(ContentWrapper.PolygonTexture(rectangle1, "Square", ContentWrapper.Blue, ContentWrapper.Gold, ContentWrapper.Black, 1f));
-            _offset = new Vector2(ConvertUnits.ToDisplayUnits(2f), 0f);
+            _rectangleSprite = new Sprite(ContentWrapper.PolygonTexture(rectangle1, "Square", ContentWrapper.Blue, ContentWrapper.Gold, ContentWrapper.Black, 1f, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
             // draw first rectangle
-            Sprites.Draw(_rectangleSprite.Image, ConvertUnits.ToDisplayUnits(_rectangles.Position), null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin + _offset, 1f, SpriteEffects.None, 0f);
+            SpriteBatch.Draw(_rectangleSprite.Texture, _rectangles.Position, null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin + _offset * _rectangleSprite.Size / _rectangleSize, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
 
             // draw second rectangle
-            Sprites.Draw(_rectangleSprite.Image, ConvertUnits.ToDisplayUnits(_rectangles.Position), null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin - _offset, 1f, SpriteEffects.None, 0f);
-            Sprites.End();
+            SpriteBatch.Draw(_rectangleSprite.Texture, _rectangles.Position, null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin - _offset * _rectangleSprite.Size / _rectangleSize, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

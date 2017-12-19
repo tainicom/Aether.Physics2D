@@ -7,6 +7,7 @@ using System.Text;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -54,15 +55,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
             _border = new Border(World, ScreenManager, Camera);
-            _agent = new Agent(World, ScreenManager, new Vector2(0f, 10f));
+            _agent = new Agent(World, ScreenManager, new Vector2(0f, -10f));
             _spiders = new Spider[8];
 
             for (int i = 0; i < _spiders.Length; i++)
             {
-                _spiders[i] = new Spider(World, ScreenManager, new Vector2(0f, 8f - (i + 1) * 2f));
+                _spiders[i] = new Spider(World, ScreenManager, new Vector2(0f, -8f + (i + 1) * 2f));
             }
 
             SetUserAgent(_agent.Body, 1000f, 400f);
@@ -76,14 +77,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                 {
                     _spiders[i].Update(gameTime);
                 }
-            }
+            } 
 
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.SpriteBatchTransform);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             _agent.Draw();
             for (int i = 0; i < _spiders.Length; i++)
             {

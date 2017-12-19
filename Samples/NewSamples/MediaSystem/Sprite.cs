@@ -10,28 +10,25 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
 {
     public class Sprite
     {
-        public Vector2 Origin { get; set; }
-
-        private Texture2D _image;
-        public Texture2D Image
+        public readonly Texture2D Texture;
+        public readonly Vector2 Size;
+        public readonly Vector2 TexelSize;
+        public Vector2 Origin;
+                
+        public Sprite(Texture2D texture, Vector2 origin)
         {
-            get { return _image; }
-            set
-            {
-                _image = value;
-                Origin = new Vector2(_image.Width / 2f, _image.Height / 2f);
-            }
-        }
-
-        public Sprite(Texture2D image, Vector2 origin)
-        {
-            _image = image;
+            Texture = texture;
+            Size = new Vector2(Texture.Width, Texture.Height);
+            TexelSize = Vector2.One / Size;
             Origin = origin;
         }
 
-        public Sprite(Texture2D image)
+        public Sprite(Texture2D texture)
         {
-            Image = image;
+            Texture = texture;
+            Size = new Vector2(Texture.Width, Texture.Height);
+            TexelSize = Vector2.One / Size;
+            Origin = Size / 2f;
         }
     }
 }
