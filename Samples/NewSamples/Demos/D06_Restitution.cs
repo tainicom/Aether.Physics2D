@@ -77,7 +77,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             BatchEffect.View = Camera.View;
             BatchEffect.Projection = Camera.Projection;
-            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
                         
             for (int i = 0; i < 6; ++i)
             {

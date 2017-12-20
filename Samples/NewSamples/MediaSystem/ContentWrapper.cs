@@ -421,7 +421,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             _effect.TextureEnabled = true;
             _effect.Texture = _textureList["Blank"];
             _effect.VertexColorEnabled = true;
-            _effect.Techniques[0].Passes[0].Apply();
+            _effect.CurrentTechnique.Passes[0].Apply();
 
             for (int i = 0; i < verticesFill.Count; i++)
             {
@@ -431,7 +431,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             if (pattern != null)
             {
                 _effect.Texture = pattern;
-                _effect.Techniques[0].Passes[0].Apply();
+                _effect.CurrentTechnique.Passes[0].Apply();
                 for (int i = 0; i < verticesFill.Count; i++)
                 {
                     for (int j = 0; j < verticesFill[i].Length; j++)
@@ -445,7 +445,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             if (verticesOutline.Length > 1)
             {
                 _effect.TextureEnabled = false;
-                _effect.Techniques[0].Passes[0].Apply();
+                _effect.CurrentTechnique.Passes[0].Apply();
                 Game.GraphicsDevice.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
             }
             Game.GraphicsDevice.SetRenderTarget(null);

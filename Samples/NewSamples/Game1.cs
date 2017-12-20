@@ -274,7 +274,7 @@ namespace tainicom.Aether.Physics2D.Samples
 
                 if (screen.ScreenState == ScreenState.TransitionOn || screen.ScreenState == ScreenState.TransitionOff)
                 {
-                    _spriteBatch.Begin(0, BlendState.AlphaBlend);
+                    _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
                     if (screen is PhysicsDemoScreen)
                     {
                         Vector2 position = Vector2.Lerp(_menuScreen.PreviewPosition, new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height) / 2f, 1f - screen.TransitionPosition);

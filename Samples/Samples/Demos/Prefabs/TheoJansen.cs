@@ -260,13 +260,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             batchEffect.View = camera.View;
             batchEffect.Projection = camera.Projection;
 
-            _spriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, batchEffect);
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, batchEffect);
             _spriteBatch.Draw(_body.Texture, _chassis.Position, null, Color.White, _chassis.Rotation, _body.Origin, new Vector2(5f, 2.0f) * _body.TexelSize, SpriteEffects.FlipVertically, 0f);
             _spriteBatch.End();
             
             for (int i = 0; i < 3; ++i)
             {
-                _spriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, batchEffect);
+                _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, batchEffect);
                 _spriteBatch.Draw(_leftLeg.Texture, _leftLegs[i].Position, null, Color.White, _leftLegs[i].Rotation, _leftLeg.Origin, new Vector2(2.9583f, 4.9583f) * _leftLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
                 _spriteBatch.Draw(_leftShoulder.Texture, _leftShoulders[i].Position, null, Color.White, _leftShoulders[i].Rotation, _leftShoulder.Origin, new Vector2(3.5833f, 2.9583f) * _leftShoulder.TexelSize, SpriteEffects.FlipVertically, 0f);
                 _spriteBatch.Draw(_rightLeg.Texture, _rightLegs[i].Position, null, Color.White, _rightLegs[i].Rotation, _rightLeg.Origin, new Vector2(2.9583f, 4.9583f) * _rightLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
@@ -281,7 +281,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 _lineBatch.End();
             }
 
-            _spriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, batchEffect);
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, batchEffect);
             _spriteBatch.Draw(_engine.Texture, _wheel.Position, null, Color.White * 0.7f, _wheel.Rotation, _engine.Origin, new Vector2(2f * 1.6f) * _engine.TexelSize, SpriteEffects.FlipVertically, 0f);
             _spriteBatch.End();
         }

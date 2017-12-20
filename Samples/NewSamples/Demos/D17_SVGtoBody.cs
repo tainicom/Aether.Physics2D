@@ -95,7 +95,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             BatchEffect.View = Camera.View;
             BatchEffect.Projection = Camera.Projection;
-            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
             SpriteBatch.Draw(_heart.Texture, _heartBody.Position, null, Color.White, _heartBody.Rotation, _heart.Origin, new Vector2(5.3f) * _heart.TexelSize, SpriteEffects.FlipVertically, 0f);
             SpriteBatch.Draw(_club.Texture, _clubBody.Position, null, Color.White, _clubBody.Rotation, _club.Origin, new Vector2(5.3f) * _club.TexelSize, SpriteEffects.FlipVertically, 0f);
             SpriteBatch.Draw(_spade.Texture, _spadeBody.Position, null, Color.White, _spadeBody.Rotation, _spade.Origin, new Vector2(5.3f) * _spade.TexelSize, SpriteEffects.FlipVertically, 0f);
