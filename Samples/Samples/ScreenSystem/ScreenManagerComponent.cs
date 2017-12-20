@@ -191,7 +191,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
                 if (screen.ScreenState == ScreenState.TransitionOn || screen.ScreenState == ScreenState.TransitionOff)
                 {
-                    SpriteBatch.Begin(0, BlendState.AlphaBlend);
+                    SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
                     SpriteBatch.Draw(_transitions[transitionCount], Vector2.Zero, Color.White * screen.TransitionAlpha);
                     SpriteBatch.End();
 

@@ -76,7 +76,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             ScreenManager.BatchEffect.View = Camera.View;
             ScreenManager.BatchEffect.Projection = Camera.Projection;
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
+            ScreenManager.SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, _rectangle.Position, null, Color.White, _rectangle.Rotation, _rectangleSprite.Origin, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             ScreenManager.SpriteBatch.End();
             _border.Draw();

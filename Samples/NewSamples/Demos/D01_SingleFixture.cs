@@ -77,7 +77,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             BatchEffect.View = Camera.View;
             BatchEffect.Projection = Camera.Projection;
-            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
             SpriteBatch.Draw(_rectangleSprite.Texture, _rectangle.Position, null, Color.White, _rectangle.Rotation, _rectangleSprite.Origin, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             SpriteBatch.End();
 

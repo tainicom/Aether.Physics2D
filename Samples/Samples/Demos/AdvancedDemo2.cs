@@ -114,7 +114,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             ScreenManager.BatchEffect.View = Camera.View;
             ScreenManager.BatchEffect.Projection = Camera.Projection;
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
+            ScreenManager.SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             for (int i = 0; i < _softBodies.Count; ++i)
             {
                 ScreenManager.SpriteBatch.Draw(_softBodyBox.Texture, _softBodies[i].Position, null, Color.White, _softBodies[i].Rotation, _softBodyBox.Origin, new Vector2(1f, 1f) * _softBodyBox.TexelSize, SpriteEffects.FlipVertically, 0f);

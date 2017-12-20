@@ -90,7 +90,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             ScreenManager.BatchEffect.View = Camera.View;
             ScreenManager.BatchEffect.Projection = Camera.Projection;
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
+            ScreenManager.SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             // draw first rectangle
             ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, _rectangles.Position, null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin + _offset * _rectangleSprite.Size / _rectangleSize, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
 

@@ -110,7 +110,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             ScreenManager.BatchEffect.View = Camera.View;
             ScreenManager.BatchEffect.Projection = Camera.Projection;
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
+            ScreenManager.SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             ScreenManager.SpriteBatch.Draw(_polygonTexture, _compound.Position, null, Color.Tomato, _compound.Rotation, _origin, _polygonSize / new Vector2(_polygonTexture.Width, _polygonTexture.Height), SpriteEffects.FlipVertically, 0f);
             ScreenManager.SpriteBatch.End();
             _border.Draw();

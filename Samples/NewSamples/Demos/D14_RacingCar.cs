@@ -293,7 +293,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             BatchEffect.View = Camera.View;
             BatchEffect.Projection = Camera.Projection;
-            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
             
             // draw car
             SpriteBatch.Draw(_wheel.Texture, _wheelBack.Position, null, Color.White, _wheelBack.Rotation, _wheel.Origin, new Vector2(0.5f) * _wheel.TexelSize, SpriteEffects.FlipVertically, 0f);

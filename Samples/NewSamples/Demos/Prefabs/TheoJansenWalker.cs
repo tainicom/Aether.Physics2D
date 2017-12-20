@@ -216,13 +216,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             batchEffect.View = camera.View;
             batchEffect.Projection = camera.Projection;
 
-            batch.Begin(0, null, null, null, RasterizerState.CullNone, batchEffect);
+            batch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, batchEffect);
             batch.Draw(_body.Texture, _chassis.Position, null, Color.White, _chassis.Rotation, _body.Origin, new Vector2(5f, 2.0f) * _body.TexelSize, SpriteEffects.FlipVertically, 0f);
             batch.End();
 
             for (int i = 0; i < 3; i++)
             {
-                batch.Begin(0, null, null, null, RasterizerState.CullNone, batchEffect);
+                batch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, batchEffect);
                 batch.Draw(_leftLeg.Texture, _leftLegs[i].Position, null, _walkerColors[i], _leftLegs[i].Rotation, _leftLeg.Origin, new Vector2(2.9583f, 4.9583f) * _leftLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
                 batch.Draw(_leftShoulder.Texture, _leftShoulders[i].Position, null, _walkerColors[i], _leftShoulders[i].Rotation, _leftShoulder.Origin, new Vector2(3.5833f, 2.9583f) * _leftShoulder.TexelSize, SpriteEffects.FlipVertically, 0f);
                 batch.Draw(_rightLeg.Texture, _rightLegs[i].Position, null, _walkerColors[i], _rightLegs[i].Rotation, _rightLeg.Origin, new Vector2(2.9583f, 4.9583f) * _rightLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
@@ -237,7 +237,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 lines.End();
             }
             
-            batch.Begin(0, null, null, null, RasterizerState.CullNone, batchEffect);
+            batch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, batchEffect);
             batch.Draw(_engine.Texture, _wheel.Position, null, Color.White * 0.7f, _wheel.Rotation, _engine.Origin, new Vector2(2f * 1.6f) * _engine.TexelSize, SpriteEffects.FlipVertically, 0f);
             batch.End();
         }

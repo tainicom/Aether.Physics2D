@@ -130,7 +130,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             BatchEffect.View = Camera.View;
             BatchEffect.Projection = Camera.Projection;
-            SpriteBatch.Begin(0, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
             for (int i = 0; i < 3; i++)
             {
                 SpriteBatch.Draw(_angleCube.Texture, _angleBody[i].Position, null, Color.White, _angleBody[i].Rotation, _angleCube.Origin, new Vector2(1.5f, 1.5f) * _angleCube.TexelSize, SpriteEffects.FlipVertically, 0f);
