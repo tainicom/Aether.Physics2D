@@ -15,10 +15,14 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
     public class Border
     {
         private Body _anchor;
+
         private BasicEffect _basicEffect;
         private VertexPositionColorTexture[] _borderVerts;
         private Camera2D _camera;
         private ScreenManager _screenManager;
+
+        public Body Anchor { get { return _anchor; } }
+
 
         public Border(World world, ScreenManager screenManager, Camera2D camera)
         {
