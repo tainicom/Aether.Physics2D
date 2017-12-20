@@ -22,6 +22,7 @@ namespace tainicom.Aether.Physics2D.Samples
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
+            _graphics.PreparingDeviceSettings += _graphics_PreparingDeviceSettings;
             _graphics.PreferMultiSampling = true;
 #if WINDOWS
             _graphics.PreferredBackBufferWidth = 1280;
@@ -48,6 +49,16 @@ namespace tainicom.Aether.Physics2D.Samples
             FrameRateCounter frameRateCounter = new FrameRateCounter(ScreenManager);
             frameRateCounter.DrawOrder = 101;
             Components.Add(frameRateCounter);
+        }
+
+        void _graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
+        {
+            // unlock the 30 fps limit. 60fps (if possible)
+            e.GraphicsDeviceInformation.PresentationParameters.PresentationInterval = PresentInterval.One;
+
+            // set HiDef Profile if supported
+            if (e.GraphicsDeviceInformation.Adapter.IsProfileSupported(GraphicsProfile.HiDef))
+                e.GraphicsDeviceInformation.GraphicsProfile = GraphicsProfile.HiDef;
         }
 
         public ScreenManager ScreenManager { get; set; }
