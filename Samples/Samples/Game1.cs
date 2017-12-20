@@ -92,6 +92,7 @@ namespace tainicom.Aether.Physics2D.Samples
             AdvancedDemo3 advanced3 = new AdvancedDemo3();
             AdvancedDemo4 advanced4 = new AdvancedDemo4();
             AdvancedDemo5 advanced5 = new AdvancedDemo5();
+            AdvancedDemo6 advanced6 = new AdvancedDemo6();
 
             GameDemo1 game1 = new GameDemo1();
 
@@ -114,6 +115,7 @@ namespace tainicom.Aether.Physics2D.Samples
             menuScreen.AddMenuItem(advanced3.GetTitle(), EntryType.Screen, advanced3);
             menuScreen.AddMenuItem(advanced4.GetTitle(), EntryType.Screen, advanced4);
             menuScreen.AddMenuItem(advanced5.GetTitle(), EntryType.Screen, advanced5);
+            menuScreen.AddMenuItem(advanced6.GetTitle(), EntryType.Screen, advanced6);
 
             menuScreen.AddMenuItem("Game Samples", EntryType.Separator, null);
             menuScreen.AddMenuItem(game1.GetTitle(), EntryType.Screen, game1);

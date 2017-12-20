@@ -114,8 +114,11 @@
     <Compile Include="Demos\AdvancedDemo3.cs" />
     <Compile Include="Demos\AdvancedDemo4.cs" />
     <Compile Include="Demos\AdvancedDemo5.cs" />
+    <Compile Include="Demos\AdvancedDemo6.cs" />
     <Compile Include="ScreenSystem\FramerateCounterComponent.cs" />
     <Compile Include="DrawingSystem\AssetCreator.cs" />
+    <Compile Include="DrawingSystem\ShadowBatch.cs" />
+    <Compile Include="DrawingSystem\ShadowMap2D.cs" />
     <Compile Include="DrawingSystem\Sprite.cs" />
     <Compile Include="Demos\GameDemo1.cs" />
     <Compile Include="Demos\Prefabs\Agent.cs" />

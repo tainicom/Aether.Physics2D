@@ -49,6 +49,12 @@
 /processorParam:TextureFormat=Color
 /build:Common/logo.png
 
+#begin Effects/LightEffect.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Effects/LightEffect.fx
+
 #begin Fonts/detailsFont.xnb
 /copy:Fonts/detailsFont.xnb
 
