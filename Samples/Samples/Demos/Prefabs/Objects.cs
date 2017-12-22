@@ -1,15 +1,17 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.DrawingSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 {
@@ -23,53 +25,52 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
     public class Objects
     {
-        private List<Body> _bodies;
-        private Category _collidesWith;
-        private Category _collisionCategories;
+        public List<Body> BodyList { get; private set; }
         private Sprite _object;
         private SpriteBatch _batch;
         private float _bodyRadius;
 
-        public Objects(World world, ScreenManager screenManager, Vector2 startPosition, Vector2 endPosition, int count, float radius, ObjectType type)
+        public Objects(World world, ScreenManager screenManager, Vector2 startPosition, Vector2 endPosition, int count, float radius, ObjectType type, float toothHeight = 1f)
         {
             _batch = screenManager.SpriteBatch;
             _bodyRadius = radius;
-            _bodies = new List<Body>(count);
+            BodyList = new List<Body>(count);
 
-            CollidesWith = Category.All;
-            CollisionCategories = Category.All;
 
-            for (int i = 0; i < count; ++i)
+            for (int i = 0; i < count; i++)
             {
                 switch (type)
                 {
                     case ObjectType.Circle:
-                        _bodies.Add(world.CreateCircle(radius, 1f));
+                        BodyList.Add(world.CreateCircle(radius, 1f));
                         break;
                     case ObjectType.Rectangle:
-                        _bodies.Add(world.CreateRectangle(radius, radius, 1f));
+                        BodyList.Add(world.CreateRectangle(radius, radius, 1f));
                         _bodyRadius = radius/2f;
                         break;
                     case ObjectType.Star:
-                        _bodies.Add(world.CreateGear(radius, 10, 0f, 1f, 1f));
+                        BodyList.Add(world.CreateGear(radius, 10, 0f, toothHeight, 1f));
                         _bodyRadius = radius * 2.7f;
                         break;
                     case ObjectType.Gear:
-                        _bodies.Add(world.CreateGear(radius, 10, 100f, 1f, 1f));
+                        BodyList.Add(world.CreateGear(radius, 10, 100f, toothHeight, 1f));
                         _bodyRadius = radius * 2.7f;
                         break;
                 }
             }
 
-            for (int i = 0; i < _bodies.Count; ++i)
+            var collidesWith = Category.All;
+            var collisionCategories = Category.All;
+
+            for (int i = 0; i < BodyList.Count; i++)
             {
-                Body body = _bodies[i];
+                Body body = BodyList[i];
                 body.BodyType = BodyType.Dynamic;
                 body.Position = Vector2.Lerp(startPosition, endPosition, i / (float)(count - 1));
-                body.SetRestitution(.7f);
-                body.SetFriction(.2f);
-                body.SetCollisionCategories(CollisionCategories);
-                body.SetCollidesWith(CollidesWith);
+                body.SetRestitution(0.7f);
+                body.SetFriction(0.2f);
+                body.SetCollisionCategories(collisionCategories);
+                body.SetCollidesWith(collidesWith);
             }
 
             //GFX
@@ -83,45 +84,37 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                     _object = new Sprite(creator.TextureFromVertices(PolygonTools.CreateRectangle(radius / 2f, radius / 2f), MaterialType.Dots, Color.Blue, 0.8f, 24f));
                     break;
                 case ObjectType.Star:
-                    _object = new Sprite(creator.TextureFromVertices(PolygonTools.CreateGear(radius, 10, 0f, 1f), MaterialType.Dots, Color.Yellow, 0.8f, 24f));
+                    _object = new Sprite(creator.TextureFromVertices(PolygonTools.CreateGear(radius, 10, 0f, toothHeight), MaterialType.Dots, Color.Yellow, 0.8f, 24f));
                     break;
                 case ObjectType.Gear:
-                    _object = new Sprite(creator.TextureFromVertices(PolygonTools.CreateGear(radius, 10, 100f, 1f), MaterialType.Dots, Color.DarkGreen, 0.8f, 24f));
+                    _object = new Sprite(creator.TextureFromVertices(PolygonTools.CreateGear(radius, 10, 100f, toothHeight), MaterialType.Dots, Color.DarkGreen, 0.8f, 24f));
                     break;
             }
         }
 
-        public Category CollisionCategories
+        public void SetBodyType(BodyType bodyType)
         {
-            get { return _collisionCategories; }
-            set
-            {
-                _collisionCategories = value;
-
-                foreach (Body body in _bodies)
-                    body.SetCollisionCategories(_collisionCategories);
-            }
+                foreach (Body body in BodyList)
+                    body.BodyType = bodyType;
         }
 
-        public Category CollidesWith
+        public void SetCollisionCategories(Category collisionCategories)
         {
-            get { return _collidesWith; }
-            set
-            {
-                _collidesWith = value;
-
-                foreach (Body body in _bodies)
-                    body.SetCollidesWith(_collidesWith);
-            }
+            foreach (Body body in BodyList)
+                body.SetCollisionCategories(collisionCategories);
         }
 
+        public void SetCollidesWith(Category collidesWith)
+        {
+            foreach (Body body in BodyList)
+                body.SetCollidesWith(collidesWith);
+        }
+        
         public void Draw()
         {
-            
-
-            for (int i = 0; i < _bodies.Count; ++i)
+            foreach (Body body in BodyList)
             {
-                _batch.Draw(_object.Texture, _bodies[i].Position, null, Color.White, _bodies[i].Rotation, _object.Origin, new Vector2(2f*_bodyRadius) * _object.TexelSize, SpriteEffects.FlipVertically, 0f);
+                _batch.Draw(_object.Texture, body.Position, null, Color.White, body.Rotation, _object.Origin, new Vector2(2f * _bodyRadius) * _object.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
         }
     }
