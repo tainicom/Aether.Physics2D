@@ -277,8 +277,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             // the movement slow down as it nears the end).
             Vector2 transitionOffset = new Vector2(0f, (float)Math.Pow(TransitionPosition, 2) * 100f);
 
-            spriteBatch.DrawString(font, _menuTitle, _titlePosition - transitionOffset + Vector2.One * 2f, Color.Black, 0, _titleOrigin, 1f, SpriteEffects.None, 0);
-            spriteBatch.DrawString(font, _menuTitle, _titlePosition - transitionOffset, new Color(255, 210, 0), 0, _titleOrigin, 1f, SpriteEffects.None, 0);
+            spriteBatch.DrawString(font, _menuTitle, _titlePosition - transitionOffset + Vector2.One, Color.LightGray, 0, _titleOrigin, 1f, SpriteEffects.None, 0);
+            //spriteBatch.DrawString(font, _menuTitle, _titlePosition - transitionOffset, new Color(164, 190, 229); , 0, _titleOrigin, 1f, SpriteEffects.None, 0);
             _scrollUp.Draw();
             _scrollSlider.Draw();
             _scrollDown.Draw();

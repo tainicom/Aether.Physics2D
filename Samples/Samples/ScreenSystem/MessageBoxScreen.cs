@@ -96,6 +96,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             // Fade the popup alpha during transitions.
             Color bgColor = new Color(0,0,0, 0.75f * TransitionAlpha);
 
+            //var colText = new Color(164, 196, 229);
+            var colText = new Color(203, 229, 164);
+
             spriteBatch.Begin();
 
             var position = _textPosition;
@@ -107,8 +110,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             spriteBatch.Draw(_gradientTexture, backgroundRectangle, bgColor);
             
             // Draw the title text.
-            spriteBatch.DrawString(font, _title, position + Vector2.One, Color.Black * alpha);
-            spriteBatch.DrawString(font, _title, position, Color.DarkOrange * alpha);
+            spriteBatch.DrawString(font, _title, position + Vector2.One, Color.Black * alpha, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(font, _title, position, colText * TransitionAlpha, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
 
             position.Y += _titleSize.Y;
 
