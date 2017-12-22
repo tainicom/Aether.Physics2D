@@ -223,6 +223,13 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         }
 
         /// <summary>
+        /// This is called when the screen should draw rendertargets.
+        /// </summary>
+        public virtual void PreDraw(GameTime gameTime)
+        {
+        }
+
+        /// <summary>
         /// This is called when the screen should draw itself.
         /// </summary>
         public virtual void Draw(GameTime gameTime)

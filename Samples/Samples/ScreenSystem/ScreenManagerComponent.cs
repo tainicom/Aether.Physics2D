@@ -162,6 +162,17 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public override void Draw(GameTime gameTime)
         {
+            foreach (GameScreen screen in _screens)
+            {
+                if (screen.ScreenState == ScreenState.TransitionOn ||
+                    screen.ScreenState == ScreenState.TransitionOff || 
+                    screen.ScreenState == ScreenState.Active)
+                {
+                    screen.PreDraw(gameTime);
+                    GraphicsDevice.SetRenderTarget(null);
+                }
+            }
+            
             int transitionCount = 0;
             foreach (GameScreen screen in _screens)
             {
