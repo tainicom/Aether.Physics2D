@@ -150,7 +150,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             base.HandleInput(input, gameTime);
         }
 
-        private void HandleCursor(InputHelper input)
+        protected virtual void HandleCursor(InputHelper input)
         {
             Vector2 position = Camera.ConvertScreenToWorld(input.Cursor);
 
@@ -199,7 +199,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 Camera.ResetCamera();
         }
 
-        private void HandleUserAgent(InputHelper input)
+        protected virtual void HandleUserAgent(InputHelper input)
         {
             Vector2 force = _agentForce * new Vector2(input.GamePadState.ThumbSticks.Right.X, -input.GamePadState.ThumbSticks.Right.Y);
             float torque = _agentTorque * (input.GamePadState.Triggers.Right - input.GamePadState.Triggers.Left);

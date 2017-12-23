@@ -252,7 +252,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             var vp = _graphics.Viewport;
             var cameraZoomFactor = (1f/_currentZoom) * 53 / vp.Width;
-            Projection = Matrix.CreateOrthographic(vp.Width * cameraZoomFactor, vp.Height * cameraZoomFactor, 0f, 1f);
+            Projection = Matrix.CreateOrthographic(vp.Width * cameraZoomFactor, vp.Height * cameraZoomFactor, 0f, 30f);
         }
 
         private void UpdateView()
