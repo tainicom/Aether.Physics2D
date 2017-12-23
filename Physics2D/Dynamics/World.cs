@@ -333,7 +333,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                         Island.Add(contact);
                         contact.IslandFlag = true;
 
-                        Body other = ce.Other;
+                        Body other = ce.OtherBody;
 
                         // Was the other body already added to this island?
                         if (other._island)
@@ -702,7 +702,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                             }
 
                             // Only add static, kinematic, or bullet bodies.
-                            Body other = ce.Other;
+                            Body other = ce.OtherBody;
                             if (other.BodyType == BodyType.Dynamic &&
                                 body.IsBullet == false && other.IsBullet == false)
                             {
@@ -1067,7 +1067,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     ContactEdge edge = bodyB.ContactList;
                     while (edge != null)
                     {
-                        if (edge.Other == bodyA)
+                        if (edge.OtherBody == bodyA)
                         {
                             // Flag the contact for filtering at the next time step (where either
                             // body is awake).
@@ -1167,7 +1167,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     ContactEdge edge = bodyB.ContactList;
                     while (edge != null)
                     {
-                        if (edge.Other == bodyA)
+                        if (edge.OtherBody == bodyA)
                         {
                             // Flag the contact for filtering at the next time step (where either
                             // body is awake).

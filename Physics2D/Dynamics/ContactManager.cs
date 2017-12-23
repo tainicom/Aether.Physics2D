@@ -116,7 +116,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ContactEdge edge = bodyB.ContactList;
             while (edge != null)
             {
-                if (edge.Other == bodyA)
+                if (edge.OtherBody == bodyA)
                 {
                     Fixture fA = edge.Contact.FixtureA;
                     Fixture fB = edge.Contact.FixtureB;
@@ -184,7 +184,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Connect to body A
             c._nodeA.Contact = c;
-            c._nodeA.Other = bodyB;
+            c._nodeA.OtherBody = bodyB;
+            c._nodeA.OtherFixture = fixtureB;
 
             c._nodeA.Prev = null;
             c._nodeA.Next = bodyA.ContactList;
@@ -196,7 +197,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Connect to body B
             c._nodeB.Contact = c;
-            c._nodeB.Other = bodyA;
+            c._nodeB.OtherBody = bodyA;
+            c._nodeB.OtherFixture = fixtureA;
 
             c._nodeB.Prev = null;
             c._nodeB.Next = bodyB.ContactList;

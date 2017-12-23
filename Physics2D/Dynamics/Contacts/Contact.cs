@@ -54,14 +54,19 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         public ContactEdge Next;
 
         /// <summary>
-        /// Provides quick access to the other body attached.
-        /// </summary>
-        public Body Other;
-
-        /// <summary>
         /// The previous contact edge in the body's contact list
         /// </summary>
         public ContactEdge Prev;
+
+        /// <summary>
+        /// Provides quick access to the other body attached.
+        /// </summary>
+        public Body OtherBody;
+
+        /// <summary>
+        /// Provides quick access to the other fixture attached.
+        /// </summary>
+        public Fixture OtherFixture;
     }
 
     /// <summary>
@@ -221,12 +226,14 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             _nodeA.Contact = null;
             _nodeA.Prev = null;
             _nodeA.Next = null;
-            _nodeA.Other = null;
+            _nodeA.OtherBody = null;
+            _nodeA.OtherFixture = null;
 
             _nodeB.Contact = null;
             _nodeB.Prev = null;
             _nodeB.Next = null;
-            _nodeB.Other = null;
+            _nodeB.OtherBody = null;
+            _nodeB.OtherFixture = null;
 
             _toiCount = 0;
 

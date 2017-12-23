@@ -114,7 +114,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             ContactEdge ballContacts2 = ball.ContactList;
             Debug.Assert(ballContacts2 != null);
-            Debug.Assert(ballContacts2.Other == wall);
+            Debug.Assert(ballContacts2.OtherBody == wall);
             Contact contact = ballContacts2.Contact;
 
             return;
