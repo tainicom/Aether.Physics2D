@@ -57,6 +57,7 @@
     <Compile Include="Demos\Prefabs\Spiderweb.cs" />
     <Compile Include="Demos\Prefabs\TheoJansen.cs" />
     <Compile Include="Demos\SimpleDemo1.cs" />
+    <Compile Include="Demos\SimpleDemo10.cs" />
     <Compile Include="Demos\SimpleDemo2.cs" />
     <Compile Include="Demos\SimpleDemo3.cs" />
     <Compile Include="Demos\SimpleDemo4.cs" />

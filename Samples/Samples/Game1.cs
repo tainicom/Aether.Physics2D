@@ -86,6 +86,7 @@ namespace tainicom.Aether.Physics2D.Samples
             SimpleDemo7 simple7 = new SimpleDemo7();
             SimpleDemo8 simple8 = new SimpleDemo8();
             SimpleDemo9 simple9 = new SimpleDemo9();
+            SimpleDemo10 simple10 = new SimpleDemo10();
 
             AdvancedDemo1 advanced1 = new AdvancedDemo1();
             AdvancedDemo2 advanced2 = new AdvancedDemo2();
@@ -107,6 +108,7 @@ namespace tainicom.Aether.Physics2D.Samples
             menuScreen.AddMenuItem(simple7.GetTitle(), EntryType.Screen, simple7);
             menuScreen.AddMenuItem(simple8.GetTitle(), EntryType.Screen, simple8);
             menuScreen.AddMenuItem(simple9.GetTitle(), EntryType.Screen, simple9);
+            menuScreen.AddMenuItem(simple10.GetTitle(), EntryType.Screen, simple10);
 
             menuScreen.AddMenuItem("Advanced Samples", EntryType.Separator, null);
             menuScreen.AddMenuItem(advanced1.GetTitle(), EntryType.Screen, advanced1);

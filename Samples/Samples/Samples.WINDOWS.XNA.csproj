@@ -151,6 +151,7 @@
     <Compile Include="Demos\SimpleDemo7.cs" />
     <Compile Include="Demos\SimpleDemo8.cs" />
     <Compile Include="Demos\SimpleDemo9.cs" />
+    <Compile Include="Demos\SimpleDemo10.cs" />
     <Compile Include="ScreenSystem\VirtualButton.cs" />
     <Compile Include="ScreenSystem\VirtualStick.cs" />
   </ItemGroup>
