@@ -75,19 +75,20 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             base.Update(settings, gameTime);
 
-            DrawString("Press 1-4 to set VelocityConstraintsMultithreadThreshold. (1-(0 - Always ON), 2-(128), 3-(256), 4-(int.MaxValue - Always OFF))");
-            DrawString("Press 5-8 to set PositionConstraintsMultithreadThreshold. (5-(0 - Always ON), 6-(128), 7-(256), 8-(int.MaxValue - Always OFF))");
+            DrawString("Press Space to switch between single-core / multi-core solvers.");
+            DrawString("Press 1-4 to set VelocityConstraints Threshold. (1-(0 - Always ON), 2-(128), 3-(256), 4-(int.MaxValue - Always OFF))");
+            DrawString("Press 5-8 to set PositionConstraints Threshold. (5-(0 - Always ON), 6-(128), 7-(256), 8-(int.MaxValue - Always OFF))");
             var threshold = Settings.VelocityConstraintsMultithreadThreshold;
-            if (threshold == 0) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 0");
-            else if (threshold == 128) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 128");
-            else if (threshold == 256) DrawString("VelocityConstraintsMultithreadThreshold is Currently: 256");
-            else if (threshold == int.MaxValue) DrawString("VelocityConstraintsMultithreadThreshold is Currently: int.MaxValue");
-            else DrawString("VelocityConstraintsMultithreadThreshold is Currently: " + threshold);
+            if (threshold == 0) DrawString("VelocityConstraints Threshold: 0");
+            else if (threshold == 128) DrawString("VelocityConstraintsMultithreadThreshold: 128");
+            else if (threshold == 256) DrawString("VelocityConstraintsMultithreadThreshold: 256");
+            else if (threshold == int.MaxValue) DrawString("VelocityConstraintsMultithreadThreshold: int.MaxValue");
+            else DrawString("VelocityConstraintsMultithreadThreshold: " + threshold);
             threshold = Settings.PositionConstraintsMultithreadThreshold;
-            if (threshold == 0) DrawString("PositionConstraintsMultithreadThreshold is Currently: 0");
-            else if (threshold == 128) DrawString("PositionConstraintsMultithreadThreshold is Currently: 128");
-            else if (threshold == 256) DrawString("PositionConstraintsMultithreadThreshold is Currently: 256");
-            else if (threshold == int.MaxValue) DrawString("PositionConstraintsMultithreadThreshold is Currently: int.MaxValue");
+            if (threshold == 0) DrawString("PositionConstraintsMultithreadThreshold: 0");
+            else if (threshold == 128) DrawString("PositionConstraintsMultithreadThreshold: 128");
+            else if (threshold == 256) DrawString("PositionConstraintsMultithreadThreshold: 256");
+            else if (threshold == int.MaxValue) DrawString("PositionConstraintsMultithreadThreshold: int.MaxValue");
             else DrawString("PositionConstraintsMultithreadThreshold is Currently: " + threshold);
             
             if (gameTime.IsRunningSlowly)
@@ -115,6 +116,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Settings.PositionConstraintsMultithreadThreshold = 256;
             if (keyboardManager.IsNewKeyPress(Keys.D8))
                 Settings.PositionConstraintsMultithreadThreshold = int.MaxValue;
+
+            if (keyboardManager.IsNewKeyPress(Keys.Space))
+            {
+                if (Settings.VelocityConstraintsMultithreadThreshold == int.MaxValue)
+                    Settings.VelocityConstraintsMultithreadThreshold = 0;
+                else                
+                    Settings.VelocityConstraintsMultithreadThreshold = int.MaxValue;
+                Settings.PositionConstraintsMultithreadThreshold = Settings.VelocityConstraintsMultithreadThreshold;
+
+            }
         }
 
         public static Test Create()
