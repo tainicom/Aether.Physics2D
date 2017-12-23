@@ -141,7 +141,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                         if (ficture != null)
                         {
                             _fixedMouseJoint = new FixedMouseJoint(ficture.Body, worldAnchor.Value);
-                            _fixedMouseJoint.MaxForce = 1000.0f * ficture.Body.Mass;
+                            _fixedMouseJoint.MaxForce = 50.0f * ficture.Body.Mass;
                             World.Add(_fixedMouseJoint);
                         }
                     }

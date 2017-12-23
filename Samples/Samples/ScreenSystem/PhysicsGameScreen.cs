@@ -161,7 +161,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 {
                     Body body = savedFixture.Body;
                     _fixedMouseJoint = new FixedMouseJoint(body, position);
-                    _fixedMouseJoint.MaxForce = 1000.0f * body.Mass;
+                    _fixedMouseJoint.MaxForce = 50.0f * body.Mass;
                     World.Add(_fixedMouseJoint);
                     body.Awake = true;
                 }
