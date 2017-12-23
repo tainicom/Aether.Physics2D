@@ -43,8 +43,7 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
         public static Vector2 CalculateOrigin(Body b, float pixelsPerMeter)
         {
             Vector2 lBound = new Vector2(float.MaxValue);
-            Transform trans;
-            b.GetTransform(out trans);
+            Transform trans = b.GetTransform();
 
             for (int i = 0; i < b.FixtureList.Count; ++i)
             {

@@ -228,9 +228,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
         {
             get
             {
-                Transform xf1, xf2;
-                BodyA.GetTransform(out xf1);
-                BodyB.GetTransform(out xf2);
+                Transform xf1 = BodyA.GetTransform();
+                Transform xf2 = BodyB.GetTransform();
 
                 Vector2 r1 = Complex.Multiply(LocalAnchorA - BodyA.LocalCenter, ref xf1.q);
                 Vector2 r2 = Complex.Multiply(LocalAnchorB - BodyB.LocalCenter, ref xf2.q);

@@ -140,8 +140,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 foreach (Body b in World.BodyList)
                 {
-                    Transform xf;
-                    b.GetTransform(out xf);
+                    Transform xf = b.GetTransform();
                     foreach (Fixture f in b.FixtureList)
                     {
                         if (b.Enabled == false)
@@ -191,8 +190,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                         PolygonShape polygon = f.Shape as PolygonShape;
                         if (polygon != null)
                         {
-                            Transform xf;
-                            body.GetTransform(out xf);
+                            Transform xf = body.GetTransform();
 
                             for (int i = 0; i < polygon.Vertices.Count; i++)
                             {
@@ -240,8 +238,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 foreach (Body b in World.BodyList)
                 {
-                    Transform xf;
-                    b.GetTransform(out xf);
+                    Transform xf = b.GetTransform();
                     xf.p = b.WorldCenter;
                     DrawTransform(ref xf);
                 }
@@ -378,16 +375,14 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             Body b1 = joint.BodyA;
             Body b2 = joint.BodyB;
-            Transform xf1;
-            b1.GetTransform(out xf1);
+            Transform xf1 = b1.GetTransform();
 
             Vector2 x2 = Vector2.Zero;
 
             // WIP David
             if (!joint.IsFixedType())
             {
-                Transform xf2;
-                b2.GetTransform(out xf2);
+                Transform xf2 = b2.GetTransform();
                 x2 = xf2.p;
             }
 
