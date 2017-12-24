@@ -120,7 +120,6 @@ namespace tainicom.Aether.Physics2D.Collision
             ++_proxyCount;
             BufferMove(proxyId);
 
-            SetProxy(proxyId, ref proxy);
             return proxyId;
         }
 

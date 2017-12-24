@@ -104,9 +104,6 @@ namespace tainicom.Aether.Physics2D.Collision
 
             _idRegister.Add(proxyId, qtnode);
             _quadTree.AddNode(qtnode);
-            
-            proxy.ProxyId = proxyId;
-            SetProxy(proxyId, ref proxy);
 
             return proxyId;
         }

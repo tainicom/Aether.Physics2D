@@ -315,12 +315,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
             for (int i = 0; i < ProxyCount; ++i)
             {
                 FixtureProxy proxy = new FixtureProxy();
-                Shape.ComputeAABB(out proxy.AABB, ref xf, i);
                 proxy.Fixture = this;
                 proxy.ChildIndex = i;
+                Shape.ComputeAABB(out proxy.AABB, ref xf, i);
 
                 //FPE note: This line needs to be after the previous two because FixtureProxy is a struct
                 proxy.ProxyId = broadPhase.AddProxy(ref proxy);
+                broadPhase.SetProxy(proxy.ProxyId, ref proxy);
 
                 Proxies[i] = proxy;
             }
