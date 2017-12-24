@@ -68,10 +68,8 @@ namespace tainicom.Aether.Physics2D.Collision
             while (i < _pairBuffer.Count)
             {
                 Pair primaryPair = _pairBuffer[i];
-                FixtureProxy userDataA = GetProxy(primaryPair.ProxyIdA);
-                FixtureProxy userDataB = GetProxy(primaryPair.ProxyIdB);
 
-                callback(ref userDataA, ref userDataB);
+                callback(primaryPair.ProxyIdA, primaryPair.ProxyIdB);
                 ++i;
 
                 // Skip any duplicate pairs.

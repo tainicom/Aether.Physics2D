@@ -95,8 +95,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         // Broad-phase callback.
-        private void AddPair(ref FixtureProxy proxyA, ref FixtureProxy proxyB)
+        private void AddPair(int proxyIdA, int proxyIdB)
         {
+            FixtureProxy proxyA = BroadPhase.GetProxy(proxyIdA);
+            FixtureProxy proxyB = BroadPhase.GetProxy(proxyIdB);
+            
             Fixture fixtureA = proxyA.Fixture;
             Fixture fixtureB = proxyB.Fixture;
 
