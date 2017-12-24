@@ -106,7 +106,7 @@ namespace tainicom.Aether.Physics2D.Collision
             _quadTree.AddNode(qtnode);
             
             proxy.ProxyId = proxyId;
-            _idRegister[proxyId].Value = proxy;
+            SetProxy(proxyId, ref proxy);
 
             return proxyId;
         }
@@ -160,6 +160,11 @@ namespace tainicom.Aether.Physics2D.Collision
             ReinsertNode(qtnode);
 
             BufferMove(qtnode);
+        }
+
+        public void SetProxy(int proxyId, ref FixtureProxy proxy)
+        {
+            _idRegister[proxyId].Value = proxy;
         }
 
         public FixtureProxy GetProxy(int proxyId)
