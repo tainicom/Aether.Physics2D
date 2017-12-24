@@ -22,6 +22,8 @@ namespace tainicom.Aether.Physics2D.Collision
 
         void MoveProxy(int proxyId, ref AABB aabb, Vector2 displacement);
 
+        void SetProxy(int proxyId, ref FixtureProxy proxy);
+
         FixtureProxy GetProxy(int proxyId);
 
         void TouchProxy(int proxyId);
