@@ -120,7 +120,7 @@ namespace tainicom.Aether.Physics2D.Collision
             ++_proxyCount;
             BufferMove(proxyId);
 
-            _tree.SetUserData(proxyId, proxy);
+            SetProxy(proxyId, ref proxy);
             return proxyId;
         }
 
@@ -211,6 +211,11 @@ namespace tainicom.Aether.Physics2D.Collision
         public void GetFatAABB(int proxyId, out AABB aabb)
         {
             _tree.GetFatAABB(proxyId, out aabb);
+        }
+
+        public void SetProxy(int proxyId, ref FixtureProxy proxy)
+        {
+            _tree.SetUserData(proxyId, proxy);
         }
 
         /// <summary>
