@@ -113,15 +113,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             // Does a contact already exist?
-            ContactEdge edge = bodyB.ContactList;
-            while (edge != null)
+            for (ContactEdge ceB = bodyB.ContactList; ceB != null; ceB = ceB.Next)
             {
-                if (edge.Other == bodyA)
+                if (ceB.Other == bodyA)
                 {
-                    Fixture fA = edge.Contact.FixtureA;
-                    Fixture fB = edge.Contact.FixtureB;
-                    int iA = edge.Contact.ChildIndexA;
-                    int iB = edge.Contact.ChildIndexB;
+                    Fixture fA = ceB.Contact.FixtureA;
+                    Fixture fB = ceB.Contact.FixtureB;
+                    int iA = ceB.Contact.ChildIndexA;
+                    int iB = ceB.Contact.ChildIndexB;
 
                     if (fA == fixtureA && fB == fixtureB && iA == indexA && iB == indexB)
                     {
@@ -135,8 +134,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                         return;
                     }
                 }
-
-                edge = edge.Next;
             }
 
             // Does a joint override collision? Is at least one body dynamic?
