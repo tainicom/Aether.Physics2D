@@ -16,7 +16,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
         bool TestOverlap(int proxyIdA, int proxyIdB);
 
-        int AddProxy(ref FixtureProxy proxy);
+        int AddProxy(ref AABB aabb);
 
         void RemoveProxy(int proxyId);
 

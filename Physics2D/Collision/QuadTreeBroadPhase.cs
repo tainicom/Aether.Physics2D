@@ -96,10 +96,10 @@ namespace tainicom.Aether.Physics2D.Collision
             return AABB.TestOverlap(ref aabb1, ref aabb2);
         }
 
-        public int AddProxy(ref FixtureProxy proxy)
+        public int AddProxy(ref AABB uaabb)
         {
             int proxyId = _currId++;
-            AABB aabb = Fatten(ref proxy.AABB);
+            AABB aabb = Fatten(ref uaabb);
             Element<FixtureProxy> qtnode = new Element<FixtureProxy>(aabb);
 
             _idRegister.Add(proxyId, qtnode);
