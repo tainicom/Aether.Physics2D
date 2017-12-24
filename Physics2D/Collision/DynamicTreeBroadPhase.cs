@@ -116,9 +116,11 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <returns></returns>
         public int AddProxy(ref FixtureProxy proxy)
         {
-            int proxyId = _tree.AddProxy(ref proxy.AABB, proxy);
+            int proxyId = _tree.AddProxy(ref proxy.AABB);
             ++_proxyCount;
             BufferMove(proxyId);
+
+            _tree.SetUserData(proxyId, proxy);
             return proxyId;
         }
 

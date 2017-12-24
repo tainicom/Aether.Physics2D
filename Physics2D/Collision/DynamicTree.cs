@@ -185,7 +185,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <param name="aabb">The aabb.</param>
         /// <param name="userData">The user data.</param>
         /// <returns>Index of the created proxy</returns>
-        public int AddProxy(ref AABB aabb, T userData)
+        public int AddProxy(ref AABB aabb)
         {
             int proxyId = AllocateNode();
 
@@ -193,7 +193,6 @@ namespace tainicom.Aether.Physics2D.Collision
             Vector2 r = new Vector2(Settings.AABBExtension, Settings.AABBExtension);
             _nodes[proxyId].AABB.LowerBound = aabb.LowerBound - r;
             _nodes[proxyId].AABB.UpperBound = aabb.UpperBound + r;
-            _nodes[proxyId].UserData = userData;
             _nodes[proxyId].Height = 0;
 
             InsertLeaf(proxyId);
@@ -267,6 +266,17 @@ namespace tainicom.Aether.Physics2D.Collision
 
             InsertLeaf(proxyId);
             return true;
+        }
+
+        /// <summary>
+        /// Set proxy user data.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="proxyId">The proxy id.</param>
+        /// <param name="userData">The proxy user data.</param>
+        public void SetUserData(int proxyId, T userData)
+        {
+            _nodes[proxyId].UserData = userData;
         }
 
         /// <summary>
