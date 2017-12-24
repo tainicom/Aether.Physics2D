@@ -99,12 +99,14 @@ namespace tainicom.Aether.Physics2D.Collision
         public int AddProxy(ref FixtureProxy proxy)
         {
             int proxyId = _currId++;
-            proxy.ProxyId = proxyId;
             AABB aabb = Fatten(ref proxy.AABB);
-            Element<FixtureProxy> qtnode = new Element<FixtureProxy>(proxy, aabb);
+            Element<FixtureProxy> qtnode = new Element<FixtureProxy>(aabb);
 
             _idRegister.Add(proxyId, qtnode);
             _quadTree.AddNode(qtnode);
+            
+            proxy.ProxyId = proxyId;
+            _idRegister[proxyId].Value = proxy;
 
             return proxyId;
         }
