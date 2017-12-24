@@ -10,7 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\bin\Debug\Windows\Aether.Content.Pipeline.Physics2DImporters.dll
+/reference:..\..\bin\Debug\Windows.MG\Aether.Content.Pipeline.Physics2DImporters.dll
 
 #---------------------------------- Content ---------------------------------#
 
