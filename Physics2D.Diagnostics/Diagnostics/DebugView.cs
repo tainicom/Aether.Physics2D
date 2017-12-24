@@ -66,6 +66,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         private StringBuilder _debugPanelSbUpdate = new StringBuilder();
 
         //Performance graph
+        private bool _updatePerformanceGraphCalled = false;
         public bool AdaptiveLimits = true;
         public int ValuesToGraph = 500;
         public TimeSpan MinimumValue;
@@ -265,11 +266,6 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         private void DrawPerformanceGraph()
         {
-            _graphValues.Add(World.UpdateTime);
-
-            if (_graphValues.Count > ValuesToGraph + 1)
-                _graphValues.RemoveAt(0);
-
             float x = PerformancePanelBounds.X;
             float deltaX = PerformancePanelBounds.Width / (float)ValuesToGraph;
             float yScale = PerformancePanelBounds.Bottom - (float)PerformancePanelBounds.Top;
@@ -323,6 +319,16 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _background[3] = new Vector2(PerformancePanelBounds.X + PerformancePanelBounds.Width, PerformancePanelBounds.Y);
 
             DrawSolidPolygon(_background, 4, Color.DarkGray, true);
+        }
+
+        public void UpdatePerformanceGraph(TimeSpan updateTime)
+        {
+            _graphValues.Add(updateTime);
+
+            if (_graphValues.Count > ValuesToGraph + 1)
+                _graphValues.RemoveAt(0);
+
+            _updatePerformanceGraphCalled = true;
         }
 
         private void DrawDebugPanel()
@@ -769,6 +775,11 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         {
             if (!Enabled)
                 return;
+
+            if (!_updatePerformanceGraphCalled)
+                UpdatePerformanceGraph(World.UpdateTime);
+            _updatePerformanceGraphCalled = false;
+
 
             //Nothing is enabled - don't draw the debug view.
             if (Flags == 0)

@@ -96,6 +96,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             Camera.Update(gameTime);
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            DebugView.UpdatePerformanceGraph(World.UpdateTime);
         }
 
         public override void HandleInput(InputHelper input, GameTime gameTime)

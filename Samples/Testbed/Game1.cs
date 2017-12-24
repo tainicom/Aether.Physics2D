@@ -252,6 +252,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 _test.TextLine = 30;
                 _test.Update(_settings, gameTime);
             }
+
+            _test.DebugView.UpdatePerformanceGraph(_test.World.UpdateTime);
         }
 
         private void EnableOrDisableFlag(DebugViewFlags flag)
