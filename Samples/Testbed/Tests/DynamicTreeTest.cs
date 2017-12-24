@@ -60,7 +60,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
                 Actor actor = _actors[i];
                 GetRandomAABB(out actor.AABB);
-                actor.ProxyId = _tree.AddProxy(ref actor.AABB, actor);
+                int proxyId = _tree.AddProxy(ref actor.AABB);
+                actor.ProxyId = proxyId;
+                _tree.SetUserData(proxyId, actor);
             }
 
             float h = _worldExtent;
@@ -229,7 +231,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 if (actor.ProxyId == -1)
                 {
                     GetRandomAABB(out actor.AABB);
-                    actor.ProxyId = _tree.AddProxy(ref actor.AABB, actor);
+                    int proxyId = _tree.AddProxy(ref actor.AABB);
+                    actor.ProxyId = proxyId;
+                    _tree.SetUserData(proxyId, actor);
                     return;
                 }
             }
