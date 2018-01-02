@@ -15,6 +15,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
     {
         private const int DefaultBufferSize = 500;
 
+        public const float DefaultTriangleListDepth = -0.1f;
+        public const float DefaultLineListDepth     =  0.0f;
+
         // a basic effect, which contains the shaders that we will use to draw our
         // primitives.
         private BasicEffect _basicEffect;
@@ -114,32 +117,59 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             return _hasBegun;
         }
 
-        public void AddVertex(Vector2 vertex, Color color, PrimitiveType primitiveType)
+        public int AddVertex(Vector3 position, Color color, PrimitiveType primitiveType)
         {
             if (!_hasBegun)
                 throw new InvalidOperationException("Begin must be called before AddVertex can be called.");
 
-            if (primitiveType == PrimitiveType.LineStrip || primitiveType == PrimitiveType.TriangleStrip)
-                throw new NotSupportedException("The specified primitiveType is not supported by PrimitiveBatch.");
-
-            if (primitiveType == PrimitiveType.TriangleList)
+            switch (primitiveType)
             {
-                if (_triangleVertsCount >= _triangleVertices.Length)
-                    FlushTriangles();
+                case PrimitiveType.TriangleList:                    
+                    if (_triangleVertsCount >= _triangleVertices.Length)
+                        FlushTriangles();
 
-                _triangleVertices[_triangleVertsCount].Position = new Vector3(vertex, -0.1f);
-                _triangleVertices[_triangleVertsCount].Color = color;
-                _triangleVertsCount++;
+                    _triangleVertices[_triangleVertsCount].Position = position;
+                    _triangleVertices[_triangleVertsCount].Color = color;
+                    return _triangleVertsCount++;
+
+                case PrimitiveType.LineList:
+                    if (_lineVertsCount >= _lineVertices.Length)
+                        FlushLines();
+
+                    _lineVertices[_lineVertsCount].Position = position;
+                    _lineVertices[_lineVertsCount].Color = color;
+                    return _lineVertsCount++;
+
+                default:
+                    throw new NotSupportedException("The specified primitiveType is not supported by PrimitiveBatch.");
             }
+        }
+        
+        public int AddVertex(Vector2 position, Color color, PrimitiveType primitiveType)
+        {
+            if (!_hasBegun)
+                throw new InvalidOperationException("Begin must be called before AddVertex can be called.");
 
-            if (primitiveType == PrimitiveType.LineList)
+            switch (primitiveType)
             {
-                if (_lineVertsCount >= _lineVertices.Length)
-                    FlushLines();
+                case PrimitiveType.TriangleList:
+                    if (_triangleVertsCount >= _triangleVertices.Length)
+                        FlushTriangles();
 
-                _lineVertices[_lineVertsCount].Position = new Vector3(vertex, 0f);
-                _lineVertices[_lineVertsCount].Color = color;
-                _lineVertsCount++;
+                    _triangleVertices[_triangleVertsCount].Position = new Vector3(position,DefaultTriangleListDepth);
+                    _triangleVertices[_triangleVertsCount].Color = color;
+                    return _triangleVertsCount++;
+
+                case PrimitiveType.LineList:
+                    if (_lineVertsCount >= _lineVertices.Length)
+                        FlushLines();
+
+                    _lineVertices[_lineVertsCount].Position = new Vector3(position,DefaultLineListDepth);
+                    _lineVertices[_lineVertsCount].Color = color;
+                    return _lineVertsCount++;
+
+                default:
+                    throw new NotSupportedException("The specified primitiveType is not supported by PrimitiveBatch.");
             }
         }
 

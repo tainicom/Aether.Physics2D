@@ -4,32 +4,34 @@
  */
 
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.DrawingSystem;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 {
     public class Spiderweb
     {
+        private World _world;
+        private float _radius;
+
         private Sprite _goo;
         private Sprite _link;
 
-        private float _radius;
-        private float _spriteScale;
-        private World _world;
 
         public Spiderweb(World world, Body ground, Vector2 position, float radius, int rings, int sides)
         {
-            const float breakpoint = 100f;
-
             _world = world;
             _radius = radius;
+
+            const float breakpoint = 100f;
+
 
             List<List<Body>> ringBodys = new List<List<Body>>(rings);
 
@@ -81,7 +83,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             //Fix each of the body of the outer ring
             for (int j = 0; j < lastRingBodies.Count; ++j)
             {
-                lastRingBodies[j].IsStatic = true;
+                lastRingBodies[j].BodyType = BodyType.Static;
             }
 
             //Interconnect the rings
@@ -106,8 +108,6 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         {
             _link = new Sprite(content.Load<Texture2D>("Samples/link"));
             _goo = new Sprite(content.Load<Texture2D>("Samples/goo"));
-
-            _spriteScale = 2f * ConvertUnits.ToDisplayUnits(_radius) / _goo.Texture.Width;
         }
 
         public void Draw(SpriteBatch batch)
@@ -116,13 +116,12 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             {
                 if (j.Enabled && j.JointType != JointType.FixedMouse)
                 {
-                    Vector2 pos = ConvertUnits.ToDisplayUnits((j.WorldAnchorA + j.WorldAnchorB) / 2f);
+                    Vector2 pos = (j.WorldAnchorA + j.WorldAnchorB) / 2f;
                     Vector2 AtoB = j.WorldAnchorB - j.WorldAnchorA;
-                    float distance = ConvertUnits.ToDisplayUnits(AtoB.Length()) + 8f * _spriteScale;
-                    Vector2 scale = new Vector2(distance / _link.Texture.Width, _spriteScale);
-                    Vector2 unitx = Vector2.UnitX;
-                    float angle = (float)MathUtils.VectorAngle(ref unitx, ref AtoB);
-                    batch.Draw(_link.Texture, pos, null, Color.White, angle, _link.Origin, scale, SpriteEffects.None, 0f);
+                    float angle = (float)MathUtils.VectorAngle(Vector2.UnitX, AtoB);
+                    float distance = AtoB.Length() + _radius * 2f/3f;
+
+                    batch.Draw(_link.Texture, pos, null, Color.White, angle, _link.Origin, new Vector2(distance, _radius) * _link.TexelSize, SpriteEffects.FlipVertically, 0f);
                 }
             }
 
@@ -130,7 +129,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             {
                 if (b.Enabled && b.FixtureList.Count > 0 && b.FixtureList[0].Shape.ShapeType == ShapeType.Circle)
                 {
-                    batch.Draw(_goo.Texture, ConvertUnits.ToDisplayUnits(b.Position), null, Color.White, 0f, _goo.Origin, _spriteScale, SpriteEffects.None, 0f);
+                    batch.Draw(_goo.Texture, b.Position, null, Color.White, 0f, _goo.Origin, new Vector2(2f * _radius) * _goo.TexelSize, SpriteEffects.FlipVertically, 0f);
                 }
             }
         }

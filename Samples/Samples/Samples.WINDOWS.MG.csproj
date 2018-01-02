@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\Windows\</OutputPath>
+    <OutputPath>bin\Debug\Windows.MG\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WINDOWS;MG</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <ErrorReport>prompt</ErrorReport>
@@ -30,7 +30,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\Windows\</OutputPath>
+    <OutputPath>bin\Release\Windows.MG\</OutputPath>
     <DefineConstants>TRACE;WINDOWS;MG</DefineConstants>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <ErrorReport>prompt</ErrorReport>
@@ -47,6 +47,8 @@
     <Compile Include="Demos\AdvancedDemo3.cs" />
     <Compile Include="Demos\AdvancedDemo4.cs" />
     <Compile Include="Demos\AdvancedDemo5.cs" />
+    <Compile Include="Demos\AdvancedDemo6.cs" />
+    <Compile Include="DrawingSystem\ShadowBatch.cs" />
     <Compile Include="Demos\GameDemo1.cs" />
     <Compile Include="Demos\Prefabs\Agent.cs" />
     <Compile Include="Demos\Prefabs\Border.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="Demos\Prefabs\Spiderweb.cs" />
     <Compile Include="Demos\Prefabs\TheoJansen.cs" />
     <Compile Include="Demos\SimpleDemo1.cs" />
+    <Compile Include="Demos\SimpleDemo10.cs" />
     <Compile Include="Demos\SimpleDemo2.cs" />
     <Compile Include="Demos\SimpleDemo3.cs" />
     <Compile Include="Demos\SimpleDemo4.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Demos\SimpleDemo9.cs" />
     <Compile Include="DrawingSystem\AssetCreator.cs" />
     <Compile Include="DrawingSystem\LineBatch.cs" />
+    <Compile Include="DrawingSystem\ShadowMap2D.cs" />
     <Compile Include="DrawingSystem\Sprite.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
@@ -90,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
-      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+      <HintPath>..\..\ThirdPartyLibraries\MonoGame\Windows\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>

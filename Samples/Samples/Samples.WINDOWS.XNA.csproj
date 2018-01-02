@@ -38,7 +38,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\x86\Debug</OutputPath>
+    <OutputPath>bin\Debug\Windows.XNA\</OutputPath>
     <DefineConstants>DEBUG;TRACE;WINDOWS;XNA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -50,7 +50,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\x86\Release</OutputPath>
+    <OutputPath>bin\Release\Windows.XNA\</OutputPath>
     <DefineConstants>TRACE;WINDOWS;XNA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -114,8 +114,11 @@
     <Compile Include="Demos\AdvancedDemo3.cs" />
     <Compile Include="Demos\AdvancedDemo4.cs" />
     <Compile Include="Demos\AdvancedDemo5.cs" />
+    <Compile Include="Demos\AdvancedDemo6.cs" />
     <Compile Include="ScreenSystem\FramerateCounterComponent.cs" />
     <Compile Include="DrawingSystem\AssetCreator.cs" />
+    <Compile Include="DrawingSystem\ShadowBatch.cs" />
+    <Compile Include="DrawingSystem\ShadowMap2D.cs" />
     <Compile Include="DrawingSystem\Sprite.cs" />
     <Compile Include="Demos\GameDemo1.cs" />
     <Compile Include="Demos\Prefabs\Agent.cs" />
@@ -151,6 +154,7 @@
     <Compile Include="Demos\SimpleDemo7.cs" />
     <Compile Include="Demos\SimpleDemo8.cs" />
     <Compile Include="Demos\SimpleDemo9.cs" />
+    <Compile Include="Demos\SimpleDemo10.cs" />
     <Compile Include="ScreenSystem\VirtualButton.cs" />
     <Compile Include="ScreenSystem\VirtualStick.cs" />
   </ItemGroup>

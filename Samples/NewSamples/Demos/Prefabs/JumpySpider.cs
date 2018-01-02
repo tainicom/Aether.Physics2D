@@ -3,11 +3,12 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.MediaSystem;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 {
@@ -16,11 +17,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         private const float FlexTime = 5000f;
         private const float RelaxTime = 5000f;
 
-        private const float ShoulderFlexed = -1.2f;
-        private const float ShoulderRelaxed = -0.2f;
+        private const float ShoulderFlexed = 1.2f;
+        private const float ShoulderRelaxed = 0.2f;
 
-        private const float KneeFlexed = -1.4f;
-        private const float KneeRelaxed = -0.4f;
+        private const float KneeFlexed = 1.4f;
+        private const float KneeRelaxed = 0.4f;
 
         private bool _flexed;
 
@@ -85,9 +86,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             _rightKneeAngleJoint.MaxImpulse = 3;
 
             //GFX
-            _torso = new Sprite(ContentWrapper.CircleTexture(SpiderBodyRadius, "Square", ContentWrapper.Grey, ContentWrapper.Gold, ContentWrapper.Black, 1f));
-            _upperLeg = new Sprite(ContentWrapper.TextureFromShape(_leftUpper.FixtureList[0].Shape, ContentWrapper.Grey, ContentWrapper.Black));
-            _lowerLeg = new Sprite(ContentWrapper.TextureFromShape(_leftLower.FixtureList[0].Shape, ContentWrapper.Gold, ContentWrapper.Black));
+            _torso = new Sprite(ContentWrapper.CircleTexture(SpiderBodyRadius, "Square", ContentWrapper.Grey, ContentWrapper.Gold, ContentWrapper.Black, 1f, 24f));
+            _upperLeg = new Sprite(ContentWrapper.TextureFromShape(_leftUpper.FixtureList[0].Shape, ContentWrapper.Grey, ContentWrapper.Black, 24f));
+            _lowerLeg = new Sprite(ContentWrapper.TextureFromShape(_leftLower.FixtureList[0].Shape, ContentWrapper.Gold, ContentWrapper.Black, 24f));
 
             _flexed = false;
             _timer = 0f;
@@ -131,13 +132,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
         public void Draw(SpriteBatch batch)
         {
-            batch.Draw(_lowerLeg.Image, ConvertUnits.ToDisplayUnits(_leftLower.Position), null, Color.White, _leftLower.Rotation, _lowerLeg.Origin, 1f, SpriteEffects.None, 0f);
-            batch.Draw(_lowerLeg.Image, ConvertUnits.ToDisplayUnits(_rightLower.Position), null, Color.White, _rightLower.Rotation, _lowerLeg.Origin, 1f, SpriteEffects.None, 0f);
+            batch.Draw(_lowerLeg.Texture, _leftLower.Position, null, Color.White, _leftLower.Rotation, _lowerLeg.Origin, _lowerLegSize * _lowerLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
+            batch.Draw(_lowerLeg.Texture, _rightLower.Position, null, Color.White, _rightLower.Rotation, _lowerLeg.Origin, _lowerLegSize * _lowerLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
 
-            batch.Draw(_upperLeg.Image, ConvertUnits.ToDisplayUnits(_leftUpper.Position), null, Color.White, _leftUpper.Rotation, _upperLeg.Origin, 1f, SpriteEffects.None, 0f);
-            batch.Draw(_upperLeg.Image, ConvertUnits.ToDisplayUnits(_rightUpper.Position), null, Color.White, _rightUpper.Rotation, _upperLeg.Origin, 1f, SpriteEffects.None, 0f);
+            batch.Draw(_upperLeg.Texture, _leftUpper.Position, null, Color.White, _leftUpper.Rotation, _upperLeg.Origin, _upperLegSize * _upperLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
+            batch.Draw(_upperLeg.Texture, _rightUpper.Position, null, Color.White, _rightUpper.Rotation, _upperLeg.Origin, _upperLegSize * _upperLeg.TexelSize, SpriteEffects.FlipVertically, 0f);
 
-            batch.Draw(_torso.Image, ConvertUnits.ToDisplayUnits(_circle.Position), null, Color.White, _circle.Rotation, _torso.Origin, 1f, SpriteEffects.None, 0f);
+            batch.Draw(_torso.Texture, _circle.Position, null, Color.White, _circle.Rotation, _torso.Origin, new Vector2(2f * SpiderBodyRadius) * _torso.TexelSize, SpriteEffects.FlipVertically, 0f);
         }
     }
 }

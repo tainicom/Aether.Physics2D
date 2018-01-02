@@ -26,7 +26,6 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_IGNORE_CCD_CATEGORIES
 
 using System;
 using System.Collections.Generic;
@@ -59,8 +58,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public FixtureProxy[] Proxies { get; private set; }
         public int ProxyCount { get; private set; }
 
-        public Category IgnoreCCDWith;
-
         /// <summary>
         /// Fires after two shapes has collided and are solved. This gives you a chance to get the impact force.
         /// </summary>
@@ -87,11 +84,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal Fixture() // Note: This is internal because it's used by Deserialization.
         {   
-            _collisionCategories = Settings.DefaultFixtureCollisionCategories;
-            _collidesWith = Settings.DefaultFixtureCollidesWith;
+            _collisionCategories = Category.Cat1;
+            _collidesWith = Category.All;
             _collisionGroup = 0;
-
-            IgnoreCCDWith = Settings.DefaultFixtureIgnoreCCDWith;
 
             //Fixture defaults
             Friction = 0.2f;
@@ -110,13 +105,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Defaults to 0
         /// 
-        /// If Settings.UseFPECollisionCategories is set to false:
         /// Collision groups allow a certain group of objects to never collide (negative)
         /// or always collide (positive). Zero means no collision group. Non-zero group
         /// filtering always wins against the mask bits.
-        /// 
-        /// If Settings.UseFPECollisionCategories is set to true:
-        /// If 2 fixtures are in the same collision group, they will not collide.
         /// </summary>
         public short CollisionGroup
         {
@@ -136,7 +127,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// 
         /// The collision mask bits. This states the categories that this
         /// fixture would accept for collision.
-        /// Use Settings.UseFPECollisionCategories to change the behavior.
         /// </summary>
         public Category CollidesWith
         {
@@ -155,11 +145,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// The collision categories this fixture is a part of.
         /// 
-        /// If Settings.UseFPECollisionCategories is set to false:
         /// Defaults to Category.Cat1
-        /// 
-        /// If Settings.UseFPECollisionCategories is set to true:
-        /// Defaults to Category.All
         /// </summary>
         public Category CollisionCategories
         {
@@ -329,12 +315,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
             for (int i = 0; i < ProxyCount; ++i)
             {
                 FixtureProxy proxy = new FixtureProxy();
-                Shape.ComputeAABB(out proxy.AABB, ref xf, i);
                 proxy.Fixture = this;
                 proxy.ChildIndex = i;
-
-                //FPE note: This line needs to be after the previous two because FixtureProxy is a struct
-                proxy.ProxyId = broadPhase.AddProxy(ref proxy);
+                Shape.ComputeAABB(out proxy.AABB, ref xf, i);
+                proxy.ProxyId = broadPhase.AddProxy(ref proxy.AABB);
+                broadPhase.SetProxy(proxy.ProxyId, ref proxy);
 
                 Proxies[i] = proxy;
             }
@@ -400,7 +385,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             fixture._collisionGroup = _collisionGroup;
             fixture._collisionCategories = _collisionCategories;
             fixture._collidesWith = _collidesWith;
-            fixture.IgnoreCCDWith = IgnoreCCDWith;
             
             body.Add(fixture);
             return fixture;

@@ -24,7 +24,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public LogoScreen(TimeSpan duration)
         {
             _duration = duration;
-            TransitionOffTime = TimeSpan.FromSeconds(2.0);
+            TransitionOffTime = TimeSpan.FromSeconds(0.6);
         }
 
         /// <summary>

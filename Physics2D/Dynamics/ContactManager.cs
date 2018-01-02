@@ -26,7 +26,6 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_ACTIVE_CONTACT_SET
 
 using System.Collections.Generic;
 using tainicom.Aether.Physics2D.Collision;
@@ -43,6 +42,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public IBroadPhase BroadPhase;
 
+        public readonly ContactListHead ContactList;
         public int ContactCount { get; private set; }
 
         /// <summary>
@@ -50,7 +50,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public CollisionFilterDelegate ContactFilter;
 
-        public Contact ContactList;
 
 #if USE_ACTIVE_CONTACT_SET
         /// <summary>
@@ -88,9 +87,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal ContactManager(IBroadPhase broadPhase)
         {
-            ContactList = Contact.Create();
-            ContactList.Prev = ContactList;
-            ContactList.Next = ContactList;
+            ContactList = new ContactListHead();
             ContactCount = 0;
 
             BroadPhase = broadPhase;
@@ -98,8 +95,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         // Broad-phase callback.
-        private void AddPair(ref FixtureProxy proxyA, ref FixtureProxy proxyB)
+        private void AddPair(int proxyIdA, int proxyIdB)
         {
+            FixtureProxy proxyA = BroadPhase.GetProxy(proxyIdA);
+            FixtureProxy proxyB = BroadPhase.GetProxy(proxyIdB);
+            
             Fixture fixtureA = proxyA.Fixture;
             Fixture fixtureB = proxyB.Fixture;
 
@@ -116,15 +116,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             // Does a contact already exist?
-            ContactEdge edge = bodyB.ContactList;
-            while (edge != null)
+            for (ContactEdge ceB = bodyB.ContactList; ceB != null; ceB = ceB.Next)
             {
-                if (edge.Other == bodyA)
+                if (ceB.Other == bodyA)
                 {
-                    Fixture fA = edge.Contact.FixtureA;
-                    Fixture fB = edge.Contact.FixtureB;
-                    int iA = edge.Contact.ChildIndexA;
-                    int iB = edge.Contact.ChildIndexB;
+                    Fixture fA = ceB.Contact.FixtureA;
+                    Fixture fB = ceB.Contact.FixtureB;
+                    int iA = ceB.Contact.ChildIndexA;
+                    int iB = ceB.Contact.ChildIndexB;
 
                     if (fA == fixtureA && fB == fixtureB && iA == indexA && iB == indexB)
                     {
@@ -138,8 +137,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                         return;
                     }
                 }
-
-                edge = edge.Next;
             }
 
             // Does a joint override collision? Is at least one body dynamic?
@@ -294,9 +291,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
 #if USE_ACTIVE_CONTACT_SET
 			if (ActiveContacts.Contains(contact))
-			{
 				ActiveContacts.Remove(contact);
-			}
 #endif
             contact.Destroy();
         }
@@ -305,10 +300,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             // Update awake contacts.
 #if USE_ACTIVE_CONTACT_SET
-			ActiveList.AddRange(ActiveContacts);
-
-			foreach (var c in ActiveList)
-			{
+            ActiveList.AddRange(ActiveContacts);
+            foreach (var tmpc in ActiveList)
+            {
+                Contact c = tmpc;
 #else
             for (Contact c = ContactList.Next; c != ContactList;)
             {
@@ -401,72 +396,40 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private static bool ShouldCollide(Fixture fixtureA, Fixture fixtureB)
         {
-            if (Settings.UseFPECollisionCategories)
+            if (fixtureA.CollisionGroup != 0 && fixtureA.CollisionGroup == fixtureB.CollisionGroup)
             {
-                if ((fixtureA.CollisionGroup == fixtureB.CollisionGroup) &&
-                    fixtureA.CollisionGroup != 0 && fixtureB.CollisionGroup != 0)
-                    return false;
-
-                if (((fixtureA.CollisionCategories & fixtureB.CollidesWith) ==
-                     Category.None) &
-                    ((fixtureB.CollisionCategories & fixtureA.CollidesWith) ==
-                     Category.None))
-                    return false;
-
-                return true;
+                return (fixtureA.CollisionGroup > 0);
             }
 
-            if (fixtureA.CollisionGroup == fixtureB.CollisionGroup &&
-                fixtureA.CollisionGroup != 0)
-            {
-                return fixtureA.CollisionGroup > 0;
-            }
-
-            bool collide = (fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0 &&
-                           (fixtureA.CollisionCategories & fixtureB.CollidesWith) != 0;
+            bool collide = ((fixtureA.CollidesWith & fixtureB.CollisionCategories) != 0) &&
+                            ((fixtureB.CollidesWith & fixtureA.CollisionCategories) != 0);
 
             return collide;
         }
 
-        internal void UpdateContacts(ContactEdge contactEdge, bool value)
+#if USE_ACTIVE_CONTACT_SET
+        internal void UpdateActiveContacts(ContactEdge ContactList, bool value)
         {
-#if USE_ACTIVE_CONTACT_SET
-			if(value)
-			{
-				while(contactEdge != null)
-				{
-					var c = contactEdge.Contact;
-					if (!ActiveContacts.Contains(c))
-					{
-						ActiveContacts.Add(c);
-					}
-					contactEdge = contactEdge.Next;
-				}
-			}
-			else
-			{
-				while (contactEdge != null)
-				{
-					var c = contactEdge.Contact;
-					if (!contactEdge.Other.Awake)
-					{
-						if (ActiveContacts.Contains(c))
-						{
-							ActiveContacts.Remove(c);
-						}
-					}
-					contactEdge = contactEdge.Next;
-				}
-			}
-#endif
+            if(value)
+            {
+                for (var contactEdge = ContactList; contactEdge != null; contactEdge = contactEdge.Next)
+                {
+                    if (!ActiveContacts.Contains(contactEdge.Contact))
+                        ActiveContacts.Add(contactEdge.Contact);
+                }
+            }
+            else
+            {
+                for (var contactEdge = ContactList; contactEdge != null; contactEdge = contactEdge.Next)
+                {
+                    if (!contactEdge.Other.Awake)
+                    {
+                        if (ActiveContacts.Contains(contactEdge.Contact))
+                            ActiveContacts.Remove(contactEdge.Contact);
+                    }
+                }
+            }
         }
-
-#if USE_ACTIVE_CONTACT_SET
-		internal void RemoveActiveContact(Contact contact)
-		{
-			if (ActiveContacts.Contains(contact))
-				ActiveContacts.Remove(contact);
-		}
 #endif
     }
 }

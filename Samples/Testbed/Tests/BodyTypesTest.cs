@@ -106,8 +106,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             // Drive the kinematic body.
             if (_platform.BodyType == BodyType.Kinematic)
             {
-                Transform tf;
-                _platform.GetTransform(out tf);
+                Transform tf = _platform.GetTransform();
                 Vector2 p = tf.p;
                 Vector2 v = _platform.LinearVelocity;
 

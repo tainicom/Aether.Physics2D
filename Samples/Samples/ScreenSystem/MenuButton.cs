@@ -77,7 +77,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         public void Draw()
         {
             SpriteBatch batch = _screen.ScreenManager.SpriteBatch;
-            Color color = Color.Lerp(Color.White, new Color(255, 210, 0), _selectionFade);
+            var col = new Color(235, 204, 255);
+            var colSel = new Color(203, 164, 229);
+            Color color = Color.Lerp(col, colSel, _selectionFade);
 
             batch.Draw(_sprite, Position - _baseOrigin * _scale, null, color, 0f, Vector2.Zero, _scale, _flip ? SpriteEffects.FlipVertically : SpriteEffects.None, 0f);
         }

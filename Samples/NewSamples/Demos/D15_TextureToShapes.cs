@@ -12,6 +12,7 @@ using tainicom.Aether.Physics2D.Samples.MediaSystem;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using tainicom.Aether.Physics2D.Collision;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -19,6 +20,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
     {
         private Border _border;
         private Body _compound;
+        private Vector2 _polygonSize;
         private Sprite _objectSprite;
 
         #region Demo description
@@ -62,24 +64,39 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             World.Gravity = Vector2.Zero;
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             List<Vertices> tracedObject = Framework.Content.Load<List<Vertices>>("Pipeline/Object");
+
+            //scale the vertices from graphics space to sim space
+            Vector2 vertScale = new Vector2(1f / 24f);
+            AABB aabb = new AABB();
+            foreach (Vertices vertices in tracedObject)
+            {
+                vertices.Scale(new Vector2(1f, -1f));
+                vertices.Translate(new Vector2(0f, 0f));
+
+                var vaabb = vertices.GetAABB();
+                aabb.Combine(ref vaabb);
+            }
+            _polygonSize = new Vector2(aabb.Width, aabb.Height);
 
             // Create a single body with multiple fixtures
             _compound = World.CreateCompoundPolygon(tracedObject, 1f, Vector2.Zero, 0, BodyType.Dynamic);
 
             SetUserAgent(_compound, 200f, 200f);
-            _objectSprite = new Sprite(ContentWrapper.GetTexture("Logo"), ContentWrapper.CalculateOrigin(_compound));
+            _objectSprite = new Sprite(ContentWrapper.GetTexture("Logo"), ContentWrapper.CalculateOrigin(_compound, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            Sprites.Draw(_objectSprite.Image, ConvertUnits.ToDisplayUnits(_compound.Position), null, Color.White, _compound.Rotation, _objectSprite.Origin, 1f, SpriteEffects.None, 0f);
-            Sprites.End();
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+            SpriteBatch.Draw(_objectSprite.Texture, _compound.Position, null, Color.White, _compound.Rotation, _objectSprite.Origin, _polygonSize * _objectSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

@@ -218,14 +218,14 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             }
             Quads.End();
 
-            Sprites.Begin();
+            SpriteBatch.Begin();
             foreach (OptionEntry entry in _optionEntries)
             {
-                Sprites.DrawString(_font, entry.Text, entry.Position + Vector2.One + _optionTextOffset, ContentWrapper.Black * TransitionAlpha, 0f, entry.Origin, entry.Scale, SpriteEffects.None, 0f);
-                Sprites.DrawString(_font, entry.Text, entry.Position + _optionTextOffset, entry.TextColor * TransitionAlpha, 0f, entry.Origin, entry.Scale, SpriteEffects.None, 0f);
-                Sprites.Draw(_checkmark, entry.Position - _optionEntrySize / 2f + _optionCheckOffset, Color.White * entry.CheckedFade);
+                SpriteBatch.DrawString(_font, entry.Text, entry.Position + Vector2.One + _optionTextOffset, ContentWrapper.Black * TransitionAlpha, 0f, entry.Origin, entry.Scale, SpriteEffects.None, 0f);
+                SpriteBatch.DrawString(_font, entry.Text, entry.Position + _optionTextOffset, entry.TextColor * TransitionAlpha, 0f, entry.Origin, entry.Scale, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_checkmark, entry.Position - _optionEntrySize / 2f + _optionCheckOffset, Color.White * entry.CheckedFade);
             }
-            Sprites.End();
+            SpriteBatch.End();
         }
     }
 }

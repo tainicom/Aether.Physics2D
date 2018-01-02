@@ -5,6 +5,9 @@
 		<Size>10</Size>
 		<Spacing>2</Spacing>
 		<Style>Bold</Style>
+
+    <DefaultCharacter>�</DefaultCharacter>
+    
 		<CharacterRegions>
 			<CharacterRegion>
 				<Start>f</Start>

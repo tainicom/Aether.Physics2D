@@ -22,11 +22,11 @@ namespace tainicom.Aether.Physics2D.Samples
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
+            _graphics.PreparingDeviceSettings += _graphics_PreparingDeviceSettings;
             _graphics.PreferMultiSampling = true;
 #if WINDOWS
             _graphics.PreferredBackBufferWidth = 1280;
             _graphics.PreferredBackBufferHeight = 720;
-            ConvertUnits.SetDisplayUnitToSimUnitRatio(24f);
             IsFixedTimeStep = true;
 #elif WINDOWS_PHONE
             _graphics.PreferredBackBufferWidth = 800;
@@ -51,6 +51,16 @@ namespace tainicom.Aether.Physics2D.Samples
             Components.Add(frameRateCounter);
         }
 
+        void _graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
+        {
+            // unlock the 30 fps limit. 60fps (if possible)
+            e.GraphicsDeviceInformation.PresentationParameters.PresentationInterval = PresentInterval.One;
+
+            // set HiDef Profile if supported
+            if (e.GraphicsDeviceInformation.Adapter.IsProfileSupported(GraphicsProfile.HiDef))
+                e.GraphicsDeviceInformation.GraphicsProfile = GraphicsProfile.HiDef;
+        }
+
         public ScreenManager ScreenManager { get; set; }
 
         /// <summary>
@@ -63,6 +73,10 @@ namespace tainicom.Aether.Physics2D.Samples
         {
             base.Initialize();
 
+            // enable multithreading
+            Settings.VelocityConstraintsMultithreadThreshold = 64;
+            Settings.PositionConstraintsMultithreadThreshold = 64;
+
             SimpleDemo1 simple1 = new SimpleDemo1();
             SimpleDemo2 simple2 = new SimpleDemo2();
             SimpleDemo3 simple3 = new SimpleDemo3();
@@ -72,12 +86,14 @@ namespace tainicom.Aether.Physics2D.Samples
             SimpleDemo7 simple7 = new SimpleDemo7();
             SimpleDemo8 simple8 = new SimpleDemo8();
             SimpleDemo9 simple9 = new SimpleDemo9();
+            SimpleDemo10 simple10 = new SimpleDemo10();
 
             AdvancedDemo1 advanced1 = new AdvancedDemo1();
             AdvancedDemo2 advanced2 = new AdvancedDemo2();
             AdvancedDemo3 advanced3 = new AdvancedDemo3();
             AdvancedDemo4 advanced4 = new AdvancedDemo4();
             AdvancedDemo5 advanced5 = new AdvancedDemo5();
+            AdvancedDemo6 advanced6 = new AdvancedDemo6();
 
             GameDemo1 game1 = new GameDemo1();
 
@@ -93,6 +109,7 @@ namespace tainicom.Aether.Physics2D.Samples
             menuScreen.AddMenuItem(simple7.GetTitle(), EntryType.Screen, simple7);
             menuScreen.AddMenuItem(simple8.GetTitle(), EntryType.Screen, simple8);
             menuScreen.AddMenuItem(simple9.GetTitle(), EntryType.Screen, simple9);
+            menuScreen.AddMenuItem(simple10.GetTitle(), EntryType.Screen, simple10);
 
             menuScreen.AddMenuItem("Advanced Samples", EntryType.Separator, null);
             menuScreen.AddMenuItem(advanced1.GetTitle(), EntryType.Screen, advanced1);
@@ -100,6 +117,7 @@ namespace tainicom.Aether.Physics2D.Samples
             menuScreen.AddMenuItem(advanced3.GetTitle(), EntryType.Screen, advanced3);
             menuScreen.AddMenuItem(advanced4.GetTitle(), EntryType.Screen, advanced4);
             menuScreen.AddMenuItem(advanced5.GetTitle(), EntryType.Screen, advanced5);
+            menuScreen.AddMenuItem(advanced6.GetTitle(), EntryType.Screen, advanced6);
 
             menuScreen.AddMenuItem("Game Samples", EntryType.Separator, null);
             menuScreen.AddMenuItem(game1.GetTitle(), EntryType.Screen, game1);

@@ -107,6 +107,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             Camera.Update(gameTime);
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            DebugView.UpdatePerformanceGraph(World.UpdateTime);
         }
 
         public override void HandleInput(InputHelper input, GameTime gameTime)
@@ -228,8 +230,6 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public override void Draw(GameTime gameTime)
         {
-            Matrix projection = Camera.DebugProjection;
-            Matrix view = Camera.DebugView;
 
             if (RenderDebug)
             {
@@ -238,7 +238,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     DebugView.Flags = _flags;
                     _flagsChanged = false;
                 }
-                DebugView.RenderDebugData(ref projection, ref view);
+                DebugView.RenderDebugData(Camera.Projection, Camera.View);
             }
             base.Draw(gameTime);
         }

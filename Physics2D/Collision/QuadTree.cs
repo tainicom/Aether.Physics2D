@@ -15,10 +15,10 @@ namespace tainicom.Aether.Physics2D.Collision
         public AABB Span;
         public T Value;
 
-        public Element(T value, AABB span)
+        public Element(AABB span)
         {
             Span = span;
-            Value = value;
+            Value = default(T);
             Parent = null;
         }
     }

@@ -24,7 +24,6 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_ACTIVE_CONTACT_SET
 
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -182,7 +181,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Friction = Settings.MixFriction(FixtureA.Friction, FixtureB.Friction);
         }
 
-        private Contact(Fixture fA, int indexA, Fixture fB, int indexB)
+        protected Contact(Fixture fA, int indexA, Fixture fB, int indexB)
         {
             Reset(fA, indexA, fB, indexB);
         }
@@ -428,11 +427,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
 
-        internal static Contact Create()
-        {            
-            return new Contact(null, 0, null, 0);
-        }
-
         internal static Contact Create(Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
         {
             ShapeType type1 = fixtureA.Shape.ShapeType;
@@ -475,9 +469,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         internal void Destroy()
         {
-#if USE_ACTIVE_CONTACT_SET
-            FixtureA.Body.World.ContactManager.RemoveActiveContact(this);
-#endif
             FixtureA.Body.World._contactPool.Enqueue(this);
 
             if (Manifold.PointCount > 0 && FixtureA.IsSensor == false && FixtureB.IsSensor == false)

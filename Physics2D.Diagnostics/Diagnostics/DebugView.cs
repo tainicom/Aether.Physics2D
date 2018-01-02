@@ -66,6 +66,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         private StringBuilder _debugPanelSbUpdate = new StringBuilder();
 
         //Performance graph
+        private bool _updatePerformanceGraphCalled = false;
         public bool AdaptiveLimits = true;
         public int ValuesToGraph = 500;
         public TimeSpan MinimumValue;
@@ -140,8 +141,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 foreach (Body b in World.BodyList)
                 {
-                    Transform xf;
-                    b.GetTransform(out xf);
+                    Transform xf = b.GetTransform();
                     foreach (Fixture f in b.FixtureList)
                     {
                         if (b.Enabled == false)
@@ -191,8 +191,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                         PolygonShape polygon = f.Shape as PolygonShape;
                         if (polygon != null)
                         {
-                            Transform xf;
-                            body.GetTransform(out xf);
+                            Transform xf = body.GetTransform();
 
                             for (int i = 0; i < polygon.Vertices.Count; i++)
                             {
@@ -240,8 +239,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 foreach (Body b in World.BodyList)
                 {
-                    Transform xf;
-                    b.GetTransform(out xf);
+                    Transform xf = b.GetTransform();
                     xf.p = b.WorldCenter;
                     DrawTransform(ref xf);
                 }
@@ -268,11 +266,6 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         private void DrawPerformanceGraph()
         {
-            _graphValues.Add(World.UpdateTime);
-
-            if (_graphValues.Count > ValuesToGraph + 1)
-                _graphValues.RemoveAt(0);
-
             float x = PerformancePanelBounds.X;
             float deltaX = PerformancePanelBounds.Width / (float)ValuesToGraph;
             float yScale = PerformancePanelBounds.Bottom - (float)PerformancePanelBounds.Top;
@@ -328,6 +321,16 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             DrawSolidPolygon(_background, 4, Color.DarkGray, true);
         }
 
+        public void UpdatePerformanceGraph(TimeSpan updateTime)
+        {
+            _graphValues.Add(updateTime);
+
+            if (_graphValues.Count > ValuesToGraph + 1)
+                _graphValues.RemoveAt(0);
+
+            _updatePerformanceGraphCalled = true;
+        }
+
         private void DrawDebugPanel()
         {
             int fixtureCount = 0;
@@ -378,16 +381,14 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             Body b1 = joint.BodyA;
             Body b2 = joint.BodyB;
-            Transform xf1;
-            b1.GetTransform(out xf1);
+            Transform xf1 = b1.GetTransform();
 
             Vector2 x2 = Vector2.Zero;
 
             // WIP David
             if (!joint.IsFixedType())
             {
-                Transform xf2;
-                b2.GetTransform(out xf2);
+                Transform xf2 = b2.GetTransform();
                 x2 = xf2.p;
             }
 
@@ -462,7 +463,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                         Vector2 center = Transform.Multiply(circle.Position, ref xf);
                         float radius = circle.Radius;
-                        Vector2 axis = Complex.Multiply(new Vector2(1.0f, 0.0f), ref xf.q);
+                        Vector2 axis = xf.q.ToVector2();
 
                         DrawSolidCircle(center, radius, axis, color);
                     }
@@ -508,12 +509,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             }
         }
 
-        public override void DrawPolygon(Vector2[] vertices, int count, float red, float green, float blue, bool closed = true)
-        {
-            DrawPolygon(vertices, count, new Color(red, green, blue), closed);
-        }
-
-        public void DrawPolygon(Vector2[] vertices, int count, Color color, bool closed = true)
+        public override void DrawPolygon(Vector2[] vertices, int count, Color color, bool closed = true)
         {
             if (!_primitiveBatch.IsReady())
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
@@ -530,9 +526,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             }
         }
 
-        public override void DrawSolidPolygon(Vector2[] vertices, int count, float red, float green, float blue)
+        public override void DrawSolidPolygon(Vector2[] vertices, int count, Color color)
         {
-            DrawSolidPolygon(vertices, count, new Color(red, green, blue));
+            DrawSolidPolygon(vertices, count, color);
         }
 
         public void DrawSolidPolygon(Vector2[] vertices, int count, Color color, bool outline = true)
@@ -559,12 +555,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 DrawPolygon(vertices, count, color);
         }
 
-        public override void DrawCircle(Vector2 center, float radius, float red, float green, float blue)
-        {
-            DrawCircle(center, radius, new Color(red, green, blue));
-        }
-
-        public void DrawCircle(Vector2 center, float radius, Color color)
+        public override void DrawCircle(Vector2 center, float radius, Color color)
         {
             if (!_primitiveBatch.IsReady())
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
@@ -585,12 +576,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             _primitiveBatch.AddVertex(center_vS, color, PrimitiveType.LineList);
         }
 
-        public override void DrawSolidCircle(Vector2 center, float radius, Vector2 axis, float red, float green, float blue)
-        {
-            DrawSolidCircle(center, radius, axis, new Color(red, green, blue));
-        }
-
-        public void DrawSolidCircle(Vector2 center, float radius, Vector2 axis, Color color)
+        public override void DrawSolidCircle(Vector2 center, float radius, Vector2 axis, Color color)
         {
             if (!_primitiveBatch.IsReady())
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
@@ -624,12 +610,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             DrawSegment(center, center + axis * radius, color);
         }
 
-        public override void DrawSegment(Vector2 start, Vector2 end, float red, float green, float blue)
-        {
-            DrawSegment(start, end, new Color(red, green, blue));
-        }
-
-        public void DrawSegment(Vector2 start, Vector2 end, Color color)
+        public override void DrawSegment(Vector2 start, Vector2 end, Color color)
         {
             if (!_primitiveBatch.IsReady())
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
@@ -794,6 +775,11 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         {
             if (!Enabled)
                 return;
+
+            if (!_updatePerformanceGraphCalled)
+                UpdatePerformanceGraph(World.UpdateTime);
+            _updatePerformanceGraphCalled = false;
+
 
             //Nothing is enabled - don't draw the debug view.
             if (Flags == 0)

@@ -5,14 +5,15 @@
 
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.Decomposition;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
 {
@@ -39,11 +40,10 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
             _effect = new BasicEffect(_device);
         }
 
-        public static Vector2 CalculateOrigin(Body b)
+        public static Vector2 CalculateOrigin(Body b, float pixelsPerMeter)
         {
             Vector2 lBound = new Vector2(float.MaxValue);
-            Transform trans;
-            b.GetTransform(out trans);
+            Transform trans = b.GetTransform();
 
             for (int i = 0; i < b.FixtureList.Count; ++i)
             {
@@ -57,7 +57,7 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
 
             // calculate body offset from its center and add a 1 pixel border
             // because we generate the textures a little bigger than the actual body's fixtures
-            return ConvertUnits.ToDisplayUnits(b.Position - lBound) + new Vector2(1f);
+            return pixelsPerMeter * (b.Position - lBound) + new Vector2(1f);
         }
 
         public void LoadContent(ContentManager contentManager)
@@ -74,21 +74,21 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
             switch (shape.ShapeType)
             {
                 case ShapeType.Circle:
-                    return CircleTexture(shape.Radius, type, color, materialScale);
+                    return CircleTexture(shape.Radius, type, color, materialScale, 24f);
                 case ShapeType.Polygon:
-                    return TextureFromVertices(((PolygonShape)shape).Vertices, type, color, materialScale);
+                    return TextureFromVertices(((PolygonShape)shape).Vertices, type, color, materialScale, 24f);
                 default:
                     throw new NotSupportedException("The specified shape type is not supported.");
             }
         }
 
-        public Texture2D TextureFromVertices(Vertices vertices, MaterialType type, Color color, float materialScale)
+        public Texture2D TextureFromVertices(Vertices vertices, MaterialType type, Color color, float materialScale, float pixelsPerMeter)
         {
             // copy vertices
             Vertices verts = new Vertices(vertices);
 
             // scale to display units (i.e. pixels) for rendering to texture
-            Vector2 scale = ConvertUnits.ToDisplayUnits(Vector2.One);
+            Vector2 scale = Vector2.One * pixelsPerMeter;
             verts.Scale(ref scale);
 
             // translate the boundingbox center to the texture center
@@ -139,20 +139,20 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
             return RenderTexture((int)vertsSize.X, (int)vertsSize.Y, _materials[type], verticesFill, verticesOutline);
         }
 
-        public Texture2D CircleTexture(float radius, MaterialType type, Color color, float materialScale)
+        public Texture2D CircleTexture(float radius, MaterialType type, Color color, float materialScale, float pixelsPerMeter)
         {
-            return EllipseTexture(radius, radius, type, color, materialScale);
+            return EllipseTexture(radius, radius, type, color, materialScale, pixelsPerMeter);
         }
 
-        public Texture2D EllipseTexture(float radiusX, float radiusY, MaterialType type, Color color, float materialScale)
+        public Texture2D EllipseTexture(float radiusX, float radiusY, MaterialType type, Color color, float materialScale, float pixelsPerMeter)
         {
             VertexPositionColorTexture[] verticesFill = new VertexPositionColorTexture[3 * (CircleSegments - 2)];
             VertexPositionColor[] verticesOutline = new VertexPositionColor[2 * CircleSegments];
             const float segmentSize = MathHelper.TwoPi / CircleSegments;
             float theta = segmentSize;
 
-            radiusX = ConvertUnits.ToDisplayUnits(radiusX);
-            radiusY = ConvertUnits.ToDisplayUnits(radiusY);
+            radiusX = radiusX * pixelsPerMeter;
+            radiusY = radiusY * pixelsPerMeter;
             materialScale /= _materials[type].Width;
 
             Vector2 start = new Vector2(radiusX, 0f);
@@ -211,20 +211,20 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
 
             _device.SetRenderTarget(texture);
             _device.Clear(Color.Transparent);
-            _effect.Projection = Matrix.CreateOrthographic(width + 2f, -height - 2f, 0f, 1f);
+            _effect.Projection = Matrix.CreateOrthographic(width + 2f, height + 2f, 0f, 1f);
             _effect.View = halfPixelOffset;
             // render shape;
             _effect.TextureEnabled = true;
             _effect.Texture = material;
             _effect.VertexColorEnabled = true;
-            _effect.Techniques[0].Passes[0].Apply();
+            _effect.CurrentTechnique.Passes[0].Apply();
             for (int i = 0; i < verticesFill.Count; ++i)
             {
                 _device.DrawUserPrimitives(PrimitiveType.TriangleList, verticesFill[i], 0, verticesFill[i].Length / 3);
             }
             // render outline;
             _effect.TextureEnabled = false;
-            _effect.Techniques[0].Passes[0].Apply();
+            _effect.CurrentTechnique.Passes[0].Apply();
             _device.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
             _device.SetRenderTarget(null);
             return texture;

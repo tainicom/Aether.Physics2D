@@ -56,7 +56,7 @@ namespace tainicom.Aether.Physics2D.Controllers
 
                 foreach (Body controllerBody in Bodies)
                 {
-                    if (worldBody == controllerBody || (worldBody.IsStatic && controllerBody.IsStatic) || !controllerBody.Enabled)
+                    if (worldBody == controllerBody || (worldBody.BodyType == BodyType.Static && controllerBody.BodyType == BodyType.Static) || !controllerBody.Enabled)
                         continue;
 
                     Vector2 d = controllerBody.Position - worldBody.Position;

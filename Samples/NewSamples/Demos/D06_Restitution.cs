@@ -53,11 +53,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            Vector2 position = new Vector2(-15f, -8f);
+            Vector2 position = new Vector2(-15f, 8f);
             float restitution = 0f;
 
             for (int i = 0; i < 6; ++i)
@@ -70,21 +70,23 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             }
 
             // create sprite based on body
-            _circleSprite = new Sprite(ContentWrapper.TextureFromShape(_circle[0].FixtureList[0].Shape, "Square", ContentWrapper.Green, ContentWrapper.Lime, ContentWrapper.Black, 1f));
+            _circleSprite = new Sprite(ContentWrapper.TextureFromShape(_circle[0].FixtureList[0].Shape, "Square", ContentWrapper.Green, ContentWrapper.Lime, ContentWrapper.Black, 1f, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+                        
             for (int i = 0; i < 6; ++i)
             {
-                Sprites.Draw(_circleSprite.Image, ConvertUnits.ToDisplayUnits(_circle[i].Position), null, Color.White, _circle[i].Rotation, _circleSprite.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_circleSprite.Texture, _circle[i].Position, null, Color.White, _circle[i].Rotation, _circleSprite.Origin, new Vector2(2f * 1.5f) * _circleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
 
-            Sprites.End();
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

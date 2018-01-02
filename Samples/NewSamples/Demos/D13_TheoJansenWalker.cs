@@ -58,19 +58,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             HasCursor = false;
 
-            World.Gravity = new Vector2(0, 9.82f);
+            World.Gravity = new Vector2(0, -9.82f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             CircleShape shape = new CircleShape(0.25f, 1);
-            _grain = new Sprite(ContentWrapper.CircleTexture(0.25f, ContentWrapper.Gold, ContentWrapper.Grey));
+            _grain = new Sprite(ContentWrapper.CircleTexture(0.25f, ContentWrapper.Gold, ContentWrapper.Grey, 24f));
 
             _circles = new Body[48];
-            for (int i = 0; i < 48; i++)
+            for (int i = 0; i < _circles.Length; i++)
             {
                 _circles[i] = World.CreateBody();
                 _circles[i].BodyType = BodyType.Dynamic;
-                _circles[i].Position = new Vector2(-24f + 1f * i, 10f);
+                _circles[i].Position = new Vector2(-24f + 1f * i, -10f);
                 _circles[i].CreateFixture(shape);
             }
 
@@ -87,15 +87,18 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            for (int i = 0; i < 48; i++)
-            {
-                Sprites.Draw(_grain.Image, ConvertUnits.ToDisplayUnits(_circles[i].Position), null, Color.White, _circles[i].Rotation, _grain.Origin, 1f, SpriteEffects.None, 1f);
-            }
-            Sprites.End();
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
 
-            _walker.Draw(Sprites, Lines, Camera);
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+            for (int i = 0; i < _circles.Length; i++)
+            {   
+                SpriteBatch.Draw(_grain.Texture, _circles[i].Position, null, Color.White, _circles[i].Rotation, _grain.Origin, new Vector2(2f * 0.25f) * _grain.TexelSize, SpriteEffects.FlipVertically, 0f);
+            }
+            SpriteBatch.End();
+                        
+            _walker.Draw(SpriteBatch, BatchEffect, LineBatch, Camera);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

@@ -19,8 +19,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
     {
         private Border _border;
         private Sprite _rectangleSprite;
+        private Vector2 _rectangleSize = new Vector2(4f, 4f);
         private Body _rectangles;
-        private Vector2 _offset;
+        private Vector2 _offset = new Vector2(2f, 0f);
 
         #region IDemoScreen Members
 
@@ -65,13 +66,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             _border = new Border(World, ScreenManager, Camera);
 
-            Vertices rect1 = PolygonTools.CreateRectangle(2f, 2f);
-            Vertices rect2 = PolygonTools.CreateRectangle(2f, 2f);
+            Vertices rect1 = PolygonTools.CreateRectangle(_rectangleSize.X/2f, _rectangleSize.Y/2f);
+            Vertices rect2 = PolygonTools.CreateRectangle(_rectangleSize.X/2f, _rectangleSize.Y/2f);
 
-            Vector2 trans = new Vector2(-2f, 0f);
-            rect1.Translate(ref trans);
-            trans = new Vector2(2f, 0f);
-            rect2.Translate(ref trans);
+            rect1.Translate(-_offset);
+            rect2.Translate(_offset);
 
             List<Vertices> vertices = new List<Vertices>(2);
             vertices.Add(rect1);
@@ -84,18 +83,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             // create sprite based on rectangle fixture
             _rectangleSprite = new Sprite(ScreenManager.Assets.TextureFromVertices(rect1, MaterialType.Squares,
-                                                                                   Color.Orange, 1f));
-            _offset = new Vector2(ConvertUnits.ToDisplayUnits(2f), 0f);
+                                                                                   Color.Orange, 1f, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.View);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             // draw first rectangle
-            ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, ConvertUnits.ToDisplayUnits(_rectangles.Position), null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin + _offset, 1f, SpriteEffects.None, 0f);
+            ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, _rectangles.Position, null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin + _offset * _rectangleSprite.Size / _rectangleSize, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
 
             // draw second rectangle
-            ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, ConvertUnits.ToDisplayUnits(_rectangles.Position), null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin - _offset, 1f, SpriteEffects.None, 0f);
+            ScreenManager.SpriteBatch.Draw(_rectangleSprite.Texture, _rectangles.Position, null, Color.White, _rectangles.Rotation, _rectangleSprite.Origin - _offset * _rectangleSprite.Size / _rectangleSize, _rectangleSize * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             ScreenManager.SpriteBatch.End();
             _border.Draw();
             base.Draw(gameTime);

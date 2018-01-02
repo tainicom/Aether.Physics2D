@@ -7,6 +7,7 @@ using System.Text;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -50,20 +51,22 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0, 9.82f);
+            World.Gravity = new Vector2(0, -9.82f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            _webOfGoo = new WebOfGoo(World, Vector2.Zero, ConvertUnits.ToSimUnits(12), 5, 12);
+            _webOfGoo = new WebOfGoo(World, Vector2.Zero, 0.5f, 5, 12);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            _webOfGoo.Draw(Sprites);
-            Sprites.End();
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+            _webOfGoo.Draw(SpriteBatch);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

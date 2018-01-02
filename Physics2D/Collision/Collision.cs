@@ -444,13 +444,10 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <returns>True if they are overlapping.</returns>
         public static bool TestOverlap(ref AABB a, ref AABB b)
         {
-            Vector2 d1 = b.LowerBound - a.UpperBound;
-            Vector2 d2 = a.LowerBound - b.UpperBound;
-
-            if (d1.X > 0.0f || d1.Y > 0.0f)
+            if (b.LowerBound.X > a.UpperBound.X || b.LowerBound.Y > a.UpperBound.Y)
                 return false;
 
-            if (d2.X > 0.0f || d2.Y > 0.0f)
+            if (a.LowerBound.X > b.UpperBound.X || a.LowerBound.Y > b.UpperBound.Y)
                 return false;
 
             return true;
@@ -1715,7 +1712,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             for (int i = 0; i < count2; ++i)
             {
-                float dot = Vector2.Dot(vertices2[i], normal1);
+                float dot = MathUtils.Dot(vertices2[i], ref normal1);
                 if (dot < minDot)
                 {
                     minDot = dot;
@@ -1725,7 +1722,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             Vector2 v1 = Transform.Multiply(vertices1[edge1], ref xf1To2);
             Vector2 v2 = vertices2[index];
-            float separation = Vector2.Dot(v2 - v1, normal1);
+            float separation = MathUtils.Dot(v2 - v1, ref normal1);
 
             return separation;
         }
@@ -1755,7 +1752,7 @@ namespace tainicom.Aether.Physics2D.Collision
             float maxDot = -Settings.MaxFloat;
             for (int i = 0; i < count1; ++i)
             {
-                float dot = Vector2.Dot(normals1[i], dLocal1);
+                float dot = MathUtils.Dot(normals1[i], ref dLocal1);
                 if (dot > maxDot)
                 {
                     maxDot = dot;

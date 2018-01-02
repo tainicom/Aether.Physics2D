@@ -8,6 +8,7 @@ using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -65,7 +66,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             World.Gravity = Vector2.Zero;
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             // Cat1=Circles, Cat2=Rectangles, Cat3=Gears, Cat4=Stars
             _agent = new Agent(World, Vector2.Zero);
@@ -74,52 +75,54 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             _agent.CollisionCategories = Category.All & ~Category.Cat4;
             _agent.CollidesWith = Category.All & ~Category.Cat4;
 
-            Vector2 startPosition = new Vector2(-20f, -11f);
-            Vector2 endPosition = new Vector2(20, -11f);
+            Vector2 startPosition = new Vector2(-20f, 11f);
+            Vector2 endPosition = new Vector2(20, 11f);
             _circles = new Objects(World, startPosition, endPosition, 15, 0.6f, ObjectType.Circle);
 
             // Collide with itself only
-            _circles.CollisionCategories = Category.Cat1;
-            _circles.CollidesWith = Category.Cat1;
+            _circles.SetCollisionCategories(Category.Cat1);
+            _circles.SetCollidesWith(Category.Cat1);
 
-            startPosition = new Vector2(-20, 11f);
-            endPosition = new Vector2(20, 11f);
+            startPosition = new Vector2(-20, -11f);
+            endPosition = new Vector2(20, -11f);
             _rectangles = new Objects(World, startPosition, endPosition, 15, 1.2f, ObjectType.Rectangle);
 
             // Collides with itself only
-            _rectangles.CollisionCategories = Category.Cat2;
-            _rectangles.CollidesWith = Category.Cat2;
+            _rectangles.SetCollisionCategories(Category.Cat2);
+            _rectangles.SetCollidesWith(Category.Cat2);
 
-            startPosition = new Vector2(-20, 7);
-            endPosition = new Vector2(-20, -7);
+            startPosition = new Vector2(-20, -7);
+            endPosition = new Vector2(-20, 7);
             _gears = new Objects(World, startPosition, endPosition, 5, 0.6f, ObjectType.Gear);
 
             // Collides with stars
-            _gears.CollisionCategories = Category.Cat3;
-            _gears.CollidesWith = Category.Cat3 | Category.Cat4;
+            _gears.SetCollisionCategories(Category.Cat3);
+            _gears.SetCollidesWith(Category.Cat3 | Category.Cat4);
 
-            startPosition = new Vector2(20, 7);
-            endPosition = new Vector2(20, -7);
+            startPosition = new Vector2(20, -7);
+            endPosition = new Vector2(20, 7);
             _stars = new Objects(World, startPosition, endPosition, 5, 0.6f, ObjectType.Star);
 
             // Collides with gears
-            _stars.CollisionCategories = Category.Cat4;
-            _stars.CollidesWith = Category.Cat3 | Category.Cat4;
+            _stars.SetCollisionCategories(Category.Cat4);
+            _stars.SetCollidesWith(Category.Cat3 | Category.Cat4);
 
             SetUserAgent(_agent.Body, 1000f, 400f);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            _agent.Draw(Sprites);
-            _circles.Draw(Sprites);
-            _rectangles.Draw(Sprites);
-            _stars.Draw(Sprites);
-            _gears.Draw(Sprites);
-            Sprites.End();
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+            _agent.Draw(SpriteBatch);
+            _circles.Draw(SpriteBatch);
+            _rectangles.Draw(SpriteBatch);
+            _stars.Draw(SpriteBatch);
+            _gears.Draw(SpriteBatch);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

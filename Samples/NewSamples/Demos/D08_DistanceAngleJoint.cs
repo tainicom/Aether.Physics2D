@@ -63,29 +63,29 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             _obstacles = World.CreateBody();
-            _obstacles.CreateEdge(new Vector2(-16f, -1f), new Vector2(-14f, 1f));
-            _obstacles.CreateEdge(new Vector2(-14f, 1f), new Vector2(-12f, -1f));
+            _obstacles.CreateEdge(new Vector2(-16f, 1f), new Vector2(-14f, -1f));
+            _obstacles.CreateEdge(new Vector2(-14f, -1f), new Vector2(-12f, 1f));
 
-            _obstacles.CreateEdge(new Vector2(14f, -1f), new Vector2(12f, 5f));
-            _obstacles.CreateEdge(new Vector2(14f, -1f), new Vector2(16f, 5f));
+            _obstacles.CreateEdge(new Vector2(14f, 1f), new Vector2(12f, -5f));
+            _obstacles.CreateEdge(new Vector2(14f, 1f), new Vector2(16f, -5f));
 
             _angleBody[0] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _angleBody[0].BodyType = BodyType.Dynamic;
             _angleBody[0].SetFriction(0.7f);
-            _angleBody[0].Position = new Vector2(-15f, -5f);
+            _angleBody[0].Position = new Vector2(-15f, 5f);
             _angleBody[1] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _angleBody[1].BodyType = BodyType.Dynamic;
             _angleBody[1].SetFriction(0.7f);
-            _angleBody[1].Position = new Vector2(-18f, 5f);
+            _angleBody[1].Position = new Vector2(-18f, -5f);
             _angleBody[2] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _angleBody[2].BodyType = BodyType.Dynamic;
             _angleBody[2].SetFriction(0.7f);
-            _angleBody[2].Position = new Vector2(-10f, 5f);
+            _angleBody[2].Position = new Vector2(-10f, -5f);
 
             World.Add(new AngleJoint(_angleBody[0], _angleBody[1]));
             World.Add(new AngleJoint(_angleBody[0], _angleBody[2]));
@@ -93,19 +93,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             _distanceBody[0] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[0].BodyType = BodyType.Dynamic;
             _distanceBody[0].SetFriction(0.7f);
-            _distanceBody[0].Position = new Vector2(11.5f, -4f);
+            _distanceBody[0].Position = new Vector2(11.5f, 4f);
             _distanceBody[1] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[1].BodyType = BodyType.Dynamic;
             _distanceBody[1].SetFriction(0.7f);
-            _distanceBody[1].Position = new Vector2(16.5f, -4f);
+            _distanceBody[1].Position = new Vector2(16.5f, 4f);
             _distanceBody[2] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[2].BodyType = BodyType.Dynamic;
             _distanceBody[2].SetFriction(0.7f);
-            _distanceBody[2].Position = new Vector2(11.5f, -6f);
+            _distanceBody[2].Position = new Vector2(11.5f, 6f);
             _distanceBody[3] = World.CreateRectangle(1.5f, 1.5f, 1f);
             _distanceBody[3].BodyType = BodyType.Dynamic;
             _distanceBody[3].SetFriction(0.7f);
-            _distanceBody[3].Position = new Vector2(16.5f, -6f);
+            _distanceBody[3].Position = new Vector2(16.5f, 6f);
 
             DistanceJoint softDistance = new DistanceJoint(_distanceBody[0], _distanceBody[1], Vector2.Zero, Vector2.Zero, false);
             softDistance.DampingRatio = 0.3f;
@@ -114,44 +114,41 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             World.Add(new DistanceJoint(_distanceBody[2], _distanceBody[3], Vector2.Zero, Vector2.Zero, false));
 
             // create sprites based on bodies
-            _angleCube = new Sprite(ContentWrapper.TextureFromShape(_angleBody[0].FixtureList[0].Shape, "Square", ContentWrapper.Gold, ContentWrapper.Orange, ContentWrapper.Grey, 1f));
-            _distanceCube = new Sprite(ContentWrapper.TextureFromShape(_distanceBody[0].FixtureList[0].Shape, "Stripe", ContentWrapper.Red, ContentWrapper.Blue, ContentWrapper.Grey, 4f));
+            _angleCube = new Sprite(ContentWrapper.TextureFromShape(_angleBody[0].FixtureList[0].Shape, "Square", ContentWrapper.Gold, ContentWrapper.Orange, ContentWrapper.Grey, 1f, 24f));
+            _distanceCube = new Sprite(ContentWrapper.TextureFromShape(_distanceBody[0].FixtureList[0].Shape, "Stripe", ContentWrapper.Red, ContentWrapper.Blue, ContentWrapper.Grey, 4f, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Lines.Begin(Camera.SimProjection, Camera.SimView);
-
+            LineBatch.Begin(Camera.Projection, Camera.View);
             foreach (Fixture f in _obstacles.FixtureList)
             {
-                Lines.DrawLine(_distanceBody[0].Position, _distanceBody[1].Position, ContentWrapper.Black);
-                Lines.DrawLine(_distanceBody[2].Position, _distanceBody[3].Position, ContentWrapper.Black);
+                LineBatch.DrawLine(_distanceBody[0].Position, _distanceBody[1].Position, ContentWrapper.Black);
+                LineBatch.DrawLine(_distanceBody[2].Position, _distanceBody[3].Position, ContentWrapper.Black);
             }
+            LineBatch.End();
 
-            Lines.End();
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
             for (int i = 0; i < 3; i++)
             {
-                Sprites.Draw(_angleCube.Image, ConvertUnits.ToDisplayUnits(_angleBody[i].Position), null, Color.White, _angleBody[i].Rotation, _angleCube.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_angleCube.Texture, _angleBody[i].Position, null, Color.White, _angleBody[i].Rotation, _angleCube.Origin, new Vector2(1.5f, 1.5f) * _angleCube.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
-
             for (int i = 0; i < 4; i++)
             {
-                Sprites.Draw(_distanceCube.Image, ConvertUnits.ToDisplayUnits(_distanceBody[i].Position), null, Color.White, _distanceBody[i].Rotation, _distanceCube.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_distanceCube.Texture, _distanceBody[i].Position, null, Color.White, _distanceBody[i].Rotation, _distanceCube.Origin, new Vector2(1.5f, 1.5f) * _distanceCube.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
+            SpriteBatch.End();
 
-            Sprites.End();
-            Lines.Begin(Camera.SimProjection, Camera.SimView);
-            
+            LineBatch.Begin(Camera.Projection, Camera.View);            
             foreach (Fixture f in _obstacles.FixtureList)
             {
-                Lines.DrawLineShape(f.Shape, ContentWrapper.Black);
+                LineBatch.DrawLineShape(f.Shape, ContentWrapper.Black);
             }
+            LineBatch.End();
 
-            Lines.End();
-
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

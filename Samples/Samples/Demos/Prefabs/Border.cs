@@ -15,18 +15,27 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
     public class Border
     {
         private Body _anchor;
+
         private BasicEffect _basicEffect;
         private VertexPositionColorTexture[] _borderVerts;
         private Camera2D _camera;
         private ScreenManager _screenManager;
+
+        public Body Anchor { get { return _anchor; } }
+
 
         public Border(World world, ScreenManager screenManager, Camera2D camera)
         {
             _screenManager = screenManager;
             _camera = camera;
 
-            float halfWidth = ConvertUnits.ToSimUnits(screenManager.GraphicsDevice.Viewport.Width) / 2f - 0.75f;
-            float halfHeight = ConvertUnits.ToSimUnits(screenManager.GraphicsDevice.Viewport.Height) / 2f - 0.75f;
+            var vp = screenManager.GraphicsDevice.Viewport;
+            float height = 30f; // 30 meters height
+            float width = height * vp.AspectRatio;
+            width -= 1.5f; // 1.5 meters border
+            height -= 1.5f;
+            float halfWidth = width / 2f;
+            float halfHeight = height / 2f;
 
             Vertices borders = new Vertices(4);
             borders.Add(new Vector2(-halfWidth, halfHeight));
@@ -87,13 +96,13 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
             device.SamplerStates[0] = SamplerState.AnisotropicWrap;
             device.RasterizerState = RasterizerState.CullNone;
-            _basicEffect.Projection = _camera.SimProjection;
-            _basicEffect.View = _camera.SimView;
+            _basicEffect.Projection = _camera.Projection;
+            _basicEffect.View = _camera.View;
             _basicEffect.CurrentTechnique.Passes[0].Apply();
 
             device.DrawUserPrimitives(PrimitiveType.TriangleList, _borderVerts, 0, 8);
 
-            batch.Begin(_camera.SimProjection, _camera.SimView);
+            batch.Begin(_camera.Projection, _camera.View);
             batch.DrawLineShape(_anchor.FixtureList[0].Shape);
             batch.End();
         }

@@ -59,11 +59,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
             _border = new Border(World, ScreenManager, Camera);
 
-            _agent = new Agent(World, ScreenManager, new Vector2(-6.9f, -11f));
+            _agent = new Agent(World, ScreenManager, new Vector2(-6.9f, 11f));
 
             LoadObstacles();
 
@@ -75,15 +75,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             for (int i = 0; i < 5; ++i)
             {
                 _obstacles[i] = World.CreateRectangle(5f, 1f, 1f);
-                _obstacles[i].IsStatic = true;
+                _obstacles[i].BodyType = BodyType.Static;
                 _obstacles[i].SetRestitution(0.2f);
                 _obstacles[i].SetFriction(0.2f);
             }
 
-            _obstacles[0].Position = new Vector2(-5f, 9f);
-            _obstacles[1].Position = new Vector2(15f, 6f);
-            _obstacles[2].Position = new Vector2(10f, -3f);
-            _obstacles[3].Position = new Vector2(-10f, -9f);
+            _obstacles[0].Position = new Vector2(-5f, -9f);
+            _obstacles[1].Position = new Vector2(15f, -6f);
+            _obstacles[2].Position = new Vector2(10f, 3f);
+            _obstacles[3].Position = new Vector2(-10f, 9f);
             _obstacles[4].Position = new Vector2(-17f, 0f);
 
             // create sprite based on body
@@ -94,13 +94,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.SpriteBatch.Begin(0, null, null, null, null, null, Camera.View);
+            ScreenManager.BatchEffect.View = Camera.View;
+            ScreenManager.BatchEffect.Projection = Camera.Projection;
+            ScreenManager.SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, ScreenManager.BatchEffect);
             for (int i = 0; i < 5; ++i)
             {
-                ScreenManager.SpriteBatch.Draw(_obstacle.Texture, ConvertUnits.ToDisplayUnits(_obstacles[i].Position),
+                ScreenManager.SpriteBatch.Draw(_obstacle.Texture, _obstacles[i].Position,
                                                null,
-                                               Color.White, _obstacles[i].Rotation, _obstacle.Origin, 1f,
-                                               SpriteEffects.None, 0f);
+                                               Color.White, _obstacles[i].Rotation, _obstacle.Origin, new Vector2(5f, 1f) * _obstacle.TexelSize,
+                                               SpriteEffects.FlipVertically, 0f);
             }
             _agent.Draw();
             ScreenManager.SpriteBatch.End();

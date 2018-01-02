@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -13,7 +15,8 @@ namespace tainicom.Aether.Physics2D.Samples
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
-        private SpriteBatch _batch;
+        private SpriteBatch _spriteBatch;
+        private BasicEffect _spriteBatchEffect;
         private KeyboardState _oldKeyState;
         private GamePadState _oldPadState;
         private SpriteFont _font;
@@ -22,16 +25,22 @@ namespace tainicom.Aether.Physics2D.Samples
 
         private Body _circleBody;
         private Body _groundBody;
+        private const float _circleBodyRadius = 0.75f;
+        private Vector2 _groundBodySize = new Vector2(8f, 1f);
+
 
         private Texture2D _circleSprite;
         private Texture2D _groundSprite;
+        private Vector2 _circleSpriteSize;
+        private Vector2 _groundSpriteSize;
+        private Vector2 _circleSpriteOrigin;
+        private Vector2 _groundSpriteOrigin;
 
         // Simple camera controls
+        private Matrix _projection;
         private Matrix _view;
-        private Vector2 _cameraPosition;
-        private Vector2 _screenCenter;
-        private Vector2 _groundOrigin;
-        private Vector2 _circleOrigin;
+        private Vector3 _cameraPosition;
+
 
 
 #if !JOYSTICK
@@ -53,49 +62,48 @@ namespace tainicom.Aether.Physics2D.Samples
 
             Content.RootDirectory = "Content";
 
-            //Create a world with gravity.
-            _world = new World(new Vector2(0, 9.82f));
+            //Create a world
+            _world = new World();
         }
 
         protected override void LoadContent()
         {
-            // Initialize camera controls
-            _view = Matrix.Identity;
-            _cameraPosition = Vector2.Zero;
-            _screenCenter = new Vector2(_graphics.GraphicsDevice.Viewport.Width / 2f, _graphics.GraphicsDevice.Viewport.Height / 2f);
-            _batch = new SpriteBatch(_graphics.GraphicsDevice);
+            // Initialize camera controls 
+            _cameraPosition = Vector3.Zero;
 
-            _font = Content.Load<SpriteFont>("font");
+            _spriteBatch = new SpriteBatch(_graphics.GraphicsDevice);
+            _spriteBatchEffect = new BasicEffect(_graphics.GraphicsDevice);
+            _spriteBatchEffect.TextureEnabled = true;
+            
+             _font = Content.Load<SpriteFont>("font");
 
             // Load sprites
             _circleSprite = Content.Load<Texture2D>("CircleSprite"); //  96px x 96px => 1.5m x 1.5m
             _groundSprite = Content.Load<Texture2D>("GroundSprite"); // 512px x 64px =>   8m x 1m
+                        
+            _groundSpriteSize = new Vector2(_groundSprite.Width, _groundSprite.Height);
+            _circleSpriteSize = new Vector2(_circleSprite.Width, _circleSprite.Height);
 
             /* We need XNA to draw the ground and circle at the center of the shapes */
-            _groundOrigin = new Vector2(_groundSprite.Width / 2f, _groundSprite.Height / 2f);
-            _circleOrigin = new Vector2(_circleSprite.Width / 2f, _circleSprite.Height / 2f);
-
-            // Farseer expects objects to be scaled to MKS (meters, kilos, seconds)
-            // 1 meters equals 64 pixels here
-            ConvertUnits.SetDisplayUnitToSimUnitRatio(64f);
-
+            _groundSpriteOrigin = _groundSpriteSize / 2f;
+            _circleSpriteOrigin = _circleSpriteSize / 2f;
+                        
             /* Circle */
-            // Convert screen center from pixels to meters
-            Vector2 circlePosition = ConvertUnits.ToSimUnits(_screenCenter) + new Vector2(0, -1.5f);
+            Vector2 circlePosition = new Vector2(0, 1.5f);
 
             // Create the circle fixture
-            _circleBody = _world.CreateCircle(ConvertUnits.ToSimUnits(96 / 2f), 1f, circlePosition, BodyType.Dynamic);
+            _circleBody = _world.CreateCircle(_circleBodyRadius, 1f, circlePosition, BodyType.Dynamic);
 
             // Give it some bounce and friction
             _circleBody.SetRestitution(0.3f);
             _circleBody.SetFriction(0.5f);
 
             /* Ground */
-            Vector2 groundPosition = ConvertUnits.ToSimUnits(_screenCenter) + new Vector2(0, 1.25f);
+            Vector2 groundPosition = new Vector2(0, -1.25f);
 
             // Create the ground fixture
-            _groundBody = _world.CreateRectangle(ConvertUnits.ToSimUnits(512f), ConvertUnits.ToSimUnits(64f), 1f, groundPosition);
-            _groundBody.IsStatic = true;
+            _groundBody = _world.CreateRectangle(_groundBodySize.X, _groundBodySize.Y, 1f, groundPosition);
+            _groundBody.BodyType = BodyType.Static;
             _groundBody.SetRestitution(0.3f);
             _groundBody.SetFriction(0.5f);
         }
@@ -107,8 +115,14 @@ namespace tainicom.Aether.Physics2D.Samples
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            HandleGamePad();
-            HandleKeyboard();
+            HandleGamePad(gameTime);
+            HandleKeyboard(gameTime);
+
+            // update camera View Projection
+            var vp = GraphicsDevice.Viewport;
+            var cameraZoomFactor = 12.5f / vp.Width; // zoom out to about ~12.5 meters wide
+            _projection = Matrix.CreateOrthographic(vp.Width * cameraZoomFactor, vp.Height * cameraZoomFactor, 0f, -1f);
+            _view = Matrix.CreateLookAt(_cameraPosition, _cameraPosition + Vector3.Forward, Vector3.Up);
 
             //We update the world
             _world.Step((float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f);
@@ -116,7 +130,7 @@ namespace tainicom.Aether.Physics2D.Samples
             base.Update(gameTime);
         }
 
-        private void HandleGamePad()
+        private void HandleGamePad(GameTime gameTime)
         {
             GamePadState padState = GamePad.GetState(0);
 
@@ -132,40 +146,41 @@ namespace tainicom.Aether.Physics2D.Samples
                 _cameraPosition.X -= padState.ThumbSticks.Right.X;
                 _cameraPosition.Y += padState.ThumbSticks.Right.Y;
 
-                _view = Matrix.CreateTranslation(new Vector3(_cameraPosition - _screenCenter, 0f)) * Matrix.CreateTranslation(new Vector3(_screenCenter, 0f));
 
                 _oldPadState = padState;
             }
         }
 
-        private void HandleKeyboard()
+        private void HandleKeyboard(GameTime gameTime)
         {
             KeyboardState state = Keyboard.GetState();
+            float totalSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
+            var vp = GraphicsDevice.Viewport;
 
             // Move camera
             if (state.IsKeyDown(Keys.Left))
-                _cameraPosition.X += 1.5f;
+                _cameraPosition.X -= totalSeconds * (vp.Width * 0.01f);
 
             if (state.IsKeyDown(Keys.Right))
-                _cameraPosition.X -= 1.5f;
+                _cameraPosition.X += totalSeconds * (vp.Width * 0.01f);
 
             if (state.IsKeyDown(Keys.Up))
-                _cameraPosition.Y += 1.5f;
+                _cameraPosition.Y += totalSeconds * (vp.Width * 0.01f);
 
             if (state.IsKeyDown(Keys.Down))
-                _cameraPosition.Y -= 1.5f;
+                _cameraPosition.Y -= totalSeconds * (vp.Width * 0.01f);
 
-            _view = Matrix.CreateTranslation(new Vector3(_cameraPosition - _screenCenter, 0f)) * Matrix.CreateTranslation(new Vector3(_screenCenter, 0f));
 
             // We make it possible to rotate the circle body
             if (state.IsKeyDown(Keys.A))
-                _circleBody.ApplyTorque(-10);
-
-            if (state.IsKeyDown(Keys.D))
                 _circleBody.ApplyTorque(10);
 
+            if (state.IsKeyDown(Keys.D))
+                _circleBody.ApplyTorque(-10);
+
             if (state.IsKeyDown(Keys.Space) && _oldKeyState.IsKeyUp(Keys.Space))
-                _circleBody.ApplyLinearImpulse(new Vector2(0, -10));
+                _circleBody.ApplyLinearImpulse(new Vector2(0, 10));
 
             if (state.IsKeyDown(Keys.Escape))
                 Exit();
@@ -182,16 +197,18 @@ namespace tainicom.Aether.Physics2D.Samples
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             //Draw circle and ground
-            _batch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, _view);
-            _batch.Draw(_circleSprite, ConvertUnits.ToDisplayUnits(_circleBody.Position), null, Color.White, _circleBody.Rotation, _circleOrigin, 1f, SpriteEffects.None, 0f);
-            _batch.Draw(_groundSprite, ConvertUnits.ToDisplayUnits(_groundBody.Position), null, Color.White, 0f, _groundOrigin, 1f, SpriteEffects.None, 0f);
-            _batch.End();
+            _spriteBatchEffect.Projection = _projection;
+            _spriteBatchEffect.View = _view;
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullClockwise, _spriteBatchEffect);
+            _spriteBatch.Draw(_circleSprite, _circleBody.Position, null, Color.White, _circleBody.Rotation, _circleSpriteOrigin, new Vector2(_circleBodyRadius * 2f) / _circleSpriteSize, SpriteEffects.FlipVertically, 0f);
+            _spriteBatch.Draw(_groundSprite, _groundBody.Position, null, Color.White, 0f, _groundSpriteOrigin, _groundBodySize / _groundSpriteSize, SpriteEffects.FlipVertically, 0f);
+            _spriteBatch.End();
 
             // Display instructions
-            _batch.Begin();
-            _batch.DrawString(_font, Text, new Vector2(14f, 14f), Color.Black);
-            _batch.DrawString(_font, Text, new Vector2(12f, 12f), Color.White);
-            _batch.End();
+            _spriteBatch.Begin();
+            _spriteBatch.DrawString(_font, Text, new Vector2(14f, 14f), Color.Black);
+            _spriteBatch.DrawString(_font, Text, new Vector2(12f, 12f), Color.White);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }

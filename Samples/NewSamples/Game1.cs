@@ -14,20 +14,6 @@ using Microsoft.Xna.Framework.Input;
 
 namespace tainicom.Aether.Physics2D.Samples
 {
-    internal static class Program
-    {
-        /// <summary>
-        /// The main entry point for the samples
-        /// </summary>
-        private static void Main(string[] args)
-        {
-            using(Game1 game = new Game1())
-            {
-                game.Run();
-            }
-        }
-    }
-
     /// <summary>
     /// This is the main type for the samples
     /// </summary>
@@ -35,6 +21,7 @@ namespace tainicom.Aether.Physics2D.Samples
     {
         private SpriteBatch _spriteBatch;
         private LineBatch _lineBatch;
+        private BasicEffect _batchEffect;
         private QuadRenderer _quadRenderer;
         private InputHelper _input;
         private List<GameScreen> _screens = new List<GameScreen>();
@@ -55,10 +42,11 @@ namespace tainicom.Aether.Physics2D.Samples
             Window.Title = "Samples";
 
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.GraphicsProfile = GraphicsProfile.Reach;
+            _graphics.PreparingDeviceSettings += _graphics_PreparingDeviceSettings;
             _graphics.PreferMultiSampling = true;
             _graphics.PreferredBackBufferWidth = 1280;
-            _graphics.PreferredBackBufferHeight = 720; 
-            ConvertUnits.SetDisplayUnitToSimUnitRatio(24f);
+            _graphics.PreferredBackBufferHeight = 720;
             IsFixedTimeStep = true;
             
             _graphics.IsFullScreen = false;
@@ -66,8 +54,22 @@ namespace tainicom.Aether.Physics2D.Samples
             Content.RootDirectory = "Content";
         }
 
+        void _graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
+        {
+            // unlock the 30 fps limit. 60fps (if possible)
+            e.GraphicsDeviceInformation.PresentationParameters.PresentationInterval = PresentInterval.One;
+
+            // set HiDef Profile if supported
+            if (e.GraphicsDeviceInformation.Adapter.IsProfileSupported(GraphicsProfile.HiDef))
+                e.GraphicsDeviceInformation.GraphicsProfile = GraphicsProfile.HiDef;
+        }
+
         protected override void Initialize()
         {
+            // enable multithreading
+            Settings.VelocityConstraintsMultithreadThreshold = 64;
+            Settings.PositionConstraintsMultithreadThreshold = 64;
+
             _input = new InputHelper();
 #if WINDOWS
             _counter = new FrameRateCounter();
@@ -86,6 +88,9 @@ namespace tainicom.Aether.Physics2D.Samples
 
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             _lineBatch = new LineBatch(GraphicsDevice);
+            _batchEffect = new BasicEffect(GraphicsDevice);
+            _batchEffect.VertexColorEnabled = true;
+            _batchEffect.TextureEnabled = true;
             _quadRenderer = new QuadRenderer(GraphicsDevice);
 
             _input.LoadContent(GraphicsDevice.Viewport);
@@ -121,8 +126,9 @@ namespace tainicom.Aether.Physics2D.Samples
                 demoScreen.Framework = this;
                 demoScreen.IsExiting = false;
 
-                demoScreen.Sprites = _spriteBatch;
-                demoScreen.Lines = _lineBatch;
+                demoScreen.SpriteBatch = _spriteBatch;
+                demoScreen.LineBatch = _lineBatch;
+                demoScreen.BatchEffect = _batchEffect;
                 demoScreen.Quads = _quadRenderer;
 
                 demoScreen.LoadContent();
@@ -272,7 +278,7 @@ namespace tainicom.Aether.Physics2D.Samples
 
                 if (screen.ScreenState == ScreenState.TransitionOn || screen.ScreenState == ScreenState.TransitionOff)
                 {
-                    _spriteBatch.Begin(0, BlendState.AlphaBlend);
+                    _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
                     if (screen is PhysicsDemoScreen)
                     {
                         Vector2 position = Vector2.Lerp(_menuScreen.PreviewPosition, new Vector2(GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height) / 2f, 1f - screen.TransitionPosition);
@@ -320,8 +326,9 @@ namespace tainicom.Aether.Physics2D.Samples
             screen.Framework = this;
             screen.IsExiting = false;
 
-            screen.Sprites = _spriteBatch;
-            screen.Lines = _lineBatch;
+            screen.SpriteBatch = _spriteBatch;
+            screen.LineBatch = _lineBatch;
+            screen.BatchEffect = _batchEffect;
             screen.Quads = _quadRenderer;
 
             // Tell the screen to load content.

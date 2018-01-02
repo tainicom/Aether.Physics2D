@@ -27,6 +27,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         private List<Sprite> _breakableSprite;
         private Sprite _completeSprite;
         private BreakableBody[] _breakableCookie = new BreakableBody[3];
+        private static bool _isLoaded = false;
 
         #region Demo description
         public override string GetTitle()
@@ -66,35 +67,47 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             World.Gravity = Vector2.Zero;
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
-            for (int i = 0; i < 3; i++)
-            {
-                BodyContainer bodyContainer = Framework.Content.Load<BodyContainer>("Pipeline/BreakableBody");
-                BodyTemplate bodyTemplate = bodyContainer["Cookie"];
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-                List<Shape> shapes = new List<Shape>();
+            BodyContainer bodyContainer = Framework.Content.Load<BodyContainer>("Pipeline/BreakableBody");
+            BodyTemplate bodyTemplate = bodyContainer["Cookie"];
+
+            if (!_isLoaded) //we flip vertices once.
+            {
                 foreach (FixtureTemplate f in bodyTemplate.Fixtures)
                 {
+                    var shape = (PolygonShape)f.Shape;
+                    shape.Vertices.Scale(new Vector2(1f, -1f)); // flip Vert
+                    shape.Vertices.Translate(new Vector2(-5.33f, 5.33f));
+                }
+                _isLoaded = true;
+            }
+            
+            for (int i = 0; i < 3; i++)
+            {
+                List<Shape> shapes = new List<Shape>();
+                foreach (FixtureTemplate f in bodyTemplate.Fixtures)
+                {   
                     shapes.Add(f.Shape);
                 }
                 _breakableCookie[i] = new tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody(World, shapes);
 
                 _breakableCookie[i].Strength = 120f;
-                _breakableCookie[i].MainBody.Position = new Vector2(-20.33f + 15f * i, -5.33f);
+                _breakableCookie[i].MainBody.Position = new Vector2(-15.0f + 15f * i, 0f);
             }
 
             _breakableSprite = new List<Sprite>();
-            List<Texture2D> textures = ContentWrapper.BreakableTextureFragments(_breakableCookie[0], "Cookie");
+            List<Texture2D> textures = ContentWrapper.BreakableTextureFragments(_breakableCookie[0], "Cookie", 24f);
             for (int i = 0; i < _breakableCookie[0].Parts.Count; i++)
             {
                 AABB bounds;
                 Transform transform;
                 _breakableCookie[0].Parts[i].Body.GetTransform(out transform);
                 _breakableCookie[0].Parts[i].Shape.ComputeAABB(out bounds, ref transform, 0);
-                Vector2 origin = ConvertUnits.ToDisplayUnits(_breakableCookie[0].Parts[i].Body.Position - bounds.LowerBound);
+                Vector2 origin = 24f * (_breakableCookie[0].Parts[i].Body.Position - bounds.LowerBound);
                 _breakableSprite.Add(new Sprite(textures[i], origin));
             }
-            _completeSprite = new Sprite(ContentWrapper.GetTexture("Cookie"), Vector2.Zero);
+            _completeSprite = new Sprite(ContentWrapper.GetTexture("Cookie"));
         }
 
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
@@ -165,25 +178,30 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
             for (int i = 0; i < 3; i++)
             {
                 if (_breakableCookie[i].State == BreakableBody.BreakableBodyState.Broken)
                 {
                     for (int j = 0; j < _breakableCookie[i].Parts.Count; j++)
                     {
-                        Body b = _breakableCookie[i].Parts[j].Body;
-                        Sprites.Draw(_breakableSprite[j].Image, ConvertUnits.ToDisplayUnits(b.Position), null, Color.White, b.Rotation, _breakableSprite[j].Origin, 1f, SpriteEffects.None, 0f);
+                        var part = _breakableCookie[i].Parts[j];
+                        var shape = (PolygonShape)part.Shape;
+                        var aabb = shape.Vertices.GetAABB();
+                        var box = new Vector2(aabb.Width, aabb.Height);
+                        SpriteBatch.Draw(_breakableSprite[j].Texture, part.Body.Position, null, Color.White, part.Body.Rotation, _breakableSprite[j].Origin, box * _breakableSprite[j].TexelSize, SpriteEffects.FlipVertically, 0f);
                     }
                 }
                 else
                 {
-                    Sprites.Draw(_completeSprite.Image, ConvertUnits.ToDisplayUnits(_breakableCookie[i].MainBody.Position), null, Color.White, _breakableCookie[i].MainBody.Rotation, _completeSprite.Origin, 1f, SpriteEffects.None, 0f);
+                    SpriteBatch.Draw(_completeSprite.Texture, _breakableCookie[i].MainBody.Position, null, Color.White, _breakableCookie[i].MainBody.Rotation, _completeSprite.Origin, new Vector2(10.66f) * _completeSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
                 }
             }
-            Sprites.End();
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

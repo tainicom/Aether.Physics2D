@@ -103,34 +103,6 @@ namespace tainicom.Aether.Physics2D
         public static int MaxPolygonVertices = 8;
 
         /// <summary>
-        /// Farseer Physics Engine has a different way of filtering fixtures than Box2d.
-        /// We have both FPE and Box2D filtering in the engine. If you are upgrading
-        /// from earlier versions of FPE, set this to true and DefaultFixtureCollisionCategories
-        /// to Category.All.
-        /// </summary>
-        public static bool UseFPECollisionCategories;
-
-        /// <summary>
-        /// This is used by the Fixture constructor as the default value 
-        /// for Fixture.CollisionCategories member. Note that you may need to change this depending
-        /// on the setting of UseFPECollisionCategories, above.
-        /// </summary>
-        public static Category DefaultFixtureCollisionCategories = Category.Cat1;
-
-        /// <summary>
-        /// This is used by the Fixture constructor as the default value 
-        /// for Fixture.CollidesWith member.
-        /// </summary>
-        public static Category DefaultFixtureCollidesWith = Category.All;
-
-
-        /// <summary>
-        /// This is used by the Fixture constructor as the default value 
-        /// for Fixture.IgnoreCCDWith member.
-        /// </summary>
-        public static Category DefaultFixtureIgnoreCCDWith = Category.None;
-
-        /// <summary>
         /// The maximum number of contact points between two convex shapes.
         /// DO NOT CHANGE THIS VALUE!
         /// </summary>
@@ -192,6 +164,15 @@ namespace tainicom.Aether.Physics2D
         /// The multithreading algorithm might generate garbage. This can hurt the performance on platforms with poor GC performance.
         /// </remarks>
         public static int VelocityConstraintsMultithreadThreshold = int.MaxValue;
+
+        /// <summary>
+        /// A threshold for activating multiple cores to solve PositionConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve PositionConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public static int PositionConstraintsMultithreadThreshold = int.MaxValue;
+
 
         /// <summary>
         /// The maximum linear position correction used when solving constraints. This helps to

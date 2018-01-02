@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{AB279FE5-6D8D-480C-8B93-D0312CFE7D3B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tainicom.Aether.Physics2D.Samples.NewSamples</RootNamespace>
+    <AssemblyName>Samples.NewSamples</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\Windows.MG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINDOWS;MG</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\Windows.MG\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS;MG</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Demos\D17_SVGtoBody.cs" />
+    <Compile Include="Demos\D16_SVGtoPolygon.cs" />
+    <Compile Include="Demos\D08_DistanceAngleJoint.cs" />
+    <Compile Include="MediaSystem\LineBatch.cs" />
+    <Compile Include="MediaSystem\ContentWrapper.cs" />
+    <Compile Include="MediaSystem\QuadRenderer.cs" />
+    <Compile Include="Demos\D15_TextureToShapes.cs" />
+    <Compile Include="Demos\D11_SoftBody.cs" />
+    <Compile Include="Demos\D13_TheoJansenWalker.cs" />
+    <Compile Include="Demos\D12_WebOfGoo.cs" />
+    <Compile Include="Demos\D18_BreakableBody.cs" />
+    <Compile Include="ScreenSystem\LogoScreen.cs" />
+    <Compile Include="ScreenSystem\OptionEntry.cs" />
+    <Compile Include="ScreenSystem\OptionsScreen.cs" />
+    <Compile Include="ScreenSystem\FrameRateCounter.cs" />
+    <Compile Include="MediaSystem\Sprite.cs" />
+    <Compile Include="Demos\D14_RacingCar.cs" />
+    <Compile Include="Demos\Prefabs\Agent.cs" />
+    <Compile Include="Demos\Prefabs\Border.cs" />
+    <Compile Include="Demos\Prefabs\Objects.cs" />
+    <Compile Include="Demos\Prefabs\Pyramid.cs" />
+    <Compile Include="Demos\Prefabs\Ragdoll.cs" />
+    <Compile Include="Demos\Prefabs\JumpySpider.cs" />
+    <Compile Include="Demos\Prefabs\WebOfGoo.cs" />
+    <Compile Include="Demos\Prefabs\TheoJansenWalker.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ScreenSystem\Camera2D.cs" />
+    <Compile Include="ScreenSystem\GameScreen.cs" />
+    <Compile Include="ScreenSystem\InputHelper.cs" />
+    <Compile Include="ScreenSystem\PhysicsDemoScreen.cs" />
+    <Compile Include="ScreenSystem\BackgroundScreen.cs" />
+    <Compile Include="ScreenSystem\MenuSlider.cs" />
+    <Compile Include="ScreenSystem\MenuEntry.cs" />
+    <Compile Include="ScreenSystem\MenuScreen.cs" />
+    <Compile Include="ScreenSystem\DescriptionBoxScreen.cs" />
+    <Compile Include="Demos\D01_SingleFixture.cs" />
+    <Compile Include="Demos\D02_MultipleFixtures.cs" />
+    <Compile Include="Demos\D03_StaticBodies.cs" />
+    <Compile Include="Demos\D04_StackedBodies.cs" />
+    <Compile Include="Demos\D05_CollisionCategories.cs" />
+    <Compile Include="Demos\D09_DynamicJoints.cs" />
+    <Compile Include="Demos\D10_Ragdoll.cs" />
+    <Compile Include="Demos\D06_Restitution.cs" />
+    <Compile Include="Demos\D07_Friction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\ThirdPartyLibraries\MonoGame\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="..\NewSamplesContent\NewSamplesContent.mgcb">
+      <Link>Content\SamplesContent.mgcb</Link>
+    </MonoGameContentReference>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.MG.csproj">
+      <Project>{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}</Project>
+      <Name>Aether.Physics2D.Diagnostics.WINDOWS.MG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Physics2D\Aether.Physics2D.WINDOWS.MG.csproj">
+      <Project>{58A4F378-3FC5-4616-BC62-5FF5DF676627}</Project>
+      <Name>Aether.Physics2D.WINDOWS.MG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -26,11 +26,14 @@
 * misrepresented as being the original software. 
 * 3. This notice may not be removed or altered from any source distribution. 
 */
-//#define USE_ACTIVE_CONTACT_SET
-//#define USE_AWAKE_BODY_SET
-//#define USE_ISLAND_SET
-//#define OPTIMIZE_TOI
-//#define USE_IGNORE_CCD_CATEGORIES
+
+// Inactive objects optimizations. 
+// See: id:9178 at https://farseerphysics.codeplex.com/SourceControl/list/patches
+// See: http://blog.boundingboxgames.com/2011/04/farseer-inactive-object-optimizations.html
+// USE_ACTIVE_CONTACT_SET
+// USE_AWAKE_BODY_SET
+// USE_ISLAND_SET
+// OPTIMIZE_TOI
 
 using System;
 using System.Collections.Generic;
@@ -222,7 +225,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #if USE_ACTIVE_CONTACT_SET
             foreach (var c in ContactManager.ActiveContacts)
             {
-                c.Flags &= ~ContactFlags.Island;
+                //c.Flags &= ~ContactFlags.Island;
+                c.IslandFlag = false;
             }
 #else
             for (Contact c = ContactManager.ContactList.Next; c != ContactManager.ContactList; c = c.Next)
@@ -433,9 +437,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             foreach (var b in IslandSet)
             {
                 if (!TOISet.Contains(b))
-                {
                     TOISet.Add(b);
-                }
             }
 #endif
 #if USE_ISLAND_SET
@@ -547,8 +549,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                             continue;
                         }
 
-                        bool collideA = (bA.IsBullet || typeA != BodyType.Dynamic) && ((fA.IgnoreCCDWith & fB.CollisionCategories) == 0) && !bA.IgnoreCCD;
-                        bool collideB = (bB.IsBullet || typeB != BodyType.Dynamic) && ((fB.IgnoreCCDWith & fA.CollisionCategories) == 0) && !bB.IgnoreCCD;
+                        bool collideA = (bA.IsBullet || typeA != BodyType.Dynamic) && !bA.IgnoreCCD;
+                        bool collideB = (bB.IsBullet || typeB != BodyType.Dynamic) && !bB.IgnoreCCD;
 
                         // Are these two non-bullet dynamic bodies?
                         if (collideA == false && collideB == false)
@@ -809,11 +811,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     break;
                 }
             }
+
 #if OPTIMIZE_TOI
             if (wasStepComplete)
-            {
                 TOISet.Clear();
-            }
 #endif
         }
 
@@ -892,7 +893,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <value>The head of the world contact list.</value>
         /// <example>for (Contact c = World.ContactList.Next; c != World..ContactList; c = c.Next)</example>
-        public Contact ContactList
+        public ContactListHead ContactList
         {
             get { return ContactManager.ContactList; }
         }
@@ -970,8 +971,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 throw new ArgumentException("You are removing a body that is not in the simulation.", "body");
 
 #if USE_AWAKE_BODY_SET
-                    Debug.Assert(!AwakeBodySet.Contains(body));
+            Debug.Assert(!AwakeBodySet.Contains(body));
 #endif
+
             // Delete the attached joints.
             JointEdge je = body.JointList;
             while (je != null)
@@ -1012,7 +1014,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 BodyRemoved(this, body);
 
 #if USE_AWAKE_BODY_SET
-                    Debug.Assert(!AwakeBodySet.Contains(body));
+            Debug.Assert(!AwakeBodySet.Contains(body));
 #endif
         }
         
@@ -1227,9 +1229,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
 #if USE_AWAKE_BODY_SET
             if (AwakeBodySet.Contains(body))
-            {
                 AwakeBodySet.Remove(body);
-            }
 #endif
         }
 
@@ -1313,9 +1313,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
 #if DEBUG && USE_AWAKE_BODY_SET
             foreach (var b in AwakeBodySet)
-            {
                 Debug.Assert(BodyList.Contains(b));
-            }
 #endif
         }
 

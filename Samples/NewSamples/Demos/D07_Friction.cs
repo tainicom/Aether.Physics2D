@@ -54,53 +54,55 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
             _ramps = World.CreateBody();
-            _ramps.CreateEdge(new Vector2(-20f, -11.2f), new Vector2(10f, -3.8f));
-            _ramps.CreateEdge(new Vector2(12f, -5.6f), new Vector2(12f, -3.2f));
+            _ramps.CreateEdge(new Vector2(-20f, 11.2f), new Vector2(10f, 3.8f));
+            _ramps.CreateEdge(new Vector2(12f, 5.6f), new Vector2(12f, 3.2f));
 
-            _ramps.CreateEdge(new Vector2(-10f, 4.4f), new Vector2(20f, -1.4f));
-            _ramps.CreateEdge(new Vector2(-12f, 2.6f), new Vector2(-12f, 5f));
+            _ramps.CreateEdge(new Vector2(-10f, -4.4f), new Vector2(20f, 1.4f));
+            _ramps.CreateEdge(new Vector2(-12f, -2.6f), new Vector2(-12f, -5f));
 
-            _ramps.CreateEdge(new Vector2(-20f, 6.8f), new Vector2(10f, 11.5f));
+            _ramps.CreateEdge(new Vector2(-20f, -6.8f), new Vector2(10f, -11.5f));
 
             float[] friction = { 0.75f, 0.45f, 0.28f, 0.17f, 0.0f };
             for (int i = 0; i < 5; i++)
             {
                 _rectangle[i] = World.CreateRectangle(1.5f, 1.5f, 1f);
                 _rectangle[i].BodyType = BodyType.Dynamic;
-                _rectangle[i].Position = new Vector2(-18f + 5.2f * i, -13.0f + 1.282f * i);
+                _rectangle[i].Position = new Vector2(-18f + 5.2f * i, 13.0f - 1.282f * i);
                 _rectangle[i].SetFriction(friction[i]);
             }
 
             // create sprite based on body
-            _rectangleSprite = new Sprite(ContentWrapper.TextureFromShape(_rectangle[0].FixtureList[0].Shape, "Square", ContentWrapper.Green, ContentWrapper.Lime, ContentWrapper.Black, 1f));
+            _rectangleSprite = new Sprite(ContentWrapper.TextureFromShape(_rectangle[0].FixtureList[0].Shape, "Square", ContentWrapper.Green, ContentWrapper.Lime, ContentWrapper.Black, 1f, 24f));
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
 
             for (int i = 0; i < 5; ++i)
             {
-                Sprites.Draw(_rectangleSprite.Image, ConvertUnits.ToDisplayUnits(_rectangle[i].Position), null,
-                             Color.White, _rectangle[i].Rotation, _rectangleSprite.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_rectangleSprite.Texture, _rectangle[i].Position, null,
+                             Color.White, _rectangle[i].Rotation, _rectangleSprite.Origin, new Vector2(1.5f, 1.5f) * _rectangleSprite.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
 
-            Sprites.End();
-            Lines.Begin(Camera.SimProjection, Camera.SimView);
+            SpriteBatch.End();
+            LineBatch.Begin(Camera.Projection, Camera.View);
 
             foreach (Fixture f in _ramps.FixtureList)
             {
-                Lines.DrawLineShape(f.Shape, ContentWrapper.Teal);
+                LineBatch.DrawLineShape(f.Shape, ContentWrapper.Teal);
             }
 
-            Lines.End();
+            LineBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

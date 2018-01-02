@@ -54,6 +54,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public LineBatch LineBatch { get; private set; }
 
+        public BasicEffect BatchEffect { get; private set; }
+
         public ContentManager Content { get; private set; }
 
         public SpriteFonts Fonts { get; private set; }
@@ -78,6 +80,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             SpriteBatch = new SpriteBatch(GraphicsDevice);
             LineBatch = new LineBatch(GraphicsDevice);
+            BatchEffect = new BasicEffect(GraphicsDevice);
+            BatchEffect.VertexColorEnabled = true;
+            BatchEffect.TextureEnabled = true;
             Assets = new AssetCreator(GraphicsDevice);
             Assets.LoadContent(Content);
             _input.LoadContent();
@@ -157,6 +162,17 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public override void Draw(GameTime gameTime)
         {
+            foreach (GameScreen screen in _screens)
+            {
+                if (screen.ScreenState == ScreenState.TransitionOn ||
+                    screen.ScreenState == ScreenState.TransitionOff || 
+                    screen.ScreenState == ScreenState.Active)
+                {
+                    screen.PreDraw(gameTime);
+                    GraphicsDevice.SetRenderTarget(null);
+                }
+            }
+            
             int transitionCount = 0;
             foreach (GameScreen screen in _screens)
             {
@@ -186,7 +202,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
                 if (screen.ScreenState == ScreenState.TransitionOn || screen.ScreenState == ScreenState.TransitionOff)
                 {
-                    SpriteBatch.Begin(0, BlendState.AlphaBlend);
+                    SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
                     SpriteBatch.Draw(_transitions[transitionCount], Vector2.Zero, Color.White * screen.TransitionAlpha);
                     SpriteBatch.End();
 

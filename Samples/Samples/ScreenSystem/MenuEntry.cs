@@ -123,8 +123,14 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             SpriteFont font = _menu.ScreenManager.Fonts.MenuSpriteFont;
             SpriteBatch batch = _menu.ScreenManager.SpriteBatch;
 
-            // Draw the selected entry in yellow, otherwise white
-            Color color = _type == EntryType.Separator ? Color.DarkOrange : Color.Lerp(Color.White, new Color(255, 210, 0), _selectionFade);
+            // Draw the selected entry   
+            var col = new Color(235, 204, 255);
+            var colSel = new Color(203, 164, 229);
+            //var colSep = new Color(164, 190, 229);
+            var colSep = new Color(164, 229, 203);
+
+
+            Color color = _type == EntryType.Separator ? colSep : Color.Lerp(col, colSel, _selectionFade);
             color *= Alpha;
 
             // Draw text, centered on the middle of each line.

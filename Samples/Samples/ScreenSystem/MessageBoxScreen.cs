@@ -11,25 +11,27 @@ using Microsoft.Xna.Framework.Graphics;
 namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 {
     /// <summary>
-    /// A popup message box screen, used to display "are you sure?"
-    /// confirmation messages.
+    /// A popup message box screen.
     /// </summary>
     public class MessageBoxScreen : GameScreen
     {
         private Rectangle _backgroundRectangle;
         private Texture2D _gradientTexture;
+        private string _title;
         private string _message;
+        Vector2 _titleSize;
         private Vector2 _textPosition;
 
-        public MessageBoxScreen(string message)
+        public MessageBoxScreen(string title, string message)
         {
+            _title = title;
             _message = message;
 
             IsPopup = true;
             HasCursor = true;
 
-            TransitionOnTime = TimeSpan.FromSeconds(0.4);
-            TransitionOffTime = TimeSpan.FromSeconds(0.4);
+            TransitionOnTime = TimeSpan.FromSeconds(0.35);
+            TransitionOffTime = TimeSpan.FromSeconds(0.3);
         }
 
         /// <summary>
@@ -47,14 +49,30 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             // Center the message text in the viewport.
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
             Vector2 viewportSize = new Vector2(viewport.Width, viewport.Height);
+            _titleSize = font.MeasureString(_title);
+            _titleSize.Y *= 2f;
             Vector2 textSize = font.MeasureString(_message);
-            _textPosition = (viewportSize - textSize) / 2;
+            textSize.X = (float)Math.Max(_titleSize.X, textSize.X);
+            textSize.Y = _titleSize.Y + textSize.Y;
 
             // The background includes a border somewhat larger than the text itself.
             const int hPad = 32;
-            const int vPad = 16;
+            const int vPad = 64;
 
-            _backgroundRectangle = new Rectangle((int)_textPosition.X - hPad, (int)_textPosition.Y - vPad, (int)textSize.X + hPad * 2, (int)textSize.Y + vPad * 2);
+            var panelSize = new Vector2(
+                textSize.X + hPad * 2f,
+                textSize.Y + vPad * 2f
+                );
+
+            _backgroundRectangle = new Rectangle(
+                (int)(viewportSize.X - panelSize.X),
+                (int)(0), 
+                (int)(panelSize.X),
+                (int)(viewportSize.Y)
+                );
+
+            _textPosition.X = _backgroundRectangle.X + hPad;
+            _textPosition.Y = 0 + vPad;
         }
 
         /// <summary>
@@ -74,17 +92,32 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
             SpriteFont font = ScreenManager.Fonts.DetailsFont;
 
+            var alpha = 0.7f * TransitionAlpha;
             // Fade the popup alpha during transitions.
-            Color color = Color.White * TransitionAlpha * (2f / 3f);
+            Color bgColor = new Color(0,0,0, 0.75f * TransitionAlpha);
+
+            //var colText = new Color(164, 196, 229);
+            var colText = new Color(203, 229, 164);
 
             spriteBatch.Begin();
 
+            var position = _textPosition;
+            var backgroundRectangle = _backgroundRectangle;
+            backgroundRectangle.X += (int)(_backgroundRectangle.Width * TransitionPosition);
+            position.X += _backgroundRectangle.Width * TransitionPosition;
+
             // Draw the background rectangle.
-            spriteBatch.Draw(_gradientTexture, _backgroundRectangle, color);
+            spriteBatch.Draw(_gradientTexture, backgroundRectangle, bgColor);
+            
+            // Draw the title text.
+            spriteBatch.DrawString(font, _title, position + Vector2.One, Color.Black * alpha, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(font, _title, position, colText * TransitionAlpha, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 0f);
+
+            position.Y += _titleSize.Y;
 
             // Draw the message box text.
-            spriteBatch.DrawString(font, _message, _textPosition + Vector2.One, Color.Black);
-            spriteBatch.DrawString(font, _message, _textPosition, Color.White);
+            spriteBatch.DrawString(font, _message, position + Vector2.One, Color.Black * alpha);
+            spriteBatch.DrawString(font, _message, position, Color.White * alpha);
 
             spriteBatch.End();
         }

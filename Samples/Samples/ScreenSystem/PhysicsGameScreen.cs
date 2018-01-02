@@ -96,6 +96,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
             Camera.Update(gameTime);
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
+
+            DebugView.UpdatePerformanceGraph(World.UpdateTime);
         }
 
         public override void HandleInput(InputHelper input, GameTime gameTime)
@@ -150,7 +152,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             base.HandleInput(input, gameTime);
         }
 
-        private void HandleCursor(InputHelper input)
+        protected virtual void HandleCursor(InputHelper input)
         {
             Vector2 position = Camera.ConvertScreenToWorld(input.Cursor);
 
@@ -199,7 +201,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                 Camera.ResetCamera();
         }
 
-        private void HandleUserAgent(InputHelper input)
+        protected virtual void HandleUserAgent(InputHelper input)
         {
             Vector2 force = _agentForce * new Vector2(input.GamePadState.ThumbSticks.Right.X, -input.GamePadState.ThumbSticks.Right.Y);
             float torque = _agentTorque * (input.GamePadState.Triggers.Right - input.GamePadState.Triggers.Left);
@@ -215,11 +217,11 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (input.KeyboardState.IsKeyDown(Keys.A))
                 force += new Vector2(-forceAmount, 0);
             if (input.KeyboardState.IsKeyDown(Keys.S))
-                force += new Vector2(0, forceAmount);
+                force += new Vector2(0, -forceAmount);
             if (input.KeyboardState.IsKeyDown(Keys.D))
                 force += new Vector2(forceAmount, 0);
             if (input.KeyboardState.IsKeyDown(Keys.W))
-                force += new Vector2(0, -forceAmount);
+                force += new Vector2(0, forceAmount);
             if (input.KeyboardState.IsKeyDown(Keys.Q))
                 torque -= _agentTorque;
             if (input.KeyboardState.IsKeyDown(Keys.E))
@@ -239,7 +241,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
 
         public override void Draw(GameTime gameTime)
         {
-            DebugView.RenderDebugData(ref Camera.DebugProjection, ref Camera.DebugView);
+            DebugView.RenderDebugData(Camera.Projection, Camera.View);
             base.Draw(gameTime);
         }
     }

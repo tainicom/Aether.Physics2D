@@ -6,15 +6,16 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Path = System.IO.Path;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.Decomposition;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Graphics;
-using Path = System.IO.Path;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples.MediaSystem
 {
@@ -152,7 +153,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
                 throw new FileNotFoundException();
         }
 
-        public static Vector2 CalculateOrigin(Body body)
+        public static Vector2 CalculateOrigin(Body body, float pixelsPerMeter)
         {
             Vector2 lowerBound = new Vector2(float.MaxValue);
             Transform transform;
@@ -169,24 +170,24 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             }
             // calculate body offset from its center and add a 1 pixel border
             // because we generate the textures a little bigger than the actual body's fixtures
-            return ConvertUnits.ToDisplayUnits(body.Position - lowerBound) + new Vector2(1f);
+            return pixelsPerMeter * (body.Position - lowerBound) + new Vector2(1f);
         }
 
-        public static Texture2D TextureFromShape(Shape shape, Color color, Color outlineColor)
+        public static Texture2D TextureFromShape(Shape shape, Color color, Color outlineColor, float pixelsPerMeter)
         {
-            return TextureFromShape(shape, "Blank", color, color, outlineColor, 1f);
+            return TextureFromShape(shape, "Blank", color, color, outlineColor, 1f, pixelsPerMeter);
         }
 
-        public static Texture2D TextureFromShape(Shape shape, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale)
+        public static Texture2D TextureFromShape(Shape shape, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale, float pixelsPerMeter)
         {
             if (_contentWrapper != null)
             {
                 switch (shape.ShapeType)
                 {
                     case ShapeType.Circle:
-                        return CircleTexture((shape).Radius, pattern, mainColor, patternColor, outlineColor, materialScale);
+                        return CircleTexture((shape).Radius, pattern, mainColor, patternColor, outlineColor, materialScale, pixelsPerMeter);
                     case ShapeType.Polygon:
-                        return PolygonTexture(((PolygonShape)shape).Vertices, pattern, mainColor, patternColor, outlineColor, materialScale);
+                        return PolygonTexture(((PolygonShape)shape).Vertices, pattern, mainColor, patternColor, outlineColor, materialScale, 24f);
                     default:
                         throw new NotSupportedException("The specified shape type is not supported.");
                 }
@@ -194,12 +195,12 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             return null;
         }
 
-        public static Texture2D CircleTexture(float radius, Color color, Color outlineColor)
+        public static Texture2D CircleTexture(float radius, Color color, Color outlineColor, float pixelsPerMeter)
         {
-            return CircleTexture(radius, "Blank", color, color, outlineColor, 1f);
+            return CircleTexture(radius, "Blank", color, color, outlineColor, 1f, pixelsPerMeter);
         }
 
-        public static Texture2D CircleTexture(float radius, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale)
+        public static Texture2D CircleTexture(float radius, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale, float pixelsPerMeter)
         {
             if (_contentWrapper != null)
             {
@@ -209,7 +210,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
                 const float segmentSize = MathHelper.TwoPi / CircleSegments;
                 float theta = segmentSize;
 
-                radius = ConvertUnits.ToDisplayUnits(radius);
+                radius = pixelsPerMeter * radius;
                 if (_textureList.ContainsKey(pattern))
                     materialScale /= _textureList[pattern].Width;
                 else
@@ -254,23 +255,23 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             return null;
         }
 
-        public static Texture2D PolygonTexture(Vector2[] vertices, Color color, Color outlineColor)
+        public static Texture2D PolygonTexture(Vector2[] vertices, Color color, Color outlineColor, float pixelsPerMeter)
         {
-            return PolygonTexture(vertices, "Blank", color, color, outlineColor, 1f);
+            return PolygonTexture(vertices, "Blank", color, color, outlineColor, 1f, pixelsPerMeter);
         }
 
-        public static Texture2D PolygonTexture(Vector2[] vertices, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale)
+        public static Texture2D PolygonTexture(Vector2[] vertices, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale, float pixelsPerMeter)
         {
             Vertices temp = new Vertices(vertices);
-            return PolygonTexture(temp, pattern, mainColor, patternColor, outlineColor, materialScale);
+            return PolygonTexture(temp, pattern, mainColor, patternColor, outlineColor, materialScale, pixelsPerMeter);
         }
 
-        public static Texture2D PolygonTexture(Vertices vertices, Color color, Color outlineColor)
+        public static Texture2D PolygonTexture(Vertices vertices, Color color, Color outlineColor, float pixelsPerMeter)
         {
-            return PolygonTexture(vertices, "Blank", color, color, outlineColor, 1f);
+            return PolygonTexture(vertices, "Blank", color, color, outlineColor, 1f, pixelsPerMeter);
         }
 
-        public static Texture2D PolygonTexture(Vertices vertices, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale)
+        public static Texture2D PolygonTexture(Vertices vertices, string pattern, Color mainColor, Color patternColor, Color outlineColor, float materialScale, float pixelsPerMeter)
         {
             if (_contentWrapper != null)
             {
@@ -278,7 +279,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
                 Vertices scaledVertices = new Vertices(vertices);
 
                 // scale to display units (i.e. pixels) for rendering to texture
-                Vector2 scale = ConvertUnits.ToDisplayUnits(Vector2.One);
+                Vector2 scale = Vector2.One * pixelsPerMeter;
                 scaledVertices.Scale(ref scale);
 
                 // translate the boundingbox center to the texture center
@@ -340,12 +341,12 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             return null;
         }
 
-        public static List<Texture2D> BreakableTextureFragments(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody body, string textureName)
+        public static List<Texture2D> BreakableTextureFragments(tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody body, string textureName, float pixelsPerMeter)
         {
             List<Texture2D> result = new List<Texture2D>();
             if (_contentWrapper != null)
             {
-                Vector2 scale = ConvertUnits.ToDisplayUnits(Vector2.One);
+                Vector2 scale = Vector2.One * pixelsPerMeter;
                 foreach (Fixture f in body.Parts)
                 {
                     Vertices v = null;
@@ -414,13 +415,13 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
 
             Game.GraphicsDevice.SetRenderTarget(texture);
             Game.GraphicsDevice.Clear(Color.Transparent);
-            _effect.Projection = Matrix.CreateOrthographic(width + 2f, -height - 2f, 0f, 1f);
+            _effect.Projection = Matrix.CreateOrthographic(width + 2f, height + 2f, 0f, 1f);
             _effect.View = halfPixelOffset;
             // render shape;
             _effect.TextureEnabled = true;
             _effect.Texture = _textureList["Blank"];
             _effect.VertexColorEnabled = true;
-            _effect.Techniques[0].Passes[0].Apply();
+            _effect.CurrentTechnique.Passes[0].Apply();
 
             for (int i = 0; i < verticesFill.Count; i++)
             {
@@ -430,7 +431,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             if (pattern != null)
             {
                 _effect.Texture = pattern;
-                _effect.Techniques[0].Passes[0].Apply();
+                _effect.CurrentTechnique.Passes[0].Apply();
                 for (int i = 0; i < verticesFill.Count; i++)
                 {
                     for (int j = 0; j < verticesFill[i].Length; j++)
@@ -444,7 +445,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             if (verticesOutline.Length > 1)
             {
                 _effect.TextureEnabled = false;
-                _effect.Techniques[0].Passes[0].Apply();
+                _effect.CurrentTechnique.Passes[0].Apply();
                 Game.GraphicsDevice.DrawUserPrimitives(PrimitiveType.LineList, verticesOutline, 0, verticesOutline.Length / 2);
             }
             Game.GraphicsDevice.SetRenderTarget(null);

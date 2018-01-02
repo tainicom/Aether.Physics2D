@@ -58,41 +58,43 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            _ragdoll = new Ragdoll(World, new Vector2(-20f, -10f));
+            _ragdoll = new Ragdoll(World, new Vector2(-20f, 10f));
 
             _obstacles = new Body[9];
             Vector2 stairStart = new Vector2(-23f, 0f);
-            Vector2 stairDelta = new Vector2(2.5f, 1.65f);
+            Vector2 stairDelta = new Vector2(2.5f, -1.65f);
 
             for (int i = 0; i < 9; i++)
             {
                 _obstacles[i] = World.CreateRectangle(5f, 1.5f, 1f, stairStart + stairDelta * i);
-                _obstacles[i].IsStatic = true;
+                _obstacles[i].BodyType = BodyType.Static;
             }
 
             // create sprite based on body
-            _obstacle = new Sprite(ContentWrapper.TextureFromShape(_obstacles[0].FixtureList[0].Shape, "Stripe", ContentWrapper.Red, ContentWrapper.Black, ContentWrapper.Black, 1.5f));
+            _obstacle = new Sprite(ContentWrapper.TextureFromShape(_obstacles[0].FixtureList[0].Shape, "Stripe", ContentWrapper.Red, ContentWrapper.Black, ContentWrapper.Black, 1.5f, 24f));
 
             SetUserAgent(_ragdoll.Body, 1000f, 400f);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+
             for (int i = 0; i < 9; i++)
             {
-                Sprites.Draw(_obstacle.Image, ConvertUnits.ToDisplayUnits(_obstacles[i].Position), null, Color.White, _obstacles[i].Rotation, _obstacle.Origin, 1f, SpriteEffects.None, 0f);
+                SpriteBatch.Draw(_obstacle.Texture, _obstacles[i].Position, null, Color.White, _obstacles[i].Rotation, _obstacle.Origin, new Vector2(5f, 1.5f) * _obstacle.TexelSize, SpriteEffects.FlipVertically, 0f);
             }
 
-            _ragdoll.Draw(Sprites);
-            Sprites.End();
+            _ragdoll.Draw(SpriteBatch);
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

@@ -27,7 +27,6 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
-//#define USE_AWAKE_BODY_SET
 
 using System;
 using System.Collections.Generic;
@@ -261,12 +260,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     if (!_awake)
                     {
                         _sleepTime = 0.0f;
-                        World.ContactManager.UpdateContacts(ContactList, true);
+                        
+#if USE_ACTIVE_CONTACT_SET
+                        World.ContactManager.UpdateActiveContacts(ContactList, true);
+#endif
+
 #if USE_AWAKE_BODY_SET
 						if (InWorld && !World.AwakeBodySet.Contains(this))
-						{
 							World.AwakeBodySet.Add(this);
-						}
 #endif
                     }
                 }
@@ -276,13 +277,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
 					// Check even for BodyType.Static because if this body had just been changed to Static it will have
 					// set Awake = false in the process.
 					if (InWorld && World.AwakeBodySet.Contains(this))
-					{
 						World.AwakeBodySet.Remove(this);
-					}
 #endif
                     ResetDynamics();
                     _sleepTime = 0.0f;
-                    World.ContactManager.UpdateContacts(ContactList, false);
+                    
+#if USE_ACTIVE_CONTACT_SET
+                    World.ContactManager.UpdateActiveContacts(ContactList, false);
+#endif
                 }
 
                 _awake = value;
@@ -453,20 +455,22 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Gets or sets a value indicating whether this body is static.
         /// </summary>
         /// <value><c>true</c> if this instance is static; otherwise, <c>false</c>.</value>
+        /// <remarks>Deprecated in version 1.2</remarks>
+        [Obsolete("Use BodyType")]
         public bool IsStatic
         {
             get { return _bodyType == BodyType.Static; }
-            set { BodyType = value ? BodyType.Static : BodyType.Dynamic; }
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether this body is kinematic.
         /// </summary>
         /// <value><c>true</c> if this instance is kinematic; otherwise, <c>false</c>.</value>
+        /// <remarks>Deprecated in version 1.2</remarks>
+        [Obsolete("Use BodyType")]
         public bool IsKinematic
         {
             get { return _bodyType == BodyType.Kinematic; }
-            set { BodyType = value ? BodyType.Kinematic : BodyType.Dynamic; }
         }
 
         /// <summary>
@@ -724,6 +728,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
             for (int i = 0; i < FixtureList.Count; i++)
                 FixtureList[i].Synchronize(broadPhase, ref _xf, ref _xf);
+        }
+
+        /// <summary>
+        /// Get the body transform for the body's origin.
+        /// </summary>
+        /// <param name="transform">The transform of the body's origin.</param>
+        public Transform GetTransform()
+        {
+            return _xf;
         }
 
         /// <summary>
@@ -1100,8 +1113,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal void SynchronizeFixtures()
         {
-            Transform xf1 = new Transform();
-            xf1.q.Phase = _sweep.A0;
+            Transform xf1 = new Transform(Vector2.Zero, _sweep.A0);
             xf1.p = _sweep.C0 - Complex.Multiply(ref _sweep.LocalCenter, ref xf1.q);
 
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
@@ -1209,19 +1221,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             for (int i = 0; i < FixtureList.Count; i++)
                 FixtureList[i].CollidesWith = category;
-        }
-
-        /// <summary>
-        /// Body objects can define which categories of bodies they wish to ignore CCD with. 
-        /// This allows certain bodies to be configured to ignore CCD with objects that
-        /// aren't a penetration problem due to the way content has been prepared.
-        /// This is compared against the other Body's fixture CollisionCategories within World.SolveTOI().
-        /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
-        /// </summary>
-        public void SetIgnoreCCDWith(Category category)
-        {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].IgnoreCCDWith = category;
         }
 
         /// <summary>

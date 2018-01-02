@@ -7,6 +7,7 @@ using System.Text;
 using tainicom.Aether.Physics2D.Samples.Demos.Prefabs;
 using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
@@ -55,16 +56,16 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             base.LoadContent();
 
-            World.Gravity = new Vector2(0f, 20f);
+            World.Gravity = new Vector2(0f, -20f);
 
-            _border = new Border(World, Lines, Framework.GraphicsDevice);
+            _border = new Border(World, LineBatch, Framework.GraphicsDevice);
 
-            _agent = new Agent(World, new Vector2(0f, 10f));
+            _agent = new Agent(World, new Vector2(0f, -10f));
             _spiders = new JumpySpider[8];
 
             for (int i = 0; i < _spiders.Length; i++)
             {
-                _spiders[i] = new JumpySpider(World, new Vector2(0f, 8f - (i + 1) * 2f));
+                _spiders[i] = new JumpySpider(World, new Vector2(0f, -8f + (i + 1) * 2f));
             }
 
             SetUserAgent(_agent.Body, 1000f, 400f);
@@ -85,17 +86,19 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
         public override void Draw(GameTime gameTime)
         {
-            Sprites.Begin(0, null, null, null, null, null, Camera.View);
-            _agent.Draw(Sprites);
+            BatchEffect.View = Camera.View;
+            BatchEffect.Projection = Camera.Projection;
+            SpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullNone, BatchEffect);
+            _agent.Draw(SpriteBatch);
             
             for (int i = 0; i < _spiders.Length; i++)
             {
-                _spiders[i].Draw(Sprites);
+                _spiders[i].Draw(SpriteBatch);
             }
 
-            Sprites.End();
+            SpriteBatch.End();
 
-            _border.Draw(Camera.SimProjection, Camera.SimView);
+            _border.Draw(Camera.Projection, Camera.View);
 
             base.Draw(gameTime);
         }

@@ -58,8 +58,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private void DrawFixture(Fixture fixture)
         {
             Color color = new Color(0.95f, 0.95f, 0.6f);
-            Transform xf;
-            fixture.Body.GetTransform(out xf);
+            Transform xf = fixture.Body.GetTransform();
 
             switch (fixture.Shape.ShapeType)
             {
@@ -107,8 +106,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Body body = fixture.Body;
             Shape shape = fixture.Shape;
 
-            Transform xf;
-            body.GetTransform(out xf);
+            Transform xf = body.GetTransform();
 
             bool overlap = Collision.Collision.TestOverlap(shape, 0, Circle, 0, ref xf, ref Transform);
 

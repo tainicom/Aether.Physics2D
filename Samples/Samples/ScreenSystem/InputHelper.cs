@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2017 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -218,11 +220,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (leftStick != Vector2.Zero)
                 leftStick.Normalize();
             
-#if !MG // TODO: fix MonoGame GamePadState
             return new GamePadState(leftStick, Vector2.Zero, 0f, 0f, buttons.ToArray());
-#else
-            return new GamePadState(leftStick, Vector2.Zero, 0f, 0f, ((Buttons)0));
-#endif
         }
 
         private GamePadState HandleVirtualStickWP7()
@@ -249,11 +247,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             }
             stick = _phoneStick.StickPosition;
 #endif
-#if !MG // TODO: fix MonoGame GamePadState
             return new GamePadState(stick, Vector2.Zero, 0f, 0f, buttons.ToArray());
-#else
-            return new GamePadState(stick, Vector2.Zero, 0f, 0f, ((Buttons)0));
-#endif
         }
 
         /// <summary>
@@ -303,8 +297,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
                     return false;
             }
         }
-
-
+        
         /// <summary>
         /// Checks if the requested mouse button is released.
         /// </summary>
@@ -328,6 +321,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             }
         }
 
+        public float WheelDelta { get { return MouseState.ScrollWheelValue - PreviousMouseState.ScrollWheelValue; } }
+        
         /// <summary>
         ///   Checks for a "menu select" input action.
         /// </summary>

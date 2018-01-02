@@ -32,7 +32,8 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         /// </summary>
         public override void LoadContent()
         {
-            _logoTexture = ContentWrapper.GetTexture("Logo");
+            _logoTexture = this.Framework.Content.Load<Texture2D>("Common/logo");
+
             Viewport viewport = Framework.GraphicsDevice.Viewport;
 
             _logoPosition = new Vector2((viewport.Width - _logoTexture.Width) / 2f - 100f, (viewport.Height - _logoTexture.Height) / 2f);
@@ -61,9 +62,9 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
         {
             Framework.GraphicsDevice.Clear(Color.White);
 
-            Sprites.Begin();
-            Sprites.Draw(_logoTexture, _logoPosition, Color.White);
-            Sprites.End();
+            SpriteBatch.Begin();
+            SpriteBatch.Draw(_logoTexture, _logoPosition, Color.White);
+            SpriteBatch.End();
         }
     }
 }
