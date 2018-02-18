@@ -40,17 +40,17 @@ namespace tainicom.Aether.Physics2D.Collision
 
         public int CompareTo(Pair other)
         {
-            if (ProxyIdA < other.ProxyIdA)
+            if (ProxyIdB < other.ProxyIdB)
             {
                 return -1;
             }
-            if (ProxyIdA == other.ProxyIdA)
+            if (ProxyIdB == other.ProxyIdB)
             {
-                if (ProxyIdB < other.ProxyIdB)
+                if (ProxyIdA < other.ProxyIdA)
                 {
                     return -1;
                 }
-                if (ProxyIdB == other.ProxyIdB)
+                if (ProxyIdA == other.ProxyIdA)
                 {
                     return 0;
                 }
