@@ -915,8 +915,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 throw new InvalidOperationException("World is stepping.");
             if (body == null)
                 throw new ArgumentNullException("body");
-            if (BodyList.Contains(body))
+            if (body._world == this)
                 throw new ArgumentException("You are adding the same body more than once.", "body");
+            if (body._world != null)
+                throw new ArgumentException("body belongs to another world.", "body");
 
 #if USE_AWAKE_BODY_SET
                     Debug.Assert(!body.IsDisposed);
