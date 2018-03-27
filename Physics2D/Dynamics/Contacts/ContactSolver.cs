@@ -100,13 +100,18 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         public ContactVelocityConstraint[] _velocityConstraints;
         public Contact[] _contacts;
         public int _count;
+        int _velocityConstraintsMultithreadThreshold;
+        int _positionConstraintsMultithreadThreshold;
 
-        public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities)
+        public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities,
+            int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)
         {
             _count = count;
             _positions = positions;
             _velocities = velocities;
             _contacts = contacts;
+            _velocityConstraintsMultithreadThreshold = velocityConstraintsMultithreadThreshold;
+            _positionConstraintsMultithreadThreshold = positionConstraintsMultithreadThreshold;
 
             // grow the array
             if (_velocityConstraints == null || _velocityConstraints.Length < count)
@@ -354,7 +359,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         public void SolveVelocityConstraints()
         {
-            if (_count >= Settings.VelocityConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
+            if (_count >= _velocityConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
             {
                 if (_count == 0) return;
                 var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);
@@ -794,7 +799,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         {
             bool contactsOkay = false;
 
-            if (_count >= Settings.PositionConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
+            if (_count >= _positionConstraintsMultithreadThreshold && System.Environment.ProcessorCount > 1)
             {
                 if (_count == 0) return true;
                 var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);

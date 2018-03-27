@@ -35,6 +35,25 @@ namespace tainicom.Aether.Physics2D.Dynamics
 {
     public class ContactManager
     {
+        #region Settings
+        /// <summary>
+        /// A threshold for activating multiple cores to solve VelocityConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve VelocityConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public int VelocityConstraintsMultithreadThreshold = int.MaxValue;
+
+        /// <summary>
+        /// A threshold for activating multiple cores to solve PositionConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve PositionConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public int PositionConstraintsMultithreadThreshold = int.MaxValue;
+        #endregion
+
+
         /// <summary>
         /// Fires when a contact is created
         /// </summary>
