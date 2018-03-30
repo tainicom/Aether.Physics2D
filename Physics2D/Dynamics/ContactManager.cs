@@ -277,36 +277,20 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ContactCount--;
 
             // Remove from body 1
-            if (contact._nodeA.Prev != null)
-            {
-                contact._nodeA.Prev.Next = contact._nodeA.Next;
-            }
-
-            if (contact._nodeA.Next != null)
-            {
-                contact._nodeA.Next.Prev = contact._nodeA.Prev;
-            }
-
             if (contact._nodeA == bodyA.ContactList)
-            {
                 bodyA.ContactList = contact._nodeA.Next;
-            }
+            if (contact._nodeA.Prev != null)
+                contact._nodeA.Prev.Next = contact._nodeA.Next;
+            if (contact._nodeA.Next != null)
+                contact._nodeA.Next.Prev = contact._nodeA.Prev;
 
             // Remove from body 2
-            if (contact._nodeB.Prev != null)
-            {
-                contact._nodeB.Prev.Next = contact._nodeB.Next;
-            }
-
-            if (contact._nodeB.Next != null)
-            {
-                contact._nodeB.Next.Prev = contact._nodeB.Prev;
-            }
-
             if (contact._nodeB == bodyB.ContactList)
-            {
                 bodyB.ContactList = contact._nodeB.Next;
-            }
+            if (contact._nodeB.Prev != null)
+                contact._nodeB.Prev.Next = contact._nodeB.Next;
+            if (contact._nodeB.Next != null)
+                contact._nodeB.Next.Prev = contact._nodeB.Prev;
 
 #if USE_ACTIVE_CONTACT_SET
 			if (ActiveContacts.Contains(contact))
