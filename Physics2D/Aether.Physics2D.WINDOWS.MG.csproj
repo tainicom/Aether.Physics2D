@@ -107,6 +107,7 @@
     <Compile Include="Common\Math.cs" />
     <Compile Include="Common\Path.cs" />
     <Compile Include="Common\PathManager.cs" />
+    <Compile Include="Common\Maths\Complex.cs" />
     <Compile Include="Common\PhysicsLogic\BreakableBody.cs" />
     <Compile Include="Common\PhysicsLogic\ControllerFilter.cs" />
     <Compile Include="Common\PhysicsLogic\FilterData.cs" />
@@ -172,7 +173,6 @@
     <Compile Include="Fluids\1\HashGrid.cs" />
     <Compile Include="Fluids\2\FluidSystem2.cs" />
     <Compile Include="Fluids\2\SpartialTable.cs" />
-    <Compile Include="Maths\Complex.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>

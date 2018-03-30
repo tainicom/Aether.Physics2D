@@ -10,10 +10,10 @@ using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Common.Maths;
 using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Samples.DrawingSystem;
-using tainicom.Aether.Physics2D.Maths;
 
 namespace tainicom.Aether.Physics2D.Samples.Demos
 {
