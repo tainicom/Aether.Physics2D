@@ -66,6 +66,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal World _world;
         internal Transform _xf; // the body origin transform
         internal bool _island;
+        internal int _lock;
+        internal int _lockOrder;
 
         public ControllerFilter ControllerFilter = new ControllerFilter(ControllerCategory.All);
 
