@@ -459,7 +459,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     {
                         if (Interlocked.CompareExchange(ref _velocities[orderedIndexB].Lock, 1, 0) == 0)
                             break;
-                        _velocities[orderedIndexA].Lock = 0;
+                        System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexA].Lock, 0);
                     }
 #if NET40 || NET45
                     Thread.Sleep(0);
@@ -770,8 +770,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _velocities[indexB].w = wB;
 
 #if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
-                _velocities[orderedIndexB].Lock = 0;
-                _velocities[orderedIndexA].Lock = 0;
+                System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexB].Lock, 0);
+                System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexA].Lock, 0);
 #endif
             }
         }
@@ -853,7 +853,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                     {
                         if (Interlocked.CompareExchange(ref _positions[orderedIndexB].Lock, 1, 0) == 0)
                             break;
-                        _positions[orderedIndexA].Lock = 0;
+                        System.Threading.Interlocked.Exchange(ref _positions[orderedIndexA].Lock, 0);
                     }
 #if NET40 || NET45
                     Thread.Sleep(0);
@@ -924,8 +924,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
 #if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 // Unlock bodies.
-                _positions[orderedIndexB].Lock = 0;
-                _positions[orderedIndexA].Lock = 0;
+                System.Threading.Interlocked.Exchange(ref _positions[orderedIndexB].Lock, 0);
+                System.Threading.Interlocked.Exchange(ref _positions[orderedIndexA].Lock, 0);
 #endif
             }
 
