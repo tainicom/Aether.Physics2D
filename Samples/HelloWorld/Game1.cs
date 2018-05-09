@@ -117,6 +117,8 @@ namespace tainicom.Aether.Physics2D.Samples
         {
             HandleGamePad(gameTime);
             HandleKeyboard(gameTime);
+            
+            float totalSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             // update camera View Projection
             var vp = GraphicsDevice.Viewport;
@@ -125,7 +127,7 @@ namespace tainicom.Aether.Physics2D.Samples
             _view = Matrix.CreateLookAt(_cameraPosition, _cameraPosition + Vector3.Forward, Vector3.Up);
 
             //We update the world
-            _world.Step((float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f);
+            _world.Step((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             base.Update(gameTime);
         }

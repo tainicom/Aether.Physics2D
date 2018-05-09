@@ -80,7 +80,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 
         public virtual void Update(GameSettings settings, GameTime gameTime)
         {
-            float timeStep = Math.Min((float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f, (1f / 30f));
+            float timeStep = Math.Min((float)gameTime.ElapsedGameTime.TotalSeconds, (1f / 30f));
 
             if (settings.Pause)
             {
