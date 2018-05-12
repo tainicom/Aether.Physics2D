@@ -112,6 +112,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             get { return _bodyType; }
             set
             {
+                if (World != null && World.IsStepping)
+                    throw new InvalidOperationException("World is stepping.");
+
                 if (_bodyType == value)
                     return;
 
@@ -584,6 +587,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public void Add(Fixture fixture)
         {
+            if (World != null && World.IsStepping)
+                throw new InvalidOperationException("World is stepping.");
             if (fixture == null)
                 throw new ArgumentNullException("fixture");
             if (fixture.Body != null)
@@ -607,9 +612,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             if (World != null)
             {
-                if (World.IsStepping)
-                    throw new InvalidOperationException("World is stepping.");
-
                 if (Enabled)
                 {
                     IBroadPhase broadPhase = World.ContactManager.BroadPhase;
@@ -636,13 +638,12 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="fixture">The fixture to be removed.</param>
         public virtual void Remove(Fixture fixture)
         {
+            if (World != null && World.IsStepping)
+                throw new InvalidOperationException("World is stepping.");
             if (fixture == null)
                 throw new ArgumentNullException("fixture");
             if (fixture.Body != this)
                 throw new ArgumentException("You are removing a fixture that does not belong to this Body.", "fixture");
-
-            if (World.IsStepping)
-                throw new InvalidOperationException("World is stepping.");
 
             // Destroy any contacts associated with the fixture.
             ContactEdge edge = ContactList;

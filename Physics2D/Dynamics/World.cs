@@ -1514,13 +1514,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 throw new InvalidOperationException("World is stepping.");
             if (controller == null)
                 throw new ArgumentNullException("controller");
+            if (controller.World == this)
+                throw new ArgumentException("You are adding the same controller more than once.", "controller");
             if (controller.World != null)
-            {
-                if (controller.World == this)
-                    throw new ArgumentException("You are adding the same controller more than once.", "controller");
-                else
-                    throw new ArgumentException("Controller belongs to another world.", "controller");
-            }
+                throw new ArgumentException("Controller belongs to another world.", "controller");
 
             controller.World = this;
             ControllerList.Add(controller);
