@@ -202,7 +202,6 @@
     <Compile Include="Fluids\1\HashGrid.cs" />
     <Compile Include="Fluids\2\FluidSystem2.cs" />
     <Compile Include="Fluids\2\SpartialTable.cs" />
-    <Compile Include="Maths\Complex.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
