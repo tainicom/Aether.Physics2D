@@ -452,7 +452,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
         }
 
-        private void SolveTOI(ref TimeStep step)
+        private void SolveTOI(ref TimeStep step, ref SolverIterations iterations)
         {
             Island.Reset(2 * Settings.MaxTOIContacts, Settings.MaxTOIContacts, 0, ContactManager);
 
@@ -774,6 +774,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
 
                 TimeStep subStep;
+                subStep.positionIterations = iterations.TOIPositionIterations;
+                subStep.velocityIterations = iterations.TOIVelocityIterations;
                 subStep.dt = (1.0f - minAlpha) * step.dt;
                 subStep.inv_dt = 1.0f / subStep.dt;
                 subStep.dtRatio = 1.0f;
@@ -1333,6 +1335,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
         }
 
+        
         /// <summary>
         /// Take a time step. This performs collision detection, integration,
         /// and consraint solution.
@@ -1346,11 +1349,38 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Take a time step. This performs collision detection, integration,
         /// and consraint solution.
+        /// </summary>
+        /// <param name="dt">The amount of time to simulate, this should not vary.</param>
+        public void Step(TimeSpan dt, ref SolverIterations iterations)
+        {
+            Step((float)dt.TotalSeconds, ref iterations);
+        }
+
+        /// <summary>
+        /// Take a time step. This performs collision detection, integration,
+        /// and consraint solution.
         /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="dt">The amount of time to simulate in seconds, this should not vary.</param>
         /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Step(float dt)
+        {
+            SolverIterations iterations = new SolverIterations();
+            iterations.PositionIterations = Settings.PositionIterations;
+            iterations.VelocityIterations = Settings.VelocityIterations;
+            iterations.TOIPositionIterations = Settings.TOIPositionIterations;
+            iterations.TOIVelocityIterations = Settings.TOIVelocityIterations;
+            Step(dt, ref iterations);
+        }
+
+        /// <summary>
+        /// Take a time step. This performs collision detection, integration,
+        /// and consraint solution.
+        /// Warning: This method is locked during callbacks.
+        /// </summary>
+        /// <param name="dt">The amount of time to simulate in seconds, this should not vary.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
+        public void Step(float dt, ref SolverIterations iterations)
         {
             if (IsLocked)
                 throw new InvalidOperationException("The World is locked.");
@@ -1376,6 +1406,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             //FPE only: moved position and velocity iterations into Settings.cs
             TimeStep step;
+            step.positionIterations = iterations.PositionIterations;
+            step.velocityIterations = iterations.VelocityIterations;
             step.dt = dt;
             step.inv_dt = (dt > 0.0f) ? (1.0f / dt) : 0.0f;
             step.dtRatio = _invDt0 * dt;
@@ -1408,7 +1440,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 // Handle TOI events.
                 if (Settings.ContinuousPhysics && step.dt > 0.0f)
                 {
-                    SolveTOI(ref step);
+                    SolveTOI(ref step, ref iterations);
                 }
                 if (Settings.EnableDiagnostics)
                     ContinuousPhysicsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);

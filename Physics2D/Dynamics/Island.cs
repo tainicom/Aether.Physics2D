@@ -175,7 +175,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _watch.Stop();
 
             // Solve velocity constraints.
-            for (int i = 0; i < Settings.VelocityIterations; ++i)
+            for (int i = 0; i < step.velocityIterations; ++i)
             {
                 for (int j = 0; j < JointCount; ++j)
                 {
@@ -236,7 +236,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Solve position constraints
             bool positionSolved = false;
-            for (int i = 0; i < Settings.PositionIterations; ++i)
+            for (int i = 0; i < step.positionIterations; ++i)
             {
                 bool contactsOkay = _contactSolver.SolvePositionConstraints();
 
@@ -339,7 +339,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 _contactManager.VelocityConstraintsMultithreadThreshold, _contactManager.PositionConstraintsMultithreadThreshold);
 
             // Solve position constraints.
-            for (int i = 0; i < Settings.TOIPositionIterations; ++i)
+            for (int i = 0; i < subStep.positionIterations; ++i)
             {
                 bool contactsOkay = _contactSolver.SolveTOIPositionConstraints(toiIndexA, toiIndexB);
                 if (contactsOkay)
@@ -359,7 +359,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _contactSolver.InitializeVelocityConstraints();
 
             // Solve velocity constraints.
-            for (int i = 0; i < Settings.TOIVelocityIterations; ++i)
+            for (int i = 0; i < subStep.velocityIterations; ++i)
             {
                 _contactSolver.SolveVelocityConstraints();
             }

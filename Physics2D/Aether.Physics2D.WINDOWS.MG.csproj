@@ -161,6 +161,7 @@
     <Compile Include="Dynamics\Joints\RopeJoint.cs" />
     <Compile Include="Dynamics\Joints\WeldJoint.cs" />
     <Compile Include="Dynamics\Joints\WheelJoint.cs" />
+    <Compile Include="Dynamics\SolverIterations.cs" />
     <Compile Include="Dynamics\TimeStep.cs" />
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />

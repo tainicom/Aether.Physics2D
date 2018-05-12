@@ -46,6 +46,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public float inv_dt;
 
+        public int positionIterations;
+        public int velocityIterations;
+
         public bool warmStarting;
     }
 
