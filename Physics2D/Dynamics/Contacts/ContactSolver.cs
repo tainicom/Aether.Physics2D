@@ -366,14 +366,15 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 var batches = (int)Math.Ceiling((float)_count / batchSize);
 
 #if NET40 || NET45
-                SolveVelocityConstraintsWaitLock = batches;
+                SolveVelocityConstraintsWaitLock.Reset(batches);
                 for (int i = 0; i < batches; i++)
                 {
                     var start = i * batchSize;
                     var end = Math.Min(start + batchSize, _count);
                     ThreadPool.QueueUserWorkItem( SolveVelocityConstraintsCallback, SolveVelocityConstraintsState.Get(this, start,end));                    
                 }
-                while (SolveVelocityConstraintsWaitLock > 0)
+                // We avoid SolveVelocityConstraintsWaitLock.Wait(); because it spins a few milliseconds before going into sleep. Going into sleep(0) directly in a while loop is faster.
+                while (SolveVelocityConstraintsWaitLock.CurrentCount > 0)
                     Thread.Sleep(0);
 #elif PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 Parallel.For(0, batches, (i) =>
@@ -395,14 +396,14 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         }
 
 #if NET40 || NET45
-        volatile int SolveVelocityConstraintsWaitLock;
+        CountdownEvent SolveVelocityConstraintsWaitLock = new CountdownEvent(0);
         static void SolveVelocityConstraintsCallback(object state)
         {
             var svcState = (SolveVelocityConstraintsState)state;
 
             svcState.ContactSolver.SolveVelocityConstraints(svcState.Start, svcState.End);
             SolveVelocityConstraintsState.Return(svcState);
-            Interlocked.Decrement(ref svcState.ContactSolver.SolveVelocityConstraintsWaitLock);
+            svcState.ContactSolver.SolveVelocityConstraintsWaitLock.Signal();
         }
 
         private class SolveVelocityConstraintsState
