@@ -104,16 +104,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Gets or sets the body type.
-        /// Warning: Calling this mid-update might cause a crash.
+        /// Warning: This property is readonly during callbacks.
         /// </summary>
         /// <value>The type of body.</value>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public BodyType BodyType
         {
             get { return _bodyType; }
             set
             {
-                if (World != null && World.IsStepping)
-                    throw new InvalidOperationException("World is stepping.");
+                if (World != null && World.IsLocked)
+                    throw new InvalidOperationException("The World is locked.");
 
                 if (_bodyType == value)
                     return;
@@ -311,15 +312,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Joints connected to an inactive body are implicitly inactive.
         /// An inactive body is still owned by a b2World object and remains
         /// in the body list.
+        /// Warning: This property is readonly during callbacks.
         /// </summary>
         /// <value><c>true</c> if active; otherwise, <c>false</c>.</value>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public bool Enabled
         {
             get { return _enabled; }
             set
             {
-                if (World != null && World.IsStepping)
-                    throw new InvalidOperationException("World is stepping.");
+                if (World != null && World.IsLocked)
+                    throw new InvalidOperationException("The World is locked.");
 
                 if (value == _enabled)
                     return;
@@ -495,15 +498,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Get the local position of the center of mass.
+        /// Warning: This property is readonly during callbacks.
         /// </summary>
         /// <value>The local position.</value>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public Vector2 LocalCenter
         {
             get { return _sweep.LocalCenter; }
             set
             {
-                if (World != null && World.IsStepping)
-                    throw new InvalidOperationException("World is stepping.");
+                if (World != null && World.IsLocked)
+                    throw new InvalidOperationException("The World is locked.");
 
                 if (_bodyType != BodyType.Dynamic)
                     return;
@@ -521,15 +526,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Gets or sets the mass. Usually in kilograms (kg).
+        /// Warning: This property is readonly during callbacks.
         /// </summary>
         /// <value>The mass.</value>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public float Mass
         {
             get { return _mass; }
             set
             {
-                if (World != null && World.IsStepping)
-                    throw new InvalidOperationException("World is stepping.");
+                if (World != null && World.IsLocked)
+                    throw new InvalidOperationException("The World is locked.");
 
                 Debug.Assert(!float.IsNaN(value));
 
@@ -547,15 +554,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Get or set the rotational inertia of the body about the local origin. usually in kg-m^2.
+        /// Warning: This property is readonly during callbacks.
         /// </summary>
         /// <value>The inertia.</value>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public float Inertia
         {
             get { return _inertia + Mass * Vector2.Dot(_sweep.LocalCenter, _sweep.LocalCenter); }
             set
             {
-                if (World != null && World.IsStepping)
-                    throw new InvalidOperationException("World is stepping.");
+                if (World != null && World.IsLocked)
+                    throw new InvalidOperationException("The World is locked.");
 
                 Debug.Assert(!float.IsNaN(value));
 
@@ -585,10 +594,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _linearVelocity = Vector2.Zero;
         }
 
+        ///<summary>
+        /// Warning: This method is locked during callbacks.
+        /// </summary>>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Add(Fixture fixture)
         {
-            if (World != null && World.IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (World != null && World.IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (fixture == null)
                 throw new ArgumentNullException("fixture");
             if (fixture.Body != null)
@@ -633,13 +646,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// automatically adjust the mass of the body if the body is dynamic and the
         /// fixture has positive density.
         /// All fixtures attached to a body are implicitly destroyed when the body is destroyed.
-        /// Warning: This function is locked during callbacks.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="fixture">The fixture to be removed.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public virtual void Remove(Fixture fixture)
         {
-            if (World != null && World.IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (World != null && World.IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (fixture == null)
                 throw new ArgumentNullException("fixture");
             if (fixture.Body != this)
@@ -686,9 +700,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Set the position of the body's origin and rotation.
         /// This breaks any contacts and wakes the other bodies.
         /// Manipulating a body's transform may cause non-physical behavior.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="position">The world position of the body's local origin.</param>
         /// <param name="rotation">The world rotation in radians.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void SetTransform(ref Vector2 position, float rotation)
         {
             SetTransformIgnoreContacts(ref position, rotation);
@@ -700,9 +716,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Set the position of the body's origin and rotation.
         /// This breaks any contacts and wakes the other bodies.
         /// Manipulating a body's transform may cause non-physical behavior.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="position">The world position of the body's local origin.</param>
         /// <param name="rotation">The world rotation in radians.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void SetTransform(Vector2 position, float rotation)
         {
             SetTransform(ref position, rotation);
@@ -710,14 +728,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// For teleporting a body without considering new contacts immediately.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="position">The position.</param>
         /// <param name="angle">The angle.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void SetTransformIgnoreContacts(ref Vector2 position, float angle)
         {
             Debug.Assert(World != null);
-            if (World.IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (World.IsLocked)
+                throw new InvalidOperationException("The World is locked.");
 
             _xf.q.Phase = angle;
             _xf.p = position;

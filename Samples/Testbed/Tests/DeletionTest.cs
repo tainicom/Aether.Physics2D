@@ -27,7 +27,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         private void OnSeparation(Fixture sender, Fixture other, Contact contact)
         {
-            if (other.Body.World.IsStepping)
+            if (other.Body.World.IsLocked)
                 other.Body.World.RemoveAsync(other.Body);
         }
 

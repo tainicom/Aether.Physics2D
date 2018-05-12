@@ -853,9 +853,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public Vector2 Gravity;
         
         /// <summary>
+        /// Is the world locked (in the middle of a time step).
+        /// </summary>        
+        public bool IsLocked { get; private set; }
+
+        /// <summary>
         /// Is the world running (in the middle of a time step).
         /// </summary>        
-        public bool IsStepping { get; private set; }
+        /// <remarks>Deprecated in version 1.3</remarks>
+        [Obsolete("Use IsLocked")]
+        public bool IsStepping { get { return IsLocked; } }
 
         /// <summary>
         /// Get the contact manager for testing.
@@ -907,12 +914,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Add a rigid body.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
-        /// <returns></returns>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public virtual void Add(Body body)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (body == null)
                 throw new ArgumentNullException("body");
             if (body._world == this)
@@ -961,12 +969,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Destroy a rigid body.
         /// Warning: This automatically deletes all associated shapes and joints.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="body">The body.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public virtual void Remove(Body body)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (body == null)
                 throw new ArgumentNullException("body");
             if (body.World != this)
@@ -1022,12 +1032,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         
         /// <summary>
         /// Create a joint to constrain bodies together. This may cause the connected bodies to cease colliding.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="joint">The joint.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Add(Joint joint)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (joint == null)
                 throw new ArgumentNullException("joint");
             if (JointList.Contains(joint))
@@ -1089,12 +1101,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         
         /// <summary>
         /// Destroy a joint. This may cause the connected bodies to begin colliding.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="joint">The joint.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Remove(Joint joint)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (joint == null)
                 throw new ArgumentNullException("joint");
             if (!JointList.Contains(joint))
@@ -1198,7 +1212,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // TODO: check body.World to see if body belongs to another world,
             //       or if it's allready added to this World.
 
-            if (IsStepping)
+            if (IsLocked)
             {
                 if (!_bodyAddList.Contains(body))
                     _bodyAddList.Add(body);
@@ -1219,7 +1233,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (body == null)
                 throw new ArgumentNullException("body");
 
-            if (IsStepping)
+            if (IsLocked)
             {
                 if (!_bodyRemoveList.Contains(body))
                     _bodyRemoveList.Add(body);
@@ -1244,7 +1258,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (joint == null)
                 throw new ArgumentNullException("joint");
 
-            if (IsStepping)
+            if (IsLocked)
             {
                 if (!_jointAddList.Contains(joint))
                     _jointAddList.Add(joint);
@@ -1264,7 +1278,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (joint == null)
                 throw new ArgumentNullException("joint");
 
-            if (IsStepping)
+            if (IsLocked)
             {
                 if (!_jointRemoveList.Contains(joint))
                     _jointRemoveList.Add(joint);
@@ -1332,12 +1346,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Take a time step. This performs collision detection, integration,
         /// and consraint solution.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="dt">The amount of time to simulate in seconds, this should not vary.</param>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Step(float dt)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
 
             if (!Enabled)
                 return;
@@ -1365,7 +1381,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             step.dtRatio = _invDt0 * dt;
             step.warmStarting = _warmStarting;
 
-            IsStepping = true;
+            IsLocked = true;
             try
             {
                 //Update controllers
@@ -1405,7 +1421,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
             finally
             {
-                IsStepping = false;
+                IsLocked = false;
             }
 
             if (step.dt > 0.0f)
@@ -1508,10 +1524,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return affected;
         }
 
+        /// <summary>
+        /// Warning: This method is locked during callbacks.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Add(Controller controller)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (controller == null)
                 throw new ArgumentNullException("controller");
             if (controller.World == this)
@@ -1526,10 +1546,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ControllerAdded(this, controller);
         }
 
+        /// <summary>
+        /// Warning: This method is locked during callbacks.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Remove(Controller controller)
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
             if (controller == null)
                 throw new ArgumentNullException("controller");
             if (controller.World != this)
@@ -1623,10 +1647,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ContactManager.BroadPhase.ShiftOrigin(newOrigin);
         }
 
+        /// <summary>
+        /// Warning: This method is locked during callbacks.
+        /// </summary>
+        /// <exception cref="System.InvalidOperationException">Thrown when the world is Locked/Stepping.</exception>
         public void Clear()
         {
-            if (IsStepping)
-                throw new InvalidOperationException("World is stepping.");
+            if (IsLocked)
+                throw new InvalidOperationException("The World is locked.");
 
             ProcessChanges();
 

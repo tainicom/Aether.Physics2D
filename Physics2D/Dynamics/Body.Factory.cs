@@ -22,7 +22,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Creates a fixture and attach it to this body.
         /// If the density is non-zero, this function automatically updates the mass of the body.
         /// Contacts are not created until the next time step.
-        /// Warning: This function is locked during callbacks.
+        /// Warning: This method is locked during callbacks.
         /// </summary>
         /// <param name="shape">The shape.</param>
         /// <param name="userData">Application specific data</param>
