@@ -87,8 +87,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 #endif
 
             // AetherPhysics2D tests
-            new TestEntry {Name = "Multithread SolveVelocityConstraints() Test 1", CreateTest = Multithread1Test.Create},            
-            new TestEntry {Name = "Multithread SolveVelocityConstraints() Test 2", CreateTest = Multithread2Test.Create},
+            new TestEntry {Name = "Multithread Solvers() Test 1", CreateTest = Multithread1Test.Create},            
+            new TestEntry {Name = "Multithread Solvers() Test 2", CreateTest = Multithread2Test.Create},
             new TestEntry {Name = "Body Pool", CreateTest = BodyPoolTest.Create},
             new TestEntry {Name = "Collision Test", CreateTest = CollisionTest.Create},
 

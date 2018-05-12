@@ -45,6 +45,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             // enable multithreading
             World.ContactManager.VelocityConstraintsMultithreadThreshold = 256;
             World.ContactManager.PositionConstraintsMultithreadThreshold = 256;
+            World.ContactManager.CollideMultithreadThreshold = 256;
 
             //Create ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
