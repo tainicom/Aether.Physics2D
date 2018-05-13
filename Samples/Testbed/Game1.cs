@@ -279,7 +279,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 ResetCamera();
             }
 
-            _test.DebugView.RenderDebugData(ref Projection, ref View);
+            _test.DrawDebugView(gameTime, ref Projection, ref View);
 
             base.Draw(gameTime);
         }
