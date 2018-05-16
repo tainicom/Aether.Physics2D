@@ -78,9 +78,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
             DebugView.DrawString(x, y, title);
         }
 
+        public virtual void DrawDebugView(GameTime gameTime, ref Matrix projection, ref Matrix view)
+        {
+            DebugView.RenderDebugData(ref projection, ref view);
+        }
+
         public virtual void Update(GameSettings settings, GameTime gameTime)
         {
-            float timeStep = Math.Min((float)gameTime.ElapsedGameTime.TotalMilliseconds * 0.001f, (1f / 30f));
+            float timeStep = Math.Min((float)gameTime.ElapsedGameTime.TotalSeconds, (1f / 30f));
 
             if (settings.Pause)
             {

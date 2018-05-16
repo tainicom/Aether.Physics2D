@@ -35,6 +35,33 @@ namespace tainicom.Aether.Physics2D.Dynamics
 {
     public class ContactManager
     {
+        #region Settings
+        /// <summary>
+        /// A threshold for activating multiple cores to solve VelocityConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve VelocityConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public int VelocityConstraintsMultithreadThreshold = int.MaxValue;
+
+        /// <summary>
+        /// A threshold for activating multiple cores to solve PositionConstraints.
+        /// An Island with a contact count above this threshold will use multiple threads to solve PositionConstraints.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public int PositionConstraintsMultithreadThreshold = int.MaxValue;
+        
+        /// <summary>
+        /// A threshold for activating multiple cores to solve Collide.
+        /// An World with a contact count above this threshold will use multiple threads to solve Collide.
+        /// A value of 0 will always use multithreading. A value of (int.MaxValue) will never use multithreading.
+        /// Typical values are {128 or 256}.
+        /// </summary>
+        public int CollideMultithreadThreshold = int.MaxValue;
+        #endregion
+
+
         /// <summary>
         /// Fires when a contact is created
         /// </summary>
@@ -258,36 +285,20 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ContactCount--;
 
             // Remove from body 1
-            if (contact._nodeA.Prev != null)
-            {
-                contact._nodeA.Prev.Next = contact._nodeA.Next;
-            }
-
-            if (contact._nodeA.Next != null)
-            {
-                contact._nodeA.Next.Prev = contact._nodeA.Prev;
-            }
-
             if (contact._nodeA == bodyA.ContactList)
-            {
                 bodyA.ContactList = contact._nodeA.Next;
-            }
+            if (contact._nodeA.Prev != null)
+                contact._nodeA.Prev.Next = contact._nodeA.Next;
+            if (contact._nodeA.Next != null)
+                contact._nodeA.Next.Prev = contact._nodeA.Prev;
 
             // Remove from body 2
-            if (contact._nodeB.Prev != null)
-            {
-                contact._nodeB.Prev.Next = contact._nodeB.Next;
-            }
-
-            if (contact._nodeB.Next != null)
-            {
-                contact._nodeB.Next.Prev = contact._nodeB.Prev;
-            }
-
             if (contact._nodeB == bodyB.ContactList)
-            {
                 bodyB.ContactList = contact._nodeB.Next;
-            }
+            if (contact._nodeB.Prev != null)
+                contact._nodeB.Prev.Next = contact._nodeB.Next;
+            if (contact._nodeB.Next != null)
+                contact._nodeB.Next.Prev = contact._nodeB.Prev;
 
 #if USE_ACTIVE_CONTACT_SET
 			if (ActiveContacts.Contains(contact))
@@ -298,6 +309,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal void Collide()
         {
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+            if (this.ContactCount > CollideMultithreadThreshold && System.Environment.ProcessorCount > 1)
+            {
+                CollideMultiCore();
+                return;
+            }
+#endif
+
             // Update awake contacts.
 #if USE_ACTIVE_CONTACT_SET
             ActiveList.AddRange(ActiveContacts);
@@ -393,6 +412,160 @@ namespace tainicom.Aether.Physics2D.Dynamics
 			ActiveList.Clear();
 #endif
         }
+
+        /// <summary>
+        /// A temporary list of contacts to be updated during Collide().
+        /// </summary>
+        List<Contact> updateList = new List<Contact>();
+
+#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+        internal void CollideMultiCore()
+        {
+            int lockOrder = 0;
+ 
+            // Update awake contacts.
+#if USE_ACTIVE_CONTACT_SET
+            ActiveList.AddRange(ActiveContacts);
+            foreach (var tmpc in ActiveList)
+            {
+                Contact c = tmpc;
+#else
+            for (Contact c = ContactList.Next; c != ContactList; )
+            {
+#endif
+                Fixture fixtureA = c.FixtureA;
+                Fixture fixtureB = c.FixtureB;
+                int indexA = c.ChildIndexA;
+                int indexB = c.ChildIndexB;
+                Body bodyA = fixtureA.Body;
+                Body bodyB = fixtureB.Body;
+
+                //Do no try to collide disabled bodies
+                if (!bodyA.Enabled || !bodyB.Enabled)
+                {
+                    c = c.Next;
+                    continue;
+                }
+
+                // Is this contact flagged for filtering?
+                if (c.FilterFlag)
+                {
+                    // Should these bodies collide?
+                    if (bodyB.ShouldCollide(bodyA) == false)
+                    {
+                        Contact cNuke = c;
+                        c = c.Next;
+                        Destroy(cNuke);
+                        continue;
+                    }
+
+                    // Check default filtering
+                    if (ShouldCollide(fixtureA, fixtureB) == false)
+                    {
+                        Contact cNuke = c;
+                        c = c.Next;
+                        Destroy(cNuke);
+                        continue;
+                    }
+
+                    // Check user filtering.
+                    if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
+                    {
+                        Contact cNuke = c;
+                        c = c.Next;
+                        Destroy(cNuke);
+                        continue;
+                    }
+
+                    // Clear the filtering flag.
+                    c.FilterFlag = false;
+                }
+
+                bool activeA = bodyA.Awake && bodyA.BodyType != BodyType.Static;
+                bool activeB = bodyB.Awake && bodyB.BodyType != BodyType.Static;
+
+                // At least one body must be awake and it must be dynamic or kinematic.
+                if (activeA == false && activeB == false)
+                {
+#if USE_ACTIVE_CONTACT_SET
+					ActiveContacts.Remove(c);
+#endif
+                    c = c.Next;
+                    continue;
+                }
+
+                int proxyIdA = fixtureA.Proxies[indexA].ProxyId;
+                int proxyIdB = fixtureB.Proxies[indexB].ProxyId;
+
+                bool overlap = BroadPhase.TestOverlap(proxyIdA, proxyIdB);
+
+                // Here we destroy contacts that cease to overlap in the broad-phase.
+                if (overlap == false)
+                {
+                    Contact cNuke = c;
+                    c = c.Next;
+                    Destroy(cNuke);
+                    continue;
+                }
+
+                // The contact persists.
+                updateList.Add(c);
+                // Assign a unique id for lock order
+                bodyA._lockOrder = lockOrder++;
+                bodyB._lockOrder = lockOrder++;
+
+
+                c = c.Next;
+            }
+
+#if USE_ACTIVE_CONTACT_SET
+			ActiveList.Clear();
+#endif
+
+            // update contacts
+            System.Threading.Tasks.Parallel.ForEach<Contact>(updateList, (c) =>
+            {
+                // find lower order item
+                Fixture fixtureA = c.FixtureA;
+                Fixture fixtureB = c.FixtureB;
+
+                // find lower order item
+                Body orderedBodyA = fixtureA.Body;
+                Body orderedBodyB = fixtureB.Body;
+                int idA = orderedBodyA._lockOrder;
+                int idB = orderedBodyB._lockOrder;
+                if (idA == idB)
+                    throw new System.Exception();
+
+                if (idA > idB)
+                {
+                    orderedBodyA = fixtureB.Body;
+                    orderedBodyB = fixtureA.Body;
+                }
+
+                // obtain lock
+                for (; ; )
+                {
+                    if (System.Threading.Interlocked.CompareExchange(ref orderedBodyA._lock, 1, 0) == 0)
+                    {
+                        if (System.Threading.Interlocked.CompareExchange(ref orderedBodyB._lock, 1, 0) == 0)
+                            break;
+                        System.Threading.Interlocked.Exchange(ref orderedBodyA._lock, 0);
+                    }
+#if NET40 || NET45
+                    System.Threading.Thread.Sleep(0);
+#endif
+                }
+
+                c.Update(this);
+
+                System.Threading.Interlocked.Exchange(ref orderedBodyB._lock, 0);
+                System.Threading.Interlocked.Exchange(ref orderedBodyA._lock, 0);
+            });
+
+            updateList.Clear();
+        }
+#endif
 
         private static bool ShouldCollide(Fixture fixtureA, Fixture fixtureB)
         {

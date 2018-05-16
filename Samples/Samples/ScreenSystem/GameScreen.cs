@@ -197,7 +197,7 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             if (time == TimeSpan.Zero)
                 transitionDelta = 1f;
             else
-                transitionDelta = (float)(gameTime.ElapsedGameTime.TotalMilliseconds / time.TotalMilliseconds);
+                transitionDelta = (float)(gameTime.ElapsedGameTime.TotalSeconds / time.TotalSeconds);
 
             // Update the transition position.
             TransitionPosition += transitionDelta * direction;

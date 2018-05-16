@@ -27,8 +27,8 @@
 
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
+using tainicom.Aether.Physics2D.Common.Maths;
 using tainicom.Aether.Physics2D.Dynamics;
-using tainicom.Aether.Physics2D.Maths;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using Microsoft.Xna.Framework;
 

@@ -73,10 +73,6 @@ namespace tainicom.Aether.Physics2D.Samples
         {
             base.Initialize();
 
-            // enable multithreading
-            Settings.VelocityConstraintsMultithreadThreshold = 64;
-            Settings.PositionConstraintsMultithreadThreshold = 64;
-
             SimpleDemo1 simple1 = new SimpleDemo1();
             SimpleDemo2 simple2 = new SimpleDemo2();
             SimpleDemo3 simple3 = new SimpleDemo3();

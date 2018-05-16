@@ -42,6 +42,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         private Multithread1Test()
         {
+            // enable multithreading
+            World.ContactManager.VelocityConstraintsMultithreadThreshold = 256;
+            World.ContactManager.PositionConstraintsMultithreadThreshold = 256;
+            World.ContactManager.CollideMultithreadThreshold = 256;
+
             //Create ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 
@@ -75,21 +80,29 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             base.Update(settings, gameTime);
 
+            var cMgr = World.ContactManager;
+
             DrawString("Press Space to switch between single-core / multi-core solvers.");
-            DrawString("Press 1-4 to set VelocityConstraints Threshold. (1-(0 - Always ON), 2-(128), 3-(256), 4-(int.MaxValue - Always OFF))");
-            DrawString("Press 5-8 to set PositionConstraints Threshold. (5-(0 - Always ON), 6-(128), 7-(256), 8-(int.MaxValue - Always OFF))");
-            var threshold = Settings.VelocityConstraintsMultithreadThreshold;
-            if (threshold == 0) DrawString("VelocityConstraints Threshold: 0");
-            else if (threshold == 128) DrawString("VelocityConstraintsMultithreadThreshold: 128");
+            DrawString("Press 1-3 to set VelocityConstraints Threshold. (1-(0 - Always ON), 2-(256), 3-(int.MaxValue - Always OFF))");
+            DrawString("Press 4-6 to set PositionConstraints Threshold. (4-(0 - Always ON), 5-(256), 6-(int.MaxValue - Always OFF))");
+            DrawString("Press 7-9 to set Collide Threshold.             (7-(0 - Always ON), 8-(256), 9-(int.MaxValue - Always OFF))");
+            
+            TextLine += 15 * 10;
+            var threshold = cMgr.VelocityConstraintsMultithreadThreshold;
+            if (threshold == 0) DrawString("VelocityConstraintsMultithreadThreshold: 0");
             else if (threshold == 256) DrawString("VelocityConstraintsMultithreadThreshold: 256");
             else if (threshold == int.MaxValue) DrawString("VelocityConstraintsMultithreadThreshold: int.MaxValue");
             else DrawString("VelocityConstraintsMultithreadThreshold: " + threshold);
-            threshold = Settings.PositionConstraintsMultithreadThreshold;
+            threshold = cMgr.PositionConstraintsMultithreadThreshold;
             if (threshold == 0) DrawString("PositionConstraintsMultithreadThreshold: 0");
-            else if (threshold == 128) DrawString("PositionConstraintsMultithreadThreshold: 128");
             else if (threshold == 256) DrawString("PositionConstraintsMultithreadThreshold: 256");
             else if (threshold == int.MaxValue) DrawString("PositionConstraintsMultithreadThreshold: int.MaxValue");
             else DrawString("PositionConstraintsMultithreadThreshold is Currently: " + threshold);
+            threshold = cMgr.CollideMultithreadThreshold;
+            if (threshold == 0) DrawString("CollideMultithreadThreshold: 0");
+            else if (threshold == 256) DrawString("CollideMultithreadThreshold:  256");
+            else if (threshold == int.MaxValue) DrawString("CollideMultithreadThreshold: int.MaxValue");
+            else DrawString("CollideMultithreadThreshold is Currently: " + threshold);
             
             if (gameTime.IsRunningSlowly)
                 DrawString("[IsRunningSlowly]");
@@ -99,31 +112,37 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             base.Keyboard(keyboardManager);
 
-            if (keyboardManager.IsNewKeyPress(Keys.D1))
-                Settings.VelocityConstraintsMultithreadThreshold = 0;
-            if (keyboardManager.IsNewKeyPress(Keys.D2))
-                Settings.VelocityConstraintsMultithreadThreshold = 128;
-            if (keyboardManager.IsNewKeyPress(Keys.D3))
-                Settings.VelocityConstraintsMultithreadThreshold = 256;
-            if (keyboardManager.IsNewKeyPress(Keys.D4))
-                Settings.VelocityConstraintsMultithreadThreshold = int.MaxValue;
+            var cMgr = World.ContactManager;         
 
+            if (keyboardManager.IsNewKeyPress(Keys.D1))
+                cMgr.VelocityConstraintsMultithreadThreshold = 0;
+            if (keyboardManager.IsNewKeyPress(Keys.D2))
+                cMgr.VelocityConstraintsMultithreadThreshold = 256;
+            if (keyboardManager.IsNewKeyPress(Keys.D3))
+                cMgr.VelocityConstraintsMultithreadThreshold = int.MaxValue;
+
+            if (keyboardManager.IsNewKeyPress(Keys.D4))
+                cMgr.PositionConstraintsMultithreadThreshold = 0;
             if (keyboardManager.IsNewKeyPress(Keys.D5))
-                Settings.PositionConstraintsMultithreadThreshold = 0;
+                cMgr.PositionConstraintsMultithreadThreshold = 256;
             if (keyboardManager.IsNewKeyPress(Keys.D6))
-                Settings.PositionConstraintsMultithreadThreshold = 128;
+                cMgr.PositionConstraintsMultithreadThreshold = int.MaxValue;
+            
             if (keyboardManager.IsNewKeyPress(Keys.D7))
-                Settings.PositionConstraintsMultithreadThreshold = 256;
+                cMgr.CollideMultithreadThreshold = 0;
             if (keyboardManager.IsNewKeyPress(Keys.D8))
-                Settings.PositionConstraintsMultithreadThreshold = int.MaxValue;
+                cMgr.CollideMultithreadThreshold = 256;
+            if (keyboardManager.IsNewKeyPress(Keys.D9))
+                cMgr.CollideMultithreadThreshold = int.MaxValue;
 
             if (keyboardManager.IsNewKeyPress(Keys.Space))
             {
-                if (Settings.VelocityConstraintsMultithreadThreshold == int.MaxValue)
-                    Settings.VelocityConstraintsMultithreadThreshold = 0;
-                else                
-                    Settings.VelocityConstraintsMultithreadThreshold = int.MaxValue;
-                Settings.PositionConstraintsMultithreadThreshold = Settings.VelocityConstraintsMultithreadThreshold;
+                if (cMgr.VelocityConstraintsMultithreadThreshold == int.MaxValue)
+                    cMgr.VelocityConstraintsMultithreadThreshold = 0;
+                else
+                    cMgr.VelocityConstraintsMultithreadThreshold = int.MaxValue;
+                cMgr.PositionConstraintsMultithreadThreshold = cMgr.VelocityConstraintsMultithreadThreshold;
+                cMgr.CollideMultithreadThreshold = cMgr.VelocityConstraintsMultithreadThreshold;
 
             }
         }

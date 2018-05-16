@@ -46,22 +46,22 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         /// <summary>
         /// The contact
         /// </summary>
-        public Contact Contact;
-
-        /// <summary>
-        /// The next contact edge in the body's contact list
-        /// </summary>
-        public ContactEdge Next;
+        public Contact Contact { get; internal set; }
 
         /// <summary>
         /// Provides quick access to the other body attached.
         /// </summary>
-        public Body Other;
+        public Body Other { get; internal set; }
 
+        /// <summary>
+        /// The next contact edge in the body's contact list
+        /// </summary>
+        public ContactEdge Next { get; internal set; }
+        
         /// <summary>
         /// The previous contact edge in the body's contact list
         /// </summary>
-        public ContactEdge Prev;
+        public ContactEdge Prev { get; internal set; }
     }
 
     /// <summary>
@@ -215,18 +215,18 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
             Manifold.PointCount = 0;
 
-            Prev = null;
             Next = null;
+            Prev = null;
 
             _nodeA.Contact = null;
-            _nodeA.Prev = null;
-            _nodeA.Next = null;
             _nodeA.Other = null;
+            _nodeA.Next = null;
+            _nodeA.Prev = null;
 
             _nodeB.Contact = null;
-            _nodeB.Prev = null;
-            _nodeB.Next = null;
             _nodeB.Other = null;
+            _nodeB.Next = null;
+            _nodeB.Prev = null;
 
             _toiCount = 0;
 

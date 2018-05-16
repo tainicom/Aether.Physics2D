@@ -95,6 +95,7 @@
     <Compile Include="Tests\MotorJointTest.cs" />
     <Compile Include="Tests\Multithread1Test.cs" />
     <Compile Include="Tests\Multithread2Test.cs" />
+    <Compile Include="Tests\MultithreadWorldsTest.cs" />
     <Compile Include="Tests\OneSidedPlatformTest.cs" />
     <Compile Include="Tests\PathTest.cs" />
     <Compile Include="Tests\PinballTest.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Tests\SphereStackTest.cs" />
     <Compile Include="Tests\TestEntries.cs" />
     <Compile Include="Tests\TextureVerticesTest.cs" />
+    <Compile Include="Tests\TheLeaningTowerofLireTest.cs" />
     <Compile Include="Tests\TheoJansenTest.cs" />
     <Compile Include="Tests\TilesTest.cs" />
     <Compile Include="Tests\TimeOfImpactTest.cs" />

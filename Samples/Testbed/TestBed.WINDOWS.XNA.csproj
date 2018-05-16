@@ -151,6 +151,7 @@
     <Compile Include="Tests\GearsTest.cs" />
     <Compile Include="Tests\Multithread1Test.cs" />
     <Compile Include="Tests\Multithread2Test.cs" />
+    <Compile Include="Tests\MultithreadWorldsTest.cs" />
     <Compile Include="Tests\OneSidedPlatformTest.cs" />
     <Compile Include="Tests\PathTest.cs" />
     <Compile Include="Tests\PinballTest.cs" />
@@ -174,6 +175,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tests\TextureVerticesTest.cs" />
+    <Compile Include="Tests\TheLeaningTowerofLireTest.cs" />
     <Compile Include="Tests\TheoJansenTest.cs" />
     <Compile Include="Tests\TilesTest.cs" />
     <Compile Include="Tests\TimeOfImpactTest.cs" />
