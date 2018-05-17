@@ -102,7 +102,7 @@ namespace tainicom.Aether.Physics2D.Common.Decomposition
                 case TriangulationAlgorithm.Bayazit:
                     if (skipSanityChecks)
                         Debug.Assert(vertices.IsCounterClockWise(), "The polygon is not counter clockwise. This is needed for Bayazit to work correctly.");
-                    else if (vertices.IsCounterClockWise())
+                    else if (!vertices.IsCounterClockWise())
                     {
                         Vertices temp = new Vertices(vertices);
                         temp.Reverse();
@@ -113,7 +113,7 @@ namespace tainicom.Aether.Physics2D.Common.Decomposition
                 case TriangulationAlgorithm.Flipcode:
                     if (skipSanityChecks)
                         Debug.Assert(vertices.IsCounterClockWise(), "The polygon is not counter clockwise. This is needed for Bayazit to work correctly.");
-                    else if (vertices.IsCounterClockWise())
+                    else if (!vertices.IsCounterClockWise())
                     {
                         Vertices temp = new Vertices(vertices);
                         temp.Reverse();
