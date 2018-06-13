@@ -17,30 +17,28 @@ namespace tainicom.Aether.Physics2D.Samples
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private BasicEffect _spriteBatchEffect;
-        private KeyboardState _oldKeyState;
-        private GamePadState _oldPadState;
         private SpriteFont _font;
 
-        private World _world;
+        private Texture2D _playerTexture;
+        private Texture2D _groundTexture;
+        private Vector2 _playerTextureSize;
+        private Vector2 _groundTextureSize;
+        private Vector2 _playerTextureOrigin;
+        private Vector2 _groundTextureOrigin;
 
-        private Body _circleBody;
-        private Body _groundBody;
-        private const float _circleBodyRadius = 0.75f;
-        private Vector2 _groundBodySize = new Vector2(8f, 1f);
-
-
-        private Texture2D _circleSprite;
-        private Texture2D _groundSprite;
-        private Vector2 _circleSpriteSize;
-        private Vector2 _groundSpriteSize;
-        private Vector2 _circleSpriteOrigin;
-        private Vector2 _groundSpriteOrigin;
+        private KeyboardState _oldKeyState;
+        private GamePadState _oldPadState;
 
         // Simple camera controls
-        private Matrix _projection;
-        private Matrix _view;
-        private Vector3 _cameraPosition;
+        private Vector3 _cameraPosition = new Vector3(0, 1.70f, 0); // camera is 1.7 meters above the ground
+        float cameraViewWidth = 12.5f; // camera is 12.5 meters wide.
 
+        // physics
+        private World _world;
+        private Body _playerBody;
+        private Body _groundBody;
+        private float _playerBodyRadius = 1.5f / 2f; // player diameter is 1.5 meters
+        private Vector2 _groundBodySize = new Vector2(8f, 1f); // ground is 8x1 meters
 
 
 #if !JOYSTICK
@@ -62,50 +60,58 @@ namespace tainicom.Aether.Physics2D.Samples
 
             Content.RootDirectory = "Content";
 
+        }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+            
             //Create a world
             _world = new World();
+
+            /* Circle */
+            Vector2 playerPosition = new Vector2(0, _playerBodyRadius);
+
+            // Create the player fixture
+            _playerBody = _world.CreateCircle(_playerBodyRadius, 1f, playerPosition);
+            _playerBody.BodyType = BodyType.Dynamic;
+
+            // Give it some bounce and friction
+            _playerBody.SetRestitution(0.3f);
+            _playerBody.SetFriction(0.5f);
+
+
+            /* Ground */
+            Vector2 groundPosition = new Vector2(0, -(_groundBodySize.Y/2f));
+
+            // Create the ground fixture
+            _groundBody = _world.CreateRectangle(_groundBodySize.X, _groundBodySize.Y, 1f, groundPosition);
+            _groundBody.BodyType = BodyType.Static;
+
+            _groundBody.SetRestitution(0.3f);
+            _groundBody.SetFriction(0.5f);
         }
 
         protected override void LoadContent()
         {
-            // Initialize camera controls 
-            _cameraPosition = Vector3.Zero;
-
             _spriteBatch = new SpriteBatch(_graphics.GraphicsDevice);
+            // We use a BasicEffect to pass our view/projection in _spriteBatch
             _spriteBatchEffect = new BasicEffect(_graphics.GraphicsDevice);
             _spriteBatchEffect.TextureEnabled = true;
             
              _font = Content.Load<SpriteFont>("font");
 
             // Load sprites
-            _circleSprite = Content.Load<Texture2D>("CircleSprite"); //  96px x 96px => 1.5m x 1.5m
-            _groundSprite = Content.Load<Texture2D>("GroundSprite"); // 512px x 64px =>   8m x 1m
-                        
-            _groundSpriteSize = new Vector2(_groundSprite.Width, _groundSprite.Height);
-            _circleSpriteSize = new Vector2(_circleSprite.Width, _circleSprite.Height);
+            _playerTexture = Content.Load<Texture2D>("CircleSprite");
+            _groundTexture = Content.Load<Texture2D>("GroundSprite");
 
-            /* We need XNA to draw the ground and circle at the center of the shapes */
-            _groundSpriteOrigin = _groundSpriteSize / 2f;
-            _circleSpriteOrigin = _circleSpriteSize / 2f;
-                        
-            /* Circle */
-            Vector2 circlePosition = new Vector2(0, 1.5f);
+            // We scale the ground and player textures at body dimensions
+            _playerTextureSize = new Vector2(_playerTexture.Width, _playerTexture.Height);
+            _groundTextureSize = new Vector2(_groundTexture.Width, _groundTexture.Height);
 
-            // Create the circle fixture
-            _circleBody = _world.CreateCircle(_circleBodyRadius, 1f, circlePosition, BodyType.Dynamic);
-
-            // Give it some bounce and friction
-            _circleBody.SetRestitution(0.3f);
-            _circleBody.SetFriction(0.5f);
-
-            /* Ground */
-            Vector2 groundPosition = new Vector2(0, -1.25f);
-
-            // Create the ground fixture
-            _groundBody = _world.CreateRectangle(_groundBodySize.X, _groundBodySize.Y, 1f, groundPosition);
-            _groundBody.BodyType = BodyType.Static;
-            _groundBody.SetRestitution(0.3f);
-            _groundBody.SetFriction(0.5f);
+            // We draw the ground and player textures at the center of the shapes
+            _playerTextureOrigin = _playerTextureSize / 2f;
+            _groundTextureOrigin = _groundTextureSize / 2f;
         }
 
         /// <summary>
@@ -120,12 +126,6 @@ namespace tainicom.Aether.Physics2D.Samples
             
             float totalSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            // update camera View Projection
-            var vp = GraphicsDevice.Viewport;
-            var cameraZoomFactor = 12.5f / vp.Width; // zoom out to about ~12.5 meters wide
-            _projection = Matrix.CreateOrthographic(vp.Width * cameraZoomFactor, vp.Height * cameraZoomFactor, 0f, -1f);
-            _view = Matrix.CreateLookAt(_cameraPosition, _cameraPosition + Vector3.Forward, Vector3.Up);
-
             //We update the world
             _world.Step((float)gameTime.ElapsedGameTime.TotalSeconds);
 
@@ -135,6 +135,7 @@ namespace tainicom.Aether.Physics2D.Samples
         private void HandleGamePad(GameTime gameTime)
         {
             GamePadState padState = GamePad.GetState(0);
+            float totalSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             if (padState.IsConnected)
             {
@@ -142,9 +143,9 @@ namespace tainicom.Aether.Physics2D.Samples
                     Exit();
 
                 if (padState.Buttons.A == ButtonState.Pressed && _oldPadState.Buttons.A == ButtonState.Released)
-                    _circleBody.ApplyLinearImpulse(new Vector2(0, -10));
+                    _playerBody.ApplyLinearImpulse(new Vector2(0, -10));
 
-                _circleBody.ApplyForce(padState.ThumbSticks.Left);
+                _playerBody.ApplyForce(padState.ThumbSticks.Left);
                 _cameraPosition.X -= padState.ThumbSticks.Right.X;
                 _cameraPosition.Y += padState.ThumbSticks.Right.Y;
 
@@ -162,27 +163,27 @@ namespace tainicom.Aether.Physics2D.Samples
 
             // Move camera
             if (state.IsKeyDown(Keys.Left))
-                _cameraPosition.X -= totalSeconds * (vp.Width * 0.01f);
+                _cameraPosition.X -= totalSeconds * cameraViewWidth;
 
             if (state.IsKeyDown(Keys.Right))
-                _cameraPosition.X += totalSeconds * (vp.Width * 0.01f);
+                _cameraPosition.X += totalSeconds * cameraViewWidth;
 
             if (state.IsKeyDown(Keys.Up))
-                _cameraPosition.Y += totalSeconds * (vp.Width * 0.01f);
+                _cameraPosition.Y += totalSeconds * cameraViewWidth;
 
             if (state.IsKeyDown(Keys.Down))
-                _cameraPosition.Y -= totalSeconds * (vp.Width * 0.01f);
+                _cameraPosition.Y -= totalSeconds * cameraViewWidth;
 
 
-            // We make it possible to rotate the circle body
+            // We make it possible to rotate the player body
             if (state.IsKeyDown(Keys.A))
-                _circleBody.ApplyTorque(10);
+                _playerBody.ApplyTorque(10);
 
             if (state.IsKeyDown(Keys.D))
-                _circleBody.ApplyTorque(-10);
+                _playerBody.ApplyTorque(-10);
 
             if (state.IsKeyDown(Keys.Space) && _oldKeyState.IsKeyUp(Keys.Space))
-                _circleBody.ApplyLinearImpulse(new Vector2(0, 10));
+                _playerBody.ApplyLinearImpulse(new Vector2(0, 10));
 
             if (state.IsKeyDown(Keys.Escape))
                 Exit();
@@ -197,13 +198,17 @@ namespace tainicom.Aether.Physics2D.Samples
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            //Draw circle and ground
-            _spriteBatchEffect.Projection = _projection;
-            _spriteBatchEffect.View = _view;
+            
+            // Update camera View and Projection.
+            var vp = GraphicsDevice.Viewport;
+            _spriteBatchEffect.View = Matrix.CreateLookAt(_cameraPosition, _cameraPosition + Vector3.Forward, Vector3.Up);
+            _spriteBatchEffect.Projection = Matrix.CreateOrthographic(cameraViewWidth, cameraViewWidth / vp.AspectRatio, 0f, -1f);
+            
+            // Draw player and ground. 
+            // Our View/Projection requires RasterizerState.CullClockwise and SpriteEffects.FlipVertically.
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, RasterizerState.CullClockwise, _spriteBatchEffect);
-            _spriteBatch.Draw(_circleSprite, _circleBody.Position, null, Color.White, _circleBody.Rotation, _circleSpriteOrigin, new Vector2(_circleBodyRadius * 2f) / _circleSpriteSize, SpriteEffects.FlipVertically, 0f);
-            _spriteBatch.Draw(_groundSprite, _groundBody.Position, null, Color.White, 0f, _groundSpriteOrigin, _groundBodySize / _groundSpriteSize, SpriteEffects.FlipVertically, 0f);
+            _spriteBatch.Draw(_playerTexture, _playerBody.Position, null, Color.White, _playerBody.Rotation, _playerTextureOrigin, new Vector2(_playerBodyRadius * 2f) / _playerTextureSize, SpriteEffects.FlipVertically, 0f);
+            _spriteBatch.Draw(_groundTexture, _groundBody.Position, null, Color.White, _groundBody.Rotation, _groundTextureOrigin, _groundBodySize / _groundTextureSize, SpriteEffects.FlipVertically, 0f);
             _spriteBatch.End();
 
             // Display instructions
