@@ -81,7 +81,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private Func<Fixture, Vector2, Vector2, float, float> _rayCastCallback;
         private Func<RayCastInput, int, float> _rayCastCallbackWrapper;
 
-        internal Queue<Contact> _contactPool = new Queue<Contact>(256);
         internal bool _worldHasNewFixture;
 
         public FluidSystem2 Fluid { get; private set; }
