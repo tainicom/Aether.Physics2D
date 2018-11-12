@@ -467,8 +467,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         internal void Destroy()
         {
-            FixtureA.Body.World._contactPool.Enqueue(this);
-
             if (Manifold.PointCount > 0 && FixtureA.IsSensor == false && FixtureB.IsSensor == false)
             {
                 FixtureA.Body.Awake = true;

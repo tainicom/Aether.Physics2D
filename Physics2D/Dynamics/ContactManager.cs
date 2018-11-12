@@ -305,6 +305,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
 				ActiveContacts.Remove(contact);
 #endif
             contact.Destroy();
+            
+            // Insert into the pool.
+            bodyA.World._contactPool.Enqueue(contact);
         }
 
         internal void Collide()
