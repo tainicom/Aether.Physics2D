@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -435,32 +437,28 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Debug.Assert(ShapeType.Unknown < type1 && type1 < ShapeType.TypeCount);
             Debug.Assert(ShapeType.Unknown < type2 && type2 < ShapeType.TypeCount);
 
-            Contact c;
+            Contact c = null;
             Queue<Contact> pool = fixtureA.Body.World._contactPool;
             if (pool.Count > 0)
             {
                 c = pool.Dequeue();
-                if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
-                {
-                    c.Reset(fixtureA, indexA, fixtureB, indexB);
-                }
+            }
+            // Edge+Polygon is non-symetrical due to the way Erin handles collision type registration.
+            if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
+            {
+                if (c == null)
+                    c = new Contact(fixtureA, indexA, fixtureB, indexB);
                 else
-                {
-                    c.Reset(fixtureB, indexB, fixtureA, indexA);
-                }
+                    c.Reset(fixtureA, indexA, fixtureB, indexB);
             }
             else
             {
-                // Edge+Polygon is non-symetrical due to the way Erin handles collision type registration.
-                if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
-                {
-                    c = new Contact(fixtureA, indexA, fixtureB, indexB);
-                }
-                else
-                {
+                if (c == null)
                     c = new Contact(fixtureB, indexB, fixtureA, indexA);
-                }
+                else
+                    c.Reset(fixtureB, indexB, fixtureA, indexA);
             }
+        
 
             c._type = _registers[(int)type1, (int)type2];
 
