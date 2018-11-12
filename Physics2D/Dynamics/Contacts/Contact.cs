@@ -429,7 +429,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
 
-        internal static Contact Create(Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
+        internal static Contact Create(ContactManager contactManager, Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
         {
             ShapeType type1 = fixtureA.Shape.ShapeType;
             ShapeType type2 = fixtureB.Shape.ShapeType;
@@ -438,10 +438,14 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Debug.Assert(ShapeType.Unknown < type2 && type2 < ShapeType.TypeCount);
 
             Contact c = null;
-            Queue<Contact> pool = fixtureA.Body.World._contactPool;
-            if (pool.Count > 0)
-            {
-                c = pool.Dequeue();
+            var contactPoolList = contactManager._contactPoolList;
+            if (contactPoolList.Next != contactPoolList)
+            {                
+                // get first item in the pool.
+                c = contactPoolList.Next;
+                // Remove from the pool.
+                contactPoolList.Next = c.Next;
+                c.Next = null;
             }
             // Edge+Polygon is non-symetrical due to the way Erin handles collision type registration.
             if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
