@@ -170,6 +170,7 @@
     <Compile Include="Tests\ShapeEditingTest.cs" />
     <Compile Include="Tests\SliderCrankTest.cs" />
     <Compile Include="Tests\SparseBodiesTest.cs" />
+    <Compile Include="Tests\SparseBodiesWithManyFixturesTest.cs" />
     <Compile Include="Tests\CircleBenchmarkTest.cs" />
     <Compile Include="Tests\SphereStackTest.cs" />
     <Compile Include="Tests\TestEntries.cs">
