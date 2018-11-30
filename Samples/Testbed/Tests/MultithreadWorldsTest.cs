@@ -24,8 +24,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             CreateWorld(this.World); // initialize World synchronously in the main thread
             CreateWorld(world2); // initialize world2 synchronously in the main thread
-            var cw3 = Task.Run(() => CreateWorld(world3)); // initialize world3 asynchronously in the threadpool
-            var cw4 = Task.Run(() => CreateWorld(world4)); // initialize world4 asynchronously in the threadpool 
+            var cw3 = Task.Factory.StartNew(() => CreateWorld(world3)); // initialize world3 asynchronously in the threadpool
+            var cw4 = Task.Factory.StartNew(() => CreateWorld(world4)); // initialize world4 asynchronously in the threadpool 
 
             cw3.Wait();
             cw4.Wait();
@@ -87,8 +87,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 float timeStep = Math.Min((float)gameTime.ElapsedGameTime.TotalSeconds, (1f / 30f));
 
-                var st2 = Task.Run(() => world2.Step(timeStep)); // update world2 asynchronously in the threadpool
-                var st3 = Task.Run(() => world3.Step(timeStep)); // update world3 asynchronously in the threadpool
+                var st2 = Task.Factory.StartNew(() => world2.Step(timeStep)); // update world2 asynchronously in the threadpool
+                var st3 = Task.Factory.StartNew(() => world3.Step(timeStep)); // update world3 asynchronously in the threadpool
                 world4.Step(timeStep); // update world4 synchronously in the main thread
 
                 st2.Wait();
