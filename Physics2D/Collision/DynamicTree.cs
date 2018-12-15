@@ -46,8 +46,10 @@ namespace tainicom.Aether.Physics2D.Collision
         internal int Child1;
         internal int Child2;
 
+        // leaf = 0, free node = -1
         internal int Height;
         internal int ParentOrNext;
+
         internal T UserData;
 
         internal bool IsLeaf()
@@ -92,11 +94,11 @@ namespace tainicom.Aether.Physics2D.Collision
             {
                 _nodes[i] = new TreeNode<T>();
                 _nodes[i].ParentOrNext = i + 1;
-                _nodes[i].Height = 1;
+                _nodes[i].Height = -1;
             }
             _nodes[_nodeCapacity - 1] = new TreeNode<T>();
             _nodes[_nodeCapacity - 1].ParentOrNext = NullNode;
-            _nodes[_nodeCapacity - 1].Height = 1;
+            _nodes[_nodeCapacity - 1].Height = -1;
             _freeList = 0;
         }
 
