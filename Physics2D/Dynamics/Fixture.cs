@@ -339,9 +339,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal void Synchronize(IBroadPhase broadPhase, ref Transform transform1, ref Transform transform2)
         {
-            if (ProxyCount == 0)
-                return;
-
             for (int i = 0; i < ProxyCount; ++i)
             {
                 FixtureProxy proxy = Proxies[i];
