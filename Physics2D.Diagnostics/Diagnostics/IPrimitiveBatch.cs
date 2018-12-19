@@ -13,5 +13,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         bool IsReady();
         int AddVertex(Vector3 position, Color color, PrimitiveType primitiveType);
         int AddVertex(Vector2 position, Color color, PrimitiveType primitiveType);
+        int AddVertex(ref Vector2 position, Color color, PrimitiveType primitiveType);
+        int AddVertex(ref Vector3 position, Color color, PrimitiveType primitiveType);        
     }
 }

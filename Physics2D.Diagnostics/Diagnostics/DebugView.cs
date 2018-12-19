@@ -516,13 +516,13 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             for (int i = 0; i < count - 1; i++)
             {
-                _primitiveBatch.AddVertex(vertices[i], color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(vertices[i + 1], color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref vertices[i], color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref vertices[i + 1], color, PrimitiveType.LineList);
             }
             if (closed)
             {
-                _primitiveBatch.AddVertex(vertices[count - 1], color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(vertices[0], color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref vertices[count - 1], color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref vertices[0], color, PrimitiveType.LineList);
             }
         }
 
@@ -546,9 +546,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             for (int i = 1; i < count - 1; i++)
             {
-                _primitiveBatch.AddVertex(vertices[0], colorFill, PrimitiveType.TriangleList);
-                _primitiveBatch.AddVertex(vertices[i], colorFill, PrimitiveType.TriangleList);
-                _primitiveBatch.AddVertex(vertices[i + 1], colorFill, PrimitiveType.TriangleList);
+                _primitiveBatch.AddVertex(ref vertices[0], colorFill, PrimitiveType.TriangleList);
+                _primitiveBatch.AddVertex(ref vertices[i], colorFill, PrimitiveType.TriangleList);
+                _primitiveBatch.AddVertex(ref vertices[i + 1], colorFill, PrimitiveType.TriangleList);
             }
 
             if (outline)
@@ -571,12 +571,12 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 v2 = Complex.Multiply(ref v1, ref circleSegmentRotation);
                 center_v2 = center + v2;
 
-                _primitiveBatch.AddVertex(center_v1, color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref center_v1, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref center_v2, color, PrimitiveType.LineList);
             }
             // Close Circle
-            _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
-            _primitiveBatch.AddVertex(center_vS, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(ref center_v2, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(ref center_vS, color, PrimitiveType.LineList);
         }
 
         public override void DrawSolidCircle(Vector2 center, float radius, Vector2 axis, Color color)
@@ -598,20 +598,20 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 center_v2 = center + v2;
 
                 // Draw Circle
-                _primitiveBatch.AddVertex(center_v1, color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref center_v1, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(ref center_v2, color, PrimitiveType.LineList);
 
                 // Draw Solid Circle
                 if (i > 0)
                 {
-                    _primitiveBatch.AddVertex(center_vS, colorFill, PrimitiveType.TriangleList);
-                    _primitiveBatch.AddVertex(center_v1, colorFill, PrimitiveType.TriangleList);
-                    _primitiveBatch.AddVertex(center_v2, colorFill, PrimitiveType.TriangleList);
+                    _primitiveBatch.AddVertex(ref center_vS, colorFill, PrimitiveType.TriangleList);
+                    _primitiveBatch.AddVertex(ref center_v1, colorFill, PrimitiveType.TriangleList);
+                    _primitiveBatch.AddVertex(ref center_v2, colorFill, PrimitiveType.TriangleList);
             }
             }
             // Close Circle
-            _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
-            _primitiveBatch.AddVertex(center_vS, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(ref center_v2, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(ref center_vS, color, PrimitiveType.LineList);
 
             DrawSegment(center, center + axis * radius, color);
         }
@@ -621,8 +621,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             if (!_primitiveBatch.IsReady())
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
-            _primitiveBatch.AddVertex(start, color, PrimitiveType.LineList);
-            _primitiveBatch.AddVertex(end, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(ref start, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(ref end, color, PrimitiveType.LineList);
         }
 
         public override void DrawTransform(ref Transform transform)
