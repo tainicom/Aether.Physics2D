@@ -207,15 +207,43 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
-            Vector2 v1 = Transform.Multiply(ref _vertex1, ref transform);
-            Vector2 v2 = Transform.Multiply(ref _vertex2, ref transform);
+            // OPT: Vector2 v1 = Transform.Multiply(ref _vertex1, ref transform);            
+            float v1X = (_vertex1.X * transform.q.Real - _vertex1.Y * transform.q.Imaginary) + transform.p.X;
+            float v1Y = (_vertex1.Y * transform.q.Real + _vertex1.X * transform.q.Imaginary) + transform.p.Y;
+            // OPT: Vector2 v2 = Transform.Multiply(ref _vertex2, ref transform);
+            float v2X = (_vertex2.X * transform.q.Real - _vertex2.Y * transform.q.Imaginary) + transform.p.X;
+            float v2Y = (_vertex2.Y * transform.q.Real + _vertex2.X * transform.q.Imaginary) + transform.p.Y;
 
-            Vector2 lower = Vector2.Min(v1, v2);
-            Vector2 upper = Vector2.Max(v1, v2);
+            // OPT: aabb.LowerBound = Vector2.Min(v1, v2);
+            // OPT: aabb.UpperBound = Vector2.Max(v1, v2);
+            if (v1X < v2X)
+            {
+                aabb.LowerBound.X = v1X;
+                aabb.UpperBound.X = v2X;
+            }
+            else
+            {
+                aabb.LowerBound.X = v2X;
+                aabb.UpperBound.X = v1X;
+            }
+            if (v1Y < v2Y)
+            {
+                aabb.LowerBound.Y = v1Y;
+                aabb.UpperBound.Y = v2Y;
+            }
+            else
+            {
+                aabb.LowerBound.Y = v2Y;
+                aabb.UpperBound.Y = v1Y;
+            }
 
-            Vector2 r = new Vector2(Radius, Radius);
-            aabb.LowerBound = lower - r;
-            aabb.UpperBound = upper + r;
+            // OPT: Vector2 r = new Vector2(Radius, Radius);
+            // OPT: aabb.LowerBound = aabb.LowerBound - r;
+            // OPT: aabb.UpperBound = aabb.LowerBound + r;
+            aabb.LowerBound.X -= Radius;
+            aabb.LowerBound.Y -= Radius;
+            aabb.UpperBound.X += Radius;
+            aabb.UpperBound.Y += Radius;
         }
 
         protected override void ComputeProperties()
