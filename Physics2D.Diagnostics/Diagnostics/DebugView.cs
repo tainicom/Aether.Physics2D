@@ -561,18 +561,21 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
             Vector2 v2 = new Vector2(radius, 0);
-            var center_vS = center + v2;
+            var center_v2 = center + v2;
+            var center_vS = center_v2;
 
             for (int i = 0; i < CircleSegments - 1; i++)
             {
                 Vector2 v1 = v2;
+                var center_v1 = center_v2;
                 v2 = Complex.Multiply(ref v1, ref circleSegmentRotation);
+                center_v2 = center + v2;
 
-                _primitiveBatch.AddVertex(center + v1, color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(center + v2, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(center_v1, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
             }
             // Close Circle
-            _primitiveBatch.AddVertex(center+v2, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
             _primitiveBatch.AddVertex(center_vS, color, PrimitiveType.LineList);
         }
 
@@ -582,29 +585,32 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 throw new InvalidOperationException("BeginCustomDraw must be called before drawing anything.");
 
             Vector2 v2 = new Vector2(radius, 0);
-            var center_vS = center + v2;
+            var center_v2 = center + v2;
+            var center_vS = center_v2;
 
             Color colorFill = color * 0.5f;
 
             for (int i = 0; i < CircleSegments-1; i++)
             {
                 Vector2 v1 = v2;
+                var center_v1 = center_v2;
                 v2 = Complex.Multiply(ref v1, ref circleSegmentRotation);
+                center_v2 = center + v2;
 
                 // Draw Circle
-                _primitiveBatch.AddVertex(center + v1, color, PrimitiveType.LineList);
-                _primitiveBatch.AddVertex(center + v2, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(center_v1, color, PrimitiveType.LineList);
+                _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
 
                 // Draw Solid Circle
                 if (i > 0)
                 {
                     _primitiveBatch.AddVertex(center_vS, colorFill, PrimitiveType.TriangleList);
-                    _primitiveBatch.AddVertex(center+v1, colorFill, PrimitiveType.TriangleList);
-                    _primitiveBatch.AddVertex(center+v2, colorFill, PrimitiveType.TriangleList);
+                    _primitiveBatch.AddVertex(center_v1, colorFill, PrimitiveType.TriangleList);
+                    _primitiveBatch.AddVertex(center_v2, colorFill, PrimitiveType.TriangleList);
             }
             }
             // Close Circle
-            _primitiveBatch.AddVertex(center+v2, color, PrimitiveType.LineList);
+            _primitiveBatch.AddVertex(center_v2, color, PrimitiveType.LineList);
             _primitiveBatch.AddVertex(center_vS, color, PrimitiveType.LineList);
 
             DrawSegment(center, center + axis * radius, color);
