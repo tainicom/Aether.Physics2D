@@ -23,28 +23,66 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 for (float y = -(gridSize/2f); y <= (gridSize/2f); y+=blockDistanse)
                 {
                     var position = new Vector2(x, y);
-                    var block = World.CreateRectangle(blockSize, blockSize, 2.6f, position, 0, BodyType.Dynamic);
+                    var block = World.CreateBody(position, 0, BodyType.Dynamic);
                     block.IgnoreGravity = true;
                     block.SleepingAllowed = false;
                     angularVelocity = (angularVelocity + MathHelper.ToRadians(360f / 60f)) % 1f;
                     block.AngularVelocity = angularVelocity;
 
-                    block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(-1f, -1f));
-                    block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(-1f,  0f));
-                    block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(-1f,  1f));
-                    
-                    //block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 0f, -1f));
-                    //block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 0f,  1f));
-                    
-                    block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 1f, -1f));
-                    block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 1f,  0f));
-                    block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 1f,  1f));
-
-
+                    // Create fixtures
+                    CreateRectangles(block);
+                    //CreateEdges(block);
+                    //CreateCircles(block);
                 }
             }
         }
         
+        private static void CreateRectangles(Body block)
+        {
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(-1f, -1f));
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(-1f, 0f));
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(-1f, 1f));
+
+            ///block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 0f, -1f));
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(0f, 0f));
+            //block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2( 0f,  1f));
+
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(1f, -1f));
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(1f, 0f));
+            block.CreateRectangle(blockSize, blockSize, 2.6f, new Vector2(1f, 1f));
+        }
+
+        private static void CreateCircles(Body block)
+        {
+            var radius = blockSize / 2f;
+            block.CreateCircle(radius, 2.6f, new Vector2(-1f, -1f));
+            block.CreateCircle(radius, 2.6f, new Vector2(-1f, +0f));
+            block.CreateCircle(radius, 2.6f, new Vector2(-1f, +1f));
+
+            block.CreateCircle(radius, 2.6f, new Vector2(+0f, -1f));
+            block.CreateCircle(radius, 2.6f, new Vector2(+0f, -0f));
+            block.CreateCircle(radius, 2.6f, new Vector2(+0f, +1f));
+
+            block.CreateCircle(radius, 2.6f, new Vector2(+1f, -1f));
+            block.CreateCircle(radius, 2.6f, new Vector2(+1f, +0f));
+            block.CreateCircle(radius, 2.6f, new Vector2(+1f, +1f));
+        }
+
+        private static void CreateEdges(Body block)
+        {
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(-1f, -1f), new Vector2(blockSize) / 2f + new Vector2(-1f, -1f));
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(-1f, +0f), new Vector2(blockSize) / 2f + new Vector2(-1f, +0f));
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(-1f, +1f), new Vector2(blockSize) / 2f + new Vector2(-1f, +1f));
+
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(+0f, -1f), new Vector2(blockSize) / 2f + new Vector2(+0f, -1f));
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(+0f, -0f), new Vector2(blockSize) / 2f + new Vector2(+0f, +0f));
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(+0f, +1f), new Vector2(blockSize) / 2f + new Vector2(+0f, +1f));
+
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(+1f, -1f), new Vector2(blockSize) / 2f + new Vector2(+1f, -1f));
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(+1f, +0f), new Vector2(blockSize) / 2f + new Vector2(+1f, +0f));
+            block.CreateEdge(new Vector2(-blockSize) / 2f + new Vector2(+1f, +1f), new Vector2(blockSize) / 2f + new Vector2(+1f, +1f));
+        }
+                
         public override void Update(GameSettings settings, GameTime gameTime)
         {
             base.Update(settings, gameTime);
