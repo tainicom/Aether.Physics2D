@@ -568,8 +568,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 Vector2 v1 = v2;
                 var center_v1 = center_v2;
-                v2 = Complex.Multiply(ref v1, ref circleSegmentRotation);
-                center_v2 = center + v2;
+                Complex.Multiply(ref v1, ref circleSegmentRotation, out v2);
+                Vector2.Add(ref center, ref v2, out center_v2);
 
                 _primitiveBatch.AddVertex(ref center_v1, color, PrimitiveType.LineList);
                 _primitiveBatch.AddVertex(ref center_v2, color, PrimitiveType.LineList);
@@ -594,8 +594,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             {
                 Vector2 v1 = v2;
                 var center_v1 = center_v2;
-                v2 = Complex.Multiply(ref v1, ref circleSegmentRotation);
-                center_v2 = center + v2;
+                Complex.Multiply(ref v1, ref circleSegmentRotation, out v2);
+                Vector2.Add(ref center, ref v2, out center_v2);
 
                 // Draw Circle
                 _primitiveBatch.AddVertex(ref center_v1, color, PrimitiveType.LineList);
