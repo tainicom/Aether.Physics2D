@@ -134,9 +134,16 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
 
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
-            Vector2 p = transform.p + Complex.Multiply(ref _position, ref transform.q);
-            aabb.LowerBound = new Vector2(p.X - Radius, p.Y - Radius);
-            aabb.UpperBound = new Vector2(p.X + Radius, p.Y + Radius);
+            // OPT: Vector2 p = transform.p + Complex.Multiply(ref _position, ref transform.q);
+            var pX = (_position.X * transform.q.Real - _position.Y * transform.q.Imaginary) + transform.p.X;
+            var pY = (_position.Y * transform.q.Real + _position.X * transform.q.Imaginary) + transform.p.Y;
+
+            // OPT: aabb.LowerBound = new Vector2(p.X - Radius, p.Y - Radius);
+            // OPT: aabb.UpperBound = new Vector2(p.X + Radius, p.Y + Radius);
+            aabb.LowerBound.X = pX - Radius;
+            aabb.LowerBound.Y = pY - Radius;
+            aabb.UpperBound.X = pX + Radius;
+            aabb.UpperBound.Y = pY + Radius;
         }
 
         protected override sealed void ComputeProperties()
