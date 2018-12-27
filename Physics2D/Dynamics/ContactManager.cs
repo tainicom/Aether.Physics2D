@@ -71,6 +71,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public readonly ContactListHead ContactList;
         public int ContactCount { get; private set; }
+        internal readonly ContactListHead _contactPoolList;
 
         /// <summary>
         /// The filter used by the contact manager.
@@ -116,6 +117,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             ContactList = new ContactListHead();
             ContactCount = 0;
+            _contactPoolList = new ContactListHead();
 
             BroadPhase = broadPhase;
             OnBroadphaseCollision = AddPair;
@@ -186,7 +188,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 return;
 
             // Call the factory.
-            Contact c = Contact.Create(fixtureA, indexA, fixtureB, indexB);
+            Contact c = Contact.Create(this, fixtureA, indexA, fixtureB, indexB);
 
             if (c == null)
                 return;
@@ -305,6 +307,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
 				ActiveContacts.Remove(contact);
 #endif
             contact.Destroy();
+            
+            // Insert into the pool.
+            contact.Next = _contactPoolList.Next;
+            _contactPoolList.Next = contact;
         }
 
         internal void Collide()

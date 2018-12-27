@@ -317,19 +317,36 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
         /// <param name="childIndex">The child shape index.</param>
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
-            Vector2 lower = Transform.Multiply(Vertices[0], ref transform);
-            Vector2 upper = lower;
+            // OPT: aabb.LowerBound = Transform.Multiply(Vertices[0], ref transform);
+            var vert = Vertices[0];
+            aabb.LowerBound.X = (vert.X * transform.q.Real - vert.Y * transform.q.Imaginary) + transform.p.X;
+            aabb.LowerBound.Y = (vert.Y * transform.q.Real + vert.X * transform.q.Imaginary) + transform.p.Y;
+            aabb.UpperBound = aabb.LowerBound;
 
             for (int i = 1; i < Vertices.Count; ++i)
             {
-                Vector2 v = Transform.Multiply(Vertices[i], ref transform);
-                Vector2.Min(ref lower, ref v, out lower);
-                Vector2.Max(ref upper, ref v, out upper);
+                // OPT: Vector2 v = Transform.Multiply(Vertices[i], ref transform);
+                vert = Vertices[i];
+                float vX = (vert.X * transform.q.Real - vert.Y * transform.q.Imaginary) + transform.p.X;
+                float vY = (vert.Y * transform.q.Real + vert.X * transform.q.Imaginary) + transform.p.Y;
+
+                // OPT: Vector2.Min(ref aabb.LowerBound, ref v, out aabb.LowerBound);
+                // OPT: Vector2.Max(ref aabb.UpperBound, ref v, out aabb.UpperBound);
+                Debug.Assert(aabb.LowerBound.X <= aabb.UpperBound.X);
+                if (vX < aabb.LowerBound.X) aabb.LowerBound.X = vX;
+                else if (vX > aabb.UpperBound.X) aabb.UpperBound.X = vX;
+                Debug.Assert(aabb.LowerBound.Y <= aabb.UpperBound.Y);
+                if (vY < aabb.LowerBound.Y) aabb.LowerBound.Y = vY;
+                else if (vY > aabb.UpperBound.Y) aabb.UpperBound.Y = vY;
             }
 
-            Vector2 r = new Vector2(Radius, Radius);
-            aabb.LowerBound = lower - r;
-            aabb.UpperBound = upper + r;
+            // OPT: Vector2 r = new Vector2(Radius, Radius);
+            // OPT: aabb.LowerBound = aabb.LowerBound - r;
+            // OPT: aabb.UpperBound = aabb.UpperBound + r;
+            aabb.LowerBound.X -= Radius;
+            aabb.LowerBound.Y -= Radius;
+            aabb.UpperBound.X += Radius;
+            aabb.UpperBound.Y += Radius;
         }
 
         public override float ComputeSubmergedArea(ref Vector2 normal, float offset, ref Transform xf, out Vector2 sc)

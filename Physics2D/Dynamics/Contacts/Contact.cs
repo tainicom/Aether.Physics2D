@@ -1,3 +1,5 @@
+// Copyright (c) 2017 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -427,7 +429,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             }
         }
 
-        internal static Contact Create(Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
+        internal static Contact Create(ContactManager contactManager, Fixture fixtureA, int indexA, Fixture fixtureB, int indexB)
         {
             ShapeType type1 = fixtureA.Shape.ShapeType;
             ShapeType type2 = fixtureB.Shape.ShapeType;
@@ -435,32 +437,32 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Debug.Assert(ShapeType.Unknown < type1 && type1 < ShapeType.TypeCount);
             Debug.Assert(ShapeType.Unknown < type2 && type2 < ShapeType.TypeCount);
 
-            Contact c;
-            Queue<Contact> pool = fixtureA.Body.World._contactPool;
-            if (pool.Count > 0)
+            Contact c = null;
+            var contactPoolList = contactManager._contactPoolList;
+            if (contactPoolList.Next != contactPoolList)
+            {                
+                // get first item in the pool.
+                c = contactPoolList.Next;
+                // Remove from the pool.
+                contactPoolList.Next = c.Next;
+                c.Next = null;
+            }
+            // Edge+Polygon is non-symetrical due to the way Erin handles collision type registration.
+            if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
             {
-                c = pool.Dequeue();
-                if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
-                {
-                    c.Reset(fixtureA, indexA, fixtureB, indexB);
-                }
+                if (c == null)
+                    c = new Contact(fixtureA, indexA, fixtureB, indexB);
                 else
-                {
-                    c.Reset(fixtureB, indexB, fixtureA, indexA);
-                }
+                    c.Reset(fixtureA, indexA, fixtureB, indexB);
             }
             else
             {
-                // Edge+Polygon is non-symetrical due to the way Erin handles collision type registration.
-                if ((type1 >= type2 || (type1 == ShapeType.Edge && type2 == ShapeType.Polygon)) && !(type2 == ShapeType.Edge && type1 == ShapeType.Polygon))
-                {
-                    c = new Contact(fixtureA, indexA, fixtureB, indexB);
-                }
-                else
-                {
+                if (c == null)
                     c = new Contact(fixtureB, indexB, fixtureA, indexA);
-                }
+                else
+                    c.Reset(fixtureB, indexB, fixtureA, indexA);
             }
+        
 
             c._type = _registers[(int)type1, (int)type2];
 
@@ -469,8 +471,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
         internal void Destroy()
         {
-            FixtureA.Body.World._contactPool.Enqueue(this);
-
             if (Manifold.PointCount > 0 && FixtureA.IsSensor == false && FixtureB.IsSensor == false)
             {
                 FixtureA.Body.Awake = true;

@@ -29,6 +29,6 @@ https://www.nuget.org/packages/Aether.Physics2D
 
 https://www.nuget.org/packages/Aether.Physics2D.Diagnostics
 
-https://github.com/tainicom/Aether.Physics2D/releases/tag/v1.2
+https://github.com/tainicom/Aether.Physics2D/releases/tag/v1.3.1
 
 ![LightAndShadowsDemo](Documentation//Images/LightAndShadowsDemo.png)

@@ -119,6 +119,11 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
         public int AddVertex(Vector3 position, Color color, PrimitiveType primitiveType)
         {
+            return AddVertex(ref position, color, primitiveType);
+        }
+
+        public int AddVertex(ref Vector3 position, Color color, PrimitiveType primitiveType)
+        {
             if (!_hasBegun)
                 throw new InvalidOperationException("Begin must be called before AddVertex can be called.");
 
@@ -144,8 +149,14 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                     throw new NotSupportedException("The specified primitiveType is not supported by PrimitiveBatch.");
             }
         }
-        
+
+
         public int AddVertex(Vector2 position, Color color, PrimitiveType primitiveType)
+        {
+            return AddVertex(ref position, color, primitiveType);
+        }
+
+        public int AddVertex(ref Vector2 position, Color color, PrimitiveType primitiveType)
         {
             if (!_hasBegun)
                 throw new InvalidOperationException("Begin must be called before AddVertex can be called.");
@@ -156,7 +167,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                     if (_triangleVertsCount >= _triangleVertices.Length)
                         FlushTriangles();
 
-                    _triangleVertices[_triangleVertsCount].Position = new Vector3(position,DefaultTriangleListDepth);
+                    _triangleVertices[_triangleVertsCount].Position.X = position.X;
+                    _triangleVertices[_triangleVertsCount].Position.Y = position.Y;
+                    _triangleVertices[_triangleVertsCount].Position.Z = DefaultTriangleListDepth;
                     _triangleVertices[_triangleVertsCount].Color = color;
                     return _triangleVertsCount++;
 
@@ -164,7 +177,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                     if (_lineVertsCount >= _lineVertices.Length)
                         FlushLines();
 
-                    _lineVertices[_lineVertsCount].Position = new Vector3(position,DefaultLineListDepth);
+                    _lineVertices[_lineVertsCount].Position.X = position.X;
+                    _lineVertices[_lineVertsCount].Position.Y = position.Y;
+                    _lineVertices[_lineVertsCount].Position.Z = DefaultLineListDepth;
                     _lineVertices[_lineVertsCount].Color = color;
                     return _lineVertsCount++;
 
