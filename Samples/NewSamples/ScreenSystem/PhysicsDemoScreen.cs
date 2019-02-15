@@ -66,6 +66,11 @@ namespace tainicom.Aether.Physics2D.Samples.ScreenSystem
             {
                 World = new World(Vector2.Zero);
                 World.JointRemoved += JointRemoved;
+                
+                // enable multithreading
+                World.ContactManager.VelocityConstraintsMultithreadThreshold = 256;
+                World.ContactManager.PositionConstraintsMultithreadThreshold = 256;
+                World.ContactManager.CollideMultithreadThreshold = 256;
             }
             else
             {

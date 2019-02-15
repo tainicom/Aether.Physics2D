@@ -66,10 +66,6 @@ namespace tainicom.Aether.Physics2D.Samples
 
         protected override void Initialize()
         {
-            // enable multithreading
-            Settings.VelocityConstraintsMultithreadThreshold = 64;
-            Settings.PositionConstraintsMultithreadThreshold = 64;
-
             _input = new InputHelper();
 #if WINDOWS
             _counter = new FrameRateCounter();
