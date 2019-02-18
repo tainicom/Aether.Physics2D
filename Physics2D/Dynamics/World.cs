@@ -411,27 +411,35 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Synchronize fixtures, check for out of range bodies.
 #if USE_ISLAND_SET
             foreach (var b in IslandSet)
-#else
-            foreach (Body b in BodyList)
-#endif
             {
                 // If a body was not in an island then it did not move.
                 if (!b._island)
                 {
                     continue;
                 }
-#if USE_ISLAND_SET
                 Debug.Assert(b.BodyType != BodyType.Static);
-#else
-                if (b.BodyType == BodyType.Static)
-                {
-                    continue;
-                }
-#endif
 
                 // Update fixtures (for broad-phase).
                 b.SynchronizeFixtures();
             }
+#else
+            foreach (Body b in BodyList)
+            {
+                // If a body was not in an island then it did not move.
+                if (!b._island)
+                {
+                    continue;
+                }
+                if (b.BodyType == BodyType.Static)
+                {
+                    continue;
+                }
+
+                // Update fixtures (for broad-phase).
+                b.SynchronizeFixtures();
+            }
+#endif
+
 #if OPTIMIZE_TOI
             foreach (var b in IslandSet)
             {
