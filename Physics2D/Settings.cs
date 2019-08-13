@@ -27,7 +27,6 @@
 
 using System;
 using Microsoft.Xna.Framework;
-using tainicom.Aether.Physics2D.Dynamics;
 
 namespace tainicom.Aether.Physics2D
 {
