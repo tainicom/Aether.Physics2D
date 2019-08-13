@@ -31,6 +31,7 @@
     <ConsolePause>false</ConsolePause>
     <DefineConstants>PORTABLE45</DefineConstants>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="Collision\Collision.cs" />
     <Compile Include="Collision\Distance.cs" />
@@ -163,9 +164,11 @@
     <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.PORTABLE.cs" />
   </ItemGroup>
+
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

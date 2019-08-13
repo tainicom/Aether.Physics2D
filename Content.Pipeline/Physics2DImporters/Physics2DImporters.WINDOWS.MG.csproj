@@ -48,6 +48,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.XML" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="BodyContainer.cs" />
     <Compile Include="Serialization\BodyContainerWriter.cs" />
@@ -60,10 +61,12 @@
     <Compile Include="RawBodyTemplate.cs" />
     <Compile Include="SVGPathParser.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.MG.cs" />
     <None Include="packages.config" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\..\Physics2D\Aether.Physics2D.WINDOWS.MG.csproj">
       <Project>{96A2FDD8-E119-4441-B413-C07BF4AB41FA}</Project>

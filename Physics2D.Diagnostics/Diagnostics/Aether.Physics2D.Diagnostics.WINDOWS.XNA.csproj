@@ -83,13 +83,18 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="DebugView.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IPrimitiveBatch.cs" />
     <Compile Include="PrimitiveBatch.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
       <Project>e64c1098-713a-489a-bb70-725dcbed9271</Project>

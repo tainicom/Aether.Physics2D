@@ -32,15 +32,18 @@
     <ConsolePause>false</ConsolePause>
     <DefineConstants>PORTABLE45</DefineConstants>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="DebugView.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IPrimitiveBatch.cs" />
     <Compile Include="PrimitiveBatch.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.PORTABLE.cs" />
   </ItemGroup>
+
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

@@ -31,6 +31,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="Collision\Collision.cs" />
     <Compile Include="Collision\Distance.cs" />
@@ -162,9 +163,11 @@
     <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.iOS.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
