@@ -174,9 +174,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Initializes a new instance of the <see cref="World"/> class.
         /// </summary>
-        public World(AABB span) : this()
-        {            
-            ContactManager = new ContactManager(new QuadTreeBroadPhase(span));
+        [Obsolete("Use: new World(new QuadTreeBroadPhase(span));")]
+        public World(AABB span) : this(new QuadTreeBroadPhase(span))
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="World"/> class.
+        /// </summary>
+        public World(IBroadPhase broadPhase) : this()
+        {
+            ContactManager = new ContactManager(broadPhase);
         }
 
         private bool QueryAABBCallbackWrapper(int proxyId)

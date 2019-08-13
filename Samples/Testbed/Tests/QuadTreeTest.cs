@@ -28,7 +28,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             //Create a World using QuadTree constructor
             var worldSpan = new AABB(-_worldSize / 2, _worldSize / 2);
-            World = new World(worldSpan);
+            World = new World(new QuadTreeBroadPhase(worldSpan));
 
             //Create a World using DynamicTree constructor
             //World = new World();
