@@ -72,22 +72,22 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //
             //populate
             //
-            //const int rad = 12;
-            //const float a = 0.6f;
-            //const float sep = 0.000f;
+            const int rad = 12;
+            const float a = 0.6f;
+            const float sep = 0.000f;
 
-            //Vector2 cent = Vector2.Zero;
+            Vector2 cent = Vector2.Zero;
 
-            //for (int y = -rad; y <= +rad; y++)
-            //{
-            //    int xrad = (int)Math.Round(Math.Sqrt(rad * rad - y * y));
-            //    for (int x = -xrad; x <= +xrad; x++)
-            //    {
-            //        Vector2 pos = cent + new Vector2(x * (2 * a + sep), y * (2 * a + sep));
-            //        Body cBody = World.CreateCircle(a, 55, pos);
-            //        cBody.BodyType = BodyType.Dynamic;
-            //    }
-            //}
+            for (int y = -rad; y <= +rad; y++)
+            {
+                int xrad = (int)Math.Round(Math.Sqrt(rad * rad - y * y));
+                for (int x = -xrad; x <= +xrad; x++)
+                {
+                    Vector2 pos = cent + new Vector2(x * (2 * a + sep), y * (2 * a + sep));
+                    Body cBody = World.CreateCircle(a, 55, pos);
+                    cBody.BodyType = BodyType.Dynamic;
+                }
+            }
 
             base.Initialize();
 
