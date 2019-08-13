@@ -3,6 +3,7 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
+using System;
 using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
@@ -26,11 +27,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _worldSize = 2 * GameInstance.ConvertScreenToWorld(GameInstance.Window.ClientBounds.Width, 0);
 
             //Create a World using QuadTree constructor
-            World = new World(new AABB(-_worldSize / 2, _worldSize / 2));
-            World.Gravity = new Vector2(0.0f, -10.0f);
+            var worldSpan = new AABB(-_worldSize / 2, _worldSize / 2);
+            World = new World(worldSpan);
 
             //Create a World using DynamicTree constructor
-            //World = new World(new Vector2(0.0f, -10.0f));
+            //World = new World();
+
+            //
+            //set up gravity
+            //
+            World.Gravity = new Vector2(0.0f, -10.0f);
 
             //
             //set up border
@@ -78,7 +84,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //    for (int x = -xrad; x <= +xrad; x++)
             //    {
             //        Vector2 pos = cent + new Vector2(x * (2 * a + sep), y * (2 * a + sep));
-            //        Body cBody = BodyFactory.CreateCircle(World, a, 55, pos);
+            //        Body cBody = World.CreateCircle(a, 55, pos);
             //        cBody.BodyType = BodyType.Dynamic;
             //    }
             //}
