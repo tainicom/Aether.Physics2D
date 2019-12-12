@@ -215,7 +215,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
                 float C = aB - aA - ReferenceAngle;
 
                 // Frequency
-                float omega = 2.0f * MathHelper.Pi * FrequencyHz;
+                float omega = 2.0f * Constant.Pi * FrequencyHz;
 
                 // Damping coefficient
                 float d = 2.0f * m * DampingRatio * omega;

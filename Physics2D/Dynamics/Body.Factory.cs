@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.Decomposition;
+using tainicom.Aether.Physics2D.Common.Maths;
 using tainicom.Aether.Physics2D.Dynamics;
 using Microsoft.Xna.Framework;
 
@@ -126,14 +127,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public Fixture CreateLineArc(float radians, int sides, float radius, bool closed)
         {
             Vertices arc = PolygonTools.CreateArc(radians, sides, radius);
-            arc.Rotate((MathHelper.Pi - radians) / 2);
+            arc.Rotate((Constant.Pi - radians) / 2);
             return closed ? CreateLoopShape(arc) : CreateChainShape(arc);
         }
 
         public List<Fixture> CreateSolidArc(float density, float radians, int sides, float radius)
         {
             Vertices arc = PolygonTools.CreateArc(radians, sides, radius);
-            arc.Rotate((MathHelper.Pi - radians) / 2);
+            arc.Rotate((Constant.Pi - radians) / 2);
 
             //Close the arc
             arc.Add(arc[0]);

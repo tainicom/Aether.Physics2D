@@ -3,6 +3,7 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
+using tainicom.Aether.Physics2D.Common.Maths;
 using tainicom.Aether.Physics2D.Dynamics;
 using Microsoft.Xna.Framework;
 
@@ -59,7 +60,7 @@ namespace tainicom.Aether.Physics2D.Controllers
                     }
 
                     //TODO: Consider Divergence:
-                    //forceVector = Vector2.Transform(forceVector, Matrix.CreateRotationZ((MathHelper.Pi - MathHelper.Pi/2) * (float)Randomize.NextDouble()));
+                    //forceVector = Vector2.Transform(forceVector, Matrix.CreateRotationZ((Constant.Pi - Constant.Pi/2) * (float)Randomize.NextDouble()));
 
                     // Calculate random Variation
                     if (Variation != 0)
