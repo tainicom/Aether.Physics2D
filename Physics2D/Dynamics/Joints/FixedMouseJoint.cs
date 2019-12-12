@@ -179,7 +179,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             float mass = BodyA.Mass;
 
             // Frequency
-            float omega = 2.0f * Constant.Pi * Frequency;
+            float omega = Constant.Tau * Frequency;
 
             // Damping coefficient
             float d = 2.0f * mass * DampingRatio * omega;
