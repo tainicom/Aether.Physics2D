@@ -287,7 +287,7 @@ namespace tainicom.Aether.Physics2D.Common
 
             float stepSize = Constant.Tau / numberOfTeeth;
             tipPercentage /= 100f;
-            MathHelper.Clamp(tipPercentage, 0f, 1f);
+            MathUtils.Clamp(tipPercentage, 0f, 1f);
             float toothTipStepSize = (stepSize / 2f) * tipPercentage;
 
             float toothAngleStepSize = (stepSize - (toothTipStepSize * 2f)) / 2f;

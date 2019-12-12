@@ -90,7 +90,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
             if (float.IsNaN(percent))
                 return 0f;
 
-            return MathHelper.Clamp(percent, 0f, 1f);
+            return MathUtils.Clamp(percent, 0f, 1f);
         }
     }
 }
