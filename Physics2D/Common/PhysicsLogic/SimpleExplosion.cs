@@ -71,7 +71,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 
                     Vector2 forceVector = pos - overlappingBody.Position;
                     forceVector *= 1f / (float)Math.Sqrt(forceVector.X * forceVector.X + forceVector.Y * forceVector.Y);
-                    forceVector *= MathHelper.Min(force * forcePercent, maxForce);
+                    forceVector *= Math.Min(force * forcePercent, maxForce);
                     forceVector *= -1;
 
                     overlappingBody.ApplyLinearImpulse(forceVector);

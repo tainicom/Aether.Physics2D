@@ -329,7 +329,7 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 
                 float arclen = _data[i].Max - _data[i].Min;
 
-                float first = MathHelper.Min(MaxEdgeOffset, EdgeRatio * arclen);
+                float first = Math.Min(MaxEdgeOffset, EdgeRatio * arclen);
                 int insertedRays = (int)Math.Ceiling(((arclen - 2.0f * first) - (MinRays - 1) * MaxAngle) / MaxAngle);
 
                 if (insertedRays < 0)
