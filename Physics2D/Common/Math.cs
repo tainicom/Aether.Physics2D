@@ -28,8 +28,8 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Common.Maths;
+using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Common
 {
@@ -709,7 +709,7 @@ namespace tainicom.Aether.Physics2D.Common
         /// </summary>
         public void Normalize()
         {
-            float d = MathHelper.TwoPi * (float)Math.Floor(A0 / MathHelper.TwoPi);
+            float d = Constant.Tau * (float)Math.Floor(A0 / Constant.Tau);
             A0 -= d;
             A -= d;
         }
