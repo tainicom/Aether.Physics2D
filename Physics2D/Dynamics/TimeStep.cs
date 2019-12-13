@@ -57,7 +57,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
     {
         public Vector2 c;
         public float a;
-        internal int Lock;
     }
 
     /// This is an internal structure.
@@ -65,7 +64,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
     {
         public Vector2 v;
         public float w;
-        internal int Lock;
     }
 
     /// Solver Data
@@ -74,5 +72,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public TimeStep step;
         public Position[] positions;
         public Velocity[] velocities;
+        internal int[] locks;
     }
 }

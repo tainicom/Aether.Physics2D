@@ -96,6 +96,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
     {
         public Position[] _positions;
         public Velocity[] _velocities;
+        internal int[] _locks;
         public ContactPositionConstraint[] _positionConstraints;
         public ContactVelocityConstraint[] _velocityConstraints;
         public Contact[] _contacts;
@@ -104,11 +105,12 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         int _positionConstraintsMultithreadThreshold;
 
         public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities,
-            int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)
+            int[] locks, int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)
         {
             _count = count;
             _positions = positions;
             _velocities = velocities;
+            _locks = locks;
             _contacts = contacts;
             _velocityConstraintsMultithreadThreshold = velocityConstraintsMultithreadThreshold;
             _positionConstraintsMultithreadThreshold = positionConstraintsMultithreadThreshold;
@@ -456,11 +458,11 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 
                 for (; ; )
                 {
-                    if (Interlocked.CompareExchange(ref _velocities[orderedIndexA].Lock, 1, 0) == 0)
+                    if (Interlocked.CompareExchange(ref _locks[orderedIndexA], 1, 0) == 0)
                     {
-                        if (Interlocked.CompareExchange(ref _velocities[orderedIndexB].Lock, 1, 0) == 0)
+                        if (Interlocked.CompareExchange(ref _locks[orderedIndexB], 1, 0) == 0)
                             break;
-                        System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexA].Lock, 0);
+                        System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
                     }
 #if NET40 || NET45 || NETSTANDARD2_0
                     Thread.Sleep(0);
@@ -771,8 +773,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _velocities[indexB].w = wB;
 
 #if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
-                System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexB].Lock, 0);
-                System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexA].Lock, 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexB], 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
 #endif
             }
         }
@@ -850,11 +852,11 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 // Lock bodies.
                 for (; ; )
                 {
-                    if (Interlocked.CompareExchange(ref _positions[orderedIndexA].Lock, 1, 0) == 0)
+                    if (Interlocked.CompareExchange(ref _locks[orderedIndexA], 1, 0) == 0)
                     {
-                        if (Interlocked.CompareExchange(ref _positions[orderedIndexB].Lock, 1, 0) == 0)
+                        if (Interlocked.CompareExchange(ref _locks[orderedIndexB], 1, 0) == 0)
                             break;
-                        System.Threading.Interlocked.Exchange(ref _positions[orderedIndexA].Lock, 0);
+                        System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
                     }
 #if NET40 || NET45 || NETSTANDARD2_0
                     Thread.Sleep(0);
@@ -925,8 +927,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
 #if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 // Unlock bodies.
-                System.Threading.Interlocked.Exchange(ref _positions[orderedIndexB].Lock, 0);
-                System.Threading.Interlocked.Exchange(ref _positions[orderedIndexA].Lock, 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexB], 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
 #endif
             }
 
