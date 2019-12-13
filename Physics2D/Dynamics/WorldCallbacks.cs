@@ -27,11 +27,13 @@
 * 3. This notice may not be removed or altered from any source distribution. 
 */
 
-using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
+#if XNAAPI
+using Microsoft.Xna.Framework;
+#endif
 
 namespace tainicom.Aether.Physics2D.Dynamics
 {

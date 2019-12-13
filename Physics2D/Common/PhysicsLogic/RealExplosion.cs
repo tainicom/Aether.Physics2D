@@ -10,7 +10,9 @@ using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 {

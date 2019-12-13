@@ -28,7 +28,10 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+using Vector3 = Microsoft.Xna.Framework.Vector3;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common
 {

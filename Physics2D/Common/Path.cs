@@ -6,7 +6,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+using Vector3 = Microsoft.Xna.Framework.Vector3;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common
 {

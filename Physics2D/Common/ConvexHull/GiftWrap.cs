@@ -3,7 +3,9 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common.ConvexHull
 {

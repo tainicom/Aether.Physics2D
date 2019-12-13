@@ -14,7 +14,9 @@ using tainicom.Aether.Physics2D.Common.Decomposition.CDT;
 using tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay;
 using tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep;
 using tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common.Decomposition
 {
