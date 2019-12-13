@@ -44,7 +44,6 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Collision\Collision.cs" />
     <Compile Include="Collision\Distance.cs" />
@@ -135,8 +134,6 @@
     <Compile Include="Controllers\GravityController.cs" />
     <Compile Include="Controllers\SimpleWindForce.cs" />
     <Compile Include="Controllers\VelocityLimitController.cs" />
-    <Compile Include="Diagnostics\DebugViewBase.cs" />
-    <Compile Include="Diagnostics\DebugViewFlags.cs" />
     <Compile Include="Dynamics\Body.cs" />
     <Compile Include="Dynamics\Body.Factory.cs" />
     <Compile Include="Dynamics\BodyType.cs" />
@@ -177,11 +174,9 @@
     <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
       <HintPath>..\packages\MonoGame.Framework.Portable.3.2.99.1-Beta\lib\portable-net40+sl40+win+wp80\MonoGame.Framework.dll</HintPath>

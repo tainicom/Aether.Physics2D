@@ -35,6 +35,8 @@
 
   <ItemGroup>
     <Compile Include="DebugView.cs" />
+    <Compile Include="DebugViewBase.cs" />
+    <Compile Include="DebugViewFlags.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IPrimitiveBatch.cs" />
     <Compile Include="PrimitiveBatch.cs" />
