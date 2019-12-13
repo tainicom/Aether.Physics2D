@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\WP8_1\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;NETFX_CORE;WP8_1</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;WP8_1</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -31,7 +31,7 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\WP8_1\</OutputPath>
-    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;NETFX_CORE;WP8_1</DefineConstants>
+    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;WP8_1</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\WP8\x86\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;WP8</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;WP8</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -36,7 +36,7 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\WP8\x86\</OutputPath>
-    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;WP8</DefineConstants>
+    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;WP8</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -48,7 +48,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\WP8\ARM\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;WP8</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;WP8</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -59,7 +59,7 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\WP8\ARM\</OutputPath>
-    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;WP8</DefineConstants>
+    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;WP8</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
