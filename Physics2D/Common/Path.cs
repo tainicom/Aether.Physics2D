@@ -123,11 +123,10 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="value">The amount to rotate by in radians.</param>
         public void Rotate(float value)
         {
-            Matrix rotationMatrix;
-            Matrix.CreateRotationZ(value, out rotationMatrix);
+            var rotation = Maths.Complex.FromAngle(value);
 
             for (int i = 0; i < ControlPoints.Count; i++)
-                ControlPoints[i] = Vector2.Transform(ControlPoints[i], rotationMatrix);
+                ControlPoints[i] = Maths.Complex.Multiply(ControlPoints[i], ref rotation);
         }
 
         public override string ToString()
