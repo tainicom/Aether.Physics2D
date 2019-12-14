@@ -76,19 +76,22 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             if (Bodies == null || Bodies.Length < bodyCapacity)
             {
-                Bodies = new Body[bodyCapacity];
-                _velocities = new Velocity[bodyCapacity];
-                _positions = new Position[bodyCapacity];
+                int newBodyBufferCapacity = bodyCapacity;
+                Bodies = new Body[newBodyBufferCapacity];
+                _velocities = new Velocity[newBodyBufferCapacity];
+                _positions = new Position[newBodyBufferCapacity];
             }
 
             if (_contacts == null || _contacts.Length < contactCapacity)
             {
-                _contacts = new Contact[contactCapacity * 2];
+                int newContactBufferCapacity = contactCapacity * 2;
+                _contacts = new Contact[newContactBufferCapacity];
             }
 
             if (_joints == null || _joints.Length < jointCapacity)
             {
-                _joints = new Joint[jointCapacity * 2];
+                int newJointBufferCapacity = jointCapacity * 2;
+                _joints = new Joint[newJointBufferCapacity];
             }
         }
 
