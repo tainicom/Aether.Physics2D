@@ -122,13 +122,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _velocityConstraints = new ContactVelocityConstraint[newBufferCount];
                 _positionConstraints = new ContactPositionConstraint[newBufferCount];
 
-                for (int i = 0; i < _velocityConstraints.Length; i++)
+                for (int i = 0; i < newBufferCount; i++)
                 {
                     _velocityConstraints[i] = new ContactVelocityConstraint();
-                }
-
-                for (int i = 0; i < _positionConstraints.Length; i++)
-                {
                     _positionConstraints[i] = new ContactPositionConstraint();
                 }
             }
