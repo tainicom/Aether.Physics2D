@@ -77,6 +77,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (Bodies == null || Bodies.Length < bodyCapacity)
             {
                 int newBodyBufferCapacity = Math.Max(bodyCapacity, 32);
+                newBodyBufferCapacity = (newBodyBufferCapacity + 31) & (~31); // grow in chunks of 32.
                 Bodies = new Body[newBodyBufferCapacity];
                 _velocities = new Velocity[newBodyBufferCapacity];
                 _positions = new Position[newBodyBufferCapacity];
@@ -85,12 +86,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (_contacts == null || _contacts.Length < contactCapacity)
             {
                 int newContactBufferCapacity = Math.Max(contactCapacity * 2, 32);
+                newContactBufferCapacity = (newContactBufferCapacity + 31) & (~31); // grow in chunks of 32.
                 _contacts = new Contact[newContactBufferCapacity];
             }
 
             if (_joints == null || _joints.Length < jointCapacity)
             {
                 int newJointBufferCapacity = Math.Max(jointCapacity * 2, 32);
+                newJointBufferCapacity = (newJointBufferCapacity + 31) & (~31); // grow in chunks of 32.
                 _joints = new Joint[newJointBufferCapacity];
             }
         }
