@@ -57,6 +57,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public Velocity[] _velocities;
         public Position[] _positions;
+        internal int[] _locks;
 
         public int BodyCapacity;
         public int ContactCapacity;
@@ -81,6 +82,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 Bodies = new Body[newBodyBufferCapacity];
                 _velocities = new Velocity[newBodyBufferCapacity];
                 _positions = new Position[newBodyBufferCapacity];
+                _locks = new int[newBodyBufferCapacity];
             }
 
             if (_contacts == null || _contacts.Length < contactCapacity)
@@ -158,9 +160,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             solverData.step = step;
             solverData.positions = _positions;
             solverData.velocities = _velocities;
+            solverData.locks = _locks;
 
             _contactSolver.Reset(ref step, ContactCount, _contacts, _positions, _velocities,
-                _contactManager.VelocityConstraintsMultithreadThreshold, _contactManager.PositionConstraintsMultithreadThreshold);
+                _locks, _contactManager.VelocityConstraintsMultithreadThreshold, _contactManager.PositionConstraintsMultithreadThreshold);
             _contactSolver.InitializeVelocityConstraints();
 
             if (step.warmStarting)
@@ -342,7 +345,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             _contactSolver.Reset(ref subStep, ContactCount, _contacts, _positions, _velocities,
-                _contactManager.VelocityConstraintsMultithreadThreshold, _contactManager.PositionConstraintsMultithreadThreshold);
+                _locks, _contactManager.VelocityConstraintsMultithreadThreshold, _contactManager.PositionConstraintsMultithreadThreshold);
 
             // Solve position constraints.
             for (int i = 0; i < subStep.positionIterations; ++i)
