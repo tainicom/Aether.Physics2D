@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// Copyright (c) 2019 Kastellanos Nikolaos
+
+using System;
 
 namespace tainicom.Aether.Physics2D.Common.Maths
 {
