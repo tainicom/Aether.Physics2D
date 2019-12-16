@@ -104,7 +104,7 @@ namespace tainicom.Aether.Physics2D.Common
         public void Translate(ref Vector2 vector)
         {
             for (int i = 0; i < ControlPoints.Count; i++)
-                ControlPoints[i] = Vector2.Add(ControlPoints[i], vector);
+                ControlPoints[i] = ControlPoints[i] + vector;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace tainicom.Aether.Physics2D.Common
         public void Scale(ref Vector2 value)
         {
             for (int i = 0; i < ControlPoints.Count; i++)
-                ControlPoints[i] = Vector2.Multiply(ControlPoints[i], value);
+                ControlPoints[i] = ControlPoints[i] * value;
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace tainicom.Aether.Physics2D.Common
             output.X = -temp.Y;
             output.Y = temp.X;
 
-            Vector2.Normalize(ref output, out output);
+            output.Normalize();
 
             return output;
         }
@@ -316,7 +316,7 @@ namespace tainicom.Aether.Physics2D.Common
                 Vector2 normal = GetPositionNormal(t);
                 float angle = (float)Math.Atan2(normal.Y, normal.X);
 
-                verts.Add(new Vector3(end, angle));
+                verts.Add(new Vector3(end.X, end.Y, angle));
 
                 // until we reach the correct distance down the curve
                 while (deltaLength >= Vector2.Distance(start, end))

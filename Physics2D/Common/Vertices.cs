@@ -236,7 +236,7 @@ namespace tainicom.Aether.Physics2D.Common
             Debug.Assert(!AttachedToBody, "Translating vertices that are used by a Body can result in unstable behavior. Use Body.Position instead.");
 
             for (int i = 0; i < Count; i++)
-                this[i] = Vector2.Add(this[i], value);
+                this[i] = this[i] + value;
 
             if (Holes != null && Holes.Count > 0)
             {
@@ -265,7 +265,7 @@ namespace tainicom.Aether.Physics2D.Common
             Debug.Assert(!AttachedToBody, "Scaling vertices that are used by a Body can result in unstable behavior.");
 
             for (int i = 0; i < Count; i++)
-                this[i] = Vector2.Multiply(this[i], value);
+                this[i] = this[i] * value;
 
             if (Holes != null && Holes.Count > 0)
             {
