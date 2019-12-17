@@ -322,6 +322,7 @@ namespace tainicom.Aether.Physics2D.Common
             return vertices;
         }
 
+#if XNAAPI
         /// <summary>
         /// Detects the vertices by analyzing the texture data.
         /// </summary>
@@ -361,5 +362,6 @@ namespace tainicom.Aether.Physics2D.Common
             return TextureConverter.DetectVertices(data, width, hullTolerance, alphaTolerance,
                                                    multiPartDetection, holeDetection);
         }
+#endif
     }
 }

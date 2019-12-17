@@ -548,6 +548,7 @@ namespace tainicom.Aether.Physics2D.Common
             return true;
         }
 
+#if XNAAPI
         /// <summary>
         /// Transforms the polygon using the defined matrix.
         /// </summary>
@@ -570,6 +571,7 @@ namespace tainicom.Aether.Physics2D.Common
                 }
             }
         }
+#endif
 
         public override string ToString()
         {
