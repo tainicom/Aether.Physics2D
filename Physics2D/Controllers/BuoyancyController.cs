@@ -6,6 +6,7 @@
 using System.Collections.Generic;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
+using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 using tainicom.Aether.Physics2D.Dynamics;
 #if XNAAPI

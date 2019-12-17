@@ -11,6 +11,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common.Decomposition.Seidel;
+using tainicom.Aether.Physics2D.Common;
 using Point = tainicom.Aether.Physics2D.Common.Decomposition.Seidel.Point;
 #if XNAAPI
 using Vector2 = Microsoft.Xna.Framework.Vector2;

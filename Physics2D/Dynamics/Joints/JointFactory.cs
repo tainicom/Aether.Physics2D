@@ -3,6 +3,7 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
+using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 #if XNAAPI
