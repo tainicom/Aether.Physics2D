@@ -196,7 +196,7 @@ namespace tainicom.Aether.Physics2D.Common
                 // relative time
                 float lt = (time - _deltaT * p) / _deltaT;
 
-                temp = Vector2.CatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt);
+                CalcCatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt, out temp);
 
                 RemoveAt(ControlPoints.Count - 1);
             }
@@ -221,10 +221,32 @@ namespace tainicom.Aether.Physics2D.Common
                 // relative time
                 float lt = (time - _deltaT * p) / _deltaT;
 
-                temp = Vector2.CatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt);
+                CalcCatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt, out temp);
             }
 
             return temp;
+        }
+
+        private void CalcCatmullRom(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float amount, out Vector2 result)
+        {
+            double sqAmount = amount * amount;
+            double cuAmount = sqAmount * amount;
+            
+            double x;
+            double y;
+            x = 2.0 * p1.X;
+            y = 2.0 * p1.Y;
+            x += (p2.X - p0.X) * amount;
+            y += (p2.Y - p0.Y) * amount;
+            x += (2.0 * p0.X - 5.0 * p1.X + 4.0 * p2.X - p3.X) * sqAmount;
+            y += (2.0 * p0.Y - 5.0 * p1.Y + 4.0 * p2.Y - p3.Y) * sqAmount;
+            x += (3.0 * p1.X - p0.X - 3.0 * p2.X + p3.X) * cuAmount;
+            y += (3.0 * p1.Y - p0.Y - 3.0 * p2.Y + p3.Y) * cuAmount;
+            x *= 0.5;
+            y *= 0.5;
+
+            result.X = (float)x;
+            result.Y = (float)y;
         }
 
         /// <summary>
