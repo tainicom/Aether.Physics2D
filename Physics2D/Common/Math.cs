@@ -186,7 +186,9 @@ namespace tainicom.Aether.Physics2D.Common
 
         public static Vector2 Clamp(Vector2 a, Vector2 low, Vector2 high)
         {
-            return Vector2.Max(low, Vector2.Min(a, high));
+            a.X = Math.Max(low.X, Math.Min(a.X, high.X));
+            a.Y = Math.Max(low.Y, Math.Min(a.Y, high.Y));
+            return a;
         }
 
         public static void Cross(ref Vector2 a, ref Vector2 b, out float c)
