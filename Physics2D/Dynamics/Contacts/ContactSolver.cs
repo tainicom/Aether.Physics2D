@@ -94,8 +94,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
     public class ContactSolver
     {
-        public Position[] _positions;
-        public Velocity[] _velocities;
+        internal SolverPosition[] _positions;
+        internal SolverVelocity[] _velocities;
         internal int[] _locks;
         public ContactPositionConstraint[] _positionConstraints;
         public ContactVelocityConstraint[] _velocityConstraints;
@@ -104,7 +104,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         int _velocityConstraintsMultithreadThreshold;
         int _positionConstraintsMultithreadThreshold;
 
-        public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities,
+        internal void Reset(ref TimeStep step, int count, Contact[] contacts, SolverPosition[] positions, SolverVelocity[] velocities,
             int[] locks, int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)
         {
             _count = count;

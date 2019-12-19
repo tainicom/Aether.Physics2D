@@ -55,8 +55,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public int ContactCount;
         public int JointCount;
 
-        public Velocity[] _velocities;
-        public Position[] _positions;
+        internal SolverVelocity[] _velocities;
+        internal SolverPosition[] _positions;
         internal int[] _locks;
 
         public int BodyCapacity;
@@ -80,8 +80,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 int newBodyBufferCapacity = Math.Max(bodyCapacity, 32);
                 newBodyBufferCapacity = (newBodyBufferCapacity + 31) & (~31); // grow in chunks of 32.
                 Bodies = new Body[newBodyBufferCapacity];
-                _velocities = new Velocity[newBodyBufferCapacity];
-                _positions = new Position[newBodyBufferCapacity];
+                _velocities = new SolverVelocity[newBodyBufferCapacity];
+                _positions = new SolverPosition[newBodyBufferCapacity];
                 _locks = new int[newBodyBufferCapacity];
             }
 
@@ -108,7 +108,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             JointCount = 0;
         }
 
-        public void Solve(ref TimeStep step, ref Vector2 gravity)
+        internal void Solve(ref TimeStep step, ref Vector2 gravity)
         {
             float h = step.dt;
 
