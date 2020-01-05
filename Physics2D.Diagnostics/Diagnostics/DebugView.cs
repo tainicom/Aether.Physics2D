@@ -607,7 +607,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                     _primitiveBatch.AddVertex(ref center_vS, colorFill, PrimitiveType.TriangleList);
                     _primitiveBatch.AddVertex(ref center_v1, colorFill, PrimitiveType.TriangleList);
                     _primitiveBatch.AddVertex(ref center_v2, colorFill, PrimitiveType.TriangleList);
-            }
+                }
             }
             // Close Circle
             _primitiveBatch.AddVertex(ref center_v2, color, PrimitiveType.LineList);

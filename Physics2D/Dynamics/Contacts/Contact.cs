@@ -440,7 +440,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Contact c = null;
             var contactPoolList = contactManager._contactPoolList;
             if (contactPoolList.Next != contactPoolList)
-            {                
+            {
                 // get first item in the pool.
                 c = contactPoolList.Next;
                 // Remove from the pool.
