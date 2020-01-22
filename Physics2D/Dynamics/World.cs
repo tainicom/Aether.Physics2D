@@ -1523,6 +1523,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="aabb">The aabb query box.</param>
         /// <returns>A list of fixtures that were in the affected area.</returns>
+        [Obsolete]
         public List<Fixture> QueryAABB(ref AABB aabb)
         {
             List<Fixture> affected = new List<Fixture>();
@@ -1562,6 +1563,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _rayCastCallback = null;
         }
 
+        /// <summary>
+        /// Ray-cast the world for all fixtures in the path of the ray.
+        /// Use the overload with a callback for filtering and better performance.
+        /// </summary>
+        /// <param name="point1">The ray starting point.</param>
+        /// <param name="point2">The ray ending point.</param>
+        [Obsolete]
         public List<Fixture> RayCast(Vector2 point1, Vector2 point2)
         {
             List<Fixture> affected = new List<Fixture>();
