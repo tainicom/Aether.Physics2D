@@ -210,7 +210,7 @@ namespace tainicom.Aether.Physics2D.Collision
         private Func<RayCastInput, Element<FixtureProxy>, float> TransformRayCallback(BroadPhaseRayCastCallback callback)
         {
             Func<RayCastInput, Element<FixtureProxy>, float> newCallback =
-                (input, qtnode) => callback(input, qtnode.Value.ProxyId);
+                (input, qtnode) => callback(ref input, qtnode.Value.ProxyId);
             return newCallback;
         }
 

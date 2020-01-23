@@ -38,5 +38,5 @@ namespace tainicom.Aether.Physics2D.Collision
     }
 
     public delegate bool BroadPhaseQueryCallback(int proxyId);
-    public delegate float BroadPhaseRayCastCallback(RayCastInput input, int proxyId);
+    public delegate float BroadPhaseRayCastCallback(ref RayCastInput input, int proxyId);
 }

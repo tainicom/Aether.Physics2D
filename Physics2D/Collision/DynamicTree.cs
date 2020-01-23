@@ -435,7 +435,7 @@ namespace tainicom.Aether.Physics2D.Collision
                     subInput.Point2 = input.Point2;
                     subInput.MaxFraction = maxFraction;
 
-                    float value = callback(subInput, nodeId);
+                    float value = callback(ref subInput, nodeId);
 
                     if (value == 0.0f)
                     {

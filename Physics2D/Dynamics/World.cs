@@ -195,7 +195,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return _queryAABBCallback(proxy.Fixture);
         }
 
-        private float RayCastCallbackWrapper(RayCastInput rayCastInput, int proxyId)
+        private float RayCastCallbackWrapper(ref RayCastInput rayCastInput, int proxyId)
         {
             FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
             Fixture fixture = proxy.Fixture;
