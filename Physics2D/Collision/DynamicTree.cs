@@ -333,7 +333,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="callback">The callback.</param>
         /// <param name="aabb">The aabb.</param>
-        public void Query(Func<int, bool> callback, ref AABB aabb)
+        public void Query(BroadPhaseQueryCallback callback, ref AABB aabb)
         {
             _queryStack.Clear();
             _queryStack.Push(_root);

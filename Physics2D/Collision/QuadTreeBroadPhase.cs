@@ -178,7 +178,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 throw new KeyNotFoundException("proxyID not found in register");
         }
 
-        public void Query(Func<int, bool> callback, ref AABB query)
+        public void Query(BroadPhaseQueryCallback callback, ref AABB query)
         {
             _quadTree.QueryAABB(TransformPredicate(callback), ref query);
         }
@@ -201,7 +201,7 @@ namespace tainicom.Aether.Physics2D.Collision
             return new AABB(aabb.LowerBound - r, aabb.UpperBound + r);
         }
 
-        private Func<Element<FixtureProxy>, bool> TransformPredicate(Func<int, bool> idPredicate)
+        private Func<Element<FixtureProxy>, bool> TransformPredicate(BroadPhaseQueryCallback idPredicate)
         {
             Func<Element<FixtureProxy>, bool> qtPred = qtnode => idPredicate(qtnode.Value.ProxyId);
             return qtPred;

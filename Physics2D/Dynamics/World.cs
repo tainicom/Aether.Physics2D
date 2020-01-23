@@ -69,7 +69,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private HashSet<Joint> _jointAddList = new HashSet<Joint>();
         private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
         private Func<Fixture, bool> _queryAABBCallback;
-        private Func<int, bool> _queryAABBCallbackWrapper;
+        private BroadPhaseQueryCallback _queryAABBCallbackWrapper;
         private TOIInput _input = new TOIInput();
         private Fixture _myFixture;
         private Vector2 _point1;
