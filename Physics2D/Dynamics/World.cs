@@ -76,7 +76,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private Vector2 _point2;
         private List<Fixture> _testPointAllFixtures;
         private Stopwatch _watch = new Stopwatch();
-        private Func<Fixture, Vector2, Vector2, float, float> _rayCastCallback;
+        private RayCastCallback _rayCastCallback;
         private BroadPhaseRayCastCallback _rayCastCallbackWrapper;
 
         internal bool _worldHasNewFixture;
@@ -1551,7 +1551,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="point1">The ray starting point.</param>
         /// <param name="point2">The ray ending point.</param>
-        public void RayCast(Func<Fixture, Vector2, Vector2, float, float> callback, Vector2 point1, Vector2 point2)
+        public void RayCast(RayCastCallback callback, Vector2 point1, Vector2 point2)
         {
             RayCastInput input = new RayCastInput();
             input.MaxFraction = 1.0f;
