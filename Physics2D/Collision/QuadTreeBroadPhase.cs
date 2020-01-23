@@ -183,7 +183,7 @@ namespace tainicom.Aether.Physics2D.Collision
             _quadTree.QueryAABB(TransformPredicate(callback), ref query);
         }
 
-        public void RayCast(Func<RayCastInput, int, float> callback, ref RayCastInput input)
+        public void RayCast(BroadPhaseRayCastCallback callback, ref RayCastInput input)
         {
             _quadTree.RayCast(TransformRayCallback(callback), ref input);
         }
@@ -207,7 +207,7 @@ namespace tainicom.Aether.Physics2D.Collision
             return qtPred;
         }
 
-        private Func<RayCastInput, Element<FixtureProxy>, float> TransformRayCallback(Func<RayCastInput, int, float> callback)
+        private Func<RayCastInput, Element<FixtureProxy>, float> TransformRayCallback(BroadPhaseRayCastCallback callback)
         {
             Func<RayCastInput, Element<FixtureProxy>, float> newCallback =
                 (input, qtnode) => callback(input, qtnode.Value.ProxyId);

@@ -77,7 +77,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private List<Fixture> _testPointAllFixtures;
         private Stopwatch _watch = new Stopwatch();
         private Func<Fixture, Vector2, Vector2, float, float> _rayCastCallback;
-        private Func<RayCastInput, int, float> _rayCastCallbackWrapper;
+        private BroadPhaseRayCastCallback _rayCastCallbackWrapper;
 
         internal bool _worldHasNewFixture;
 
