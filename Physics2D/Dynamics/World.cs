@@ -68,7 +68,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private HashSet<Body> _bodyRemoveList = new HashSet<Body>();
         private HashSet<Joint> _jointAddList = new HashSet<Joint>();
         private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
-        private Func<Fixture, bool> _queryAABBCallback;
+        private QueryCallback _queryAABBCallback;
         private BroadPhaseQueryCallback _queryAABBCallbackWrapper;
         private TOIInput _input = new TOIInput();
         private Fixture _myFixture;
@@ -1510,7 +1510,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="aabb">The aabb query box.</param>
-        public void QueryAABB(Func<Fixture, bool> callback, ref AABB aabb)
+        public void QueryAABB(QueryCallback callback, ref AABB aabb)
         {
             _queryAABBCallback = callback;
             ContactManager.BroadPhase.Query(_queryAABBCallbackWrapper, ref aabb);

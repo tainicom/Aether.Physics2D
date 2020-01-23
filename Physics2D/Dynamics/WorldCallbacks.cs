@@ -35,6 +35,13 @@ using tainicom.Aether.Physics2D.Dynamics.Joints;
 namespace tainicom.Aether.Physics2D.Dynamics
 {
     /// <summary>
+    /// Called for each fixture found in the query.
+    /// <returns>true: Continues the query, false: Terminate the query</returns>
+    /// </summary>
+    public delegate bool QueryCallback(Fixture fixture);
+
+
+    /// <summary>
     /// This delegate is called when a contact is deleted
     /// </summary>
     public delegate void EndContactDelegate(Contact contact);
