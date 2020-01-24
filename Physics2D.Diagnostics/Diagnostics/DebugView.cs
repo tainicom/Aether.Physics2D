@@ -287,7 +287,18 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                 if (AdaptiveLimits)
                 {
-                    MaximumValue = _max;
+                    var maxTicks = _max.Ticks;
+                    // Round up to the next highest power of 2
+                    {
+                        maxTicks--;
+                        maxTicks |= maxTicks >> 1;
+                        maxTicks |= maxTicks >> 2;
+                        maxTicks |= maxTicks >> 4;
+                        maxTicks |= maxTicks >> 8;
+                        maxTicks |= maxTicks >> 16;
+                        maxTicks++;
+                    }
+                    MaximumValue = TimeSpan.FromTicks(maxTicks);
                     MinimumValue = TimeSpan.Zero;
                 }
 
