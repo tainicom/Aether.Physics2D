@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\Portable45\</OutputPath>
-    <DefineConstants>DEBUG;LEGACY_FLUIDS;PORTABLE45</DefineConstants>
+    <DefineConstants>DEBUG;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;PORTABLE45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -29,7 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DefineConstants>LEGACY_FLUIDS;PORTABLE45</DefineConstants>
+    <DefineConstants>LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;PORTABLE45</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

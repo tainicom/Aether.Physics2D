@@ -43,7 +43,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\Windows.XNA\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;LEGACY_FLUIDS;WINDOWS;XNA;NET40</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;WINDOWS;XNA;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
@@ -56,7 +56,7 @@
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\Windows.XNA\</OutputPath>
-    <DefineConstants>TRACE;LEGACY_FLUIDS;WINDOWS;XNA;NET40</DefineConstants>
+    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;WINDOWS;XNA;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>

@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\Android\</OutputPath>
-    <DefineConstants>DEBUG;LEGACY_FLUIDS;ANDROID PORTABLE</DefineConstants>
+    <DefineConstants>DEBUG;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;ANDROID PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\Android\</OutputPath>
-    <DefineConstants>LEGACY_FLUIDS;ANDROID</DefineConstants>
+    <DefineConstants>LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;ANDROID</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

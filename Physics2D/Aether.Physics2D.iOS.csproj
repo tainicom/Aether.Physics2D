@@ -16,7 +16,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\iOS\</OutputPath>
-    <DefineConstants>DEBUG;LEGACY_FLUIDS;IOS PORTABLE</DefineConstants>
+    <DefineConstants>DEBUG;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;IOS PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\iOS\</OutputPath>
-    <DefineConstants>LEGACY_FLUIDS;IOS PORTABLE</DefineConstants>
+    <DefineConstants>LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;IOS PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

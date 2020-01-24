@@ -64,10 +64,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private float _invDt0;
         private Body[] _stack = new Body[64];
-        private HashSet<Body> _bodyAddList = new HashSet<Body>();
-        private HashSet<Body> _bodyRemoveList = new HashSet<Body>();
-        private HashSet<Joint> _jointAddList = new HashSet<Joint>();
-        private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
         private QueryCallback _queryAABBCallback;
         private BroadPhaseQueryCallback _queryAABBCallbackWrapper;
         private TOIInput _input = new TOIInput();
@@ -80,6 +76,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private BroadPhaseRayCastCallback _rayCastCallbackWrapper;
 
         internal bool _worldHasNewFixture;
+
+
+#if LEGACY_ASYNCADDREMOVE
+        private HashSet<Body> _bodyAddList = new HashSet<Body>();
+        private HashSet<Body> _bodyRemoveList = new HashSet<Body>();
+        private HashSet<Joint> _jointAddList = new HashSet<Joint>();
+        private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
+#endif
 
 #if LEGACY_FLUIDS
         public tainicom.Aether.Physics2D.Fluids.FluidSystem2 Fluid { get; private set; }
@@ -1219,6 +1223,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
 
+        #region LEGACY_ASYNCADDREMOVE
+#if LEGACY_ASYNCADDREMOVE
         /// <summary>
         /// Add a rigid body.
         /// </summary>
@@ -1351,6 +1357,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 Debug.Assert(BodyList.Contains(b));
 #endif
         }
+#endif
+        #endregion // LEGACY_ASYNCADDREMOVE
 
         
         /// <summary>
@@ -1408,9 +1416,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (Settings.EnableDiagnostics)
                 _watch.Start();
 
+#if LEGACY_ASYNCADDREMOVE
             ProcessChanges();
             if (Settings.EnableDiagnostics)
                 AddRemoveTime = TimeSpan.FromTicks(_watch.ElapsedTicks);
+#endif
 
             // If new fixtures were added, we need to find the new contacts.
             if (_worldHasNewFixture)
@@ -1715,7 +1725,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (IsLocked)
                 throw new InvalidOperationException("The World is locked.");
 
+#if LEGACY_ASYNCADDREMOVE
             ProcessChanges();
+#endif
 
             for (int i = BodyList.Count - 1; i >= 0; i--)
             {
