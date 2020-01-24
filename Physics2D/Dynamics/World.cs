@@ -68,16 +68,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private HashSet<Body> _bodyRemoveList = new HashSet<Body>();
         private HashSet<Joint> _jointAddList = new HashSet<Joint>();
         private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
-        private Func<Fixture, bool> _queryAABBCallback;
-        private Func<int, bool> _queryAABBCallbackWrapper;
+        private QueryCallback _queryAABBCallback;
+        private BroadPhaseQueryCallback _queryAABBCallbackWrapper;
         private TOIInput _input = new TOIInput();
         private Fixture _myFixture;
         private Vector2 _point1;
         private Vector2 _point2;
         private List<Fixture> _testPointAllFixtures;
         private Stopwatch _watch = new Stopwatch();
-        private Func<Fixture, Vector2, Vector2, float, float> _rayCastCallback;
-        private Func<RayCastInput, int, float> _rayCastCallbackWrapper;
+        private RayCastCallback _rayCastCallback;
+        private BroadPhaseRayCastCallback _rayCastCallbackWrapper;
 
         internal bool _worldHasNewFixture;
 
@@ -195,7 +195,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return _queryAABBCallback(proxy.Fixture);
         }
 
-        private float RayCastCallbackWrapper(RayCastInput rayCastInput, int proxyId)
+        private float RayCastCallbackWrapper(ref RayCastInput rayCastInput, int proxyId)
         {
             FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
             Fixture fixture = proxy.Fixture;
@@ -1510,7 +1510,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="aabb">The aabb query box.</param>
-        public void QueryAABB(Func<Fixture, bool> callback, ref AABB aabb)
+        public void QueryAABB(QueryCallback callback, ref AABB aabb)
         {
             _queryAABBCallback = callback;
             ContactManager.BroadPhase.Query(_queryAABBCallbackWrapper, ref aabb);
@@ -1551,7 +1551,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="point1">The ray starting point.</param>
         /// <param name="point2">The ray ending point.</param>
-        public void RayCast(Func<Fixture, Vector2, Vector2, float, float> callback, Vector2 point1, Vector2 point2)
+        public void RayCast(RayCastCallback callback, Vector2 point1, Vector2 point2)
         {
             RayCastInput input = new RayCastInput();
             input.MaxFraction = 1.0f;

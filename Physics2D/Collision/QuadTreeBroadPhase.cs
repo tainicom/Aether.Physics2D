@@ -178,12 +178,12 @@ namespace tainicom.Aether.Physics2D.Collision
                 throw new KeyNotFoundException("proxyID not found in register");
         }
 
-        public void Query(Func<int, bool> callback, ref AABB query)
+        public void Query(BroadPhaseQueryCallback callback, ref AABB query)
         {
             _quadTree.QueryAABB(TransformPredicate(callback), ref query);
         }
 
-        public void RayCast(Func<RayCastInput, int, float> callback, ref RayCastInput input)
+        public void RayCast(BroadPhaseRayCastCallback callback, ref RayCastInput input)
         {
             _quadTree.RayCast(TransformRayCallback(callback), ref input);
         }
@@ -201,16 +201,16 @@ namespace tainicom.Aether.Physics2D.Collision
             return new AABB(aabb.LowerBound - r, aabb.UpperBound + r);
         }
 
-        private Func<Element<FixtureProxy>, bool> TransformPredicate(Func<int, bool> idPredicate)
+        private Func<Element<FixtureProxy>, bool> TransformPredicate(BroadPhaseQueryCallback idPredicate)
         {
             Func<Element<FixtureProxy>, bool> qtPred = qtnode => idPredicate(qtnode.Value.ProxyId);
             return qtPred;
         }
 
-        private Func<RayCastInput, Element<FixtureProxy>, float> TransformRayCallback(Func<RayCastInput, int, float> callback)
+        private Func<RayCastInput, Element<FixtureProxy>, float> TransformRayCallback(BroadPhaseRayCastCallback callback)
         {
             Func<RayCastInput, Element<FixtureProxy>, float> newCallback =
-                (input, qtnode) => callback(input, qtnode.Value.ProxyId);
+                (input, qtnode) => callback(ref input, qtnode.Value.ProxyId);
             return newCallback;
         }
 

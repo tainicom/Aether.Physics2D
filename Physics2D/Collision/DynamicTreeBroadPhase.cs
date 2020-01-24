@@ -78,7 +78,7 @@ namespace tainicom.Aether.Physics2D.Collision
         private int _pairCapacity;
         private int _pairCount;
         private int _proxyCount;
-        private Func<int, bool> _queryCallback;
+        private BroadPhaseQueryCallback _queryCallback;
         private int _queryProxyId;
         private DynamicTree<FixtureProxy> _tree = new DynamicTree<FixtureProxy>();
 
@@ -301,7 +301,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="callback">The callback.</param>
         /// <param name="aabb">The aabb.</param>
-        public void Query(Func<int, bool> callback, ref AABB aabb)
+        public void Query(BroadPhaseQueryCallback callback, ref AABB aabb)
         {
             _tree.Query(callback, ref aabb);
         }
@@ -315,7 +315,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="callback">A callback class that is called for each proxy that is hit by the ray.</param>
         /// <param name="input">The ray-cast input data. The ray extends from p1 to p1 + maxFraction * (p2 - p1).</param>
-        public void RayCast(Func<RayCastInput, int, float> callback, ref RayCastInput input)
+        public void RayCast(BroadPhaseRayCastCallback callback, ref RayCastInput input)
         {
             _tree.RayCast(callback, ref input);
         }
