@@ -418,7 +418,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Get the list of all contacts attached to this body.
         /// Warning: this list changes during the time step and you may
-        /// miss some collisions if you don't use ContactListener.
+        /// miss some collisions if you don't use callback events.
         /// </summary>
         /// <value>The contact list.</value>
         public ContactEdge ContactList { get; internal set; }
