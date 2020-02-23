@@ -26,7 +26,7 @@
 */
 
 using System;
-using tainicom.Aether.Physics2D.Common.Maths;
+using tainicom.Aether.Physics2D.Common;
 
 namespace tainicom.Aether.Physics2D
 {

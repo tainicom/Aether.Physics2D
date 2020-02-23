@@ -192,10 +192,10 @@
     <Compile Include="Common\FixedArray.cs" />
     <Compile Include="Common\LineTools.cs" />
     <Compile Include="Common\Math.cs" />
-    <Compile Include="Common\Maths\Constant.cs" />
+    <Compile Include="Common\Complex.cs" />
+    <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\Path.cs" />
     <Compile Include="Common\PathManager.cs" />
-    <Compile Include="Common\Maths\Complex.cs" />
     <Compile Include="Common\PhysicsLogic\BreakableBody.cs" />
     <Compile Include="Common\PhysicsLogic\ControllerFilter.cs" />
     <Compile Include="Common\PhysicsLogic\FilterData.cs" />

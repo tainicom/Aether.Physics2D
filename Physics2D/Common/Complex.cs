@@ -3,7 +3,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace tainicom.Aether.Physics2D.Common.Maths
+namespace tainicom.Aether.Physics2D.Common
 {
     public struct Complex
     {

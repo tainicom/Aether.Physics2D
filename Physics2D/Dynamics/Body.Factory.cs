@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.Decomposition;
-using tainicom.Aether.Physics2D.Common.Maths;
 using tainicom.Aether.Physics2D.Dynamics;
 using Microsoft.Xna.Framework;
 

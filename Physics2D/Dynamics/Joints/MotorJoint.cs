@@ -27,7 +27,6 @@
 
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.Common.Maths;
 using Microsoft.Xna.Framework;
 
 namespace tainicom.Aether.Physics2D.Dynamics.Joints

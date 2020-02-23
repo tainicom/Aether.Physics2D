@@ -2,7 +2,7 @@
 
 using System;
 
-namespace tainicom.Aether.Physics2D.Common.Maths
+namespace tainicom.Aether.Physics2D.Common
 {
     static class Constant
     {
