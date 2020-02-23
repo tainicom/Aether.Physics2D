@@ -1099,7 +1099,9 @@ namespace tainicom.Aether.Physics2D.Common
                 }
             }
 
+#if LEGACY_ASYNCADDREMOVE
             world.ProcessChanges();
+#endif
         }
 
         private static Vector2 ReadVector(XMLFragmentElement node)
