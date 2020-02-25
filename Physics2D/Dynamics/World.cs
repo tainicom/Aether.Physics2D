@@ -180,6 +180,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Initializes a new instance of the <see cref="World"/> class.
         /// </summary>
+        /// <remarks>Deprecated in version 1.5</remarks>
         [Obsolete("Use: new World(new QuadTreeBroadPhase(span));")]
         public World(AABB span) : this(new QuadTreeBroadPhase(span))
         {
@@ -1533,7 +1534,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="aabb">The aabb query box.</param>
         /// <returns>A list of fixtures that were in the affected area.</returns>
-        [Obsolete]
+        /// <remarks>Deprecated in version 1.5</remarks>
+        [Obsolete("Use QueryAABB(QueryCallback, ref AABB)")]
         public List<Fixture> QueryAABB(ref AABB aabb)
         {
             List<Fixture> affected = new List<Fixture>();
@@ -1579,7 +1581,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="point1">The ray starting point.</param>
         /// <param name="point2">The ray ending point.</param>
-        [Obsolete]
+        /// <remarks>Deprecated in version 1.5</remarks>
+        [Obsolete("Use RayCast(RayCastCallback, Vector2, Vector2)")]
         public List<Fixture> RayCast(Vector2 point1, Vector2 point2)
         {
             List<Fixture> affected = new List<Fixture>();
