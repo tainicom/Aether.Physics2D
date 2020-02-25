@@ -1521,6 +1521,20 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="aabb">The aabb query box.</param>
+        public void QueryAABB(QueryCallback callback, AABB aabb)
+        {
+            QueryAABB(callback, ref aabb);
+        }
+
+        /// <summary>
+        /// Query the world for all fixtures that potentially overlap the provided AABB.
+        /// 
+        /// Inside the callback:
+        /// Return true: Continues the query
+        /// Return false: Terminate the query
+        /// </summary>
+        /// <param name="callback">A user implemented callback class.</param>
+        /// <param name="aabb">The aabb query box.</param>
         public void QueryAABB(QueryCallback callback, ref AABB aabb)
         {
             _queryAABBCallback = callback;
