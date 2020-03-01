@@ -1703,11 +1703,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return true;
         }
 
+#if XNAAPI
         /// <summary>
         /// Returns a list of fixtures that are at the specified point.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns></returns>
+        /// <remarks>Deprecated in version 1.5</remarks>
+        [Obsolete("Use QueryAABB(QueryCallback, ref AABB)")]
         public List<Fixture> TestPointAll(Vector2 point)
         {
             AABB aabb;
@@ -1733,6 +1736,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Continue the query.
             return true;
         }
+#endif
 
         /// Shift the world origin. Useful for large worlds.
         /// The body shift formula is: position -= newOrigin
