@@ -13,7 +13,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using tainicom.Aether.Physics2D.Collision;
-using tainicom.Aether.Physics2D.Common;
 #if XNAAPI
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Matrix = Microsoft.Xna.Framework.Matrix;

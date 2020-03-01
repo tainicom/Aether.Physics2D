@@ -5,7 +5,6 @@
 
 using System;
 using tainicom.Aether.Physics2D.Collision;
-using tainicom.Aether.Physics2D.Common;
 #if XNAAPI
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif
