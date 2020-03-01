@@ -128,8 +128,8 @@ namespace tainicom.Aether.Physics2D.Controllers
                 body.ApplyForce(buoyancyForce, massc);
 
                 //Linear drag
-                Vector2 dragForce = body.GetLinearVelocityFromWorldPoint(areac) - Velocity;
-                dragForce *= -LinearDragCoefficient * area;
+                Vector2 dragVelocity = body.GetLinearVelocityFromWorldPoint(areac) - Velocity;
+                Vector2 dragForce = dragVelocity * (-LinearDragCoefficient * area);
                 body.ApplyForce(dragForce, areac);
 
                 //Angular drag
