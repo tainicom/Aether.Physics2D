@@ -5,11 +5,14 @@
 
 using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Common.Decomposition;
+using tainicom.Aether.Physics2D.Common;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
 {

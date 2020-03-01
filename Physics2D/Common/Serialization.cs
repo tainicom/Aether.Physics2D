@@ -13,7 +13,9 @@ using System.Xml.Serialization;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common
 {

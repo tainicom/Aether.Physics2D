@@ -32,7 +32,9 @@ using System.Diagnostics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 {
