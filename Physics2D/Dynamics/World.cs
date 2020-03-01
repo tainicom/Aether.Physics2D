@@ -63,6 +63,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private const bool _subStepping = false;
         #endregion
 
+        Vector2 _gravity;
+
         private bool _stepComplete = true;
 
         private float _invDt0;
@@ -414,7 +416,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     }
                 }
 
-                Island.Solve(ref step, ref Gravity);
+                Island.Solve(ref step, ref _gravity);
 
                 // Post solve cleanup.
                 for (int i = 0; i < Island.BodyCount; ++i)
@@ -879,7 +881,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Change the global gravity vector.
         /// </summary>
         /// <value>The gravity.</value>
-        public Vector2 Gravity;
+        public Vector2 Gravity
+        {
+            get { return _gravity; }
+            set 
+            {
+                if (IsLocked)
+                    throw new InvalidOperationException("The World is locked.");
+                _gravity = value;
+            }
+        }
         
         /// <summary>
         /// Is the world locked (in the middle of a time step).
