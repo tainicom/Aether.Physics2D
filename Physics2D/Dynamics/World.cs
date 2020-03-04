@@ -69,17 +69,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private float _invDt0;
         private Body[] _stack = new Body[64];
-        private QueryCallback _queryCallbackTmp;
+        private QueryReportFixtureDelegate _queryDelegateTmp;
         private BroadPhaseQueryCallback _queryCallbackCache;
         private TOIInput _input = new TOIInput();
         private Vector2 _testPointPointTmp;
         private Fixture _testPointFixtureTmp;
-        private QueryCallback _testPointCallbackCache;
+        private QueryReportFixtureDelegate _testPointDelegateCache;
         private Vector2 _testPointAllPointTmp;
         private List<Fixture> _testPointAllFixturesTmp;
-        private QueryCallback _testPointAllCallbackCache;
+        private QueryReportFixtureDelegate _testPointAllDelegateCache;
         private Stopwatch _watch = new Stopwatch();
-        private RayCastCallback _rayCastCallbackTmp;
+        private RayCastReportFixtureDelegate _rayCastDelegateTmp;
         private BroadPhaseRayCastCallback _rayCastCallbackCache;
 
         internal bool _worldHasNewFixture;
@@ -166,8 +166,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             _queryCallbackCache = new BroadPhaseQueryCallback(QueryAABBCallback);
             _rayCastCallbackCache = new BroadPhaseRayCastCallback(RayCastCallback);
-            _testPointCallbackCache = new QueryCallback(this.TestPointCallback);
-            _testPointAllCallbackCache = new QueryCallback(this.TestPointAllCallback);
+            _testPointDelegateCache = new QueryReportFixtureDelegate(this.TestPointCallback);
+            _testPointAllDelegateCache = new QueryReportFixtureDelegate(this.TestPointAllCallback);
 
 #if LEGACY_FLUIDS
             Fluid = new tainicom.Aether.Physics2D.Fluids.FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
@@ -1519,7 +1519,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="aabb">The aabb query box.</param>
-        public void QueryAABB(QueryCallback callback, AABB aabb)
+        public void QueryAABB(QueryReportFixtureDelegate callback, AABB aabb)
         {
             QueryAABB(callback, ref aabb);
         }
@@ -1533,17 +1533,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="aabb">The aabb query box.</param>
-        public void QueryAABB(QueryCallback callback, ref AABB aabb)
+        public void QueryAABB(QueryReportFixtureDelegate callback, ref AABB aabb)
         {
-            _queryCallbackTmp = callback;
+            _queryDelegateTmp = callback;
             ContactManager.BroadPhase.Query(_queryCallbackCache, ref aabb);
-            _queryCallbackTmp = null;
+            _queryDelegateTmp = null;
         }
 
         private bool QueryAABBCallback(int proxyId)
         {
             FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
-            return _queryCallbackTmp(proxy.Fixture);
+            return _queryDelegateTmp(proxy.Fixture);
         }
 
 #if XNAAPI
@@ -1583,16 +1583,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="callback">A user implemented callback class.</param>
         /// <param name="point1">The ray starting point.</param>
         /// <param name="point2">The ray ending point.</param>
-        public void RayCast(RayCastCallback callback, Vector2 point1, Vector2 point2)
+        public void RayCast(RayCastReportFixtureDelegate callback, Vector2 point1, Vector2 point2)
         {
             RayCastInput input = new RayCastInput();
             input.MaxFraction = 1.0f;
             input.Point1 = point1;
             input.Point2 = point2;
 
-            _rayCastCallbackTmp = callback;
+            _rayCastDelegateTmp = callback;
             ContactManager.BroadPhase.RayCast(_rayCastCallbackCache, ref input);
-            _rayCastCallbackTmp = null;
+            _rayCastDelegateTmp = null;
         }
 
         private float RayCastCallback(ref RayCastInput rayCastInput, int proxyId)
@@ -1607,7 +1607,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 float fraction = output.Fraction;
                 Vector2 point = (1.0f - fraction) * rayCastInput.Point1 + fraction * rayCastInput.Point2;
-                return _rayCastCallbackTmp(fixture, point, output.Normal, fraction);
+                return _rayCastDelegateTmp(fixture, point, output.Normal, fraction);
             }
 
             return rayCastInput.MaxFraction;
@@ -1689,7 +1689,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _testPointFixtureTmp = null;
 
             // Query the world for overlapping shapes.
-            QueryAABB(_testPointCallbackCache, ref aabb);
+            QueryAABB(_testPointDelegateCache, ref aabb);
 
             return _testPointFixtureTmp;
         }
@@ -1726,7 +1726,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _testPointAllFixturesTmp = new List<Fixture>();
 
             // Query the world for overlapping shapes.
-            QueryAABB(_testPointAllCallbackCache, ref aabb);
+            QueryAABB(_testPointAllDelegateCache, ref aabb);
 
             return _testPointAllFixturesTmp;
         }

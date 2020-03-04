@@ -42,7 +42,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
     /// Called for each fixture found in the query.
     /// <returns>true: Continues the query, false: Terminate the query</returns>
     /// </summary>
-    public delegate bool QueryCallback(Fixture fixture);
+    public delegate bool QueryReportFixtureDelegate(Fixture fixture);
 
     /// <summary>
     /// Called for each fixture found in the query. You control how the ray cast
@@ -56,7 +56,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
     /// @param normal the normal vector at the point of intersection
     /// @return 0 to terminate, fraction to clip the ray for closest hit, 1 to continue
     /// </summary>
-    public delegate float RayCastCallback(Fixture fixture, Vector2 point, Vector2 normal, float fraction);
+    public delegate float RayCastReportFixtureDelegate(Fixture fixture, Vector2 point, Vector2 normal, float fraction);
 
     /// <summary>
     /// This delegate is called when a contact is deleted
