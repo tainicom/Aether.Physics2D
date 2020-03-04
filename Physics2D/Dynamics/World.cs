@@ -69,16 +69,18 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         private float _invDt0;
         private Body[] _stack = new Body[64];
-        private QueryCallback _queryAABBCallback;
-        private BroadPhaseQueryCallback _queryAABBCallbackWrapper;
+        private QueryCallback _queryCallbackTmp;
+        private BroadPhaseQueryCallback _queryCallbackCache;
         private TOIInput _input = new TOIInput();
-        private Fixture _myFixture;
-        private Vector2 _point1;
-        private Vector2 _point2;
-        private List<Fixture> _testPointAllFixtures;
+        private Vector2 _testPointPointTmp;
+        private Fixture _testPointFixtureTmp;
+        private QueryCallback _testPointCallbackCache;
+        private Vector2 _testPointAllPointTmp;
+        private List<Fixture> _testPointAllFixturesTmp;
+        private QueryCallback _testPointAllCallbackCache;
         private Stopwatch _watch = new Stopwatch();
-        private RayCastCallback _rayCastCallback;
-        private BroadPhaseRayCastCallback _rayCastCallbackWrapper;
+        private RayCastCallback _rayCastCallbackTmp;
+        private BroadPhaseRayCastCallback _rayCastCallbackCache;
 
         internal bool _worldHasNewFixture;
 
@@ -162,8 +164,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             TOISet = new HashSet<Body>();
 #endif
 
-            _queryAABBCallbackWrapper = QueryAABBCallbackWrapper;
-            _rayCastCallbackWrapper = RayCastCallbackWrapper;
+            _queryCallbackCache = new BroadPhaseQueryCallback(QueryAABBCallback);
+            _rayCastCallbackCache = new BroadPhaseRayCastCallback(RayCastCallback);
+            _testPointCallbackCache = new QueryCallback(this.TestPointCallback);
+            _testPointAllCallbackCache = new QueryCallback(this.TestPointAllCallback);
 
 #if LEGACY_FLUIDS
             Fluid = new tainicom.Aether.Physics2D.Fluids.FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
@@ -199,30 +203,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         public World(IBroadPhase broadPhase) : this()
         {
             ContactManager = new ContactManager(broadPhase);
-        }
-
-        private bool QueryAABBCallbackWrapper(int proxyId)
-        {
-            FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
-            return _queryAABBCallback(proxy.Fixture);
-        }
-
-        private float RayCastCallbackWrapper(ref RayCastInput rayCastInput, int proxyId)
-        {
-            FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
-            Fixture fixture = proxy.Fixture;
-            int index = proxy.ChildIndex;
-            RayCastOutput output;
-            bool hit = fixture.RayCast(out output, ref rayCastInput, index);
-
-            if (hit)
-            {
-                float fraction = output.Fraction;
-                Vector2 point = (1.0f - fraction) * rayCastInput.Point1 + fraction * rayCastInput.Point2;
-                return _rayCastCallback(fixture, point, output.Normal, fraction);
-            }
-
-            return rayCastInput.MaxFraction;
         }
 
         private void Solve(ref TimeStep step)
@@ -1555,9 +1535,15 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <param name="aabb">The aabb query box.</param>
         public void QueryAABB(QueryCallback callback, ref AABB aabb)
         {
-            _queryAABBCallback = callback;
-            ContactManager.BroadPhase.Query(_queryAABBCallbackWrapper, ref aabb);
-            _queryAABBCallback = null;
+            _queryCallbackTmp = callback;
+            ContactManager.BroadPhase.Query(_queryCallbackCache, ref aabb);
+            _queryCallbackTmp = null;
+        }
+
+        private bool QueryAABBCallback(int proxyId)
+        {
+            FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
+            return _queryCallbackTmp(proxy.Fixture);
         }
 
 #if XNAAPI
@@ -1604,9 +1590,27 @@ namespace tainicom.Aether.Physics2D.Dynamics
             input.Point1 = point1;
             input.Point2 = point2;
 
-            _rayCastCallback = callback;
-            ContactManager.BroadPhase.RayCast(_rayCastCallbackWrapper, ref input);
-            _rayCastCallback = null;
+            _rayCastCallbackTmp = callback;
+            ContactManager.BroadPhase.RayCast(_rayCastCallbackCache, ref input);
+            _rayCastCallbackTmp = null;
+        }
+
+        private float RayCastCallback(ref RayCastInput rayCastInput, int proxyId)
+        {
+            FixtureProxy proxy = ContactManager.BroadPhase.GetProxy(proxyId);
+            Fixture fixture = proxy.Fixture;
+            int index = proxy.ChildIndex;
+            RayCastOutput output;
+            bool hit = fixture.RayCast(out output, ref rayCastInput, index);
+
+            if (hit)
+            {
+                float fraction = output.Fraction;
+                Vector2 point = (1.0f - fraction) * rayCastInput.Point1 + fraction * rayCastInput.Point2;
+                return _rayCastCallbackTmp(fixture, point, output.Normal, fraction);
+            }
+
+            return rayCastInput.MaxFraction;
         }
 
 #if XNAAPI
@@ -1681,21 +1685,21 @@ namespace tainicom.Aether.Physics2D.Dynamics
             aabb.LowerBound = point - d;
             aabb.UpperBound = point + d;
 
-            _myFixture = null;
-            _point1 = point;
+            _testPointPointTmp = point;
+            _testPointFixtureTmp = null;
 
             // Query the world for overlapping shapes.
-            QueryAABB(TestPointCallback, ref aabb);
+            QueryAABB(_testPointCallbackCache, ref aabb);
 
-            return _myFixture;
+            return _testPointFixtureTmp;
         }
 
         private bool TestPointCallback(Fixture fixture)
         {
-            bool inside = fixture.TestPoint(ref _point1);
+            bool inside = fixture.TestPoint(ref _testPointPointTmp);
             if (inside)
             {
-                _myFixture = fixture;
+                _testPointFixtureTmp = fixture;
                 return false;
             }
 
@@ -1718,20 +1722,20 @@ namespace tainicom.Aether.Physics2D.Dynamics
             aabb.LowerBound = point - d;
             aabb.UpperBound = point + d;
 
-            _point2 = point;
-            _testPointAllFixtures = new List<Fixture>();
+            _testPointAllPointTmp = point;
+            _testPointAllFixturesTmp = new List<Fixture>();
 
             // Query the world for overlapping shapes.
-            QueryAABB(TestPointAllCallback, ref aabb);
+            QueryAABB(_testPointAllCallbackCache, ref aabb);
 
-            return _testPointAllFixtures;
+            return _testPointAllFixturesTmp;
         }
 
         private bool TestPointAllCallback(Fixture fixture)
         {
-            bool inside = fixture.TestPoint(ref _point2);
+            bool inside = fixture.TestPoint(ref _testPointAllPointTmp);
             if (inside)
-                _testPointAllFixtures.Add(fixture);
+                _testPointAllFixturesTmp.Add(fixture);
 
             // Continue the query.
             return true;

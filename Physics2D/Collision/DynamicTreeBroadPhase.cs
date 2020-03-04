@@ -81,7 +81,7 @@ namespace tainicom.Aether.Physics2D.Collision
         private int _pairCapacity;
         private int _pairCount;
         private int _proxyCount;
-        private BroadPhaseQueryCallback _queryCallback;
+        private BroadPhaseQueryCallback _queryCallbackCache;
         private int _queryProxyId;
         private DynamicTree<FixtureProxy> _tree = new DynamicTree<FixtureProxy>();
 
@@ -90,7 +90,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         public DynamicTreeBroadPhase()
         {
-            _queryCallback = QueryCallback;
+            _queryCallbackCache = new BroadPhaseQueryCallback(QueryCallback);
             _proxyCount = 0;
 
             _pairCapacity = 16;
@@ -264,7 +264,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 AABB fatAABB = _tree.GetFatAABB(_queryProxyId);
 
                 // Query tree, create pairs and add them pair buffer.
-                _tree.Query(_queryCallback, ref fatAABB);
+                _tree.Query(_queryCallbackCache, ref fatAABB);
             }
 
             // Reset move buffer
