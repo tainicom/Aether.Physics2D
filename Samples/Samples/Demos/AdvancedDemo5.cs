@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2020 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -137,11 +139,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
                     // restore MouseJoint
                     if (worldAnchor != null && _fixedMouseJoint == null)
                     {
-                        var ficture = World.TestPoint(worldAnchor.Value);
-                        if (ficture != null)
+                        var fixture = World.TestPoint(worldAnchor.Value);
+                        if (fixture != null)
                         {
-                            _fixedMouseJoint = new FixedMouseJoint(ficture.Body, worldAnchor.Value);
-                            _fixedMouseJoint.MaxForce = 1000.0f * ficture.Body.Mass;
+                            _fixedMouseJoint = new FixedMouseJoint(fixture.Body, worldAnchor.Value);
+                            _fixedMouseJoint.MaxForce = 1000.0f * fixture.Body.Mass;
                             World.Add(_fixedMouseJoint);
                         }
                     }
