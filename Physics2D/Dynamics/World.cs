@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
+﻿// Copyright (c) 2020 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -75,9 +75,11 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private Vector2 _testPointPointTmp;
         private Fixture _testPointFixtureTmp;
         private QueryReportFixtureDelegate _testPointDelegateCache;
+#if XNAAPI
         private Vector2 _testPointAllPointTmp;
         private List<Fixture> _testPointAllFixturesTmp;
         private QueryReportFixtureDelegate _testPointAllDelegateCache;
+#endif
         private Stopwatch _watch = new Stopwatch();
         private RayCastReportFixtureDelegate _rayCastDelegateTmp;
         private BroadPhaseRayCastCallback _rayCastCallbackCache;
