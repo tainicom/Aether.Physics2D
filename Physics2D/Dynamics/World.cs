@@ -167,7 +167,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _queryCallbackCache = new BroadPhaseQueryCallback(QueryAABBCallback);
             _rayCastCallbackCache = new BroadPhaseRayCastCallback(RayCastCallback);
             _testPointDelegateCache = new QueryReportFixtureDelegate(this.TestPointCallback);
+#if XNAAPI
             _testPointAllDelegateCache = new QueryReportFixtureDelegate(this.TestPointAllCallback);
+#endif
 
 #if LEGACY_FLUIDS
             Fluid = new tainicom.Aether.Physics2D.Fluids.FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
