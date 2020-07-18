@@ -23,7 +23,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\W10\AnyCPU\</OutputPath>
+    <OutputPath>..\bin\Debug\MG.W10\AnyCPU\</OutputPath>
     <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;W10</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,7 +33,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\W10\AnyCPU\</OutputPath>
+    <OutputPath>..\bin\Release\MG.W10\AnyCPU\</OutputPath>
     <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;W10</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\Windows.MG\</OutputPath>
+    <OutputPath>..\..\bin\Debug\MG.Windows\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WINDOWS;MG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,7 +31,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\Windows.MG\</OutputPath>
+    <OutputPath>..\..\bin\Release\MG.Windows\</OutputPath>
     <DefineConstants>TRACE;WINDOWS;MG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
