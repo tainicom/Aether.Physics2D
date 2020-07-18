@@ -90,10 +90,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MonoGame.Framework, Version=3.7.9012.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MonoGame.Framework.WindowsDX.9000.3.7.9012\lib\net40\MonoGame.Framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.7.9012">
+    </PackageReference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -101,7 +99,6 @@
       <Link>Content\SamplesContent.mgcb</Link>
     </MonoGameContentReference>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.MG.csproj">

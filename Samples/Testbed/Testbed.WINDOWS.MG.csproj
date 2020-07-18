@@ -133,10 +133,8 @@
     <Compile Include="Tests\YuPengPolygonTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MonoGame.Framework, Version=3.7.9012.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MonoGame.Framework.WindowsDX.9000.3.7.9012\lib\net40\MonoGame.Framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.7.9012">
+    </PackageReference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -178,7 +176,6 @@
     <None Include="Data\strange.dat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
