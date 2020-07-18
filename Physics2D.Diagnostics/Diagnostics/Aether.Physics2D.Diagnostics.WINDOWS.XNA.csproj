@@ -42,7 +42,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\Windows.XNA\</OutputPath>
+    <OutputPath>..\..\bin\Debug\XNA.Windows\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WINDOWS;XNA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -54,7 +54,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\Windows.XNA\</OutputPath>
+    <OutputPath>..\..\bin\Release\XNA.Windows\</OutputPath>
     <DefineConstants>TRACE;WINDOWS;XNA</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -83,13 +83,20 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
     <Compile Include="DebugView.cs" />
+    <Compile Include="DebugViewBase.cs" />
+    <Compile Include="DebugViewFlags.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IPrimitiveBatch.cs" />
     <Compile Include="PrimitiveBatch.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
       <Project>e64c1098-713a-489a-bb70-725dcbed9271</Project>

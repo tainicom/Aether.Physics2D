@@ -4,8 +4,11 @@
  */
 
 using System;
+using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Collision
 {
@@ -30,10 +33,13 @@ namespace tainicom.Aether.Physics2D.Collision
 
         void GetFatAABB(int proxyId, out AABB aabb);
 
-        void Query(Func<int, bool> callback, ref AABB aabb);
+        void Query(BroadPhaseQueryCallback callback, ref AABB aabb);
 
-        void RayCast(Func<RayCastInput, int, float> callback, ref RayCastInput input);
+        void RayCast(BroadPhaseRayCastCallback callback, ref RayCastInput input);
 
         void ShiftOrigin(Vector2 newOrigin);
     }
+
+    public delegate bool BroadPhaseQueryCallback(int proxyId);
+    public delegate float BroadPhaseRayCastCallback(ref RayCastInput input, int proxyId);
 }

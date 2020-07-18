@@ -173,7 +173,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             return true;
         }
 
-        private float RayCastCallback(RayCastInput input, int proxyid)
+        private float RayCastCallback(ref RayCastInput input, int proxyid)
         {
             Actor actor = _tree.GetUserData(proxyid);
 

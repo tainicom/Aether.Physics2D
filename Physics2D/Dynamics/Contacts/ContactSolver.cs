@@ -32,9 +32,10 @@ using System.Diagnostics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.Common.Maths;
-using Microsoft.Xna.Framework;
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
 using System.Threading;
 using System.Threading.Tasks;
 #endif
@@ -94,8 +95,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
     public class ContactSolver
     {
-        public Position[] _positions;
-        public Velocity[] _velocities;
+        internal SolverPosition[] _positions;
+        internal SolverVelocity[] _velocities;
+        internal int[] _locks;
         public ContactPositionConstraint[] _positionConstraints;
         public ContactVelocityConstraint[] _velocityConstraints;
         public Contact[] _contacts;
@@ -103,12 +105,13 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
         int _velocityConstraintsMultithreadThreshold;
         int _positionConstraintsMultithreadThreshold;
 
-        public void Reset(ref TimeStep step, int count, Contact[] contacts, Position[] positions, Velocity[] velocities,
-            int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)
+        internal void Reset(ref TimeStep step, int count, Contact[] contacts, SolverPosition[] positions, SolverVelocity[] velocities,
+            int[] locks, int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)
         {
             _count = count;
             _positions = positions;
             _velocities = velocities;
+            _locks = locks;
             _contacts = contacts;
             _velocityConstraintsMultithreadThreshold = velocityConstraintsMultithreadThreshold;
             _positionConstraintsMultithreadThreshold = positionConstraintsMultithreadThreshold;
@@ -116,16 +119,16 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             // grow the array
             if (_velocityConstraints == null || _velocityConstraints.Length < count)
             {
-                _velocityConstraints = new ContactVelocityConstraint[count * 2];
-                _positionConstraints = new ContactPositionConstraint[count * 2];
+                int newBufferCount = Math.Max(count, 32);
+                newBufferCount = newBufferCount + (newBufferCount * 2 >> 4); // grow by x1.125f
+                newBufferCount = (newBufferCount + 31) & (~31); // grow in chunks of 32.
+                int oldBufferCount = (_velocityConstraints == null) ? 0 : _velocityConstraints.Length;
+                Array.Resize(ref _velocityConstraints, newBufferCount);
+                Array.Resize(ref _positionConstraints, newBufferCount);
 
-                for (int i = 0; i < _velocityConstraints.Length; i++)
+                for (int i = oldBufferCount; i < newBufferCount; i++)
                 {
                     _velocityConstraints[i] = new ContactVelocityConstraint();
-                }
-
-                for (int i = 0; i < _positionConstraints.Length; i++)
-                {
                     _positionConstraints[i] = new ContactPositionConstraint();
                 }
             }
@@ -365,7 +368,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);
                 var batches = (int)Math.Ceiling((float)_count / batchSize);
 
-#if NET40 || NET45
+#if NET40 || NET45 || NETSTANDARD2_0
                 SolveVelocityConstraintsWaitLock.Reset(batches);
                 for (int i = 0; i < batches; i++)
                 {
@@ -395,7 +398,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             return;
         }
 
-#if NET40 || NET45
+#if NET40 || NET45 || NETSTANDARD2_0
         CountdownEvent SolveVelocityConstraintsWaitLock = new CountdownEvent(0);
         static void SolveVelocityConstraintsCallback(object state)
         {
@@ -444,7 +447,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             {
                 ContactVelocityConstraint vc = _velocityConstraints[i];
 
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 // find lower order item
                 int orderedIndexA = vc.indexA;
                 int orderedIndexB = vc.indexB;
@@ -456,13 +459,13 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 
                 for (; ; )
                 {
-                    if (Interlocked.CompareExchange(ref _velocities[orderedIndexA].Lock, 1, 0) == 0)
+                    if (Interlocked.CompareExchange(ref _locks[orderedIndexA], 1, 0) == 0)
                     {
-                        if (Interlocked.CompareExchange(ref _velocities[orderedIndexB].Lock, 1, 0) == 0)
+                        if (Interlocked.CompareExchange(ref _locks[orderedIndexB], 1, 0) == 0)
                             break;
-                        System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexA].Lock, 0);
+                        System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
                     }
-#if NET40 || NET45
+#if NET40 || NET45 || NETSTANDARD2_0
                     Thread.Sleep(0);
 #endif
                 }
@@ -770,9 +773,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _velocities[indexB].v = vB;
                 _velocities[indexB].w = wB;
 
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
-                System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexB].Lock, 0);
-                System.Threading.Interlocked.Exchange(ref _velocities[orderedIndexA].Lock, 0);
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexB], 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
 #endif
             }
         }
@@ -805,8 +808,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 if (_count == 0) return true;
                 var batchSize = (int)Math.Ceiling((float)_count / System.Environment.ProcessorCount);
                 var batches = (int)Math.Ceiling((float)_count / batchSize);
-                
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 Parallel.For(0, batches, (i) =>
                 {
                     var start = i * batchSize;
@@ -836,8 +839,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             for (int i = start; i < end; ++i)
             {
                 ContactPositionConstraint pc = _positionConstraints[i];
-                
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 // Find lower order item.
                 int orderedIndexA = pc.indexA;
                 int orderedIndexB = pc.indexB;
@@ -850,13 +853,13 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 // Lock bodies.
                 for (; ; )
                 {
-                    if (Interlocked.CompareExchange(ref _positions[orderedIndexA].Lock, 1, 0) == 0)
+                    if (Interlocked.CompareExchange(ref _locks[orderedIndexA], 1, 0) == 0)
                     {
-                        if (Interlocked.CompareExchange(ref _positions[orderedIndexB].Lock, 1, 0) == 0)
+                        if (Interlocked.CompareExchange(ref _locks[orderedIndexB], 1, 0) == 0)
                             break;
-                        System.Threading.Interlocked.Exchange(ref _positions[orderedIndexA].Lock, 0);
+                        System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
                     }
-#if NET40 || NET45
+#if NET40 || NET45 || NETSTANDARD2_0
                     Thread.Sleep(0);
 #endif
                 }
@@ -923,10 +926,10 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 _positions[indexB].c = cB;
                 _positions[indexB].a = aB;
 
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
                 // Unlock bodies.
-                System.Threading.Interlocked.Exchange(ref _positions[orderedIndexB].Lock, 0);
-                System.Threading.Interlocked.Exchange(ref _positions[orderedIndexA].Lock, 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexB], 0);
+                System.Threading.Interlocked.Exchange(ref _locks[orderedIndexA], 0);
 #endif
             }
 

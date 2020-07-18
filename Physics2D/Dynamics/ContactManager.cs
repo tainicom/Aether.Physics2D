@@ -315,7 +315,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         internal void Collide()
         {
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
             if (this.ContactCount > CollideMultithreadThreshold && System.Environment.ProcessorCount > 1)
             {
                 CollideMultiCore();
@@ -424,7 +424,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         List<Contact> updateList = new List<Contact>();
 
-#if NET40 || NET45 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
+#if NET40 || NET45 || NETSTANDARD2_0 || PORTABLE40 || PORTABLE45 || W10 || W8_1 || WP8_1
         internal void CollideMultiCore()
         {
             int lockOrder = 0;
@@ -558,7 +558,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
                             break;
                         System.Threading.Interlocked.Exchange(ref orderedBodyA._lock, 0);
                     }
-#if NET40 || NET45
+#if NET40 || NET45 || NETSTANDARD2_0
                     System.Threading.Thread.Sleep(0);
 #endif
                 }

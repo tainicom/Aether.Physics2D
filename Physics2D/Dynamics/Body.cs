@@ -34,12 +34,13 @@ using System.Diagnostics;
 using tainicom.Aether.Physics2D.Collision;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
-using tainicom.Aether.Physics2D.Common.Maths;
 using tainicom.Aether.Physics2D.Common.PhysicsLogic;
 using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Dynamics
 {
@@ -418,7 +419,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Get the list of all contacts attached to this body.
         /// Warning: this list changes during the time step and you may
-        /// miss some collisions if you don't use ContactListener.
+        /// miss some collisions if you don't use callback events.
         /// </summary>
         /// <value>The contact list.</value>
         public ContactEdge ContactList { get; internal set; }
@@ -457,28 +458,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 else
                     SetTransform(ref _xf.p, value);
             }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this body is static.
-        /// </summary>
-        /// <value><c>true</c> if this instance is static; otherwise, <c>false</c>.</value>
-        /// <remarks>Deprecated in version 1.2</remarks>
-        [Obsolete("Use BodyType")]
-        public bool IsStatic
-        {
-            get { return _bodyType == BodyType.Static; }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this body is kinematic.
-        /// </summary>
-        /// <value><c>true</c> if this instance is kinematic; otherwise, <c>false</c>.</value>
-        /// <remarks>Deprecated in version 1.2</remarks>
-        [Obsolete("Use BodyType")]
-        public bool IsKinematic
-        {
-            get { return _bodyType == BodyType.Kinematic; }
         }
 
         /// <summary>

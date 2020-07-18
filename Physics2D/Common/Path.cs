@@ -6,7 +6,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+using Vector3 = Microsoft.Xna.Framework.Vector3;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common
 {
@@ -104,7 +107,7 @@ namespace tainicom.Aether.Physics2D.Common
         public void Translate(ref Vector2 vector)
         {
             for (int i = 0; i < ControlPoints.Count; i++)
-                ControlPoints[i] = Vector2.Add(ControlPoints[i], vector);
+                ControlPoints[i] = ControlPoints[i] + vector;
         }
 
         /// <summary>
@@ -114,7 +117,7 @@ namespace tainicom.Aether.Physics2D.Common
         public void Scale(ref Vector2 value)
         {
             for (int i = 0; i < ControlPoints.Count; i++)
-                ControlPoints[i] = Vector2.Multiply(ControlPoints[i], value);
+                ControlPoints[i] = ControlPoints[i] * value;
         }
 
         /// <summary>
@@ -123,11 +126,10 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="value">The amount to rotate by in radians.</param>
         public void Rotate(float value)
         {
-            Matrix rotationMatrix;
-            Matrix.CreateRotationZ(value, out rotationMatrix);
+            var rotation = Complex.FromAngle(value);
 
             for (int i = 0; i < ControlPoints.Count; i++)
-                ControlPoints[i] = Vector2.Transform(ControlPoints[i], rotationMatrix);
+                ControlPoints[i] = Complex.Multiply(ControlPoints[i], ref rotation);
         }
 
         public override string ToString()
@@ -197,7 +199,7 @@ namespace tainicom.Aether.Physics2D.Common
                 // relative time
                 float lt = (time - _deltaT * p) / _deltaT;
 
-                temp = Vector2.CatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt);
+                CalcCatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt, out temp);
 
                 RemoveAt(ControlPoints.Count - 1);
             }
@@ -222,10 +224,32 @@ namespace tainicom.Aether.Physics2D.Common
                 // relative time
                 float lt = (time - _deltaT * p) / _deltaT;
 
-                temp = Vector2.CatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt);
+                CalcCatmullRom(ControlPoints[p0], ControlPoints[p1], ControlPoints[p2], ControlPoints[p3], lt, out temp);
             }
 
             return temp;
+        }
+
+        private void CalcCatmullRom(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float amount, out Vector2 result)
+        {
+            double sqAmount = amount * amount;
+            double cuAmount = sqAmount * amount;
+            
+            double x;
+            double y;
+            x = 2.0 * p1.X;
+            y = 2.0 * p1.Y;
+            x += (p2.X - p0.X) * amount;
+            y += (p2.Y - p0.Y) * amount;
+            x += (2.0 * p0.X - 5.0 * p1.X + 4.0 * p2.X - p3.X) * sqAmount;
+            y += (2.0 * p0.Y - 5.0 * p1.Y + 4.0 * p2.Y - p3.Y) * sqAmount;
+            x += (3.0 * p1.X - p0.X - 3.0 * p2.X + p3.X) * cuAmount;
+            y += (3.0 * p1.Y - p0.Y - 3.0 * p2.Y + p3.Y) * cuAmount;
+            x *= 0.5;
+            y *= 0.5;
+
+            result.X = (float)x;
+            result.Y = (float)y;
         }
 
         /// <summary>
@@ -247,7 +271,7 @@ namespace tainicom.Aether.Physics2D.Common
             output.X = -temp.Y;
             output.Y = temp.X;
 
-            Vector2.Normalize(ref output, out output);
+            output.Normalize();
 
             return output;
         }
@@ -317,7 +341,7 @@ namespace tainicom.Aether.Physics2D.Common
                 Vector2 normal = GetPositionNormal(t);
                 float angle = (float)Math.Atan2(normal.Y, normal.X);
 
-                verts.Add(new Vector3(end, angle));
+                verts.Add(new Vector3(end.X, end.Y, angle));
 
                 // until we reach the correct distance down the curve
                 while (deltaLength >= Vector2.Distance(start, end))

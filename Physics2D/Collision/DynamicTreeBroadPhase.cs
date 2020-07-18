@@ -26,8 +26,11 @@
 */
 
 using System;
+using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Collision
 {
@@ -78,7 +81,7 @@ namespace tainicom.Aether.Physics2D.Collision
         private int _pairCapacity;
         private int _pairCount;
         private int _proxyCount;
-        private Func<int, bool> _queryCallback;
+        private BroadPhaseQueryCallback _queryCallbackCache;
         private int _queryProxyId;
         private DynamicTree<FixtureProxy> _tree = new DynamicTree<FixtureProxy>();
 
@@ -87,7 +90,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         public DynamicTreeBroadPhase()
         {
-            _queryCallback = QueryCallback;
+            _queryCallbackCache = new BroadPhaseQueryCallback(QueryCallback);
             _proxyCount = 0;
 
             _pairCapacity = 16;
@@ -261,7 +264,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 AABB fatAABB = _tree.GetFatAABB(_queryProxyId);
 
                 // Query tree, create pairs and add them pair buffer.
-                _tree.Query(_queryCallback, ref fatAABB);
+                _tree.Query(_queryCallbackCache, ref fatAABB);
             }
 
             // Reset move buffer
@@ -301,7 +304,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="callback">The callback.</param>
         /// <param name="aabb">The aabb.</param>
-        public void Query(Func<int, bool> callback, ref AABB aabb)
+        public void Query(BroadPhaseQueryCallback callback, ref AABB aabb)
         {
             _tree.Query(callback, ref aabb);
         }
@@ -315,7 +318,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// </summary>
         /// <param name="callback">A callback class that is called for each proxy that is hit by the ray.</param>
         /// <param name="input">The ray-cast input data. The ray extends from p1 to p1 + maxFraction * (p2 - p1).</param>
-        public void RayCast(Func<RayCastInput, int, float> callback, ref RayCastInput input)
+        public void RayCast(BroadPhaseRayCastCallback callback, ref RayCastInput input)
         {
             _tree.RayCast(callback, ref input);
         }

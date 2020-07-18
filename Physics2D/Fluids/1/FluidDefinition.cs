@@ -3,7 +3,8 @@
  * Microsoft Permissive License (Ms-PL) v1.1
  */
 
-using Microsoft.Xna.Framework;
+using System;
+using tainicom.Aether.Physics2D.Common;
 
 namespace tainicom.Aether.Physics2D.Fluids
 {
@@ -104,18 +105,18 @@ namespace tainicom.Aether.Physics2D.Fluids
 
         public void Check()
         {
-            InfluenceRadius = MathHelper.Clamp(InfluenceRadius, 0.1f, 10.0f);
-            DensityRest = MathHelper.Clamp(DensityRest, 1.0f, 100.0f);
-            Stiffness = MathHelper.Clamp(Stiffness, 0.1f, 10.0f);
+            InfluenceRadius = MathUtils.Clamp(InfluenceRadius, 0.1f, 10.0f);
+            DensityRest = MathUtils.Clamp(DensityRest, 1.0f, 100.0f);
+            Stiffness = MathUtils.Clamp(Stiffness, 0.1f, 10.0f);
             StiffnessNear = Stiffness * 100.0f; // See pvfs.pdf
 
-            ViscositySigma = MathHelper.Max(ViscositySigma, 0.0f);
-            ViscosityBeta = MathHelper.Max(ViscosityBeta, 0.0f);
+            ViscositySigma = Math.Max(ViscositySigma, 0.0f);
+            ViscosityBeta = Math.Max(ViscosityBeta, 0.0f);
 
-            Plasticity = MathHelper.Max(Plasticity, 0.0f);
-            KSpring = MathHelper.Max(KSpring, 0.0f);
-            YieldRatioCompress = MathHelper.Max(YieldRatioCompress, 0.0f);
-            YieldRatioStretch = MathHelper.Max(YieldRatioStretch, 0.0f);
+            Plasticity = Math.Max(Plasticity, 0.0f);
+            KSpring = Math.Max(KSpring, 0.0f);
+            YieldRatioCompress = Math.Max(YieldRatioCompress, 0.0f);
+            YieldRatioStretch = Math.Max(YieldRatioStretch, 0.0f);
         }
     }
 }

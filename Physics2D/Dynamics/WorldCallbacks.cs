@@ -28,12 +28,36 @@
 */
 
 using tainicom.Aether.Physics2D.Collision;
+using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
+#if XNAAPI
+using Microsoft.Xna.Framework;
+#endif
 
 namespace tainicom.Aether.Physics2D.Dynamics
 {
+    /// <summary>
+    /// Called for each fixture found in the query.
+    /// <returns>true: Continues the query, false: Terminate the query</returns>
+    /// </summary>
+    public delegate bool QueryReportFixtureDelegate(Fixture fixture);
+
+    /// <summary>
+    /// Called for each fixture found in the query. You control how the ray cast
+    /// proceeds by returning a float:
+    /// return -1: ignore this fixture and continue
+    /// return 0: terminate the ray cast
+    /// return fraction: clip the ray to this point
+    /// return 1: don't clip the ray and continue
+    /// @param fixture the fixture hit by the ray
+    /// @param point the point of initial intersection
+    /// @param normal the normal vector at the point of intersection
+    /// @return 0 to terminate, fraction to clip the ray for closest hit, 1 to continue
+    /// </summary>
+    public delegate float RayCastReportFixtureDelegate(Fixture fixture, Vector2 point, Vector2 normal, float fraction);
+
     /// <summary>
     /// This delegate is called when a contact is deleted
     /// </summary>

@@ -7,8 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common.TextureTools;
-using tainicom.Aether.Physics2D.Common.Maths;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Common
 {
@@ -93,7 +94,7 @@ namespace tainicom.Aether.Physics2D.Common
             {
                 int numberOfEdges = (segments * 4 + 8);
 
-                float stepSize = MathHelper.TwoPi / (numberOfEdges - 4);
+                float stepSize = Constant.Tau / (numberOfEdges - 4);
                 int perPhase = numberOfEdges / 4;
 
                 Vector2 posOffset = new Vector2(width / 2 - xRadius, height / 2 - yRadius);
@@ -156,7 +157,7 @@ namespace tainicom.Aether.Physics2D.Common
         {
             Vertices vertices = new Vertices();
 
-            float stepSize = MathHelper.TwoPi / numberOfEdges;
+            float stepSize = Constant.Tau / numberOfEdges;
 
             vertices.Add(new Vector2(xRadius, 0));
             for (int i = numberOfEdges - 1; i > 0; --i)
@@ -249,7 +250,7 @@ namespace tainicom.Aether.Physics2D.Common
             // top
             vertices.Add(new Vector2(topRadius, newHeight));
 
-            float stepSize = MathHelper.Pi / topEdges;
+            float stepSize = Constant.Pi / topEdges;
             for (int i = 1; i < topEdges; i++)
             {
                 vertices.Add(new Vector2(topRadius * (float)Math.Cos(stepSize * i),
@@ -261,7 +262,7 @@ namespace tainicom.Aether.Physics2D.Common
             // bottom
             vertices.Add(new Vector2(-bottomRadius, -newHeight));
 
-            stepSize = MathHelper.Pi / bottomEdges;
+            stepSize = Constant.Pi / bottomEdges;
             for (int i = 1; i < bottomEdges; i++)
             {
                 vertices.Add(new Vector2(-bottomRadius * (float)Math.Cos(stepSize * i),
@@ -285,9 +286,9 @@ namespace tainicom.Aether.Physics2D.Common
         {
             Vertices vertices = new Vertices();
 
-            float stepSize = MathHelper.TwoPi / numberOfTeeth;
+            float stepSize = Constant.Tau / numberOfTeeth;
             tipPercentage /= 100f;
-            MathHelper.Clamp(tipPercentage, 0f, 1f);
+            MathUtils.Clamp(tipPercentage, 0f, 1f);
             float toothTipStepSize = (stepSize / 2f) * tipPercentage;
 
             float toothAngleStepSize = (stepSize - (toothTipStepSize * 2f)) / 2f;
@@ -321,6 +322,7 @@ namespace tainicom.Aether.Physics2D.Common
             return vertices;
         }
 
+#if XNAAPI
         /// <summary>
         /// Detects the vertices by analyzing the texture data.
         /// </summary>
@@ -360,5 +362,6 @@ namespace tainicom.Aether.Physics2D.Common
             return TextureConverter.DetectVertices(data, width, hullTolerance, alphaTolerance,
                                                    multiPartDetection, holeDetection);
         }
+#endif
     }
 }

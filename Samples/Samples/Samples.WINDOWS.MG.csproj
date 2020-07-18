@@ -93,9 +93,8 @@
     <Compile Include="ScreenSystem\VirtualStick.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MonoGame.Framework">
-      <HintPath>..\..\ThirdPartyLibraries\MonoGame\Windows\MonoGame.Framework.dll</HintPath>
-    </Reference>
+    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.7.9012">
+    </PackageReference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>

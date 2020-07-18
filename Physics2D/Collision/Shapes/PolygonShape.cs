@@ -28,8 +28,9 @@
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.ConvexHull;
-using tainicom.Aether.Physics2D.Common.Maths;
-using Microsoft.Xna.Framework;
+#if XNAAPI
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+#endif
 
 namespace tainicom.Aether.Physics2D.Collision.Shapes
 {
@@ -114,7 +115,7 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
                     Vector2 edge = _vertices[next] - _vertices[i];
                     Debug.Assert(edge.LengthSquared() > Settings.Epsilon * Settings.Epsilon);
 
-                    //FPE optimization: Normals.Add(MathHelper.Cross(edge, 1.0f));
+                    //FPE optimization: Normals.Add(MathUtils.Cross(edge, 1.0f));
                     Vector2 temp = new Vector2(edge.Y, -edge.X);
                     temp.Normalize();
                     _normals.Add(temp);

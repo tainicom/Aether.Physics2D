@@ -26,8 +26,7 @@
 */
 
 using System;
-using Microsoft.Xna.Framework;
-using tainicom.Aether.Physics2D.Dynamics;
+using tainicom.Aether.Physics2D.Common;
 
 namespace tainicom.Aether.Physics2D
 {
@@ -125,7 +124,7 @@ namespace tainicom.Aether.Physics2D
         /// A small angle used as a collision and constraint tolerance. Usually it is
         /// chosen to be numerically significant, but visually insignificant.
         /// </summary>
-        public const float AngularSlop = (2.0f / 180.0f * MathHelper.Pi);
+        public const float AngularSlop = (2.0f / 180.0f * Constant.Pi);
 
         /// <summary>
         /// The radius of the polygon/edge shape skin. This should not be modified. Making
@@ -157,7 +156,7 @@ namespace tainicom.Aether.Physics2D
         /// The maximum angular position correction used when solving constraints. This helps to
         /// prevent overshoot.
         /// </summary>
-        public const float MaxAngularCorrection = (8.0f / 180.0f * MathHelper.Pi);
+        public const float MaxAngularCorrection = (8.0f / 180.0f * Constant.Pi);
 
         /// <summary>
         /// This scale factor controls how fast overlap is resolved. Ideally this would be 1 so
@@ -180,7 +179,7 @@ namespace tainicom.Aether.Physics2D
         /// <summary>
         /// A body cannot sleep if its angular velocity is above this tolerance.
         /// </summary>
-        public const float AngularSleepTolerance = (2.0f / 180.0f * MathHelper.Pi);
+        public const float AngularSleepTolerance = (2.0f / 180.0f * Constant.Pi);
 
         /// <summary>
         /// The maximum linear velocity of a body. This limit is very large and is used
@@ -194,7 +193,7 @@ namespace tainicom.Aether.Physics2D
         /// The maximum angular velocity of a body. This limit is very large and is used
         /// to prevent numerical problems. You shouldn't need to adjust this.
         /// </summary>
-        public const float MaxRotation = (0.5f * MathHelper.Pi);
+        public const float MaxRotation = (0.5f * Constant.Pi);
 
         public const float MaxRotationSquared = (MaxRotation * MaxRotation);
 
