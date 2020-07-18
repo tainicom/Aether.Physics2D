@@ -203,7 +203,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             if (fixtureb.Shape.ShapeType == ShapeType.Edge)
             {
                 //Remove everything from the world
-                //World.Clear(); //Can't Clear a running World (World.IsStepping == true).
+                //World.Clear(); //Can't Clear a running World (World.IsLocked == true).
 
                 //Add a rectangle
                 World.CreateRectangle(5, 5, 1);
