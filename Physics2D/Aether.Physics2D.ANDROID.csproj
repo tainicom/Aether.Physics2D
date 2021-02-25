@@ -178,7 +178,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <PackageReference Include="MonoGame.Framework.Android" Version="3.7.1.189">
+    <PackageReference Include="MonoGame.Framework.Android.9000" Version="3.8.9007">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>

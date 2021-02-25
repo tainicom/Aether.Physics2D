@@ -179,7 +179,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.Portable" Version="3.2.99.1-Beta">
+    <PackageReference Include="MonoGame.Framework.Portable.9000" Version="3.8.9007">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
