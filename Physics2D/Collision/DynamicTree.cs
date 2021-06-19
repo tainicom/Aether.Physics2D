@@ -747,8 +747,10 @@ namespace tainicom.Aether.Physics2D.Collision
             // Rotate B up
             if (balance > 1)
             {
+                int iP = _nodes[iN].Parent;
                 int iBA = _nodes[iB].Child1;
                 int iBB = _nodes[iB].Child2;
+                //TreeNode<T>* P  = &_nodes[iN->Parent];
                 //TreeNode<T>* BA = &_nodes[iBA];
                 //TreeNode<T>* BB = &_nodes[iBB];
                 Debug.Assert(0 <= iBA && iBA < _nodeCapacity);
@@ -762,14 +764,14 @@ namespace tainicom.Aether.Physics2D.Collision
                 // N's old parent should point to B
                 if (_nodes[iB].Parent != NullNode)
                 {
-                    if (_nodes[_nodes[iB].Parent].Child1 == iN)
+                    if (_nodes[iP].Child1 == iN)
                     {
-                        _nodes[_nodes[iB].Parent].Child1 = iB;
+                        _nodes[iP].Child1 = iB;
                     }
                     else
                     {
-                        Debug.Assert(_nodes[_nodes[iB].Parent].Child2 == iN);
-                        _nodes[_nodes[iB].Parent].Child2 = iB;
+                        Debug.Assert(_nodes[iP].Child2 == iN);
+                        _nodes[iP].Child2 = iB;
                     }
                 }
                 else
@@ -807,8 +809,10 @@ namespace tainicom.Aether.Physics2D.Collision
             // Rotate A up
             if (balance < -1)
             {
+                int iP = _nodes[iN].Parent;
                 int iAA = _nodes[iA].Child1;
                 int iAB = _nodes[iA].Child2;
+                //TreeNode<T>* P  = &_nodes[iN->Parent];
                 //TreeNode<T>* AA = &_nodes[iAA];
                 //TreeNode<T>* AB = &_nodes[iAB];
                 Debug.Assert(0 <= iAA && iAA < _nodeCapacity);
@@ -822,14 +826,14 @@ namespace tainicom.Aether.Physics2D.Collision
                 // N's old parent should point to A
                 if (_nodes[iA].Parent != NullNode)
                 {
-                    if (_nodes[_nodes[iA].Parent].Child1 == iN)
+                    if (_nodes[iP].Child1 == iN)
                     {
-                        _nodes[_nodes[iA].Parent].Child1 = iA;
+                        _nodes[iP].Child1 = iA;
                     }
                     else
                     {
-                        Debug.Assert(_nodes[_nodes[iA].Parent].Child2 == iN);
-                        _nodes[_nodes[iA].Parent].Child2 = iA;
+                        Debug.Assert(_nodes[iP].Child2 == iN);
+                        _nodes[iP].Child2 = iA;
                     }
                 }
                 else
