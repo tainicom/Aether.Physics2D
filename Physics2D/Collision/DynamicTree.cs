@@ -720,22 +720,22 @@ namespace tainicom.Aether.Physics2D.Collision
         }
 
         /// <summary>
-        /// Perform a left or right rotation if node A is imbalanced.
+        /// Perform a left or right rotation if node N is imbalanced.
         /// </summary>
-        /// <param name="iA"></param>
+        /// <param name="iN"></param>
         /// <returns>the new root index.</returns>
-        private int Balance(int iA)
+        private int Balance(int iN)
         {
-            Debug.Assert(iA != NullNode);
+            Debug.Assert(iN != NullNode);
 
-            //TreeNode<T>* A = &_nodes[iA];
-            if (_nodes[iA].IsLeaf() || _nodes[iA].Height < 2)
+            //TreeNode<T>* N = &_nodes[i];
+            if (_nodes[iN].IsLeaf() || _nodes[iN].Height < 2)
             {
-                return iA;
+                return iN;
             }
 
-            int iB = _nodes[iA].Child1;
-            int iC = _nodes[iA].Child2;
+            int iB = _nodes[iN].Child1;
+            int iC = _nodes[iN].Child2;
             Debug.Assert(0 <= iB && iB < _nodeCapacity);
             Debug.Assert(0 <= iC && iC < _nodeCapacity);
 
@@ -754,21 +754,21 @@ namespace tainicom.Aether.Physics2D.Collision
                 Debug.Assert(0 <= iF && iF < _nodeCapacity);
                 Debug.Assert(0 <= iG && iG < _nodeCapacity);
 
-                // Swap A and C
-                _nodes[iC].Child1 = iA;
-                _nodes[iC].Parent = _nodes[iA].Parent;
-                _nodes[iA].Parent = iC;
+                // Swap N and C
+                _nodes[iC].Child1 = iN;
+                _nodes[iC].Parent = _nodes[iN].Parent;
+                _nodes[iN].Parent = iC;
 
-                // A's old parent should point to C
+                // N's old parent should point to C
                 if (_nodes[iC].Parent != NullNode)
                 {
-                    if (_nodes[_nodes[iC].Parent].Child1 == iA)
+                    if (_nodes[_nodes[iC].Parent].Child1 == iN)
                     {
                         _nodes[_nodes[iC].Parent].Child1 = iC;
                     }
                     else
                     {
-                        Debug.Assert(_nodes[_nodes[iC].Parent].Child2 == iA);
+                        Debug.Assert(_nodes[_nodes[iC].Parent].Child2 == iN);
                         _nodes[_nodes[iC].Parent].Child2 = iC;
                     }
                 }
@@ -781,24 +781,24 @@ namespace tainicom.Aether.Physics2D.Collision
                 if (_nodes[iF].Height > _nodes[iG].Height)
                 {
                     _nodes[iC].Child2 = iF;
-                    _nodes[iA].Child2 = iG;
-                    _nodes[iG].Parent = iA;
-                    _nodes[iA].AABB.Combine(ref _nodes[iB].AABB, ref _nodes[iG].AABB);
-                    _nodes[iC].AABB.Combine(ref _nodes[iA].AABB, ref _nodes[iF].AABB);
+                    _nodes[iN].Child2 = iG;
+                    _nodes[iG].Parent = iN;
+                    _nodes[iN].AABB.Combine(ref _nodes[iB].AABB, ref _nodes[iG].AABB);
+                    _nodes[iC].AABB.Combine(ref _nodes[iN].AABB, ref _nodes[iF].AABB);
 
-                    _nodes[iA].Height = 1 + Math.Max(_nodes[iB].Height, _nodes[iG].Height);
-                    _nodes[iC].Height = 1 + Math.Max(_nodes[iA].Height, _nodes[iF].Height);
+                    _nodes[iN].Height = 1 + Math.Max(_nodes[iB].Height, _nodes[iG].Height);
+                    _nodes[iC].Height = 1 + Math.Max(_nodes[iN].Height, _nodes[iF].Height);
                 }
                 else
                 {
                     _nodes[iC].Child2 = iG;
-                    _nodes[iA].Child2 = iF;
-                    _nodes[iF].Parent = iA;
-                    _nodes[iA].AABB.Combine(ref _nodes[iB].AABB, ref _nodes[iF].AABB);
-                    _nodes[iC].AABB.Combine(ref _nodes[iA].AABB, ref _nodes[iG].AABB);
+                    _nodes[iN].Child2 = iF;
+                    _nodes[iF].Parent = iN;
+                    _nodes[iN].AABB.Combine(ref _nodes[iB].AABB, ref _nodes[iF].AABB);
+                    _nodes[iC].AABB.Combine(ref _nodes[iN].AABB, ref _nodes[iG].AABB);
 
-                    _nodes[iA].Height = 1 + Math.Max(_nodes[iB].Height, _nodes[iF].Height);
-                    _nodes[iC].Height = 1 + Math.Max(_nodes[iA].Height, _nodes[iG].Height);
+                    _nodes[iN].Height = 1 + Math.Max(_nodes[iB].Height, _nodes[iF].Height);
+                    _nodes[iC].Height = 1 + Math.Max(_nodes[iN].Height, _nodes[iG].Height);
                 }
 
                 return iC;
@@ -814,21 +814,21 @@ namespace tainicom.Aether.Physics2D.Collision
                 Debug.Assert(0 <= iD && iD < _nodeCapacity);
                 Debug.Assert(0 <= iE && iE < _nodeCapacity);
 
-                // Swap A and B
-                _nodes[iB].Child1 = iA;
-                _nodes[iB].Parent = _nodes[iA].Parent;
-                _nodes[iA].Parent = iB;
+                // Swap N and B
+                _nodes[iB].Child1 = iN;
+                _nodes[iB].Parent = _nodes[iN].Parent;
+                _nodes[iN].Parent = iB;
 
-                // A's old parent should point to B
+                // N's old parent should point to B
                 if (_nodes[iB].Parent != NullNode)
                 {
-                    if (_nodes[_nodes[iB].Parent].Child1 == iA)
+                    if (_nodes[_nodes[iB].Parent].Child1 == iN)
                     {
                         _nodes[_nodes[iB].Parent].Child1 = iB;
                     }
                     else
                     {
-                        Debug.Assert(_nodes[_nodes[iB].Parent].Child2 == iA);
+                        Debug.Assert(_nodes[_nodes[iB].Parent].Child2 == iN);
                         _nodes[_nodes[iB].Parent].Child2 = iB;
                     }
                 }
@@ -841,30 +841,30 @@ namespace tainicom.Aether.Physics2D.Collision
                 if (_nodes[iD].Height > _nodes[iE].Height)
                 {
                     _nodes[iB].Child2 = iD;
-                    _nodes[iA].Child1 = iE;
-                    _nodes[iE].Parent = iA;
-                    _nodes[iA].AABB.Combine(ref _nodes[iC].AABB, ref  _nodes[iE].AABB);
-                    _nodes[iB].AABB.Combine(ref _nodes[iA].AABB, ref _nodes[iD].AABB);
+                    _nodes[iN].Child1 = iE;
+                    _nodes[iE].Parent = iN;
+                    _nodes[iN].AABB.Combine(ref _nodes[iC].AABB, ref  _nodes[iE].AABB);
+                    _nodes[iB].AABB.Combine(ref _nodes[iN].AABB, ref _nodes[iD].AABB);
 
-                    _nodes[iA].Height = 1 + Math.Max(_nodes[iC].Height, _nodes[iE].Height);
-                    _nodes[iB].Height = 1 + Math.Max(_nodes[iA].Height, _nodes[iD].Height);
+                    _nodes[iN].Height = 1 + Math.Max(_nodes[iC].Height, _nodes[iE].Height);
+                    _nodes[iB].Height = 1 + Math.Max(_nodes[iN].Height, _nodes[iD].Height);
                 }
                 else
                 {
                     _nodes[iB].Child2 = iE;
-                    _nodes[iA].Child1 = iD;
-                    _nodes[iD].Parent = iA;
-                    _nodes[iA].AABB.Combine(ref _nodes[iC].AABB, ref _nodes[iD].AABB);
-                    _nodes[iB].AABB.Combine(ref _nodes[iA].AABB, ref _nodes[iE].AABB);
+                    _nodes[iN].Child1 = iD;
+                    _nodes[iD].Parent = iN;
+                    _nodes[iN].AABB.Combine(ref _nodes[iC].AABB, ref _nodes[iD].AABB);
+                    _nodes[iB].AABB.Combine(ref _nodes[iN].AABB, ref _nodes[iE].AABB);
 
-                    _nodes[iA].Height = 1 + Math.Max(_nodes[iC].Height, _nodes[iD].Height);
-                    _nodes[iB].Height = 1 + Math.Max(_nodes[iA].Height, _nodes[iE].Height);
+                    _nodes[iN].Height = 1 + Math.Max(_nodes[iC].Height, _nodes[iD].Height);
+                    _nodes[iB].Height = 1 + Math.Max(_nodes[iN].Height, _nodes[iE].Height);
                 }
 
                 return iB;
             }
 
-            return iA;
+            return iN;
         }
 
         /// <summary>
