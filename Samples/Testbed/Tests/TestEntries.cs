@@ -95,6 +95,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry {Name = "The Leaning Tower of Lire Test", CreateTest = TheLeaningTowerofLireTest.Create},
             new TestEntry {Name = "Sparse bodies Test", CreateTest = SparseBodiesTest.Create},
             new TestEntry {Name = "Sparse bodies with many fixtures Test", CreateTest = SparseBodiesWithManyFixturesTest.Create},
+            new TestEntry {Name = "SPH1", CreateTest = SPH1Test.Create},
+            new TestEntry {Name = "SPH2", CreateTest = SPH2Test.Create},
 
             //FPE tests
             new TestEntry {Name = "YuPeng Polygon", CreateTest = YuPengPolygonTest.Create},
