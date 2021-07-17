@@ -41,12 +41,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 for (int y = 0; y < countY; y++)
                 {
-                    Body currentFixture = World.CreateRectangle(1f, 1f, 5f,
-                                                                      new Vector2(x * 2 - countX, y * 2 + 5));
-                    //Fixture currentFixture = World.CreateCircle(0.2f, 10f, new Vector2(x - countX, y  + 5));
-                    currentFixture.BodyType = BodyType.Dynamic;
-                    currentFixture.SetFriction(0.5f);
-                    currentFixture.SetTransform(currentFixture.Position, 0.6f);
+                    Body currentBody = World.CreateBody(new Vector2(x * 2 - countX, y * 2 + 5), 0.6f, BodyType.Dynamic);
+                    var currentFixture = currentBody.CreateRectangle(1f, 1f, 5f, Vector2.Zero);
+                    //Body currentBody = World.CreateBody(new Vector2(x - countX, y + 5), 0.6f, BodyType.Dynamic);
+                    //var currentFixture = currentBody.CreateCircle(0.2f, 10f);
+                    currentFixture.Friction=0.5f;
                     //currentFixture.CollidesWith = Category.Cat10;
                 }
             }
@@ -56,10 +55,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Body right = World.CreateRectangle(1, 100, 1, new Vector2(35, 0));
             Body left = World.CreateRectangle(1, 100, 1, new Vector2(-35, 0));
 
-            floor.SetFriction(0.2f);
-            ceiling.SetFriction(0.2f);
-            right.SetFriction(0.2f);
-            left.SetFriction(0.2f);
+            foreach (var fixture in floor.FixtureList)
+                fixture.Friction = 0.2f;
+            foreach (var fixture in ceiling.FixtureList)
+                fixture.Friction = 0.2f;
+            foreach (var fixture in right.FixtureList)
+                fixture.Friction = 0.2f;
+            foreach (var fixture in left.FixtureList)
+                fixture.Friction = 0.2f;
         }
 
         public void DrawPointForce()

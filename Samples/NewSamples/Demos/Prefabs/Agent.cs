@@ -61,7 +61,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             set
             {
                 _collisionCategories = value;
-                Body.SetCollisionCategories(value);
+                foreach (Fixture fixture in Body.FixtureList)
+                    fixture.CollisionCategories = value;
             }
         }
 
@@ -71,7 +72,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             set
             {
                 _collidesWith = value;
-                Body.SetCollidesWith(value);
+                foreach (Fixture fixture in Body.FixtureList)
+                    fixture.CollidesWith = value;
             }
         }
 

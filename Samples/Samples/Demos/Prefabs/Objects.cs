@@ -59,18 +59,18 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
                 }
             }
 
-            var collidesWith = Category.All;
-            var collisionCategories = Category.All;
-
             for (int i = 0; i < BodyList.Count; i++)
             {
                 Body body = BodyList[i];
                 body.BodyType = BodyType.Dynamic;
                 body.Position = Vector2.Lerp(startPosition, endPosition, i / (float)(count - 1));
-                body.SetRestitution(0.7f);
-                body.SetFriction(0.2f);
-                body.SetCollisionCategories(collisionCategories);
-                body.SetCollidesWith(collidesWith);
+                foreach (Fixture fixture in body.FixtureList)
+                {
+                    fixture.Restitution = 0.7f;
+                    fixture.Friction = 0.2f;
+                    fixture.CollisionCategories = Category.All;
+                    fixture.CollidesWith = Category.All;
+                }
             }
 
             //GFX
@@ -101,13 +101,15 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
         public void SetCollisionCategories(Category collisionCategories)
         {
             foreach (Body body in BodyList)
-                body.SetCollisionCategories(collisionCategories);
+                foreach (Fixture fixture in body.FixtureList)
+                    fixture.CollisionCategories = collisionCategories;
         }
 
         public void SetCollidesWith(Category collidesWith)
         {
             foreach (Body body in BodyList)
-                body.SetCollidesWith(collidesWith);
+                foreach (Fixture fixture in body.FixtureList)
+                    fixture.CollidesWith = collidesWith;
         }
         
         public void Draw()

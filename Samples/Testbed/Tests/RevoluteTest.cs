@@ -64,9 +64,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
 
             {
-                Body ball = World.CreateCircle(3.0f, 5.0f, new Vector2(5.0f, 30.0f));
-                ball.BodyType = BodyType.Dynamic;
-                ball.SetCollisionCategories(Category.Cat1);
+                Body ball = World.CreateBody(new Vector2(5.0f, 30.0f), 0, BodyType.Dynamic);
+                var bfixture = ball.CreateCircle(3.0f, 5.0f);
+                bfixture.CollisionCategories = Category.Cat1;
 
                 Vertices polygonVertices = PolygonTools.CreateRectangle(10.0f, 0.2f, new Vector2(-10.0f, 0.0f), 0.0f);
 

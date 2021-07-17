@@ -52,20 +52,22 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             World.Gravity = Vector2.Zero;
 
-            wall = World.CreateRectangle(2F, 20f, 1f, new Vector2(-1F, 10f));
+            wall = World.CreateBody(new Vector2(-1F, 10f));
+            Fixture wfixture = wall.CreateRectangle(2F, 20f, 1f, Vector2.Zero);
             wall.Tag = "wall";
-            wall.SetRestitution(1);
-            wall.SetFriction(0);
             wall.FixedRotation = true;
             wall.IsBullet = true;
+            wfixture.Restitution = 1;
+            wfixture.Friction = 0;
             
-            ball = World.CreateCircle(0.51f, 1f, position, BodyType.Dynamic);
+            ball = World.CreateBody(position, 0, BodyType.Dynamic);
+            Fixture bfixture = ball.CreateCircle(0.51f, 1f);
             ball.Tag = "ball";
             ball.LinearVelocity = speed;
-            ball.SetRestitution(1);
-            ball.SetFriction(0);
             ball.FixedRotation = true;
             ball.IsBullet = true;
+            bfixture.Restitution = 1;
+            bfixture.Friction = 0;
 
             ball.OnCollision += ball_OnCollision;
             ball.OnSeparation += ball_OnSeparation;

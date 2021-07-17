@@ -43,7 +43,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private CharacterCollisionTest()
         {
             //Ground body
-            Body ground = World.CreateEdge(new Vector2(-20.0f, 0.0f), new Vector2(20.0f, 0.0f));
+            Body ground = World.CreateBody();
+            ground.CreateEdge(new Vector2(-20.0f, 0.0f), new Vector2(20.0f, 0.0f));
 
             // Collinear edges with no adjacency information.
             // This shows the problematic case where a box shape can hit
@@ -101,19 +102,19 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             World.CreateLoopShape(vertices, new Vector2(-10, 4));
 
             // Square character 1
-            Body squareCharacter = World.CreateRectangle(1, 1, 20, new Vector2(-3.0f, 8.0f));
-            squareCharacter.BodyType = BodyType.Dynamic;
+            Body squareCharacter = World.CreateBody(new Vector2(-3.0f, 8.0f), 0, BodyType.Dynamic);
             squareCharacter.FixedRotation = true;
             squareCharacter.SleepingAllowed = false;
+            squareCharacter.CreateRectangle(1, 1, 20, Vector2.Zero);
 
             squareCharacter.OnCollision += CharacterOnCollision;
             squareCharacter.OnSeparation += CharacterOnSeparation;
 
             // Square character 2
-            Body squareCharacter2 = World.CreateRectangle(0.5f, 0.5f, 20, new Vector2(-5.0f, 5.0f));
-            squareCharacter2.BodyType = BodyType.Dynamic;
+            Body squareCharacter2 = World.CreateBody(new Vector2(-5.0f, 5.0f), 0, BodyType.Dynamic);
             squareCharacter2.FixedRotation = true;
             squareCharacter2.SleepingAllowed = false;
+            squareCharacter2.CreateRectangle(0.5f, 0.5f, 20, Vector2.Zero);
 
             // Hexagon character
             float angle = 0.0f;
@@ -126,22 +127,22 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 angle += delta;
             }
 
-            Body hexCharacter = World.CreatePolygon(vertices, 20, new Vector2(-5.0f, 8.0f));
-            hexCharacter.BodyType = BodyType.Dynamic;
+            Body hexCharacter = World.CreateBody(new Vector2(-5.0f, 8.0f), 0, BodyType.Dynamic);
             hexCharacter.FixedRotation = true;
             hexCharacter.SleepingAllowed = false;
+            Fixture hcFixture = hexCharacter.CreatePolygon(vertices, 20);
 
             // Circle character
-            Body circleCharacter = World.CreateCircle(0.5f, 20, new Vector2(3.0f, 5.0f));
-            circleCharacter.BodyType = BodyType.Dynamic;
+            Body circleCharacter = World.CreateBody(new Vector2(3.0f, 5.0f),0, BodyType.Dynamic);
             circleCharacter.FixedRotation = true;
             circleCharacter.SleepingAllowed = false;
+            Fixture ccFixture = circleCharacter.CreateCircle(0.5f, 20);
 
             // Circle character
-            _character = World.CreateCircle(0.25f, 20, new Vector2(-7.0f, 6.0f));
-            _character.BodyType = BodyType.Dynamic;
-            _character.SetFriction(1.0f);
+            _character = World.CreateBody(new Vector2(-7.0f, 6.0f),0, BodyType.Dynamic);
             _character.SleepingAllowed = false;
+            Fixture cFixture = _character.CreateCircle(0.25f, 20);
+            cFixture.Friction = 1.0f;
         }
 
         private bool CharacterOnCollision(Fixture sender, Fixture other, Contact contact)

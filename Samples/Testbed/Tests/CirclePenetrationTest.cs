@@ -36,17 +36,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             borders.Add(PolygonTools.CreateRectangle(borderWidth, height, new Vector2(width, 0), 0));
 
             Body body = World.CreateCompoundPolygon(borders, 1, new Vector2(0, 20));
-
             foreach (Fixture fixture in body.FixtureList)
             {
                 fixture.Restitution = 1f;
                 fixture.Friction = 0;
             }
 
-            Body circle = World.CreateCircle(0.32f, 1);
-            circle.BodyType = BodyType.Dynamic;
-            circle.SetRestitution(1f);
-            circle.SetFriction(0);
+            Body circle = World.CreateBody(Vector2.Zero, 0, BodyType.Dynamic);
+            var cfixture = circle.CreateCircle(0.32f, 1);
+            cfixture.Restitution = 1f;
+            cfixture.Friction = 0;
 
             circle.ApplyLinearImpulse(new Vector2(200, 50));
         }

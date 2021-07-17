@@ -19,16 +19,15 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 
-            Body box = World.CreateRectangle(5, 5, 5);
-            box.SetRestitution(0.8f);
-            box.SetFriction(0.9f);
-            box.BodyType = BodyType.Dynamic;
-            box.Position = new Vector2(10, 10);
+            Body box = World.CreateBody( new Vector2(10, 10), 0, BodyType.Dynamic);
             box.SleepingAllowed = false;
             box.LinearDamping = 1;
             box.AngularDamping = 0.5f;
             box.AngularVelocity = 0.5f;
             box.LinearVelocity = new Vector2(0, 10);
+            var bfixture = box.CreateRectangle(5, 5, 5, Vector2.Zero);
+            bfixture.Restitution = 0.8f;
+            bfixture.Friction = 0.9f;
 
             //This clones the body and all attached fixtures
             Body boxClone1 = box.DeepClone();

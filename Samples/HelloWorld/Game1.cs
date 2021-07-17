@@ -73,23 +73,23 @@ namespace tainicom.Aether.Physics2D.Samples
             Vector2 playerPosition = new Vector2(0, _playerBodyRadius);
 
             // Create the player fixture
-            _playerBody = _world.CreateCircle(_playerBodyRadius, 1f, playerPosition);
-            _playerBody.BodyType = BodyType.Dynamic;
+            _playerBody = _world.CreateBody(playerPosition, 0, BodyType.Dynamic);
+            var pfixture = _playerBody.CreateCircle(_playerBodyRadius, 1f);
 
             // Give it some bounce and friction
-            _playerBody.SetRestitution(0.3f);
-            _playerBody.SetFriction(0.5f);
+            pfixture.Restitution = 0.3f;
+            pfixture.Friction = 0.5f;
 
 
             /* Ground */
             Vector2 groundPosition = new Vector2(0, -(_groundBodySize.Y/2f));
 
             // Create the ground fixture
-            _groundBody = _world.CreateRectangle(_groundBodySize.X, _groundBodySize.Y, 1f, groundPosition);
-            _groundBody.BodyType = BodyType.Static;
+            _groundBody = _world.CreateBody(groundPosition, 0, BodyType.Static);
+            var gfixture = _groundBody.CreateRectangle(_groundBodySize.X, _groundBodySize.Y, 1f, Vector2.Zero);
 
-            _groundBody.SetRestitution(0.3f);
-            _groundBody.SetFriction(0.5f);
+            gfixture.Restitution = 0.3f;
+            gfixture.Friction = 0.5f;
         }
 
         protected override void LoadContent()

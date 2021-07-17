@@ -59,11 +59,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 World.Add(body);
             }
             else
-                body = World.CreateCircle(0.4f, 1);
+            {
+                body = World.CreateBody();
+                body.BodyType = BodyType.Dynamic;
+                Fixture fixture = body.CreateCircle(0.4f, 1);
+                fixture.Restitution = 1f;
+            }
 
             body.Position = new Vector2(Rand.RandomFloat(-35, 35), 10);
-            body.BodyType = BodyType.Dynamic;
-            body.SetRestitution(1f);
 
             base.Update(settings, gameTime);
         }
