@@ -454,16 +454,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
                 //FPE optimization: We don't store the impulses and send it to the delegate. We just send the whole contact.
                 //FPE feature: added after collision
-                if (c.FixtureA.AfterCollision != null)
-                    c.FixtureA.AfterCollision(c.FixtureA, c.FixtureB, c, constraints[i]);
+                var afterCollisionHandlerA = c.FixtureA.AfterCollision;
+                if (afterCollisionHandlerA != null)
+                    afterCollisionHandlerA(c.FixtureA, c.FixtureB, c, constraints[i]);
 
-                if (c.FixtureB.AfterCollision != null)
-                    c.FixtureB.AfterCollision(c.FixtureB, c.FixtureA, c, constraints[i]);
+                var afterCollisionHandlerB = c.FixtureB.AfterCollision;
+                if (afterCollisionHandlerB != null)
+                    afterCollisionHandlerB(c.FixtureB, c.FixtureA, c, constraints[i]);
 
-                if (_contactManager.PostSolve != null)
-                {
-                    _contactManager.PostSolve(c, constraints[i]);
-                }
+                var postSolveHandler = _contactManager.PostSolve;
+                if (postSolveHandler != null)
+                    postSolveHandler(c, constraints[i]);
             }
         }
     }

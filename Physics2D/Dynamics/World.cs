@@ -984,12 +984,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Fire World events:
 
-            if (BodyAdded != null)
-                BodyAdded(this, body);
+            var bodyAddedHandler = BodyAdded;
+            if (bodyAddedHandler != null)
+                bodyAddedHandler(this, body);
             
-            if (FixtureAdded != null)
+            var fixtureAddedHandler = FixtureAdded;
+            if (fixtureAddedHandler != null)
                 for (int i = 0; i < body.FixtureList.Count; i++)
-                    FixtureAdded(this, body, body.FixtureList[i]);
+                    fixtureAddedHandler(this, body, body.FixtureList[i]);
         }
 
         /// <summary>
@@ -1041,15 +1043,17 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body.DestroyProxies();
             for (int i = 0; i < body.FixtureList.Count; i++)
             {
-                if (FixtureRemoved != null)
-                    FixtureRemoved(this, body, body.FixtureList[i]);
+                var fixtureRemovedHandler = FixtureRemoved;
+                if (fixtureRemovedHandler != null)
+                    fixtureRemovedHandler(this, body, body.FixtureList[i]);
             }
 
             body._world = null;
             BodyList.Remove(body);
 
-            if (BodyRemoved != null)
-                BodyRemoved(this, body);
+            var bodyRemovedHandler = BodyRemoved;
+            if (bodyRemovedHandler != null)
+                bodyRemovedHandler(this, body);
 
 #if USE_AWAKE_BODY_SET
             Debug.Assert(!AwakeBodySet.Contains(body));
@@ -1122,8 +1126,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
             }
 
-            if (JointAdded != null)
-                JointAdded(this, joint);
+            var jointAddedHandler = JointAdded;
+            if (jointAddedHandler != null)
+                jointAddedHandler(this, joint);
 
             // Note: creating a joint doesn't wake the bodies.
         }
@@ -1225,8 +1230,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
             }
 
-            if (JointRemoved != null)
-                JointRemoved(this, joint);
+            var jointRemovedHandler = JointRemoved;
+            if (jointRemovedHandler != null)
+                jointRemovedHandler(this, joint);
         }
 
 
@@ -1662,8 +1668,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             controller.World = this;
             ControllerList.Add(controller);
 
-            if (ControllerAdded != null)
-                ControllerAdded(this, controller);
+            var controllerAddedHandler = ControllerAdded;
+            if (controllerAddedHandler != null)
+                controllerAddedHandler(this, controller);
         }
 
         /// <summary>
@@ -1682,8 +1689,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             controller.World = null;
             ControllerList.Remove(controller);
 
-            if (ControllerRemoved != null)
-                ControllerRemoved(this, controller);
+            var controllerRemovedHandler = ControllerRemoved;
+            if (controllerRemovedHandler != null)
+                controllerRemovedHandler(this, controller);
         }
 
         public Fixture TestPoint(Vector2 point)
