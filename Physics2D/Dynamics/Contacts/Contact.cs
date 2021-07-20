@@ -254,9 +254,6 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
             Body bodyA = FixtureA.Body;
             Body bodyB = FixtureB.Body;
 
-            if (FixtureA == null || FixtureB == null)
-                return;
-
             Manifold oldManifold = Manifold;
 
             // Re-enable this contact.
@@ -334,14 +331,14 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                             enabledB = handler(FixtureB, FixtureA, this) && enabledB;
 
                     // Report the collision to both bodies:
-                    if (FixtureA.Body != null && FixtureA.Body.onCollisionEventHandler != null)
-                        foreach (OnCollisionEventHandler handler in FixtureA.Body.onCollisionEventHandler.GetInvocationList())
+                    if (bodyA.onCollisionEventHandler != null)
+                        foreach (OnCollisionEventHandler handler in bodyA.onCollisionEventHandler.GetInvocationList())
                             enabledA = handler(FixtureA, FixtureB, this) && enabledA;
 
                     // Reverse the order of the reported fixtures. The first fixture is always the one that the
                     // user subscribed to.
-                    if (FixtureB.Body != null && FixtureB.Body.onCollisionEventHandler != null)
-                        foreach (OnCollisionEventHandler handler in FixtureB.Body.onCollisionEventHandler.GetInvocationList())
+                    if (bodyB.onCollisionEventHandler != null)
+                        foreach (OnCollisionEventHandler handler in bodyB.onCollisionEventHandler.GetInvocationList())
                             enabledB = handler(FixtureB, FixtureA, this) && enabledB;
 
 
@@ -363,22 +360,22 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 if (touching == false)
                 {
                     //Report the separation to both participants:
-                    if (FixtureA != null && FixtureA.OnSeparation != null)
+                    if (FixtureA.OnSeparation != null)
                         FixtureA.OnSeparation(FixtureA, FixtureB, this);
 
                     //Reverse the order of the reported fixtures. The first fixture is always the one that the
                     //user subscribed to.
-                    if (FixtureB != null && FixtureB.OnSeparation != null)
+                    if (FixtureB.OnSeparation != null)
                         FixtureB.OnSeparation(FixtureB, FixtureA, this);
                     
                     //Report the separation to both bodies:
-                    if (FixtureA != null && FixtureA.Body != null && FixtureA.Body.onSeparationEventHandler != null)
-                        FixtureA.Body.onSeparationEventHandler(FixtureA, FixtureB, this);
+                    if (bodyA.onSeparationEventHandler != null)
+                        bodyA.onSeparationEventHandler(FixtureA, FixtureB, this);
 
                     //Reverse the order of the reported fixtures. The first fixture is always the one that the
                     //user subscribed to.
-                    if (FixtureB != null && FixtureB.Body != null && FixtureB.Body.onSeparationEventHandler != null)
-                        FixtureB.Body.onSeparationEventHandler(FixtureB, FixtureA, this);
+                    if (bodyB.onSeparationEventHandler != null)
+                        bodyB.onSeparationEventHandler(FixtureB, FixtureA, this);
 
 
                     if (contactManager.EndContact != null)

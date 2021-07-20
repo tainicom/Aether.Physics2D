@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("tainicom LTD")]
 [assembly: AssemblyProduct("Aether.Physics2D")]
-[assembly: AssemblyCopyright("Copyright Ian Qvist © 2013, Copyright © Kastellanos Nikolaos 2015-2020")]
+[assembly: AssemblyCopyright("Copyright Ian Qvist © 2013, Copyright © Kastellanos Nikolaos 2015-2021")]
 [assembly: AssemblyTrademark("Aether Engine (tm)")]
 [assembly: AssemblyCulture("")]
 
