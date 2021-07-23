@@ -1,3 +1,5 @@
+// Copyright (c) 2021 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -100,6 +102,7 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
 
     public abstract class Joint
     {
+        internal World _world;
         private float _breakpoint;
         private double _breakpointSquared;
 
@@ -137,6 +140,8 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
         {
             BodyA = body;
         }
+
+        public World World { get { return _world; } }
 
         /// <summary>
         /// Gets or sets the type of the joint.
