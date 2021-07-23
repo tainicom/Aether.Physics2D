@@ -59,10 +59,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 fixture.Friction = 0;
             }
 
-            Body circle = world.CreateCircle(0.32f, 1);
+            Body circle = world.CreateBody();
             circle.BodyType = BodyType.Dynamic;
-            circle.SetRestitution(1f);
-            circle.SetFriction(0);
+            Fixture cfixture = circle.CreateCircle(0.32f, 1);
+            cfixture.Restitution = 1f;
+            cfixture.Friction = 0;            
 
             circle.ApplyLinearImpulse(new Vector2(200, 50));
         }

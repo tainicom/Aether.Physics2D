@@ -40,11 +40,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             float[] restitution = new[] { 0.0f, 0.1f, 0.3f, 0.5f, 0.75f, 0.9f, 1.0f };
 
-            for (int i = 0; i < 7; ++i)
+            for (int i = 0; i < restitution.Length; ++i)
             {
-                Body body = World.CreateCircle(1.0f, 1, new Vector2(-10.0f + 3.0f * i, 20.0f));
-                body.BodyType = BodyType.Dynamic;
-                body.SetRestitution(restitution[i]);
+                Body body = World.CreateBody(new Vector2(-10.0f + 3.0f * i, 20.0f), 0, BodyType.Dynamic);
+                var fixture = body.CreateCircle(1.0f, 1);
+                fixture.Restitution = restitution[i];
             }
         }
 

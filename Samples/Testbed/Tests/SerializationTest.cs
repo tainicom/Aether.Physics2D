@@ -25,11 +25,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             //Friction and distance joint
             {
-                Body bodyA = World.CreateCircle(1, 1.5f, new Vector2(10, 25));
-                bodyA.BodyType = BodyType.Dynamic;
+                Body bodyA = World.CreateBody(new Vector2(10, 25), 0, BodyType.Dynamic);
+                bodyA.CreateCircle(1, 1.5f);
 
-                Body bodyB = World.CreateRectangle(1, 1, 1, new Vector2(-1, 25));
-                bodyB.BodyType = BodyType.Dynamic;
+                Body bodyB = World.CreateBody(new Vector2(-1, 25), 0, BodyType.Dynamic);
+                bodyB.CreateRectangle(1, 1, 1, Vector2.Zero);
 
                 FrictionJoint frictionJoint = JointFactory.CreateFrictionJoint(World, bodyB, ground, Vector2.Zero);
                 frictionJoint.CollideConnected = true;
@@ -48,16 +48,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 vertices.Add(new Vector2(-1.15f, 0.9f));
                 vertices.Add(new Vector2(-1.5f, 0.2f));
 
-                Body carBody = World.CreatePolygon(vertices, 1, new Vector2(0, 1));
-                carBody.BodyType = BodyType.Dynamic;
+                Body carBody = World.CreateBody(new Vector2(0, 1), 0, BodyType.Dynamic);
+                Fixture carFixture = carBody.CreatePolygon(vertices, 1);
 
-                Body wheel1 = World.CreateCircle(0.4f, 1, new Vector2(-1.0f, 0.35f));
-                wheel1.BodyType = BodyType.Dynamic;
-                wheel1.SetFriction(0.9f);
+                Body wheel1 = World.CreateBody(new Vector2(-1.0f, 0.35f), 0, BodyType.Dynamic);
+                Fixture wheel1Fixture = wheel1.CreateCircle(0.4f, 1);
+                wheel1Fixture.Friction = 0.9f;
 
-                Body wheel2 = World.CreateCircle(0.4f, 1, new Vector2(1.0f, 0.4f));
-                wheel2.BodyType = BodyType.Dynamic;
-                wheel2.SetFriction(0.9f);
+                Body wheel2 = World.CreateBody(new Vector2(1.0f, 0.4f), 0, BodyType.Dynamic);
+                Fixture wheel2Fixture = wheel2.CreateCircle(0.4f, 1);
+                wheel2Fixture.Friction = 0.9f;
 
                 Vector2 axis = new Vector2(0.0f, 1.0f);
 
@@ -78,9 +78,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             //Prismatic joint
             {
-                Body body = World.CreateRectangle(2, 2, 5, new Vector2(-10.0f, 10.0f));
-                body.BodyType = BodyType.Dynamic;
-                body.Rotation = 0.5f * MathHelper.Pi;
+                Body body = World.CreateBody(new Vector2(-10.0f, 10.0f), 0.5f * MathHelper.Pi, BodyType.Dynamic);
+                body.CreateRectangle(2, 2, 5, Vector2.Zero);
 
                 Vector2 axis = new Vector2(2.0f, 1.0f);
                 axis.Normalize();
@@ -96,11 +95,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             // Pulley joint
             {
-                Body body1 = World.CreateRectangle(2, 4, 5, new Vector2(-10.0f, 16.0f));
-                body1.BodyType = BodyType.Dynamic;
+                Body body1 = World.CreateBody(new Vector2(-10.0f, 16.0f),0, BodyType.Dynamic);
+                body1.CreateRectangle(2, 4, 5, Vector2.Zero);
 
-                Body body2 = World.CreateRectangle(2, 4, 5, new Vector2(10.0f, 16.0f));
-                body2.BodyType = BodyType.Dynamic;
+                Body body2 = World.CreateBody(new Vector2(10.0f, 16.0f),0, BodyType.Dynamic);
+                body2.CreateRectangle(2, 4, 5, Vector2.Zero);
 
                 Vector2 anchor1 = new Vector2(-10.0f, 16.0f + 2.0f);
                 Vector2 anchor2 = new Vector2(10.0f, 16.0f + 2.0f);
@@ -112,11 +111,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             //Revolute joint
             {
-                Body ball = World.CreateCircle(3.0f, 5.0f, new Vector2(5.0f, 30.0f));
-                ball.BodyType = BodyType.Dynamic;
+                Body ball = World.CreateBody(new Vector2(5.0f, 30.0f), 0, BodyType.Dynamic);
+                ball.CreateCircle(3.0f, 5.0f);
 
-                Body polygonBody = World.CreateRectangle(20, 0.4f, 2, new Vector2(10, 10));
-                polygonBody.BodyType = BodyType.Dynamic;
+                Body polygonBody = World.CreateBody(new Vector2(10, 10), 0, BodyType.Dynamic);
+                polygonBody.CreateRectangle(20, 0.4f, 2, Vector2.Zero);
                 polygonBody.IsBullet = true;
 
                 RevoluteJoint joint = JointFactory.CreateRevoluteJoint(World, ground, polygonBody, new Vector2(10, 0));
@@ -132,9 +131,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Body prevBody = ground;
                 for (int i = 0; i < 10; ++i)
                 {
-                    Body body = World.CreateBody();
-                    body.BodyType = BodyType.Dynamic;
-                    body.Position = new Vector2(-14.5f + 1.0f * i, 5.0f);
+                    Body body = World.CreateBody(new Vector2(-14.5f + 1.0f * i, 5.0f), 0, BodyType.Dynamic);
                     body.CreateFixture(shape);
 
                     Vector2 anchor = new Vector2(0.5f, 0);
@@ -154,23 +151,22 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             //Angle joint
             {
-                Body fA = World.CreateRectangle(4, 4, 1, new Vector2(-5, 4));
-                fA.BodyType = BodyType.Dynamic;
-                fA.Rotation = (float)(Math.PI / 3);
+                Body bA = World.CreateBody(new Vector2(-5, 4), (float)(Math.PI / 3), BodyType.Dynamic);
+                Fixture fA = bA.CreateRectangle(4, 4, 1, Vector2.Zero);
 
-                Body fB = World.CreateRectangle(4, 4, 1, new Vector2(5, 4));
-                fB.BodyType = BodyType.Dynamic;
+                Body bB = World.CreateBody(new Vector2(5, 4), 0, BodyType.Dynamic);
+                Fixture fB = bB.CreateRectangle(4, 4, 1, Vector2.Zero);
 
-                AngleJoint joint = new AngleJoint(fA, fB);
+                AngleJoint joint = new AngleJoint(bA, bB);
                 joint.TargetAngle = (float)Math.PI / 2;
                 World.Add(joint);
             }
 
             //Motor joint
             {
-                Body body = World.CreateRectangle(4, 1, 2, new Vector2(0, 35));
-                body.BodyType = BodyType.Dynamic;
-                body.SetFriction(0.6f);
+                Body body = World.CreateBody(new Vector2(0, 35), 0, BodyType.Dynamic);
+                Fixture fixture = body.CreateRectangle(4, 1, 2, Vector2.Zero);
+                fixture.Friction = 0.6f;
 
                 MotorJoint motorJoint = JointFactory.CreateMotorJoint(World, ground, body);
                 motorJoint.MaxForce = 1000.0f;

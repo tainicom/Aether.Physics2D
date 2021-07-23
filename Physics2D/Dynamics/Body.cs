@@ -1190,6 +1190,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
         /// <param name="restitution"></param>
+        [Obsolete]
         public void SetRestitution(float restitution)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1201,6 +1202,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
         /// <param name="friction"></param>
+        [Obsolete]
         public void SetFriction(float friction)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1210,6 +1212,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        [Obsolete]
         public void SetCollisionCategories(Category category)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1219,6 +1222,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        [Obsolete]
         public void SetCollidesWith(Category category)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1228,6 +1232,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        [Obsolete]
         public void SetCollisionGroup(short collisionGroup)
         {
             for (int i = 0; i < FixtureList.Count; i++)
@@ -1237,6 +1242,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        [Obsolete]
         public void SetIsSensor(bool isSensor)
         {
             for (int i = 0; i < FixtureList.Count; i++)

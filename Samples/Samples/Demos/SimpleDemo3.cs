@@ -74,10 +74,10 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
         {
             for (int i = 0; i < 5; ++i)
             {
-                _obstacles[i] = World.CreateRectangle(5f, 1f, 1f);
-                _obstacles[i].BodyType = BodyType.Static;
-                _obstacles[i].SetRestitution(0.2f);
-                _obstacles[i].SetFriction(0.2f);
+                _obstacles[i] = World.CreateBody(Vector2.Zero, 0, BodyType.Static);
+                var rfixture = _obstacles[i].CreateRectangle(5f, 1f, 1f, Vector2.Zero);
+                rfixture.Restitution = 0.2f;
+                rfixture.Friction = 0.2f;
             }
 
             _obstacles[0].Position = new Vector2(-5f, -9f);
