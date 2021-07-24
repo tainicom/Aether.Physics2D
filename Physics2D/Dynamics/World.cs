@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2020 Kastellanos Nikolaos
+﻿// Copyright (c) 2021 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -1068,10 +1068,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 throw new InvalidOperationException("The World is locked.");
             if (joint == null)
                 throw new ArgumentNullException("joint");
-            if (JointList.Contains(joint))
+            if (joint._world == this)
                 throw new ArgumentException("You are adding the same joint more than once.", "joint");
+            if (joint._world != null)
+                throw new ArgumentException("joint belongs to another world.", "joint");
 
             // Connect to the world list.
+            joint._world = this;
             JointList.Add(joint);
 
             // Connect to the bodies' doubly linked lists.
@@ -1137,12 +1140,13 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 throw new InvalidOperationException("The World is locked.");
             if (joint == null)
                 throw new ArgumentNullException("joint");
-            if (!JointList.Contains(joint))
+            if (joint.World != this)
                 throw new ArgumentException("You are removing a joint that is not in the simulation.", "joint");
 
             bool collideConnected = joint.CollideConnected;
 
             // Remove from the world list.
+            joint._world = null;
             JointList.Remove(joint);
 
             // Disconnect from island graph.
