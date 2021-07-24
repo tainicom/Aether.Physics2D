@@ -120,7 +120,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _contactPoolList = new ContactListHead();
 
             BroadPhase = broadPhase;
-            OnBroadphaseCollision = AddPair;
+            OnBroadphaseCollision += AddPair;
         }
 
         // Broad-phase callback.
