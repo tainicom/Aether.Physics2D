@@ -67,7 +67,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public BeginContactDelegate BeginContact;
 
-        public IBroadPhase BroadPhase;
+        public readonly IBroadPhase BroadPhase;
 
         public readonly ContactListHead ContactList;
         public int ContactCount { get; private set; }
