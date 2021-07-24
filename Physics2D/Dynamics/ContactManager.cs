@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
+﻿// Copyright (c) 2021 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -258,22 +258,22 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (contact.IsTouching)
             {
                 //Report the separation to both participants:
-                if (fixtureA != null && fixtureA.OnSeparation != null)
+                if (fixtureA.OnSeparation != null)
                     fixtureA.OnSeparation(fixtureA, fixtureB, contact);
 
                 //Reverse the order of the reported fixtures. The first fixture is always the one that the
                 //user subscribed to.
-                if (fixtureB != null && fixtureB.OnSeparation != null)
+                if (fixtureB.OnSeparation != null)
                     fixtureB.OnSeparation(fixtureB, fixtureA, contact);
 
                 //Report the separation to both bodies:
-                if (fixtureA != null && fixtureA.Body != null && fixtureA.Body.onSeparationEventHandler != null)
-                    fixtureA.Body.onSeparationEventHandler(fixtureA, fixtureB, contact);
+                if (bodyA.onSeparationEventHandler != null)
+                    bodyA.onSeparationEventHandler(fixtureA, fixtureB, contact);
 
                 //Reverse the order of the reported fixtures. The first fixture is always the one that the
                 //user subscribed to.
-                if (fixtureB != null && fixtureB.Body != null && fixtureB.Body.onSeparationEventHandler != null)
-                    fixtureB.Body.onSeparationEventHandler(fixtureB, fixtureA, contact);
+                if (bodyB.onSeparationEventHandler != null)
+                    bodyB.onSeparationEventHandler(fixtureB, fixtureA, contact);
 
                 if (EndContact != null)
                     EndContact(contact);
