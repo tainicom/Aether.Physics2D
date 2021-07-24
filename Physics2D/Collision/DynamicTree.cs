@@ -728,7 +728,7 @@ namespace tainicom.Aether.Physics2D.Collision
         {
             Debug.Assert(iN != NullNode);
 
-            //TreeNode<T>* N = &_nodes[i];
+            //TreeNode<T>* N = &_nodes[iN];
             if (_nodes[iN].IsLeaf() || _nodes[iN].Height < 2)
             {
                 return iN;
@@ -762,7 +762,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 _nodes[iN].Parent = iB;
 
                 // N's old parent should point to B
-                if (_nodes[iB].Parent != NullNode)
+                if (iP != NullNode)
                 {
                     if (_nodes[iP].Child1 == iN)
                     {
@@ -824,7 +824,7 @@ namespace tainicom.Aether.Physics2D.Collision
                 _nodes[iN].Parent = iA;
 
                 // N's old parent should point to A
-                if (_nodes[iA].Parent != NullNode)
+                if (iP != NullNode)
                 {
                     if (_nodes[iP].Child1 == iN)
                     {
