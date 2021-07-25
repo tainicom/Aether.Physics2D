@@ -1041,12 +1041,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Delete the attached fixtures. This destroys broad-phase proxies.
             body.DestroyProxies();
-            for (int i = 0; i < body.FixtureList.Count; i++)
-            {
-                var fixtureRemovedHandler = FixtureRemoved;
-                if (fixtureRemovedHandler != null)
+            var fixtureRemovedHandler = FixtureRemoved;
+            if (fixtureRemovedHandler != null)
+                for (int i = 0; i < body.FixtureList.Count; i++)
                     fixtureRemovedHandler(this, body, body.FixtureList[i]);
-            }
 
             body._world = null;
             BodyList.Remove(body);
