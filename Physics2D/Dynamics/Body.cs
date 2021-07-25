@@ -100,7 +100,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <value>The revolutions.</value>
         public float Revolutions
         {
-            get { return Rotation / (float)Math.PI; }
+            get { return Rotation / (2 * (float)Math.PI); }
         }
 
         /// <summary>
