@@ -614,8 +614,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 // to be created at the beginning of the next time step.
                 World._worldHasNewFixture = true;
 
-                if (World.FixtureAdded != null)
-                    World.FixtureAdded(World, this, fixture);
+                var fixtureAddedHandler = World.FixtureAdded;
+                if (fixtureAddedHandler != null)
+                    fixtureAddedHandler(World, this, fixture);
             }
         }
 
@@ -669,8 +670,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = false;
 #endif
 
-            if (World.FixtureRemoved != null)
-                World.FixtureRemoved(World, this, fixture);
+            var fixtureRemovedHandler = World.FixtureRemoved;
+            if (fixtureRemovedHandler != null)
+                fixtureRemovedHandler(World, this, fixture);
 
             ResetMassData();
         }

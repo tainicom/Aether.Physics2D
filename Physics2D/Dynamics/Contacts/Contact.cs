@@ -320,33 +320,38 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
 
                     // Report the collision to both participants. Track which ones returned true so we can
                     // later call OnSeparation if the contact is disabled for a different reason.
-                    if (FixtureA.OnCollision != null)
-                        foreach (OnCollisionEventHandler handler in FixtureA.OnCollision.GetInvocationList())
+                    var onFixtureCollisionHandlerA = FixtureA.OnCollision;
+                    if (onFixtureCollisionHandlerA != null)
+                        foreach (OnCollisionEventHandler handler in onFixtureCollisionHandlerA.GetInvocationList())
                             enabledA = handler(FixtureA, FixtureB, this) && enabledA;
 
                     // Reverse the order of the reported fixtures. The first fixture is always the one that the
                     // user subscribed to.
-                    if (FixtureB.OnCollision != null)
-                        foreach (OnCollisionEventHandler handler in FixtureB.OnCollision.GetInvocationList())
+                    var onFixtureCollisionHandlerB = FixtureB.OnCollision;
+                    if (onFixtureCollisionHandlerB != null)
+                        foreach (OnCollisionEventHandler handler in onFixtureCollisionHandlerB.GetInvocationList())
                             enabledB = handler(FixtureB, FixtureA, this) && enabledB;
 
                     // Report the collision to both bodies:
-                    if (bodyA.onCollisionEventHandler != null)
-                        foreach (OnCollisionEventHandler handler in bodyA.onCollisionEventHandler.GetInvocationList())
+                    var onBodyCollisionHandlerA = bodyA.onCollisionEventHandler;
+                    if (onBodyCollisionHandlerA != null)
+                        foreach (OnCollisionEventHandler handler in onBodyCollisionHandlerA.GetInvocationList())
                             enabledA = handler(FixtureA, FixtureB, this) && enabledA;
 
                     // Reverse the order of the reported fixtures. The first fixture is always the one that the
                     // user subscribed to.
-                    if (bodyB.onCollisionEventHandler != null)
-                        foreach (OnCollisionEventHandler handler in bodyB.onCollisionEventHandler.GetInvocationList())
+                    var onBodyCollisionHandlerB = bodyB.onCollisionEventHandler;
+                    if (onBodyCollisionHandlerB != null)
+                        foreach (OnCollisionEventHandler handler in onBodyCollisionHandlerB.GetInvocationList())
                             enabledB = handler(FixtureB, FixtureA, this) && enabledB;
 
 
                     Enabled = enabledA && enabledB;
 
                     // BeginContact can also return false and disable the contact
-                    if (enabledA && enabledB && contactManager.BeginContact != null)
-                        Enabled = contactManager.BeginContact(this);
+                    var beginContactHandler = contactManager.BeginContact;
+                    if (enabledA && enabledB && beginContactHandler != null)
+                        Enabled = beginContactHandler(this);
 
                     // If the user disabled the contact (needed to exclude it in TOI solver) at any point by
                     // any of the callbacks, we need to mark it as not touching and call any separation
@@ -360,34 +365,39 @@ namespace tainicom.Aether.Physics2D.Dynamics.Contacts
                 if (touching == false)
                 {
                     //Report the separation to both participants:
-                    if (FixtureA.OnSeparation != null)
-                        FixtureA.OnSeparation(FixtureA, FixtureB, this);
+                    var onFixtureSeparationHandlerA = FixtureA.OnSeparation;
+                    if (onFixtureSeparationHandlerA != null)
+                        onFixtureSeparationHandlerA(FixtureA, FixtureB, this);
 
                     //Reverse the order of the reported fixtures. The first fixture is always the one that the
                     //user subscribed to.
-                    if (FixtureB.OnSeparation != null)
-                        FixtureB.OnSeparation(FixtureB, FixtureA, this);
+                    var onFixtureSeparationHandlerB = FixtureB.OnSeparation;
+                    if (onFixtureSeparationHandlerB != null)
+                        onFixtureSeparationHandlerB(FixtureB, FixtureA, this);
                     
                     //Report the separation to both bodies:
-                    if (bodyA.onSeparationEventHandler != null)
-                        bodyA.onSeparationEventHandler(FixtureA, FixtureB, this);
+                    var onBodySeparationHandlerA = bodyA.onSeparationEventHandler;
+                    if (onBodySeparationHandlerA != null)
+                        onBodySeparationHandlerA(FixtureA, FixtureB, this);
 
                     //Reverse the order of the reported fixtures. The first fixture is always the one that the
                     //user subscribed to.
-                    if (bodyB.onSeparationEventHandler != null)
-                        bodyB.onSeparationEventHandler(FixtureB, FixtureA, this);
-
-
-                    if (contactManager.EndContact != null)
-                        contactManager.EndContact(this);
+                    var onBodySeparationHandlerB = bodyB.onSeparationEventHandler;
+                    if (onBodySeparationHandlerB != null)
+                        onBodySeparationHandlerB(FixtureB, FixtureA, this);
+                    
+                    var endContactHandler = contactManager.EndContact;
+                    if (endContactHandler != null)
+                        endContactHandler(this);
                 }
             }
 
             if (sensor)
                 return;
 
-            if (contactManager.PreSolve != null)
-                contactManager.PreSolve(this, ref oldManifold);
+            var preSolveHandler = contactManager.PreSolve;
+            if (preSolveHandler != null)
+                preSolveHandler(this, ref oldManifold);
         }
 
         /// <summary>

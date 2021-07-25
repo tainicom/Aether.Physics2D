@@ -177,15 +177,21 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 return;
 
             // Check user filtering.
-            if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
-                return;
+            var contactFilterHandler = ContactFilter;
+            if (contactFilterHandler != null)
+                if (contactFilterHandler(fixtureA, fixtureB) == false)
+                    return;
 
             //FPE feature: BeforeCollision delegate
-            if (fixtureA.BeforeCollision != null && fixtureA.BeforeCollision(fixtureA, fixtureB) == false)
-                return;
+            var beforeCollisionHandlerA = fixtureA.BeforeCollision;
+            if (beforeCollisionHandlerA != null)
+                if (beforeCollisionHandlerA(fixtureA, fixtureB) == false)
+                    return;
 
-            if (fixtureB.BeforeCollision != null && fixtureB.BeforeCollision(fixtureB, fixtureA) == false)
-                return;
+            var beforeCollisionHandlerB = fixtureB.BeforeCollision;
+            if (beforeCollisionHandlerB != null)
+                if (beforeCollisionHandlerB(fixtureB, fixtureA) == false)
+                    return;
 
             // Call the factory.
             Contact c = Contact.Create(this, fixtureA, indexA, fixtureB, indexB);
@@ -258,25 +264,30 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (contact.IsTouching)
             {
                 //Report the separation to both participants:
-                if (fixtureA.OnSeparation != null)
-                    fixtureA.OnSeparation(fixtureA, fixtureB, contact);
+                var onFixtureSeparationHandlerA = fixtureA.OnSeparation;
+                if (onFixtureSeparationHandlerA != null)
+                    onFixtureSeparationHandlerA(fixtureA, fixtureB, contact);
 
                 //Reverse the order of the reported fixtures. The first fixture is always the one that the
                 //user subscribed to.
-                if (fixtureB.OnSeparation != null)
-                    fixtureB.OnSeparation(fixtureB, fixtureA, contact);
+                var onFixtureSeparationHandlerB = fixtureB.OnSeparation;
+                if (onFixtureSeparationHandlerB != null)
+                    onFixtureSeparationHandlerB(fixtureB, fixtureA, contact);
 
                 //Report the separation to both bodies:
-                if (bodyA.onSeparationEventHandler != null)
-                    bodyA.onSeparationEventHandler(fixtureA, fixtureB, contact);
+                var onBodySeparationHandlerA = bodyA.onSeparationEventHandler;
+                if (onBodySeparationHandlerA != null)
+                    onBodySeparationHandlerA(fixtureA, fixtureB, contact);
 
                 //Reverse the order of the reported fixtures. The first fixture is always the one that the
                 //user subscribed to.
-                if (bodyB.onSeparationEventHandler != null)
-                    bodyB.onSeparationEventHandler(fixtureB, fixtureA, contact);
+                var onBodySeparationHandlerB = bodyB.onSeparationEventHandler;
+                if (onBodySeparationHandlerB != null)
+                    onBodySeparationHandlerB(fixtureB, fixtureA, contact);
 
-                if (EndContact != null)
-                    EndContact(contact);
+                var endContactHandler = EndContact;
+                if (endContactHandler != null)
+                    endContactHandler(contact);
             }
 
             // Remove from the world.
@@ -369,12 +380,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     }
 
                     // Check user filtering.
-                    if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
+                    var contactFilterHandler = ContactFilter;
+                    if (contactFilterHandler != null)
                     {
-                        Contact cNuke = c;
-                        c = c.Next;
-                        Destroy(cNuke);
-                        continue;
+                        if (contactFilterHandler(fixtureA, fixtureB) == false)
+                        {
+                            Contact cNuke = c;
+                            c = c.Next;
+                            Destroy(cNuke);
+                            continue;
+                        }
                     }
 
                     // Clear the filtering flag.
@@ -475,12 +490,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     }
 
                     // Check user filtering.
-                    if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
+                    var contactFilterHandler = ContactFilter;
+                    if (contactFilterHandler != null)
                     {
-                        Contact cNuke = c;
-                        c = c.Next;
-                        Destroy(cNuke);
-                        continue;
+                        if (contactFilterHandler(fixtureA, fixtureB) == false)
+                        {
+                            Contact cNuke = c;
+                            c = c.Next;
+                            Destroy(cNuke);
+                            continue;
+                        }
                     }
 
                     // Clear the filtering flag.
