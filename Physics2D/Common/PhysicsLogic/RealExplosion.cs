@@ -350,10 +350,9 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
                     Vector2 hitpoint = Vector2.Zero;
                     float minlambda = float.MaxValue;
 
-                    List<Fixture> fl = _data[i].Body.FixtureList;
-                    for (int x = 0; x < fl.Count; x++)
+                    for (int x = 0; x < _data[i].Body.FixtureList.Count; x++)
                     {
-                        Fixture f = fl[x];
+                        Fixture f = _data[i].Body.FixtureList[x];
                         RayCastInput ri;
                         ri.Point1 = p1;
                         ri.Point2 = p2;
