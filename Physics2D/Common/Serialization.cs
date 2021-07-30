@@ -342,33 +342,6 @@ namespace tainicom.Aether.Physics2D.Common
             return value.ToString(System.Globalization.CultureInfo.InvariantCulture);
         }
 
-        private static String Join(List<Fixture> fixtures, IEnumerable<Fixture> values)
-        {
-            using (var en = values.GetEnumerator())
-            {
-                if (!en.MoveNext())
-                    return String.Empty;
-
-                StringBuilder result = new StringBuilder();
-                if (en.Current != null)
-                {
-                    var fixture = en.Current;
-                    var fixtureId = fixtures.IndexOf(fixture);
-                    result.Append(fixtureId.ToString());
-                }
-
-                while (en.MoveNext())
-                {
-                    result.Append("|");
-
-                    var fixture = en.Current;
-                    var fixtureId = fixtures.IndexOf(fixture);
-                    result.Append(fixtureId.ToString());
-                }
-                return result.ToString();
-            }
-        }
-
         internal static void Serialize(World world, Stream stream)
         {
             List<Body> bodies = new List<Body>();
