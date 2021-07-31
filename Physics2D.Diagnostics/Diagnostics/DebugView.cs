@@ -1,4 +1,4 @@
-// Copyright (c) 2017 Kastellanos Nikolaos
+// Copyright (c) 2017-2021 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -246,10 +246,8 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             if ((Flags & DebugViewFlags.Controllers) == DebugViewFlags.Controllers)
             {
-                for (int i = 0; i < World.ControllerList.Count; i++)
+                foreach (Controller controller in World.ControllerList)
                 {
-                    Controller controller = World.ControllerList[i];
-
                     BuoyancyController buoyancy = controller as BuoyancyController;
                     if (buoyancy != null)
                     {
@@ -344,9 +342,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         private void DrawDebugPanel()
         {
             int fixtureCount = 0;
-            for (int i = 0; i < World.BodyList.Count; i++)
+            foreach (Body body in World.BodyList)
             {
-                fixtureCount += World.BodyList[i].FixtureList.Count;
+                fixtureCount += body.FixtureList.Count;
             }
 
             int x = (int)DebugPanelPosition.X;

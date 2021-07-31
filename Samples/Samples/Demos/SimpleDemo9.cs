@@ -91,7 +91,10 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             ScreenManager.LineBatch.Begin(Camera.Projection, Camera.View);
             for (int i = 0; i < _ramps.Count; ++i)
             {
-                ScreenManager.LineBatch.DrawLineShape(_ramps[i].FixtureList[0].Shape, Color.Black);
+                foreach (Fixture fixture in _ramps[i].FixtureList)
+                {
+                    ScreenManager.LineBatch.DrawLineShape(fixture.Shape, Color.Black);
+                }
             }
             ScreenManager.LineBatch.End();
 

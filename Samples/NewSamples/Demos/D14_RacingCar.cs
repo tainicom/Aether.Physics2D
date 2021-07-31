@@ -320,9 +320,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             LineBatch.Begin(Camera.Projection, Camera.View);
             
             // draw ground
-            for (int i = 0; i < _ground.FixtureList.Count; ++i)
+            foreach (Fixture fixture in _ground.Fixtures)
             {
-                LineBatch.DrawLineShape(_ground.FixtureList[i].Shape, Color.Black);
+                LineBatch.DrawLineShape(fixture.Shape, Color.Black);
             }
             LineBatch.End();
             base.Draw(gameTime);
