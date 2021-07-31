@@ -52,7 +52,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         private Test _test;
         private int _testCount;
         private int _testIndex;
-        private int _testSelection;
         private Vector2 _upper;
         public Matrix View;
         private Vector2 _viewCenter;
@@ -118,7 +117,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             }
 
             _testIndex = MathUtils.Clamp(_testIndex, 0, _testCount - 1);
-            _testSelection = _testIndex;
             StartTest(_testIndex);
         }
 
@@ -188,16 +186,22 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 _settings.Pause = !_settings.Pause;
             else if (_keyboardManager.IsNewKeyPress(Keys.I) || newGamePad.IsButtonDown(Buttons.LeftShoulder) && _oldGamePad.IsButtonUp(Buttons.LeftShoulder))
             {
-                --_testSelection;
-                if (_testSelection < 0)
-                    _testSelection = _testCount - 1;
+                --_testIndex;
+                _testIndex = (_testIndex+_testCount) %_testCount;
+
+                StartTest(_testIndex);
+                ResetCamera();
             }
             else if (_keyboardManager.IsNewKeyPress(Keys.O) || newGamePad.IsButtonDown(Buttons.RightShoulder) && _oldGamePad.IsButtonUp(Buttons.RightShoulder)) // Press O to next test.
             {
-                ++_testSelection;
-                if (_testSelection == _testCount)
-                    _testSelection = 0;
+                ++_testIndex;
+                _testIndex = _testIndex % _testCount;
+
+                StartTest(_testIndex);
+                ResetCamera();
             }
+            
+
             if (_keyboardManager.IsKeyDown(Keys.Left)) // Press left to pan left.
                 ViewCenter = new Vector2(ViewCenter.X - 0.5f, ViewCenter.Y);
             else if (_keyboardManager.IsKeyDown(Keys.Right)) // Press right to pan right.
@@ -271,13 +275,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         protected override void Draw(GameTime gameTime)
         {
             _test.DrawTitle(50, 15, _entry.Name);
-
-            if (_testSelection != _testIndex)
-            {
-                _testIndex = _testSelection;
-                StartTest(_testIndex);
-                ResetCamera();
-            }
 
             _test.DrawDebugView(gameTime, ref Projection, ref View);
 
