@@ -151,9 +151,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             Island = new Island();
             Enabled = true;
-            ControllerList = new List<Controller>();
-            BodyList = new List<Body>(32);
-            JointList = new List<Joint>(32);
+            BodyList = new BodyCollection(this);
+            JointList = new JointCollection(this);
+            ControllerList = new ControllerCollection(this);
 
 #if USE_AWAKE_BODY_SET
             AwakeBodySet = new HashSet<Body>();
@@ -261,9 +261,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             foreach (var seed in AwakeBodyList)
             {
 #else
-            for (int index = BodyList.Count - 1; index >= 0; index--)
+            for (int index = BodyList._list.Count - 1; index >= 0; index--)
             {
-                Body seed = BodyList[index];
+                Body seed = BodyList._list[index];
 #endif
                 if (seed._island)
                 {
@@ -481,10 +481,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     b.Sweep.Alpha0 = 0.0f;
                 }
 #else
-                for (int i = 0; i < BodyList.Count; i++)
+                for (int i = 0; i < BodyList._list.Count; i++)
                 {
-                    BodyList[i]._island = false;
-                    BodyList[i]._sweep.Alpha0 = 0.0f;
+                    BodyList._list[i]._island = false;
+                    BodyList._list[i]._sweep.Alpha0 = 0.0f;
                 }
 #endif
 #if USE_ACTIVE_CONTACT_SET
@@ -833,7 +833,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
         }
 
-        public readonly List<Controller> ControllerList;
+        public readonly ControllerCollection ControllerList;
 
         public TimeSpan UpdateTime { get; private set; }
         public TimeSpan ContinuousPhysicsTime { get; private set; }
@@ -900,7 +900,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Get the world body list.
         /// </summary>
         /// <value>The head of the world body list.</value>
-        public readonly List<Body> BodyList;
+        public readonly BodyCollection BodyList;
 
 #if USE_AWAKE_BODY_SET
         public HashSet<Body> AwakeBodySet { get; private set; }
@@ -917,7 +917,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Get the world joint list. 
         /// </summary>
         /// <value>The joint list.</value>
-        public readonly List<Joint> JointList;
+        public readonly JointCollection JointList;
 
         /// <summary>
         /// Get the world contact list. 
@@ -969,7 +969,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 #endif
 
             body._world = this;
-            BodyList.Add(body);
+            BodyList._list.Add(body);
+            BodyList._versionStamp++;
 
 
             // Update transform
@@ -990,8 +991,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
             
             var fixtureAddedHandler = FixtureAdded;
             if (fixtureAddedHandler != null)
-                for (int i = 0; i < body.FixtureList.Count; i++)
-                    fixtureAddedHandler(this, body, body.FixtureList[i]);
+                for (int i = 0; i < body.FixtureList._list.Count; i++)
+                    fixtureAddedHandler(this, body, body.FixtureList._list[i]);
         }
 
         /// <summary>
@@ -1043,11 +1044,12 @@ namespace tainicom.Aether.Physics2D.Dynamics
             body.DestroyProxies();
             var fixtureRemovedHandler = FixtureRemoved;
             if (fixtureRemovedHandler != null)
-                for (int i = 0; i < body.FixtureList.Count; i++)
-                    fixtureRemovedHandler(this, body, body.FixtureList[i]);
+                for (int i = 0; i < body.FixtureList._list.Count; i++)
+                    fixtureRemovedHandler(this, body, body.FixtureList._list[i]);
 
             body._world = null;
-            BodyList.Remove(body);
+            BodyList._list.Remove(body);
+            BodyList._versionStamp++;
 
             var bodyRemovedHandler = BodyRemoved;
             if (bodyRemovedHandler != null)
@@ -1077,7 +1079,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Connect to the world list.
             joint._world = this;
-            JointList.Add(joint);
+            JointList._list.Add(joint);
+            JointList._versionStamp++;
 
             // Connect to the bodies' doubly linked lists.
             joint.EdgeA.Joint = joint;
@@ -1150,7 +1153,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             // Remove from the world list.
             joint._world = null;
-            JointList.Remove(joint);
+            JointList._list.Remove(joint);
+            JointList._versionStamp++;
 
             // Disconnect from island graph.
             Body bodyA = joint.BodyA;
@@ -1455,9 +1459,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             try
             {
                 //Update controllers
-                for (int i = 0; i < ControllerList.Count; i++)
+                for (int i = 0; i < ControllerList._list.Count; i++)
                 {
-                    ControllerList[i].Update(dt);
+                    ControllerList._list[i].Update(dt);
                 }
                 if (Settings.EnableDiagnostics)
                     ControllersUpdateTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime);
@@ -1514,9 +1518,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public void ClearForces()
         {
-            for (int i = 0; i < BodyList.Count; i++)
+            for (int i = 0; i < BodyList._list.Count; i++)
             {
-                Body body = BodyList[i];
+                Body body = BodyList._list[i];
                 body._force = Vector2.Zero;
                 body._torque = 0.0f;
             }
@@ -1664,7 +1668,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 throw new ArgumentException("Controller belongs to another world.", "controller");
 
             controller.World = this;
-            ControllerList.Add(controller);
+            ControllerList._list.Add(controller);
+            ControllerList._versionStamp++;
 
             var controllerAddedHandler = ControllerAdded;
             if (controllerAddedHandler != null)
@@ -1685,7 +1690,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     throw new ArgumentException("You are removing a controller that is not in the simulation.", "controller");
 
             controller.World = null;
-            ControllerList.Remove(controller);
+            ControllerList._list.Remove(controller);
+            ControllerList._versionStamp++;
 
             var controllerRemovedHandler = ControllerRemoved;
             if (controllerRemovedHandler != null)
@@ -1790,14 +1796,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             ProcessChanges();
 #endif
 
-            for (int i = BodyList.Count - 1; i >= 0; i--)
+            for (int i = BodyList._list.Count - 1; i >= 0; i--)
             {
-                Remove(BodyList[i]);
+                Remove(BodyList._list[i]);
             }
 
-            for (int i = ControllerList.Count - 1; i >= 0; i--)
+            for (int i = ControllerList._list.Count - 1; i >= 0; i--)
             {
-                Remove(ControllerList[i]);
+                Remove(ControllerList._list[i]);
             }
 
         }

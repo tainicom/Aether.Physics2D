@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
+﻿// Copyright (c) 2017-2021 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -74,7 +74,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public Body()
         {
-            FixtureList = new List<Fixture>();
+            FixtureList = new FixtureCollection(this);
 
             _enabled = true;
             _awake = true;
@@ -354,8 +354,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal void CreateProxies()
         {   
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].CreateProxies(broadPhase, ref _xf);
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].CreateProxies(broadPhase, ref _xf);
         }
 
         /// <summary>
@@ -364,8 +364,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         internal void DestroyProxies()
         {
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].DestroyProxies(broadPhase);
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].DestroyProxies(broadPhase);
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Gets all the fixtures attached to this body.
         /// </summary>
         /// <value>The fixture list.</value>
-        public readonly List<Fixture> FixtureList;
+        public readonly FixtureCollection FixtureList;
 
         /// <summary>
         /// Get the list of all joints attached to this body.
@@ -592,7 +592,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             fixture.Body = this;
-            this.FixtureList.Add(fixture);
+            FixtureList._list.Add(fixture);
+            FixtureList._versionStamp++;
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
@@ -664,7 +665,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
             }
 
             fixture.Body = null;
-            FixtureList.Remove(fixture);
+            FixtureList._list.Remove(fixture);
+            FixtureList._versionStamp++;
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = false;
@@ -730,8 +732,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _sweep.A0 = angle;
 
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].Synchronize(broadPhase, ref _xf, ref _xf);
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].Synchronize(broadPhase, ref _xf, ref _xf);
         }
 
         /// <summary>
@@ -1121,9 +1123,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             xf1.p = _sweep.C0 - Complex.Multiply(ref _sweep.LocalCenter, ref xf1.q);
 
             IBroadPhase broadPhase = World.ContactManager.BroadPhase;
-            for (int i = 0; i < FixtureList.Count; i++)
+            for (int i = 0; i < FixtureList._list.Count; i++)
             {
-                FixtureList[i].Synchronize(broadPhase, ref xf1, ref _xf);
+                FixtureList._list[i].Synchronize(broadPhase, ref xf1, ref _xf);
             }
         }
 
@@ -1195,8 +1197,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         [Obsolete]
         public void SetRestitution(float restitution)
         {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].Restitution = restitution;
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].Restitution = restitution;
         }
 
         /// <summary>
@@ -1207,8 +1209,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         [Obsolete]
         public void SetFriction(float friction)
         {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].Friction = friction;
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].Friction = friction;
         }
 
         /// <summary>
@@ -1217,8 +1219,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         [Obsolete]
         public void SetCollisionCategories(Category category)
         {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].CollisionCategories = category;
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].CollisionCategories = category;
         }
 
         /// <summary>
@@ -1227,8 +1229,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         [Obsolete]
         public void SetCollidesWith(Category category)
         {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].CollidesWith = category;
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].CollidesWith = category;
         }
 
         /// <summary>
@@ -1237,8 +1239,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         [Obsolete]
         public void SetCollisionGroup(short collisionGroup)
         {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].CollisionGroup = collisionGroup;
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].CollisionGroup = collisionGroup;
         }
 
         /// <summary>
@@ -1247,8 +1249,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         [Obsolete]
         public void SetIsSensor(bool isSensor)
         {
-            for (int i = 0; i < FixtureList.Count; i++)
-                FixtureList[i].IsSensor = isSensor;
+            for (int i = 0; i < FixtureList._list.Count; i++)
+                FixtureList._list[i].IsSensor = isSensor;
         }
 
         /// <summary>
@@ -1288,10 +1290,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             Body body = Clone(world ?? World);
 
-            int count = FixtureList.Count; //Make a copy of the count. Otherwise it causes an infinite loop.
+            int count = FixtureList._list.Count; //Make a copy of the count. Otherwise it causes an infinite loop.
             for (int i = 0; i < count; i++)
             {
-                FixtureList[i].CloneOnto(body);
+                FixtureList._list[i].CloneOnto(body);
             }
 
             return body;
