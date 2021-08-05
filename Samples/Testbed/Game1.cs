@@ -320,12 +320,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private void WindowClientSizeChanged(object sender, EventArgs e)
         {
-            if (Window.ClientBounds.Width > 0 && Window.ClientBounds.Height > 0)
-            {
-                _graphics.PreferredBackBufferWidth = Window.ClientBounds.Width;
-                _graphics.PreferredBackBufferHeight = Window.ClientBounds.Height;
-            }
-
             //We want to keep aspec ratio. Recalcuate the projection matrix.
             UpdateProjection();
         }
