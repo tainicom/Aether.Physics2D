@@ -153,11 +153,11 @@ namespace tainicom.Aether.Physics2D.Common
             }
 
             _writer.WriteStartElement("Bindings");
-            for (int i = 0; i < body.FixtureList.Count; i++)
+            for (int i = 0; i < body.FixtureList._list.Count; i++)
             {
                 _writer.WriteStartElement("Pair");
-                _writer.WriteAttributeString("FixtureId", fixtures.IndexOf(body.FixtureList[i]).ToString());
-                _writer.WriteAttributeString("ShapeId", shapes.IndexOf(body.FixtureList[i].Shape).ToString());
+                _writer.WriteAttributeString("FixtureId", fixtures.IndexOf(body.FixtureList._list[i]).ToString());
+                _writer.WriteAttributeString("ShapeId", shapes.IndexOf(body.FixtureList._list[i].Shape).ToString());
                 _writer.WriteEndElement();
             }
 

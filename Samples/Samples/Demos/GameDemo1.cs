@@ -305,9 +305,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             ScreenManager.LineBatch.Begin(Camera.Projection, Camera.View);
             // draw ground
-            for (int i = 0; i < _ground.FixtureList.Count; ++i)
+            foreach (Fixture fixture in _ground.FixtureList)
             {
-                ScreenManager.LineBatch.DrawLineShape(_ground.FixtureList[i].Shape, Color.Black);
+                ScreenManager.LineBatch.DrawLineShape(fixture.Shape, Color.Black);
             }
             ScreenManager.LineBatch.End();
             base.Draw(gameTime);

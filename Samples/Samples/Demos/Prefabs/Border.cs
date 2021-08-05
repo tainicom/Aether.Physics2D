@@ -106,7 +106,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             device.DrawUserPrimitives(PrimitiveType.TriangleList, _borderVerts, 0, 8);
 
             batch.Begin(_camera.Projection, _camera.View);
-            batch.DrawLineShape(_anchor.FixtureList[0].Shape);
+            foreach (Fixture fixture in _anchor.FixtureList)
+                batch.DrawLineShape(fixture.Shape);
             batch.End();
         }
     }
