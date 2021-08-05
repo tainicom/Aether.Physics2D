@@ -52,9 +52,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _fixture2 = null;
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.C) && _fixture2 == null)
+            if (input.IsKeyPressed(Keys.C) && _fixture2 == null)
             {
                 CircleShape shape = new CircleShape(3.0f, 10);
                 shape.Position = new Vector2(0.5f, -4.0f);
@@ -62,14 +62,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _body.Awake = true;
             }
 
-            if (keyboardManager.IsNewKeyPress(Keys.D) && _fixture2 != null)
+            if (input.IsKeyPressed(Keys.D) && _fixture2 != null)
             {
                 _body.Remove(_fixture2);
                 _fixture2 = null;
                 _body.Awake = true;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

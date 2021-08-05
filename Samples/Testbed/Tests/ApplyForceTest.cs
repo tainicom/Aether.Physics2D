@@ -140,18 +140,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.W))
+            if (input.IsKeyDown(Keys.W))
                 _body.ApplyForce(_body.GetWorldVector(new Vector2(0.0f, -200.0f)));
 
-            if (keyboardManager.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.A))
                 _body.ApplyTorque(50.0f);
 
-            if (keyboardManager.IsKeyDown(Keys.D))
+            if (input.IsKeyDown(Keys.D))
                 _body.ApplyTorque(-50.0f);
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         internal static Test Create()

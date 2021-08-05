@@ -41,16 +41,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
                 _auto = !_auto;
 
-            if (keyboardManager.IsNewKeyPress(Keys.G))
+            if (input.IsKeyPressed(Keys.G))
                 Generate();
 
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

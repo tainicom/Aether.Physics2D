@@ -103,29 +103,29 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DebugView.EndCustomDraw();
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.A))
             {
                 _positionB.X -= 0.1f;
             }
-            if (keyboardManager.IsKeyDown(Keys.D))
+            if (input.IsKeyDown(Keys.D))
             {
                 _positionB.X += 0.1f;
             }
-            if (keyboardManager.IsKeyDown(Keys.S))
+            if (input.IsKeyDown(Keys.S))
             {
                 _positionB.Y -= 0.1f;
             }
-            if (keyboardManager.IsKeyDown(Keys.W))
+            if (input.IsKeyDown(Keys.W))
             {
                 _positionB.Y += 0.1f;
             }
-            if (keyboardManager.IsKeyDown(Keys.Q))
+            if (input.IsKeyDown(Keys.Q))
             {
                 _angleB += 0.1f * MathHelper.Pi;
             }
-            if (keyboardManager.IsKeyDown(Keys.E))
+            if (input.IsKeyDown(Keys.E))
             {
                 _angleB -= 0.1f * MathHelper.Pi;
             }

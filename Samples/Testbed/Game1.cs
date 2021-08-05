@@ -43,16 +43,13 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
     {
         private TestEntry _entry;
         private GraphicsDeviceManager _graphics;
-        private KeyboardManager _keyboardManager = new KeyboardManager();
-        private Vector2 _lower;
-        private GamePadState _oldGamePad;
-        private MouseState _oldMouseState;
+        private InputState _inputState = new InputState();
+
         public Matrix Projection;
         private GameSettings _settings = new GameSettings();
         private Test _test;
         private int _testCount;
         private int _testIndex;
-        private Vector2 _upper;
         public Matrix View;
         private Vector2 _viewCenter;
 
@@ -143,9 +140,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         /// </summary>
         protected override void LoadContent()
         {
-            _keyboardManager._oldKeyboardState = Keyboard.GetState();
-            _oldMouseState = Mouse.GetState();
-            _oldGamePad = GamePad.GetState(PlayerIndex.One);
         }
 
         /// <summary>
@@ -158,33 +152,31 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             // clear graphics here because some tests already draw during update
             GraphicsDevice.Clear(Color.Black);
 
+            _inputState.Update(this.IsActive);
+
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (_inputState.IsButtonPressed(Buttons.Back))
                 Exit();
-
-            _keyboardManager._newKeyboardState = Keyboard.GetState();
-            GamePadState newGamePad = GamePad.GetState(PlayerIndex.One);
-            MouseState newMouseState = Mouse.GetState();
-
-            if (_keyboardManager.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
+            
+            if (_inputState.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
                 ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
-            else if (_keyboardManager.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
+            else if (_inputState.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
                 ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
-            else if (_keyboardManager.IsKeyDown(Keys.Subtract)) // Press '-' to zoom out.
+            else if (_inputState.IsKeyDown(Keys.Subtract)) // Press '-' to zoom out.
                 ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
-            else if (_keyboardManager.IsKeyDown(Keys.Add)) // Press 'x' to zoom in.
+            else if (_inputState.IsKeyDown(Keys.Add)) // Press 'x' to zoom in.
                 ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
-            else if (newMouseState.ScrollWheelValue != _oldMouseState.ScrollWheelValue) // Mouse Wheel to Zoom.
+            else if (_inputState.ScrollWheelDelta != 0) // Mouse Wheel to Zoom.
             {
-                var wheelDelta = (newMouseState.ScrollWheelValue - _oldMouseState.ScrollWheelValue)/120f;
+                var wheelDelta = _inputState.ScrollWheelDelta /120f;
                 var zoomFactor = (float)Math.Pow(Math.E, 0.05f * wheelDelta);
                 ViewZoom = Math.Min(Math.Max(zoomFactor * ViewZoom, 0.02f), 20.0f);
             }
-            else if (_keyboardManager.IsNewKeyPress(Keys.R)) // Press 'r' to reset.
+            else if (_inputState.IsKeyPressed(Keys.R)) // Press 'r' to reset.
                 Restart();
-            else if (_keyboardManager.IsNewKeyPress(Keys.P) || newGamePad.IsButtonDown(Buttons.Start) && _oldGamePad.IsButtonUp(Buttons.Start)) // Press I to prev test.
+            else if (_inputState.IsKeyPressed(Keys.P) || _inputState.IsButtonPressed(Buttons.Start)) // Press I to prev test.
                 _settings.Pause = !_settings.Pause;
-            else if (_keyboardManager.IsNewKeyPress(Keys.I) || newGamePad.IsButtonDown(Buttons.LeftShoulder) && _oldGamePad.IsButtonUp(Buttons.LeftShoulder))
+            else if (_inputState.IsKeyPressed(Keys.I) || _inputState.IsButtonPressed(Buttons.LeftShoulder))
             {
                 --_testIndex;
                 _testIndex = (_testIndex+_testCount) %_testCount;
@@ -192,7 +184,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 StartTest(_testIndex);
                 ResetCamera();
             }
-            else if (_keyboardManager.IsNewKeyPress(Keys.O) || newGamePad.IsButtonDown(Buttons.RightShoulder) && _oldGamePad.IsButtonUp(Buttons.RightShoulder)) // Press O to next test.
+            else if (_inputState.IsKeyPressed(Keys.O) || _inputState.IsButtonPressed(Buttons.RightShoulder)) // Press O to next test.
             {
                 ++_testIndex;
                 _testIndex = _testIndex % _testCount;
@@ -202,54 +194,50 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             }
             
 
-            if (_keyboardManager.IsKeyDown(Keys.Left)) // Press left to pan left.
-                ViewCenter = new Vector2(ViewCenter.X - 0.5f, ViewCenter.Y);
-            else if (_keyboardManager.IsKeyDown(Keys.Right)) // Press right to pan right.
-                ViewCenter = new Vector2(ViewCenter.X + 0.5f, ViewCenter.Y);
-            if (_keyboardManager.IsKeyDown(Keys.Down)) // Press down to pan down.
-                ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y - 0.5f);
-            else if (_keyboardManager.IsKeyDown(Keys.Up)) // Press up to pan up.
-                ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y + 0.5f);
-            if (_keyboardManager.IsNewKeyPress(Keys.Home)) // Press home to reset the view.
+            if (_inputState.IsKeyDown(Keys.Left)) // Press left to pan left.
+                ViewCenter += -Vector2.UnitX * 0.5f;
+            else if (_inputState.IsKeyDown(Keys.Right)) // Press right to pan right.
+                ViewCenter +=  Vector2.UnitX * 0.5f;
+            if (_inputState.IsKeyDown(Keys.Down)) // Press down to pan down.
+                ViewCenter += -Vector2.UnitY * 0.5f;
+            else if (_inputState.IsKeyDown(Keys.Up)) // Press up to pan up.
+                ViewCenter +=  Vector2.UnitY * 0.5f;
+            if (_inputState.IsKeyPressed(Keys.Home)) // Press home to reset the view.
                 ResetCamera();
-            else if (_keyboardManager.IsNewKeyPress(Keys.F1))
+            else if (_inputState.IsKeyPressed(Keys.F1))
                 EnableOrDisableFlag(DebugViewFlags.Shape);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F2))
+            else if (_inputState.IsKeyPressed(Keys.F2))
                 EnableOrDisableFlag(DebugViewFlags.DebugPanel);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F3))
+            else if (_inputState.IsKeyPressed(Keys.F3))
                 EnableOrDisableFlag(DebugViewFlags.PerformanceGraph);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F4))
+            else if (_inputState.IsKeyPressed(Keys.F4))
                 EnableOrDisableFlag(DebugViewFlags.AABB);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F5))
+            else if (_inputState.IsKeyPressed(Keys.F5))
                 EnableOrDisableFlag(DebugViewFlags.CenterOfMass);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F6))
+            else if (_inputState.IsKeyPressed(Keys.F6))
                 EnableOrDisableFlag(DebugViewFlags.Joint);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F7))
+            else if (_inputState.IsKeyPressed(Keys.F7))
             {
                 EnableOrDisableFlag(DebugViewFlags.ContactPoints);
                 EnableOrDisableFlag(DebugViewFlags.ContactNormals);
             }
-            else if (_keyboardManager.IsNewKeyPress(Keys.F8))
+            else if (_inputState.IsKeyPressed(Keys.F8))
                 EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F9))
+            else if (_inputState.IsKeyPressed(Keys.F9))
                 EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
             else
             {
                 if (_test != null)
-                    _test.Keyboard(_keyboardManager);
+                    _test.Keyboard(_inputState);
             }
 
             if (_test != null)
-                _test.Mouse(newMouseState, _oldMouseState);
+                _test.Mouse(_inputState);
 
-            if (_test != null && newGamePad.IsConnected)
-                _test.Gamepad(newGamePad, _oldGamePad);
+            if (_test != null && _inputState.GamePadState.IsConnected)
+                _test.Gamepad(_inputState);
 
             base.Update(gameTime);
-
-            _keyboardManager._oldKeyboardState = _keyboardManager._newKeyboardState;
-            _oldMouseState = newMouseState;
-            _oldGamePad = newGamePad;
 
             if (_test != null)
             {
@@ -289,11 +277,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private void UpdateProjection()
         {
-            _lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
-            _upper =  new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+            var lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+            var upper =  new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
 
             // L/R/B/T
-            Projection = Matrix.CreateOrthographicOffCenter(_lower.X, _upper.X, _lower.Y, _upper.Y, 0f, 2f);
+            Projection = Matrix.CreateOrthographicOffCenter(lower.X, upper.X, lower.Y, upper.Y, 0f, 2f);
         }
 
         private void UpdateView()

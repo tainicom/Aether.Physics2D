@@ -95,14 +95,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             fixture.Friction = 0;
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.C))
+            if (input.IsKeyPressed(Keys.C))
             {
                 CreateCircle();
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

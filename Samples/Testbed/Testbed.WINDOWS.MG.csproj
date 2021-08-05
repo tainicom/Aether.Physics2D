@@ -43,7 +43,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Framework\GameSettings.cs" />
-    <Compile Include="Framework\KeyboardManager.cs" />
+    <Compile Include="Framework\InputState.cs" />
     <Compile Include="Framework\Rand.cs" />
     <Compile Include="Framework\Test.cs" />
     <Compile Include="Framework\TestEntry.cs" />

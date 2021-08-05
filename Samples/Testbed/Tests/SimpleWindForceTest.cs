@@ -99,35 +99,34 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.Q))
+            if (input.IsKeyDown(Keys.Q))
                 _strength += 1f;
 
-            if (keyboardManager.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.A))
                 _strength -= 1f;
 
-            if (keyboardManager.IsKeyDown(Keys.W))
+            if (input.IsKeyDown(Keys.W))
                 _simpleWind.Variation += 0.1f;
 
-            if (keyboardManager.IsKeyDown(Keys.S))
+            if (input.IsKeyDown(Keys.S))
                 _simpleWind.Variation -= 0.1f;
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
-        public override void Mouse(MouseState state, MouseState oldState)
+        public override void Mouse(InputState input)
         {
-            //base.Mouse(state, oldState);
-            Vector2 mouseWorld = GameInstance.ConvertScreenToWorld(state.X, state.Y);
+            //base.Mouse(input);
+            Vector2 mouseWorld = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
             _simpleWind.Direction = mouseWorld - _simpleWind.Position;
             _simpleWind.Strength = _strength;
 
-            if (state.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released)
+            if (input.IsLeftButtonPressed())
             {
                 _simpleWind.Position = mouseWorld;
                 _simpleWind.Direction = mouseWorld + new Vector2(0, 1);
-                Microsoft.Xna.Framework.Input.Mouse.SetPosition(state.X, state.Y + 10);
             }
         }
 

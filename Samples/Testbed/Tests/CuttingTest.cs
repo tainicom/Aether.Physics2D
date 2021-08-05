@@ -102,58 +102,58 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.Tab))
+            if (input.IsKeyPressed(Keys.Tab))
                 _switched = !_switched;
 
-            if (keyboardManager.IsNewKeyPress(Keys.Enter))
+            if (input.IsKeyPressed(Keys.Enter))
                 CuttingTools.Cut(World, _start, _end);
 
             if (_switched)
             {
-                if (keyboardManager.IsKeyDown(Keys.A))
+                if (input.IsKeyDown(Keys.A))
                     _start.X -= MoveAmount;
 
-                if (keyboardManager.IsKeyDown(Keys.S))
+                if (input.IsKeyDown(Keys.S))
                     _start.Y -= MoveAmount;
 
-                if (keyboardManager.IsKeyDown(Keys.W))
+                if (input.IsKeyDown(Keys.W))
                     _start.Y += MoveAmount;
 
-                if (keyboardManager.IsKeyDown(Keys.D))
+                if (input.IsKeyDown(Keys.D))
                     _start.X += MoveAmount;
             }
             else
             {
-                if (keyboardManager.IsKeyDown(Keys.A))
+                if (input.IsKeyDown(Keys.A))
                     _end.X -= MoveAmount;
 
-                if (keyboardManager.IsKeyDown(Keys.S))
+                if (input.IsKeyDown(Keys.S))
                     _end.Y -= MoveAmount;
 
-                if (keyboardManager.IsKeyDown(Keys.W))
+                if (input.IsKeyDown(Keys.W))
                     _end.Y += MoveAmount;
 
-                if (keyboardManager.IsKeyDown(Keys.D))
+                if (input.IsKeyDown(Keys.D))
                     _end.X += MoveAmount;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
-        public override void Gamepad(GamePadState state, GamePadState oldState)
+        public override void Gamepad(InputState input)
         {
-            _start.X += state.ThumbSticks.Left.X / 5;
-            _start.Y += state.ThumbSticks.Left.Y / 5;
+            _start.X += input.GamePadState.ThumbSticks.Left.X / 5;
+            _start.Y += input.GamePadState.ThumbSticks.Left.Y / 5;
 
-            _end.X += state.ThumbSticks.Right.X / 5;
-            _end.Y += state.ThumbSticks.Right.Y / 5;
+            _end.X += input.GamePadState.ThumbSticks.Right.X / 5;
+            _end.Y += input.GamePadState.ThumbSticks.Right.Y / 5;
 
-            if (state.Buttons.A == ButtonState.Pressed && oldState.Buttons.A == ButtonState.Released)
+            if (input.IsButtonPressed(Buttons.A))
                 CuttingTools.Cut(World, _start, _end);
 
-            base.Gamepad(state, oldState);
+            base.Gamepad(input);
         }
 
         public static CuttingTest Create()

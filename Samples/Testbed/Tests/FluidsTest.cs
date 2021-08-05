@@ -61,11 +61,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public override void Mouse(MouseState state, MouseState oldState)
+        public override void Mouse(InputState input)
         {
-            if (state.LeftButton == ButtonState.Pressed)
+            if (input.MouseState.LeftButton == ButtonState.Pressed)
             {
-                Vector2 mousePosition = GameInstance.ConvertScreenToWorld(state.X, state.Y);
+                Vector2 mousePosition = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -73,7 +73,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 }
             }
 
-            base.Mouse(state, oldState);
+            base.Mouse(input);
         }
 
         internal static Test Create()

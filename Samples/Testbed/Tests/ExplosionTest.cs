@@ -68,36 +68,36 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _realExplosion.ControllerCategory = _realExplosionCategory;
         }
 
-        public override void Mouse(MouseState state, MouseState oldState)
-        {
-            _mousePos = GameInstance.ConvertScreenToWorld(state.X, state.Y);
-            base.Mouse(state, oldState);
+        public override void Mouse(InputState input)
+        {   
+            _mousePos = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
+            base.Mouse(input);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.OemComma))
+            if (input.IsKeyPressed(Keys.OemComma))
             {
                 _realExplosion.Activate(_mousePos, _radius, _force);
             }
-            if (keyboardManager.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.A))
             {
                 _radius = MathHelper.Clamp(_radius - 0.1f, 0, 20);
             }
-            if (keyboardManager.IsKeyDown(Keys.S))
+            if (input.IsKeyDown(Keys.S))
             {
                 _radius = MathHelper.Clamp(_radius + 0.1f, 0, 20);
             }
-            if (keyboardManager.IsKeyDown(Keys.D))
+            if (input.IsKeyDown(Keys.D))
             {
                 _force = MathHelper.Clamp(_force - 0.1f, 0, 20);
             }
-            if (keyboardManager.IsKeyDown(Keys.F))
+            if (input.IsKeyDown(Keys.F))
             {
                 _force = MathHelper.Clamp(_force + 0.1f, 0, 20);
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)
