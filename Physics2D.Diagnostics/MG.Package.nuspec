@@ -18,6 +18,10 @@
     <dependencies>
       <dependency id="Aether.Physics2D.MG" version="1.5" />
     </dependencies>
+    
+    <contentFiles>
+      <files include="**\Content\*.xnb"  buildAction="None" copyToOutput="true" />
+    </contentFiles>
   </metadata>
 
   <files>
@@ -30,6 +34,9 @@
 
     <!-- content -->
     <file src="..\bin\Release\MG.Windows\Content\*.xnb" target="Content\Content" />
+    
+    <!-- contentFiles -->
+    <file src="..\bin\Release\MG.Windows\Content\*.xnb" target="contentFiles\any\any\Content" />
   </files>
 
 </package>
