@@ -210,24 +210,24 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             if (_inputState.IsKeyPressed(Keys.Home)) // Press home to reset the view.
                 ResetCamera();
             else if (_inputState.IsKeyPressed(Keys.F1))
-                EnableOrDisableFlag(DebugViewFlags.Shape);
+                ToggleDebugDrawFlag(DebugViewFlags.Shape);
             else if (_inputState.IsKeyPressed(Keys.F2))
-                EnableOrDisableFlag(DebugViewFlags.DebugPanel);
+                ToggleDebugDrawFlag(DebugViewFlags.DebugPanel);
             else if (_inputState.IsKeyPressed(Keys.F3))
-                EnableOrDisableFlag(DebugViewFlags.PerformanceGraph);
+                ToggleDebugDrawFlag(DebugViewFlags.PerformanceGraph);
             else if (_inputState.IsKeyPressed(Keys.F4))
-                EnableOrDisableFlag(DebugViewFlags.AABB);
+                ToggleDebugDrawFlag(DebugViewFlags.AABB);
             else if (_inputState.IsKeyPressed(Keys.F5))
-                EnableOrDisableFlag(DebugViewFlags.CenterOfMass);
+                ToggleDebugDrawFlag(DebugViewFlags.CenterOfMass);
             else if (_inputState.IsKeyPressed(Keys.F6))
-                EnableOrDisableFlag(DebugViewFlags.Joint);
+                ToggleDebugDrawFlag(DebugViewFlags.Joint);
             else if (_inputState.IsKeyPressed(Keys.F7))
             {
-                EnableOrDisableFlag(DebugViewFlags.ContactPoints);
-                EnableOrDisableFlag(DebugViewFlags.ContactNormals);
+                ToggleDebugDrawFlag(DebugViewFlags.ContactPoints);
+                ToggleDebugDrawFlag(DebugViewFlags.ContactNormals);
             }
             else if (_inputState.IsKeyPressed(Keys.F8))
-                EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
+                ToggleDebugDrawFlag(DebugViewFlags.PolygonPoints);
             else
             {
                 if (_test != null)
@@ -251,7 +251,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             _test.DebugView.UpdatePerformanceGraph(_test.World.UpdateTime);
         }
 
-        private void EnableOrDisableFlag(DebugViewFlags flag)
+        private void ToggleDebugDrawFlag(DebugViewFlags flag)
         {
             if ((_test.DebugView.Flags & flag) == flag)
                 _test.DebugView.RemoveFlags(flag);
