@@ -15,9 +15,7 @@ using Vector2 = Microsoft.Xna.Framework.Vector2;
 
 namespace tainicom.Aether.Physics2D.Dynamics
 {
-    /// <summary>
-    /// An easy to use factory for creating bodies
-    /// </summary>
+    // An easy to use factory for creating bodies
     public partial class Body
     {
         /// <summary>
