@@ -52,6 +52,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         public Matrix View;
         private Vector2 _viewCenter;
         private float _viewZoom;
+        private Vector2 _mouseMoveBeginViewCenter;
+        private MouseState? _mouseMoveBeginState;
 
         private TestEntry _entry;
         private Test _test;
@@ -60,7 +62,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private GameSettings _settings = new GameSettings();
         private ControlPanel _controlPanel;
-
 
         public Game1()
         {
@@ -245,6 +246,33 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
             if (_test != null)
                 _test.Mouse(_inputState);
+
+            // move camera with Right mouse button
+            if (_inputState.IsRightButtonPressed())
+            {
+                _mouseMoveBeginState = _inputState.MouseState;
+                _mouseMoveBeginViewCenter = ViewCenter;
+                IsMouseVisible = false;
+            }
+            if (_inputState.IsRightButtonReleased())
+            {
+                _mouseMoveBeginState = null;
+                _mouseMoveBeginViewCenter = Vector2.Zero;
+                IsMouseVisible = true;
+            }
+            if (_mouseMoveBeginState.HasValue)
+            {
+                var beginView = Matrix.CreateLookAt(new Vector3(_mouseMoveBeginViewCenter, 1), new Vector3(_mouseMoveBeginViewCenter, 0), Vector3.Up);
+
+                Vector3 beginPos = new Vector3(_mouseMoveBeginState.Value.X, _mouseMoveBeginState.Value.Y, 0f);
+                Vector3 pos = new Vector3(_inputState.MouseState.X, _inputState.MouseState.Y, 0f);
+
+                beginPos = GraphicsDevice.Viewport.Unproject(beginPos, Projection, beginView, Matrix.Identity);
+                pos = GraphicsDevice.Viewport.Unproject(pos, Projection, beginView, Matrix.Identity);                    
+                Vector3 offset = beginPos - pos;
+
+                ViewCenter = _mouseMoveBeginViewCenter + new Vector2(offset.X, offset.Y);
+            }
 
             if (_test != null && _inputState.GamePadState.IsConnected)
                 _test.Gamepad(_inputState);
