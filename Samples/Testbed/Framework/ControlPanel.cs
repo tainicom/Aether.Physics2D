@@ -62,6 +62,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
                 _sb.DrawString(_font, "Arrow keys - Pan L/R/U/D", pos, color);
                 pos.Y += _font.LineSpacing;
 
+                _sb.DrawString(_font, "(F11) - Fullscreen", pos, color);
+                pos.Y += _font.LineSpacing;
+
                 pos.Y += _font.LineSpacing;
 
                 _sb.DrawString(_font, "- Debug Draw -", pos, color);

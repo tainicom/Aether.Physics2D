@@ -1,3 +1,5 @@
+//   Copyright 2021 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -41,20 +43,24 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
     /// </summary>
     public class Game1 : Game
     {
-        private TestEntry _entry;
+
         private GraphicsDeviceManager _graphics;
+        Point windowedSize = new Point(1024, 768);
         private InputState _inputState = new InputState();
 
         public Matrix Projection;
-        private GameSettings _settings = new GameSettings();
-        private ControlPanel _controlPanel;
+        public Matrix View;
+        private Vector2 _viewCenter;
+        private float _viewZoom;
+
+        private TestEntry _entry;
         private Test _test;
         private int _testCount;
         private int _testIndex;
-        public Matrix View;
-        private Vector2 _viewCenter;
 
-        private float _viewZoom;
+        private GameSettings _settings = new GameSettings();
+        private ControlPanel _controlPanel;
+
 
         public Game1()
         {
@@ -163,6 +169,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             if (_inputState.IsButtonPressed(Buttons.Back))
                 Exit();
             
+            if (_inputState.IsKeyReleased(Keys.F11))
+                ToggleFullscreen();
+
             if (_inputState.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
                 ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
             else if (_inputState.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
@@ -249,6 +258,26 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             }
 
             _test.DebugView.UpdatePerformanceGraph(_test.World.UpdateTime);
+        }
+
+        private void ToggleFullscreen()
+        {
+            if (!_graphics.IsFullScreen)
+            {
+                windowedSize.X = GraphicsDevice.PresentationParameters.BackBufferWidth;
+                windowedSize.Y = GraphicsDevice.PresentationParameters.BackBufferHeight;
+                _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+                _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+                _graphics.IsFullScreen = true;
+                _graphics.ApplyChanges();
+            }
+            else
+            {
+                _graphics.PreferredBackBufferWidth = windowedSize.X;
+                _graphics.PreferredBackBufferHeight = windowedSize.Y;
+                _graphics.IsFullScreen = false;
+                _graphics.ApplyChanges();
+            }
         }
 
         private void ToggleDebugDrawFlag(DebugViewFlags flag)
