@@ -209,24 +209,24 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 ViewCenter +=  Vector2.UnitY * 0.5f;
             if (_inputState.IsKeyPressed(Keys.Home)) // Press home to reset the view.
                 ResetCamera();
-            else if (_inputState.IsKeyPressed(Keys.F1))
-                ToggleDebugDrawFlag(DebugViewFlags.Shape);
             else if (_inputState.IsKeyPressed(Keys.F2))
                 ToggleDebugDrawFlag(DebugViewFlags.DebugPanel);
             else if (_inputState.IsKeyPressed(Keys.F3))
                 ToggleDebugDrawFlag(DebugViewFlags.PerformanceGraph);
             else if (_inputState.IsKeyPressed(Keys.F4))
-                ToggleDebugDrawFlag(DebugViewFlags.AABB);
+                ToggleDebugDrawFlag(DebugViewFlags.Shape);
             else if (_inputState.IsKeyPressed(Keys.F5))
-                ToggleDebugDrawFlag(DebugViewFlags.CenterOfMass);
+                ToggleDebugDrawFlag(DebugViewFlags.AABB);
             else if (_inputState.IsKeyPressed(Keys.F6))
-                ToggleDebugDrawFlag(DebugViewFlags.Joint);
+                ToggleDebugDrawFlag(DebugViewFlags.CenterOfMass);
             else if (_inputState.IsKeyPressed(Keys.F7))
+                ToggleDebugDrawFlag(DebugViewFlags.Joint);
+            else if (_inputState.IsKeyPressed(Keys.F8))
             {
                 ToggleDebugDrawFlag(DebugViewFlags.ContactPoints);
                 ToggleDebugDrawFlag(DebugViewFlags.ContactNormals);
             }
-            else if (_inputState.IsKeyPressed(Keys.F8))
+            else if (_inputState.IsKeyPressed(Keys.F9))
                 ToggleDebugDrawFlag(DebugViewFlags.PolygonPoints);
             else
             {

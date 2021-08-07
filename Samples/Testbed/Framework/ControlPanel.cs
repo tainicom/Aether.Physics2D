@@ -57,23 +57,21 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 
             _sb.DrawString(_font, "- Debug Draw -", pos, color);
             pos.Y += _font.LineSpacing;
-            _sb.DrawString(_font, "(F1) - Shape", pos, color);
-            pos.Y += _font.LineSpacing;
             _sb.DrawString(_font, "(F2) - DebugPanel", pos, color);
             pos.Y += _font.LineSpacing;
             _sb.DrawString(_font, "(F3) - PerformanceGraph", pos, color);
             pos.Y += _font.LineSpacing;
-
-
-            _sb.DrawString(_font, "(F4) - AABB", pos, color);
+            _sb.DrawString(_font, "(F4) - Shape", pos, color);
             pos.Y += _font.LineSpacing;
-            _sb.DrawString(_font, "(F5) - CenterOfMass", pos, color);
+            _sb.DrawString(_font, "(F5) - AABB", pos, color);
             pos.Y += _font.LineSpacing;
-            _sb.DrawString(_font, "(F6) - Joint", pos, color);
+            _sb.DrawString(_font, "(F6) - CenterOfMass", pos, color);
             pos.Y += _font.LineSpacing;
-            _sb.DrawString(_font, "(F7) - Contacts", pos, color);
+            _sb.DrawString(_font, "(F7) - Joint", pos, color);
             pos.Y += _font.LineSpacing;
-            _sb.DrawString(_font, "(F8) - PolygonPoints", pos, color);
+            _sb.DrawString(_font, "(F8) - Contacts", pos, color);
+            pos.Y += _font.LineSpacing;
+            _sb.DrawString(_font, "(F9) - PolygonPoints", pos, color);
             pos.Y += _font.LineSpacing;
             
             _sb.End();
