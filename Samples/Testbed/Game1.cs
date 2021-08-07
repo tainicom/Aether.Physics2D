@@ -47,6 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         public Matrix Projection;
         private GameSettings _settings = new GameSettings();
+        private ControlPanel _controlPanel;
         private Test _test;
         private int _testCount;
         private int _testIndex;
@@ -98,11 +99,15 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         /// </summary>
         protected override void Initialize()
         {
+            _controlPanel = new ControlPanel(this);
+            Components.Add(_controlPanel);
+
             base.Initialize();
 
             //Set window defaults. Parent game can override in constructor
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += WindowClientSizeChanged;
+
 
             //Default projection and view
             ResetCamera();
@@ -164,7 +169,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
             else if (_inputState.IsKeyDown(Keys.Subtract)) // Press '-' to zoom out.
                 ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
-            else if (_inputState.IsKeyDown(Keys.Add)) // Press 'x' to zoom in.
+            else if (_inputState.IsKeyDown(Keys.Add)) // Press '+' to zoom in.
                 ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
             else if (_inputState.ScrollWheelDelta != 0) // Mouse Wheel to Zoom.
             {
@@ -174,9 +179,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             }
             else if (_inputState.IsKeyPressed(Keys.R)) // Press 'r' to reset.
                 Restart();
-            else if (_inputState.IsKeyPressed(Keys.P) || _inputState.IsButtonPressed(Buttons.Start)) // Press I to prev test.
+            else if (_inputState.IsKeyPressed(Keys.P) || _inputState.IsButtonPressed(Buttons.Start))
                 _settings.Pause = !_settings.Pause;
-            else if (_inputState.IsKeyPressed(Keys.I) || _inputState.IsButtonPressed(Buttons.LeftShoulder))
+            else if (_inputState.IsKeyPressed(Keys.I) || _inputState.IsButtonPressed(Buttons.LeftShoulder)) // Press I to prev test.
             {
                 --_testIndex;
                 _testIndex = (_testIndex+_testCount) %_testCount;
@@ -222,8 +227,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 EnableOrDisableFlag(DebugViewFlags.ContactNormals);
             }
             else if (_inputState.IsKeyPressed(Keys.F8))
-                EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
-            else if (_inputState.IsKeyPressed(Keys.F9))
                 EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
             else
             {

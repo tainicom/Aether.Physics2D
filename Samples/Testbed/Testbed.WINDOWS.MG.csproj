@@ -42,6 +42,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Framework\ControlPanel.cs" />
     <Compile Include="Framework\GameSettings.cs" />
     <Compile Include="Framework\InputState.cs" />
     <Compile Include="Framework\Rand.cs" />
