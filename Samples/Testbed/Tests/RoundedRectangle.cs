@@ -38,21 +38,21 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Create(0);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
                 _segments++;
 
-            if (keyboardManager.IsNewKeyPress(Keys.S) && _segments > 0)
+            if (input.IsKeyPressed(Keys.S) && _segments > 0)
                 _segments--;
 
-            if (keyboardManager.IsNewKeyPress(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
                 Create(0);
 
-            if (keyboardManager.IsNewKeyPress(Keys.F))
+            if (input.IsKeyPressed(Keys.F))
                 Create(1);
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         private void Create(int type)

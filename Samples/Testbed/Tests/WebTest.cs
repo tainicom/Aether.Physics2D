@@ -125,9 +125,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _removedJoints++;
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.B))
+            if (input.IsKeyPressed(Keys.B))
             {
                 for (int i = 0; i < 4; ++i)
                 {
@@ -140,7 +140,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 }
             }
 
-            if (keyboardManager.IsNewKeyPress(Keys.J))
+            if (input.IsKeyPressed(Keys.J))
             {
                 for (int i = 0; i < 8; ++i)
                 {
@@ -153,7 +153,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 }
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

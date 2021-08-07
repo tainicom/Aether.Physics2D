@@ -80,9 +80,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _bullet = null;
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.OemComma))
+            if (input.IsKeyPressed(Keys.OemComma))
             {
                 if (_bullet != null)
                 {
@@ -105,7 +105,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 }
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

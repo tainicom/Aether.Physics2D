@@ -107,22 +107,24 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DebugView.EndCustomDraw();
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
                 _positionB.X -= 0.1f;
-            if (keyboardManager.IsNewKeyPress(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
                 _positionB.X += 0.1f;
-            if (keyboardManager.IsNewKeyPress(Keys.S))
+            if (input.IsKeyPressed(Keys.S))
                 _positionB.Y -= 0.1f;
-            if (keyboardManager.IsNewKeyPress(Keys.W))
+            if (input.IsKeyPressed(Keys.W))
                 _positionB.Y += 0.1f;
-            if (keyboardManager.IsNewKeyPress(Keys.Q))
+            if (input.IsKeyPressed(Keys.Q))
                 _angleB += 0.1f * MathHelper.Pi;
-            if (keyboardManager.IsNewKeyPress(Keys.E))
+            if (input.IsKeyPressed(Keys.E))
                 _angleB -= 0.1f * MathHelper.Pi;
 
             _transformB = new Transform(_positionB, _angleB);
+            
+            base.Keyboard(input);
         }
 
         internal static Test Create()

@@ -209,34 +209,34 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
             {
                 _spring1.MotorSpeed = _speed;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.S))
+            else if (input.IsKeyPressed(Keys.S))
             {
                 _spring1.MotorSpeed = 0.0f;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.D))
+            else if (input.IsKeyPressed(Keys.D))
             {
                 _spring1.MotorSpeed = -_speed;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.Q))
+            else if (input.IsKeyPressed(Keys.Q))
             {
                 _hz = Math.Max(0.0f, _hz - 1.0f);
                 _spring1.Frequency = _hz;
                 _spring2.Frequency = _hz;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.E))
+            else if (input.IsKeyPressed(Keys.E))
             {
                 _hz += 1.0f;
                 _spring1.Frequency = _hz;
                 _spring2.Frequency = _hz;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

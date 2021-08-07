@@ -146,24 +146,26 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Dynamic tree height = " + height);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
             {
                 _automated = !_automated;
             }
-            if (keyboardManager.IsNewKeyPress(Keys.C))
+            if (input.IsKeyPressed(Keys.C))
             {
                 CreateProxy();
             }
-            if (keyboardManager.IsNewKeyPress(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
             {
                 DestroyProxy();
             }
-            if (keyboardManager.IsNewKeyPress(Keys.M))
+            if (input.IsKeyPressed(Keys.M))
             {
                 MoveProxy();
             }
+
+            base.Keyboard(input);
         }
 
         private bool QueryCallback(int proxyid)

@@ -83,20 +83,20 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
                 _platform.BodyType = BodyType.Dynamic;
-            if (keyboardManager.IsKeyDown(Keys.S))
+            if (input.IsKeyPressed(Keys.S))
                 _platform.BodyType = BodyType.Static;
-            if (keyboardManager.IsKeyDown(Keys.K))
+            if (input.IsKeyPressed(Keys.K))
             {
                 _platform.BodyType = BodyType.Kinematic;
                 _platform.LinearVelocity = new Vector2(-_speed, 0.0f);
                 _platform.AngularVelocity = 0.0f;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

@@ -98,33 +98,33 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _mode = RayCastMode.Closest;
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.D1))
+            if (input.IsKeyPressed(Keys.D1))
             {
                 Create(0);
             }
-            if (keyboardManager.IsNewKeyPress(Keys.D2))
+            if (input.IsKeyPressed(Keys.D2))
             {
                 Create(1);
             }
-            if (keyboardManager.IsNewKeyPress(Keys.D3))
+            if (input.IsKeyPressed(Keys.D3))
             {
                 Create(2);
             }
-            if (keyboardManager.IsNewKeyPress(Keys.D4))
+            if (input.IsKeyPressed(Keys.D4))
             {
                 Create(3);
             }
-            if (keyboardManager.IsNewKeyPress(Keys.D5))
+            if (input.IsKeyPressed(Keys.D5))
             {
                 Create(4);
             }
-            if (keyboardManager.IsNewKeyPress(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
             {
                 DestroyBody();
             }
-            if (keyboardManager.IsNewKeyPress(Keys.M))
+            if (input.IsKeyPressed(Keys.M))
             {
                 switch (_mode)
                 {
@@ -141,6 +141,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                         break;
                 }
             }
+
+            base.Keyboard(input);
         }
 
         private void DestroyBody()

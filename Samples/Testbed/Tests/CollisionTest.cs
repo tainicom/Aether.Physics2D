@@ -149,21 +149,21 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Launch();
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
 
-            if (keyboardManager.IsNewKeyPress(Keys.C))
+            if (input.IsKeyPressed(Keys.C))
                 Settings.ContinuousPhysics = !Settings.ContinuousPhysics;
             
-            if (keyboardManager.IsNewKeyPress(Keys.W))
+            if (input.IsKeyPressed(Keys.W))
                 wall.IsBullet = !wall.IsBullet;
-            if (keyboardManager.IsNewKeyPress(Keys.B))
+            if (input.IsKeyPressed(Keys.B))
                 ball.IsBullet = !ball.IsBullet;
 
-            if (keyboardManager.IsNewKeyPress(Keys.E))
+            if (input.IsKeyPressed(Keys.E))
                 wall.IgnoreCCD = !wall.IgnoreCCD;
-            if (keyboardManager.IsNewKeyPress(Keys.N))
+            if (input.IsKeyPressed(Keys.N))
                 ball.IgnoreCCD = !ball.IgnoreCCD;
         }
 

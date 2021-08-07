@@ -70,18 +70,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             World.Add(_joint);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.L))
+            if (input.IsKeyPressed(Keys.L))
                 _joint.LimitEnabled = !_joint.LimitEnabled;
 
-            if (keyboardManager.IsNewKeyPress(Keys.M))
+            if (input.IsKeyPressed(Keys.M))
                 _joint.MotorEnabled = !_joint.MotorEnabled;
 
-            if (keyboardManager.IsNewKeyPress(Keys.S))
+            if (input.IsKeyPressed(Keys.S))
                 _joint.MotorSpeed = -_joint.MotorSpeed;
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)
