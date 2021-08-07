@@ -1,0 +1,4 @@
+<map id="PrismaticJoint" name="PrismaticJoint">
+<area shape="rect" id="node1" title="A prismatic joint. This joint provides one degree of freedom: translation along an axis fixed in body..." alt="" coords="5,83,127,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="39,5,93,35"/>
+</map>

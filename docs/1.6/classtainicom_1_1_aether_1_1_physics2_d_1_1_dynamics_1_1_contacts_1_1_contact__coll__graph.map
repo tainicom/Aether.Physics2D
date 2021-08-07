@@ -1,0 +1,7 @@
+<map id="Contact" name="Contact">
+<area shape="rect" id="node1" title="The class manages contact between two shapes. A contact exists for each overlapping AABB in the broad..." alt="" coords="279,247,355,276"/>
+<area shape="rect" id="node2" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold.html" title="A manifold for two touching convex Shapes. Box2D supports multiple types of contact:" alt="" coords="201,135,283,164"/>
+<area shape="rect" id="node3" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2.html" title=" " alt="" coords="5,5,279,52"/>
+<area shape="rect" id="node4" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2.html" title=" " alt="" coords="303,14,381,43"/>
+<area shape="rect" id="node5" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge.html" title="A contact edge is used to connect bodies and contacts together in a contact graph where each body is ..." alt="" coords="307,135,422,164"/>
+</map>

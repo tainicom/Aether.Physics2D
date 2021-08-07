@@ -1,0 +1,7 @@
+<map id="EdgeShape" name="EdgeShape">
+<area shape="rect" id="node1" title="A line segment (edge) shape. These can be connected in chains or loops to other edge shapes...." alt="" coords="95,212,202,241"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape.html" title="A shape is used for collision detection. You can create a shape however you like. Shapes used for sim..." alt="" coords="49,100,117,129"/>
+<area shape="rect" id="node3" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_mass_data.html" title="This holds the mass data computed for a shape." alt="" coords="5,5,100,35"/>
+<area shape="rect" id="node4" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2.html" title=" " alt="" coords="158,100,235,129"/>
+<area shape="rect" id="node5" title=" " alt="" coords="124,5,301,35"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FixtureTemplate" name="FixtureTemplate">
+<area shape="rect" id="node1" title=" " alt="" coords="5,195,140,224"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape.html" title="A shape is used for collision detection. You can create a shape however you like. Shapes used for sim..." alt="" coords="39,100,107,129"/>
+<area shape="rect" id="node3" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_mass_data.html" title="This holds the mass data computed for a shape." alt="" coords="25,5,120,35"/>
+</map>
