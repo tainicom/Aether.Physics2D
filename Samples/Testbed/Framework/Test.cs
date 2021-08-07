@@ -105,17 +105,17 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 
         public virtual void Keyboard(InputState input)
         {
-            if (input.IsKeyPressed(Keys.F11))
+            if (input.IsKeyDown(Keys.LeftControl) && input.IsKeyPressed(Keys.F11))
             {
-                using (Stream stream = new FileStream("out.xml", FileMode.Create))
+                using (Stream stream = new FileStream(this.GetType().Name + ".xml", FileMode.Create))
                 {
                     WorldSerializer.Serialize(World, stream);
                 }
             }
 
-            if (input.IsKeyPressed(Keys.F12))
+            if (input.IsKeyDown(Keys.LeftControl) && input.IsKeyPressed(Keys.F12))
             {
-                using (Stream stream = new FileStream("out.xml", FileMode.Open))
+                using (Stream stream = new FileStream(this.GetType().Name + ".xml", FileMode.Open))
                 {
                     World = WorldSerializer.Deserialize(stream);
                 }

@@ -185,14 +185,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _time = 0;
                 if (_save)
                 {
-                    using (Stream stream = new FileStream("out.xml", FileMode.Create))
+                    using (Stream stream = new FileStream("SerializationTest.xml", FileMode.Create))
                     {
                         WorldSerializer.Serialize(World, stream);
                     }
                 }
                 else
                 {
-                    using (Stream stream = new FileStream("out.xml", FileMode.Open))
+                    using (Stream stream = new FileStream("SerializationTest.xml", FileMode.Open))
                     {
                         World = WorldSerializer.Deserialize(stream);
                     }
