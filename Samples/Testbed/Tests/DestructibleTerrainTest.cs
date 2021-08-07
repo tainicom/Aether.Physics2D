@@ -70,7 +70,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
             Vector2 position = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
 
-            if (input.MouseState.RightButton == ButtonState.Pressed)
+            if (input.IsKeyDown(Keys.LeftShift) && input.MouseState.LeftButton == ButtonState.Pressed)
             {
                 DrawCircleOnMap(position, -1);
                 _terrain.RegenerateTerrain();
@@ -79,7 +79,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 DebugView.DrawSolidCircle(position, _circleRadius, Vector2.UnitY, Color.Blue * 0.5f);
                 DebugView.EndCustomDraw();
             }
-            else if (input.MouseState.LeftButton == ButtonState.Pressed)
+            else if (input.IsKeyUp(Keys.LeftShift) && input.MouseState.LeftButton == ButtonState.Pressed)
             {
                 DrawCircleOnMap(position, 1);
                 _terrain.RegenerateTerrain();
@@ -144,7 +144,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DebugView.EndCustomDraw();
 
             DrawString("Left click and drag the mouse to destroy terrain!");
-            DrawString("Right click and drag the mouse to create terrain!");
+            DrawString("Left Shift + Left click and drag the mouse to create terrain!");
             DrawString("Middle click to create circles!");
             DrawString("Press t or y to cycle between decomposers: " + _terrain.Decomposer);
             TextLine += 25;
