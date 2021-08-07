@@ -123,6 +123,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _angleB -= 0.1f * MathHelper.Pi;
 
             _transformB = new Transform(_positionB, _angleB);
+            
+            base.Keyboard(input);
         }
 
         internal static Test Create()

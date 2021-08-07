@@ -207,6 +207,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     _clip = _selected;
                 }
             }
+
+            base.Keyboard(input);
         }
 
         public override void Mouse(InputState input)

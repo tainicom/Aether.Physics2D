@@ -131,6 +131,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
 
             _transformB = new Transform(_positionB, _angleB);
+
+            base.Keyboard(input);
         }
     }
 }

@@ -141,6 +141,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                         break;
                 }
             }
+
+            base.Keyboard(input);
         }
 
         private void DestroyBody()

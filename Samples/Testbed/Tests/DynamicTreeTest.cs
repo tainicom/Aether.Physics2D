@@ -164,6 +164,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 MoveProxy();
             }
+
+            base.Keyboard(input);
         }
 
         private bool QueryCallback(int proxyid)
