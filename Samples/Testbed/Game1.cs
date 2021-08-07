@@ -267,6 +267,12 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
                 Vector3 beginPos = new Vector3(_mouseMoveBeginState.Value.X, _mouseMoveBeginState.Value.Y, 0f);
                 Vector3 pos = new Vector3(_inputState.MouseState.X, _inputState.MouseState.Y, 0f);
 
+                if (Mouse.IsRawInputAvailable)
+                {
+                    beginPos = new Vector3(_mouseMoveBeginState.Value.RawX, _mouseMoveBeginState.Value.RawY, 0f);
+                    pos = new Vector3(_inputState.MouseState.RawX, _inputState.MouseState.RawY, 0f);
+                }
+
                 beginPos = GraphicsDevice.Viewport.Unproject(beginPos, Projection, beginView, Matrix.Identity);
                 pos = GraphicsDevice.Viewport.Unproject(pos, Projection, beginView, Matrix.Identity);                    
                 Vector3 offset = beginPos - pos;
