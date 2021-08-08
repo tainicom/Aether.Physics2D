@@ -89,7 +89,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public World World { get {return _world; } }
         
-        public int IslandIndex { get; set; }
+        [Obsolete]
+        public int IslandIndex { get; internal set; }
 
         /// <summary>
         /// Set the user data. Use this to store your application specific data.
