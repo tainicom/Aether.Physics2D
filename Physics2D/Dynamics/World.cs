@@ -190,17 +190,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             Gravity = gravity;
         }
 
-#if XNAAPI
-        /// <summary>
-        /// Initializes a new instance of the <see cref="World"/> class.
-        /// </summary>
-        /// <remarks>Deprecated in version 1.5</remarks>
-        [Obsolete("Use: new World(new QuadTreeBroadPhase(span));")]
-        public World(AABB span) : this(new QuadTreeBroadPhase(span))
-        {
-        }
-#endif
-
         /// <summary>
         /// Initializes a new instance of the <see cref="World"/> class.
         /// </summary>
@@ -881,15 +870,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>        
         public bool IsLocked { get; private set; }
 
-#if XNAAPI
-        /// <summary>
-        /// Is the world running (in the middle of a time step).
-        /// </summary>        
-        /// <remarks>Deprecated in version 1.3</remarks>
-        [Obsolete("Use IsLocked")]
-        public bool IsStepping { get { return IsLocked; } }
-#endif
-
         /// <summary>
         /// Get the contact manager for testing.
         /// </summary>
@@ -1562,29 +1542,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return _queryDelegateTmp(proxy.Fixture);
         }
 
-#if XNAAPI
-        /// <summary>
-        /// Query the world for all fixtures that potentially overlap the provided AABB.
-        /// Use the overload with a callback for filtering and better performance.
-        /// </summary>
-        /// <param name="aabb">The aabb query box.</param>
-        /// <returns>A list of fixtures that were in the affected area.</returns>
-        /// <remarks>Deprecated in version 1.5</remarks>
-        [Obsolete("Use QueryAABB(QueryCallback, ref AABB)")]
-        public List<Fixture> QueryAABB(ref AABB aabb)
-        {
-            List<Fixture> affected = new List<Fixture>();
-
-            QueryAABB(fixture =>
-                {
-                    affected.Add(fixture);
-                    return true;
-                }, ref aabb);
-
-            return affected;
-        }
-#endif
-
         /// <summary>
         /// Ray-cast the world for all fixtures in the path of the ray. Your callback
         /// controls whether you get the closest point, any point, or n-points.
@@ -1628,29 +1585,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             return rayCastInput.MaxFraction;
         }
-
-#if XNAAPI
-        /// <summary>
-        /// Ray-cast the world for all fixtures in the path of the ray.
-        /// Use the overload with a callback for filtering and better performance.
-        /// </summary>
-        /// <param name="point1">The ray starting point.</param>
-        /// <param name="point2">The ray ending point.</param>
-        /// <remarks>Deprecated in version 1.5</remarks>
-        [Obsolete("Use RayCast(RayCastCallback, Vector2, Vector2)")]
-        public List<Fixture> RayCast(Vector2 point1, Vector2 point2)
-        {
-            List<Fixture> affected = new List<Fixture>();
-
-            RayCast((f, p, n, fr) =>
-            {
-                affected.Add(f);
-                return 1;
-            }, point1, point2);
-
-            return affected;
-        }
-#endif
 
         /// <summary>
         /// Warning: This method is locked during callbacks.
@@ -1726,41 +1660,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Continue the query.
             return true;
         }
-
-#if XNAAPI
-        /// <summary>
-        /// Returns a list of fixtures that are at the specified point.
-        /// </summary>
-        /// <param name="point">The point.</param>
-        /// <returns></returns>
-        /// <remarks>Deprecated in version 1.5</remarks>
-        [Obsolete("Use QueryAABB(QueryCallback, ref AABB)")]
-        public List<Fixture> TestPointAll(Vector2 point)
-        {
-            AABB aabb;
-            Vector2 d = new Vector2(Settings.Epsilon, Settings.Epsilon);
-            aabb.LowerBound = point - d;
-            aabb.UpperBound = point + d;
-
-            _testPointAllPointTmp = point;
-            _testPointAllFixturesTmp = new List<Fixture>();
-
-            // Query the world for overlapping shapes.
-            QueryAABB(_testPointAllDelegateCache, ref aabb);
-
-            return _testPointAllFixturesTmp;
-        }
-
-        private bool TestPointAllCallback(Fixture fixture)
-        {
-            bool inside = fixture.TestPoint(ref _testPointAllPointTmp);
-            if (inside)
-                _testPointAllFixturesTmp.Add(fixture);
-
-            // Continue the query.
-            return true;
-        }
-#endif
 
         /// Shift the world origin. Useful for large worlds.
         /// The body shift formula is: position -= newOrigin
