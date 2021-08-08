@@ -1,0 +1,148 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint}\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+
+
+A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic joint. You specify a gear ratio to bind the motions together\+: coordinate1 + ratio $\ast$ coordinate2 = ant The ratio can be negative or positive. If one joint is a revolute joint and the other joint is a prismatic joint, then the ratio will have units of length or units of 1/length.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_ab1706da2726ad7f275f0eae844341069}{Gear\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyB, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} jointA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} jointB, float ratio=1f)
+\begin{DoxyCompactList}\small\item\em Requires two existing revolute or prismatic joints (any combination will work). The provided joints must attach a dynamic body to a static body. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a185ef1a0e06622ddaf95650147085711}{Get\+Reaction\+Force}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction force on body at the joint anchor in Newtons. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a0ed1167f6bf3b2abd0d597a88a4c05a0}{Get\+Reaction\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction torque on the body at the joint anchor in N$\ast$m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a3e744ab8a72944f41eacdac8c529462c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a3e744ab8a72944f41eacdac8c529462c}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorA}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_ae17762ac5e7075a3716021ac5a8756f8}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_ae17762ac5e7075a3716021ac5a8756f8}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorB}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a51f4ad63c8d49c75be943faa626e91f6}{Ratio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The gear ratio. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a0a8150f0ae6967623039b3fc14da2919}{JointA}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The first revolute/prismatic joint attached to the gear joint. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a359b0d5fa2fbd86ae31b525fcbab4bb3}{JointB}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The second revolute/prismatic joint attached to the gear joint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic joint. You specify a gear ratio to bind the motions together\+: coordinate1 + ratio $\ast$ coordinate2 = ant The ratio can be negative or positive. If one joint is a revolute joint and the other joint is a prismatic joint, then the ratio will have units of length or units of 1/length. 
+
+Warning\+: You have to manually destroy the gear joint if jointA or jointB is destroyed.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_ab1706da2726ad7f275f0eae844341069}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_ab1706da2726ad7f275f0eae844341069}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}!GearJoint@{GearJoint}}
+\index{GearJoint@{GearJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+\doxysubsubsection{\texorpdfstring{GearJoint()}{GearJoint()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint.\+Gear\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyB,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}}}]{jointA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}}}]{jointB,  }\item[{float}]{ratio = {\ttfamily 1f} }\end{DoxyParamCaption})}
+
+
+
+Requires two existing revolute or prismatic joints (any combination will work). The provided joints must attach a dynamic body to a static body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jointA} & The first joint.\\
+\hline
+{\em jointB} & The second joint.\\
+\hline
+{\em ratio} & The ratio.\\
+\hline
+{\em bodyA} & The first body\\
+\hline
+{\em bodyB} & The second body\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a185ef1a0e06622ddaf95650147085711}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a185ef1a0e06622ddaf95650147085711}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}!GetReactionForce@{GetReactionForce}}
+\index{GetReactionForce@{GetReactionForce}!tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionForce()}{GetReactionForce()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint.\+Get\+Reaction\+Force (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction force on body at the joint anchor in Newtons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_af2c9a28af88d5c656660a9f4232d4f66}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a0ed1167f6bf3b2abd0d597a88a4c05a0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a0ed1167f6bf3b2abd0d597a88a4c05a0}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}!GetReactionTorque@{GetReactionTorque}}
+\index{GetReactionTorque@{GetReactionTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionTorque()}{GetReactionTorque()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint.\+Get\+Reaction\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction torque on the body at the joint anchor in N$\ast$m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_aaba06d8a94a8bcb20963d6e34ec22ba6}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a0a8150f0ae6967623039b3fc14da2919}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a0a8150f0ae6967623039b3fc14da2919}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}!JointA@{JointA}}
+\index{JointA@{JointA}!tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+\doxysubsubsection{\texorpdfstring{JointA}{JointA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint.\+JointA\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The first revolute/prismatic joint attached to the gear joint. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a359b0d5fa2fbd86ae31b525fcbab4bb3}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a359b0d5fa2fbd86ae31b525fcbab4bb3}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}!JointB@{JointB}}
+\index{JointB@{JointB}!tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+\doxysubsubsection{\texorpdfstring{JointB}{JointB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint.\+JointB\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The second revolute/prismatic joint attached to the gear joint. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a51f4ad63c8d49c75be943faa626e91f6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint_a51f4ad63c8d49c75be943faa626e91f6}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}!Ratio@{Ratio}}
+\index{Ratio@{Ratio}!tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint}}
+\doxysubsubsection{\texorpdfstring{Ratio}{Ratio}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Gear\+Joint.\+Ratio\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The gear ratio. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Dynamics/\+Joints/Gear\+Joint.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::FixedArray2</compoundname>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2_1ab84c52d4031bc7ba4facd51dce6847b9" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.FixedArray2&lt; T &gt;._value0</definition>
+        <argsstring></argsstring>
+        <name>_value0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/FixedArray.cs" line="34" column="19" bodyfile="Physics2D/Common/FixedArray.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2_1aa5e2ab6b0b52dc5c930308750b9a26fb" prot="private" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.FixedArray2&lt; T &gt;._value1</definition>
+        <argsstring></argsstring>
+        <name>_value1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/FixedArray.cs" line="35" column="19" bodyfile="Physics2D/Common/FixedArray.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2_1a7ba4d698312619fef0015d274ff8dc35" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.FixedArray2&lt; T &gt;.this[int index]</definition>
+        <argsstring></argsstring>
+        <name>this[int index]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/FixedArray.cs" line="37" column="18" bodyfile="Physics2D/Common/FixedArray.cs" bodystart="38" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/FixedArray.cs" line="32" column="11" bodyfile="Physics2D/Common/FixedArray.cs" bodystart="33" bodyend="66"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2_1ab84c52d4031bc7ba4facd51dce6847b9" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::FixedArray2</scope><name>_value0</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2_1aa5e2ab6b0b52dc5c930308750b9a26fb" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::FixedArray2</scope><name>_value1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2_1a7ba4d698312619fef0015d274ff8dc35" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::FixedArray2</scope><name>this[int index]</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,244 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain}\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+
+
+Simple class to maintain a terrain. It can keep track  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a97439c82498bd968534e257bf964789c}{Terrain}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} world, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} area)
+\begin{DoxyCompactList}\small\item\em Creates a new terrain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_acd58520ed0cf7b234dce982cf534244d}{Terrain}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} world, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} position, float width, float height)
+\begin{DoxyCompactList}\small\item\em Creates a new terrain \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a80bb0ef00e745e7233953cc2b2495af1}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the terrain for use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a9a59866514c76e777b3e84daa0d3a5ff}{Apply\+Data}} (sbyte\mbox{[},\mbox{]} data, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} offset=default(\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}))
+\begin{DoxyCompactList}\small\item\em Apply the specified texture data to the terrain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a8f5700a03f49d6ee93bd567f19dd57e1}{Modify\+Terrain}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} location, sbyte value)
+\begin{DoxyCompactList}\small\item\em Modify a single point in the terrain. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a8a3946bf29551e7c1ffb1c8a100d462e}{Regenerate\+Terrain}} ()
+\begin{DoxyCompactList}\small\item\em Regenerate the terrain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_ab283b588e5edfbf4656f40061b37f7eb}{World}}
+\begin{DoxyCompactList}\small\item\em World to manage terrain in. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a3ceff19c4b0ba4f307cdd1763425b3bd}{Center}}
+\begin{DoxyCompactList}\small\item\em Center of terrain in world units. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_adea3419eeed54a4a53f4e87b0b8e5599}{Width}}
+\begin{DoxyCompactList}\small\item\em Width of terrain in world units. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a962b8053580c6dc259ad89122efd0fe5}{Height}}
+\begin{DoxyCompactList}\small\item\em Height of terrain in world units. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a51f71e5eba46348384e47829ca9e995c}{Points\+Per\+Unit}}
+\begin{DoxyCompactList}\small\item\em Points per each world unit used to define the terrain in the point cloud. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_af2566f3c71f3fcf67c993cd34c1ff86d}{Cell\+Size}}
+\begin{DoxyCompactList}\small\item\em Points per cell. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a9ce24c9ecb210ba55838d154f899e5a7}{Sub\+Cell\+Size}}
+\begin{DoxyCompactList}\small\item\em Points per sub cell. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_aca67a80d08c11ea0d24676efa28b6347}{Iterations}} = 2
+\begin{DoxyCompactList}\small\item\em Number of iterations to perform in the Marching Squares algorithm. Note\+: More then 3 has almost no effect on quality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_aa2b1cda235a52272a12b9522898e850c}{Triangulation\+Algorithm}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a23a3587d1a98a585f80ec6186b0daf34}{Decomposer}}
+\begin{DoxyCompactList}\small\item\em Decomposer to use when regenerating terrain. Can be changed on the fly without consequence. Note\+: Some decomposerers are unstable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple class to maintain a terrain. It can keep track 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a97439c82498bd968534e257bf964789c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a97439c82498bd968534e257bf964789c}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Terrain@{Terrain}}
+\index{Terrain@{Terrain}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Terrain()}{Terrain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Terrain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}}}]{world,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{area }\end{DoxyParamCaption})}
+
+
+
+Creates a new terrain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & The World\\
+\hline
+{\em area} & The area of the terrain.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_acd58520ed0cf7b234dce982cf534244d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_acd58520ed0cf7b234dce982cf534244d}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Terrain@{Terrain}}
+\index{Terrain@{Terrain}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Terrain()}{Terrain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Terrain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}}}]{world,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{position,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+
+
+Creates a new terrain 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & The World\\
+\hline
+{\em position} & The position (center) of the terrain.\\
+\hline
+{\em width} & The width of the terrain.\\
+\hline
+{\em height} & The height of the terrain.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a9a59866514c76e777b3e84daa0d3a5ff}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a9a59866514c76e777b3e84daa0d3a5ff}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!ApplyData@{ApplyData}}
+\index{ApplyData@{ApplyData}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{ApplyData()}{ApplyData()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Apply\+Data (\begin{DoxyParamCaption}\item[{sbyte}]{data\mbox{[},\mbox{]},  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{offset = {\ttfamily default(\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}})} }\end{DoxyParamCaption})}
+
+
+
+Apply the specified texture data to the terrain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+{\em offset} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a80bb0ef00e745e7233953cc2b2495af1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a80bb0ef00e745e7233953cc2b2495af1}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the terrain for use. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a8f5700a03f49d6ee93bd567f19dd57e1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a8f5700a03f49d6ee93bd567f19dd57e1}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!ModifyTerrain@{ModifyTerrain}}
+\index{ModifyTerrain@{ModifyTerrain}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{ModifyTerrain()}{ModifyTerrain()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Modify\+Terrain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{location,  }\item[{sbyte}]{value }\end{DoxyParamCaption})}
+
+
+
+Modify a single point in the terrain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & World location to modify. Automatically clipped.\\
+\hline
+{\em value} & -\/1 = inside terrain, 1 = outside terrain\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a8a3946bf29551e7c1ffb1c8a100d462e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a8a3946bf29551e7c1ffb1c8a100d462e}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!RegenerateTerrain@{RegenerateTerrain}}
+\index{RegenerateTerrain@{RegenerateTerrain}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{RegenerateTerrain()}{RegenerateTerrain()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Regenerate\+Terrain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Regenerate the terrain. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_af2566f3c71f3fcf67c993cd34c1ff86d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_af2566f3c71f3fcf67c993cd34c1ff86d}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!CellSize@{CellSize}}
+\index{CellSize@{CellSize}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{CellSize}{CellSize}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Cell\+Size}
+
+
+
+Points per cell. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a3ceff19c4b0ba4f307cdd1763425b3bd}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a3ceff19c4b0ba4f307cdd1763425b3bd}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Center@{Center}}
+\index{Center@{Center}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Center}{Center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Center}
+
+
+
+Center of terrain in world units. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a23a3587d1a98a585f80ec6186b0daf34}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a23a3587d1a98a585f80ec6186b0daf34}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Decomposer@{Decomposer}}
+\index{Decomposer@{Decomposer}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Decomposer}{Decomposer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_aa2b1cda235a52272a12b9522898e850c}{Triangulation\+Algorithm}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Decomposer}
+
+
+
+Decomposer to use when regenerating terrain. Can be changed on the fly without consequence. Note\+: Some decomposerers are unstable. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a962b8053580c6dc259ad89122efd0fe5}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a962b8053580c6dc259ad89122efd0fe5}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Height@{Height}}
+\index{Height@{Height}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Height}{Height}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Height}
+
+
+
+Height of terrain in world units. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_aca67a80d08c11ea0d24676efa28b6347}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_aca67a80d08c11ea0d24676efa28b6347}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Iterations@{Iterations}}
+\index{Iterations@{Iterations}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Iterations}{Iterations}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Iterations = 2}
+
+
+
+Number of iterations to perform in the Marching Squares algorithm. Note\+: More then 3 has almost no effect on quality. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a51f71e5eba46348384e47829ca9e995c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a51f71e5eba46348384e47829ca9e995c}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!PointsPerUnit@{PointsPerUnit}}
+\index{PointsPerUnit@{PointsPerUnit}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{PointsPerUnit}{PointsPerUnit}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Points\+Per\+Unit}
+
+
+
+Points per each world unit used to define the terrain in the point cloud. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a9ce24c9ecb210ba55838d154f899e5a7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_a9ce24c9ecb210ba55838d154f899e5a7}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!SubCellSize@{SubCellSize}}
+\index{SubCellSize@{SubCellSize}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{SubCellSize}{SubCellSize}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Sub\+Cell\+Size}
+
+
+
+Points per sub cell. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_adea3419eeed54a4a53f4e87b0b8e5599}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_adea3419eeed54a4a53f4e87b0b8e5599}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!Width@{Width}}
+\index{Width@{Width}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+Width}
+
+
+
+Width of terrain in world units. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_ab283b588e5edfbf4656f40061b37f7eb}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_ab283b588e5edfbf4656f40061b37f7eb}} 
+\index{tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}!World@{World}}
+\index{World@{World}!tainicom.Aether.Physics2D.Common.TextureTools.Terrain@{tainicom.Aether.Physics2D.Common.TextureTools.Terrain}}
+\doxysubsubsection{\texorpdfstring{World}{World}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Texture\+Tools.\+Terrain.\+World}
+
+
+
+World to manage terrain in. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Common/\+Texture\+Tools/Terrain.\+cs\end{DoxyCompactItemize}

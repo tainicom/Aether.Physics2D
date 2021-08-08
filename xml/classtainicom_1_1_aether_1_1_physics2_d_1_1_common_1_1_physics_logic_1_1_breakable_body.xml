@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a512fa9226412c993a188e0b8e2939bcb" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>BreakableBodyState</name>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a512fa9226412c993a188e0b8e2939bcba3bfaa3d0d7276f874f11575d2732a70b" prot="public">
+          <name>Unbroken</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a512fa9226412c993a188e0b8e2939bcba8d96a8323a879b9b1339d6fc9ba7d8f6" prot="public">
+          <name>ShouldBreak</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a512fa9226412c993a188e0b8e2939bcbac98dbc22f49f1b4a644307551924f8da" prot="public">
+          <name>Broken</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="24" column="15" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="25" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1adfc51793a53524cfd1fd2a84f537caeb" prot="private" static="no" mutable="no">
+        <type>float[]</type>
+        <definition>float [] tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody._angularVelocitiesCache</definition>
+        <argsstring></argsstring>
+        <name>_angularVelocitiesCache</name>
+        <initializer>= new float[8]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="31" column="23" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1aa100c1f1a29a8b9cefe79cec864ff873" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>[]</type>
+        <definition>Vector2 [] tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody._velocitiesCache</definition>
+        <argsstring></argsstring>
+        <name>_velocitiesCache</name>
+        <initializer>= new <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>[8]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="32" column="25" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a1c3cd1baee0e3e625943a380b9f8c9be" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture" kindref="compound">Fixture</ref> &gt;</type>
+        <definition>List&lt;Fixture&gt; tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.Parts</definition>
+        <argsstring></argsstring>
+        <name>Parts</name>
+        <initializer>= new List&lt;<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture" kindref="compound">Fixture</ref>&gt;(8)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="34" column="21" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a1a150f73e16657ec0a420476228a00f3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.Strength</definition>
+        <argsstring></argsstring>
+        <name>Strength</name>
+        <initializer>= 500.0f</initializer>
+        <briefdescription>
+<para>The force needed to break the body apart. Default: 500 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="43" column="22" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a7fef1086b356b8cae795f127b49d3e6b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+        <definition>World tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.World</definition>
+        <argsstring></argsstring>
+        <name>World</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="36" column="22" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a32aae3788eb89fa52a92ca02c2461008" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+        <definition>Body tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.MainBody</definition>
+        <argsstring></argsstring>
+        <name>MainBody</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="37" column="21" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1ab8d735b42188d675c1d5e7b97108755a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>BreakableBodyState</type>
+        <definition>BreakableBodyState tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="45" column="35" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="45" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1ac66de00a637cae94ec557d3c7db86e49" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.BreakableBody</definition>
+        <argsstring>(World world)</argsstring>
+        <name>BreakableBody</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="47" column="17" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="47" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1ac8ef04180e1231c264fa2064bdf75f6e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.PostSolve</definition>
+        <argsstring>(Contact contact, ContactVelocityConstraint impulse)</argsstring>
+        <name>PostSolve</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref></type>
+          <declname>contact</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint" kindref="compound">ContactVelocityConstraint</ref></type>
+          <declname>impulse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="93" column="22" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="93" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a9cb955f8f6c3a58c88045a2cf4f6cf44" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.CacheVelocities</definition>
+        <argsstring>()</argsstring>
+        <name>CacheVelocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="130" column="22" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="130" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a4f13d2a78d23adee86f4dd35dfc2d16c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.Decompose</definition>
+        <argsstring>()</argsstring>
+        <name>Decompose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="147" column="22" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="147" bodyend="178"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a1bca69a9f9c109293130601b453bca36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.BreakableBody</definition>
+        <argsstring>(World world, IEnumerable&lt; Vertices &gt; vertices, float density, Vector2 position=new Vector2(), float rotation=0)</argsstring>
+        <name>BreakableBody</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>IEnumerable&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>density</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+          <defval>new <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>()</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotation</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="55" column="16" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="55" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a07b5b7dc623c1ac9ad7a9ce993302bd3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.BreakableBody</definition>
+        <argsstring>(World world, IEnumerable&lt; Shape &gt; shapes, Vector2 position=new Vector2(), float rotation=0)</argsstring>
+        <name>BreakableBody</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>IEnumerable&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape" kindref="compound">Shape</ref> &gt;</type>
+          <declname>shapes</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+          <defval>new <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>()</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotation</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="67" column="16" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="67" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1adf4490552e199db41aa26c7d95f6581d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.BreakableBody</definition>
+        <argsstring>(World world, Vertices vertices, float density, Vector2 position=new Vector2(), float rotation=0)</argsstring>
+        <name>BreakableBody</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>density</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+          <defval>new <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>()</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>rotation</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="78" column="16" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="78" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a5e9f0bd4b06fef18426de12ab2d036de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.BreakableBody.Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="116" column="21" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="116" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A type of body that supports multiple fixtures that can break apart. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/PhysicsLogic/BreakableBody.cs" line="22" column="11" bodyfile="Physics2D/Common/PhysicsLogic/BreakableBody.cs" bodystart="23" bodyend="180"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1adfc51793a53524cfd1fd2a84f537caeb" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>_angularVelocitiesCache</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1aa100c1f1a29a8b9cefe79cec864ff873" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>_velocitiesCache</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1ac66de00a637cae94ec557d3c7db86e49" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>BreakableBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a1bca69a9f9c109293130601b453bca36" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>BreakableBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a07b5b7dc623c1ac9ad7a9ce993302bd3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>BreakableBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1adf4490552e199db41aa26c7d95f6581d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>BreakableBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a512fa9226412c993a188e0b8e2939bcb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>BreakableBodyState</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a9cb955f8f6c3a58c88045a2cf4f6cf44" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>CacheVelocities</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a4f13d2a78d23adee86f4dd35dfc2d16c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>Decompose</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a32aae3788eb89fa52a92ca02c2461008" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>MainBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a1c3cd1baee0e3e625943a380b9f8c9be" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>Parts</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1ac8ef04180e1231c264fa2064bdf75f6e" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>PostSolve</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1ab8d735b42188d675c1d5e7b97108755a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>State</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a1a150f73e16657ec0a420476228a00f3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>Strength</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a5e9f0bd4b06fef18426de12ab2d036de" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>Update</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body_1a7fef1086b356b8cae795f127b49d3e6b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::BreakableBody</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

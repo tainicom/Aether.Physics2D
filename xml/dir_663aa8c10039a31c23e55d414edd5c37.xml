@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_663aa8c10039a31c23e55d414edd5c37" kind="dir">
+    <compoundname>Physics2D/Fluids</compoundname>
+    <innerdir refid="dir_7ae3b504b2682a5e9225453e17321957">Physics2D/Fluids/1</innerdir>
+    <innerdir refid="dir_5606c3038998087fe5c19173aab12390">Physics2D/Fluids/2</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Fluids/"/>
+  </compounddef>
+</doxygen>

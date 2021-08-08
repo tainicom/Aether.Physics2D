@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Joints</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_angle_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::AngleJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::DistanceJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::FixedMouseJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::FrictionJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::GearJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::JointEdge</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::Joint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_motor_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::MotorJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_prismatic_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::PrismaticJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_pulley_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::PulleyJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::RevoluteJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_rope_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::RopeJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint" prot="public">tainicom::Aether::Physics2D::Dynamics::Joints::WheelJoint</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>JointType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a358561ac4d41f41d479b7c54b19b639e" prot="public">
+          <name>Revolute</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a35fa8acd1b8b1beb23e6c2e24313570c" prot="public">
+          <name>Prismatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a0aa6f4210bf373c95eda00232e93cd98" prot="public">
+          <name>Distance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2aba41903d01ed39b1b98768512c8e65f5" prot="public">
+          <name>Pulley</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2afb845762a66c26782f477febab5344dc" prot="public">
+          <name>Gear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2aa5df60ef4fc4447353769d66661d2229" prot="public">
+          <name>Wheel</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a768bf199aed2d6ea5cd5d27017978530" prot="public">
+          <name>Weld</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a6513892a7d1f1a327b2d4de2b8f69b89" prot="public">
+          <name>Friction</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2aa3a77296cc85eb0c3175a09c0f7c3e60" prot="public">
+          <name>Rope</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2ab33538179f5661a86cbe327a1793e199" prot="public">
+          <name>Motor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a45f4ce6c3306644b1efe333f4f8d6929" prot="public">
+          <name>Angle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2abe5d9f5fe5d17b1ed014e090a0f9d94d" prot="public">
+          <name>FixedMouse</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a59a85b3732f41a070284c0ee10611b7d" prot="public">
+          <name>FixedRevolute</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a10c25cea0541b2393f6d6aed1c6c9736" prot="public">
+          <name>FixedDistance</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2ad46b8bc8437d639008f876c409cb2d0b" prot="public">
+          <name>FixedLine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a40cc91cbdb2b729c31040a77e354196b" prot="public">
+          <name>FixedPrismatic</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a5e344a2279c3ac68f18fc1654170e7db" prot="public">
+          <name>FixedAngle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1a8253d0debf2af5b1419f4c712becd9f2a0977c53f423eee5673c8d142f232e7d6" prot="public">
+          <name>FixedFriction</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/Joint.cs" line="39" column="11" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="40" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1abb1e9b16c2afbbc0e145c27850fb4302" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LimitState</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1abb1e9b16c2afbbc0e145c27850fb4302a3cab03c00dbd11bc3569afa0748013f0" prot="public">
+          <name>Inactive</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1abb1e9b16c2afbbc0e145c27850fb4302aca182151063c1d84522f0a6b8bf974b9" prot="public">
+          <name>AtLower</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1abb1e9b16c2afbbc0e145c27850fb4302affd094d9668b346a58bb516fbcef4253" prot="public">
+          <name>AtUpper</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1abb1e9b16c2afbbc0e145c27850fb4302af5f286e73bda105e538310b3190f75c5" prot="public">
+          <name>Equal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/Joint.cs" line="65" column="11" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="66" bodyend="71"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/Joints/AngleJoint.cs" line="18" column="1"/>
+  </compounddef>
+</doxygen>

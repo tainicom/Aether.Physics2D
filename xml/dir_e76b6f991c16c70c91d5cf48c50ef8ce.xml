@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_e76b6f991c16c70c91d5cf48c50ef8ce" kind="dir">
+    <compoundname>Physics2D/Common/Decomposition/CDT/Sets</compoundname>
+    <innerfile refid="_constrained_point_set_8cs">ConstrainedPointSet.cs</innerfile>
+    <innerfile refid="_point_set_8cs">PointSet.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDT/Sets/"/>
+  </compounddef>
+</doxygen>

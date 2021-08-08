@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Content::BodyTemplate</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a82910ff2180a69498567a50d32c13348" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_fixture_template" kindref="compound">FixtureTemplate</ref> &gt;</type>
+        <definition>List&lt;FixtureTemplate&gt; tainicom.Aether.Physics2D.Content.BodyTemplate.Fixtures</definition>
+        <argsstring></argsstring>
+        <name>Fixtures</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/BodyContainer.cs" line="22" column="21" bodyfile="Physics2D/Content/BodyContainer.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1aa0689da796e461dbac87778d7e600f18" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Content.BodyTemplate.Mass</definition>
+        <argsstring></argsstring>
+        <name>Mass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/BodyContainer.cs" line="23" column="22" bodyfile="Physics2D/Content/BodyContainer.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a6f884761a8806dc606aab995ee588943" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1a6e7d1615336b3770adf0713570b7dc09" kindref="member">BodyType</ref></type>
+        <definition>BodyType tainicom.Aether.Physics2D.Content.BodyTemplate.BodyType</definition>
+        <argsstring></argsstring>
+        <name>BodyType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/BodyContainer.cs" line="24" column="25" bodyfile="Physics2D/Content/BodyContainer.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a944f51e628d98af39c7689e221a9b68c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Content.BodyTemplate.BodyTemplate</definition>
+        <argsstring>()</argsstring>
+        <name>BodyTemplate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/BodyContainer.cs" line="26" column="16" bodyfile="Physics2D/Content/BodyContainer.cs" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a87c84b1ae77904534c111d92986e015c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+        <definition>Body tainicom.Aether.Physics2D.Content.BodyTemplate.Create</definition>
+        <argsstring>(World world)</argsstring>
+        <name>Create</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/BodyContainer.cs" line="31" column="21" bodyfile="Physics2D/Content/BodyContainer.cs" bodystart="31" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Content/BodyContainer.cs" line="20" column="11" bodyfile="Physics2D/Content/BodyContainer.cs" bodystart="21" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a944f51e628d98af39c7689e221a9b68c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::BodyTemplate</scope><name>BodyTemplate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a6f884761a8806dc606aab995ee588943" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::BodyTemplate</scope><name>BodyType</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a87c84b1ae77904534c111d92986e015c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::BodyTemplate</scope><name>Create</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1a82910ff2180a69498567a50d32c13348" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::BodyTemplate</scope><name>Fixtures</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template_1aa0689da796e461dbac87778d7e600f18" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::BodyTemplate</scope><name>Mass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

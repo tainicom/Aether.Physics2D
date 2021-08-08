@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node" kind="struct" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Collision::TreeNode</compoundname>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1ab79ca037d3cbf61d6051842bb737e397" prot="package" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+        <definition>AABB tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.AABB</definition>
+        <argsstring></argsstring>
+        <name>AABB</name>
+        <briefdescription>
+<para>Enlarged <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="48" column="23" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1af846af0e08f24c56eab2d2ba88bf3baf" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.Child1</definition>
+        <argsstring></argsstring>
+        <name>Child1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="50" column="22" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a9e792f1efd0d90921e8c0cd47fb4a89e" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.Child2</definition>
+        <argsstring></argsstring>
+        <name>Child2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="51" column="22" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1af9e699a01446eb0623245ccec3531c04" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="54" column="22" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a7d0dcc04c75d09333e408ec0c6661b10" prot="package" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.Parent</definition>
+        <argsstring></argsstring>
+        <name>Parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="55" column="22" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a9e09aa3761c114b2c12256dd930f8f14" prot="package" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.UserData</definition>
+        <argsstring></argsstring>
+        <name>UserData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="67" column="20" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1afb4eb3187670a390521f2726a208877d" prot="package" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.Next</definition>
+        <argsstring></argsstring>
+        <name>Next</name>
+        <briefdescription>
+<para>Next free node </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="61" column="22" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="62" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a98c1749f939e246960b1e1687a91c816" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;.IsLeaf</definition>
+        <argsstring>()</argsstring>
+        <name>IsLeaf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTree.cs" line="70" column="23" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="70" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A node in the dynamic tree. The client does not interact with this directly. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.TreeNode&lt; T &gt;</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>AABB</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Collision.AABB</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LowerBound</edgelabel>
+          <edgelabel>UpperBound</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/DynamicTree.cs" line="43" column="13" bodyfile="Physics2D/Collision/DynamicTree.cs" bodystart="44" bodyend="74"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1ab79ca037d3cbf61d6051842bb737e397" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>AABB</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1af846af0e08f24c56eab2d2ba88bf3baf" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>Child1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a9e792f1efd0d90921e8c0cd47fb4a89e" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>Child2</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1af9e699a01446eb0623245ccec3531c04" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>Height</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a98c1749f939e246960b1e1687a91c816" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>IsLeaf</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1afb4eb3187670a390521f2726a208877d" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>Next</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a7d0dcc04c75d09333e408ec0c6661b10" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>Parent</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node_1a9e09aa3761c114b2c12256dd930f8f14" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::TreeNode</scope><name>UserData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

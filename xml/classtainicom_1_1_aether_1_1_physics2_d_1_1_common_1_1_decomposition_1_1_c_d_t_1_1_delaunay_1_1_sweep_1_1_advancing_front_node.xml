@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a669c7fb3ff451950695655e7729accdc" prot="public" static="no" mutable="no">
+        <type>AdvancingFrontNode</type>
+        <definition>AdvancingFrontNode tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.Next</definition>
+        <argsstring></argsstring>
+        <name>Next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="47" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1aa50ce078fc55a68f995f72e0c61744c0" prot="public" static="no" mutable="no">
+        <type>TriangulationPoint</type>
+        <definition>TriangulationPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.Point</definition>
+        <argsstring></argsstring>
+        <name>Point</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="48" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1aaa48c78a5422eda3e7da7f2d33f903aa" prot="public" static="no" mutable="no">
+        <type>AdvancingFrontNode</type>
+        <definition>AdvancingFrontNode tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.Prev</definition>
+        <argsstring></argsstring>
+        <name>Prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="49" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a138f7baa9b9787c3c277bfd45060894c" prot="public" static="no" mutable="no">
+        <type>DelaunayTriangle</type>
+        <definition>DelaunayTriangle tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.Triangle</definition>
+        <argsstring></argsstring>
+        <name>Triangle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="50" column="33" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1ad1ac1e01c1ef37280e0334a2ffea5819" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="51" column="23" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a0d20adcd95c43cc20f676945750d6073" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.HasNext</definition>
+        <argsstring></argsstring>
+        <name>HasNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="59" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1af1dcfca16467dbf794ba66fe5c3a182b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.HasPrev</definition>
+        <argsstring></argsstring>
+        <name>HasPrev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="64" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="65" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a41a819a2b04600de01a54d1b84fdbbed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode.AdvancingFrontNode</definition>
+        <argsstring>(TriangulationPoint point)</argsstring>
+        <name>AdvancingFrontNode</name>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="53" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="53" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>IEnumerable&lt; bool &gt;</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Point</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Triangle</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>Next</edgelabel>
+          <edgelabel>Prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.DelaunayTriangle</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Neighbors</edgelabel>
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>EdgeIsConstrained</edgelabel>
+          <edgelabel>EdgeIsDelaunay</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Util</label>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationPoint</label>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedBitArray3</label>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" line="45" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/AdvancingFrontNode.cs" bodystart="46" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a41a819a2b04600de01a54d1b84fdbbed" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>AdvancingFrontNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a0d20adcd95c43cc20f676945750d6073" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>HasNext</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1af1dcfca16467dbf794ba66fe5c3a182b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>HasPrev</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a669c7fb3ff451950695655e7729accdc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>Next</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1aa50ce078fc55a68f995f72e0c61744c0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>Point</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1aaa48c78a5422eda3e7da7f2d33f903aa" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>Prev</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1a138f7baa9b9787c3c277bfd45060894c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>Triangle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_advancing_front_node_1ad1ac1e01c1ef37280e0334a2ffea5819" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::AdvancingFrontNode</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

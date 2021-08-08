@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_ray_data_comparer" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::PhysicsLogic::RayDataComparer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IComparer&lt; float &gt;</basecompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_ray_data_comparer_1ad173e4f10ca01314bd70665de01f29aa" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int IComparer&lt; float &gt;.</type>
+        <definition>int IComparer&lt;float&gt;. tainicom.Aether.Physics2D.Common.PhysicsLogic.RayDataComparer.Compare</definition>
+        <argsstring>(float a, float b)</argsstring>
+        <name>Compare</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="37" column="22" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="37" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is a comprarer used for detecting angle difference between rays </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.RayDataComparer</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IComparer&lt; float &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.RayDataComparer</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IComparer&lt; float &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="33" column="13" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="34" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_ray_data_comparer_1ad173e4f10ca01314bd70665de01f29aa" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RayDataComparer</scope><name>Compare</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

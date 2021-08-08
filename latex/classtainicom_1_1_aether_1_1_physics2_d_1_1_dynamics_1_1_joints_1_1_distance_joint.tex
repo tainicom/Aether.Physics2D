@@ -1,0 +1,178 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint}\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+
+
+A distance joint rains two points on two bodies to remain at a fixed distance from each other. You can view this as a massless, rigid rod.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a3f6fe28f501e8d245421dd48ca38a48d}{Distance\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyB, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchorA, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchorB, bool use\+World\+Coordinates=false)
+\begin{DoxyCompactList}\small\item\em This requires defining an anchor point on both bodies and the non-\/zero length of the distance joint. If you don\textquotesingle{}t supply a length, the local anchor points is used so that the initial configuration can violate the constraint slightly. This helps when saving and loading a game. Warning Do not use a zero or short length. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_ab84f2e5059100f4b6f1bb0c4e3b6eacc}{Get\+Reaction\+Force}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction force given the inverse time step. Unit is N. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a6eb550c76787489add1672d9e56fe453}{Get\+Reaction\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction torque given the inverse time step. Unit is N$\ast$m. This is always zero for a distance joint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a44cbd044d895481558c06b5aed14d55e}{Local\+AnchorA}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point relative to bodyA\textquotesingle{}s origin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_ad29c5ba3d6c2bdba1fdea12e72759bc9}{Local\+AnchorB}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point relative to bodyB\textquotesingle{}s origin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a388792840ed25403d2013e5aa768f431}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a388792840ed25403d2013e5aa768f431}} 
+override sealed \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorA}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a0d6d432269789d72fcef9ab0d3565519}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a0d6d432269789d72fcef9ab0d3565519}} 
+override sealed \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorB}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a659723c0e875d44d87f002105147b269}{Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The natural length between the anchor points. Manipulating the length can lead to non-\/physical behavior when the frequency is zero. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a8b4f8814085a997f4d68e800d3b3ac26}{Frequency}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The mass-\/spring-\/damper frequency in Hertz. A value of 0 disables softness. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a11599e93af2b9c2680e94f8100232f31}{Damping\+Ratio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The damping ratio. 0 = no damping, 1 = critical damping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A distance joint rains two points on two bodies to remain at a fixed distance from each other. You can view this as a massless, rigid rod. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a3f6fe28f501e8d245421dd48ca38a48d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a3f6fe28f501e8d245421dd48ca38a48d}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!DistanceJoint@{DistanceJoint}}
+\index{DistanceJoint@{DistanceJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{DistanceJoint()}{DistanceJoint()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Distance\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyB,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchorA,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchorB,  }\item[{bool}]{use\+World\+Coordinates = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+This requires defining an anchor point on both bodies and the non-\/zero length of the distance joint. If you don\textquotesingle{}t supply a length, the local anchor points is used so that the initial configuration can violate the constraint slightly. This helps when saving and loading a game. Warning Do not use a zero or short length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bodyA} & The first body\\
+\hline
+{\em bodyB} & The second body\\
+\hline
+{\em anchorA} & The first body anchor\\
+\hline
+{\em anchorB} & The second body anchor\\
+\hline
+{\em use\+World\+Coordinates} & Set to true if you are using world coordinates as anchors.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_ab84f2e5059100f4b6f1bb0c4e3b6eacc}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_ab84f2e5059100f4b6f1bb0c4e3b6eacc}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!GetReactionForce@{GetReactionForce}}
+\index{GetReactionForce@{GetReactionForce}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionForce()}{GetReactionForce()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Get\+Reaction\+Force (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction force given the inverse time step. Unit is N. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_af2c9a28af88d5c656660a9f4232d4f66}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a6eb550c76787489add1672d9e56fe453}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a6eb550c76787489add1672d9e56fe453}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!GetReactionTorque@{GetReactionTorque}}
+\index{GetReactionTorque@{GetReactionTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionTorque()}{GetReactionTorque()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Get\+Reaction\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction torque given the inverse time step. Unit is N$\ast$m. This is always zero for a distance joint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_aaba06d8a94a8bcb20963d6e34ec22ba6}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a11599e93af2b9c2680e94f8100232f31}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a11599e93af2b9c2680e94f8100232f31}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!DampingRatio@{DampingRatio}}
+\index{DampingRatio@{DampingRatio}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{DampingRatio}{DampingRatio}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Damping\+Ratio\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The damping ratio. 0 = no damping, 1 = critical damping. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a8b4f8814085a997f4d68e800d3b3ac26}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a8b4f8814085a997f4d68e800d3b3ac26}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Frequency\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The mass-\/spring-\/damper frequency in Hertz. A value of 0 disables softness. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a659723c0e875d44d87f002105147b269}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a659723c0e875d44d87f002105147b269}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!Length@{Length}}
+\index{Length@{Length}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Length\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The natural length between the anchor points. Manipulating the length can lead to non-\/physical behavior when the frequency is zero. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a44cbd044d895481558c06b5aed14d55e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_a44cbd044d895481558c06b5aed14d55e}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!LocalAnchorA@{LocalAnchorA}}
+\index{LocalAnchorA@{LocalAnchorA}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorA}{LocalAnchorA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Local\+AnchorA\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point relative to bodyA\textquotesingle{}s origin. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_ad29c5ba3d6c2bdba1fdea12e72759bc9}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint_ad29c5ba3d6c2bdba1fdea12e72759bc9}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}!LocalAnchorB@{LocalAnchorB}}
+\index{LocalAnchorB@{LocalAnchorB}!tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.DistanceJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorB}{LocalAnchorB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Distance\+Joint.\+Local\+AnchorB\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point relative to bodyB\textquotesingle{}s origin. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Dynamics/\+Joints/Distance\+Joint.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Content::Polygon</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_1a65d46372b509aef2da09e3516b84b373" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>Vertices tainicom.Aether.Physics2D.Content.Polygon.Vertices</definition>
+        <argsstring></argsstring>
+        <name>Vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/PolygonContainer.cs" line="14" column="25" bodyfile="Physics2D/Content/PolygonContainer.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_1af5c4943aac27597528ce1156c80a1ccb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Content.Polygon.Closed</definition>
+        <argsstring></argsstring>
+        <name>Closed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/PolygonContainer.cs" line="15" column="21" bodyfile="Physics2D/Content/PolygonContainer.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_1a3d20e8b14806ee49cd432d63b3fadf85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Content.Polygon.Polygon</definition>
+        <argsstring>(Vertices v, bool closed)</argsstring>
+        <name>Polygon</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>closed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Content/PolygonContainer.cs" line="17" column="16" bodyfile="Physics2D/Content/PolygonContainer.cs" bodystart="17" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Content.Polygon</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Vertices</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vertices</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>List&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Content/PolygonContainer.cs" line="12" column="11" bodyfile="Physics2D/Content/PolygonContainer.cs" bodystart="13" bodyend="22"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_1af5c4943aac27597528ce1156c80a1ccb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::Polygon</scope><name>Closed</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_1a3d20e8b14806ee49cd432d63b3fadf85" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::Polygon</scope><name>Polygon</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_1a65d46372b509aef2da09e3516b84b373" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Content::Polygon</scope><name>Vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

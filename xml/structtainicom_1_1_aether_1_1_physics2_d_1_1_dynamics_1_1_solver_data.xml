@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data" kind="struct" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::SolverData</compoundname>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1a037544cefd137fb3c5168e6b17bb4443" prot="package" static="no" mutable="no">
+        <type>TimeStep</type>
+        <definition>TimeStep tainicom.Aether.Physics2D.Dynamics.SolverData.step</definition>
+        <argsstring></argsstring>
+        <name>step</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/TimeStep.cs" line="75" column="27" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1aa202148711b129916e2b9b675aac75a1" prot="package" static="no" mutable="no">
+        <type>SolverPosition[]</type>
+        <definition>SolverPosition [] tainicom.Aether.Physics2D.Dynamics.SolverData.positions</definition>
+        <argsstring></argsstring>
+        <name>positions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/TimeStep.cs" line="76" column="33" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1af4eb97b12e7f67d86ea3df4cbfe0ed5f" prot="package" static="no" mutable="no">
+        <type>SolverVelocity[]</type>
+        <definition>SolverVelocity [] tainicom.Aether.Physics2D.Dynamics.SolverData.velocities</definition>
+        <argsstring></argsstring>
+        <name>velocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/TimeStep.cs" line="77" column="33" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1a8d67e626d971f9d23de2d6112fd2dd26" prot="package" static="no" mutable="no">
+        <type>int[]</type>
+        <definition>int [] tainicom.Aether.Physics2D.Dynamics.SolverData.locks</definition>
+        <argsstring></argsstring>
+        <name>locks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/TimeStep.cs" line="78" column="22" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Solver Data. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverVelocity</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>v</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverPosition</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>c</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>tainicom.Aether.Physics2D.Dynamics.TimeStep</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverData</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>positions</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>velocities</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>step</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/TimeStep.cs" line="73" column="13" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="74" bodyend="79"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1a8d67e626d971f9d23de2d6112fd2dd26" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverData</scope><name>locks</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1aa202148711b129916e2b9b675aac75a1" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverData</scope><name>positions</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1a037544cefd137fb3c5168e6b17bb4443" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverData</scope><name>step</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_data_1af4eb97b12e7f67d86ea3df4cbfe0ed5f" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverData</scope><name>velocities</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

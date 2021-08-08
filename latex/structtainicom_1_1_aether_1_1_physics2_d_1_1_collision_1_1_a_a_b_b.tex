@@ -1,0 +1,308 @@
+\hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB Struct Reference}
+\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+
+
+An axis aligned bounding box.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a2ce3d19fc3ef3f8d8119a5dde0eedd02}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a2ce3d19fc3ef3f8d8119a5dde0eedd02}} 
+{\bfseries AABB} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} min, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} max)
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a4166e03fe0e50dd149c09a2d1294b24b}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a4166e03fe0e50dd149c09a2d1294b24b}} 
+{\bfseries AABB} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} min, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} max)
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a1fe66db9db924a3c81603cd61a2e5d11}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a1fe66db9db924a3c81603cd61a2e5d11}} 
+{\bfseries AABB} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} center, float width, float height)
+\item 
+bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a0b4de9bcc05bd022da7e56483592a240}{Is\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Verify that the bounds are sorted. And the bounds are valid numbers (not NaN). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a81b173862b52e9cbc65f50b51ded779e}{Combine}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} aabb)
+\begin{DoxyCompactList}\small\item\em Combine an \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} into this one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a01bea5228d64e4f07555602300c8aafd}{Combine}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} aabb1, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} aabb2)
+\begin{DoxyCompactList}\small\item\em Combine two AABBs into this one. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a12895f69d5e265e8faf4c8b967add533}{Contains}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} aabb)
+\begin{DoxyCompactList}\small\item\em Does this aabb contain the provided \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_af2876ed8cb79cbedbde88ad03d81d8cf}{Contains}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} point)
+\begin{DoxyCompactList}\small\item\em Determines whether the AAABB contains the specified point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a33391da014bc935413b03e8e0b6b431f}{Ray\+Cast}} (out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_output}{Ray\+Cast\+Output}} output, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input}{Ray\+Cast\+Input}} input, bool do\+Interior\+Check=true)
+\begin{DoxyCompactList}\small\item\em Raycast against this \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} using the specificed points and maxfraction (found in input) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ae3b5ddd648916ba3c05c7b38011f9d5c}{Test\+Overlap}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} a, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} b)
+\begin{DoxyCompactList}\small\item\em Test if the two AABBs overlap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a2893543ebb698bc0ebce16a4cad660f3}{Lower\+Bound}}
+\begin{DoxyCompactList}\small\item\em The lower vertex \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a988bd61d5bd25b6aa3d4545e5526066e}{Upper\+Bound}}
+\begin{DoxyCompactList}\small\item\em The upper vertex \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a7f301f8148fc9d6d2b385cd1b7a94633}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a7f301f8148fc9d6d2b385cd1b7a94633}} 
+float {\bfseries Width}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a4e11317de0a1333fdc0fa888d86208e8}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a4e11317de0a1333fdc0fa888d86208e8}} 
+float {\bfseries Height}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ad0c026cd1dbc0d867ce7beb43bb96c3b}{Center}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the center of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a8f74230c08e54afc4ce5c6042fd9c322}{Extents}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the extents of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} (half-\/widths). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a1d2920ea98b408510b25608ebfa2472f}{Perimeter}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the perimeter length \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a3dc8fc85c0e6dc12a51f18c1ce038f84}{Vertices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the vertices of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ade05cb5aaee5f06ab065b4ee20b9f50b}{Q1}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em First quadrant \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a28f5ed98bbcff3a8c857a48f2ee3e423}{Q2}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Second quadrant \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a913e5f95ed90d48c82a21a910b3c1fda}{Q3}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Third quadrant \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a671def13d73dd295af3663ee369cd0cc}{Q4}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Forth quadrant \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An axis aligned bounding box. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a81b173862b52e9cbc65f50b51ded779e}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a81b173862b52e9cbc65f50b51ded779e}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Combine@{Combine}}
+\index{Combine@{Combine}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Combine()}{Combine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Combine (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{aabb }\end{DoxyParamCaption})}
+
+
+
+Combine an \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} into this one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb} & The aabb.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a01bea5228d64e4f07555602300c8aafd}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a01bea5228d64e4f07555602300c8aafd}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Combine@{Combine}}
+\index{Combine@{Combine}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Combine()}{Combine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Combine (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{aabb1,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{aabb2 }\end{DoxyParamCaption})}
+
+
+
+Combine two AABBs into this one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb1} & The aabb1.\\
+\hline
+{\em aabb2} & The aabb2.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a12895f69d5e265e8faf4c8b967add533}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a12895f69d5e265e8faf4c8b967add533}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Contains@{Contains}}
+\index{Contains@{Contains}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Contains (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{aabb }\end{DoxyParamCaption})}
+
+
+
+Does this aabb contain the provided \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb} & The aabb.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if it contains the specified aabb; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_af2876ed8cb79cbedbde88ad03d81d8cf}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_af2876ed8cb79cbedbde88ad03d81d8cf}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Contains@{Contains}}
+\index{Contains@{Contains}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Contains (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{point }\end{DoxyParamCaption})}
+
+
+
+Determines whether the AAABB contains the specified point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if it contains the specified point; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a0b4de9bcc05bd022da7e56483592a240}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a0b4de9bcc05bd022da7e56483592a240}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verify that the bounds are sorted. And the bounds are valid numbers (not NaN). 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this instance is valid; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a33391da014bc935413b03e8e0b6b431f}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a33391da014bc935413b03e8e0b6b431f}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!RayCast@{RayCast}}
+\index{RayCast@{RayCast}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{RayCast()}{RayCast()}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Ray\+Cast (\begin{DoxyParamCaption}\item[{out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_output}{Ray\+Cast\+Output}}}]{output,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input}{Ray\+Cast\+Input}}}]{input,  }\item[{bool}]{do\+Interior\+Check = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Raycast against this \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} using the specificed points and maxfraction (found in input) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The results of the raycast.\\
+\hline
+{\em input} & The parameters for the raycast.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray intersects the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ae3b5ddd648916ba3c05c7b38011f9d5c}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ae3b5ddd648916ba3c05c7b38011f9d5c}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!TestOverlap@{TestOverlap}}
+\index{TestOverlap@{TestOverlap}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{TestOverlap()}{TestOverlap()}}
+{\footnotesize\ttfamily static bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Test\+Overlap (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{a,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test if the two AABBs overlap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}.\\
+\hline
+{\em b} & The second \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if they are overlapping.
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a2893543ebb698bc0ebce16a4cad660f3}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a2893543ebb698bc0ebce16a4cad660f3}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!LowerBound@{LowerBound}}
+\index{LowerBound@{LowerBound}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{LowerBound}{LowerBound}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Lower\+Bound}
+
+
+
+The lower vertex 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a988bd61d5bd25b6aa3d4545e5526066e}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a988bd61d5bd25b6aa3d4545e5526066e}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!UpperBound@{UpperBound}}
+\index{UpperBound@{UpperBound}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{UpperBound}{UpperBound}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Upper\+Bound}
+
+
+
+The upper vertex 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ad0c026cd1dbc0d867ce7beb43bb96c3b}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ad0c026cd1dbc0d867ce7beb43bb96c3b}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Center@{Center}}
+\index{Center@{Center}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Center}{Center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Center\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the center of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}. 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a8f74230c08e54afc4ce5c6042fd9c322}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a8f74230c08e54afc4ce5c6042fd9c322}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Extents@{Extents}}
+\index{Extents@{Extents}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Extents}{Extents}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Extents\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the extents of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} (half-\/widths). 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a1d2920ea98b408510b25608ebfa2472f}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a1d2920ea98b408510b25608ebfa2472f}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Perimeter@{Perimeter}}
+\index{Perimeter@{Perimeter}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Perimeter}{Perimeter}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Perimeter\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the perimeter length 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ade05cb5aaee5f06ab065b4ee20b9f50b}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_ade05cb5aaee5f06ab065b4ee20b9f50b}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Q1@{Q1}}
+\index{Q1@{Q1}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Q1}{Q1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Q1\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+First quadrant 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a28f5ed98bbcff3a8c857a48f2ee3e423}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a28f5ed98bbcff3a8c857a48f2ee3e423}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Q2@{Q2}}
+\index{Q2@{Q2}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Q2}{Q2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Q2\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Second quadrant 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a913e5f95ed90d48c82a21a910b3c1fda}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a913e5f95ed90d48c82a21a910b3c1fda}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Q3@{Q3}}
+\index{Q3@{Q3}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Q3}{Q3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Q3\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Third quadrant 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a671def13d73dd295af3663ee369cd0cc}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a671def13d73dd295af3663ee369cd0cc}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Q4@{Q4}}
+\index{Q4@{Q4}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Q4}{Q4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Q4\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Forth quadrant 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a3dc8fc85c0e6dc12a51f18c1ce038f84}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b_a3dc8fc85c0e6dc12a51f18c1ce038f84}} 
+\index{tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}!Vertices@{Vertices}}
+\index{Vertices@{Vertices}!tainicom.Aether.Physics2D.Collision.AABB@{tainicom.Aether.Physics2D.Collision.AABB}}
+\doxysubsubsection{\texorpdfstring{Vertices}{Vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+AABB.\+Vertices\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the vertices of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}. 
+
+The corners of the \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Collision/Collision.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,215 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data}\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+
+
+Contains filter data that can determine whether an object should be processed or not.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.938023cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a2cc91bba669b75e46135c76969061a7a}{Is\+Active\+On}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body)
+\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a0c67bc735e81298b08db05161f5ce33d}{Add\+Disabled\+Category}} (Category category)
+\begin{DoxyCompactList}\small\item\em Adds the category. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a207af74af2351b2e409d673272eef031}{Remove\+Disabled\+Category}} (Category category)
+\begin{DoxyCompactList}\small\item\em Removes the category. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a67f9813c805b3c12a8f6b59442fe1aca}{Is\+In\+Disabled\+Category}} (Category category)
+\begin{DoxyCompactList}\small\item\em Determines whether this body ignores the the specified controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_ad4b4f1a12b0ca07272bca503bc3cedeb}{Add\+Enabled\+Category}} (Category category)
+\begin{DoxyCompactList}\small\item\em Adds the category. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_aec5dd33678fbdad8fb7da68d769c0658}{Remove\+Enabled\+Category}} (Category category)
+\begin{DoxyCompactList}\small\item\em Removes the category. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a8422e2802fac58d53fc75e32cc4c8ab7}{Is\+In\+Enabled\+In\+Category}} (Category category)
+\begin{DoxyCompactList}\small\item\em Determines whether this body ignores the the specified controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Category \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a2c43bbd612e1b91d74a7730e807a58f5}{Disabled\+On\+Categories}} = Category.\+None
+\begin{DoxyCompactList}\small\item\em Disable the logic on specific categories. Category.\+None by default. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a8ea4ad655cf58505be4ea05629c36129}{Disabled\+On\+Group}}
+\begin{DoxyCompactList}\small\item\em Disable the logic on specific groups \end{DoxyCompactList}\item 
+Category \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a34e34e8ea50c84c31e8be3d8694daaee}{Enabled\+On\+Categories}} = Category.\+All
+\begin{DoxyCompactList}\small\item\em Enable the logic on specific categories Category.\+All by default. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_aec28e1af73b3b5c2aab51fd5860db8ac}{Enabled\+On\+Group}}
+\begin{DoxyCompactList}\small\item\em Enable the logic on specific groups. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains filter data that can determine whether an object should be processed or not. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a0c67bc735e81298b08db05161f5ce33d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a0c67bc735e81298b08db05161f5ce33d}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!AddDisabledCategory@{AddDisabledCategory}}
+\index{AddDisabledCategory@{AddDisabledCategory}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{AddDisabledCategory()}{AddDisabledCategory()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Add\+Disabled\+Category (\begin{DoxyParamCaption}\item[{Category}]{category }\end{DoxyParamCaption})}
+
+
+
+Adds the category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_ad4b4f1a12b0ca07272bca503bc3cedeb}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_ad4b4f1a12b0ca07272bca503bc3cedeb}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!AddEnabledCategory@{AddEnabledCategory}}
+\index{AddEnabledCategory@{AddEnabledCategory}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{AddEnabledCategory()}{AddEnabledCategory()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Add\+Enabled\+Category (\begin{DoxyParamCaption}\item[{Category}]{category }\end{DoxyParamCaption})}
+
+
+
+Adds the category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a2cc91bba669b75e46135c76969061a7a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a2cc91bba669b75e46135c76969061a7a}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!IsActiveOn@{IsActiveOn}}
+\index{IsActiveOn@{IsActiveOn}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{IsActiveOn()}{IsActiveOn()}}
+{\footnotesize\ttfamily virtual bool tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Is\+Active\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_a5250c4ecce57b708d6531389624e29ac}{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Controller}}, and \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_ace3da2a2b286f78feb77af8aeabd0a59}{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Physics\+Logic}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a67f9813c805b3c12a8f6b59442fe1aca}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a67f9813c805b3c12a8f6b59442fe1aca}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!IsInDisabledCategory@{IsInDisabledCategory}}
+\index{IsInDisabledCategory@{IsInDisabledCategory}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{IsInDisabledCategory()}{IsInDisabledCategory()}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Is\+In\+Disabled\+Category (\begin{DoxyParamCaption}\item[{Category}]{category }\end{DoxyParamCaption})}
+
+
+
+Determines whether this body ignores the the specified controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the object has the specified category; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a8422e2802fac58d53fc75e32cc4c8ab7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a8422e2802fac58d53fc75e32cc4c8ab7}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!IsInEnabledInCategory@{IsInEnabledInCategory}}
+\index{IsInEnabledInCategory@{IsInEnabledInCategory}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{IsInEnabledInCategory()}{IsInEnabledInCategory()}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Is\+In\+Enabled\+In\+Category (\begin{DoxyParamCaption}\item[{Category}]{category }\end{DoxyParamCaption})}
+
+
+
+Determines whether this body ignores the the specified controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the object has the specified category; otherwise, {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a207af74af2351b2e409d673272eef031}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a207af74af2351b2e409d673272eef031}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!RemoveDisabledCategory@{RemoveDisabledCategory}}
+\index{RemoveDisabledCategory@{RemoveDisabledCategory}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{RemoveDisabledCategory()}{RemoveDisabledCategory()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Remove\+Disabled\+Category (\begin{DoxyParamCaption}\item[{Category}]{category }\end{DoxyParamCaption})}
+
+
+
+Removes the category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_aec5dd33678fbdad8fb7da68d769c0658}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_aec5dd33678fbdad8fb7da68d769c0658}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!RemoveEnabledCategory@{RemoveEnabledCategory}}
+\index{RemoveEnabledCategory@{RemoveEnabledCategory}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{RemoveEnabledCategory()}{RemoveEnabledCategory()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Remove\+Enabled\+Category (\begin{DoxyParamCaption}\item[{Category}]{category }\end{DoxyParamCaption})}
+
+
+
+Removes the category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em category} & The category.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a2c43bbd612e1b91d74a7730e807a58f5}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a2c43bbd612e1b91d74a7730e807a58f5}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!DisabledOnCategories@{DisabledOnCategories}}
+\index{DisabledOnCategories@{DisabledOnCategories}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{DisabledOnCategories}{DisabledOnCategories}}
+{\footnotesize\ttfamily Category tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Disabled\+On\+Categories = Category.\+None}
+
+
+
+Disable the logic on specific categories. Category.\+None by default. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a8ea4ad655cf58505be4ea05629c36129}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a8ea4ad655cf58505be4ea05629c36129}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!DisabledOnGroup@{DisabledOnGroup}}
+\index{DisabledOnGroup@{DisabledOnGroup}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{DisabledOnGroup}{DisabledOnGroup}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Disabled\+On\+Group}
+
+
+
+Disable the logic on specific groups 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a34e34e8ea50c84c31e8be3d8694daaee}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_a34e34e8ea50c84c31e8be3d8694daaee}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!EnabledOnCategories@{EnabledOnCategories}}
+\index{EnabledOnCategories@{EnabledOnCategories}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{EnabledOnCategories}{EnabledOnCategories}}
+{\footnotesize\ttfamily Category tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Enabled\+On\+Categories = Category.\+All}
+
+
+
+Enable the logic on specific categories Category.\+All by default. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_aec28e1af73b3b5c2aab51fd5860db8ac}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_aec28e1af73b3b5c2aab51fd5860db8ac}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}!EnabledOnGroup@{EnabledOnGroup}}
+\index{EnabledOnGroup@{EnabledOnGroup}!tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData@{tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData}}
+\doxysubsubsection{\texorpdfstring{EnabledOnGroup}{EnabledOnGroup}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Filter\+Data.\+Enabled\+On\+Group}
+
+
+
+Enable the logic on specific groups. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Common/\+Physics\+Logic/Filter\+Data.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_seidel_decomposer_8cs" kind="file" language="C#">
+    <compoundname>SeidelDecomposer.cs</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_decomposer" prot="package">tainicom::Aether::Physics2D::Common::Decomposition::SeidelDecomposer</innerclass>
+    <innernamespace refid="namespacetainicom">tainicom</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether">tainicom::Aether</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d">tainicom::Aether::Physics2D</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common">tainicom::Aether::Physics2D::Common</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition">tainicom::Aether::Physics2D::Common::Decomposition</innernamespace>
+    <innernamespace refid="namespace_point">Point</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_seidel_decomposer_8cs_1a38d76edba3c93a7d4c37557f887f8b65" prot="public" static="no">
+        <type>tainicom.Aether.Physics2D.Common.Decomposition.Seidel.Point</type>
+        <definition>using Point =  tainicom.Aether.Physics2D.Common.Decomposition.Seidel.Point</definition>
+        <argsstring></argsstring>
+        <name>Point</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/SeidelDecomposer.cs" line="15" column="1" bodyfile="Physics2D/Common/Decomposition/SeidelDecomposer.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>Original<sp/>source<sp/>Farseer<sp/>Physics<sp/>Engine:</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014<sp/>Ian<sp/>Qvist,<sp/>http://farseerphysics.codeplex.com</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Microsoft<sp/>Permissive<sp/>License<sp/>(Ms-PL)<sp/>v1.1</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/>Farseer<sp/>Physics<sp/>Engine:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/>Copyright<sp/>(c)<sp/>2012<sp/>Ian<sp/>Qvist</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Collections.Generic;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Diagnostics;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacetainicom" kindref="compound">tainicom</ref>.<ref refid="namespacetainicom_1_1_aether" kindref="compound">Aether</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d" kindref="compound">Physics2D</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common" kindref="compound">Common</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition" kindref="compound">Decomposition</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel" kindref="compound">Seidel</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacetainicom" kindref="compound">tainicom</ref>.<ref refid="namespacetainicom_1_1_aether" kindref="compound">Aether</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d" kindref="compound">Physics2D</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common" kindref="compound">Common</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>Point<sp/>=<sp/><ref refid="namespacetainicom" kindref="compound">tainicom</ref>.<ref refid="namespacetainicom_1_1_aether" kindref="compound">Aether</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d" kindref="compound">Physics2D</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common" kindref="compound">Common</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition" kindref="compound">Decomposition</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel" kindref="compound">Seidel</ref>.<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_point" kindref="compound">Point</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>XNAAPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref><sp/>=<sp/>Microsoft.Xna.Framework.Vector2;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition" kindref="compound">tainicom.Aether.Physics2D.Common.Decomposition</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">internal</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SeidelDecomposer</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>List&lt;Vertices&gt;<sp/>ConvexPartition(<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref><sp/>vertices,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sheer<sp/>=<sp/>0.001f)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Debug.Assert(vertices.Count<sp/>&gt;<sp/>3);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List&lt;Point&gt;<sp/>compatList<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>List&lt;Point&gt;(vertices.Count);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(<ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref><sp/>vertex<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>vertices)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compatList.Add(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Point(vertex.X,<sp/>vertex.Y));</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Triangulator<sp/>t<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Triangulator(compatList,<sp/>sheer);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List&lt;Vertices&gt;<sp/>list<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>List&lt;Vertices&gt;();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(List&lt;Point&gt;<sp/>triangle<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>t.Triangles)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref><sp/>outTriangles<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref>(triangle.Count);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(Point<sp/>outTriangle<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>triangle)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outTriangles.Add(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>(outTriangle.X,<sp/>outTriangle.Y));</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.Add(outTriangles);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>list;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>List&lt;Vertices&gt;<sp/>ConvexPartitionTrapezoid(<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref><sp/>vertices,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>sheer<sp/>=<sp/>0.001f)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List&lt;Point&gt;<sp/>compatList<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>List&lt;Point&gt;(vertices.Count);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(<ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref><sp/>vertex<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>vertices)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compatList.Add(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Point(vertex.X,<sp/>vertex.Y));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Triangulator<sp/>t<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Triangulator(compatList,<sp/>sheer);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List&lt;Vertices&gt;<sp/>list<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>List&lt;Vertices&gt;();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(Trapezoid<sp/>trapezoid<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>t.Trapezoids)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref><sp/>verts<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref>();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>List&lt;Point&gt;<sp/>points<sp/>=<sp/>trapezoid.GetVertices();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(Point<sp/>point<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>points)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>verts.Add(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>(point.X,<sp/>point.Y));</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list.Add(verts);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>list;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Physics2D/Common/Decomposition/SeidelDecomposer.cs"/>
+  </compounddef>
+</doxygen>

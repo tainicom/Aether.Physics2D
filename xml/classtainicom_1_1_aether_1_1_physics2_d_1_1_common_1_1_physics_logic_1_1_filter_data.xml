@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</compoundname>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic</derivedcompoundref>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Controllers.Controller</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2c43bbd612e1b91d74a7730e807a58f5" prot="public" static="no" mutable="no">
+        <type>Category</type>
+        <definition>Category tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.DisabledOnCategories</definition>
+        <argsstring></argsstring>
+        <name>DisabledOnCategories</name>
+        <initializer>= Category.None</initializer>
+        <briefdescription>
+<para>Disable the logic on specific categories. Category.None by default. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="19" column="25" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8ea4ad655cf58505be4ea05629c36129" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.DisabledOnGroup</definition>
+        <argsstring></argsstring>
+        <name>DisabledOnGroup</name>
+        <briefdescription>
+<para>Disable the logic on specific groups </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="24" column="20" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a34e34e8ea50c84c31e8be3d8694daaee" prot="public" static="no" mutable="no">
+        <type>Category</type>
+        <definition>Category tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.EnabledOnCategories</definition>
+        <argsstring></argsstring>
+        <name>EnabledOnCategories</name>
+        <initializer>= Category.All</initializer>
+        <briefdescription>
+<para>Enable the logic on specific categories Category.All by default. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="30" column="25" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec28e1af73b3b5c2aab51fd5860db8ac" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.EnabledOnGroup</definition>
+        <argsstring></argsstring>
+        <name>EnabledOnGroup</name>
+        <briefdescription>
+<para>Enable the logic on specific groups. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="35" column="20" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2cc91bba669b75e46135c76969061a7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.IsActiveOn</definition>
+        <argsstring>(Body body)</argsstring>
+        <name>IsActiveOn</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ace3da2a2b286f78feb77af8aeabd0a59">IsActiveOn</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a5250c4ecce57b708d6531389624e29ac">IsActiveOn</reimplementedby>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>body</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="42" column="29" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="42" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a0c67bc735e81298b08db05161f5ce33d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.AddDisabledCategory</definition>
+        <argsstring>(Category category)</argsstring>
+        <name>AddDisabledCategory</name>
+        <param>
+          <type>Category</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+<para>Adds the category. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="79" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a207af74af2351b2e409d673272eef031" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.RemoveDisabledCategory</definition>
+        <argsstring>(Category category)</argsstring>
+        <name>RemoveDisabledCategory</name>
+        <param>
+          <type>Category</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+<para>Removes the category. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="88" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a67f9813c805b3c12a8f6b59442fe1aca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.IsInDisabledCategory</definition>
+        <argsstring>(Category category)</argsstring>
+        <name>IsInDisabledCategory</name>
+        <param>
+          <type>Category</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+<para>Determines whether this body ignores the the specified controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the object has the specified category; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="100" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1ad4b4f1a12b0ca07272bca503bc3cedeb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.AddEnabledCategory</definition>
+        <argsstring>(Category category)</argsstring>
+        <name>AddEnabledCategory</name>
+        <param>
+          <type>Category</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+<para>Adds the category. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="109" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="109" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec5dd33678fbdad8fb7da68d769c0658" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.RemoveEnabledCategory</definition>
+        <argsstring>(Category category)</argsstring>
+        <name>RemoveEnabledCategory</name>
+        <param>
+          <type>Category</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+<para>Removes the category. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="118" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="118" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8422e2802fac58d53fc75e32cc4c8ab7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData.IsInEnabledInCategory</definition>
+        <argsstring>(Category category)</argsstring>
+        <name>IsInEnabledInCategory</name>
+        <param>
+          <type>Category</type>
+          <declname>category</declname>
+        </param>
+        <briefdescription>
+<para>Determines whether this body ignores the the specified controller. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>category</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The category.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the object has the specified category; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="130" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="130" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Contains filter data that can determine whether an object should be processed or not. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Controllers.Controller</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>tainicom.Aether.Physics2D.Controllers.GravityController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_gravity_controller"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tainicom.Aether.Physics2D.Controllers.SimpleWindForce</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_simple_wind_force"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>tainicom.Aether.Physics2D.Controllers.VelocityLimitController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="6">
+        <label>tainicom.Aether.Physics2D.Controllers.AbstractForceController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>tainicom.Aether.Physics2D.Controllers.BuoyancyController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Physics2D/Common/PhysicsLogic/FilterData.cs" line="13" column="21" bodyfile="Physics2D/Common/PhysicsLogic/FilterData.cs" bodystart="14" bodyend="134"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a0c67bc735e81298b08db05161f5ce33d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>AddDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1ad4b4f1a12b0ca07272bca503bc3cedeb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>AddEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2c43bbd612e1b91d74a7730e807a58f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>DisabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8ea4ad655cf58505be4ea05629c36129" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>DisabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a34e34e8ea50c84c31e8be3d8694daaee" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>EnabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec28e1af73b3b5c2aab51fd5860db8ac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>EnabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2cc91bba669b75e46135c76969061a7a" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>IsActiveOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a67f9813c805b3c12a8f6b59442fe1aca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>IsInDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8422e2802fac58d53fc75e32cc4c8ab7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>IsInEnabledInCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a207af74af2351b2e409d673272eef031" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>RemoveDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec5dd33678fbdad8fb7da68d769c0658" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::FilterData</scope><name>RemoveEnabledCategory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

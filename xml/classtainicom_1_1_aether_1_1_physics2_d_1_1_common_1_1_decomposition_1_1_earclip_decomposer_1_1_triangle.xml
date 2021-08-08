@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1_1_triangle" kind="class" language="C#" prot="private">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.Vertices</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1_1_triangle_1a3d06f9db2d2d6b53b2d28269b70d6dff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.Triangle.Triangle</definition>
+        <argsstring>(float x1, float y1, float x2, float y2, float x3, float y3)</argsstring>
+        <name>Triangle</name>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x3</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y3</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="363" column="20" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="363" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1_1_triangle_1a4a6c1b73d8925d0075a4b8d63a681652" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.Triangle.IsInside</definition>
+        <argsstring>(float x, float y)</argsstring>
+        <name>IsInside</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="380" column="25" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="380" bodyend="408"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Vertices</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.Triangle</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>List&lt; Vector2 &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>Vertices</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.Triangle</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>List&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="360" column="16" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="361" bodyend="409"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae8814332623b38e65e8267116e0f1610" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>AttachedToBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a416d5c27d1cd4e11970cb64b2e5a1786" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>CheckPolygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1abea08d25d3720a09bf9eca75ccb6ee4b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>ForceCounterClockWise</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1aafa039a12961b8e78402e450b2ee920b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>GetAABB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a479e04f82bd8046b1f02048759b05376" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>GetArea</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ac4e4a8aa62aa763dd31580dc180ca0a1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>GetCentroid</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a564cdfc2b3991f1f3b348fc0b303646c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>GetSignedArea</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1adc2dc475507b2f32795fd59e1ae24b63" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Holes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1acbba141b7f2216a8359c6a4f61d1ebd9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>IsConvex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a9d0b89729af4b5a32a717cb3e3a11661" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>IsCounterClockWise</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1_1_triangle_1a4a6c1b73d8925d0075a4b8d63a681652" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>IsInside</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a1c2143ac0c53a68786f83ef2e221e418" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>IsSimple</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a75581f7722c5b1ec011d9780f920fec7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>NextIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a487ec4858c0495f962b0291b309f3bcf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>NextVertex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a4861eda8ba196358c356521cf9b8d8c3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>PointInPolygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae13a4650947b8dc4ffde7ca7f10b956a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>PointInPolygonAngle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a9b709e8865c43ca8329ecdb59e8c755d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>PreviousIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae8cd90b0c468cc71d386421948769035" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>PreviousVertex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1af99bfeefcd7f461c71e834ca9404fe3b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>ProjectToAxis</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a6dff9ec744bb47caf3c44a22af346092" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Rotate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ac4e50b0258a92290ce1a499633e8c65f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Scale</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1aea178fca10ffcebf1bd6eef264756952" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Scale</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a659c9ef6e4600850e54ef871fdb4aed8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>ToString</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a744771f9e1d6c16fe055082d8ca2d4a6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Translate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a53c589e848c866954a80f069ea1d24bd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Translate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1_1_triangle_1a3d06f9db2d2d6b53b2d28269b70d6dff" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Triangle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a4d73028b043fb36128efc02d22f162a2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Vertices</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a1db7cd8a6f3163e579279d16f598af68" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Vertices</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a801867e06f5071a8fb87130f8475dfb7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</scope><name>Vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

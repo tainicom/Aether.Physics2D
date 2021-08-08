@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Fluids::HashGrid</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a255be4f22951c48fc0ba0456bd016dbe" prot="private" static="no" mutable="no">
+        <type>Dictionary&lt; ulong, List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref> &gt; &gt;</type>
+        <definition>Dictionary&lt;ulong, List&lt;FluidParticle&gt; &gt; tainicom.Aether.Physics2D.Fluids.HashGrid._hash</definition>
+        <argsstring></argsstring>
+        <name>_hash</name>
+        <initializer>= new Dictionary&lt;ulong, List&lt;<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref>&gt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="20" column="28" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a7b7baea0e119584a4caf4c5a71afda1e" prot="private" static="no" mutable="no">
+        <type>Stack&lt; List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref> &gt; &gt;</type>
+        <definition>Stack&lt;List&lt;FluidParticle&gt; &gt; tainicom.Aether.Physics2D.Fluids.HashGrid._bucketPool</definition>
+        <argsstring></argsstring>
+        <name>_bucketPool</name>
+        <initializer>= new Stack&lt;List&lt;<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref>&gt;&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="21" column="23" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1afc37d6b378349231870d3140bf3974bf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.HashGrid.GridSize</definition>
+        <argsstring></argsstring>
+        <name>GridSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="28" column="22" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="28" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a1280788dfddfba18ab7d7d7419780e21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Fluids.HashGrid.HashGrid</definition>
+        <argsstring>()</argsstring>
+        <name>HashGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="23" column="16" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a82a431d3f83ba514f7b1588b30c8161a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Fluids.HashGrid.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="43" column="21" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="43" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1aae1a987384cb31842f64bf044ab4550e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Fluids.HashGrid.Add</definition>
+        <argsstring>(FluidParticle particle)</argsstring>
+        <name>Add</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref></type>
+          <declname>particle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="53" column="21" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="53" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a0ec56819b9f727658be805e80832a5af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Fluids.HashGrid.Find</definition>
+        <argsstring>(ref Vector2 position, List&lt; FluidParticle &gt; neighbours)</argsstring>
+        <name>Find</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref> &gt;</type>
+          <declname>neighbours</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="72" column="21" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="72" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a3fcafc6b220429da9aff0bb665a834cd" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ulong</type>
+        <definition>static ulong tainicom.Aether.Physics2D.Fluids.HashGrid.HashKey</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>HashKey</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="30" column="30" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="30" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1ab07a2186df2b81541f2f9c69e16600c3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ulong</type>
+        <definition>ulong tainicom.Aether.Physics2D.Fluids.HashGrid.HashKey</definition>
+        <argsstring>(Vector2 position)</argsstring>
+        <name>HashKey</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/HashGrid.cs" line="35" column="23" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="35" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Grid used by particle system to keep track of neightbor particles. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Fluids/1/HashGrid.cs" line="18" column="11" bodyfile="Physics2D/Fluids/1/HashGrid.cs" bodystart="19" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a7b7baea0e119584a4caf4c5a71afda1e" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>_bucketPool</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a255be4f22951c48fc0ba0456bd016dbe" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>_hash</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1aae1a987384cb31842f64bf044ab4550e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>Add</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a82a431d3f83ba514f7b1588b30c8161a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>Clear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a0ec56819b9f727658be805e80832a5af" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>Find</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1afc37d6b378349231870d3140bf3974bf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>GridSize</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a1280788dfddfba18ab7d7d7419780e21" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>HashGrid</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1a3fcafc6b220429da9aff0bb665a834cd" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>HashKey</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_hash_grid_1ab07a2186df2b81541f2f9c69e16600c3" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::HashGrid</scope><name>HashKey</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

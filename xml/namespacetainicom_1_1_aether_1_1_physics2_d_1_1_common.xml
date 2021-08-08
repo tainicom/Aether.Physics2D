@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Common</compoundname>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_complex" prot="public">tainicom::Aether::Physics2D::Common::Complex</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_constant" prot="public">tainicom::Aether::Physics2D::Common::Constant</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2" prot="public">tainicom::Aether::Physics2D::Common::FixedArray2</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array3" prot="public">tainicom::Aether::Physics2D::Common::FixedArray3</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array4" prot="public">tainicom::Aether::Physics2D::Common::FixedArray4</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array8" prot="public">tainicom::Aether::Physics2D::Common::FixedArray8</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_line_tools" prot="public">tainicom::Aether::Physics2D::Common::LineTools</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils" prot="public">tainicom::Aether::Physics2D::Common::MathUtils</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" prot="public">tainicom::Aether::Physics2D::Common::Mat22</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33" prot="public">tainicom::Aether::Physics2D::Common::Mat33</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" prot="public">tainicom::Aether::Physics2D::Common::Transform</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep" prot="public">tainicom::Aether::Physics2D::Common::Sweep</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path" prot="public">tainicom::Aether::Physics2D::Common::Path</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_manager" prot="public">tainicom::Aether::Physics2D::Common::PathManager</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools" prot="public">tainicom::Aether::Physics2D::Common::PolygonTools</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_serializer" prot="public">tainicom::Aether::Physics2D::Common::WorldSerializer</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_xml_serializer" prot="package">tainicom::Aether::Physics2D::Common::WorldXmlSerializer</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_xml_deserializer" prot="package">tainicom::Aether::Physics2D::Common::WorldXmlDeserializer</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_attribute" prot="package">tainicom::Aether::Physics2D::Common::XMLFragmentAttribute</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_element" prot="package">tainicom::Aether::Physics2D::Common::XMLFragmentElement</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_exception" prot="package">tainicom::Aether::Physics2D::Common::XMLFragmentException</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_file_buffer" prot="package">tainicom::Aether::Physics2D::Common::FileBuffer</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser" prot="package">tainicom::Aether::Physics2D::Common::XMLFragmentParser</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" prot="public">tainicom::Aether::Physics2D::Common::Vector2</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" prot="public">tainicom::Aether::Physics2D::Common::Vector3</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" prot="public">tainicom::Aether::Physics2D::Common::Vertices</innerclass>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull">tainicom::Aether::Physics2D::Common::ConvexHull</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition">tainicom::Aether::Physics2D::Common::Decomposition</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic">tainicom::Aether::Physics2D::Common::PhysicsLogic</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation">tainicom::Aether::Physics2D::Common::PolygonManipulation</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools">tainicom::Aether::Physics2D::Common::TextureTools</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737ac" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PolygonError</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737aca70a47cae4eb221930f2663fd244369ea" prot="public">
+          <name>NoError</name>
+          <briefdescription>
+<para>There were no errors in the polygon </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737aca0c102ced3f80f774f01bc8afd57b3476" prot="public">
+          <name>InvalidAmountOfVertices</name>
+          <briefdescription>
+<para>Polygon must have between 3 and Settings.MaxPolygonVertices vertices. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737acacdc1287219057b99b6a4a9885a3a490d" prot="public">
+          <name>NotSimple</name>
+          <briefdescription>
+<para>Polygon must be simple. This means no overlapping edges. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737aca751aa663d12b704bb5f0d52db13667ee" prot="public">
+          <name>NotCounterClockWise</name>
+          <briefdescription>
+<para>Polygon must have a counter clockwise winding. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737aca0a31d96e9c3d3ed4569ab3bd8e00de05" prot="public">
+          <name>NotConvex</name>
+          <briefdescription>
+<para>The polygon is concave, it needs to be convex. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737aca52d9613893b8e72f4688a51696199ecf" prot="public">
+          <name>AreaTooSmall</name>
+          <briefdescription>
+<para>Polygon area is too small. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737acae0df3b706ac8cffaf103e5f8e600dc8c" prot="public">
+          <name>SideTooSmall</name>
+          <briefdescription>
+<para>The polygon has a side that is too short. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="23" column="11" bodyfile="Physics2D/Common/Vertices.cs" bodystart="24" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Complex.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

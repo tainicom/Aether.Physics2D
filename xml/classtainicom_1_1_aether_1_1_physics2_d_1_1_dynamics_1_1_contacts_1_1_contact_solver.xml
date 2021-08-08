@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1_1_position_solver_manifold" prot="private">tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver::PositionSolverManifold</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1_1_world_manifold" prot="public">tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver::WorldManifold</innerclass>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a097528f10373d168ff07f988b8d0a661" prot="package" static="no" mutable="no">
+        <type>SolverPosition[]</type>
+        <definition>SolverPosition [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._positions</definition>
+        <argsstring></argsstring>
+        <name>_positions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="98" column="33" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a3f649264704f9de5b03d0764be015b99" prot="package" static="no" mutable="no">
+        <type>SolverVelocity[]</type>
+        <definition>SolverVelocity [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._velocities</definition>
+        <argsstring></argsstring>
+        <name>_velocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="99" column="33" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1af915d95aec2f9c39cc2602b7c1cfc691" prot="package" static="no" mutable="no">
+        <type>int[]</type>
+        <definition>int [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._locks</definition>
+        <argsstring></argsstring>
+        <name>_locks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="100" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1afbc9be909b5dff3847d02cf6e9c4b900" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_position_constraint" kindref="compound">ContactPositionConstraint</ref>[]</type>
+        <definition>ContactPositionConstraint [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._positionConstraints</definition>
+        <argsstring></argsstring>
+        <name>_positionConstraints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="101" column="42" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a43c540f005ebf5cf93238d05b9a6de06" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint" kindref="compound">ContactVelocityConstraint</ref>[]</type>
+        <definition>ContactVelocityConstraint [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._velocityConstraints</definition>
+        <argsstring></argsstring>
+        <name>_velocityConstraints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="102" column="42" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0acddb390d3618f0400242c7e76deff5" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref>[]</type>
+        <definition>Contact [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._contacts</definition>
+        <argsstring></argsstring>
+        <name>_contacts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="103" column="24" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a1e88d93eb07f9c78064dab4bcedb72ed" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._count</definition>
+        <argsstring></argsstring>
+        <name>_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="104" column="20" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1ae9b0f300e35e72c4d6d7181dc0ec0baf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._velocityConstraintsMultithreadThreshold</definition>
+        <argsstring></argsstring>
+        <name>_velocityConstraintsMultithreadThreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="105" column="13" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a356cc3dc289de944298da6f91ecdff02" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver._positionConstraintsMultithreadThreshold</definition>
+        <argsstring></argsstring>
+        <name>_positionConstraintsMultithreadThreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="106" column="13" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a82b1cf20e5a9d064b40e25c3d5cd8846" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.Reset</definition>
+        <argsstring>(ref TimeStep step, int count, Contact[] contacts, SolverPosition[] positions, SolverVelocity[] velocities, int[] locks, int velocityConstraintsMultithreadThreshold, int positionConstraintsMultithreadThreshold)</argsstring>
+        <name>Reset</name>
+        <param>
+          <type>ref TimeStep</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref>[]</type>
+          <declname>contacts</declname>
+        </param>
+        <param>
+          <type>SolverPosition[]</type>
+          <declname>positions</declname>
+        </param>
+        <param>
+          <type>SolverVelocity[]</type>
+          <declname>velocities</declname>
+        </param>
+        <param>
+          <type>int[]</type>
+          <declname>locks</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>velocityConstraintsMultithreadThreshold</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>positionConstraintsMultithreadThreshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="108" column="23" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="108" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a06276a8a6e4f6b89816686f7492c6c84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.InitializeVelocityConstraints</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeVelocityConstraints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="212" column="21" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="212" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0864c27235e628cb4754818a107e7968" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.WarmStart</definition>
+        <argsstring>()</argsstring>
+        <name>WarmStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="323" column="21" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="323" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0ac7a176f6d294b06e48406b584b020e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.SolveVelocityConstraints</definition>
+        <argsstring>()</argsstring>
+        <name>SolveVelocityConstraints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="363" column="21" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="363" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a33faa97992b2181f0fbf94d3251d6cdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.StoreImpulses</definition>
+        <argsstring>()</argsstring>
+        <name>StoreImpulses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="783" column="21" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="783" bodyend="800"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a92e6b8fa07cabc312ada3abc4e174a1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.SolvePositionConstraints</definition>
+        <argsstring>()</argsstring>
+        <name>SolvePositionConstraints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="802" column="21" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="802" bodyend="833"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0060ddcf559821daa90765319774e0b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.SolveTOIPositionConstraints</definition>
+        <argsstring>(int toiIndexA, int toiIndexB)</argsstring>
+        <name>SolveTOIPositionConstraints</name>
+        <param>
+          <type>int</type>
+          <declname>toiIndexA</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>toiIndexB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="942" column="21" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="942" bodyend="1028"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1ac540207c283f2168e34588fcba48bb29" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.SolveVelocityConstraints</definition>
+        <argsstring>(int start, int end)</argsstring>
+        <name>SolveVelocityConstraints</name>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="444" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="444" bodyend="781"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1acd9fd3870f827a18f53a16e39811c4d1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.SolvePositionConstraints</definition>
+        <argsstring>(int start, int end)</argsstring>
+        <name>SolvePositionConstraints</name>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="835" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="835" bodyend="939"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>tainicom.Aether.Physics2D.Common.Mat22</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ex</edgelabel>
+          <edgelabel>ey</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.VelocityConstraintPoint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_velocity_constraint_point"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>rA</edgelabel>
+          <edgelabel>rB</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="6">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverVelocity</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>v</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>K</edgelabel>
+          <edgelabel>normalMass</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactPositionConstraint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_position_constraint"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>localCenterA</edgelabel>
+          <edgelabel>localNormal</edgelabel>
+          <edgelabel>localPoint</edgelabel>
+          <edgelabel>localPoints</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge"/>
+      </node>
+      <node id="7">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>Manifold</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>_nodeA</edgelabel>
+          <edgelabel>_nodeB</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>_positionConstraints</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_positions</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>_velocities</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>_contacts</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>_velocityConstraints</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverPosition</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>c</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="96" column="11" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="97" bodyend="1166"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0acddb390d3618f0400242c7e76deff5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_contacts</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a1e88d93eb07f9c78064dab4bcedb72ed" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_count</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1af915d95aec2f9c39cc2602b7c1cfc691" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_locks</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1afbc9be909b5dff3847d02cf6e9c4b900" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_positionConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a356cc3dc289de944298da6f91ecdff02" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_positionConstraintsMultithreadThreshold</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a097528f10373d168ff07f988b8d0a661" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_positions</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a3f649264704f9de5b03d0764be015b99" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_velocities</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a43c540f005ebf5cf93238d05b9a6de06" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_velocityConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1ae9b0f300e35e72c4d6d7181dc0ec0baf" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>_velocityConstraintsMultithreadThreshold</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a06276a8a6e4f6b89816686f7492c6c84" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>InitializeVelocityConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a82b1cf20e5a9d064b40e25c3d5cd8846" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>Reset</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a92e6b8fa07cabc312ada3abc4e174a1d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>SolvePositionConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1acd9fd3870f827a18f53a16e39811c4d1" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>SolvePositionConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0060ddcf559821daa90765319774e0b7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>SolveTOIPositionConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0ac7a176f6d294b06e48406b584b020e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>SolveVelocityConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1ac540207c283f2168e34588fcba48bb29" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>SolveVelocityConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a33faa97992b2181f0fbf94d3251d6cdc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>StoreImpulses</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1a0864c27235e628cb4754818a107e7968" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver</scope><name>WarmStart</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

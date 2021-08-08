@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::ClipVertex</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex_1aee2813a0ceaa9ba31a8a4e59c635940a" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_i_d" kindref="compound">ContactID</ref></type>
+        <definition>ContactID tainicom.Aether.Physics2D.Collision.ClipVertex.ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="210" column="26" bodyfile="Physics2D/Collision/Collision.cs" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex_1afd0908dbedf02a11a1186e268e948db8" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ClipVertex.V</definition>
+        <argsstring></argsstring>
+        <name>V</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="211" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Used for computing contact manifolds. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Collision.ContactID</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_i_d"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Features</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.ClipVertex</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ID</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>V</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Collision.ContactFeature</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_feature"/>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Collision.cs" line="208" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="209" bodyend="212"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex_1aee2813a0ceaa9ba31a8a4e59c635940a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ClipVertex</scope><name>ID</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex_1afd0908dbedf02a11a1186e268e948db8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ClipVertex</scope><name>V</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

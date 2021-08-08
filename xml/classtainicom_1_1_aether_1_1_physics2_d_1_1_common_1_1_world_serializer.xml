@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_serializer" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::WorldSerializer</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_serializer_1ac7b3f33ca2cbbbb0ea266e6ec53b2d58" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.WorldSerializer.Serialize</definition>
+        <argsstring>(World world, Stream stream)</argsstring>
+        <name>Serialize</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type>Stream</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Serialize the world to a stream in XML format </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>world</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="32" column="28" bodyfile="Physics2D/Common/Serialization.cs" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_serializer_1ab4d678183542b18cf243339849ebbc33" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+        <definition>static World tainicom.Aether.Physics2D.Common.WorldSerializer.Deserialize</definition>
+        <argsstring>(Stream stream)</argsstring>
+        <name>Deserialize</name>
+        <param>
+          <type>Stream</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Deserialize the world from a stream XML </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="41" column="29" bodyfile="Physics2D/Common/Serialization.cs" bodystart="41" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Serialize the world into an XML file </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Serialization.cs" line="25" column="19" bodyfile="Physics2D/Common/Serialization.cs" bodystart="26" bodyend="45"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_serializer_1ab4d678183542b18cf243339849ebbc33" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::WorldSerializer</scope><name>Deserialize</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_world_serializer_1ac7b3f33ca2cbbbb0ea266e6ec53b2d58" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::WorldSerializer</scope><name>Serialize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

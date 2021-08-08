@@ -1,0 +1,179 @@
+\hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition Struct Reference}
+\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition}\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+
+
+Fluid parameters, see pvfs.\+pdf for a detailed explanation  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a2a335a2ce0b8a6c42f3dc9c0b34fd0b6}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a2a335a2ce0b8a6c42f3dc9c0b34fd0b6}} 
+void {\bfseries Check} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a18701c6b96351d890b95af748cd05f6a}{Influence\+Radius}}
+\begin{DoxyCompactList}\small\item\em Distance of influence between the particles \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a4157b34331bb8c070cd6ccf64c8b6c51}{Density\+Rest}}
+\begin{DoxyCompactList}\small\item\em Density of the fluid \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a0390e2b1c3ec0ed36890e03beaaf55fd}{Stiffness}}
+\begin{DoxyCompactList}\small\item\em Stiffness of the fluid (when particles are far) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a56e95349adf5ece2234a0c823be19423}{Stiffness\+Near}}
+\begin{DoxyCompactList}\small\item\em Stiffness of the fluid (when particles are near) Set by Check() \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_adc3f966f5e6dda4ef986cec6ef1a9c4e}{Use\+Viscosity}}
+\begin{DoxyCompactList}\small\item\em Toggles viscosity forces \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a337060f95f693cf84289497c2ba79a03}{Viscosity\+Sigma}}
+\begin{DoxyCompactList}\small\item\em See pvfs.\+pdf for more information \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ac9330963d6a986a86c25a795b22c29a1}{Viscosity\+Beta}}
+\begin{DoxyCompactList}\small\item\em See pvfs.\+pdf for more information \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a4a90d7ee8fbefc333df87b40bfbca5e9}{Use\+Plasticity}}
+\begin{DoxyCompactList}\small\item\em Toggles plasticity computation (springs etc.) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_aa404d45cbdba8caee43b1753241639b9}{Plasticity}}
+\begin{DoxyCompactList}\small\item\em Plasticity, amount of memory of the shape See pvfs.\+pdf for more information \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a7b0ea15cede24692b73ded32564802f3}{KSpring}}
+\begin{DoxyCompactList}\small\item\em K of the springs used for plasticity \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ab63ab7b223e59386beef132d1af6b30e}{Yield\+Ratio\+Compress}}
+\begin{DoxyCompactList}\small\item\em Amount of change of the rest length of the springs (when compressed) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ad56ce33ec837a439072c0f5919275fd8}{Yield\+Ratio\+Stretch}}
+\begin{DoxyCompactList}\small\item\em Amount of change of the rest length of the springs (when stretched) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a10bda58001f1fe6fd00c59698d1c4111}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a10bda58001f1fe6fd00c59698d1c4111}} 
+static \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition}{Fluid\+Definition}} {\bfseries Default}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fluid parameters, see pvfs.\+pdf for a detailed explanation 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a4157b34331bb8c070cd6ccf64c8b6c51}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a4157b34331bb8c070cd6ccf64c8b6c51}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!DensityRest@{DensityRest}}
+\index{DensityRest@{DensityRest}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{DensityRest}{DensityRest}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Density\+Rest}
+
+
+
+Density of the fluid 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a18701c6b96351d890b95af748cd05f6a}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a18701c6b96351d890b95af748cd05f6a}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!InfluenceRadius@{InfluenceRadius}}
+\index{InfluenceRadius@{InfluenceRadius}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{InfluenceRadius}{InfluenceRadius}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Influence\+Radius}
+
+
+
+Distance of influence between the particles 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a7b0ea15cede24692b73ded32564802f3}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a7b0ea15cede24692b73ded32564802f3}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!KSpring@{KSpring}}
+\index{KSpring@{KSpring}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{KSpring}{KSpring}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+KSpring}
+
+
+
+K of the springs used for plasticity 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_aa404d45cbdba8caee43b1753241639b9}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_aa404d45cbdba8caee43b1753241639b9}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!Plasticity@{Plasticity}}
+\index{Plasticity@{Plasticity}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{Plasticity}{Plasticity}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Plasticity}
+
+
+
+Plasticity, amount of memory of the shape See pvfs.\+pdf for more information 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a0390e2b1c3ec0ed36890e03beaaf55fd}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a0390e2b1c3ec0ed36890e03beaaf55fd}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!Stiffness@{Stiffness}}
+\index{Stiffness@{Stiffness}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{Stiffness}{Stiffness}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Stiffness}
+
+
+
+Stiffness of the fluid (when particles are far) 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a56e95349adf5ece2234a0c823be19423}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a56e95349adf5ece2234a0c823be19423}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!StiffnessNear@{StiffnessNear}}
+\index{StiffnessNear@{StiffnessNear}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{StiffnessNear}{StiffnessNear}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Stiffness\+Near}
+
+
+
+Stiffness of the fluid (when particles are near) Set by Check() 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a4a90d7ee8fbefc333df87b40bfbca5e9}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a4a90d7ee8fbefc333df87b40bfbca5e9}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!UsePlasticity@{UsePlasticity}}
+\index{UsePlasticity@{UsePlasticity}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{UsePlasticity}{UsePlasticity}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Use\+Plasticity}
+
+
+
+Toggles plasticity computation (springs etc.) 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_adc3f966f5e6dda4ef986cec6ef1a9c4e}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_adc3f966f5e6dda4ef986cec6ef1a9c4e}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!UseViscosity@{UseViscosity}}
+\index{UseViscosity@{UseViscosity}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{UseViscosity}{UseViscosity}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Use\+Viscosity}
+
+
+
+Toggles viscosity forces 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ac9330963d6a986a86c25a795b22c29a1}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ac9330963d6a986a86c25a795b22c29a1}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!ViscosityBeta@{ViscosityBeta}}
+\index{ViscosityBeta@{ViscosityBeta}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{ViscosityBeta}{ViscosityBeta}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Viscosity\+Beta}
+
+
+
+See pvfs.\+pdf for more information 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a337060f95f693cf84289497c2ba79a03}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_a337060f95f693cf84289497c2ba79a03}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!ViscositySigma@{ViscositySigma}}
+\index{ViscositySigma@{ViscositySigma}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{ViscositySigma}{ViscositySigma}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Viscosity\+Sigma}
+
+
+
+See pvfs.\+pdf for more information 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ab63ab7b223e59386beef132d1af6b30e}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ab63ab7b223e59386beef132d1af6b30e}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!YieldRatioCompress@{YieldRatioCompress}}
+\index{YieldRatioCompress@{YieldRatioCompress}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{YieldRatioCompress}{YieldRatioCompress}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Yield\+Ratio\+Compress}
+
+
+
+Amount of change of the rest length of the springs (when compressed) 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ad56ce33ec837a439072c0f5919275fd8}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_ad56ce33ec837a439072c0f5919275fd8}} 
+\index{tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}!YieldRatioStretch@{YieldRatioStretch}}
+\index{YieldRatioStretch@{YieldRatioStretch}!tainicom.Aether.Physics2D.Fluids.FluidDefinition@{tainicom.Aether.Physics2D.Fluids.FluidDefinition}}
+\doxysubsubsection{\texorpdfstring{YieldRatioStretch}{YieldRatioStretch}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+Definition.\+Yield\+Ratio\+Stretch}
+
+
+
+Amount of change of the rest length of the springs (when stretched) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Fluids/1/Fluid\+Definition.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespace_microsoft_1_1_xna_1_1_framework_1_1_content" kind="namespace" language="C#">
+    <compoundname>Microsoft::Xna::Framework::Content</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/ContentReaders/BodyContainerReader.cs" line="9" column="38"/>
+  </compounddef>
+</doxygen>

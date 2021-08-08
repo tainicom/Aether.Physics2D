@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_attribute" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::XMLFragmentAttribute</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_attribute_1ac631ce50f7aadaf41f64feec29ab6cf8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentAttribute.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1121" column="23" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1121" bodyend="1121"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_attribute_1a70d9aff48f7a0d222e9ec824233a8bdf" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentAttribute.Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1122" column="23" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1122" bodyend="1122"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Serialization.cs" line="1119" column="13" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1120" bodyend="1123"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_attribute_1ac631ce50f7aadaf41f64feec29ab6cf8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentAttribute</scope><name>Name</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_attribute_1a70d9aff48f7a0d222e9ec824233a8bdf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentAttribute</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

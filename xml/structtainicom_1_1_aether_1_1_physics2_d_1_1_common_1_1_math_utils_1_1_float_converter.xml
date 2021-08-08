@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1_1_float_converter" kind="struct" language="C#" prot="private">
+    <compoundname>tainicom::Aether::Physics2D::Common::MathUtils::FloatConverter</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1_1_float_converter_1ad2bd5f05272ed56b4ad2a99cf19cd502" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.MathUtils.FloatConverter.x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="312" column="26" bodyfile="Physics2D/Common/Math.cs" bodystart="312" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1_1_float_converter_1a2c64707d7a4c6068335f74444088f007" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.MathUtils.FloatConverter.i</definition>
+        <argsstring></argsstring>
+        <name>i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="314" column="24" bodyfile="Physics2D/Common/Math.cs" bodystart="314" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Math.cs" line="309" column="16" bodyfile="Physics2D/Common/Math.cs" bodystart="310" bodyend="315"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1_1_float_converter_1a2c64707d7a4c6068335f74444088f007" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils::FloatConverter</scope><name>i</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1_1_float_converter_1ad2bd5f05272ed56b4ad2a99cf19cd502" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils::FloatConverter</scope><name>x</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

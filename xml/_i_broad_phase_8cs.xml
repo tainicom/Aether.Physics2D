@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_i_broad_phase_8cs" kind="file" language="C#">
+    <compoundname>IBroadPhase.cs</compoundname>
+    <innerclass refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase" prot="public">tainicom::Aether::Physics2D::Collision::IBroadPhase</innerclass>
+    <innernamespace refid="namespacetainicom">tainicom</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether">tainicom::Aether</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d">tainicom::Aether::Physics2D</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision">tainicom::Aether::Physics2D::Collision</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>Original<sp/>source<sp/>Farseer<sp/>Physics<sp/>Engine:</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014<sp/>Ian<sp/>Qvist,<sp/>http://farseerphysics.codeplex.com</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Microsoft<sp/>Permissive<sp/>License<sp/>(Ms-PL)<sp/>v1.1</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacetainicom" kindref="compound">tainicom</ref>.<ref refid="namespacetainicom_1_1_aether" kindref="compound">Aether</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d" kindref="compound">Physics2D</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common" kindref="compound">Common</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespacetainicom" kindref="compound">tainicom</ref>.<ref refid="namespacetainicom_1_1_aether" kindref="compound">Aether</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d" kindref="compound">Physics2D</ref>.<ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics" kindref="compound">Dynamics</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>XNAAPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref><sp/>=<sp/>Microsoft.Xna.Framework.Vector2;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision" kindref="compound">tainicom.Aether.Physics2D.Collision</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15" refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase" kindref="compound">IBroadPhase</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ProxyCount<sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdatePairs(BroadphaseDelegate<sp/>callback);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>TestOverlap(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyIdA,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyIdB);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>AddProxy(ref<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref><sp/>aabb);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RemoveProxy(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MoveProxy(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId,<sp/>ref<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref><sp/>aabb,<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref><sp/>displacement);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetProxy(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId,<sp/>ref<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_proxy" kindref="compound">FixtureProxy</ref><sp/>proxy);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_proxy" kindref="compound">FixtureProxy</ref><sp/>GetProxy(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TouchProxy(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>GetFatAABB(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId,<sp/>out<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref><sp/>aabb);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Query(BroadPhaseQueryCallback<sp/>callback,<sp/>ref<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref><sp/>aabb);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RayCast(BroadPhaseRayCastCallback<sp/>callback,<sp/>ref<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref><sp/>input);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ShiftOrigin(<ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref><sp/>newOrigin);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>delegate<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>BroadPhaseQueryCallback(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>delegate<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>BroadPhaseRayCastCallback(ref<sp/><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref><sp/>input,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>proxyId);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Physics2D/Collision/IBroadPhase.cs"/>
+  </compounddef>
+</doxygen>

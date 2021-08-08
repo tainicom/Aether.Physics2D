@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::DistanceProxy</compoundname>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a26aa9af06764c6da0138339cd3ae682a" prot="package" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.DistanceProxy.Radius</definition>
+        <argsstring></argsstring>
+        <name>Radius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="44" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a4d132525f9bca9f4d4ea3e82964ce1fa" prot="package" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>Vertices tainicom.Aether.Physics2D.Collision.DistanceProxy.Vertices</definition>
+        <argsstring></argsstring>
+        <name>Vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="45" column="27" bodyfile="Physics2D/Collision/Distance.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a35b7641e4b2ef5a2f6b2f1efb5b67a97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Collision.DistanceProxy.DistanceProxy</definition>
+        <argsstring>(Shape shape, int index)</argsstring>
+        <name>DistanceProxy</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape" kindref="compound">Shape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Initialize the proxy using the given shape. The shape must remain in scope while the proxy is in use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shape.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="55" column="16" bodyfile="Physics2D/Collision/Distance.cs" bodystart="55" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a9bf2ca1cab2922edf45b565d72e5d95e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.DistanceProxy.GetSupport</definition>
+        <argsstring>(Vector2 direction)</argsstring>
+        <name>GetSupport</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>direction</declname>
+        </param>
+        <briefdescription>
+<para>Get the supporting vertex index in the given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The direction.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="116" column="20" bodyfile="Physics2D/Collision/Distance.cs" bodystart="116" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a587d2098b15f1ad22020542cca2d2f44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.DistanceProxy.GetSupportVertex</definition>
+        <argsstring>(Vector2 direction)</argsstring>
+        <name>GetSupportVertex</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>direction</declname>
+        </param>
+        <briefdescription>
+<para>Get the supporting vertex in the given direction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The direction.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="138" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="138" bodyend="153"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A distance proxy is used by the GJK algorithm. It encapsulates any shape. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.DistanceProxy</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Vertices</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vertices</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>List&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Distance.cs" line="42" column="11" bodyfile="Physics2D/Collision/Distance.cs" bodystart="43" bodyend="154"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a35b7641e4b2ef5a2f6b2f1efb5b67a97" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceProxy</scope><name>DistanceProxy</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a9bf2ca1cab2922edf45b565d72e5d95e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceProxy</scope><name>GetSupport</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a587d2098b15f1ad22020542cca2d2f44" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceProxy</scope><name>GetSupportVertex</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a26aa9af06764c6da0138339cd3ae682a" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceProxy</scope><name>Radius</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy_1a4d132525f9bca9f4d4ea3e82964ce1fa" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceProxy</scope><name>Vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

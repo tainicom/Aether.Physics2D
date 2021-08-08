@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_chain_hull" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::ConvexHull::ChainHull</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_chain_hull_1_1_point_comparer" prot="private">tainicom::Aether::Physics2D::Common::ConvexHull::ChainHull::PointComparer</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_chain_hull_1adbf118c3dc57ea17bd7b26df50ca8a91" prot="private" static="yes" mutable="no">
+        <type>PointComparer</type>
+        <definition>PointComparer tainicom.Aether.Physics2D.Common.ConvexHull.ChainHull._pointComparer</definition>
+        <argsstring></argsstring>
+        <name>_pointComparer</name>
+        <initializer>= new PointComparer()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/ConvexHull/ChainHull.cs" line="24" column="38" bodyfile="Physics2D/Common/ConvexHull/ChainHull.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_chain_hull_1a98a85af0c02a4aeb1fee8762071becc9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.ConvexHull.ChainHull.GetConvexHull</definition>
+        <argsstring>(Vertices vertices)</argsstring>
+        <name>GetConvexHull</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Returns the convex hull from the given vertices.. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/ConvexHull/ChainHull.cs" line="29" column="32" bodyfile="Physics2D/Common/ConvexHull/ChainHull.cs" bodystart="29" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Andrew&apos;s Monotone Chain Convex Hull algorithm. Used to get the convex hull of a point cloud. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Source: <ulink url="http://www.softsurfer.com/Archive/algorithm_0109/algorithm_0109.htm">http://www.softsurfer.com/Archive/algorithm_0109/algorithm_0109.htm</ulink></para>
+    </detaileddescription>
+    <location file="Physics2D/Common/ConvexHull/ChainHull.cs" line="20" column="19" bodyfile="Physics2D/Common/ConvexHull/ChainHull.cs" bodystart="21" bodyend="150"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_chain_hull_1adbf118c3dc57ea17bd7b26df50ca8a91" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::ConvexHull::ChainHull</scope><name>_pointComparer</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_chain_hull_1a98a85af0c02a4aeb1fee8762071becc9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::ConvexHull::ChainHull</scope><name>GetConvexHull</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

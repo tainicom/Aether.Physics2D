@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a64722f0a0b1065a899c8c0f1a7070ef6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.ConvexPartition</definition>
+        <argsstring>(Vertices vertices)</argsstring>
+        <name>ConvexPartition</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Decompose the polygon into several smaller non-concave polygon. If the polygon is already convex, it will return the original polygon, unless it is over Settings.MaxPolygonVertices. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="34" column="28" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="34" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1aa9c81a331af7f04c3ce0cb549da62319" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.TriangulatePolygon</definition>
+        <argsstring>(Vertices vertices)</argsstring>
+        <name>TriangulatePolygon</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="42" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="42" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a1672b8d00d7863585fa907986e891917" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.At</definition>
+        <argsstring>(int i, Vertices vertices)</argsstring>
+        <name>At</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="159" column="32" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="159" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a60a96176d07ea35cf939856651af599f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.Copy</definition>
+        <argsstring>(int i, int j, Vertices vertices)</argsstring>
+        <name>Copy</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="165" column="33" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="165" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1aa7d327047b4459db19f916f253ac4a7f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.CanSee</definition>
+        <argsstring>(int i, int j, Vertices vertices)</argsstring>
+        <name>CanSee</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="179" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="179" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1af1103e39cc35426a4a8c8f4713c32fbf" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.Reflex</definition>
+        <argsstring>(int i, Vertices vertices)</argsstring>
+        <name>Reflex</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="214" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a10f4e986a9436e23cbc4382a3bb41997" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.Right</definition>
+        <argsstring>(int i, Vertices vertices)</argsstring>
+        <name>Right</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="219" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="219" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1af68a0837c63e80e2b6b9f0bee5620b74" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.Left</definition>
+        <argsstring>(Vector2 a, Vector2 b, Vector2 c)</argsstring>
+        <name>Left</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="224" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="224" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1ad2dbb045de76278f739b61b99b00106f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.LeftOn</definition>
+        <argsstring>(Vector2 a, Vector2 b, Vector2 c)</argsstring>
+        <name>LeftOn</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="229" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="229" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a8f94ca3358903b8e80ee72d3ec351086" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.Right</definition>
+        <argsstring>(Vector2 a, Vector2 b, Vector2 c)</argsstring>
+        <name>Right</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="234" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="234" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1ad5d6ce36844266fe18f931e264fe9b1d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.RightOn</definition>
+        <argsstring>(Vector2 a, Vector2 b, Vector2 c)</argsstring>
+        <name>RightOn</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="239" column="29" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1ad6e5d6d3b0f13c5674db93bba2c065eb" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.Decomposition.BayazitDecomposer.SquareDist</definition>
+        <argsstring>(Vector2 a, Vector2 b)</argsstring>
+        <name>SquareDist</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="244" column="30" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="244" bodyend="249"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Convex decomposition algorithm created by Mark Bayazit (<ulink url="http://mnbayazit.com/">http://mnbayazit.com/</ulink>) </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Properties:<itemizedlist>
+<listitem><para>Tries to decompose using polygons instead of triangles.</para>
+</listitem><listitem><para>Tends to produce optimal results with low processing time.</para>
+</listitem><listitem><para>Running time is O(nr), n = number of vertices, r = reflex vertices.</para>
+</listitem><listitem><para>Does not support holes.</para>
+</listitem></itemizedlist>
+</para>
+<para>For more information about this algorithm, see <ulink url="http://mnbayazit.com/406/bayazit">http://mnbayazit.com/406/bayazit</ulink></para>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/BayazitDecomposer.cs" line="28" column="21" bodyfile="Physics2D/Common/Decomposition/BayazitDecomposer.cs" bodystart="29" bodyend="250"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a1672b8d00d7863585fa907986e891917" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>At</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1aa7d327047b4459db19f916f253ac4a7f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>CanSee</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a64722f0a0b1065a899c8c0f1a7070ef6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>ConvexPartition</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a60a96176d07ea35cf939856651af599f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>Copy</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1af68a0837c63e80e2b6b9f0bee5620b74" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>Left</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1ad2dbb045de76278f739b61b99b00106f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>LeftOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1af1103e39cc35426a4a8c8f4713c32fbf" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>Reflex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a10f4e986a9436e23cbc4382a3bb41997" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>Right</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1a8f94ca3358903b8e80ee72d3ec351086" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>Right</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1ad5d6ce36844266fe18f931e264fe9b1d" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>RightOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1ad6e5d6d3b0f13c5674db93bba2c065eb" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>SquareDist</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_bayazit_decomposer_1aa9c81a331af7f04c3ce0cb549da62319" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::BayazitDecomposer</scope><name>TriangulatePolygon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

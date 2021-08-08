@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_decomposer" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDTDecomposer</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_decomposer_1a3c3133476d6cb6b7777453171c437886" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDTDecomposer.ConvexPartition</definition>
+        <argsstring>(Vertices vertices)</argsstring>
+        <name>ConvexPartition</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Decompose the polygon into several smaller non-concave polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDTDecomposer.cs" line="42" column="28" bodyfile="Physics2D/Common/Decomposition/CDTDecomposer.cs" bodystart="42" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>2D constrained Delaunay triangulation algorithm. Based on the paper &quot;Sweep-line algorithm for constrained Delaunay triangulation&quot; by V. Domiter and and B. Zalik </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Properties:<itemizedlist>
+<listitem><para>Creates triangles with a large interior angle.</para>
+</listitem><listitem><para>Supports holes</para>
+</listitem><listitem><para>Generate a lot of garbage due to incapsulation of the Poly2Tri library.</para>
+</listitem><listitem><para>Running time is O(n^2), n = number of vertices.</para>
+</listitem><listitem><para>Does not care about winding order.</para>
+</listitem></itemizedlist>
+</para>
+<para>Source: <ulink url="http://code.google.com/p/poly2tri/">http://code.google.com/p/poly2tri/</ulink></para>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDTDecomposer.cs" line="37" column="21" bodyfile="Physics2D/Common/Decomposition/CDTDecomposer.cs" bodystart="38" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_decomposer_1a3c3133476d6cb6b7777453171c437886" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDTDecomposer</scope><name>ConvexPartition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

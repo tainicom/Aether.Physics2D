@@ -1,0 +1,675 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Island</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a7ce0f281b91ebf64562301899447b31f" prot="private" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager" kindref="compound">ContactManager</ref></type>
+        <definition>ContactManager tainicom.Aether.Physics2D.Dynamics.Island._contactManager</definition>
+        <argsstring></argsstring>
+        <name>_contactManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="46" column="32" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a4ed5290f69470a2f3114b95d46c2121d" prot="private" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver" kindref="compound">ContactSolver</ref></type>
+        <definition>ContactSolver tainicom.Aether.Physics2D.Dynamics.Island._contactSolver</definition>
+        <argsstring></argsstring>
+        <name>_contactSolver</name>
+        <initializer>= new <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver" kindref="compound">ContactSolver</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="47" column="31" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aeb1941a3ac30446b91f2340f37a91627" prot="private" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref>[]</type>
+        <definition>Contact [] tainicom.Aether.Physics2D.Dynamics.Island._contacts</definition>
+        <argsstring></argsstring>
+        <name>_contacts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="48" column="25" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ac9b9c03c29786bab00d6be85cfd98a9c" prot="private" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" kindref="compound">Joint</ref>[]</type>
+        <definition>Joint [] tainicom.Aether.Physics2D.Dynamics.Island._joints</definition>
+        <argsstring></argsstring>
+        <name>_joints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="49" column="23" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a7c59cbab831e2d9202b22c71be2df883" prot="private" static="no" mutable="no">
+        <type>Stopwatch</type>
+        <definition>Stopwatch tainicom.Aether.Physics2D.Dynamics.Island._watch</definition>
+        <argsstring></argsstring>
+        <name>_watch</name>
+        <initializer>= new Stopwatch()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="53" column="27" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a3c9c1d9c9adcf50c6d30c27f275113dc" prot="private" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Dynamics.Island.LinTolSqr</definition>
+        <argsstring></argsstring>
+        <name>LinTolSqr</name>
+        <initializer>= Settings.LinearSleepTolerance * Settings.LinearSleepTolerance</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="51" column="29" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a59aeb9d095d19823658921c24170e446" prot="private" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Dynamics.Island.AngTolSqr</definition>
+        <argsstring></argsstring>
+        <name>AngTolSqr</name>
+        <initializer>= Settings.AngularSleepTolerance * Settings.AngularSleepTolerance</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="52" column="29" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a15f96b0a5a36fbc224c554403de6822b" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref>[]</type>
+        <definition>Body [] tainicom.Aether.Physics2D.Dynamics.Island.Bodies</definition>
+        <argsstring></argsstring>
+        <name>Bodies</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="55" column="21" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a341fe6327768e36adb00da0c9b4f21ad" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Island.BodyCount</definition>
+        <argsstring></argsstring>
+        <name>BodyCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="56" column="20" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a5c39296a98d1c74fe595c5255f434e13" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Island.ContactCount</definition>
+        <argsstring></argsstring>
+        <name>ContactCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="57" column="20" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aa399ad9c263c4178b034658e3b9e6b21" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Island.JointCount</definition>
+        <argsstring></argsstring>
+        <name>JointCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="58" column="20" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a8c3af78a20c9fbb3b8720167c6c9fa92" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Island.BodyCapacity</definition>
+        <argsstring></argsstring>
+        <name>BodyCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="64" column="20" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a447a110470a26823883ffbe68e793b6c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Island.ContactCapacity</definition>
+        <argsstring></argsstring>
+        <name>ContactCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="65" column="20" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ad8b31220640b1c7729dd8fc3aad8a094" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Island.JointCapacity</definition>
+        <argsstring></argsstring>
+        <name>JointCapacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="66" column="20" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a48a932f19c6c32f7af1425fdf273c894" prot="public" static="no" mutable="no">
+        <type>TimeSpan</type>
+        <definition>TimeSpan tainicom.Aether.Physics2D.Dynamics.Island.JointUpdateTime</definition>
+        <argsstring></argsstring>
+        <name>JointUpdateTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="67" column="25" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ae7f02573727a760519acf94189028da3" prot="package" static="no" mutable="no">
+        <type>SolverVelocity[]</type>
+        <definition>SolverVelocity [] tainicom.Aether.Physics2D.Dynamics.Island._velocities</definition>
+        <argsstring></argsstring>
+        <name>_velocities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="60" column="33" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a98983b8283fe81dda381c9f109ca4153" prot="package" static="no" mutable="no">
+        <type>SolverPosition[]</type>
+        <definition>SolverPosition [] tainicom.Aether.Physics2D.Dynamics.Island._positions</definition>
+        <argsstring></argsstring>
+        <name>_positions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="61" column="33" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aa5beaf48156d46669136d7b5c1e05178" prot="package" static="no" mutable="no">
+        <type>int[]</type>
+        <definition>int [] tainicom.Aether.Physics2D.Dynamics.Island._locks</definition>
+        <argsstring></argsstring>
+        <name>_locks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="62" column="22" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a9f163b7bf5e6bd2ee5167ecf6d109fbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Reset</definition>
+        <argsstring>(int bodyCapacity, int contactCapacity, int jointCapacity, ContactManager contactManager)</argsstring>
+        <name>Reset</name>
+        <param>
+          <type>int</type>
+          <declname>bodyCapacity</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>contactCapacity</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>jointCapacity</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager" kindref="compound">ContactManager</ref></type>
+          <declname>contactManager</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="69" column="21" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="69" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a65205745e9734c23e4a7aaca81b9e9dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="106" column="21" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="106" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ab62aaeeb394b3bb16ecb0a5b39f6ad48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Add</definition>
+        <argsstring>(Body body)</argsstring>
+        <name>Add</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="427" column="21" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="427" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1acf3ab1f5723d8eb3a2234c7ecdf8f47c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Add</definition>
+        <argsstring>(Contact contact)</argsstring>
+        <name>Add</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref></type>
+          <declname>contact</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="434" column="21" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="434" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a6a5328135c9301ec0862f12149e336e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Add</definition>
+        <argsstring>(Joint joint)</argsstring>
+        <name>Add</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" kindref="compound">Joint</ref></type>
+          <declname>joint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="440" column="21" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="440" bodyend="444"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1af120aae7a5f55f75c486afe06291b319" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Solve</definition>
+        <argsstring>(ref TimeStep step, ref Vector2 gravity)</argsstring>
+        <name>Solve</name>
+        <param>
+          <type>ref TimeStep</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>gravity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="113" column="23" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="113" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aca5b390fca77ab8bed3f65b90b139e18" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.SolveTOI</definition>
+        <argsstring>(ref TimeStep subStep, int toiIndexA, int toiIndexB)</argsstring>
+        <name>SolveTOI</name>
+        <param>
+          <type>ref TimeStep</type>
+          <declname>subStep</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>toiIndexA</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>toiIndexB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="334" column="23" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="334" bodyend="425"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1af9a216eea7af028fb8ca27aaaeaeb4c8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Dynamics.Island.Report</definition>
+        <argsstring>(ContactVelocityConstraint[] constraints)</argsstring>
+        <name>Report</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint" kindref="compound">ContactVelocityConstraint</ref>[]</type>
+          <declname>constraints</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Island.cs" line="446" column="22" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="446" bodyend="469"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is an internal class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>tainicom.Aether.Physics2D.Common.Transform</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>p</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>q</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>IEnumerable&lt; Joint &gt;</label>
+      </node>
+      <node id="10">
+        <label>ICollection&lt; Fixture &gt;</label>
+      </node>
+      <node id="27">
+        <label>tainicom.Aether.Physics2D.Dynamics.ControllerCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_controller_collection"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>tainicom.Aether.Physics2D.Dynamics.World</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>JointList</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>ContactManager</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>ControllerList</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>BodyList</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>ICollection&lt; Controller &gt;</label>
+      </node>
+      <node id="22">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="23" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="31">
+        <label>tainicom.Aether.Physics2D.Dynamics.BodyCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverVelocity</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>v</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>IList&lt; Fixture &gt;</label>
+      </node>
+      <node id="28">
+        <label>IEnumerable&lt; Controller &gt;</label>
+      </node>
+      <node id="20">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tainicom.Aether.Physics2D.Common.Sweep</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>C</edgelabel>
+          <edgelabel>C0</edgelabel>
+          <edgelabel>LocalCenter</edgelabel>
+        </childnode>
+      </node>
+      <node id="32">
+        <label>IEnumerable&lt; Body &gt;</label>
+      </node>
+      <node id="8">
+        <label>tainicom.Aether.Physics2D.Dynamics.FixtureCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_collection"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>IList&lt; Controller &gt;</label>
+      </node>
+      <node id="21">
+        <label>Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>Manifold</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>_nodeA</edgelabel>
+          <edgelabel>_nodeB</edgelabel>
+        </childnode>
+      </node>
+      <node id="34">
+        <label>IList&lt; Body &gt;</label>
+      </node>
+      <node id="18">
+        <label>IList&lt; Joint &gt;</label>
+      </node>
+      <node id="24">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge"/>
+      </node>
+      <node id="13">
+        <label>tainicom.Aether.Physics2D.Common.Complex</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_complex"/>
+      </node>
+      <node id="25">
+        <label>IEnumerable&lt; Contact &gt;</label>
+      </node>
+      <node id="9">
+        <label>IEnumerable&lt; Fixture &gt;</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Island</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>_positions</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_velocities</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Bodies</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>tainicom.Aether.Physics2D.Dynamics.JointCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joint_collection"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ICollection&lt; Joint &gt;</label>
+      </node>
+      <node id="6">
+        <label>tainicom.Aether.Physics2D.Dynamics.Body</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>_sweep</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>FixtureList</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_force</edgelabel>
+          <edgelabel>_linearVelocity</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>_xf</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>_world</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>ICollection&lt; Body &gt;</label>
+      </node>
+      <node id="26">
+        <label>tainicom.Aether.Physics2D.Collision.IBroadPhase</label>
+        <link refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase"/>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverPosition</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>c</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>tainicom.Aether.Physics2D.Dynamics.ContactManager</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager"/>
+        <childnode refid="20" relation="usage">
+          <edgelabel>ContactList</edgelabel>
+          <edgelabel>_contactPoolList</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>BroadPhase</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/Island.cs" line="44" column="11" bodyfile="Physics2D/Dynamics/Island.cs" bodystart="45" bodyend="470"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a7ce0f281b91ebf64562301899447b31f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_contactManager</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aeb1941a3ac30446b91f2340f37a91627" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_contacts</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a4ed5290f69470a2f3114b95d46c2121d" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_contactSolver</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ac9b9c03c29786bab00d6be85cfd98a9c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_joints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aa5beaf48156d46669136d7b5c1e05178" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_locks</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a98983b8283fe81dda381c9f109ca4153" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_positions</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ae7f02573727a760519acf94189028da3" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_velocities</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a7c59cbab831e2d9202b22c71be2df883" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>_watch</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ab62aaeeb394b3bb16ecb0a5b39f6ad48" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Add</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1acf3ab1f5723d8eb3a2234c7ecdf8f47c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Add</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a6a5328135c9301ec0862f12149e336e4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Add</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a59aeb9d095d19823658921c24170e446" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>AngTolSqr</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a15f96b0a5a36fbc224c554403de6822b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Bodies</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a8c3af78a20c9fbb3b8720167c6c9fa92" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>BodyCapacity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a341fe6327768e36adb00da0c9b4f21ad" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>BodyCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a65205745e9734c23e4a7aaca81b9e9dc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Clear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a447a110470a26823883ffbe68e793b6c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>ContactCapacity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a5c39296a98d1c74fe595c5255f434e13" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>ContactCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1ad8b31220640b1c7729dd8fc3aad8a094" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>JointCapacity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aa399ad9c263c4178b034658e3b9e6b21" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>JointCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a48a932f19c6c32f7af1425fdf273c894" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>JointUpdateTime</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a3c9c1d9c9adcf50c6d30c27f275113dc" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>LinTolSqr</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1af9a216eea7af028fb8ca27aaaeaeb4c8" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Report</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1a9f163b7bf5e6bd2ee5167ecf6d109fbd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Reset</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1af120aae7a5f55f75c486afe06291b319" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>Solve</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island_1aca5b390fca77ab8bed3f65b90b139e18" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Island</scope><name>SolveTOI</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

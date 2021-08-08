@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Controllers.Controller</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1acb51cf67d6cdc1ffd8923ee9d98feee3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Controllers.VelocityLimitController.LimitAngularVelocity</definition>
+        <argsstring></argsstring>
+        <name>LimitAngularVelocity</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="19" column="21" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a7deb2f6d7c0af9fef468dbfcf65e668d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Controllers.VelocityLimitController.LimitLinearVelocity</definition>
+        <argsstring></argsstring>
+        <name>LimitLinearVelocity</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="20" column="21" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1ac4f02b5c6a02451eb223923782ed5af5" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref> &gt;</type>
+        <definition>List&lt;Body&gt; tainicom.Aether.Physics2D.Controllers.VelocityLimitController._bodies</definition>
+        <argsstring></argsstring>
+        <name>_bodies</name>
+        <initializer>= new List&lt;<ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="21" column="22" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aba507b99243940535b39561402cd4f96" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.VelocityLimitController._maxAngularSqared</definition>
+        <argsstring></argsstring>
+        <name>_maxAngularSqared</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="22" column="23" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a0d9e11184f90b2368bb67a927c598496" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.VelocityLimitController._maxAngularVelocity</definition>
+        <argsstring></argsstring>
+        <name>_maxAngularVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="23" column="23" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a51adc1a96879246fb8a24e8fc50ced22" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.VelocityLimitController._maxLinearSqared</definition>
+        <argsstring></argsstring>
+        <name>_maxLinearSqared</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="24" column="23" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a8721af9ce51b36cdd061a9c1630df906" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.VelocityLimitController._maxLinearVelocity</definition>
+        <argsstring></argsstring>
+        <name>_maxLinearVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="25" column="23" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a2cf4fa0388d9f258a50e910862735b19" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.VelocityLimitController.MaxAngularVelocity</definition>
+        <argsstring></argsstring>
+        <name>MaxAngularVelocity</name>
+        <briefdescription>
+<para>Gets or sets the max angular velocity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The max angular velocity.</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="61" column="22" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="62" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a9d816e25a98e531a798d5dee3cbef6d9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.VelocityLimitController.MaxLinearVelocity</definition>
+        <argsstring></argsstring>
+        <name>MaxLinearVelocity</name>
+        <briefdescription>
+<para>Gets or sets the max linear velocity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The max linear velocity.</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="75" column="22" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="76" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aa7edc78925a6f0f82668eb1444a845e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Controllers.VelocityLimitController.VelocityLimitController</definition>
+        <argsstring>()</argsstring>
+        <name>VelocityLimitController</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller" kindref="compound">VelocityLimitController</ref> class. Sets the max linear velocity to Settings.MaxTranslation Sets the max angular velocity to Settings.MaxRotation </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="32" column="16" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a657a291f1f80d1ca1925b947e7b87b36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Controllers.VelocityLimitController.VelocityLimitController</definition>
+        <argsstring>(float maxLinearVelocity, float maxAngularVelocity)</argsstring>
+        <name>VelocityLimitController</name>
+        <param>
+          <type>float</type>
+          <declname>maxLinearVelocity</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxAngularVelocity</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller" kindref="compound">VelocityLimitController</ref> class. Pass in 0 or float.MaxValue to disable the limit. maxAngularVelocity = 0 will disable the angular velocity limit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maxLinearVelocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max linear velocity.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxAngularVelocity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max angular velocity.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="45" column="16" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="45" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aa82345aea17a0441f895b0e660569d4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Controllers.VelocityLimitController.Update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a88de5f12716b917835890536d2569aa2">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="85" column="30" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="85" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aebbd5ee3386dc7b760f3b36aabae2cf2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Controllers.VelocityLimitController.AddBody</definition>
+        <argsstring>(Body body)</argsstring>
+        <name>AddBody</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="123" column="21" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="123" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1af27ebb278ce10d7fa8bf393c1938e1c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Controllers.VelocityLimitController.RemoveBody</definition>
+        <argsstring>(Body body)</argsstring>
+        <name>RemoveBody</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/VelocityLimitController.cs" line="128" column="21" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="128" bodyend="131"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Put a limit on the linear (translation - the movespeed) and angular (rotation) velocity of bodies added to this controller. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Controllers.VelocityLimitController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="2">
+        <label>Controller</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Controllers.VelocityLimitController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="2">
+        <label>Controller</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Controllers/VelocityLimitController.cs" line="17" column="11" bodyfile="Physics2D/Controllers/VelocityLimitController.cs" bodystart="18" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1ac4f02b5c6a02451eb223923782ed5af5" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>_bodies</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aba507b99243940535b39561402cd4f96" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>_maxAngularSqared</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a0d9e11184f90b2368bb67a927c598496" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>_maxAngularVelocity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a51adc1a96879246fb8a24e8fc50ced22" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>_maxLinearSqared</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a8721af9ce51b36cdd061a9c1630df906" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>_maxLinearVelocity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aebbd5ee3386dc7b760f3b36aabae2cf2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>AddBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a0c67bc735e81298b08db05161f5ce33d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>AddDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1ad4b4f1a12b0ca07272bca503bc3cedeb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>AddEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1abaf3f202dabad31bf70af473335b58ff" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>Controller</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a974dac58ca6481963f29e91d2be1d400" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>ControllerCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2c43bbd612e1b91d74a7730e807a58f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>DisabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8ea4ad655cf58505be4ea05629c36129" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>DisabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a71e8a85b66e9c7493c83e1142e1cc041" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>Enabled</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a34e34e8ea50c84c31e8be3d8694daaee" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>EnabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec28e1af73b3b5c2aab51fd5860db8ac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>EnabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a5250c4ecce57b708d6531389624e29ac" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>IsActiveOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a67f9813c805b3c12a8f6b59442fe1aca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>IsInDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8422e2802fac58d53fc75e32cc4c8ab7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>IsInEnabledInCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1acb51cf67d6cdc1ffd8923ee9d98feee3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>LimitAngularVelocity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a7deb2f6d7c0af9fef468dbfcf65e668d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>LimitLinearVelocity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a2cf4fa0388d9f258a50e910862735b19" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>MaxAngularVelocity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a9d816e25a98e531a798d5dee3cbef6d9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>MaxLinearVelocity</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1af27ebb278ce10d7fa8bf393c1938e1c9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>RemoveBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a207af74af2351b2e409d673272eef031" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>RemoveDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec5dd33678fbdad8fb7da68d769c0658" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>RemoveEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aa82345aea17a0441f895b0e660569d4a" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>Update</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1aa7edc78925a6f0f82668eb1444a845e4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>VelocityLimitController</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_1a657a291f1f80d1ca1925b947e7b87b36" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>VelocityLimitController</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1afaf1ad1096bb362e329de2583716afbf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::VelocityLimitController</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

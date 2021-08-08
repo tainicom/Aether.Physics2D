@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::Path</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1abbdf39c176553a3ed6a59166fd7b31d0" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref> &gt;</type>
+        <definition>List&lt;Vector2&gt; tainicom.Aether.Physics2D.Common.Path.ControlPoints</definition>
+        <argsstring></argsstring>
+        <name>ControlPoints</name>
+        <briefdescription>
+<para>All the points that makes up the curve </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="30" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1aacecdf6a1377c1b8cddf0ae0b9457831" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.Path._deltaT</definition>
+        <argsstring></argsstring>
+        <name>_deltaT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="32" column="23" bodyfile="Physics2D/Common/Path.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1adc18fbf44cf89b4299cf05b6f95cae5c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Path.Closed</definition>
+        <argsstring></argsstring>
+        <name>Closed</name>
+        <briefdescription>
+<para>True if the curve is closed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>true</computeroutput> if closed; otherwise, <computeroutput>false</computeroutput>.</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="73" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="73" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a10fd2cad714bf82230202d83fba8c099" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Path.Path</definition>
+        <argsstring>()</argsstring>
+        <name>Path</name>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path" kindref="compound">Path</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="37" column="16" bodyfile="Physics2D/Common/Path.cs" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ab384d9424bc62883a1553d513ea6077f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Path.Path</definition>
+        <argsstring>(Vector2[] vertices)</argsstring>
+        <name>Path</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>[]</type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path" kindref="compound">Path</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertices to created the path from.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="46" column="16" bodyfile="Physics2D/Common/Path.cs" bodystart="46" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a43786c7b6714340e0ae82e0f3743f2a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Path.Path</definition>
+        <argsstring>(IList&lt; Vector2 &gt; vertices)</argsstring>
+        <name>Path</name>
+        <param>
+          <type>IList&lt; <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref> &gt;</type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path" kindref="compound">Path</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertices to created the path from.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="60" column="16" bodyfile="Physics2D/Common/Path.cs" bodystart="60" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1afca21ec05625c035748e1cdbcc7988b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Path.NextIndex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>NextIndex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the next index of a controlpoint </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="80" column="20" bodyfile="Physics2D/Common/Path.cs" bodystart="80" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a27e56f7d3434bdfb4fabb65dfb9b89c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Path.PreviousIndex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>PreviousIndex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the previous index of a controlpoint </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="94" column="20" bodyfile="Physics2D/Common/Path.cs" bodystart="94" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ac561adbb24e7c0426b00a49ca640cd11" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.Translate</definition>
+        <argsstring>(ref Vector2 vector)</argsstring>
+        <name>Translate</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>vector</declname>
+        </param>
+        <briefdescription>
+<para>Translates the control points by the specified vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="107" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ac61a49caa55cbe2fd68df6d4f47331f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.Scale</definition>
+        <argsstring>(ref Vector2 value)</argsstring>
+        <name>Scale</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Scales the control points by the specified vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="117" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="117" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1abbe8a46aeeba5c1da447145a302a0d82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.Rotate</definition>
+        <argsstring>(float value)</argsstring>
+        <name>Rotate</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Rotate the control points by the defined value in radians. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount to rotate by in radians.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="127" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="127" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a890988bd63fbbe5444af983150538fcc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string tainicom.Aether.Physics2D.Common.Path.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="135" column="32" bodyfile="Physics2D/Common/Path.cs" bodystart="135" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a2f86e3bdf051addb4aa44d41f64a4046" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>Vertices tainicom.Aether.Physics2D.Common.Path.GetVertices</definition>
+        <argsstring>(int divisions)</argsstring>
+        <name>GetVertices</name>
+        <param>
+          <type>int</type>
+          <declname>divisions</declname>
+        </param>
+        <briefdescription>
+<para>Returns a set of points defining the curve with the specifed number of divisions between each control point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>divisions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of divisions between each control point.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="156" column="25" bodyfile="Physics2D/Common/Path.cs" bodystart="156" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a15a72584845f6809c1df67e454445f0d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.Path.GetPosition</definition>
+        <argsstring>(float time)</argsstring>
+        <name>GetPosition</name>
+        <param>
+          <type>float</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="170" column="24" bodyfile="Physics2D/Common/Path.cs" bodystart="170" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ab33438c56b3512d06bae2aa02c41845f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.Path.GetPositionNormal</definition>
+        <argsstring>(float time)</argsstring>
+        <name>GetPositionNormal</name>
+        <param>
+          <type>float</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Gets the normal for the given time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The normal.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="260" column="24" bodyfile="Physics2D/Common/Path.cs" bodystart="260" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1acadb6f6e51dbeffb16c86e02603d63c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.Add</definition>
+        <argsstring>(Vector2 point)</argsstring>
+        <name>Add</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="279" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="279" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1aaaeab503d81ac1ac771aaa4b39c8e56d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.Remove</definition>
+        <argsstring>(Vector2 point)</argsstring>
+        <name>Remove</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="285" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="285" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ad237bfd28001753cdec2df207dc7f4e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.RemoveAt</definition>
+        <argsstring>(int index)</argsstring>
+        <name>RemoveAt</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="291" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="291" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a5cc5d33e8a0b516474ab9fecb254e632" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.Path.GetLength</definition>
+        <argsstring>()</argsstring>
+        <name>GetLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="297" column="22" bodyfile="Physics2D/Common/Path.cs" bodystart="297" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a5743363c0bc21e9d34270c6b1c51dfd6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref> &gt;</type>
+        <definition>List&lt;Vector3&gt; tainicom.Aether.Physics2D.Common.Path.SubdivideEvenly</definition>
+        <argsstring>(int divisions)</argsstring>
+        <name>SubdivideEvenly</name>
+        <param>
+          <type>int</type>
+          <declname>divisions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="313" column="21" bodyfile="Physics2D/Common/Path.cs" bodystart="313" bodyend="361"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a8d24b21cca1241452abe432ca1b89a1a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Path.CalcCatmullRom</definition>
+        <argsstring>(Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3, float amount, out Vector2 result)</argsstring>
+        <name>CalcCatmullRom</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p0</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p2</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p3</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>amount</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Path.cs" line="233" column="22" bodyfile="Physics2D/Common/Path.cs" bodystart="233" bodyend="253"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path" kindref="compound">Path</ref>: Very similar to <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref>, but this class contains vectors describing control points on a Catmull-Rom curve. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Path.cs" line="25" column="11" bodyfile="Physics2D/Common/Path.cs" bodystart="26" bodyend="362"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1aacecdf6a1377c1b8cddf0ae0b9457831" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>_deltaT</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1acadb6f6e51dbeffb16c86e02603d63c5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Add</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a8d24b21cca1241452abe432ca1b89a1a" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>CalcCatmullRom</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1adc18fbf44cf89b4299cf05b6f95cae5c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Closed</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1abbdf39c176553a3ed6a59166fd7b31d0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>ControlPoints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a5cc5d33e8a0b516474ab9fecb254e632" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>GetLength</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a15a72584845f6809c1df67e454445f0d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>GetPosition</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ab33438c56b3512d06bae2aa02c41845f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>GetPositionNormal</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a2f86e3bdf051addb4aa44d41f64a4046" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>GetVertices</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1afca21ec05625c035748e1cdbcc7988b4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>NextIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a10fd2cad714bf82230202d83fba8c099" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Path</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ab384d9424bc62883a1553d513ea6077f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Path</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a43786c7b6714340e0ae82e0f3743f2a0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Path</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a27e56f7d3434bdfb4fabb65dfb9b89c9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>PreviousIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1aaaeab503d81ac1ac771aaa4b39c8e56d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Remove</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ad237bfd28001753cdec2df207dc7f4e7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>RemoveAt</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1abbe8a46aeeba5c1da447145a302a0d82" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Rotate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ac61a49caa55cbe2fd68df6d4f47331f7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Scale</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a5743363c0bc21e9d34270c6b1c51dfd6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>SubdivideEvenly</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1a890988bd63fbbe5444af983150538fcc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>ToString</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_1ac561adbb24e7c0426b00a49ca640cd11" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Path</scope><name>Translate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

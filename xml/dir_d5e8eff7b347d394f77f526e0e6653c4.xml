@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_d5e8eff7b347d394f77f526e0e6653c4" kind="dir">
+    <compoundname>Physics2D</compoundname>
+    <innerdir refid="dir_a88b9a141032021f574d50b3e6d439b5">Physics2D/Collision</innerdir>
+    <innerdir refid="dir_bcfc156f6f2a78c8313299bbd03aaaf6">Physics2D/Common</innerdir>
+    <innerdir refid="dir_5d4a6b2298e194acc008d2de0e658db5">Physics2D/Content</innerdir>
+    <innerdir refid="dir_c06fc5b65ba2f8d2155138ce42204d25">Physics2D/ContentReaders</innerdir>
+    <innerdir refid="dir_0e1029dfd013b058d543644acd0717bc">Physics2D/Controllers</innerdir>
+    <innerdir refid="dir_23fdfceae895dcb338a941e1d7344a92">Physics2D/Dynamics</innerdir>
+    <innerdir refid="dir_663aa8c10039a31c23e55d414edd5c37">Physics2D/Fluids</innerdir>
+    <innerdir refid="dir_ed7d350bffbd4947f60f0b5c888c922c">Physics2D/Properties</innerdir>
+    <innerfile refid="_settings_8cs">Settings.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/"/>
+  </compounddef>
+</doxygen>

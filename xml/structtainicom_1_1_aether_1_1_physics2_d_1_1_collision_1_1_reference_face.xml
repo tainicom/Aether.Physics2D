@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::ReferenceFace</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a1246bc94f19f91f1c8b8c17348514003" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.ReferenceFace.i1</definition>
+        <argsstring></argsstring>
+        <name>i1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="564" column="20" bodyfile="Physics2D/Collision/Collision.cs" bodystart="564" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1abe311d82e9a71f657c14daba85541465" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.ReferenceFace.i2</definition>
+        <argsstring></argsstring>
+        <name>i2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="564" column="23" bodyfile="Physics2D/Collision/Collision.cs" bodystart="564" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1ad282069d20fc5f29ee803acd4acac931" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ReferenceFace.v1</definition>
+        <argsstring></argsstring>
+        <name>v1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="566" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="566" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a08f23e0e4e1a637fb6c252d60bcf0d06" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ReferenceFace.v2</definition>
+        <argsstring></argsstring>
+        <name>v2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="566" column="27" bodyfile="Physics2D/Collision/Collision.cs" bodystart="566" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1ab5306d503570dab3782b1fb9de558e17" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ReferenceFace.normal</definition>
+        <argsstring></argsstring>
+        <name>normal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="568" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="568" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1ab78254ad93f74622e14b3abf69e166dd" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ReferenceFace.sideNormal1</definition>
+        <argsstring></argsstring>
+        <name>sideNormal1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="570" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="570" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a3f2883096db0bb78bfe7ffa8378e49ba" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.ReferenceFace.sideOffset1</definition>
+        <argsstring></argsstring>
+        <name>sideOffset1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="571" column="22" bodyfile="Physics2D/Collision/Collision.cs" bodystart="571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1aeea2a3326e41c7d1affc383603ae3f8f" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ReferenceFace.sideNormal2</definition>
+        <argsstring></argsstring>
+        <name>sideNormal2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="573" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="573" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a190ac14ef1430367f0e09ca01bbf6a13" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.ReferenceFace.sideOffset2</definition>
+        <argsstring></argsstring>
+        <name>sideOffset2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="574" column="22" bodyfile="Physics2D/Collision/Collision.cs" bodystart="574" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Reference face used for clipping </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.ReferenceFace</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>normal</edgelabel>
+          <edgelabel>sideNormal1</edgelabel>
+          <edgelabel>sideNormal2</edgelabel>
+          <edgelabel>v1</edgelabel>
+          <edgelabel>v2</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Collision.cs" line="562" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="563" bodyend="575"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a1246bc94f19f91f1c8b8c17348514003" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>i1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1abe311d82e9a71f657c14daba85541465" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>i2</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1ab5306d503570dab3782b1fb9de558e17" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>normal</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1ab78254ad93f74622e14b3abf69e166dd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>sideNormal1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1aeea2a3326e41c7d1affc383603ae3f8f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>sideNormal2</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a3f2883096db0bb78bfe7ffa8378e49ba" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>sideOffset1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a190ac14ef1430367f0e09ca01bbf6a13" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>sideOffset2</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1ad282069d20fc5f29ee803acd4acac931" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>v1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face_1a08f23e0e4e1a637fb6c252d60bcf0d06" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ReferenceFace</scope><name>v2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

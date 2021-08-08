@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_constraint" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationConstraint</compoundname>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_constraint" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepConstraint</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_constraint_1a7e90216f67cc7a066eb6bb87dce96afb" prot="public" static="no" mutable="no">
+        <type>TriangulationPoint</type>
+        <definition>TriangulationPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationConstraint.P</definition>
+        <argsstring></argsstring>
+        <name>P</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationConstraint.cs" line="48" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationConstraint.cs" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_constraint_1a1e2a9d58befa4c05ec14adb8d367ca93" prot="public" static="no" mutable="no">
+        <type>TriangulationPoint</type>
+        <definition>TriangulationPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationConstraint.Q</definition>
+        <argsstring></argsstring>
+        <name>Q</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationConstraint.cs" line="49" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationConstraint.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepConstraint</label>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationConstraint</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationConstraint</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>P</edgelabel>
+          <edgelabel>Q</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationPoint</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/TriangulationConstraint.cs" line="46" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationConstraint.cs" bodystart="47" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_constraint_1a7e90216f67cc7a066eb6bb87dce96afb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationConstraint</scope><name>P</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_constraint_1a1e2a9d58befa4c05ec14adb8d367ca93" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationConstraint</scope><name>Q</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

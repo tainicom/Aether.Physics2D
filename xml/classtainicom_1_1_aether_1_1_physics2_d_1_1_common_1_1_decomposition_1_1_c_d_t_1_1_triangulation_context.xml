@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context" kind="class" language="C#" prot="package" abstract="yes">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</compoundname>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a8a0eb5e7779ca1f31266db1518cb1616" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; TriangulationPoint &gt;</type>
+        <definition>readonly List&lt;TriangulationPoint&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.Points</definition>
+        <argsstring></argsstring>
+        <name>Points</name>
+        <initializer>= new List&lt;TriangulationPoint&gt;(200)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="45" column="30" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ad0d54904d9b6f10259c2ab2184af8621" prot="public" static="no" mutable="no">
+        <type>readonly List&lt; DelaunayTriangle &gt;</type>
+        <definition>readonly List&lt;DelaunayTriangle&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.Triangles</definition>
+        <argsstring></argsstring>
+        <name>Triangles</name>
+        <initializer>= new List&lt;DelaunayTriangle&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="46" column="30" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a53557e102155b72f3a8a62af847795dd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext._stepTime</definition>
+        <argsstring></argsstring>
+        <name>_stepTime</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="47" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a2e2c564360f288884c7f71b433ba91d1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
+        <type>TriangulationMode</type>
+        <definition>TriangulationMode tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.TriangulationMode</definition>
+        <argsstring></argsstring>
+        <name>TriangulationMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="54" column="34" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ad6c4255d9a4ce8adcfda02e702935d17" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>Triangulatable</type>
+        <definition>Triangulatable tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.Triangulatable</definition>
+        <argsstring></argsstring>
+        <name>Triangulatable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="55" column="31" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a118def0829773ee67d0d7cc88bc431c2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.WaitUntilNotified</definition>
+        <argsstring></argsstring>
+        <name>WaitUntilNotified</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="57" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a44183e440cdaa146a104c315577fb038" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.Terminated</definition>
+        <argsstring></argsstring>
+        <name>Terminated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="58" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae04f648c5111803bc17e56acaf74e4e1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.StepCount</definition>
+        <argsstring></argsstring>
+        <name>StepCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="60" column="20" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="60" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a6b1bea41ab78a24b2a8d94260decc3f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.TriangulationContext</definition>
+        <argsstring>()</argsstring>
+        <name>TriangulationContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="49" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae5ee0f195c520da5946205c49ba1b944" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.Done</definition>
+        <argsstring>()</argsstring>
+        <name>Done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="62" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a07c12a6218cf8ac2070e14501864c2c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.PrepareTriangulation</definition>
+        <argsstring>(Triangulatable t)</argsstring>
+        <name>PrepareTriangulation</name>
+        <param>
+          <type>Triangulatable</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="67" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="67" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae065028a5c7e5c0a3449588855465540" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract TriangulationConstraint</type>
+        <definition>abstract TriangulationConstraint tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.NewConstraint</definition>
+        <argsstring>(TriangulationPoint a, TriangulationPoint b)</argsstring>
+        <name>NewConstraint</name>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="74" column="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a969ff87545e2a2f0b8e1b32e170e070d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="76" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="76" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext</label>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext</label>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" line="43" column="23" bodyfile="Physics2D/Common/Decomposition/CDT/TriangulationContext.cs" bodystart="44" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a53557e102155b72f3a8a62af847795dd" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>_stepTime</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a969ff87545e2a2f0b8e1b32e170e070d" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>Clear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae5ee0f195c520da5946205c49ba1b944" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>Done</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae065028a5c7e5c0a3449588855465540" prot="public" virt="pure-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>NewConstraint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a8a0eb5e7779ca1f31266db1518cb1616" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>Points</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a07c12a6218cf8ac2070e14501864c2c1" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>PrepareTriangulation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae04f648c5111803bc17e56acaf74e4e1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>StepCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a44183e440cdaa146a104c315577fb038" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>Terminated</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ad0d54904d9b6f10259c2ab2184af8621" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>Triangles</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ad6c4255d9a4ce8adcfda02e702935d17" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>Triangulatable</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a6b1bea41ab78a24b2a8d94260decc3f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>TriangulationContext</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a2e2c564360f288884c7f71b433ba91d1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>TriangulationMode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a118def0829773ee67d0d7cc88bc431c2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::TriangulationContext</scope><name>WaitUntilNotified</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

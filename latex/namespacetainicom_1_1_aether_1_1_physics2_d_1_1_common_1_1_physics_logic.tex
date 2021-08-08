@@ -1,0 +1,69 @@
+\hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic Namespace Reference}
+\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic}\index{tainicom.Aether.Physics2D.Common.PhysicsLogic@{tainicom.Aether.Physics2D.Common.PhysicsLogic}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_breakable_body}{Breakable\+Body}}
+\begin{DoxyCompactList}\small\item\em A type of body that supports multiple fixtures that can break apart. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_controller_filter}{Controller\+Filter}}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data}{Filter\+Data}}
+\begin{DoxyCompactList}\small\item\em Contains filter data that can determine whether an object should be processed or not. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic}{Physics\+Logic}}
+\item 
+struct {\bfseries Shape\+Data}
+\item 
+class {\bfseries Ray\+Data\+Comparer}
+\begin{DoxyCompactList}\small\item\em This is a comprarer used for detecting angle difference between rays \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion}{Real\+Explosion}}
+\begin{DoxyCompactList}\small\item\em Creates a realistic explosion based on raycasting. Objects in the open will be affected, but objects behind static bodies will not. A body that is half in cover, half in the open will get half the force applied to the end in the open. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion}{Simple\+Explosion}}
+\begin{DoxyCompactList}\small\item\em Creates a simple explosion that ignores other bodies hiding behind static bodies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_a9f06fd1f4e9034515e7a77c78e775b1c}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_a9f06fd1f4e9034515e7a77c78e775b1c}} 
+enum class {\bfseries Controller\+Category} \{ \newline
+{\bfseries None} = 0x00000000
+, {\bfseries Cat01} = 0x00000001
+, {\bfseries Cat02} = 0x00000002
+, {\bfseries Cat03} = 0x00000004
+, \newline
+{\bfseries Cat04} = 0x00000008
+, {\bfseries Cat05} = 0x00000010
+, {\bfseries Cat06} = 0x00000020
+, {\bfseries Cat07} = 0x00000040
+, \newline
+{\bfseries Cat08} = 0x00000080
+, {\bfseries Cat09} = 0x00000100
+, {\bfseries Cat10} = 0x00000200
+, {\bfseries Cat11} = 0x00000400
+, \newline
+{\bfseries Cat12} = 0x00000800
+, {\bfseries Cat13} = 0x00001000
+, {\bfseries Cat14} = 0x00002000
+, {\bfseries Cat15} = 0x00004000
+, \newline
+{\bfseries Cat16} = 0x00008000
+, {\bfseries Cat17} = 0x00010000
+, {\bfseries Cat18} = 0x00020000
+, {\bfseries Cat19} = 0x00040000
+, \newline
+{\bfseries Cat20} = 0x00080000
+, {\bfseries Cat21} = 0x00100000
+, {\bfseries Cat22} = 0x00200000
+, {\bfseries Cat23} = 0x00400000
+, \newline
+{\bfseries Cat24} = 0x00800000
+, {\bfseries Cat25} = 0x01000000
+, {\bfseries Cat26} = 0x02000000
+, {\bfseries Cat27} = 0x04000000
+, \newline
+{\bfseries Cat28} = 0x08000000
+, {\bfseries Cat29} = 0x10000000
+, {\bfseries Cat30} = 0x20000000
+, {\bfseries Cat31} = 0x40000000
+, \newline
+{\bfseries All} = int.\+Max\+Value
+ \}
+\end{DoxyCompactItemize}

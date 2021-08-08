@@ -1,0 +1,84 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Quad\+Tree$<$ T $>$ Class Template Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree}\index{tainicom.Aether.Physics2D.Collision.QuadTree$<$ T $>$@{tainicom.Aether.Physics2D.Collision.QuadTree$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a2e6e2e7234149df7afa2a83942a17f1d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a2e6e2e7234149df7afa2a83942a17f1d}} 
+{\bfseries Quad\+Tree} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} span, int maxbucket, int maxdepth)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a041379d70d06a878f648845a87f9505f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a041379d70d06a878f648845a87f9505f}} 
+void {\bfseries Add\+Node} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element}{Element}}$<$ T $>$ node)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a4433e99adee71af881138e6e24c1ec98}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a4433e99adee71af881138e6e24c1ec98}} 
+void {\bfseries Query\+AABB} (Func$<$ \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element}{Element}}$<$ T $>$, bool $>$ callback, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} searchR)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a133570a1e367c5c8e203f19eff69a8b8}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a133570a1e367c5c8e203f19eff69a8b8}} 
+void {\bfseries Ray\+Cast} (Func$<$ \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input}{Ray\+Cast\+Input}}, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element}{Element}}$<$ T $>$, float $>$ callback, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input}{Ray\+Cast\+Input}} input)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_aacfb2c9b1f51cd113847068e9c3ce622}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_aacfb2c9b1f51cd113847068e9c3ce622}} 
+void {\bfseries Get\+All\+NodesR} (ref List$<$ \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element}{Element}}$<$ T $>$$>$ nodes)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a829c455df5ac63ff9f20ee5e75f1f49c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a829c455df5ac63ff9f20ee5e75f1f49c}} 
+void {\bfseries Remove\+Node} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element}{Element}}$<$ T $>$ node)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a23f353f95e18dda9e125943480e4c733}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a23f353f95e18dda9e125943480e4c733}} 
+void {\bfseries Reconstruct} ()
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a2b18958cac477ca27d6f6c8bfbe1473b}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a2b18958cac477ca27d6f6c8bfbe1473b}} 
+void {\bfseries Clear} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a4212501a85d04472681f0dbeeda63803}{Ray\+Cast\+AABB}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} aabb, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} p1, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} p2)
+\begin{DoxyCompactList}\small\item\em tests if ray intersects \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a742dc1a02f5e80fc30588bdd903fe607}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a742dc1a02f5e80fc30588bdd903fe607}} 
+int {\bfseries Max\+Bucket}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ac35fee1e73f805a812ab8d011c8f42f6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ac35fee1e73f805a812ab8d011c8f42f6}} 
+int {\bfseries Max\+Depth}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a7570f44d2a6f317cb662148bee680dd8}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a7570f44d2a6f317cb662148bee680dd8}} 
+List$<$ \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element}{Element}}$<$ T $>$ $>$ {\bfseries Nodes}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ad6fe0c2b5830e4649e80f35957d4c1bd}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ad6fe0c2b5830e4649e80f35957d4c1bd}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} {\bfseries Span}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ad037946b0ceba6cef537eda74efaf6f6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ad037946b0ceba6cef537eda74efaf6f6}} 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree}{Quad\+Tree}}$<$ T $>$\mbox{[}$\,$\mbox{]} {\bfseries Sub\+Trees}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ae00e31010fccc8e4ad6441ec67cbbc0f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_ae00e31010fccc8e4ad6441ec67cbbc0f}} 
+bool {\bfseries Is\+Partitioned}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a4212501a85d04472681f0dbeeda63803}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_a4212501a85d04472681f0dbeeda63803}} 
+\index{tainicom.Aether.Physics2D.Collision.QuadTree$<$ T $>$@{tainicom.Aether.Physics2D.Collision.QuadTree$<$ T $>$}!RayCastAABB@{RayCastAABB}}
+\index{RayCastAABB@{RayCastAABB}!tainicom.Aether.Physics2D.Collision.QuadTree$<$ T $>$@{tainicom.Aether.Physics2D.Collision.QuadTree$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{RayCastAABB()}{RayCastAABB()}}
+{\footnotesize\ttfamily static bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Quad\+Tree}}$<$ T $>$.Ray\+Cast\+AABB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{aabb,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{p1,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+tests if ray intersects \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Collision/Quad\+Tree.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_decomposer" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::SeidelDecomposer</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_decomposer_1aa51732b284ace425232db509eeea2e5e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.SeidelDecomposer.ConvexPartition</definition>
+        <argsstring>(Vertices vertices, float sheer=0.001f)</argsstring>
+        <name>ConvexPartition</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>sheer</declname>
+          <defval>0.001f</defval>
+        </param>
+        <briefdescription>
+<para>Decompose the polygon into several smaller non-concave polygons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The polygon to decompose.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sheer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sheer to use if you get bad results, try using a higher value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of triangles</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/SeidelDecomposer.cs" line="52" column="28" bodyfile="Physics2D/Common/Decomposition/SeidelDecomposer.cs" bodystart="52" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_decomposer_1a137ce431ea6041b318b1494a8b9aca9a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.SeidelDecomposer.ConvexPartitionTrapezoid</definition>
+        <argsstring>(Vertices vertices, float sheer=0.001f)</argsstring>
+        <name>ConvexPartitionTrapezoid</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>sheer</declname>
+          <defval>0.001f</defval>
+        </param>
+        <briefdescription>
+<para>Decompose the polygon into several smaller non-concave polygons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The polygon to decompose.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sheer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The sheer to use if you get bad results, try using a higher value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of trapezoids</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/SeidelDecomposer.cs" line="88" column="28" bodyfile="Physics2D/Common/Decomposition/SeidelDecomposer.cs" bodystart="88" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Convex decomposition algorithm created by Raimund <ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel" kindref="compound">Seidel</ref> </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Properties:<itemizedlist>
+<listitem><para>Decompose the polygon into trapezoids, then triangulate.</para>
+</listitem><listitem><para>To use the trapezoid data, use ConvexPartitionTrapezoid()</para>
+</listitem><listitem><para>Generate a lot of garbage due to incapsulation of the Poly2Tri library.</para>
+</listitem><listitem><para>Running time is O(n log n), n = number of vertices.</para>
+</listitem><listitem><para>Running time is almost linear for most simple polygons.</para>
+</listitem><listitem><para>Does not care about winding order.</para>
+</listitem></itemizedlist>
+</para>
+<para>For more information, see Raimund <ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel" kindref="compound">Seidel</ref>&apos;s paper &quot;A simple and fast incremental randomized
+algorithm for computing trapezoidal decompositions and for triangulating polygons&quot;</para>
+<para>See also: &quot;Computational Geometry&quot;, 3rd edition, by Mark de Berg et al, Chapter 6.2 &quot;Computational Geometry in C&quot;, 2nd edition, by Joseph O&apos;Rourke</para>
+<para>Original code from the Poly2Tri project by Mason Green. <ulink url="http://code.google.com/p/poly2tri/source/browse?repo=archive#hg/scala/src/org/poly2tri/seidel">http://code.google.com/p/poly2tri/source/browse?repo=archive#hg/scala/src/org/poly2tri/seidel</ulink></para>
+<para>This implementation is from Dec 14, 2010</para>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/SeidelDecomposer.cs" line="44" column="21" bodyfile="Physics2D/Common/Decomposition/SeidelDecomposer.cs" bodystart="45" bodyend="116"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_decomposer_1aa51732b284ace425232db509eeea2e5e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::SeidelDecomposer</scope><name>ConvexPartition</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_decomposer_1a137ce431ea6041b318b1494a8b9aca9a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::SeidelDecomposer</scope><name>ConvexPartitionTrapezoid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

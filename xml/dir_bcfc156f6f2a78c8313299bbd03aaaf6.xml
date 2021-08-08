@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_bcfc156f6f2a78c8313299bbd03aaaf6" kind="dir">
+    <compoundname>Physics2D/Common</compoundname>
+    <innerdir refid="dir_467ec770951959479211ac6ddf2b8c6f">Physics2D/Common/ConvexHull</innerdir>
+    <innerdir refid="dir_61fc533d2b0d211ae45dbb715e7f6856">Physics2D/Common/Decomposition</innerdir>
+    <innerdir refid="dir_7f9a1e54ae33dc25921372d1ac6b6298">Physics2D/Common/PhysicsLogic</innerdir>
+    <innerdir refid="dir_f188a439b58cd88a9f7a59fad5baa8d0">Physics2D/Common/PolygonManipulation</innerdir>
+    <innerdir refid="dir_3778aaf54157dd263127683dd4bacac9">Physics2D/Common/TextureTools</innerdir>
+    <innerfile refid="_complex_8cs">Complex.cs</innerfile>
+    <innerfile refid="_constant_8cs">Constant.cs</innerfile>
+    <innerfile refid="_fixed_array_8cs">FixedArray.cs</innerfile>
+    <innerfile refid="_line_tools_8cs">LineTools.cs</innerfile>
+    <innerfile refid="_math_8cs">Math.cs</innerfile>
+    <innerfile refid="_path_8cs">Path.cs</innerfile>
+    <innerfile refid="_path_manager_8cs">PathManager.cs</innerfile>
+    <innerfile refid="_polygon_tools_8cs">PolygonTools.cs</innerfile>
+    <innerfile refid="_serialization_8cs">Serialization.cs</innerfile>
+    <innerfile refid="_stopwatch_8cs">Stopwatch.cs</innerfile>
+    <innerfile refid="_vector2_8cs">Vector2.cs</innerfile>
+    <innerfile refid="_vector3_8cs">Vector3.cs</innerfile>
+    <innerfile refid="_vertices_8cs">Vertices.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/"/>
+  </compounddef>
+</doxygen>

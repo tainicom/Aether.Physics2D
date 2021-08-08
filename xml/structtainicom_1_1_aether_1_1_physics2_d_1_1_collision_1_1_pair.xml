@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair" kind="struct" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Collision::Pair</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IComparable&lt; Pair &gt;</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair_1a0f051150655b893eedec9b1b91ed5036" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.Pair.ProxyIdA</definition>
+        <argsstring></argsstring>
+        <name>ProxyIdA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTreeBroadPhase.cs" line="39" column="20" bodyfile="Physics2D/Collision/DynamicTreeBroadPhase.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair_1ad213b1f257bf678df3845f69da326445" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.Pair.ProxyIdB</definition>
+        <argsstring></argsstring>
+        <name>ProxyIdB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTreeBroadPhase.cs" line="40" column="20" bodyfile="Physics2D/Collision/DynamicTreeBroadPhase.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair_1ac74d46571f8dc58a99af2119b750abd9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.Pair.CompareTo</definition>
+        <argsstring>(Pair other)</argsstring>
+        <name>CompareTo</name>
+        <param>
+          <type>Pair</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/DynamicTreeBroadPhase.cs" line="44" column="20" bodyfile="Physics2D/Collision/DynamicTreeBroadPhase.cs" bodystart="44" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.Pair</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IComparable&lt; Pair &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.Pair</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IComparable&lt; Pair &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/DynamicTreeBroadPhase.cs" line="37" column="13" bodyfile="Physics2D/Collision/DynamicTreeBroadPhase.cs" bodystart="38" bodyend="66"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair_1ac74d46571f8dc58a99af2119b750abd9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Pair</scope><name>CompareTo</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair_1a0f051150655b893eedec9b1b91ed5036" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Pair</scope><name>ProxyIdA</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair_1ad213b1f257bf678df3845f69da326445" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Pair</scope><name>ProxyIdB</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

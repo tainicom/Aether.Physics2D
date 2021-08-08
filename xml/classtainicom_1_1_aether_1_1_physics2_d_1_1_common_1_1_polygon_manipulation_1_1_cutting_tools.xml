@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_cutting_tools" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PolygonManipulation::CuttingTools</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_cutting_tools_1aa99aee5091d115a5b340a17b90c2f02a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.PolygonManipulation.CuttingTools.SplitShape</definition>
+        <argsstring>(Fixture fixture, Vector2 entryPoint, Vector2 exitPoint, out Vertices first, out Vertices second)</argsstring>
+        <name>SplitShape</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture" kindref="compound">Fixture</ref></type>
+          <declname>fixture</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>entryPoint</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>exitPoint</declname>
+        </param>
+        <param>
+          <type>out <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>out <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>second</declname>
+        </param>
+        <briefdescription>
+<para>Split a fixture into 2 vertice collections using the given entry and exit-point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fixture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Fixture to split</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>entryPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry point - The start point</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exit point - The end point</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>first</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first collection of vertexes</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>second</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second collection of vertexes</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/CuttingTools.cs" line="29" column="28" bodyfile="Physics2D/Common/PolygonManipulation/CuttingTools.cs" bodystart="29" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_cutting_tools_1a83a2fab9c1b3f1a2085ba97116968f4e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.PolygonManipulation.CuttingTools.Cut</definition>
+        <argsstring>(World world, Vector2 start, Vector2 end)</argsstring>
+        <name>Cut</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>This is a high-level function to cuts fixtures inside the given world, using the start and end points. Note: We don&apos;t support cutting when the start or end is inside a shape. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>world</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The startpoint.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The endpoint.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the cut was performed.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/CuttingTools.cs" line="156" column="28" bodyfile="Physics2D/Common/PolygonManipulation/CuttingTools.cs" bodystart="156" bodyend="222"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/PolygonManipulation/CuttingTools.cs" line="17" column="19" bodyfile="Physics2D/Common/PolygonManipulation/CuttingTools.cs" bodystart="18" bodyend="223"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_cutting_tools_1a83a2fab9c1b3f1a2085ba97116968f4e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::CuttingTools</scope><name>Cut</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_cutting_tools_1aa99aee5091d115a5b340a17b90c2f02a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::CuttingTools</scope><name>SplitShape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

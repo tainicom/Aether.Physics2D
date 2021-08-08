@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PointGenerator</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator_1a6cf9a2b0271c02b5817b717d5943119c" prot="private" static="yes" mutable="no">
+        <type>readonly Random</type>
+        <definition>readonly Random tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PointGenerator.RNG</definition>
+        <argsstring></argsstring>
+        <name>RNG</name>
+        <initializer>= new Random()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" line="13" column="40" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator_1aa955f3408b0a217968ad8811032f2da6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; TriangulationPoint &gt;</type>
+        <definition>static List&lt;TriangulationPoint&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PointGenerator.UniformDistribution</definition>
+        <argsstring>(int n, double scale)</argsstring>
+        <name>UniformDistribution</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" line="15" column="28" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" bodystart="15" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator_1a5c4fc3612fd7658cb85734208df3e585" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; TriangulationPoint &gt;</type>
+        <definition>static List&lt;TriangulationPoint&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PointGenerator.UniformGrid</definition>
+        <argsstring>(int n, double scale)</argsstring>
+        <name>UniformGrid</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" line="25" column="28" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" bodystart="25" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" line="11" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PointGenerator.cs" bodystart="12" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator_1a6cf9a2b0271c02b5817b717d5943119c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PointGenerator</scope><name>RNG</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator_1aa955f3408b0a217968ad8811032f2da6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PointGenerator</scope><name>UniformDistribution</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator_1a5c4fc3612fd7658cb85734208df3e585" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PointGenerator</scope><name>UniformGrid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

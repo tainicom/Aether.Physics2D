@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PolygonGenerator</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1afaca1abc63214f3af6dbcd56cc28c30a" prot="private" static="yes" mutable="no">
+        <type>readonly Random</type>
+        <definition>readonly Random tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PolygonGenerator.RNG</definition>
+        <argsstring></argsstring>
+        <name>RNG</name>
+        <initializer>= new Random()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" line="44" column="40" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1a2ac55f8a35368a38523b7c131da5c684" prot="private" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PolygonGenerator.PI_2</definition>
+        <argsstring></argsstring>
+        <name>PI_2</name>
+        <initializer>= 2.0*Math.PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" line="46" column="31" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1a96a5646b102eb793a7c5f0082eb55f52" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Polygon.Polygon</type>
+        <definition>static Polygon.Polygon tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PolygonGenerator.RandomCircleSweep</definition>
+        <argsstring>(double scale, int vertexCount)</argsstring>
+        <name>RandomCircleSweep</name>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vertexCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" line="48" column="38" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" bodystart="48" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1a819a4f67e9cf5f9f027e1c3c1c450505" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Polygon.Polygon</type>
+        <definition>static Polygon.Polygon tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.PolygonGenerator.RandomCircleSweep2</definition>
+        <argsstring>(double scale, int vertexCount)</argsstring>
+        <name>RandomCircleSweep2</name>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vertexCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" line="81" column="38" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" bodystart="81" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" line="42" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Util/PolygonGenerator.cs" bodystart="43" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1a2ac55f8a35368a38523b7c131da5c684" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PolygonGenerator</scope><name>PI_2</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1a96a5646b102eb793a7c5f0082eb55f52" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PolygonGenerator</scope><name>RandomCircleSweep</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1a819a4f67e9cf5f9f027e1c3c1c450505" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PolygonGenerator</scope><name>RandomCircleSweep2</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator_1afaca1abc63214f3af6dbcd56cc28c30a" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PolygonGenerator</scope><name>RNG</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

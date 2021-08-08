@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ace63d3832474e7a1b0ab982e78b1ac32" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_velocity_constraint_point" kindref="compound">VelocityConstraintPoint</ref>[]</type>
+        <definition>VelocityConstraintPoint [] tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <initializer>= new <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_velocity_constraint_point" kindref="compound">VelocityConstraintPoint</ref>[Settings.MaxManifoldPoints]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="73" column="40" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1af0155740620220a5aa7ad0e446d63c6a" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.normal</definition>
+        <argsstring></argsstring>
+        <name>normal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="74" column="24" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1adce11c1dd9bfef7d65a2ed4ead589638" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+        <definition>Mat22 tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.normalMass</definition>
+        <argsstring></argsstring>
+        <name>normalMass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="75" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ac36954a5ca7b4643bc589d78711cd943" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+        <definition>Mat22 tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="76" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a57b94aeb17631f36049d3c4095e01cf6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.indexA</definition>
+        <argsstring></argsstring>
+        <name>indexA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="77" column="20" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a615e97a1bbb29810529327980abb505a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.indexB</definition>
+        <argsstring></argsstring>
+        <name>indexB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="78" column="20" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a1c5322a6aa254273c29546f3cc538474" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.invMassA</definition>
+        <argsstring></argsstring>
+        <name>invMassA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="79" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a9ad480e41afef654b1348ab7dec59746" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.invIA</definition>
+        <argsstring></argsstring>
+        <name>invIA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="80" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a4dbabfa18a02d737a1df01af8a7b60e5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.friction</definition>
+        <argsstring></argsstring>
+        <name>friction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="81" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1aadfa2af863cedb4a61d25e6a48f483bb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.restitution</definition>
+        <argsstring></argsstring>
+        <name>restitution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="82" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ae9e0f17dc7e968bd3651a1df31db20f9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.tangentSpeed</definition>
+        <argsstring></argsstring>
+        <name>tangentSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="83" column="22" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a1ef50336ed3e6ffeb345507db10db1f6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.pointCount</definition>
+        <argsstring></argsstring>
+        <name>pointCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="84" column="20" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ac891b377543fc86f9f0ac47fce05f5ac" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.contactIndex</definition>
+        <argsstring></argsstring>
+        <name>contactIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="85" column="20" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a4ccee96541be3952f1665045b0c49fa7" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.invMassB</definition>
+        <argsstring></argsstring>
+        <name>invMassB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="79" column="31" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ac9f84a8041acb6379abee056869ee268" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.invIB</definition>
+        <argsstring></argsstring>
+        <name>invIB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="80" column="28" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a9f8a23e82eb13e0d97f2c48f652c3c79" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint.ContactVelocityConstraint</definition>
+        <argsstring>()</argsstring>
+        <name>ContactVelocityConstraint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="87" column="16" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="87" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Mat22</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ex</edgelabel>
+          <edgelabel>ey</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.VelocityConstraintPoint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_velocity_constraint_point"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>rA</edgelabel>
+          <edgelabel>rB</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactVelocityConstraint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>K</edgelabel>
+          <edgelabel>normalMass</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>normal</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>points</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="71" column="18" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="72" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ac891b377543fc86f9f0ac47fce05f5ac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>contactIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a9f8a23e82eb13e0d97f2c48f652c3c79" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>ContactVelocityConstraint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a4dbabfa18a02d737a1df01af8a7b60e5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>friction</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a57b94aeb17631f36049d3c4095e01cf6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>indexA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a615e97a1bbb29810529327980abb505a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>indexB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a9ad480e41afef654b1348ab7dec59746" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>invIA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ac9f84a8041acb6379abee056869ee268" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>invIB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a1c5322a6aa254273c29546f3cc538474" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>invMassA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a4ccee96541be3952f1665045b0c49fa7" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>invMassB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ac36954a5ca7b4643bc589d78711cd943" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>K</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1af0155740620220a5aa7ad0e446d63c6a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>normal</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1adce11c1dd9bfef7d65a2ed4ead589638" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>normalMass</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1a1ef50336ed3e6ffeb345507db10db1f6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>pointCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ace63d3832474e7a1b0ab982e78b1ac32" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>points</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1aadfa2af863cedb4a61d25e6a48f483bb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>restitution</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint_1ae9e0f17dc7e968bd3651a1df31db20f9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactVelocityConstraint</scope><name>tangentSpeed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

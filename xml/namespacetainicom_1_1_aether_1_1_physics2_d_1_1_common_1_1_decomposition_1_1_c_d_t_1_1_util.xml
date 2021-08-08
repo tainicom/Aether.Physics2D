@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util</compoundname>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3" prot="package">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_bit_array3" prot="package">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedBitArray3</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_point_generator" prot="package">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PointGenerator</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_polygon_generator" prot="package">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::PolygonGenerator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="41" column="1"/>
+  </compounddef>
+</doxygen>

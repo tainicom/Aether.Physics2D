@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_5150cc52956511ea54c968043e6601c5" kind="dir">
+    <compoundname>Physics2D/Common/Decomposition/Seidel</compoundname>
+    <innerfile refid="_edge_8cs">Edge.cs</innerfile>
+    <innerfile refid="_monotone_mountain_8cs">MonotoneMountain.cs</innerfile>
+    <innerfile refid="_node_8cs">Node.cs</innerfile>
+    <innerfile refid="_point_8cs">Point.cs</innerfile>
+    <innerfile refid="_query_graph_8cs">QueryGraph.cs</innerfile>
+    <innerfile refid="_sink_8cs">Sink.cs</innerfile>
+    <innerfile refid="_trapezoid_8cs">Trapezoid.cs</innerfile>
+    <innerfile refid="_trapezoidal_map_8cs">TrapezoidalMap.cs</innerfile>
+    <innerfile refid="_triangulator_8cs">Triangulator.cs</innerfile>
+    <innerfile refid="_x_node_8cs">XNode.cs</innerfile>
+    <innerfile refid="_y_node_8cs">YNode.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/Seidel/"/>
+  </compounddef>
+</doxygen>

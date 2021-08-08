@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings" prot="public">tainicom::Aether::Physics2D::Settings</innerclass>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision">tainicom::Aether::Physics2D::Collision</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common">tainicom::Aether::Physics2D::Common</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_content">tainicom::Aether::Physics2D::Content</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_controllers">tainicom::Aether::Physics2D::Controllers</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics">tainicom::Aether::Physics2D::Dynamics</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_fluids">tainicom::Aether::Physics2D::Fluids</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Collision/Collision.cs" line="40" column="1"/>
+  </compounddef>
+</doxygen>

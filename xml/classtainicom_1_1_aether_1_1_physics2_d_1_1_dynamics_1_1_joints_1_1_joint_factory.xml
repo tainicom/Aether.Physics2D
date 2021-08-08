@@ -1,0 +1,569 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a297610c995bd180fd2c313bddbeee3bc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_motor_joint" kindref="compound">MotorJoint</ref></type>
+        <definition>static MotorJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateMotorJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateMotorJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="20" column="34" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a099bb8a013ebc6aedba06d731fa76493" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint" kindref="compound">RevoluteJoint</ref></type>
+        <definition>static RevoluteJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateRevoluteJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateRevoluteJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="27" column="37" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="27" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a451792d6848593a52e7c70a1dbfd597a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint" kindref="compound">RevoluteJoint</ref></type>
+        <definition>static RevoluteJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateRevoluteJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchor)</argsstring>
+        <name>CreateRevoluteJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="34" column="37" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="34" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1aaccda0aca58644e9ad4ab950556cbcbd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_rope_joint" kindref="compound">RopeJoint</ref></type>
+        <definition>static RopeJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateRopeJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateRopeJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="42" column="33" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="42" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a2e631a07e29b6e6f756ef93ec814afd7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint" kindref="compound">WeldJoint</ref></type>
+        <definition>static WeldJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateWeldJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateWeldJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="49" column="33" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="49" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a34a0bc46a690644ba3df229ef777481c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_prismatic_joint" kindref="compound">PrismaticJoint</ref></type>
+        <definition>static PrismaticJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreatePrismaticJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchor, Vector2 axis, bool useWorldCoordinates=false)</argsstring>
+        <name>CreatePrismaticJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchor</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="56" column="38" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a7f40ce64e2081ce6d717f53737ce0958" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint" kindref="compound">WheelJoint</ref></type>
+        <definition>static WheelJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateWheelJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchor, Vector2 axis, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateWheelJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchor</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="63" column="34" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a23aa22f585fac039d4dad17ae50a3222" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint" kindref="compound">WheelJoint</ref></type>
+        <definition>static WheelJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateWheelJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 axis)</argsstring>
+        <name>CreateWheelJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="70" column="34" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a03703b21c8c658ea27d53f087599b850" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_angle_joint" kindref="compound">AngleJoint</ref></type>
+        <definition>static AngleJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateAngleJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB)</argsstring>
+        <name>CreateAngleJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="75" column="34" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="75" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1aee2586c8a2bb8457469d73f5dfb59396" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint" kindref="compound">DistanceJoint</ref></type>
+        <definition>static DistanceJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateDistanceJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateDistanceJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="82" column="37" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="82" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1ad2b3a36de1e0ca67d7d4a3871135948a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_distance_joint" kindref="compound">DistanceJoint</ref></type>
+        <definition>static DistanceJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateDistanceJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB)</argsstring>
+        <name>CreateDistanceJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="89" column="37" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a4ab8db6603e263dd049c7a3527869deb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint" kindref="compound">FrictionJoint</ref></type>
+        <definition>static FrictionJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateFrictionJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchor, bool useWorldCoordinates=false)</argsstring>
+        <name>CreateFrictionJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="94" column="37" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="94" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a9b33b47787a2c9d9f370b0c610722e6f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint" kindref="compound">FrictionJoint</ref></type>
+        <definition>static FrictionJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateFrictionJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB)</argsstring>
+        <name>CreateFrictionJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="101" column="37" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a85f6b5d190c9f837fe08dc58ec8a214c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint" kindref="compound">GearJoint</ref></type>
+        <definition>static GearJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateGearJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Joint jointA, Joint jointB, float ratio)</argsstring>
+        <name>CreateGearJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" kindref="compound">Joint</ref></type>
+          <declname>jointA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" kindref="compound">Joint</ref></type>
+          <declname>jointB</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ratio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="106" column="33" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="106" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1ae674001abec82a5d9195a5d2b87e2ed1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_pulley_joint" kindref="compound">PulleyJoint</ref></type>
+        <definition>static PulleyJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreatePulleyJoint</definition>
+        <argsstring>(World world, Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB, Vector2 worldAnchorA, Vector2 worldAnchorB, float ratio, bool useWorldCoordinates=false)</argsstring>
+        <name>CreatePulleyJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>worldAnchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>worldAnchorB</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>ratio</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="113" column="35" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a4815aa1891a0b37a94de6169edf0ed68" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint" kindref="compound">FixedMouseJoint</ref></type>
+        <definition>static FixedMouseJoint tainicom.Aether.Physics2D.Dynamics.Joints.JointFactory.CreateFixedMouseJoint</definition>
+        <argsstring>(World world, Body body, Vector2 worldAnchor)</argsstring>
+        <name>CreateFixedMouseJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>worldAnchor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="120" column="39" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="120" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An easy to use factory for using joints. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/Joints/JointFactory.cs" line="18" column="19" bodyfile="Physics2D/Dynamics/Joints/JointFactory.cs" bodystart="19" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a03703b21c8c658ea27d53f087599b850" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateAngleJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1aee2586c8a2bb8457469d73f5dfb59396" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateDistanceJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1ad2b3a36de1e0ca67d7d4a3871135948a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateDistanceJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a4815aa1891a0b37a94de6169edf0ed68" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateFixedMouseJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a4ab8db6603e263dd049c7a3527869deb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateFrictionJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a9b33b47787a2c9d9f370b0c610722e6f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateFrictionJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a85f6b5d190c9f837fe08dc58ec8a214c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateGearJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a297610c995bd180fd2c313bddbeee3bc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateMotorJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a34a0bc46a690644ba3df229ef777481c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreatePrismaticJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1ae674001abec82a5d9195a5d2b87e2ed1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreatePulleyJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a099bb8a013ebc6aedba06d731fa76493" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateRevoluteJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a451792d6848593a52e7c70a1dbfd597a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateRevoluteJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1aaccda0aca58644e9ad4ab950556cbcbd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateRopeJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a2e631a07e29b6e6f756ef93ec814afd7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateWeldJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a7f40ce64e2081ce6d717f53737ce0958" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateWheelJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_factory_1a23aa22f585fac039d4dad17ae50a3222" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointFactory</scope><name>CreateWheelJoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

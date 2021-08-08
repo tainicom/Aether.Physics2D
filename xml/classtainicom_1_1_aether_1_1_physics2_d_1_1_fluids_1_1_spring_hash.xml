@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Fluids::SpringHash</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IEqualityComparer&lt; SpringHash &gt;</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1a5f43898563703de27fa08136fbe7d103" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref></type>
+        <definition>FluidParticle tainicom.Aether.Physics2D.Fluids.SpringHash.P0</definition>
+        <argsstring></argsstring>
+        <name>P0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/SpringHash.cs" line="12" column="30" bodyfile="Physics2D/Fluids/1/SpringHash.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1a4ff51a1d7bfbe9328c8cbf1207bcec2b" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle" kindref="compound">FluidParticle</ref></type>
+        <definition>FluidParticle tainicom.Aether.Physics2D.Fluids.SpringHash.P1</definition>
+        <argsstring></argsstring>
+        <name>P1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/SpringHash.cs" line="13" column="30" bodyfile="Physics2D/Fluids/1/SpringHash.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1afa11d5e3679ff9327117daf6a5146b5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Fluids.SpringHash.Equals</definition>
+        <argsstring>(SpringHash lhs, SpringHash rhs)</argsstring>
+        <name>Equals</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash" kindref="compound">SpringHash</ref></type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash" kindref="compound">SpringHash</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/SpringHash.cs" line="15" column="21" bodyfile="Physics2D/Fluids/1/SpringHash.cs" bodystart="15" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1a129ef540efca98a0158901b8782e551a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Fluids.SpringHash.GetHashCode</definition>
+        <argsstring>(SpringHash s)</argsstring>
+        <name>GetHashCode</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash" kindref="compound">SpringHash</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/SpringHash.cs" line="21" column="20" bodyfile="Physics2D/Fluids/1/SpringHash.cs" bodystart="21" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IEqualityComparer&lt; SpringHash &gt;</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Fluids.SpringHash</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IEqualityComparer&lt; SpringHash &gt;</label>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Fluids.FluidParticle</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_particle"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Acceleration</edgelabel>
+          <edgelabel>Position</edgelabel>
+          <edgelabel>PreviousPosition</edgelabel>
+          <edgelabel>Velocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Fluids.SpringHash</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>P0</edgelabel>
+          <edgelabel>P1</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Fluids/1/SpringHash.cs" line="10" column="11" bodyfile="Physics2D/Fluids/1/SpringHash.cs" bodystart="11" bodyend="25"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1afa11d5e3679ff9327117daf6a5146b5b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::SpringHash</scope><name>Equals</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1a129ef540efca98a0158901b8782e551a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::SpringHash</scope><name>GetHashCode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1a5f43898563703de27fa08136fbe7d103" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::SpringHash</scope><name>P0</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spring_hash_1a4ff51a1d7bfbe9328c8cbf1207bcec2b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::SpringHash</scope><name>P1</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

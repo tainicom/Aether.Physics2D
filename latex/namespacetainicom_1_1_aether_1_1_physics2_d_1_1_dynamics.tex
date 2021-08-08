@@ -1,0 +1,223 @@
+\hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics Namespace Reference}
+\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics}\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection}{Body\+Collection}}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager}{Contact\+Manager}}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_controller_collection}{Controller\+Collection}}
+\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}}
+\begin{DoxyCompactList}\small\item\em A fixture is used to attach a Shape to a body for collision detection. A fixture inherits its transform from its parent. Fixtures hold additional non-\/geometric data such as friction, collision filters, etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_collection}{Fixture\+Collection}}
+\item 
+struct \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_proxy}{Fixture\+Proxy}}
+\begin{DoxyCompactList}\small\item\em This proxy is used internally to connect fixtures to the broad-\/phase. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_island}{Island}}
+\begin{DoxyCompactList}\small\item\em This is an internal class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joint_collection}{Joint\+Collection}}
+\item 
+struct \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations}{Solver\+Iterations}}
+\item 
+struct {\bfseries Time\+Step}
+\begin{DoxyCompactList}\small\item\em This is an internal structure. \end{DoxyCompactList}\item 
+struct {\bfseries Solver\+Position}
+\begin{DoxyCompactList}\small\item\em This is an internal structure. \end{DoxyCompactList}\item 
+struct {\bfseries Solver\+Velocity}
+\begin{DoxyCompactList}\small\item\em This is an internal structure. \end{DoxyCompactList}\item 
+struct {\bfseries Solver\+Data}
+\begin{DoxyCompactList}\small\item\em Solver Data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}}
+\begin{DoxyCompactList}\small\item\em The world class manages all physics entities, dynamic simulation, and asynchronous queries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09}{Body\+Type}} \{ \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a84a8921b25f505d0d2077aeb5db4bc16}{Static}}
+, \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a40c78b58b86002ee38fad2d3c9dd787e}{Kinematic}}
+, \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a971fd8cc345d8bd9f92e9f7d88fdf20c}{Dynamic}}
+ \}
+\begin{DoxyCompactList}\small\item\em The body type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a80d947702515b449679c396b408167fc}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a80d947702515b449679c396b408167fc}} 
+enum class {\bfseries Category} \{ \newline
+{\bfseries None} = 0x00000000
+, {\bfseries Cat1} = 0x00000001
+, {\bfseries Cat2} = 0x00000002
+, {\bfseries Cat3} = 0x00000004
+, \newline
+{\bfseries Cat4} = 0x00000008
+, {\bfseries Cat5} = 0x00000010
+, {\bfseries Cat6} = 0x00000020
+, {\bfseries Cat7} = 0x00000040
+, \newline
+{\bfseries Cat8} = 0x00000080
+, {\bfseries Cat9} = 0x00000100
+, {\bfseries Cat10} = 0x00000200
+, {\bfseries Cat11} = 0x00000400
+, \newline
+{\bfseries Cat12} = 0x00000800
+, {\bfseries Cat13} = 0x00001000
+, {\bfseries Cat14} = 0x00002000
+, {\bfseries Cat15} = 0x00004000
+, \newline
+{\bfseries Cat16} = 0x00008000
+, {\bfseries Cat17} = 0x00010000
+, {\bfseries Cat18} = 0x00020000
+, {\bfseries Cat19} = 0x00040000
+, \newline
+{\bfseries Cat20} = 0x00080000
+, {\bfseries Cat21} = 0x00100000
+, {\bfseries Cat22} = 0x00200000
+, {\bfseries Cat23} = 0x00400000
+, \newline
+{\bfseries Cat24} = 0x00800000
+, {\bfseries Cat25} = 0x01000000
+, {\bfseries Cat26} = 0x02000000
+, {\bfseries Cat27} = 0x04000000
+, \newline
+{\bfseries Cat28} = 0x08000000
+, {\bfseries Cat29} = 0x10000000
+, {\bfseries Cat30} = 0x20000000
+, {\bfseries Cat31} = 0x40000000
+, \newline
+{\bfseries All} = int.\+Max\+Value
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate bool \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a7449c8ef0837e356dcefc546eedc0dfa}{Query\+Report\+Fixture\+Delegate}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} fixture)
+\begin{DoxyCompactList}\small\item\em Called for each fixture found in the query. \begin{DoxyReturn}{Returns}
+true\+: Continues the query, false\+: Terminate the query
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+delegate float \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a90e07f96be691f93a5f46426330a5bb5}{Ray\+Cast\+Report\+Fixture\+Delegate}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} fixture, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} point, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} normal, float fraction)
+\begin{DoxyCompactList}\small\item\em Called for each fixture found in the query. You control how the ray cast proceeds by returning a float\+: return -\/1\+: ignore this fixture and continue return 0\+: terminate the ray cast return fraction\+: clip the ray to this point return 1\+: don\textquotesingle{}t clip the ray and continue \end{DoxyCompactList}\item 
+delegate void \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a92d31ca4f908b17553bd2d46950fbfeb}{End\+Contact\+Delegate}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact)
+\begin{DoxyCompactList}\small\item\em This delegate is called when a contact is deleted \end{DoxyCompactList}\item 
+delegate bool \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a5588baf7885eb17a265bde9f9cf5d1c4}{Begin\+Contact\+Delegate}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact)
+\begin{DoxyCompactList}\small\item\em This delegate is called when a contact is created \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a98d001ae54cbdc135a39d1d53c047247}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a98d001ae54cbdc135a39d1d53c047247}} 
+delegate void {\bfseries Pre\+Solve\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold}{Manifold}} old\+Manifold)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_af71da18aa9ad0c0b5f4cfda5615bee37}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_af71da18aa9ad0c0b5f4cfda5615bee37}} 
+delegate void {\bfseries Post\+Solve\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint}{Contact\+Velocity\+Constraint}} impulse)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a3306cfa3ba5f5955d56e504e3900b184}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a3306cfa3ba5f5955d56e504e3900b184}} 
+delegate void {\bfseries Fixture\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} fixture)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a81bf6fb050adb18d9dc220774ccef497}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a81bf6fb050adb18d9dc220774ccef497}} 
+delegate void {\bfseries Joint\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint}{Joint}} joint)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a8838b668cfac7188f21e40b052197b33}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a8838b668cfac7188f21e40b052197b33}} 
+delegate void {\bfseries Body\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_aa45b5cd1d43b7c2669ee733cfe40e23e}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_aa45b5cd1d43b7c2669ee733cfe40e23e}} 
+delegate void {\bfseries Controller\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller}{Controller}} controller)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a528b248431c1eff6dabd6bf7292e762b}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a528b248431c1eff6dabd6bf7292e762b}} 
+delegate bool {\bfseries Collision\+Filter\+Delegate} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} fixtureA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} fixtureB)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_aa53da539c793e1c318b637035c91f159}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_aa53da539c793e1c318b637035c91f159}} 
+delegate void {\bfseries Broadphase\+Delegate} (int proxy\+IdA, int proxy\+IdB)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a2a23cd90b615c752f6ce181b55b2de79}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a2a23cd90b615c752f6ce181b55b2de79}} 
+delegate bool {\bfseries Before\+Collision\+Event\+Handler} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} other)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a8bda413f801d1ed587b342bc8047b99b}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a8bda413f801d1ed587b342bc8047b99b}} 
+delegate bool {\bfseries On\+Collision\+Event\+Handler} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} other, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a62e91d0039055b2fe0f1a9dc02046df4}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a62e91d0039055b2fe0f1a9dc02046df4}} 
+delegate void {\bfseries After\+Collision\+Event\+Handler} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} other, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_velocity_constraint}{Contact\+Velocity\+Constraint}} impulse)
+\item 
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a5a08975acec96890e684a5c3c5a8b0f2}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a5a08975acec96890e684a5c3c5a8b0f2}} 
+delegate void {\bfseries On\+Separation\+Event\+Handler} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} sender, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}} other, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}} contact)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09}} 
+\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!BodyType@{BodyType}}
+\index{BodyType@{BodyType}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}
+\doxysubsubsection{\texorpdfstring{BodyType}{BodyType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Body\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The body type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Static@{Static}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!Static@{Static}}}\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a84a8921b25f505d0d2077aeb5db4bc16}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a84a8921b25f505d0d2077aeb5db4bc16}} 
+Static&Zero velocity, may be manually moved. Note\+: even static bodies have mass. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Kinematic@{Kinematic}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!Kinematic@{Kinematic}}}\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a40c78b58b86002ee38fad2d3c9dd787e}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a40c78b58b86002ee38fad2d3c9dd787e}} 
+Kinematic&Zero mass, non-\/zero velocity set by user, moved by solver \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dynamic@{Dynamic}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!Dynamic@{Dynamic}}}\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a971fd8cc345d8bd9f92e9f7d88fdf20c}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a6e7d1615336b3770adf0713570b7dc09a971fd8cc345d8bd9f92e9f7d88fdf20c}} 
+Dynamic&Positive mass, non-\/zero velocity determined by forces, moved by solver \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a5588baf7885eb17a265bde9f9cf5d1c4}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a5588baf7885eb17a265bde9f9cf5d1c4}} 
+\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!BeginContactDelegate@{BeginContactDelegate}}
+\index{BeginContactDelegate@{BeginContactDelegate}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}
+\doxysubsubsection{\texorpdfstring{BeginContactDelegate()}{BeginContactDelegate()}}
+{\footnotesize\ttfamily delegate bool tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Begin\+Contact\+Delegate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}}}]{contact }\end{DoxyParamCaption})}
+
+
+
+This delegate is called when a contact is created 
+
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a92d31ca4f908b17553bd2d46950fbfeb}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a92d31ca4f908b17553bd2d46950fbfeb}} 
+\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!EndContactDelegate@{EndContactDelegate}}
+\index{EndContactDelegate@{EndContactDelegate}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}
+\doxysubsubsection{\texorpdfstring{EndContactDelegate()}{EndContactDelegate()}}
+{\footnotesize\ttfamily delegate void tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+End\+Contact\+Delegate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact}{Contact}}}]{contact }\end{DoxyParamCaption})}
+
+
+
+This delegate is called when a contact is deleted 
+
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a7449c8ef0837e356dcefc546eedc0dfa}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a7449c8ef0837e356dcefc546eedc0dfa}} 
+\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!QueryReportFixtureDelegate@{QueryReportFixtureDelegate}}
+\index{QueryReportFixtureDelegate@{QueryReportFixtureDelegate}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}
+\doxysubsubsection{\texorpdfstring{QueryReportFixtureDelegate()}{QueryReportFixtureDelegate()}}
+{\footnotesize\ttfamily delegate bool tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Query\+Report\+Fixture\+Delegate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}}}]{fixture }\end{DoxyParamCaption})}
+
+
+
+Called for each fixture found in the query. \begin{DoxyReturn}{Returns}
+true\+: Continues the query, false\+: Terminate the query
+\end{DoxyReturn}
+
+
+\mbox{\Hypertarget{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a90e07f96be691f93a5f46426330a5bb5}\label{namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_a90e07f96be691f93a5f46426330a5bb5}} 
+\index{tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}!RayCastReportFixtureDelegate@{RayCastReportFixtureDelegate}}
+\index{RayCastReportFixtureDelegate@{RayCastReportFixtureDelegate}!tainicom.Aether.Physics2D.Dynamics@{tainicom.Aether.Physics2D.Dynamics}}
+\doxysubsubsection{\texorpdfstring{RayCastReportFixtureDelegate()}{RayCastReportFixtureDelegate()}}
+{\footnotesize\ttfamily delegate float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Ray\+Cast\+Report\+Fixture\+Delegate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture}{Fixture}}}]{fixture,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{point,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{normal,  }\item[{float}]{fraction }\end{DoxyParamCaption})}
+
+
+
+Called for each fixture found in the query. You control how the ray cast proceeds by returning a float\+: return -\/1\+: ignore this fixture and continue return 0\+: terminate the ray cast return fraction\+: clip the ray to this point return 1\+: don\textquotesingle{}t clip the ray and continue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixture} & the fixture hit by the ray \\
+\hline
+{\em point} & the point of initial intersection \\
+\hline
+{\em normal} & the normal vector at the point of intersection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 to terminate, fraction to clip the ray for closest hit, 1 to continue
+\end{DoxyReturn}

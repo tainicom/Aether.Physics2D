@@ -1,0 +1,107 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller}\index{tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}}
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_ab054260a5f11dae9234c6212ece3b3cf}{Buoyancy\+Controller}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} container, float density, float linear\+Drag\+Coefficient, float rotational\+Drag\+Coefficient, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} gravity)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller}{Buoyancy\+Controller}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_aa415d9438fab8f4b05799f0079465aa6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_aa415d9438fab8f4b05799f0079465aa6}} 
+override void {\bfseries Update} (float dt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a213ca419f405beab685c5cbc62ad8b3d}{Angular\+Drag\+Coefficient}}
+\begin{DoxyCompactList}\small\item\em Controls the rotational drag that the fluid exerts on the bodies within it. Use higher values will simulate thick fluid, like honey, lower values to simulate water-\/like fluids. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a06719a0352ea022205c99dabc974049f}{Density}}
+\begin{DoxyCompactList}\small\item\em Density of the fluid. Higher values will make things more buoyant, lower values will cause things to sink. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a36b6b480727e230c45b1c62b12bda710}{Linear\+Drag\+Coefficient}}
+\begin{DoxyCompactList}\small\item\em Controls the linear drag that the fluid exerts on the bodies within it. Use higher values will simulate thick fluid, like honey, lower values to simulate water-\/like fluids. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a94ec79a01d23d361d128044f1f71a540}{Velocity}}
+\begin{DoxyCompactList}\small\item\em Acts like waterflow. Defaults to 0,0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_ace9e1c1f7b11ddfb095b9be6eddccd73}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_ace9e1c1f7b11ddfb095b9be6eddccd73}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} {\bfseries Container}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_ab054260a5f11dae9234c6212ece3b3cf}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_ab054260a5f11dae9234c6212ece3b3cf}} 
+\index{tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}!BuoyancyController@{BuoyancyController}}
+\index{BuoyancyController@{BuoyancyController}!tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}}
+\doxysubsubsection{\texorpdfstring{BuoyancyController()}{BuoyancyController()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller.\+Buoyancy\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{container,  }\item[{float}]{density,  }\item[{float}]{linear\+Drag\+Coefficient,  }\item[{float}]{rotational\+Drag\+Coefficient,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{gravity }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller}{Buoyancy\+Controller}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & Only bodies inside this AABB will be influenced by the controller\\
+\hline
+{\em density} & Density of the fluid\\
+\hline
+{\em linear\+Drag\+Coefficient} & Linear drag coefficient of the fluid\\
+\hline
+{\em rotational\+Drag\+Coefficient} & Rotational drag coefficient of the fluid\\
+\hline
+{\em gravity} & The direction gravity acts. Buoyancy force will act in opposite direction of gravity.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a213ca419f405beab685c5cbc62ad8b3d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a213ca419f405beab685c5cbc62ad8b3d}} 
+\index{tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}!AngularDragCoefficient@{AngularDragCoefficient}}
+\index{AngularDragCoefficient@{AngularDragCoefficient}!tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}}
+\doxysubsubsection{\texorpdfstring{AngularDragCoefficient}{AngularDragCoefficient}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller.\+Angular\+Drag\+Coefficient}
+
+
+
+Controls the rotational drag that the fluid exerts on the bodies within it. Use higher values will simulate thick fluid, like honey, lower values to simulate water-\/like fluids. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a06719a0352ea022205c99dabc974049f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a06719a0352ea022205c99dabc974049f}} 
+\index{tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}!Density@{Density}}
+\index{Density@{Density}!tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}}
+\doxysubsubsection{\texorpdfstring{Density}{Density}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller.\+Density}
+
+
+
+Density of the fluid. Higher values will make things more buoyant, lower values will cause things to sink. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a36b6b480727e230c45b1c62b12bda710}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a36b6b480727e230c45b1c62b12bda710}} 
+\index{tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}!LinearDragCoefficient@{LinearDragCoefficient}}
+\index{LinearDragCoefficient@{LinearDragCoefficient}!tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}}
+\doxysubsubsection{\texorpdfstring{LinearDragCoefficient}{LinearDragCoefficient}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller.\+Linear\+Drag\+Coefficient}
+
+
+
+Controls the linear drag that the fluid exerts on the bodies within it. Use higher values will simulate thick fluid, like honey, lower values to simulate water-\/like fluids. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a94ec79a01d23d361d128044f1f71a540}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller_a94ec79a01d23d361d128044f1f71a540}} 
+\index{tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}!Velocity@{Velocity}}
+\index{Velocity@{Velocity}!tainicom.Aether.Physics2D.Controllers.BuoyancyController@{tainicom.Aether.Physics2D.Controllers.BuoyancyController}}
+\doxysubsubsection{\texorpdfstring{Velocity}{Velocity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Buoyancy\+Controller.\+Velocity}
+
+
+
+Acts like waterflow. Defaults to 0,0. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Controllers/Buoyancy\+Controller.\+cs\end{DoxyCompactItemize}

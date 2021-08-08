@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_467ec770951959479211ac6ddf2b8c6f" kind="dir">
+    <compoundname>Physics2D/Common/ConvexHull</compoundname>
+    <innerfile refid="_chain_hull_8cs">ChainHull.cs</innerfile>
+    <innerfile refid="_gift_wrap_8cs">GiftWrap.cs</innerfile>
+    <innerfile refid="_melkman_8cs">Melkman.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/ConvexHull/"/>
+  </compounddef>
+</doxygen>

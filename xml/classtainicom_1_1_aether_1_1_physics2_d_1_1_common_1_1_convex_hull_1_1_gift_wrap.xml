@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_gift_wrap" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::ConvexHull::GiftWrap</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_gift_wrap_1a1a754bb915d09fd9915d1c09420fe666" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.ConvexHull.GiftWrap.GetConvexHull</definition>
+        <argsstring>(Vertices vertices)</argsstring>
+        <name>GetConvexHull</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Returns the convex hull from the given vertices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertices.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/ConvexHull/GiftWrap.cs" line="27" column="32" bodyfile="Physics2D/Common/ConvexHull/GiftWrap.cs" bodystart="27" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Giftwrap convex hull algorithm. O(nh) time complexity, where n is the number of points and h is the number of points on the convex hull. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>See <ulink url="http://en.wikipedia.org/wiki/Gift_wrapping_algorithm">http://en.wikipedia.org/wiki/Gift_wrapping_algorithm</ulink> for more details.</para>
+    </detaileddescription>
+    <location file="Physics2D/Common/ConvexHull/GiftWrap.cs" line="19" column="19" bodyfile="Physics2D/Common/ConvexHull/GiftWrap.cs" bodystart="20" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_gift_wrap_1a1a754bb915d09fd9915d1c09420fe666" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::ConvexHull::GiftWrap</scope><name>GetConvexHull</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

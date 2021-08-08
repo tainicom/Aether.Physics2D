@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::QuadTree</compoundname>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a742dc1a02f5e80fc30588bdd903fe607" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.MaxBucket</definition>
+        <argsstring></argsstring>
+        <name>MaxBucket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="31" column="20" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ac35fee1e73f805a812ab8d011c8f42f6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.MaxDepth</definition>
+        <argsstring></argsstring>
+        <name>MaxDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="32" column="20" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a7570f44d2a6f317cb662148bee680dd8" prot="public" static="no" mutable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" kindref="compound">Element</ref>&lt; T &gt; &gt;</type>
+        <definition>List&lt;Element&lt;T&gt; &gt; tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.Nodes</definition>
+        <argsstring></argsstring>
+        <name>Nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="33" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ad6fe0c2b5830e4649e80f35957d4c1bd" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+        <definition>AABB tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.Span</definition>
+        <argsstring></argsstring>
+        <name>Span</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="34" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ad037946b0ceba6cef537eda74efaf6f6" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree" kindref="compound">QuadTree</ref>&lt; T &gt;[]</type>
+        <definition>QuadTree&lt;T&gt; [] tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.SubTrees</definition>
+        <argsstring></argsstring>
+        <name>SubTrees</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="35" column="25" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ae00e31010fccc8e4ad6441ec67cbbc0f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.IsPartitioned</definition>
+        <argsstring></argsstring>
+        <name>IsPartitioned</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="46" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="47" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a2e6e2e7234149df7afa2a83942a17f1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.QuadTree</definition>
+        <argsstring>(AABB span, int maxbucket, int maxdepth)</argsstring>
+        <name>QuadTree</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>span</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxbucket</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxdepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="37" column="16" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="37" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a041379d70d06a878f648845a87f9505f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.AddNode</definition>
+        <argsstring>(Element&lt; T &gt; node)</argsstring>
+        <name>AddNode</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" kindref="compound">Element</ref>&lt; T &gt;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="67" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="67" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a4433e99adee71af881138e6e24c1ec98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.QueryAABB</definition>
+        <argsstring>(Func&lt; Element&lt; T &gt;, bool &gt; callback, ref AABB searchR)</argsstring>
+        <name>QueryAABB</name>
+        <param>
+          <type>Func&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" kindref="compound">Element</ref>&lt; T &gt;, bool &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>searchR</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="183" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="183" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a133570a1e367c5c8e203f19eff69a8b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.RayCast</definition>
+        <argsstring>(Func&lt; RayCastInput, Element&lt; T &gt;, float &gt; callback, ref RayCastInput input)</argsstring>
+        <name>RayCast</name>
+        <param>
+          <type>Func&lt; <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref>, <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" kindref="compound">Element</ref>&lt; T &gt;, float &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="206" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="206" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1aacfb2c9b1f51cd113847068e9c3ce622" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.GetAllNodesR</definition>
+        <argsstring>(ref List&lt; Element&lt; T &gt;&gt; nodes)</argsstring>
+        <name>GetAllNodesR</name>
+        <param>
+          <type>ref List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" kindref="compound">Element</ref>&lt; T &gt;&gt;</type>
+          <declname>nodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="248" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="248" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a829c455df5ac63ff9f20ee5e75f1f49c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.RemoveNode</definition>
+        <argsstring>(Element&lt; T &gt; node)</argsstring>
+        <name>RemoveNode</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" kindref="compound">Element</ref>&lt; T &gt;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="256" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="256" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a23f353f95e18dda9e125943480e4c733" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.Reconstruct</definition>
+        <argsstring>()</argsstring>
+        <name>Reconstruct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="261" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="261" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a2b18958cac477ca27d6f6c8bfbe1473b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="272" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="272" bodyend="276"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a2b7aa6611eef9cd25cf5ea52342f47f4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.Partition</definition>
+        <argsstring>(AABB span, AABB test)</argsstring>
+        <name>Partition</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>span</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>test</declname>
+        </param>
+        <briefdescription>
+<para>returns the quadrant of span that entirely contains test. if none, return 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>span</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>test</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="57" column="21" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="57" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a4212501a85d04472681f0dbeeda63803" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;.RayCastAABB</definition>
+        <argsstring>(AABB aabb, Vector2 p1, Vector2 p2)</argsstring>
+        <name>RayCastAABB</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>aabb</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+<para>tests if ray intersects <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aabb</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/QuadTree.cs" line="151" column="28" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="151" bodyend="181"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.QuadTree&lt; T &gt;</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Span</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Collision.AABB</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LowerBound</edgelabel>
+          <edgelabel>UpperBound</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/QuadTree.cs" line="29" column="11" bodyfile="Physics2D/Collision/QuadTree.cs" bodystart="30" bodyend="277"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a041379d70d06a878f648845a87f9505f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>AddNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a2b18958cac477ca27d6f6c8bfbe1473b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>Clear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1aacfb2c9b1f51cd113847068e9c3ce622" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>GetAllNodesR</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ae00e31010fccc8e4ad6441ec67cbbc0f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>IsPartitioned</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a742dc1a02f5e80fc30588bdd903fe607" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>MaxBucket</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ac35fee1e73f805a812ab8d011c8f42f6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>MaxDepth</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a7570f44d2a6f317cb662148bee680dd8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>Nodes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a2b7aa6611eef9cd25cf5ea52342f47f4" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>Partition</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a2e6e2e7234149df7afa2a83942a17f1d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>QuadTree</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a4433e99adee71af881138e6e24c1ec98" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>QueryAABB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a133570a1e367c5c8e203f19eff69a8b8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>RayCast</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a4212501a85d04472681f0dbeeda63803" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>RayCastAABB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a23f353f95e18dda9e125943480e4c733" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>Reconstruct</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1a829c455df5ac63ff9f20ee5e75f1f49c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>RemoveNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ad6fe0c2b5830e4649e80f35957d4c1bd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>Span</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_1ad037946b0ceba6cef537eda74efaf6f6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::QuadTree</scope><name>SubTrees</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

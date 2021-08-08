@@ -1,0 +1,77 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Simple\+Explosion Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion}\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion@{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion}}
+
+
+Creates a simple explosion that ignores other bodies hiding behind static bodies.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Simple\+Explosion\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_a21b8da26fc0a77e99ed8ebd47c3a0fdc}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_a21b8da26fc0a77e99ed8ebd47c3a0fdc}} 
+{\bfseries Simple\+Explosion} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world}{World}} world)
+\item 
+Dictionary$<$ \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} $>$ \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_a5129a23bca106c43991ecd480572667a}{Activate}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} pos, float radius, float force, float max\+Force=float.\+Max\+Value)
+\begin{DoxyCompactList}\small\item\em Activate the explosion at the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_adc1b7dd8bb40f113eb40ef9e1b794dd0}{Power}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em This is the power used in the power function. A value of 1 means the force applied to bodies in the explosion is linear. A value of 2 means it is exponential. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Creates a simple explosion that ignores other bodies hiding behind static bodies. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_a5129a23bca106c43991ecd480572667a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_a5129a23bca106c43991ecd480572667a}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion@{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion}!Activate@{Activate}}
+\index{Activate@{Activate}!tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion@{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily Dictionary$<$\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}$>$ tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Simple\+Explosion.\+Activate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{pos,  }\item[{float}]{radius,  }\item[{float}]{force,  }\item[{float}]{max\+Force = {\ttfamily float.MaxValue} }\end{DoxyParamCaption})}
+
+
+
+Activate the explosion at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position (center) of the explosion.\\
+\hline
+{\em radius} & The radius of the explosion.\\
+\hline
+{\em force} & The force applied\\
+\hline
+{\em max\+Force} & A maximum amount of force. When force gets over this value, it will be equal to max\+Force\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of bodies and the amount of force that was applied to them.
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_adc1b7dd8bb40f113eb40ef9e1b794dd0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion_adc1b7dd8bb40f113eb40ef9e1b794dd0}} 
+\index{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion@{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion}!Power@{Power}}
+\index{Power@{Power}!tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion@{tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion}}
+\doxysubsubsection{\texorpdfstring{Power}{Power}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Common.\+Physics\+Logic.\+Simple\+Explosion.\+Power\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+This is the power used in the power function. A value of 1 means the force applied to bodies in the explosion is linear. A value of 2 means it is exponential. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Common/\+Physics\+Logic/Simple\+Explosion.\+cs\end{DoxyCompactItemize}

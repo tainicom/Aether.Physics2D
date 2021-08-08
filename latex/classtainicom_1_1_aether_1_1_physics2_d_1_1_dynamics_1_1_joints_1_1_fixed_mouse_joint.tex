@@ -1,0 +1,154 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint}\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+
+
+A mouse joint is used to make a point on a body track a specified world point. This a soft constraint with a maximum force. This allows the constraint to stretch and without applying huge forces. NOTE\+: this joint is not documented in the manual because it was developed to be used in the testbed. If you want to learn how to use the mouse joint, look at the testbed.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a854482a04aa172c74bfaf01e0dc67544}{Fixed\+Mouse\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} world\+Anchor)
+\begin{DoxyCompactList}\small\item\em This requires a world target point, tuning parameters, and the time step. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a90ea73e9b98f6f1c5428863d8ca938f8}{Get\+Reaction\+Force}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction force on body at the joint anchor in Newtons. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ad57a18dd858dd3ec1d8141d02582af2c}{Get\+Reaction\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction torque on the body at the joint anchor in N$\ast$m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_acad6f30ad73e42db21dc429767fd3375}{Local\+AnchorA}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyA \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a8a8cebd02403f088068313294f0b122b}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a8a8cebd02403f088068313294f0b122b}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorA}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ace19ce6d72a103f0f66bb3e919572453}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ace19ce6d72a103f0f66bb3e919572453}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorB}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ac8b016f38b5e6d08b34a0b75494d0eb5}{Max\+Force}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The maximum constraint force that can be exerted to move the candidate body. Usually you will express as some multiple of the weight (multiplier $\ast$ mass $\ast$ gravity). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a5b639e8258add0667dded01b55df388a}{Frequency}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The response speed. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a34fd247f73f05c10e7c33091fd3fe48e}{Damping\+Ratio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The damping ratio. 0 = no damping, 1 = critical damping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A mouse joint is used to make a point on a body track a specified world point. This a soft constraint with a maximum force. This allows the constraint to stretch and without applying huge forces. NOTE\+: this joint is not documented in the manual because it was developed to be used in the testbed. If you want to learn how to use the mouse joint, look at the testbed. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a854482a04aa172c74bfaf01e0dc67544}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a854482a04aa172c74bfaf01e0dc67544}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!FixedMouseJoint@{FixedMouseJoint}}
+\index{FixedMouseJoint@{FixedMouseJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{FixedMouseJoint()}{FixedMouseJoint()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Fixed\+Mouse\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{body,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{world\+Anchor }\end{DoxyParamCaption})}
+
+
+
+This requires a world target point, tuning parameters, and the time step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & The body.\\
+\hline
+{\em world\+Anchor} & The target.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a90ea73e9b98f6f1c5428863d8ca938f8}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a90ea73e9b98f6f1c5428863d8ca938f8}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!GetReactionForce@{GetReactionForce}}
+\index{GetReactionForce@{GetReactionForce}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionForce()}{GetReactionForce()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Get\+Reaction\+Force (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction force on body at the joint anchor in Newtons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_af2c9a28af88d5c656660a9f4232d4f66}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ad57a18dd858dd3ec1d8141d02582af2c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ad57a18dd858dd3ec1d8141d02582af2c}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!GetReactionTorque@{GetReactionTorque}}
+\index{GetReactionTorque@{GetReactionTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionTorque()}{GetReactionTorque()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Get\+Reaction\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction torque on the body at the joint anchor in N$\ast$m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_aaba06d8a94a8bcb20963d6e34ec22ba6}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a34fd247f73f05c10e7c33091fd3fe48e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a34fd247f73f05c10e7c33091fd3fe48e}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!DampingRatio@{DampingRatio}}
+\index{DampingRatio@{DampingRatio}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{DampingRatio}{DampingRatio}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Damping\+Ratio\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The damping ratio. 0 = no damping, 1 = critical damping. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a5b639e8258add0667dded01b55df388a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_a5b639e8258add0667dded01b55df388a}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Frequency\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The response speed. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_acad6f30ad73e42db21dc429767fd3375}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_acad6f30ad73e42db21dc429767fd3375}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!LocalAnchorA@{LocalAnchorA}}
+\index{LocalAnchorA@{LocalAnchorA}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorA}{LocalAnchorA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Local\+AnchorA\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyA 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ac8b016f38b5e6d08b34a0b75494d0eb5}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_fixed_mouse_joint_ac8b016f38b5e6d08b34a0b75494d0eb5}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}!MaxForce@{MaxForce}}
+\index{MaxForce@{MaxForce}!tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FixedMouseJoint}}
+\doxysubsubsection{\texorpdfstring{MaxForce}{MaxForce}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Fixed\+Mouse\+Joint.\+Max\+Force\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The maximum constraint force that can be exerted to move the candidate body. Usually you will express as some multiple of the weight (multiplier $\ast$ mass $\ast$ gravity). 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Dynamics/\+Joints/Fixed\+Mouse\+Joint.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge" kind="class" language="C#" prot="private">
+    <compoundname>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1ad5d86b4abc4e8bbf3c84880b445e91da" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.EdgeStart</definition>
+        <argsstring></argsstring>
+        <name>EdgeStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="477" column="28" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="477" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1a6c4728de2886978e162e37e5b1330e79" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.EdgeEnd</definition>
+        <argsstring></argsstring>
+        <name>EdgeEnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="478" column="28" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="478" bodyend="478"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1a05de004a4ec5284e90cfbe4329b1dd9a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.Edge</definition>
+        <argsstring>(Vector2 edgeStart, Vector2 edgeEnd)</argsstring>
+        <name>Edge</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>edgeStart</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>edgeEnd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="471" column="20" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="471" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1ac803272f9a12042b7b7d327321db7f13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.GetCenter</definition>
+        <argsstring>()</argsstring>
+        <name>GetCenter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="480" column="28" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="480" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1aea5a2a5bd43a8990562e43291155bdaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override bool</type>
+        <definition>override bool tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.Equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>Equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="490" column="34" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="490" bodyend="500"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1aba7806e7a82b3e27295be9b55b21c900" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.Equals</definition>
+        <argsstring>(Edge e)</argsstring>
+        <name>Equals</name>
+        <param>
+          <type>Edge</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="502" column="25" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="502" bodyend="512"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1a6ecb804b61a28c400d6e36050c06d9a3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override int</type>
+        <definition>override int tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.GetHashCode</definition>
+        <argsstring>()</argsstring>
+        <name>GetHashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="514" column="33" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="514" bodyend="517"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1ae2b4e93d98147cc0baffa10e1296b936" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Edge</type>
+        <definition>static Edge tainicom.Aether.Physics2D.Common.PolygonManipulation.YuPengClipper.Edge.operator-</definition>
+        <argsstring>(Edge e)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>Edge</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="485" column="32" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="485" bodyend="488"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Specifies an Edge. Edges are used to represent simplicies in simplical chains </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" line="469" column="23" bodyfile="Physics2D/Common/PolygonManipulation/YuPengClipper.cs" bodystart="470" bodyend="518"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1a05de004a4ec5284e90cfbe4329b1dd9a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>Edge</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1a6c4728de2886978e162e37e5b1330e79" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>EdgeEnd</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1ad5d86b4abc4e8bbf3c84880b445e91da" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>EdgeStart</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1aea5a2a5bd43a8990562e43291155bdaf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>Equals</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1aba7806e7a82b3e27295be9b55b21c900" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>Equals</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1ac803272f9a12042b7b7d327321db7f13" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>GetCenter</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1a6ecb804b61a28c400d6e36050c06d9a3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>GetHashCode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_yu_peng_clipper_1_1_edge_1ae2b4e93d98147cc0baffa10e1296b936" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::YuPengClipper::Edge</scope><name>operator-</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

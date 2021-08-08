@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::XMLFragmentParser</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1ac09742ecb8fd00d2fbace7da3b58dc32" prot="private" static="yes" mutable="no">
+        <type>List&lt; char &gt;</type>
+        <definition>List&lt;char&gt; tainicom.Aether.Physics2D.Common.XMLFragmentParser._punctuation</definition>
+        <argsstring></argsstring>
+        <name>_punctuation</name>
+        <initializer>= new List&lt;char&gt; { &apos;/&apos;, &apos;&lt;&apos;, &apos;&gt;&apos;, &apos;=&apos; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1191" column="29" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1191" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1aafe2332f1c0ef2cea4306aa54a9d7129" prot="private" static="no" mutable="no">
+        <type>FileBuffer</type>
+        <definition>FileBuffer tainicom.Aether.Physics2D.Common.XMLFragmentParser._buffer</definition>
+        <argsstring></argsstring>
+        <name>_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1192" column="28" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a6ca5aaa5e2ddc32efe96296b36cfdb02" prot="private" static="no" mutable="no">
+        <type>XMLFragmentElement</type>
+        <definition>XMLFragmentElement tainicom.Aether.Physics2D.Common.XMLFragmentParser._rootNode</definition>
+        <argsstring></argsstring>
+        <name>_rootNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1193" column="36" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a30b7a735d27d1a49f9f89289829548df" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>XMLFragmentElement</type>
+        <definition>XMLFragmentElement tainicom.Aether.Physics2D.Common.XMLFragmentParser.RootNode</definition>
+        <argsstring></argsstring>
+        <name>RootNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1200" column="35" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1201" bodyend="1203"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1af8632f2433759608238f43abecff0f49" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.XMLFragmentParser.XMLFragmentParser</definition>
+        <argsstring>(Stream stream)</argsstring>
+        <name>XMLFragmentParser</name>
+        <param>
+          <type>Stream</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1195" column="16" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1195" bodyend="1198"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a883bae0927e6de9c3460ad669720a3cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.XMLFragmentParser.Load</definition>
+        <argsstring>(Stream stream)</argsstring>
+        <name>Load</name>
+        <param>
+          <type>Stream</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1205" column="21" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1205" bodyend="1208"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1ab4d12fd2b6d45c0103f9c128caea8ffd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>XMLFragmentElement</type>
+        <definition>XMLFragmentElement tainicom.Aether.Physics2D.Common.XMLFragmentParser.TryParseNode</definition>
+        <argsstring>()</argsstring>
+        <name>TryParseNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1325" column="35" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1325" bodyend="1406"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a324a2f00d0d466f429d4d98d9b1ceb6a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>XMLFragmentElement</type>
+        <definition>static XMLFragmentElement tainicom.Aether.Physics2D.Common.XMLFragmentParser.LoadFromStream</definition>
+        <argsstring>(Stream stream)</argsstring>
+        <name>LoadFromStream</name>
+        <param>
+          <type>Stream</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1210" column="42" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1210" bodyend="1215"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1abfc0b48e8ea327f74059093fdf0ef22b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentParser.NextToken</definition>
+        <argsstring>()</argsstring>
+        <name>NextToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1217" column="24" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1217" bodyend="1260"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a0fb30bacdafc5d007324b3cab41f568e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentParser.PeekToken</definition>
+        <argsstring>()</argsstring>
+        <name>PeekToken</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1262" column="24" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1262" bodyend="1268"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a29c2d0304c5dbe3f398e307f5c210409" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentParser.ReadUntil</definition>
+        <argsstring>(char c)</argsstring>
+        <name>ReadUntil</name>
+        <param>
+          <type>char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1270" column="24" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1270" bodyend="1295"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a35e30b3094ff57f399071dfcb61465b4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentParser.TrimControl</definition>
+        <argsstring>(string str)</argsstring>
+        <name>TrimControl</name>
+        <param>
+          <type>string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1297" column="24" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1297" bodyend="1315"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1ad30cf373d17c8d3e8d1fbe5b504e4a3e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string tainicom.Aether.Physics2D.Common.XMLFragmentParser.TrimTags</definition>
+        <argsstring>(string outer)</argsstring>
+        <name>TrimTags</name>
+        <param>
+          <type>string</type>
+          <declname>outer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1317" column="24" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1317" bodyend="1323"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a9bb9a4087af23ea73423028fee669b52" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.XMLFragmentParser.Parse</definition>
+        <argsstring>()</argsstring>
+        <name>Parse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Serialization.cs" line="1408" column="22" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1408" bodyend="1414"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Serialization.cs" line="1189" column="13" bodyfile="Physics2D/Common/Serialization.cs" bodystart="1190" bodyend="1415"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1aafe2332f1c0ef2cea4306aa54a9d7129" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>_buffer</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1ac09742ecb8fd00d2fbace7da3b58dc32" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>_punctuation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a6ca5aaa5e2ddc32efe96296b36cfdb02" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>_rootNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a883bae0927e6de9c3460ad669720a3cd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>Load</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a324a2f00d0d466f429d4d98d9b1ceb6a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>LoadFromStream</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1abfc0b48e8ea327f74059093fdf0ef22b" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>NextToken</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a9bb9a4087af23ea73423028fee669b52" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>Parse</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a0fb30bacdafc5d007324b3cab41f568e" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>PeekToken</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a29c2d0304c5dbe3f398e307f5c210409" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>ReadUntil</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a30b7a735d27d1a49f9f89289829548df" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>RootNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1a35e30b3094ff57f399071dfcb61465b4" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>TrimControl</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1ad30cf373d17c8d3e8d1fbe5b504e4a3e" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>TrimTags</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1ab4d12fd2b6d45c0103f9c128caea8ffd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>TryParseNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_x_m_l_fragment_parser_1af8632f2433759608238f43abecff0f49" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::XMLFragmentParser</scope><name>XMLFragmentParser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,692 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1ab283b588e5edfbf4656f40061b37f7eb" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+        <definition>World tainicom.Aether.Physics2D.Common.TextureTools.Terrain.World</definition>
+        <argsstring></argsstring>
+        <name>World</name>
+        <briefdescription>
+<para>World to manage terrain in. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="26" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a3ceff19c4b0ba4f307cdd1763425b3bd" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Center</definition>
+        <argsstring></argsstring>
+        <name>Center</name>
+        <briefdescription>
+<para>Center of terrain in world units. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="31" column="24" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1adea3419eeed54a4a53f4e87b0b8e5599" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Width</definition>
+        <argsstring></argsstring>
+        <name>Width</name>
+        <briefdescription>
+<para>Width of terrain in world units. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="36" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a962b8053580c6dc259ad89122efd0fe5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Height</definition>
+        <argsstring></argsstring>
+        <name>Height</name>
+        <briefdescription>
+<para>Height of terrain in world units. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="41" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a51f71e5eba46348384e47829ca9e995c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.TextureTools.Terrain.PointsPerUnit</definition>
+        <argsstring></argsstring>
+        <name>PointsPerUnit</name>
+        <briefdescription>
+<para>Points per each world unit used to define the terrain in the point cloud. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="46" column="20" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1af2566f3c71f3fcf67c993cd34c1ff86d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.TextureTools.Terrain.CellSize</definition>
+        <argsstring></argsstring>
+        <name>CellSize</name>
+        <briefdescription>
+<para>Points per cell. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="51" column="20" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a9ce24c9ecb210ba55838d154f899e5a7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.TextureTools.Terrain.SubCellSize</definition>
+        <argsstring></argsstring>
+        <name>SubCellSize</name>
+        <briefdescription>
+<para>Points per sub cell. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="56" column="20" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1aca67a80d08c11ea0d24676efa28b6347" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Iterations</definition>
+        <argsstring></argsstring>
+        <name>Iterations</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Number of iterations to perform in the Marching Squares algorithm. Note: More then 3 has almost no effect on quality. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="62" column="20" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a23a3587d1a98a585f80ec6186b0daf34" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1aa2b1cda235a52272a12b9522898e850c" kindref="member">TriangulationAlgorithm</ref></type>
+        <definition>TriangulationAlgorithm tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Decomposer</definition>
+        <argsstring></argsstring>
+        <name>Decomposer</name>
+        <briefdescription>
+<para>Decomposer to use when regenerating terrain. Can be changed on the fly without consequence. Note: Some decomposerers are unstable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="68" column="39" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a3292279c08137e4c3271ae32abaec620" prot="private" static="no" mutable="no">
+        <type>sbyte[,]</type>
+        <definition>sbyte [,] tainicom.Aether.Physics2D.Common.TextureTools.Terrain._terrainMap</definition>
+        <argsstring></argsstring>
+        <name>_terrainMap</name>
+        <briefdescription>
+<para>Point cloud defining the terrain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="73" column="23" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a47588c177d598e9a59ef724d02ad6208" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref> &gt;[,]</type>
+        <definition>List&lt;Body&gt; [,] tainicom.Aether.Physics2D.Common.TextureTools.Terrain._bodyMap</definition>
+        <argsstring></argsstring>
+        <name>_bodyMap</name>
+        <briefdescription>
+<para>Generated bodies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="78" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1ad8375184da5122eb0f83279d212d78c4" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.TextureTools.Terrain._localWidth</definition>
+        <argsstring></argsstring>
+        <name>_localWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="80" column="23" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1ac50e90fe76f4f4480283c010fddf4c13" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.TextureTools.Terrain._localHeight</definition>
+        <argsstring></argsstring>
+        <name>_localHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="81" column="23" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a6b059fca99fb8e2dbcf2f5f9772b731f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.TextureTools.Terrain._xnum</definition>
+        <argsstring></argsstring>
+        <name>_xnum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="82" column="21" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1af88da8b501a49273519fd5ace51a4b8a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.TextureTools.Terrain._ynum</definition>
+        <argsstring></argsstring>
+        <name>_ynum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="83" column="21" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a366079ad808aee6399290b6400ed256a" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+        <definition>AABB tainicom.Aether.Physics2D.Common.TextureTools.Terrain._dirtyArea</definition>
+        <argsstring></argsstring>
+        <name>_dirtyArea</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="84" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a2cd0962e07bce1dcfe69bfa3f82eecb9" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.TextureTools.Terrain._topLeft</definition>
+        <argsstring></argsstring>
+        <name>_topLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="85" column="25" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a97439c82498bd968534e257bf964789c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Terrain</definition>
+        <argsstring>(World world, AABB area)</argsstring>
+        <name>Terrain</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>area</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new terrain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>world</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The World</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>area</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The area of the terrain.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="92" column="16" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="92" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1acd58520ed0cf7b234dce982cf534244d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Terrain</definition>
+        <argsstring>(World world, Vector2 position, float width, float height)</argsstring>
+        <name>Terrain</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new terrain </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>world</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The World</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position (center) of the terrain.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the terrain.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the terrain.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="107" column="16" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="107" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a80bb0ef00e745e7233953cc2b2495af1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.TextureTools.Terrain.Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+<para>Initialize the terrain for use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="118" column="21" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="118" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a9a59866514c76e777b3e84daa0d3a5ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.TextureTools.Terrain.ApplyData</definition>
+        <argsstring>(sbyte[,] data, Vector2 offset=default(Vector2))</argsstring>
+        <name>ApplyData</name>
+        <param>
+          <type>sbyte</type>
+          <declname>data</declname>
+          <array>[,]</array>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>offset</declname>
+          <defval>default(<ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref>)</defval>
+        </param>
+        <briefdescription>
+<para>Apply the specified texture data to the terrain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="150" column="21" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="150" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a8f5700a03f49d6ee93bd567f19dd57e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.TextureTools.Terrain.ModifyTerrain</definition>
+        <argsstring>(Vector2 location, sbyte value)</argsstring>
+        <name>ModifyTerrain</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>location</declname>
+        </param>
+        <param>
+          <type>sbyte</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Modify a single point in the terrain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>location</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>World location to modify. Automatically clipped.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-1 = inside terrain, 1 = outside terrain</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="171" column="21" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="171" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a8a3946bf29551e7c1ffb1c8a100d462e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.TextureTools.Terrain.RegenerateTerrain</definition>
+        <argsstring>()</argsstring>
+        <name>RegenerateTerrain</name>
+        <briefdescription>
+<para>Regenerate the terrain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="197" column="21" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="197" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a7c3d1dc58665f0a367ef35682adfdd4e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.TextureTools.Terrain.RemoveOldData</definition>
+        <argsstring>(int xStart, int xEnd, int yStart, int yEnd)</argsstring>
+        <name>RemoveOldData</name>
+        <param>
+          <type>int</type>
+          <declname>xStart</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xEnd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yStart</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yEnd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="217" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="217" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a1e632c372b79eaa57ccc01f395325602" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.TextureTools.Terrain.GenerateTerrain</definition>
+        <argsstring>(int gx, int gy)</argsstring>
+        <name>GenerateTerrain</name>
+        <param>
+          <type>int</type>
+          <declname>gx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>gy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/Terrain.cs" line="240" column="22" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="240" bodyend="269"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Simple class to maintain a terrain. It can keep track </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>IEnumerable&lt; Joint &gt;</label>
+      </node>
+      <node id="17">
+        <label>tainicom.Aether.Physics2D.Dynamics.ControllerCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_controller_collection"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Dynamics.World</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>JointList</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>ContactManager</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>ControllerList</edgelabel>
+        </childnode>
+        <childnode refid="21" relation="usage">
+          <edgelabel>BodyList</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>ICollection&lt; Controller &gt;</label>
+      </node>
+      <node id="12">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="13">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="21">
+        <label>tainicom.Aether.Physics2D.Dynamics.BodyCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>IEnumerable&lt; Controller &gt;</label>
+      </node>
+      <node id="10">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>IEnumerable&lt; Body &gt;</label>
+      </node>
+      <node id="20">
+        <label>IList&lt; Controller &gt;</label>
+      </node>
+      <node id="11">
+        <label>Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>Manifold</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>_nodeA</edgelabel>
+          <edgelabel>_nodeB</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>IList&lt; Body &gt;</label>
+      </node>
+      <node id="8">
+        <label>IList&lt; Joint &gt;</label>
+      </node>
+      <node id="14">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge"/>
+      </node>
+      <node id="15">
+        <label>IEnumerable&lt; Contact &gt;</label>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Dynamics.JointCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joint_collection"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ICollection&lt; Joint &gt;</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.TextureTools.Terrain</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Center</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>World</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>ICollection&lt; Body &gt;</label>
+      </node>
+      <node id="16">
+        <label>tainicom.Aether.Physics2D.Collision.IBroadPhase</label>
+        <link refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase"/>
+      </node>
+      <node id="3">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="9">
+        <label>tainicom.Aether.Physics2D.Dynamics.ContactManager</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager"/>
+        <childnode refid="10" relation="usage">
+          <edgelabel>ContactList</edgelabel>
+          <edgelabel>_contactPoolList</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>BroadPhase</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/TextureTools/Terrain.cs" line="21" column="11" bodyfile="Physics2D/Common/TextureTools/Terrain.cs" bodystart="22" bodyend="270"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a47588c177d598e9a59ef724d02ad6208" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_bodyMap</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a366079ad808aee6399290b6400ed256a" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_dirtyArea</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1ac50e90fe76f4f4480283c010fddf4c13" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_localHeight</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1ad8375184da5122eb0f83279d212d78c4" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_localWidth</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a3292279c08137e4c3271ae32abaec620" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_terrainMap</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a2cd0962e07bce1dcfe69bfa3f82eecb9" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_topLeft</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a6b059fca99fb8e2dbcf2f5f9772b731f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_xnum</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1af88da8b501a49273519fd5ace51a4b8a" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>_ynum</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a9a59866514c76e777b3e84daa0d3a5ff" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>ApplyData</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1af2566f3c71f3fcf67c993cd34c1ff86d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>CellSize</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a3ceff19c4b0ba4f307cdd1763425b3bd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Center</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a23a3587d1a98a585f80ec6186b0daf34" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Decomposer</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a1e632c372b79eaa57ccc01f395325602" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>GenerateTerrain</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a962b8053580c6dc259ad89122efd0fe5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Height</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a80bb0ef00e745e7233953cc2b2495af1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Initialize</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1aca67a80d08c11ea0d24676efa28b6347" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Iterations</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a8f5700a03f49d6ee93bd567f19dd57e1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>ModifyTerrain</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a51f71e5eba46348384e47829ca9e995c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>PointsPerUnit</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a8a3946bf29551e7c1ffb1c8a100d462e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>RegenerateTerrain</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a7c3d1dc58665f0a367ef35682adfdd4e" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>RemoveOldData</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a9ce24c9ecb210ba55838d154f899e5a7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>SubCellSize</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1a97439c82498bd968534e257bf964789c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Terrain</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1acd58520ed0cf7b234dce982cf534244d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Terrain</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1adea3419eeed54a4a53f4e87b0b8e5599" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>Width</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_terrain_1ab283b588e5edfbf4656f40061b37f7eb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::Terrain</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

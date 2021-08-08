@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.Decomposition.CDT.Triangulatable</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a47650243ca2093a1afe10b4261ee6076" prot="protected" static="no" mutable="no">
+        <type>List&lt; Polygon &gt;</type>
+        <definition>List&lt;Polygon&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon._holes</definition>
+        <argsstring></argsstring>
+        <name>_holes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="55" column="24" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa824b8f8cf49b46cf4185b278097f9da" prot="protected" static="no" mutable="no">
+        <type>PolygonPoint</type>
+        <definition>PolygonPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon._last</definition>
+        <argsstring></argsstring>
+        <name>_last</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="56" column="32" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a1fcd5dab6462fcf6c6b069805fa2f938" prot="protected" static="no" mutable="no">
+        <type>List&lt; TriangulationPoint &gt;</type>
+        <definition>List&lt;TriangulationPoint&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon._points</definition>
+        <argsstring></argsstring>
+        <name>_points</name>
+        <initializer>= new List&lt;TriangulationPoint&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="57" column="24" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a34fd3854fa3a2121411dd1b3afcffc94" prot="protected" static="no" mutable="no">
+        <type>List&lt; TriangulationPoint &gt;</type>
+        <definition>List&lt;TriangulationPoint&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon._steinerPoints</definition>
+        <argsstring></argsstring>
+        <name>_steinerPoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="58" column="24" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ad0e6851f315437b295aa36945c9de644" prot="protected" static="no" mutable="no">
+        <type>List&lt; DelaunayTriangle &gt;</type>
+        <definition>List&lt;DelaunayTriangle&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon._triangles</definition>
+        <argsstring></argsstring>
+        <name>_triangles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="59" column="24" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ae64891909d140638093ed3188c74111b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>IList&lt; Polygon &gt;</type>
+        <definition>IList&lt;Polygon&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.Holes</definition>
+        <argsstring></argsstring>
+        <name>Holes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="88" column="22" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a16ac6827bc87ab70e459b1355528f2fe" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>TriangulationMode</type>
+        <definition>TriangulationMode tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.TriangulationMode</definition>
+        <argsstring></argsstring>
+        <name>TriangulationMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="95" column="34" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a9c9ad9c7f48a63cbf9d3462d52865383" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>IList&lt; TriangulationPoint &gt;</type>
+        <definition>IList&lt;TriangulationPoint&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.Points</definition>
+        <argsstring></argsstring>
+        <name>Points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="100" column="22" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a7978aa2a673b53b6d0267ec393ee2074" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>IList&lt; DelaunayTriangle &gt;</type>
+        <definition>IList&lt;DelaunayTriangle&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.Triangles</definition>
+        <argsstring></argsstring>
+        <name>Triangles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="105" column="22" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="106" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa8d76b4fe24c4a84ccf5616a7a59fd99" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.Polygon</definition>
+        <argsstring>(IList&lt; PolygonPoint &gt; points)</argsstring>
+        <name>Polygon</name>
+        <param>
+          <type>IList&lt; PolygonPoint &gt;</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+<para>Create a polygon from a list of at least 3 points with no duplicates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of unique points</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="65" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="65" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a7300476ee5d06d8c8b22d3a66238a45b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.Polygon</definition>
+        <argsstring>(IEnumerable&lt; PolygonPoint &gt; points)</argsstring>
+        <name>Polygon</name>
+        <param>
+          <type>IEnumerable&lt; PolygonPoint &gt;</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+<para>Create a polygon from a list of at least 3 points with no duplicates. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A list of unique points.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="80" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa6035920ab9ce6b339b0b1621a485ea0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.Polygon</definition>
+        <argsstring>()</argsstring>
+        <name>Polygon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="84" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="84" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa8d24ca0814dc7e5486453744e5aa8d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddTriangle</definition>
+        <argsstring>(DelaunayTriangle t)</argsstring>
+        <name>AddTriangle</name>
+        <param>
+          <type>DelaunayTriangle</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="110" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a480bb21cf745ab18b7c61e92d9b7cd5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddTriangles</definition>
+        <argsstring>(IEnumerable&lt; DelaunayTriangle &gt; list)</argsstring>
+        <name>AddTriangles</name>
+        <param>
+          <type>IEnumerable&lt; DelaunayTriangle &gt;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="115" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a20b8a29bd6c675f90a6b20f840c0ffa7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.ClearTriangles</definition>
+        <argsstring>()</argsstring>
+        <name>ClearTriangles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="120" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a89ca5d39e167037e33931c7bcade1618" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.PrepareTriangulation</definition>
+        <argsstring>(TriangulationContext tcx)</argsstring>
+        <name>PrepareTriangulation</name>
+        <param>
+          <type>TriangulationContext</type>
+          <declname>tcx</declname>
+        </param>
+        <briefdescription>
+<para>Creates constraints and populates the context with points </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tcx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The context</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="129" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="129" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a96c897a891aa7cec7cd3ac88b8024095" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddSteinerPoint</definition>
+        <argsstring>(TriangulationPoint point)</argsstring>
+        <name>AddSteinerPoint</name>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="170" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="170" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa180817eb4fd6c690e1a79940f64abb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddSteinerPoints</definition>
+        <argsstring>(List&lt; TriangulationPoint &gt; points)</argsstring>
+        <name>AddSteinerPoints</name>
+        <param>
+          <type>List&lt; TriangulationPoint &gt;</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="179" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="179" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a09d4138fdf982fe05bb37002c86abff2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.ClearSteinerPoints</definition>
+        <argsstring>()</argsstring>
+        <name>ClearSteinerPoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="188" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="188" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ae2352f69ae83cdcf4d1bde7825b335c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddHole</definition>
+        <argsstring>(Polygon poly)</argsstring>
+        <name>AddHole</name>
+        <param>
+          <type>Polygon</type>
+          <declname>poly</declname>
+        </param>
+        <briefdescription>
+<para>Add a hole to the polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>poly</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A subtraction polygon fully contained inside this polygon.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="200" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="200" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aeb338beb99b82625c873f01fb4762d2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.InsertPointAfter</definition>
+        <argsstring>(PolygonPoint point, PolygonPoint newPoint)</argsstring>
+        <name>InsertPointAfter</name>
+        <param>
+          <type>PolygonPoint</type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>PolygonPoint</type>
+          <declname>newPoint</declname>
+        </param>
+        <briefdescription>
+<para>Inserts newPoint after point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point to insert after in the polygon</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point to insert into the polygon</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="213" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="213" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1af3ac3f019430c12a9208dd00494502ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddPoints</definition>
+        <argsstring>(IEnumerable&lt; PolygonPoint &gt; list)</argsstring>
+        <name>AddPoints</name>
+        <param>
+          <type>IEnumerable&lt; PolygonPoint &gt;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+<para>Inserts list (after last point in polygon?) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="231" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="231" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a44a7b8a834e1872b750febfe554c7aaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.AddPoint</definition>
+        <argsstring>(PolygonPoint p)</argsstring>
+        <name>AddPoint</name>
+        <param>
+          <type>PolygonPoint</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Adds a point after the last in the polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point to add</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="254" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="254" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ae578b63f3a8eee7c0d9480e3ee141ec6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon.RemovePoint</definition>
+        <argsstring>(PolygonPoint p)</argsstring>
+        <name>RemovePoint</name>
+        <param>
+          <type>PolygonPoint</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Removes a point from the polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="266" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="266" bodyend="275"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Triangulatable</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>TriangulationPoint</label>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.PolygonPoint</label>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Triangulatable</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.Polygon</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_last</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" line="53" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/Polygon.cs" bodystart="54" bodyend="276"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a47650243ca2093a1afe10b4261ee6076" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>_holes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa824b8f8cf49b46cf4185b278097f9da" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>_last</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a1fcd5dab6462fcf6c6b069805fa2f938" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>_points</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a34fd3854fa3a2121411dd1b3afcffc94" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>_steinerPoints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ad0e6851f315437b295aa36945c9de644" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>_triangles</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ae2352f69ae83cdcf4d1bde7825b335c6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddHole</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a44a7b8a834e1872b750febfe554c7aaa" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddPoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1af3ac3f019430c12a9208dd00494502ef" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddPoints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a96c897a891aa7cec7cd3ac88b8024095" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddSteinerPoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa180817eb4fd6c690e1a79940f64abb4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddSteinerPoints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa8d24ca0814dc7e5486453744e5aa8d2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddTriangle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a480bb21cf745ab18b7c61e92d9b7cd5b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>AddTriangles</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a09d4138fdf982fe05bb37002c86abff2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>ClearSteinerPoints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a20b8a29bd6c675f90a6b20f840c0ffa7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>ClearTriangles</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ae64891909d140638093ed3188c74111b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>Holes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aeb338beb99b82625c873f01fb4762d2e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>InsertPointAfter</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a9c9ad9c7f48a63cbf9d3462d52865383" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>Points</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa8d76b4fe24c4a84ccf5616a7a59fd99" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>Polygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a7300476ee5d06d8c8b22d3a66238a45b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>Polygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1aa6035920ab9ce6b339b0b1621a485ea0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>Polygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a89ca5d39e167037e33931c7bcade1618" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>PrepareTriangulation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1ae578b63f3a8eee7c0d9480e3ee141ec6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>RemovePoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a7978aa2a673b53b6d0267ec393ee2074" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>Triangles</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_1a16ac6827bc87ab70e459b1355528f2fe" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::Polygon</scope><name>TriangulationMode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

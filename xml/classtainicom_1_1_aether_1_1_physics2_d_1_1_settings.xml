@@ -1,0 +1,611 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Settings</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1abbcda3ea4816253ad556f5671cdf2903" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxFloat</definition>
+        <argsstring></argsstring>
+        <name>MaxFloat</name>
+        <initializer>= 3.402823466e+38f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="35" column="28" bodyfile="Physics2D/Settings.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a787adfd01ced45abd7a760ccc0dd58c5" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.Epsilon</definition>
+        <argsstring></argsstring>
+        <name>Epsilon</name>
+        <initializer>= 1.192092896e-07f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="36" column="28" bodyfile="Physics2D/Settings.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ae0f8489641f59de1e4e347d44c9e1ebd" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool tainicom.Aether.Physics2D.Settings.EnableDiagnostics</definition>
+        <argsstring></argsstring>
+        <name>EnableDiagnostics</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Enabling diagnistics causes the engine to gather timing information. You can see how much time it took to solve the contacts, solve CCD and update the controllers. NOTE: If you are using a debug view that shows performance counters, you might want to enable this. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="47" column="27" bodyfile="Physics2D/Settings.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1aa39cc96e53c556f74ed5fde42576276a" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Settings.VelocityIterations</definition>
+        <argsstring></argsstring>
+        <name>VelocityIterations</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>The number of velocity iterations used in the solver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="52" column="27" bodyfile="Physics2D/Settings.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a0c984fd7535d804620e971210b1acef1" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Settings.PositionIterations</definition>
+        <argsstring></argsstring>
+        <name>PositionIterations</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>The number of position iterations used in the solver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="57" column="27" bodyfile="Physics2D/Settings.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ab3deef5fb9d21f9fe03aad4c7bf4081e" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Settings.ContinuousPhysics</definition>
+        <argsstring></argsstring>
+        <name>ContinuousPhysics</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Enable/Disable Continuous <ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision" kindref="compound">Collision</ref> Detection (CCD) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="62" column="28" bodyfile="Physics2D/Settings.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1acc28c6cd572e5a509911f71f48e10af4" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Settings.UseConvexHullPolygons</definition>
+        <argsstring></argsstring>
+        <name>UseConvexHullPolygons</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>If true, it will run a GiftWrap convex hull on all polygon inputs. This makes for a more stable engine when given random input, but if speed of the creation of polygons are more important, you might want to set this to false. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="70" column="28" bodyfile="Physics2D/Settings.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a4f0a1f6ac766be5652e77a808e34ad59" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Settings.TOIVelocityIterations</definition>
+        <argsstring></argsstring>
+        <name>TOIVelocityIterations</name>
+        <initializer>= VelocityIterations</initializer>
+        <briefdescription>
+<para>The number of velocity iterations in the TOI solver </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="75" column="27" bodyfile="Physics2D/Settings.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ad1d6297f98ffafef5ec0279087ebf480" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Settings.TOIPositionIterations</definition>
+        <argsstring></argsstring>
+        <name>TOIPositionIterations</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+<para>The number of position iterations in the TOI solver </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="80" column="27" bodyfile="Physics2D/Settings.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ab24bc09475859242a8041b51ca2e1548" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int tainicom.Aether.Physics2D.Settings.MaxSubSteps</definition>
+        <argsstring></argsstring>
+        <name>MaxSubSteps</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>Maximum number of sub-steps per contact in continuous physics simulation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="85" column="26" bodyfile="Physics2D/Settings.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ac88f7ad380d708bf64e2ee6360c4edfb" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Settings.AllowSleep</definition>
+        <argsstring></argsstring>
+        <name>AllowSleep</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Enable/Disable sleeping </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="90" column="28" bodyfile="Physics2D/Settings.cs" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ab0dc2aed891aadf4ca3d283375a17b37" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Settings.MaxPolygonVertices</definition>
+        <argsstring></argsstring>
+        <name>MaxPolygonVertices</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+<para>The maximum number of vertices on a convex polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="95" column="27" bodyfile="Physics2D/Settings.cs" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a7a4696d2a19274dc6d369fb709ef5414" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int tainicom.Aether.Physics2D.Settings.MaxManifoldPoints</definition>
+        <argsstring></argsstring>
+        <name>MaxManifoldPoints</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>The maximum number of contact points between two convex shapes. DO NOT CHANGE THIS VALUE! </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="101" column="26" bodyfile="Physics2D/Settings.cs" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a2e8106d39afd11ad192ce7dfc236d453" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.AABBExtension</definition>
+        <argsstring></argsstring>
+        <name>AABBExtension</name>
+        <initializer>= 0.1f</initializer>
+        <briefdescription>
+<para>This is used to fatten AABBs in the dynamic tree. This allows proxies to move by a small amount without triggering a tree adjustment. This is in meters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="108" column="28" bodyfile="Physics2D/Settings.cs" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a954f20d50aaada3fed254d68cace8994" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.AABBMultiplier</definition>
+        <argsstring></argsstring>
+        <name>AABBMultiplier</name>
+        <initializer>= 2.0f</initializer>
+        <briefdescription>
+<para>This is used to fatten AABBs in the dynamic tree. This is used to predict the future position based on the current displacement. This is a dimensionless multiplier. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="115" column="28" bodyfile="Physics2D/Settings.cs" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ac35609ae22583c03537a56a54956b5c2" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.LinearSlop</definition>
+        <argsstring></argsstring>
+        <name>LinearSlop</name>
+        <initializer>= 0.005f</initializer>
+        <briefdescription>
+<para>A small length used as a collision and constraint tolerance. Usually it is chosen to be numerically significant, but visually insignificant. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="121" column="28" bodyfile="Physics2D/Settings.cs" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1aa125a5490c79f46bf688c95cafdb7aef" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.AngularSlop</definition>
+        <argsstring></argsstring>
+        <name>AngularSlop</name>
+        <initializer>= (2.0f / 180.0f * Constant.Pi)</initializer>
+        <briefdescription>
+<para>A small angle used as a collision and constraint tolerance. Usually it is chosen to be numerically significant, but visually insignificant. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="127" column="28" bodyfile="Physics2D/Settings.cs" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a744ceb17f170aa4039e194c4f4bb7ef3" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.PolygonRadius</definition>
+        <argsstring></argsstring>
+        <name>PolygonRadius</name>
+        <initializer>= (2.0f * LinearSlop)</initializer>
+        <briefdescription>
+<para>The radius of the polygon/edge shape skin. This should not be modified. Making this smaller means polygons will have an insufficient buffer for continuous collision. Making it larger may create artifacts for vertex collision. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="134" column="28" bodyfile="Physics2D/Settings.cs" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ac8196d70c4fb0d0726abe26d54f0237d" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int tainicom.Aether.Physics2D.Settings.MaxTOIContacts</definition>
+        <argsstring></argsstring>
+        <name>MaxTOIContacts</name>
+        <initializer>= 32</initializer>
+        <briefdescription>
+<para>Maximum number of contacts to be handled to solve a TOI impact. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="141" column="26" bodyfile="Physics2D/Settings.cs" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a87a44dab00acc83470a4cd52c5d86b06" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.VelocityThreshold</definition>
+        <argsstring></argsstring>
+        <name>VelocityThreshold</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+<para>A velocity threshold for elastic collisions. Any collision with a relative linear velocity below this threshold will be treated as inelastic. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="147" column="28" bodyfile="Physics2D/Settings.cs" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a10eecdcd7cdc5640a3fd33d2ae545235" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxLinearCorrection</definition>
+        <argsstring></argsstring>
+        <name>MaxLinearCorrection</name>
+        <initializer>= 0.2f</initializer>
+        <briefdescription>
+<para>The maximum linear position correction used when solving constraints. This helps to prevent overshoot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="153" column="28" bodyfile="Physics2D/Settings.cs" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a78ef8628d544296a00c2778a9de75217" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxAngularCorrection</definition>
+        <argsstring></argsstring>
+        <name>MaxAngularCorrection</name>
+        <initializer>= (8.0f / 180.0f * Constant.Pi)</initializer>
+        <briefdescription>
+<para>The maximum angular position correction used when solving constraints. This helps to prevent overshoot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="159" column="28" bodyfile="Physics2D/Settings.cs" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a9f25821a6350e7a721c9568fc2d5615d" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.Baumgarte</definition>
+        <argsstring></argsstring>
+        <name>Baumgarte</name>
+        <initializer>= 0.2f</initializer>
+        <briefdescription>
+<para>This scale factor controls how fast overlap is resolved. Ideally this would be 1 so that overlap is removed in one time step. However using values close to 1 often lead to overshoot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="166" column="28" bodyfile="Physics2D/Settings.cs" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a4414793f0c1e5b21161600a30bc7262c" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.TimeToSleep</definition>
+        <argsstring></argsstring>
+        <name>TimeToSleep</name>
+        <initializer>= 0.5f</initializer>
+        <briefdescription>
+<para>The time that a body must be still before it will go to sleep. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="172" column="28" bodyfile="Physics2D/Settings.cs" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a77526423acf87a65a9e184207fe7e47d" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.LinearSleepTolerance</definition>
+        <argsstring></argsstring>
+        <name>LinearSleepTolerance</name>
+        <initializer>= 0.01f</initializer>
+        <briefdescription>
+<para>A body cannot sleep if its linear velocity is above this tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="177" column="28" bodyfile="Physics2D/Settings.cs" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a48d145d0d410d5e8dd041df8b28d791f" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.AngularSleepTolerance</definition>
+        <argsstring></argsstring>
+        <name>AngularSleepTolerance</name>
+        <initializer>= (2.0f / 180.0f * Constant.Pi)</initializer>
+        <briefdescription>
+<para>A body cannot sleep if its angular velocity is above this tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="182" column="28" bodyfile="Physics2D/Settings.cs" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1abb1cbe0dc87674c2c2d72af9b8985f8b" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxTranslation</definition>
+        <argsstring></argsstring>
+        <name>MaxTranslation</name>
+        <initializer>= 2.0f</initializer>
+        <briefdescription>
+<para>The maximum linear velocity of a body. This limit is very large and is used to prevent numerical problems. You shouldn&apos;t need to adjust this. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="188" column="28" bodyfile="Physics2D/Settings.cs" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a95b935d75debf8dd7deff50a7d0f7717" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxTranslationSquared</definition>
+        <argsstring></argsstring>
+        <name>MaxTranslationSquared</name>
+        <initializer>= (MaxTranslation * MaxTranslation)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="190" column="28" bodyfile="Physics2D/Settings.cs" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a9209db4bcb67ca0e77de66e67119657f" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxRotation</definition>
+        <argsstring></argsstring>
+        <name>MaxRotation</name>
+        <initializer>= (0.5f * Constant.Pi)</initializer>
+        <briefdescription>
+<para>The maximum angular velocity of a body. This limit is very large and is used to prevent numerical problems. You shouldn&apos;t need to adjust this. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="196" column="28" bodyfile="Physics2D/Settings.cs" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1aae3aff02a77a49968279efe6c6e16fe1" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Settings.MaxRotationSquared</definition>
+        <argsstring></argsstring>
+        <name>MaxRotationSquared</name>
+        <initializer>= (MaxRotation * MaxRotation)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="198" column="28" bodyfile="Physics2D/Settings.cs" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ae2e31d9f74d946525fec4abf9d0202ab" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int tainicom.Aether.Physics2D.Settings.MaxGJKIterations</definition>
+        <argsstring></argsstring>
+        <name>MaxGJKIterations</name>
+        <initializer>= 20</initializer>
+        <briefdescription>
+<para>Defines the maximum number of iterations made by the GJK algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="203" column="26" bodyfile="Physics2D/Settings.cs" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a102ca1d0c856c45e3be97dda2b363a58" prot="public" static="yes" mutable="no">
+        <type>const bool</type>
+        <definition>const bool tainicom.Aether.Physics2D.Settings.AutoClearForces</definition>
+        <argsstring></argsstring>
+        <name>AutoClearForces</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>By default, forces are cleared automatically after each call to Step. The default behavior is modified with this setting. The purpose of this setting is to support sub-stepping. Sub-stepping is often used to maintain a fixed sized time step under a variable frame-rate. When you perform sub-stepping you should disable auto clearing of forces and instead call ClearForces after all sub-steps are complete in one pass of your game loop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="213" column="27" bodyfile="Physics2D/Settings.cs" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a0fd1b2d9d07c25f43edb83be66930c91" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Settings.MixFriction</definition>
+        <argsstring>(float friction1, float friction2)</argsstring>
+        <name>MixFriction</name>
+        <param>
+          <type>float</type>
+          <declname>friction1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>friction2</declname>
+        </param>
+        <briefdescription>
+<para>Friction mixing law. Feel free to customize this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>friction1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The friction1.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>friction2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The friction2.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="221" column="29" bodyfile="Physics2D/Settings.cs" bodystart="221" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a682966290f017c27091c047a32e646f2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Settings.MixRestitution</definition>
+        <argsstring>(float restitution1, float restitution2)</argsstring>
+        <name>MixRestitution</name>
+        <param>
+          <type>float</type>
+          <declname>restitution1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>restitution2</declname>
+        </param>
+        <briefdescription>
+<para>Restitution mixing law. Feel free to customize this. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>restitution1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The restitution1.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>restitution2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The restitution2.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Settings.cs" line="232" column="29" bodyfile="Physics2D/Settings.cs" bodystart="232" bodyend="235"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Settings.cs" line="33" column="19" bodyfile="Physics2D/Settings.cs" bodystart="34" bodyend="236"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a2e8106d39afd11ad192ce7dfc236d453" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>AABBExtension</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a954f20d50aaada3fed254d68cace8994" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>AABBMultiplier</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ac88f7ad380d708bf64e2ee6360c4edfb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>AllowSleep</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a48d145d0d410d5e8dd041df8b28d791f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>AngularSleepTolerance</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1aa125a5490c79f46bf688c95cafdb7aef" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>AngularSlop</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a102ca1d0c856c45e3be97dda2b363a58" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>AutoClearForces</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a9f25821a6350e7a721c9568fc2d5615d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>Baumgarte</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ab3deef5fb9d21f9fe03aad4c7bf4081e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>ContinuousPhysics</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ae0f8489641f59de1e4e347d44c9e1ebd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>EnableDiagnostics</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a787adfd01ced45abd7a760ccc0dd58c5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>Epsilon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a77526423acf87a65a9e184207fe7e47d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>LinearSleepTolerance</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ac35609ae22583c03537a56a54956b5c2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>LinearSlop</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a78ef8628d544296a00c2778a9de75217" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxAngularCorrection</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1abbcda3ea4816253ad556f5671cdf2903" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxFloat</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ae2e31d9f74d946525fec4abf9d0202ab" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxGJKIterations</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a10eecdcd7cdc5640a3fd33d2ae545235" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxLinearCorrection</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a7a4696d2a19274dc6d369fb709ef5414" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxManifoldPoints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ab0dc2aed891aadf4ca3d283375a17b37" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxPolygonVertices</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a9209db4bcb67ca0e77de66e67119657f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxRotation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1aae3aff02a77a49968279efe6c6e16fe1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxRotationSquared</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ab24bc09475859242a8041b51ca2e1548" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxSubSteps</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ac8196d70c4fb0d0726abe26d54f0237d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxTOIContacts</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1abb1cbe0dc87674c2c2d72af9b8985f8b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxTranslation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a95b935d75debf8dd7deff50a7d0f7717" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MaxTranslationSquared</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a0fd1b2d9d07c25f43edb83be66930c91" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MixFriction</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a682966290f017c27091c047a32e646f2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>MixRestitution</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a744ceb17f170aa4039e194c4f4bb7ef3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>PolygonRadius</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a0c984fd7535d804620e971210b1acef1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>PositionIterations</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a4414793f0c1e5b21161600a30bc7262c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>TimeToSleep</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1ad1d6297f98ffafef5ec0279087ebf480" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>TOIPositionIterations</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a4f0a1f6ac766be5652e77a808e34ad59" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>TOIVelocityIterations</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1acc28c6cd572e5a509911f71f48e10af4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>UseConvexHullPolygons</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1aa39cc96e53c556f74ed5fde42576276a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>VelocityIterations</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_settings_1a87a44dab00acc83470a4cd52c5d86b06" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Settings</scope><name>VelocityThreshold</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

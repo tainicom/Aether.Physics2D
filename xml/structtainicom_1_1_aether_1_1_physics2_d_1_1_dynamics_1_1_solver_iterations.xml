@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::SolverIterations</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1adcf882ef1e5cc69f91c6c4a3776817b1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.SolverIterations.VelocityIterations</definition>
+        <argsstring></argsstring>
+        <name>VelocityIterations</name>
+        <briefdescription>
+<para>The number of velocity iterations used in the solver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/SolverIterations.cs" line="8" column="20" bodyfile="Physics2D/Dynamics/SolverIterations.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1ad0a3a67b78ad2bf4a237f7555b352444" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.SolverIterations.PositionIterations</definition>
+        <argsstring></argsstring>
+        <name>PositionIterations</name>
+        <briefdescription>
+<para>The number of position iterations used in the solver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/SolverIterations.cs" line="11" column="20" bodyfile="Physics2D/Dynamics/SolverIterations.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1a4e288f01e011c6f7e7ffc896630b6bb6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.SolverIterations.TOIVelocityIterations</definition>
+        <argsstring></argsstring>
+        <name>TOIVelocityIterations</name>
+        <briefdescription>
+<para>The number of velocity iterations in the TOI solver </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/SolverIterations.cs" line="14" column="20" bodyfile="Physics2D/Dynamics/SolverIterations.cs" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1a2f7cbfd4a21f0ff65ab660af92fe56cf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.SolverIterations.TOIPositionIterations</definition>
+        <argsstring></argsstring>
+        <name>TOIPositionIterations</name>
+        <briefdescription>
+<para>The number of position iterations in the TOI solver </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/SolverIterations.cs" line="17" column="20" bodyfile="Physics2D/Dynamics/SolverIterations.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/SolverIterations.cs" line="5" column="11" bodyfile="Physics2D/Dynamics/SolverIterations.cs" bodystart="6" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1ad0a3a67b78ad2bf4a237f7555b352444" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverIterations</scope><name>PositionIterations</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1a2f7cbfd4a21f0ff65ab660af92fe56cf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverIterations</scope><name>TOIPositionIterations</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1a4e288f01e011c6f7e7ffc896630b6bb6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverIterations</scope><name>TOIVelocityIterations</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_iterations_1adcf882ef1e5cc69f91c6c4a3776817b1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverIterations</scope><name>VelocityIterations</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

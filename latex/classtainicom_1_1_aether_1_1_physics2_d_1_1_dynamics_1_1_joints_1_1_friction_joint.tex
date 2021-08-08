@@ -1,0 +1,158 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint}\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+
+
+Friction joint. This is used for top-\/down friction. It provides 2D translational friction and angular friction.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_ae33350a6dd443a856ed4fe7f1d9a51c9}{Friction\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyB, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchor, bool use\+World\+Coordinates=false)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint}{Friction\+Joint}}. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aaaee90a7d6bcbc2219a6094643e8f6e2}{Get\+Reaction\+Force}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction force on body at the joint anchor in Newtons. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aa55a0f5186a53cf5137d3abb2b895344}{Get\+Reaction\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction torque on the body at the joint anchor in N$\ast$m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a03b8f228931e6bbe5b64889afaa10ff1}{Local\+AnchorA}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyA \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aec68d35d6c783ab5f3e1575d9f0b1dce}{Local\+AnchorB}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyB \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a80772974936d7a96f66870dabbe4b17f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a80772974936d7a96f66870dabbe4b17f}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorA}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a74269a0a2d43c5debe203b522036865a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a74269a0a2d43c5debe203b522036865a}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorB}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a4dfbb04348714c48450f198bc8706fb1}{Max\+Force}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The maximum friction force in N. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_adf5e812bc27c888935af5f7cf5d4465b}{Max\+Torque}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The maximum friction torque in N-\/m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Friction joint. This is used for top-\/down friction. It provides 2D translational friction and angular friction. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_ae33350a6dd443a856ed4fe7f1d9a51c9}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_ae33350a6dd443a856ed4fe7f1d9a51c9}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!FrictionJoint@{FrictionJoint}}
+\index{FrictionJoint@{FrictionJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{FrictionJoint()}{FrictionJoint()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Friction\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyB,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchor,  }\item[{bool}]{use\+World\+Coordinates = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint}{Friction\+Joint}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bodyA} & \\
+\hline
+{\em bodyB} & \\
+\hline
+{\em anchor} & \\
+\hline
+{\em use\+World\+Coordinates} & Set to true if you are using world coordinates as anchors.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aaaee90a7d6bcbc2219a6094643e8f6e2}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aaaee90a7d6bcbc2219a6094643e8f6e2}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!GetReactionForce@{GetReactionForce}}
+\index{GetReactionForce@{GetReactionForce}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionForce()}{GetReactionForce()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Get\+Reaction\+Force (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction force on body at the joint anchor in Newtons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_af2c9a28af88d5c656660a9f4232d4f66}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aa55a0f5186a53cf5137d3abb2b895344}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aa55a0f5186a53cf5137d3abb2b895344}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!GetReactionTorque@{GetReactionTorque}}
+\index{GetReactionTorque@{GetReactionTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionTorque()}{GetReactionTorque()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Get\+Reaction\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction torque on the body at the joint anchor in N$\ast$m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_aaba06d8a94a8bcb20963d6e34ec22ba6}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a03b8f228931e6bbe5b64889afaa10ff1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a03b8f228931e6bbe5b64889afaa10ff1}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!LocalAnchorA@{LocalAnchorA}}
+\index{LocalAnchorA@{LocalAnchorA}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorA}{LocalAnchorA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Local\+AnchorA\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyA 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aec68d35d6c783ab5f3e1575d9f0b1dce}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_aec68d35d6c783ab5f3e1575d9f0b1dce}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!LocalAnchorB@{LocalAnchorB}}
+\index{LocalAnchorB@{LocalAnchorB}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorB}{LocalAnchorB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Local\+AnchorB\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyB 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a4dfbb04348714c48450f198bc8706fb1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_a4dfbb04348714c48450f198bc8706fb1}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!MaxForce@{MaxForce}}
+\index{MaxForce@{MaxForce}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{MaxForce}{MaxForce}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Max\+Force\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The maximum friction force in N. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_adf5e812bc27c888935af5f7cf5d4465b}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_friction_joint_adf5e812bc27c888935af5f7cf5d4465b}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}!MaxTorque@{MaxTorque}}
+\index{MaxTorque@{MaxTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.FrictionJoint}}
+\doxysubsubsection{\texorpdfstring{MaxTorque}{MaxTorque}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Friction\+Joint.\+Max\+Torque\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The maximum friction torque in N-\/m. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Dynamics/\+Joints/Friction\+Joint.\+cs\end{DoxyCompactItemize}

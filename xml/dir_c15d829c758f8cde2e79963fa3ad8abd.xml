@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_c15d829c758f8cde2e79963fa3ad8abd" kind="dir">
+    <compoundname>Physics2D/Common/Decomposition/CDT/Delaunay/Sweep</compoundname>
+    <innerfile refid="_advancing_front_8cs">AdvancingFront.cs</innerfile>
+    <innerfile refid="_advancing_front_node_8cs">AdvancingFrontNode.cs</innerfile>
+    <innerfile refid="_d_t_sweep_8cs">DTSweep.cs</innerfile>
+    <innerfile refid="_d_t_sweep_constraint_8cs">DTSweepConstraint.cs</innerfile>
+    <innerfile refid="_d_t_sweep_context_8cs">DTSweepContext.cs</innerfile>
+    <innerfile refid="_d_t_sweep_point_comparator_8cs">DTSweepPointComparator.cs</innerfile>
+    <innerfile refid="_point_on_edge_exception_8cs">PointOnEdgeException.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/"/>
+  </compounddef>
+</doxygen>

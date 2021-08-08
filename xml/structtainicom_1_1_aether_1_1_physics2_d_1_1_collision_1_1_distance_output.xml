@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::DistanceOutput</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1aec53e93cd9036a247890f01cdf0091f1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.DistanceOutput.Distance</definition>
+        <argsstring></argsstring>
+        <name>Distance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="198" column="22" bodyfile="Physics2D/Collision/Distance.cs" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1a2c594f7aaf1f7e2554aab0e9800919d2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.DistanceOutput.Iterations</definition>
+        <argsstring></argsstring>
+        <name>Iterations</name>
+        <briefdescription>
+<para>Number of GJK iterations used </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="203" column="20" bodyfile="Physics2D/Collision/Distance.cs" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1aa257608fed0e0244859f432c62c849f8" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.DistanceOutput.PointA</definition>
+        <argsstring></argsstring>
+        <name>PointA</name>
+        <briefdescription>
+<para>Closest point on shapeA </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="208" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1a0ca87bb7ad51dde4b443f3edf443cbfb" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.DistanceOutput.PointB</definition>
+        <argsstring></argsstring>
+        <name>PointB</name>
+        <briefdescription>
+<para>Closest point on shapeB </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="213" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Output for Distance.ComputeDistance(). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.DistanceOutput</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>PointA</edgelabel>
+          <edgelabel>PointB</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Distance.cs" line="196" column="11" bodyfile="Physics2D/Collision/Distance.cs" bodystart="197" bodyend="214"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1aec53e93cd9036a247890f01cdf0091f1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceOutput</scope><name>Distance</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1a2c594f7aaf1f7e2554aab0e9800919d2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceOutput</scope><name>Iterations</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1aa257608fed0e0244859f432c62c849f8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceOutput</scope><name>PointA</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output_1a0ca87bb7ad51dde4b443f3edf443cbfb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::DistanceOutput</scope><name>PointB</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

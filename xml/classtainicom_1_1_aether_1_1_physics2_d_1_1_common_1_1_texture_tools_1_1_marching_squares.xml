@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list" prot="package">tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastList</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node" prot="package">tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_geom_poly" prot="package">tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::GeomPoly</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_geom_poly_val" prot="private">tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::GeomPolyVal</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a734c78660565fcad1241c28e383ed22f" prot="private" static="yes" mutable="no">
+        <type>int[]</type>
+        <definition>int [] tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares._lookMarch</definition>
+        <argsstring></argsstring>
+        <name>_lookMarch</name>
+        <initializer>= {
+                                              0x00, 0xE0, 0x38, 0xD8, 0x0E, 0xEE, 0x36, 0xD6, 0x83, 0x63, 0xBB, 0x5B, 0x8D,
+                                              0x6D, 0xB5, 0x55
+                                          }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Linearly interpolate between (x0 to x1) given a value at these coordinates (v0 and v1) such as to approximate value(return) = 0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="282" column="28" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a3cb9525895ad9e4160bf55e41e43d847" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.DetectSquares</definition>
+        <argsstring>(AABB domain, float cellWidth, float cellHeight, sbyte[,] f, int lerpCount, bool combine)</argsstring>
+        <name>DetectSquares</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>cellWidth</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>cellHeight</declname>
+        </param>
+        <param>
+          <type>sbyte</type>
+          <declname>f</declname>
+          <array>[,]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lerpCount</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>combine</declname>
+        </param>
+        <briefdescription>
+<para>Marching squares over the given domain using the mesh defined via the dimensions (wid,hei) to build a set of polygons such that f(x,y) less than 0, using the given number &apos;bin&apos; for recursive linear inteprolation along cell boundaries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>if &apos;comb&apos; is true, then the polygons will also be composited into larger possible concave polygons.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>domain</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cellWidth</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cellHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lerpCount</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>combine</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="59" column="28" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="59" bodyend="272"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1ac8061a02c77a0ba781673393208fb30d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.Lerp</definition>
+        <argsstring>(float x0, float x1, float v0, float v1)</argsstring>
+        <name>Lerp</name>
+        <param>
+          <type>float</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="287" column="30" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="287" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1ab7cf6c91d683be511a68e9a525526d26" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.Xlerp</definition>
+        <argsstring>(float x0, float x1, float y, float v0, float v1, sbyte[,] f, int c)</argsstring>
+        <name>Xlerp</name>
+        <param>
+          <type>float</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>sbyte</type>
+          <declname>f</declname>
+          <array>[,]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recursive linear interpolation for use in marching squares </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="301" column="30" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="301" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1ac0589c08d5be3f66920ca214c29a2be6" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.Ylerp</definition>
+        <argsstring>(float y0, float y1, float x, float v0, float v1, sbyte[,] f, int c)</argsstring>
+        <name>Ylerp</name>
+        <param>
+          <type>float</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>sbyte</type>
+          <declname>f</declname>
+          <array>[,]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Recursive linear interpolation for use in marching squares </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="317" column="30" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="317" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a2cad9b2b28f2ec439362d8892fb816a3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.Square</definition>
+        <argsstring>(float x)</argsstring>
+        <name>Square</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Square value for use in marching squares </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="333" column="30" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="333" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a3a638f6476fae7b3728e23372660202d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.VecDsq</definition>
+        <argsstring>(Vector2 a, Vector2 b)</argsstring>
+        <name>VecDsq</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="338" column="30" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="338" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a1b3921e0b76d2945927470a696e0a038" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.VecCross</definition>
+        <argsstring>(Vector2 a, Vector2 b)</argsstring>
+        <name>VecCross</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="344" column="30" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="344" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a13a29cc3e90494db8c374c33c2ec3885" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.MarchSquare</definition>
+        <argsstring>(sbyte[,] f, sbyte[,] fs, ref GeomPoly poly, int ax, int ay, float x0, float y0, float x1, float y1, int bin)</argsstring>
+        <name>MarchSquare</name>
+        <param>
+          <type>sbyte</type>
+          <declname>f</declname>
+          <array>[,]</array>
+        </param>
+        <param>
+          <type>sbyte</type>
+          <declname>fs</declname>
+          <array>[,]</array>
+        </param>
+        <param>
+          <type>ref GeomPoly</type>
+          <declname>poly</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ay</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Look-up table to relate polygon key with the vertices that should be used for the sub polygon in marching squares Perform a single celled marching square for for the given cell defined by (x0,y0) (x1,y1) using the function f for recursive interpolation, given the look-up table &apos;fs&apos; of the values of &apos;f&apos; at cell vertices with the result to be stored in &apos;poly&apos; given the actual coordinates of &apos;ax&apos; &apos;ay&apos; in the marching squares mesh. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="359" column="28" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="359" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a6acbe03cfba8f60c0313d3ae57047dd5" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.combLeft</definition>
+        <argsstring>(ref GeomPoly polya, ref GeomPoly polyb)</argsstring>
+        <name>combLeft</name>
+        <param>
+          <type>ref GeomPoly</type>
+          <declname>polya</declname>
+        </param>
+        <param>
+          <type>ref GeomPoly</type>
+          <declname>polyb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Used in polygon composition to composit polygons into scan lines Combining polya and polyb into one super-polygon stored in polya. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="411" column="29" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="411" bodyend="483"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="42" column="19" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="43" bodyend="807"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a734c78660565fcad1241c28e383ed22f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>_lookMarch</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a6acbe03cfba8f60c0313d3ae57047dd5" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>combLeft</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a3cb9525895ad9e4160bf55e41e43d847" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>DetectSquares</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1ac8061a02c77a0ba781673393208fb30d" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>Lerp</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a13a29cc3e90494db8c374c33c2ec3885" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>MarchSquare</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a2cad9b2b28f2ec439362d8892fb816a3" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>Square</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a1b3921e0b76d2945927470a696e0a038" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>VecCross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1a3a638f6476fae7b3728e23372660202d" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>VecDsq</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1ab7cf6c91d683be511a68e9a525526d26" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>Xlerp</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1ac0589c08d5be3f66920ca214c29a2be6" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares</scope><name>Ylerp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

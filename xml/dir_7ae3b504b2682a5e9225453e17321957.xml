@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_7ae3b504b2682a5e9225453e17321957" kind="dir">
+    <compoundname>Physics2D/Fluids/1</compoundname>
+    <innerfile refid="_fluid_definition_8cs">FluidDefinition.cs</innerfile>
+    <innerfile refid="_fluid_particle_8cs">FluidParticle.cs</innerfile>
+    <innerfile refid="_fluid_system1_8cs">FluidSystem1.cs</innerfile>
+    <innerfile refid="_hash_grid_8cs">HashGrid.cs</innerfile>
+    <innerfile refid="_spring_8cs">Spring.cs</innerfile>
+    <innerfile refid="_spring_hash_8cs">SpringHash.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Fluids/1/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,655 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::Vertices</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">List&lt; Vector2 &gt;</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae8814332623b38e65e8267116e0f1610" prot="package" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Vertices.AttachedToBody</definition>
+        <argsstring></argsstring>
+        <name>AttachedToBody</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="73" column="23" bodyfile="Physics2D/Common/Vertices.cs" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1adc2dc475507b2f32795fd59e1ae24b63" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Vertices.Holes</definition>
+        <argsstring></argsstring>
+        <name>Holes</name>
+        <briefdescription>
+<para>You can add holes to this collection. It will get respected by some of the triangulation algoithms, but otherwise not used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="79" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="79" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a4d73028b043fb36128efc02d22f162a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Vertices.Vertices</definition>
+        <argsstring>()</argsstring>
+        <name>Vertices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="64" column="16" bodyfile="Physics2D/Common/Vertices.cs" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a1db7cd8a6f3163e579279d16f598af68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Vertices.Vertices</definition>
+        <argsstring>(int capacity)</argsstring>
+        <name>Vertices</name>
+        <param>
+          <type>int</type>
+          <declname>capacity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="66" column="16" bodyfile="Physics2D/Common/Vertices.cs" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a801867e06f5071a8fb87130f8475dfb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Vertices.Vertices</definition>
+        <argsstring>(IEnumerable&lt; Vector2 &gt; vertices)</argsstring>
+        <name>Vertices</name>
+        <param>
+          <type>IEnumerable&lt; <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref> &gt;</type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="68" column="16" bodyfile="Physics2D/Common/Vertices.cs" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a75581f7722c5b1ec011d9780f920fec7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Vertices.NextIndex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>NextIndex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the next index. Used for iterating all the edges with wrap-around. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current index</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="85" column="20" bodyfile="Physics2D/Common/Vertices.cs" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a487ec4858c0495f962b0291b309f3bcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.Vertices.NextVertex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>NextVertex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the next vertex. Used for iterating all the edges with wrap-around. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current index</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="94" column="24" bodyfile="Physics2D/Common/Vertices.cs" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a9b709e8865c43ca8329ecdb59e8c755d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Vertices.PreviousIndex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>PreviousIndex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the previous index. Used for iterating all the edges with wrap-around. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current index</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="103" column="20" bodyfile="Physics2D/Common/Vertices.cs" bodystart="103" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae8cd90b0c468cc71d386421948769035" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.Vertices.PreviousVertex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>PreviousVertex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets the previous vertex. Used for iterating all the edges with wrap-around. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current index</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="112" column="24" bodyfile="Physics2D/Common/Vertices.cs" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a564cdfc2b3991f1f3b348fc0b303646c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.Vertices.GetSignedArea</definition>
+        <argsstring>()</argsstring>
+        <name>GetSignedArea</name>
+        <briefdescription>
+<para>Gets the signed area. If the area is less than 0, it indicates that the polygon is clockwise winded. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The signed area</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="122" column="22" bodyfile="Physics2D/Common/Vertices.cs" bodystart="122" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a479e04f82bd8046b1f02048759b05376" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.Vertices.GetArea</definition>
+        <argsstring>()</argsstring>
+        <name>GetArea</name>
+        <briefdescription>
+<para>Gets the area. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="149" column="22" bodyfile="Physics2D/Common/Vertices.cs" bodystart="149" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ac4e4a8aa62aa763dd31580dc180ca0a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Common.Vertices.GetCentroid</definition>
+        <argsstring>()</argsstring>
+        <name>GetCentroid</name>
+        <briefdescription>
+<para>Gets the centroid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="159" column="24" bodyfile="Physics2D/Common/Vertices.cs" bodystart="159" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1aafa039a12961b8e78402e450b2ee920b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+        <definition>AABB tainicom.Aether.Physics2D.Common.Vertices.GetAABB</definition>
+        <argsstring>()</argsstring>
+        <name>GetAABB</name>
+        <briefdescription>
+<para>Returns an AABB that fully contains this polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="191" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="191" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a744771f9e1d6c16fe055082d8ca2d4a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.Translate</definition>
+        <argsstring>(Vector2 value)</argsstring>
+        <name>Translate</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Translates the vertices with the specified vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="228" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="228" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a53c589e848c866954a80f069ea1d24bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.Translate</definition>
+        <argsstring>(ref Vector2 value)</argsstring>
+        <name>Translate</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Translates the vertices with the specified vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="237" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="237" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ac4e50b0258a92290ce1a499633e8c65f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.Scale</definition>
+        <argsstring>(Vector2 value)</argsstring>
+        <name>Scale</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Scales the vertices with the specified vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="257" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="257" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1aea178fca10ffcebf1bd6eef264756952" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.Scale</definition>
+        <argsstring>(ref Vector2 value)</argsstring>
+        <name>Scale</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Scales the vertices with the specified vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="266" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="266" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a6dff9ec744bb47caf3c44a22af346092" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.Rotate</definition>
+        <argsstring>(float value)</argsstring>
+        <name>Rotate</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Rotate the vertices with the defined value in radians. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Warning: Using this method on an active set of vertices of a Body, will cause problems with collisions. Use Body.Rotation instead.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount to rotate by in radians.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="289" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="289" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1acbba141b7f2216a8359c6a4f61d1ebd9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Vertices.IsConvex</definition>
+        <argsstring>()</argsstring>
+        <name>IsConvex</name>
+        <briefdescription>
+<para>Determines whether the polygon is convex. O(n^2) running time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Assumptions:<itemizedlist>
+<listitem><para>The polygon is in counter clockwise order</para>
+</listitem><listitem><para>The polygon has no overlapping edges</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if it is convex; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="322" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="322" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a9d0b89729af4b5a32a717cb3e3a11661" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Vertices.IsCounterClockWise</definition>
+        <argsstring>()</argsstring>
+        <name>IsCounterClockWise</name>
+        <briefdescription>
+<para>Indicates if the vertices are in counter clockwise order. Warning: If the area of the polygon is 0, it is unable to determine the winding. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="359" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="359" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1abea08d25d3720a09bf9eca75ccb6ee4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.ForceCounterClockWise</definition>
+        <argsstring>()</argsstring>
+        <name>ForceCounterClockWise</name>
+        <briefdescription>
+<para>Forces the vertices to be counter clock wise order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="371" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="371" bodyend="379"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a1c2143ac0c53a68786f83ef2e221e418" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Vertices.IsSimple</definition>
+        <argsstring>()</argsstring>
+        <name>IsSimple</name>
+        <briefdescription>
+<para>Checks if the vertices forms an simple polygon by checking for edge crossings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="384" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="384" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a416d5c27d1cd4e11970cb64b2e5a1786" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737ac" kindref="member">PolygonError</ref></type>
+        <definition>PolygonError tainicom.Aether.Physics2D.Common.Vertices.CheckPolygon</definition>
+        <argsstring>()</argsstring>
+        <name>CheckPolygon</name>
+        <briefdescription>
+<para>Checks if the polygon is valid for use in the engine. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs a full check, for simplicity, convexity, orientation, minimum angle, and volume.</para>
+<para>From Eric Jordan&apos;s convex decomposition library</para>
+<para><simplesect kind="return"><para><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1a708df48eca6ee8193ac96f00b25737aca70a47cae4eb221930f2663fd244369ea" kindref="member">PolygonError.NoError</ref> if there were no error.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="417" column="29" bodyfile="Physics2D/Common/Vertices.cs" bodystart="417" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1af99bfeefcd7f461c71e834ca9404fe3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Vertices.ProjectToAxis</definition>
+        <argsstring>(ref Vector2 axis, out float min, out float max)</argsstring>
+        <name>ProjectToAxis</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>out float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>out float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>Projects to axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>axis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The axis.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The min.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The max.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="454" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="454" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a4861eda8ba196358c356521cf9b8d8c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Vertices.PointInPolygon</definition>
+        <argsstring>(ref Vector2 point)</argsstring>
+        <name>PointInPolygon</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Winding number test for a point in a polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See more info about the algorithm here: <ulink url="http://softsurfer.com/Archive/algorithm_0103/algorithm_0103.htm">http://softsurfer.com/Archive/algorithm_0103/algorithm_0103.htm</ulink> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The point to be tested.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>-1 if the winding number is zero and the point is outside the polygon, 1 if the point is inside the polygon, and 0 if the point is on the polygons edge.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="486" column="20" bodyfile="Physics2D/Common/Vertices.cs" bodystart="486" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae13a4650947b8dc4ffde7ca7f10b956a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Vertices.PointInPolygonAngle</definition>
+        <argsstring>(ref Vector2 point)</argsstring>
+        <name>PointInPolygonAngle</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Compute the sum of the angles made between the test point and each pair of points making up the polygon. If this sum is 2pi then the point is an interior point, if 0 then the point is an exterior point. ref: <ulink url="http://ozviz.wasp.uwa.edu.au/~pbourke/geometry/insidepoly/">http://ozviz.wasp.uwa.edu.au/~pbourke/geometry/insidepoly/</ulink> - Solution 2 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="529" column="21" bodyfile="Physics2D/Common/Vertices.cs" bodystart="529" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a659c9ef6e4600850e54ef871fdb4aed8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string tainicom.Aether.Physics2D.Common.Vertices.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Vertices.cs" line="576" column="32" bodyfile="Physics2D/Common/Vertices.cs" bodystart="576" bodyend="588"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Vertices</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>List&lt; Vector2 &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Vertices</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>List&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Vertices.cs" line="62" column="11" bodyfile="Physics2D/Common/Vertices.cs" bodystart="63" bodyend="589"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae8814332623b38e65e8267116e0f1610" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>AttachedToBody</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a416d5c27d1cd4e11970cb64b2e5a1786" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>CheckPolygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1abea08d25d3720a09bf9eca75ccb6ee4b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>ForceCounterClockWise</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1aafa039a12961b8e78402e450b2ee920b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>GetAABB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a479e04f82bd8046b1f02048759b05376" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>GetArea</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ac4e4a8aa62aa763dd31580dc180ca0a1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>GetCentroid</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a564cdfc2b3991f1f3b348fc0b303646c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>GetSignedArea</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1adc2dc475507b2f32795fd59e1ae24b63" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Holes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1acbba141b7f2216a8359c6a4f61d1ebd9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>IsConvex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a9d0b89729af4b5a32a717cb3e3a11661" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>IsCounterClockWise</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a1c2143ac0c53a68786f83ef2e221e418" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>IsSimple</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a75581f7722c5b1ec011d9780f920fec7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>NextIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a487ec4858c0495f962b0291b309f3bcf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>NextVertex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a4861eda8ba196358c356521cf9b8d8c3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>PointInPolygon</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae13a4650947b8dc4ffde7ca7f10b956a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>PointInPolygonAngle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a9b709e8865c43ca8329ecdb59e8c755d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>PreviousIndex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ae8cd90b0c468cc71d386421948769035" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>PreviousVertex</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1af99bfeefcd7f461c71e834ca9404fe3b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>ProjectToAxis</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a6dff9ec744bb47caf3c44a22af346092" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Rotate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1ac4e50b0258a92290ce1a499633e8c65f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Scale</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1aea178fca10ffcebf1bd6eef264756952" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Scale</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a659c9ef6e4600850e54ef871fdb4aed8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>ToString</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a744771f9e1d6c16fe055082d8ca2d4a6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Translate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a53c589e848c866954a80f069ea1d24bd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Translate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a4d73028b043fb36128efc02d22f162a2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Vertices</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a1db7cd8a6f3163e579279d16f598af68" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Vertices</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices_1a801867e06f5071a8fb87130f8475dfb7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Vertices</scope><name>Vertices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

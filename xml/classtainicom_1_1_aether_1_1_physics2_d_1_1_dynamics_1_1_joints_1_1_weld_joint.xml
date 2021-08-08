@@ -1,0 +1,819 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Dynamics.Joints.Joint</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ac564f7046e0b14a771880d0a351f7965" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._impulse</definition>
+        <argsstring></argsstring>
+        <name>_impulse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="62" column="25" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a773b685a9881a640868ca15525abeb43" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._gamma</definition>
+        <argsstring></argsstring>
+        <name>_gamma</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="63" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1abdfc518064c1c1947d0bf4aab9c72a8d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._bias</definition>
+        <argsstring></argsstring>
+        <name>_bias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="64" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a80d5f3fdeb5d898725e34e5155a51be0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._indexA</definition>
+        <argsstring></argsstring>
+        <name>_indexA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="67" column="21" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a96f54d5d4d8051bc7ef5e5bd89721449" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._indexB</definition>
+        <argsstring></argsstring>
+        <name>_indexB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="68" column="21" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ac8242646930c76c4ebb287e75b0e3656" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._rA</definition>
+        <argsstring></argsstring>
+        <name>_rA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="69" column="25" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1afde0da558490b1177a50c6642f172402" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._rB</definition>
+        <argsstring></argsstring>
+        <name>_rB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="70" column="25" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a459f9f0d8b5aef1c9344639ef59910d2" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._localCenterA</definition>
+        <argsstring></argsstring>
+        <name>_localCenterA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="71" column="25" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a15bd8328fe51c85c18676cc9d3938256" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._localCenterB</definition>
+        <argsstring></argsstring>
+        <name>_localCenterB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="72" column="25" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a57e428e8ba387ffb2049dedf11aaa425" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._invMassA</definition>
+        <argsstring></argsstring>
+        <name>_invMassA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="73" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ae5871caa5463e85b9d18e4141b83bef2" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._invMassB</definition>
+        <argsstring></argsstring>
+        <name>_invMassB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="74" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ae51e1d56429335fda736334be9c9070c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._invIA</definition>
+        <argsstring></argsstring>
+        <name>_invIA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="75" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a51262bdc17473e86f59ef3a80467e7f1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._invIB</definition>
+        <argsstring></argsstring>
+        <name>_invIB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="76" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1aa63d612033cc65b9f9b613e3ee1ca76c" prot="private" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33" kindref="compound">Mat33</ref></type>
+        <definition>Mat33 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint._mass</definition>
+        <argsstring></argsstring>
+        <name>_mass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="77" column="23" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a1db00372e67e5385148f2a79e57b2cdc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.LocalAnchorA</definition>
+        <argsstring></argsstring>
+        <name>LocalAnchorA</name>
+        <briefdescription>
+<para>The local anchor point on BodyA </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="115" column="24" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="115" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a70feaea0daf6b93a537078323a08baa2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.LocalAnchorB</definition>
+        <argsstring></argsstring>
+        <name>LocalAnchorB</name>
+        <briefdescription>
+<para>The local anchor point on BodyB </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="120" column="24" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a6e6bfb636c948d7ea35e6ef73b1707fc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>override <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>override Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.WorldAnchorA</definition>
+        <argsstring></argsstring>
+        <name>WorldAnchorA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="122" column="33" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="123" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a3a19c4e9ccb68637e91a0c118782f543" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>override <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>override Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.WorldAnchorB</definition>
+        <argsstring></argsstring>
+        <name>WorldAnchorB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="128" column="33" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="129" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a315b32986aab9a84d3a384a9fe1cf20a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.ReferenceAngle</definition>
+        <argsstring></argsstring>
+        <name>ReferenceAngle</name>
+        <briefdescription>
+<para>The bodyB angle minus bodyA angle in the reference state (radians). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="137" column="22" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="137" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a7598b8c702b39d15ff7e2fddacc011d8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.FrequencyHz</definition>
+        <argsstring></argsstring>
+        <name>FrequencyHz</name>
+        <briefdescription>
+<para>The frequency of the joint. A higher frequency means a stiffer joint, but a too high value can cause the joint to oscillate. Default is 0, which means the joint does no spring calculations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="144" column="22" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="144" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a937dd061dd8b85f35f1e8bcb9cc47295" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.DampingRatio</definition>
+        <argsstring></argsstring>
+        <name>DampingRatio</name>
+        <briefdescription>
+<para>The damping on the joint. The damping is only used when the joint has a frequency (&gt; 0). A higher value means more damping. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="150" column="22" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="150" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a23024fe190ba7635c2b2b2c83cfc2134" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.WeldJoint</definition>
+        <argsstring>()</argsstring>
+        <name>WeldJoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="79" column="18" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a8787fb2839cf2d0b1417a81c4ef277ea" prot="package" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.InitVelocityConstraints</definition>
+        <argsstring>(ref SolverData data)</argsstring>
+        <name>InitVelocityConstraints</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a4cd1bcdb6d69c33c7533fb238534f24b">InitVelocityConstraints</reimplements>
+        <param>
+          <type>ref SolverData</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="162" column="32" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="162" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a5f9c9fa36251125c5f681c657ed8fc26" prot="package" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.SolveVelocityConstraints</definition>
+        <argsstring>(ref SolverData data)</argsstring>
+        <name>SolveVelocityConstraints</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a9273957733d97ce4f4bbb99bc138bfee">SolveVelocityConstraints</reimplements>
+        <param>
+          <type>ref SolverData</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="274" column="32" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="274" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a94e7b5e18f67c048632debdec9498416" prot="package" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.SolvePositionConstraints</definition>
+        <argsstring>(ref SolverData data)</argsstring>
+        <name>SolvePositionConstraints</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a4a301e252c2a048806d58911e16b5738">SolvePositionConstraints</reimplements>
+        <param>
+          <type>ref SolverData</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Solves the position constraints. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>returns true if the position errors are within tolerance.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="332" column="32" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="332" bodyend="411"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ad92cca5129cad3e167bc98a8a6690dc6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.WeldJoint</definition>
+        <argsstring>(Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB, bool useWorldCoordinates=false)</argsstring>
+        <name>WeldJoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyA</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>bodyB</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorA</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>anchorB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWorldCoordinates</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>You need to specify an anchor point where they are attached. The position of the anchor point is important for computing the reaction torque. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bodyA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first body</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bodyB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second body</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>anchorA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first body anchor.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>anchorB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second body anchor.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>useWorldCoordinates</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to true if you are using world coordinates as anchors.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="93" column="16" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="93" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a70810e8a66e1d1f4d33f7acab5a64420" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>override Vector2 tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.GetReactionForce</definition>
+        <argsstring>(float invDt)</argsstring>
+        <name>GetReactionForce</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1af2c9a28af88d5c656660a9f4232d4f66">GetReactionForce</reimplements>
+        <param>
+          <type>float</type>
+          <declname>invDt</declname>
+        </param>
+        <briefdescription>
+<para>Get the reaction force on body at the joint anchor in Newtons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>invDt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inverse delta time.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="152" column="33" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1aabf5f214cd8ba83f3fa0344bd58e70fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override float</type>
+        <definition>override float tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.GetReactionTorque</definition>
+        <argsstring>(float invDt)</argsstring>
+        <name>GetReactionTorque</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1aaba06d8a94a8bcb20963d6e34ec22ba6">GetReactionTorque</reimplements>
+        <param>
+          <type>float</type>
+          <declname>invDt</declname>
+        </param>
+        <briefdescription>
+<para>Get the reaction torque on the body at the joint anchor in N*m. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>invDt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inverse delta time.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="157" column="31" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="157" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A weld joint essentially glues two bodies together. A weld joint may distort somewhat because the island constraint solver is approximate. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The joint is soft constraint based, which means the two bodies will move relative to each other, when a force is applied. To combine two bodies in a rigid fashion, combine the fixtures to a single body instead.</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Joint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint"/>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="34">
+        <label>tainicom.Aether.Physics2D.Common.Transform</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>p</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>q</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>IEnumerable&lt; Joint &gt;</label>
+      </node>
+      <node id="32">
+        <label>ICollection&lt; Fixture &gt;</label>
+      </node>
+      <node id="20">
+        <label>tainicom.Aether.Physics2D.Dynamics.ControllerCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_controller_collection"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Dynamics.World</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>JointList</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>ContactManager</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>ControllerList</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>BodyList</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>ICollection&lt; Controller &gt;</label>
+      </node>
+      <node id="13">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Dynamics.Joints.JointEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Next</edgelabel>
+          <edgelabel>Prev</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Joint</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>Other</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>tainicom.Aether.Physics2D.Dynamics.BodyCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>IList&lt; Fixture &gt;</label>
+      </node>
+      <node id="21">
+        <label>IEnumerable&lt; Controller &gt;</label>
+      </node>
+      <node id="11">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>tainicom.Aether.Physics2D.Common.Sweep</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep"/>
+        <childnode refid="15" relation="usage">
+          <edgelabel>C</edgelabel>
+          <edgelabel>C0</edgelabel>
+          <edgelabel>LocalCenter</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Dynamics.Joints.Joint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>EdgeA</edgelabel>
+          <edgelabel>EdgeB</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_world</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>IEnumerable&lt; Body &gt;</label>
+      </node>
+      <node id="30">
+        <label>tainicom.Aether.Physics2D.Dynamics.FixtureCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_collection"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>IList&lt; Controller &gt;</label>
+      </node>
+      <node id="12">
+        <label>Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>Manifold</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>_nodeA</edgelabel>
+          <edgelabel>_nodeB</edgelabel>
+        </childnode>
+      </node>
+      <node id="27">
+        <label>IList&lt; Body &gt;</label>
+      </node>
+      <node id="9">
+        <label>IList&lt; Joint &gt;</label>
+      </node>
+      <node id="2">
+        <label>Joint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>EdgeA</edgelabel>
+          <edgelabel>EdgeB</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_world</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge"/>
+      </node>
+      <node id="35">
+        <label>tainicom.Aether.Physics2D.Common.Complex</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_complex"/>
+      </node>
+      <node id="18">
+        <label>IEnumerable&lt; Contact &gt;</label>
+      </node>
+      <node id="31">
+        <label>IEnumerable&lt; Fixture &gt;</label>
+      </node>
+      <node id="6">
+        <label>tainicom.Aether.Physics2D.Dynamics.JointCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joint_collection"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>tainicom.Aether.Physics2D.Dynamics.Body</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body"/>
+        <childnode refid="29" relation="usage">
+          <edgelabel>_sweep</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>FixtureList</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>_force</edgelabel>
+          <edgelabel>_linearVelocity</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>_xf</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_world</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ICollection&lt; Joint &gt;</label>
+      </node>
+      <node id="15">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>ICollection&lt; Body &gt;</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>tainicom.Aether.Physics2D.Collision.IBroadPhase</label>
+        <link refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase"/>
+      </node>
+      <node id="16">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="10">
+        <label>tainicom.Aether.Physics2D.Dynamics.ContactManager</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>ContactList</edgelabel>
+          <edgelabel>_contactPoolList</edgelabel>
+        </childnode>
+        <childnode refid="19" relation="usage">
+          <edgelabel>BroadPhase</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/Joints/WeldJoint.cs" line="59" column="11" bodyfile="Physics2D/Dynamics/Joints/WeldJoint.cs" bodystart="60" bodyend="412"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1abdfc518064c1c1947d0bf4aab9c72a8d" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_bias</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a773b685a9881a640868ca15525abeb43" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_gamma</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ac564f7046e0b14a771880d0a351f7965" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_impulse</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a80d5f3fdeb5d898725e34e5155a51be0" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_indexA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a96f54d5d4d8051bc7ef5e5bd89721449" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_indexB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ae51e1d56429335fda736334be9c9070c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_invIA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a51262bdc17473e86f59ef3a80467e7f1" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_invIB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a57e428e8ba387ffb2049dedf11aaa425" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_invMassA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ae5871caa5463e85b9d18e4141b83bef2" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_invMassB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a459f9f0d8b5aef1c9344639ef59910d2" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_localCenterA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a15bd8328fe51c85c18676cc9d3938256" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_localCenterB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1aa63d612033cc65b9f9b613e3ee1ca76c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_mass</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ac8242646930c76c4ebb287e75b0e3656" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_rA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1afde0da558490b1177a50c6642f172402" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_rB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a864849217291dc75008ea939b1a38715" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>_world</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1afcd1fabb98c61738efdf4ac8891f7254" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>BodyA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1aef739147d3bc576cc46b14fd36410e67" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>BodyB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a8bb0f79b4cfa894cf769f8a92a95ac75" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Breakpoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a4ef183402dac9076e3d4b7f40064d013" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Broke</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1afd60de6f77d562a5039a6616a053c485" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>CollideConnected</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a937dd061dd8b85f35f1e8bcb9cc47295" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>DampingRatio</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a13acffb966e5a22be40da97df9643cbd" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>EdgeA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1ab25d04d8f5ccd6e58e1d8e9ba89ae39e" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>EdgeB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a8cd19b68e1de9c2f08dbfd49680afd37" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Enabled</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a7598b8c702b39d15ff7e2fddacc011d8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>FrequencyHz</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a70810e8a66e1d1f4d33f7acab5a64420" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>GetReactionForce</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1aabf5f214cd8ba83f3fa0344bd58e70fd" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>GetReactionTorque</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a8787fb2839cf2d0b1417a81c4ef277ea" prot="package" virt="virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>InitVelocityConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1ad0f6ff3412e769cffab2b63f4ffe8349" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>IsFixedType</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1adca8c313cc9b57c66e62753ff439d44c" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>IslandFlag</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1ad14406d4c2eeaf1af64ac7670ff786ef" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Joint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a9af98c8b407c69efcd83bb84481d4cbe" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Joint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a9be73ffaa61330433d85182405229e8c" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Joint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a28f85a7795fc68b8a933d1fa2fdfced2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>JointType</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a1db00372e67e5385148f2a79e57b2cdc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>LocalAnchorA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a70feaea0daf6b93a537078323a08baa2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>LocalAnchorB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a315b32986aab9a84d3a384a9fe1cf20a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>ReferenceAngle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a94e7b5e18f67c048632debdec9498416" prot="package" virt="virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>SolvePositionConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a5f9c9fa36251125c5f681c657ed8fc26" prot="package" virt="virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>SolveVelocityConstraints</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1ac1307fc0de73a067a61910f61e320ab2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Tag</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a8c1de134aae83db2640603175474dad7" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>Validate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a7f2c7f9313b24ce3918573edb7ac2b07" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>WakeBodies</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a23024fe190ba7635c2b2b2c83cfc2134" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>WeldJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1ad92cca5129cad3e167bc98a8a6690dc6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>WeldJoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_1a2d0946bc1172dc3dc6919042075e43e7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>World</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a6e6bfb636c948d7ea35e6ef73b1707fc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>WorldAnchorA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint_1a3a19c4e9ccb68637e91a0c118782f543" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::WeldJoint</scope><name>WorldAnchorB</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

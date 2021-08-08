@@ -1,0 +1,468 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationContext</basecompoundref>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_270592b0ad400234aac317c32e07e744" prot="public">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext::DTSweepBasin</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_d09edd9272256e98b01525c1107a84c7" prot="public">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext::DTSweepEdgeEvent</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a329ea3419cb3e77b9784895a5f4e3a40" prot="private" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.ALPHA</definition>
+        <argsstring></argsstring>
+        <name>ALPHA</name>
+        <initializer>= 0.3f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="49" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1ac40875f99cbdaaeda90f9bd96cf7a2d3" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_270592b0ad400234aac317c32e07e744" kindref="compound">DTSweepBasin</ref></type>
+        <definition>DTSweepBasin tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.Basin</definition>
+        <argsstring></argsstring>
+        <name>Basin</name>
+        <initializer>= new <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_270592b0ad400234aac317c32e07e744" kindref="compound">DTSweepBasin</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="51" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1af30ca3102fceef56a58ec811136b2ae5" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_d09edd9272256e98b01525c1107a84c7" kindref="compound">DTSweepEdgeEvent</ref></type>
+        <definition>DTSweepEdgeEvent tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.EdgeEvent</definition>
+        <argsstring></argsstring>
+        <name>EdgeEvent</name>
+        <initializer>= new <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_d09edd9272256e98b01525c1107a84c7" kindref="compound">DTSweepEdgeEvent</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="52" column="33" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a0ae87528ad5a8440229612b1ba8dbd37" prot="public" static="no" mutable="no">
+        <type>AdvancingFront</type>
+        <definition>AdvancingFront tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.aFront</definition>
+        <argsstring></argsstring>
+        <name>aFront</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="55" column="31" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a5d8d9d4a2f4cc875519656af43fe71cb" prot="private" static="no" mutable="no">
+        <type>DTSweepPointComparator</type>
+        <definition>DTSweepPointComparator tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext._comparator</definition>
+        <argsstring></argsstring>
+        <name>_comparator</name>
+        <initializer>= new DTSweepPointComparator()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="54" column="40" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a9a8e591012fb17cfd8a37f4dee77ebd2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>TriangulationPoint</type>
+        <definition>TriangulationPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.Head</definition>
+        <argsstring></argsstring>
+        <name>Head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="62" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a4bbfcb10b8c85e52abe708504b054aae" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>TriangulationPoint</type>
+        <definition>TriangulationPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.Tail</definition>
+        <argsstring></argsstring>
+        <name>Tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="63" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="63" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a8579225edad2ef41818675d81f1547d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.DTSweepContext</definition>
+        <argsstring>()</argsstring>
+        <name>DTSweepContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="57" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a04dfd4f3f85e34011d9aaf3d32e5006d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.RemoveFromList</definition>
+        <argsstring>(DelaunayTriangle triangle)</argsstring>
+        <name>RemoveFromList</name>
+        <param>
+          <type>DelaunayTriangle</type>
+          <declname>triangle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="65" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="65" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a304514fe186100e45da0b419f6e25ab7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.MeshClean</definition>
+        <argsstring>(DelaunayTriangle triangle)</argsstring>
+        <name>MeshClean</name>
+        <param>
+          <type>DelaunayTriangle</type>
+          <declname>triangle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="79" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a401af6950f9cdf97b32b09108bd030bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="100" column="30" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1abf2c14b0df0ac5f3ce9afef394d0f3f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.AddNode</definition>
+        <argsstring>(AdvancingFrontNode node)</argsstring>
+        <name>AddNode</name>
+        <param>
+          <type>AdvancingFrontNode</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="106" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="106" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1ab953327aecb31300159b500d49e805ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.RemoveNode</definition>
+        <argsstring>(AdvancingFrontNode node)</argsstring>
+        <name>RemoveNode</name>
+        <param>
+          <type>AdvancingFrontNode</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="113" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="113" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a0c53d2930ab2d68d27573ec4d8f3c371" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>AdvancingFrontNode</type>
+        <definition>AdvancingFrontNode tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.LocateNode</definition>
+        <argsstring>(TriangulationPoint point)</argsstring>
+        <name>LocateNode</name>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="120" column="35" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1aa8685b97bc1c3e6ec2deec41e049ce0c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.CreateAdvancingFront</definition>
+        <argsstring>()</argsstring>
+        <name>CreateAdvancingFront</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="125" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="125" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a243bc3e454807039513d37a26ccbe4a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.MapTriangleToNodes</definition>
+        <argsstring>(DelaunayTriangle t)</argsstring>
+        <name>MapTriangleToNodes</name>
+        <param>
+          <type>DelaunayTriangle</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Try to map a node to all sides of this triangle that don&apos;t have a neighbor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="153" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="153" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1ab6e1b7351b0764565b975f32de048c74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.PrepareTriangulation</definition>
+        <argsstring>(Triangulatable t)</argsstring>
+        <name>PrepareTriangulation</name>
+        <param>
+          <type>Triangulatable</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="169" column="30" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="169" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a85205b361fbee571e4fec48949dee325" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.FinalizeTriangulation</definition>
+        <argsstring>()</argsstring>
+        <name>FinalizeTriangulation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="207" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="207" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a297efc7affd5bc6953b71ec2f61a42e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override TriangulationConstraint</type>
+        <definition>override TriangulationConstraint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.NewConstraint</definition>
+        <argsstring>(TriangulationPoint a, TriangulationPoint b)</argsstring>
+        <name>NewConstraint</name>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>TriangulationPoint</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="213" column="49" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="213" bodyend="216"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1af69b82f6a513f9bac02395ebfb959e75" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.MeshCleanReq</definition>
+        <argsstring>(DelaunayTriangle triangle)</argsstring>
+        <name>MeshCleanReq</name>
+        <param>
+          <type>DelaunayTriangle</type>
+          <declname>triangle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="84" column="22" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="84" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Thomas Åhlén, <ulink url="mailto:thahlen@gmail.com">thahlen@gmail.com</ulink> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TriangulationContext</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepConstraint</label>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>IEnumerable&lt; bool &gt;</label>
+      </node>
+      <node id="13">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.DTSweepBasin</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_270592b0ad400234aac317c32e07e744"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>bottomNode</edgelabel>
+          <edgelabel>leftNode</edgelabel>
+          <edgelabel>rightNode</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFrontNode</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>Point</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>Triangle</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Next</edgelabel>
+          <edgelabel>Prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext.DTSweepEdgeEvent</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_d09edd9272256e98b01525c1107a84c7"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>ConstrainedEdge</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.DelaunayTriangle</label>
+        <childnode refid="7" relation="usage">
+          <edgelabel>Neighbors</edgelabel>
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>EdgeIsConstrained</edgelabel>
+          <edgelabel>EdgeIsDelaunay</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Util</label>
+      </node>
+      <node id="12">
+        <label>TriangulationConstraint</label>
+        <childnode refid="5" relation="usage">
+          <edgelabel>P</edgelabel>
+          <edgelabel>Q</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationPoint</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.DTSweepContext</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>aFront</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>EdgeEvent</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>Basin</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedBitArray3</label>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TriangulationContext</label>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.AdvancingFront</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Head</edgelabel>
+          <edgelabel>Search</edgelabel>
+          <edgelabel>Tail</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" line="45" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/DTSweepContext.cs" bodystart="46" bodyend="240"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a5d8d9d4a2f4cc875519656af43fe71cb" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>_comparator</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1abf2c14b0df0ac5f3ce9afef394d0f3f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>AddNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a0ae87528ad5a8440229612b1ba8dbd37" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>aFront</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a329ea3419cb3e77b9784895a5f4e3a40" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>ALPHA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1ac40875f99cbdaaeda90f9bd96cf7a2d3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Basin</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a401af6950f9cdf97b32b09108bd030bf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Clear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1aa8685b97bc1c3e6ec2deec41e049ce0c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>CreateAdvancingFront</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae5ee0f195c520da5946205c49ba1b944" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Done</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a8579225edad2ef41818675d81f1547d6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>DTSweepContext</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1af30ca3102fceef56a58ec811136b2ae5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>EdgeEvent</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a85205b361fbee571e4fec48949dee325" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>FinalizeTriangulation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a9a8e591012fb17cfd8a37f4dee77ebd2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Head</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a0c53d2930ab2d68d27573ec4d8f3c371" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>LocateNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a243bc3e454807039513d37a26ccbe4a9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>MapTriangleToNodes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a304514fe186100e45da0b419f6e25ab7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>MeshClean</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1af69b82f6a513f9bac02395ebfb959e75" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>MeshCleanReq</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a297efc7affd5bc6953b71ec2f61a42e2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>NewConstraint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a8a0eb5e7779ca1f31266db1518cb1616" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Points</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1ab6e1b7351b0764565b975f32de048c74" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>PrepareTriangulation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a04dfd4f3f85e34011d9aaf3d32e5006d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>RemoveFromList</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1ab953327aecb31300159b500d49e805ec" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>RemoveNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ae04f648c5111803bc17e56acaf74e4e1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>StepCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep_1_1_d_t_sweep_context_1a4bbfcb10b8c85e52abe708504b054aae" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Tail</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a44183e440cdaa146a104c315577fb038" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Terminated</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ad0d54904d9b6f10259c2ab2184af8621" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Triangles</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1ad6c4255d9a4ce8adcfda02e702935d17" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>Triangulatable</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a6b1bea41ab78a24b2a8d94260decc3f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>TriangulationContext</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a2e2c564360f288884c7f71b433ba91d1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>TriangulationMode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_context_1a118def0829773ee67d0d7cc88bc431c2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::DTSweepContext</scope><name>WaitUntilNotified</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

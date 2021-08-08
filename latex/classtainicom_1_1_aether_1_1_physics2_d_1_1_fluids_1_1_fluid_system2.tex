@@ -1,0 +1,103 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Fluids.\+Fluid\+System2 Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2}\index{tainicom.Aether.Physics2D.Fluids.FluidSystem2@{tainicom.Aether.Physics2D.Fluids.FluidSystem2}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a4668b590fc2c60f76992904ff538d9f7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a4668b590fc2c60f76992904ff538d9f7}} 
+{\bfseries Fluid\+System2} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} gravity, int max\+Particle\+Limit, int world\+Width, int world\+Height)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a37b3976363e48f19c6937ad966a5c5ee}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a37b3976363e48f19c6937ad966a5c5ee}} 
+void {\bfseries Update} (float delta\+Time)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ac9c441abc1525d9920120d5418e30c9f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ac9c441abc1525d9920120d5418e30c9f}} 
+void {\bfseries Add\+Particle} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a46824da1087a9e5a05cdf3bace2eee1e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a46824da1087a9e5a05cdf3bace2eee1e}} 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_spatial_table}{Spatial\+Table}} {\bfseries Particles}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a07c3bc97ddb69791e14556765629cc4e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a07c3bc97ddb69791e14556765629cc4e}} 
+const int {\bfseries Max\+Neighbors} = 25
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a225adbf9a3737ab03c9b71a9d6acca25}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a225adbf9a3737ab03c9b71a9d6acca25}} 
+const int {\bfseries Cell\+Size} = 1
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a39adadd034bef0238206a20b06bcf53d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a39adadd034bef0238206a20b06bcf53d}} 
+const float {\bfseries Influence\+Radius} = 20.\+0f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ab360690e404c388c84d40d07120c6b35}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ab360690e404c388c84d40d07120c6b35}} 
+const float {\bfseries Influence\+Radius\+Squared} = Influence\+Radius $\ast$ Influence\+Radius
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_afd88102a2c6d759bed57514375d84032}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_afd88102a2c6d759bed57514375d84032}} 
+const float {\bfseries Stiffness} = 0.\+504f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_af67cf5b8fd33c90062ac01625791aa98}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_af67cf5b8fd33c90062ac01625791aa98}} 
+const float {\bfseries Stiffness\+Far\+Near\+Ratio} = 10.\+0f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a9497cdc67de5cf028c0ffe261670786e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a9497cdc67de5cf028c0ffe261670786e}} 
+const float {\bfseries Stiffness\+Near} = Stiffness $\ast$ Stiffness\+Far\+Near\+Ratio
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a1823bf8f84fc98a016a12a314f731046}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a1823bf8f84fc98a016a12a314f731046}} 
+const float {\bfseries Viscosity\+Sigma} = 0.\+0f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_aad87b4a9a2df55b609ccc01dfb9faad0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_aad87b4a9a2df55b609ccc01dfb9faad0}} 
+const float {\bfseries Viscosity\+Beta} = 0.\+3f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a43f84c080dc30ccab8c6542a6cb1a040}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a43f84c080dc30ccab8c6542a6cb1a040}} 
+const float {\bfseries Density\+Rest} = 10.\+0f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a1f57d282462a56a4cb89b822f57abc81}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a1f57d282462a56a4cb89b822f57abc81}} 
+const float {\bfseries KSpring} = 0.\+3f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_aeabbe88339bbe678be50de2c3fe74acf}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_aeabbe88339bbe678be50de2c3fe74acf}} 
+const float {\bfseries Rest\+Length} = 5.\+0f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ad204afc49b4ece74d6c72f34f9efce35}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ad204afc49b4ece74d6c72f34f9efce35}} 
+const float {\bfseries Rest\+Length\+Squared} = Rest\+Length $\ast$ Rest\+Length
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_adaee8ae6dd75b820f63c3183d4129c89}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_adaee8ae6dd75b820f63c3183d4129c89}} 
+const float {\bfseries Yield\+Ratio\+Stretch} = 0.\+5f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a84df206e4063e27d86d485354ee6fc6e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a84df206e4063e27d86d485354ee6fc6e}} 
+const float {\bfseries Yield\+Ratio\+Compress} = 0.\+5f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a895b613115686b4e30ecfc0e0ad6fad1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a895b613115686b4e30ecfc0e0ad6fad1}} 
+const float {\bfseries Plasticity} = 0.\+5f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a31f1002e28b0638be91294bbc98e2af6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a31f1002e28b0638be91294bbc98e2af6}} 
+const int {\bfseries Velocity\+Cap} = 150
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a1102fe25ddd6e136995ca8bb8776723d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a1102fe25ddd6e136995ca8bb8776723d}} 
+const float {\bfseries Deformation\+Factor} = 0f
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a6c691a0a402c86a2528ee4286d250de1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a6c691a0a402c86a2528ee4286d250de1}} 
+const float {\bfseries Collision\+Force} = 0.\+3f
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ae4545657e32ba0eb1706d93c0a72e0e4}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ae4545657e32ba0eb1706d93c0a72e0e4}} 
+int {\bfseries Particles\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a412e730543d26a653dfaf50e2255ca43}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a412e730543d26a653dfaf50e2255ca43}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries Gravity}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ac506a5334500ec97bbe13d932dbe690e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_ac506a5334500ec97bbe13d932dbe690e}} 
+int {\bfseries Max\+Particle\+Limit}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a12d24b183c4d8c1b19be710ec04e975a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a12d24b183c4d8c1b19be710ec04e975a}} 
+bool {\bfseries Elasticity\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a974d52119ee90c20ac60776b51a5b41a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_system2_a974d52119ee90c20ac60776b51a5b41a}} 
+bool {\bfseries Plasticity\+Enabled}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Fluids/2/Fluid\+System2.\+cs\end{DoxyCompactItemize}

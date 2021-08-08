@@ -1,0 +1,566 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PolygonTools</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1ad6c7eabe9a8b2e4f82d2f1c6f953d55e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateRectangle</definition>
+        <argsstring>(float hx, float hy)</argsstring>
+        <name>CreateRectangle</name>
+        <param>
+          <type>float</type>
+          <declname>hx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>hy</declname>
+        </param>
+        <briefdescription>
+<para>Build vertices to represent an axis-aligned box. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the half-width.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the half-height.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="23" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="23" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a659af79c9c0bee951a9134ccf134a6dd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateRectangle</definition>
+        <argsstring>(float hx, float hy, Vector2 center, float angle)</argsstring>
+        <name>CreateRectangle</name>
+        <param>
+          <type>float</type>
+          <declname>hx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>hy</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>center</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+<para>Build vertices to represent an oriented box. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the half-width.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the half-height.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>center</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the center of the box in local coordinates.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>angle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the rotation of the box in local coordinates.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="41" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="41" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a142ce8b3466e07207c71488b34556909" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateRoundedRectangle</definition>
+        <argsstring>(float width, float height, float xRadius, float yRadius, int segments)</argsstring>
+        <name>CreateRoundedRectangle</name>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>xRadius</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>yRadius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>segments</declname>
+        </param>
+        <briefdescription>
+<para>Creates a rounded rectangle with the specified width and height. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rounding X radius.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The rounding Y radius.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>segments</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of segments to subdivide the edges.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="67" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="67" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1af7980e28e44e62eb365514b64342e045" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateLine</definition>
+        <argsstring>(Vector2 start, Vector2 end)</argsstring>
+        <name>CreateLine</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Set this as a single edge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first point.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second point.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="129" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="129" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1ab2461ce0ac3e9e7638ac6bea51c9a12b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateCircle</definition>
+        <argsstring>(float radius, int numberOfEdges)</argsstring>
+        <name>CreateCircle</name>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numberOfEdges</declname>
+        </param>
+        <briefdescription>
+<para>Creates a circle with the specified radius and number of edges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numberOfEdges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of edges. The more edges, the more it resembles a circle</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="144" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a9bece2d0342f3c12960d0bc5cc886184" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateEllipse</definition>
+        <argsstring>(float xRadius, float yRadius, int numberOfEdges)</argsstring>
+        <name>CreateEllipse</name>
+        <param>
+          <type>float</type>
+          <declname>xRadius</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>yRadius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numberOfEdges</declname>
+        </param>
+        <briefdescription>
+<para>Creates a ellipse with the specified width, height and number of edges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the ellipse.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the ellipse.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numberOfEdges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of edges. The more edges, the more it resembles an ellipse</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="156" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="156" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a94ccb4f1ddae09cb1cc827ee4f027b93" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateArc</definition>
+        <argsstring>(float radians, int sides, float radius)</argsstring>
+        <name>CreateArc</name>
+        <param>
+          <type>float</type>
+          <declname>radians</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sides</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="170" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="170" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a6a1abd9f4acbf455732cafd03b0ce495" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateCapsule</definition>
+        <argsstring>(float height, float endRadius, int edges)</argsstring>
+        <name>CreateCapsule</name>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>endRadius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>edges</declname>
+        </param>
+        <briefdescription>
+<para>Creates an capsule with the specified height, radius and number of edges. A capsule has the same form as a pill capsule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height (inner height + 2 * radius) of the capsule.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>endRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radius of the capsule ends.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>edges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of edges of the capsule ends. The more edges, the more it resembles an capsule</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="198" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="198" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1aa9fd106a4cafd8deeb176e9132c785ff" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateCapsule</definition>
+        <argsstring>(float height, float topRadius, int topEdges, float bottomRadius, int bottomEdges)</argsstring>
+        <name>CreateCapsule</name>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>topRadius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>topEdges</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>bottomRadius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bottomEdges</declname>
+        </param>
+        <briefdescription>
+<para>Creates an capsule with the specified height, radius and number of edges. A capsule has the same form as a pill capsule. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height (inner height + radii) of the capsule.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>topRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radius of the top.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>topEdges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of edges of the top. The more edges, the more it resembles an capsule</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottomRadius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Radius of bottom.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bottomEdges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of edges of the bottom. The more edges, the more it resembles an capsule</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="218" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="218" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a6bbc2e1f3bf44dea5b5d87cbecb4b13d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonTools.CreateGear</definition>
+        <argsstring>(float radius, int numberOfTeeth, float tipPercentage, float toothHeight)</argsstring>
+        <name>CreateGear</name>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numberOfTeeth</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tipPercentage</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>toothHeight</declname>
+        </param>
+        <briefdescription>
+<para>Creates a gear shape with the specified radius and number of teeth. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numberOfTeeth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of teeth.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tipPercentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tip percentage.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>toothHeight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the tooth.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonTools.cs" line="285" column="32" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="285" bodyend="323"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/PolygonTools.cs" line="16" column="19" bodyfile="Physics2D/Common/PolygonTools.cs" bodystart="17" bodyend="366"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a94ccb4f1ddae09cb1cc827ee4f027b93" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateArc</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a6a1abd9f4acbf455732cafd03b0ce495" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateCapsule</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1aa9fd106a4cafd8deeb176e9132c785ff" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateCapsule</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1ab2461ce0ac3e9e7638ac6bea51c9a12b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateCircle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a9bece2d0342f3c12960d0bc5cc886184" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateEllipse</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a6bbc2e1f3bf44dea5b5d87cbecb4b13d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateGear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1af7980e28e44e62eb365514b64342e045" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateLine</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1ad6c7eabe9a8b2e4f82d2f1c6f953d55e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateRectangle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a659af79c9c0bee951a9134ccf134a6dd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateRectangle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_tools_1a142ce8b3466e07207c71488b34556909" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonTools</scope><name>CreateRoundedRectangle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

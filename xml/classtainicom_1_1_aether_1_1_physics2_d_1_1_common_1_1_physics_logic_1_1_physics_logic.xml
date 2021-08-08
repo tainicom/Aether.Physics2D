@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.PhysicsLogic.FilterData</basecompoundref>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion</derivedcompoundref>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ad6c089104b831a6bd4921d09f272d52d" prot="public" static="no" mutable="no">
+        <type>ControllerCategory</type>
+        <definition>ControllerCategory tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic.ControllerCategory</definition>
+        <argsstring></argsstring>
+        <name>ControllerCategory</name>
+        <initializer>= ControllerCategory.Cat01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" line="12" column="35" bodyfile="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1a8cb47b1ea97c5ca22fdbd200085dc172" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+        <definition>World tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic.World</definition>
+        <argsstring></argsstring>
+        <name>World</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" line="14" column="22" bodyfile="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" bodystart="14" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1a9cb1e22e8ddac1b7e43cafa42ec5d67f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic.PhysicsLogic</definition>
+        <argsstring>(World world)</argsstring>
+        <name>PhysicsLogic</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" line="16" column="16" bodyfile="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ace3da2a2b286f78feb77af8aeabd0a59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic.IsActiveOn</definition>
+        <argsstring>(Body body)</argsstring>
+        <name>IsActiveOn</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2cc91bba669b75e46135c76969061a7a">IsActiveOn</reimplements>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>body</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" line="20" column="30" bodyfile="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" bodystart="20" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.SimpleExplosion</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" line="10" column="21" bodyfile="Physics2D/Common/PhysicsLogic/PhysicsLogic.cs" bodystart="11" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a0c67bc735e81298b08db05161f5ce33d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>AddDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1ad4b4f1a12b0ca07272bca503bc3cedeb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>AddEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ad6c089104b831a6bd4921d09f272d52d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>ControllerCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2c43bbd612e1b91d74a7730e807a58f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>DisabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8ea4ad655cf58505be4ea05629c36129" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>DisabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a34e34e8ea50c84c31e8be3d8694daaee" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>EnabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec28e1af73b3b5c2aab51fd5860db8ac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>EnabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ace3da2a2b286f78feb77af8aeabd0a59" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>IsActiveOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a67f9813c805b3c12a8f6b59442fe1aca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>IsInDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8422e2802fac58d53fc75e32cc4c8ab7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>IsInEnabledInCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1a9cb1e22e8ddac1b7e43cafa42ec5d67f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>PhysicsLogic</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a207af74af2351b2e409d673272eef031" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>RemoveDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec5dd33678fbdad8fb7da68d769c0658" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>RemoveEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1a8cb47b1ea97c5ca22fdbd200085dc172" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::PhysicsLogic</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

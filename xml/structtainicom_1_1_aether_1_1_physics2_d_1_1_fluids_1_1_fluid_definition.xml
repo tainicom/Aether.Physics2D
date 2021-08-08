@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Fluids::FluidDefinition</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a18701c6b96351d890b95af748cd05f6a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.InfluenceRadius</definition>
+        <argsstring></argsstring>
+        <name>InfluenceRadius</name>
+        <briefdescription>
+<para>Distance of influence between the particles </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="19" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a4157b34331bb8c070cd6ccf64c8b6c51" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.DensityRest</definition>
+        <argsstring></argsstring>
+        <name>DensityRest</name>
+        <briefdescription>
+<para>Density of the fluid </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="24" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a0390e2b1c3ec0ed36890e03beaaf55fd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.Stiffness</definition>
+        <argsstring></argsstring>
+        <name>Stiffness</name>
+        <briefdescription>
+<para>Stiffness of the fluid (when particles are far) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="29" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a56e95349adf5ece2234a0c823be19423" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.StiffnessNear</definition>
+        <argsstring></argsstring>
+        <name>StiffnessNear</name>
+        <briefdescription>
+<para>Stiffness of the fluid (when particles are near) Set by Check() </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="35" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1adc3f966f5e6dda4ef986cec6ef1a9c4e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Fluids.FluidDefinition.UseViscosity</definition>
+        <argsstring></argsstring>
+        <name>UseViscosity</name>
+        <briefdescription>
+<para>Toggles viscosity forces </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="40" column="21" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a337060f95f693cf84289497c2ba79a03" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.ViscositySigma</definition>
+        <argsstring></argsstring>
+        <name>ViscositySigma</name>
+        <briefdescription>
+<para>See pvfs.pdf for more information </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="45" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1ac9330963d6a986a86c25a795b22c29a1" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.ViscosityBeta</definition>
+        <argsstring></argsstring>
+        <name>ViscosityBeta</name>
+        <briefdescription>
+<para>See pvfs.pdf for more information </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="50" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a4a90d7ee8fbefc333df87b40bfbca5e9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Fluids.FluidDefinition.UsePlasticity</definition>
+        <argsstring></argsstring>
+        <name>UsePlasticity</name>
+        <briefdescription>
+<para>Toggles plasticity computation (springs etc.) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="55" column="21" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1aa404d45cbdba8caee43b1753241639b9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.Plasticity</definition>
+        <argsstring></argsstring>
+        <name>Plasticity</name>
+        <briefdescription>
+<para>Plasticity, amount of memory of the shape See pvfs.pdf for more information </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="61" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a7b0ea15cede24692b73ded32564802f3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.KSpring</definition>
+        <argsstring></argsstring>
+        <name>KSpring</name>
+        <briefdescription>
+<para>K of the springs used for plasticity </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="66" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1ab63ab7b223e59386beef132d1af6b30e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.YieldRatioCompress</definition>
+        <argsstring></argsstring>
+        <name>YieldRatioCompress</name>
+        <briefdescription>
+<para>Amount of change of the rest length of the springs (when compressed) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="71" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1ad56ce33ec837a439072c0f5919275fd8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Fluids.FluidDefinition.YieldRatioStretch</definition>
+        <argsstring></argsstring>
+        <name>YieldRatioStretch</name>
+        <briefdescription>
+<para>Amount of change of the rest length of the springs (when stretched) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="76" column="22" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a10bda58001f1fe6fd00c59698d1c4111" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition" kindref="compound">FluidDefinition</ref></type>
+        <definition>FluidDefinition tainicom.Aether.Physics2D.Fluids.FluidDefinition.Default</definition>
+        <argsstring></argsstring>
+        <name>Default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="78" column="39" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="79" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a2a335a2ce0b8a6c42f3dc9c0b34fd0b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Fluids.FluidDefinition.Check</definition>
+        <argsstring>()</argsstring>
+        <name>Check</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="106" column="21" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="106" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Fluid parameters, see pvfs.pdf for a detailed explanation </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Fluids/1/FluidDefinition.cs" line="14" column="11" bodyfile="Physics2D/Fluids/1/FluidDefinition.cs" bodystart="15" bodyend="121"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a2a335a2ce0b8a6c42f3dc9c0b34fd0b6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>Check</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a10bda58001f1fe6fd00c59698d1c4111" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>Default</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a4157b34331bb8c070cd6ccf64c8b6c51" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>DensityRest</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a18701c6b96351d890b95af748cd05f6a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>InfluenceRadius</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a7b0ea15cede24692b73ded32564802f3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>KSpring</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1aa404d45cbdba8caee43b1753241639b9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>Plasticity</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a0390e2b1c3ec0ed36890e03beaaf55fd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>Stiffness</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a56e95349adf5ece2234a0c823be19423" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>StiffnessNear</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a4a90d7ee8fbefc333df87b40bfbca5e9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>UsePlasticity</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1adc3f966f5e6dda4ef986cec6ef1a9c4e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>UseViscosity</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1ac9330963d6a986a86c25a795b22c29a1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>ViscosityBeta</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1a337060f95f693cf84289497c2ba79a03" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>ViscositySigma</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1ab63ab7b223e59386beef132d1af6b30e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>YieldRatioCompress</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_fluids_1_1_fluid_definition_1ad56ce33ec837a439072c0f5919275fd8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Fluids::FluidDefinition</scope><name>YieldRatioStretch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_simple_combiner" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PolygonManipulation::SimpleCombiner</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_simple_combiner_1ac15d0afe7651a621cd13a837af0de705" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.PolygonManipulation.SimpleCombiner.PolygonizeTriangles</definition>
+        <argsstring>(List&lt; Vertices &gt; triangles, int maxPolys=int.MaxValue, float tolerance=0.001f)</argsstring>
+        <name>PolygonizeTriangles</name>
+        <param>
+          <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+          <declname>triangles</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxPolys</declname>
+          <defval>int.MaxValue</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tolerance</declname>
+          <defval>0.001f</defval>
+        </param>
+        <briefdescription>
+<para>Combine a list of triangles into a list of convex polygons. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: This only works on triangles.</para>
+<para>param name=&quot;triangles&quot;&gt;The triangles.</para>
+<para>param name=&quot;maxPolys&quot;&gt;The maximun number of polygons to return.</para>
+<para>param name=&quot;tolerance&quot;&gt;The tolerance</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/SimpleCombiner.cs" line="49" column="28" bodyfile="Physics2D/Common/PolygonManipulation/SimpleCombiner.cs" bodystart="49" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_simple_combiner_1a0aa570ff9233e4ec1e31ff63f6726ae1" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.PolygonManipulation.SimpleCombiner.AddTriangle</definition>
+        <argsstring>(Vertices t, Vertices vertices)</argsstring>
+        <name>AddTriangle</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PolygonManipulation/SimpleCombiner.cs" line="153" column="33" bodyfile="Physics2D/Common/PolygonManipulation/SimpleCombiner.cs" bodystart="153" bodyend="232"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Combines a list of triangles into a list of convex polygons. Starts with a seed triangle, keep adding triangles to it until you can&apos;t add any more without making the polygon non-convex. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/PolygonManipulation/SimpleCombiner.cs" line="39" column="19" bodyfile="Physics2D/Common/PolygonManipulation/SimpleCombiner.cs" bodystart="40" bodyend="233"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_simple_combiner_1a0aa570ff9233e4ec1e31ff63f6726ae1" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::SimpleCombiner</scope><name>AddTriangle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_polygon_manipulation_1_1_simple_combiner_1ac15d0afe7651a621cd13a837af0de705" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PolygonManipulation::SimpleCombiner</scope><name>PolygonizeTriangles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

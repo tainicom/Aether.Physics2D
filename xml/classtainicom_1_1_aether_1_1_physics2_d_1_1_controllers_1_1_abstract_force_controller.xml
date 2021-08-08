@@ -1,0 +1,599 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller" kind="class" language="C#" prot="public" abstract="yes">
+    <compoundname>tainicom::Aether::Physics2D::Controllers::AbstractForceController</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Controllers.Controller</basecompoundref>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_simple_wind_force" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Controllers.SimpleWindForce</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9f" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>DecayModes</name>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9fa6adf97f83acf6453d4a6a4b1070f3754" prot="public">
+          <name>None</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9fa48c7c41b72e1d678923ce3571aa65b2d" prot="public">
+          <name>Step</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9fa32a843da6ea40ab3b17a3421ccdf671b" prot="public">
+          <name>Linear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9face3511fe6e3cab696c0e1a62d445cd01" prot="public">
+          <name>InverseSquare</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9fa2cb4d4a3f8dacd623fa045a44febd476" prot="public">
+          <name>Curve</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Modes for Decay. Actual Decay must be implemented in inheriting classes </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="25" column="15" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="enum" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a05607c36c5199aa31dcec667e997ab25" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ForceTypes</name>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a05607c36c5199aa31dcec667e997ab25a2a3cd5946cfd317eb99c3d32e35e2d4c" prot="public">
+          <name>Point</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a05607c36c5199aa31dcec667e997ab25a4803e6b9e63dabf04de980788d6a13c4" prot="public">
+          <name>Line</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a05607c36c5199aa31dcec667e997ab25adeec4ff19974f12ed781cb9a59064214" prot="public">
+          <name>Area</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Forcetypes are used in the decay math to properly get the distance. They are also used to draw a representation in DebugView </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="42" column="15" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="43" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="enum" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61cac" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>TimingModes</name>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61cacae95589f4d6357f5680d489ad6997f338" prot="public">
+          <name>Switched</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61caca073b1bbd5b71098e61f7c3b8240a29bf" prot="public">
+          <name>Triggered</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61caca2cb4d4a3f8dacd623fa045a44febd476" prot="public">
+          <name>Curve</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Timing Modes Switched: Standard on/off mode using the baseclass enabled property Triggered: When the <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aff3ed1786c39dd0f51403db6f0314c8c" kindref="member">Trigger()</ref> method is called the force is active for a specified Impulse Length Curve: Still to be defined. The basic idea is having a Trigger combined with a curve for the strength </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="61" column="15" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="62" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a51712095f4b9bcf1c5a1a9f1412535ff" prot="public" static="no" mutable="no">
+        <type>Curve</type>
+        <definition>Curve tainicom.Aether.Physics2D.Controllers.AbstractForceController.DecayCurve</definition>
+        <argsstring></argsstring>
+        <name>DecayCurve</name>
+        <briefdescription>
+<para>Curve to be used for Decay in Curve mode </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="73" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1af3a2e1aff1943503d55e9daaf8671f95" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a05607c36c5199aa31dcec667e997ab25" kindref="member">ForceTypes</ref></type>
+        <definition>ForceTypes tainicom.Aether.Physics2D.Controllers.AbstractForceController.ForceType</definition>
+        <argsstring></argsstring>
+        <name>ForceType</name>
+        <briefdescription>
+<para>The Forcetype of the instance </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="78" column="27" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a888a7d19d2870b6b0c228645a5b35624" prot="public" static="no" mutable="no">
+        <type>Curve</type>
+        <definition>Curve tainicom.Aether.Physics2D.Controllers.AbstractForceController.StrengthCurve</definition>
+        <argsstring></argsstring>
+        <name>StrengthCurve</name>
+        <briefdescription>
+<para>Curve used by Curve Mode as an animated multiplier for the force strength. Only positions between 0 and 1 are considered as that range is stretched to have ImpulseLength. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="92" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a376496cb5a6694f0fddde3ac564a6430" prot="protected" static="no" mutable="no">
+        <type>Random</type>
+        <definition>Random tainicom.Aether.Physics2D.Controllers.AbstractForceController.Randomize</definition>
+        <argsstring></argsstring>
+        <name>Randomize</name>
+        <briefdescription>
+<para>Provided for reuse to provide Variation functionality in inheriting classes </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="84" column="26" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a606270f93d8dffa695ff2c99e5d96a95" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.Strength</definition>
+        <argsstring></argsstring>
+        <name>Strength</name>
+        <briefdescription>
+<para>Global Strength of the force to be applied </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="144" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="144" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a2061c1bc7a96e98ac4dcba59f2924eb8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Vector2</type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Controllers.AbstractForceController.Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <briefdescription>
+<para>Position of the Force. Can be ignored (left at (0,0) for forces that are not position-dependent </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="150" column="24" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="150" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a131329cb0179d30ee9cc67eaa1a618bc" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.MaximumSpeed</definition>
+        <argsstring></argsstring>
+        <name>MaximumSpeed</name>
+        <briefdescription>
+<para>Maximum speed of the bodies. Bodies that are travelling faster are supposed to be ignored </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="156" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="156" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a7992d643e4056057a97175512f83b3c6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.MaximumForce</definition>
+        <argsstring></argsstring>
+        <name>MaximumForce</name>
+        <briefdescription>
+<para>Maximum Force to be applied. As opposed to Maximum Speed this is independent of the velocity of the affected body </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="163" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="163" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1ad4a45ff7e9eb1acabe6f2ba6864701d0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61cac" kindref="member">TimingModes</ref></type>
+        <definition>TimingModes tainicom.Aether.Physics2D.Controllers.AbstractForceController.TimingMode</definition>
+        <argsstring></argsstring>
+        <name>TimingMode</name>
+        <briefdescription>
+<para>Timing Mode of the force instance </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="168" column="28" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="168" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1af29f4694840d9479b1c85f064292f42f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.ImpulseTime</definition>
+        <argsstring></argsstring>
+        <name>ImpulseTime</name>
+        <briefdescription>
+<para>Time of the current impulse. Incremented in update till ImpulseLength is reached </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="174" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="174" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a37fc6ca61c176299d892cea393da349f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.ImpulseLength</definition>
+        <argsstring></argsstring>
+        <name>ImpulseLength</name>
+        <briefdescription>
+<para>Length of a triggered impulse. Used in both Triggered and Curve Mode </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="179" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="179" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a98f03bda557ae26c4e599986fa293f71" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Controllers.AbstractForceController.Triggered</definition>
+        <argsstring></argsstring>
+        <name>Triggered</name>
+        <briefdescription>
+<para>Indicating if we are currently during an Impulse (Triggered and Curve Mode) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="185" column="21" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="185" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a972a1f2cd488aaf647fb2431d9934f90" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.Variation</definition>
+        <argsstring></argsstring>
+        <name>Variation</name>
+        <briefdescription>
+<para>Variation of the force applied to each body affected !! Must be used in inheriting classes properly !! </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="191" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="191" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a801529e1b98d731e9ed0240c89a66212" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9f" kindref="member">DecayModes</ref></type>
+        <definition>DecayModes tainicom.Aether.Physics2D.Controllers.AbstractForceController.DecayMode</definition>
+        <argsstring></argsstring>
+        <name>DecayMode</name>
+        <briefdescription>
+<para>See DecayModes </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="196" column="27" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="196" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a9f8830751c1a0e7f6086cab96898d5db" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.DecayStart</definition>
+        <argsstring></argsstring>
+        <name>DecayStart</name>
+        <briefdescription>
+<para>Start of the distance based Decay. To set a non decaying area </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="201" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="201" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a157fb8f0464b43ef264bef9d38a192ec" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.DecayEnd</definition>
+        <argsstring></argsstring>
+        <name>DecayEnd</name>
+        <briefdescription>
+<para>Maximum distance a force should be applied </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="206" column="22" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="206" bodyend="206"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a758e535e6aee95ca50e8af449deacd78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Controllers.AbstractForceController.AbstractForceController</definition>
+        <argsstring>()</argsstring>
+        <name>AbstractForceController</name>
+        <briefdescription>
+<para>Constructor </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="97" column="16" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="97" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aa29a7ca3df154a7ceeb2f60d308a0085" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Controllers.AbstractForceController.AbstractForceController</definition>
+        <argsstring>(TimingModes mode)</argsstring>
+        <name>AbstractForceController</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61cac" kindref="member">TimingModes</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded Contstructor with supplying Timing Mode </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="124" column="16" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="124" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aff3ed1786c39dd0f51403db6f0314c8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Controllers.AbstractForceController.Trigger</definition>
+        <argsstring>()</argsstring>
+        <name>Trigger</name>
+        <briefdescription>
+<para>Triggers the trigger modes (Trigger and Curve) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="263" column="21" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="263" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a99a3709db57029d6b84a91917d14cf95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Controllers.AbstractForceController.Update</definition>
+        <argsstring>(float dt)</argsstring>
+        <name>Update</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a88de5f12716b917835890536d2569aa2">Update</reimplements>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Inherited from <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller" kindref="compound">Controller</ref> Depending on the TimingMode perform timing logic and call <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1acec5828ff517ab7b3f448452240ff16d" kindref="member">ApplyForce()</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="274" column="30" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="274" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1acec5828ff517ab7b3f448452240ff16d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void tainicom.Aether.Physics2D.Controllers.AbstractForceController.ApplyForce</definition>
+        <argsstring>(float dt, float strength)</argsstring>
+        <name>ApplyForce</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_simple_wind_force_1a9b74870dbf87532bcb573455347f5cbe">ApplyForce</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>strength</declname>
+        </param>
+        <briefdescription>
+<para>Apply the force supplying strength (wich is modified in <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a99a3709db57029d6b84a91917d14cf95" kindref="member">Update()</ref> according to the TimingMode </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The strength</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="327" column="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a5a359b1279e26e5fe5c4a97154bbb515" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Controllers.AbstractForceController.GetDecayMultiplier</definition>
+        <argsstring>(Body body)</argsstring>
+        <name>GetDecayMultiplier</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+          <declname>body</declname>
+        </param>
+        <briefdescription>
+<para>Calculate the Decay for a given body. Meant to ease force development and stick to the DRY principle and provide unified and predictable decay math. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>body</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The body to calculate decay for</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A multiplier to multiply the force with to add decay support in inheriting classes</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/AbstractForceController.cs" line="216" column="25" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="216" bodyend="258"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Controllers.SimpleWindForce</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_simple_wind_force"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="2">
+        <label>Controller</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Controllers.AbstractForceController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="2">
+        <label>Controller</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Controllers.AbstractForceController</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Controllers/AbstractForceController.cs" line="17" column="21" bodyfile="Physics2D/Controllers/AbstractForceController.cs" bodystart="18" bodyend="328"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a758e535e6aee95ca50e8af449deacd78" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>AbstractForceController</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aa29a7ca3df154a7ceeb2f60d308a0085" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>AbstractForceController</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a0c67bc735e81298b08db05161f5ce33d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>AddDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1ad4b4f1a12b0ca07272bca503bc3cedeb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>AddEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1acec5828ff517ab7b3f448452240ff16d" prot="public" virt="pure-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>ApplyForce</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1abaf3f202dabad31bf70af473335b58ff" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Controller</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a974dac58ca6481963f29e91d2be1d400" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>ControllerCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a51712095f4b9bcf1c5a1a9f1412535ff" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DecayCurve</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a157fb8f0464b43ef264bef9d38a192ec" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DecayEnd</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a801529e1b98d731e9ed0240c89a66212" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DecayMode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a6d090fd622c0b2c60b743b56248faa9f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DecayModes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a9f8830751c1a0e7f6086cab96898d5db" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DecayStart</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2c43bbd612e1b91d74a7730e807a58f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DisabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8ea4ad655cf58505be4ea05629c36129" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>DisabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a71e8a85b66e9c7493c83e1142e1cc041" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Enabled</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a34e34e8ea50c84c31e8be3d8694daaee" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>EnabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec28e1af73b3b5c2aab51fd5860db8ac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>EnabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1af3a2e1aff1943503d55e9daaf8671f95" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>ForceType</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a05607c36c5199aa31dcec667e997ab25" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>ForceTypes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a5a359b1279e26e5fe5c4a97154bbb515" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>GetDecayMultiplier</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a37fc6ca61c176299d892cea393da349f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>ImpulseLength</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1af29f4694840d9479b1c85f064292f42f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>ImpulseTime</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1a5250c4ecce57b708d6531389624e29ac" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>IsActiveOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a67f9813c805b3c12a8f6b59442fe1aca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>IsInDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8422e2802fac58d53fc75e32cc4c8ab7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>IsInEnabledInCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a7992d643e4056057a97175512f83b3c6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>MaximumForce</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a131329cb0179d30ee9cc67eaa1a618bc" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>MaximumSpeed</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a2061c1bc7a96e98ac4dcba59f2924eb8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Position</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a376496cb5a6694f0fddde3ac564a6430" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Randomize</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a207af74af2351b2e409d673272eef031" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>RemoveDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec5dd33678fbdad8fb7da68d769c0658" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>RemoveEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a606270f93d8dffa695ff2c99e5d96a95" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Strength</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a888a7d19d2870b6b0c228645a5b35624" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>StrengthCurve</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1ad4a45ff7e9eb1acabe6f2ba6864701d0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>TimingMode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aded11d253622aac130c1f1a88ea61cac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>TimingModes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1aff3ed1786c39dd0f51403db6f0314c8c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Trigger</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a98f03bda557ae26c4e599986fa293f71" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Triggered</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a99a3709db57029d6b84a91917d14cf95" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Update</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_1a972a1f2cd488aaf647fb2431d9934f90" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>Variation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller_1afaf1ad1096bb362e329de2583716afbf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Controllers::AbstractForceController</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Collision</compoundname>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_feature" prot="public">tainicom::Aether::Physics2D::Collision::ContactFeature</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_i_d" prot="public">tainicom::Aether::Physics2D::Collision::ContactID</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point" prot="public">tainicom::Aether::Physics2D::Collision::ManifoldPoint</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold" prot="public">tainicom::Aether::Physics2D::Collision::Manifold</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_clip_vertex" prot="public">tainicom::Aether::Physics2D::Collision::ClipVertex</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" prot="public">tainicom::Aether::Physics2D::Collision::RayCastInput</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_output" prot="public">tainicom::Aether::Physics2D::Collision::RayCastOutput</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" prot="public">tainicom::Aether::Physics2D::Collision::AABB</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_e_p_axis" prot="public">tainicom::Aether::Physics2D::Collision::EPAxis</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_reference_face" prot="public">tainicom::Aether::Physics2D::Collision::ReferenceFace</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_collision" prot="public">tainicom::Aether::Physics2D::Collision::Collision</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy" prot="public">tainicom::Aether::Physics2D::Collision::DistanceProxy</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_cache" prot="public">tainicom::Aether::Physics2D::Collision::SimplexCache</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_input" prot="public">tainicom::Aether::Physics2D::Collision::DistanceInput</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_output" prot="public">tainicom::Aether::Physics2D::Collision::DistanceOutput</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex" prot="package">tainicom::Aether::Physics2D::Collision::SimplexVertex</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex" prot="package">tainicom::Aether::Physics2D::Collision::Simplex</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance" prot="public">tainicom::Aether::Physics2D::Collision::Distance</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_tree_node" prot="package">tainicom::Aether::Physics2D::Collision::TreeNode</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree" prot="public">tainicom::Aether::Physics2D::Collision::DynamicTree</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_pair" prot="package">tainicom::Aether::Physics2D::Collision::Pair</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase" prot="public">tainicom::Aether::Physics2D::Collision::DynamicTreeBroadPhase</innerclass>
+    <innerclass refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase" prot="public">tainicom::Aether::Physics2D::Collision::IBroadPhase</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_element" prot="public">tainicom::Aether::Physics2D::Collision::Element</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree" prot="public">tainicom::Aether::Physics2D::Collision::QuadTree</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase" prot="public">tainicom::Aether::Physics2D::Collision::QuadTreeBroadPhase</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_t_o_i_input" prot="public">tainicom::Aether::Physics2D::Collision::TOIInput</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_t_o_i_output" prot="public">tainicom::Aether::Physics2D::Collision::TOIOutput</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function" prot="public">tainicom::Aether::Physics2D::Collision::SeparationFunction</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_time_of_impact" prot="public">tainicom::Aether::Physics2D::Collision::TimeOfImpact</innerclass>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes">tainicom::Aether::Physics2D::Collision::Shapes</innernamespace>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a0cdefc1324e5135d9216ac1ee2d8661f" prot="package" static="no" strong="yes">
+        <type>byte</type>
+        <name>ContactFeatureType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a0cdefc1324e5135d9216ac1ee2d8661fab22b929ba52471a02d18bb3a4e4472e6" prot="package">
+          <name>Vertex</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a0cdefc1324e5135d9216ac1ee2d8661fa8af5861002f3c157f9ba842bba10aa3f" prot="package">
+          <name>Face</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="42" column="13" bodyfile="Physics2D/Collision/Collision.cs" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a4c5b152db2fb7e5df23f696cada5869b" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ManifoldType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a4c5b152db2fb7e5df23f696cada5869ba0b746483cd6f7830702edd6ee7d8d4b9" prot="public">
+          <name>Circles</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a4c5b152db2fb7e5df23f696cada5869baf43c8682b4637a32c3fd76348733a5b0" prot="public">
+          <name>FaceA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a4c5b152db2fb7e5df23f696cada5869ba9d0245173cf584f064c34d2be4718f0d" prot="public">
+          <name>FaceB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="129" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="130" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1ac9f32de7d709b821235a729a69069aef" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>PointState</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1ac9f32de7d709b821235a729a69069aefabbb93ef26e3c101ff11cdd21cab08a94" prot="public">
+          <name>Null</name>
+          <briefdescription>
+<para>Point does not exist </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1ac9f32de7d709b821235a729a69069aefaec211f7c20af43e742bf2570c3cb84f9" prot="public">
+          <name>Add</name>
+          <briefdescription>
+<para>Point was added in the update </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1ac9f32de7d709b821235a729a69069aefa5a7dacb6e9b5ba37e22f825429355174" prot="public">
+          <name>Persist</name>
+          <briefdescription>
+<para>Point persisted across the update </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1ac9f32de7d709b821235a729a69069aefa1063e38cb53d94d386f21227fcd84717" prot="public">
+          <name>Remove</name>
+          <briefdescription>
+<para>Point was removed in the update </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This is used for determining the state of contact points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="182" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="183" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a2ad9e724557fa95ef2913cd269faf45a" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>EPAxisType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a2ad9e724557fa95ef2913cd269faf45aa88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a2ad9e724557fa95ef2913cd269faf45aa2a187552a4c67d367110e85ea0087a4d" prot="public">
+          <name>EdgeA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a2ad9e724557fa95ef2913cd269faf45aa0a2d24d621ca67652605108f4d4eac97" prot="public">
+          <name>EdgeB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="577" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="578" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1aefaf44c35284d26546cb4af8fabbdabe" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>TOIOutputState</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1aefaf44c35284d26546cb4af8fabbdabea88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1aefaf44c35284d26546cb4af8fabbdabead7c8c85bf79bbe1b7188497c32c3b0ca" prot="public">
+          <name>Failed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1aefaf44c35284d26546cb4af8fabbdabea5f1b91d5ebf354ef9c15b0671c0e8b18" prot="public">
+          <name>Overlapped</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1aefaf44c35284d26546cb4af8fabbdabea5b32faae4c7bae1011dc7ab43caa1529" prot="public">
+          <name>Touching</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1aefaf44c35284d26546cb4af8fabbdabeaa718c9e839947a5b30fd87b5d1da6f8d" prot="public">
+          <name>Seperated</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="49" column="11" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="50" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1afd033dd67acdcf834b08d6da23666594" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SeparationFunctionType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1afd033dd67acdcf834b08d6da23666594a75dd5f1160a3f02b6fae89c54361a1b3" prot="public">
+          <name>Points</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1afd033dd67acdcf834b08d6da23666594af43c8682b4637a32c3fd76348733a5b0" prot="public">
+          <name>FaceA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1afd033dd67acdcf834b08d6da23666594a9d0245173cf584f064c34d2be4718f0d" prot="public">
+          <name>FaceB</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="64" column="11" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="65" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1a4df5dbe91eb51bd55d02081a168e5e34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>delegate bool</type>
+        <definition>delegate bool tainicom.Aether.Physics2D.Collision.BroadPhaseQueryCallback</definition>
+        <argsstring>(int proxyId)</argsstring>
+        <name>BroadPhaseQueryCallback</name>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="43" column="26" declfile="Physics2D/Collision/IBroadPhase.cs" declline="43" declcolumn="26"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1ac6224e8393bd2e5c42324514b2ccb045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>delegate float</type>
+        <definition>delegate float tainicom.Aether.Physics2D.Collision.BroadPhaseRayCastCallback</definition>
+        <argsstring>(ref RayCastInput input, int proxyId)</argsstring>
+        <name>BroadPhaseRayCastCallback</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref></type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="44" column="27" declfile="Physics2D/Collision/IBroadPhase.cs" declline="44" declcolumn="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Collision/Collision.cs" line="40" column="1"/>
+  </compounddef>
+</doxygen>

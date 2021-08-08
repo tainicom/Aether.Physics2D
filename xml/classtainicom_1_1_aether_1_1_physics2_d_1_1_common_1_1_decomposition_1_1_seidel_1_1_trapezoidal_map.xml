@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ab90f5e66b7fe229ebb865b705b1bd0d3" prot="public" static="no" mutable="no">
+        <type>HashSet&lt; Trapezoid &gt;</type>
+        <definition>HashSet&lt;Trapezoid&gt; tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.Map</definition>
+        <argsstring></argsstring>
+        <name>Map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="13" column="24" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a4e9f2e34d3898328358b440c182a851f" prot="private" static="no" mutable="no">
+        <type>Edge</type>
+        <definition>Edge tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap._bCross</definition>
+        <argsstring></argsstring>
+        <name>_bCross</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="16" column="22" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ab1982be8a97092b5b96a4b02d3327a77" prot="private" static="no" mutable="no">
+        <type>Edge</type>
+        <definition>Edge tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap._cross</definition>
+        <argsstring></argsstring>
+        <name>_cross</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="19" column="22" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a99c1b723e9ffa0fdbe7e4184ae6fab58" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap._margin</definition>
+        <argsstring></argsstring>
+        <name>_margin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="22" column="23" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a651d4d965ba89360839951d347748d78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.TrapezoidalMap</definition>
+        <argsstring>()</argsstring>
+        <name>TrapezoidalMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="24" column="16" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="24" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a7dad99dba5e70b76194baf48d8b4a4f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="32" column="21" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="32" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a5ac476aec0e77718efd9fbe9514086a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Trapezoid[]</type>
+        <definition>Trapezoid [] tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.Case1</definition>
+        <argsstring>(Trapezoid t, Edge e)</argsstring>
+        <name>Case1</name>
+        <param>
+          <type>Trapezoid</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>Edge</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="40" column="26" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="40" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ac8d6761742c2fc1482077359c7c47ab2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Trapezoid[]</type>
+        <definition>Trapezoid [] tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.Case2</definition>
+        <argsstring>(Trapezoid t, Edge e)</argsstring>
+        <name>Case2</name>
+        <param>
+          <type>Trapezoid</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>Edge</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="58" column="26" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="58" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1aa83eab53afcf307b194069689301381f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Trapezoid[]</type>
+        <definition>Trapezoid [] tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.Case3</definition>
+        <argsstring>(Trapezoid t, Edge e)</argsstring>
+        <name>Case3</name>
+        <param>
+          <type>Trapezoid</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>Edge</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="85" column="26" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="85" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a95461fa2ff3a1b1afaa7e9967ca8b18f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Trapezoid[]</type>
+        <definition>Trapezoid [] tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.Case4</definition>
+        <argsstring>(Trapezoid t, Edge e)</argsstring>
+        <name>Case4</name>
+        <param>
+          <type>Trapezoid</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>Edge</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="136" column="26" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="136" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ad4ebde825c3d9379cc4e4dac9ad22faf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Trapezoid</type>
+        <definition>Trapezoid tainicom.Aether.Physics2D.Common.Decomposition.Seidel.TrapezoidalMap.BoundingBox</definition>
+        <argsstring>(List&lt; Edge &gt; edges)</argsstring>
+        <name>BoundingBox</name>
+        <param>
+          <type>List&lt; Edge &gt;</type>
+          <declname>edges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="175" column="26" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="175" bodyend="198"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" line="10" column="13" bodyfile="Physics2D/Common/Decomposition/Seidel/TrapezoidalMap.cs" bodystart="11" bodyend="199"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a4e9f2e34d3898328358b440c182a851f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>_bCross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ab1982be8a97092b5b96a4b02d3327a77" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>_cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a99c1b723e9ffa0fdbe7e4184ae6fab58" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>_margin</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ad4ebde825c3d9379cc4e4dac9ad22faf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>BoundingBox</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a5ac476aec0e77718efd9fbe9514086a4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>Case1</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ac8d6761742c2fc1482077359c7c47ab2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>Case2</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1aa83eab53afcf307b194069689301381f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>Case3</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a95461fa2ff3a1b1afaa7e9967ca8b18f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>Case4</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a7dad99dba5e70b76194baf48d8b4a4f6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>Clear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1ab90f5e66b7fe229ebb865b705b1bd0d3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>Map</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_seidel_1_1_trapezoidal_map_1a651d4d965ba89360839951d347748d78" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Seidel::TrapezoidalMap</scope><name>TrapezoidalMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

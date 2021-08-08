@@ -1,0 +1,261 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint}\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+
+
+A wheel joint. This joint provides two degrees of freedom\+: translation along an axis fixed in bodyA and rotation in the plane. You can use a joint limit to restrict the range of motion and a joint motor to drive the rotation or to model rotational friction. This joint is designed for vehicle suspensions.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_af85606e2f291f5a3795d6c3e28004fed}{Wheel\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyB, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchor, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} axis, bool use\+World\+Coordinates=false)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint}{Wheel\+Joint}} \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a62b1490ad6c246b8eb400e0361661dc0}{Get\+Motor\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Gets the torque of the motor \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a59e34701c6a1ce497b5276d99b5c6555}{Get\+Reaction\+Force}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction force on body at the joint anchor in Newtons. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_aab53bd0d88a91bb39066a9a57beb73ca}{Get\+Reaction\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction torque on the body at the joint anchor in N$\ast$m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_adaf564beda415ab1b55ae4365fe40ee0}{Local\+AnchorA}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyA \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a607874b75f27417d6a788097a5b952e1}{Local\+AnchorB}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyB \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a5ab7cc64dc2cd48e44aa3f10611cb942}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a5ab7cc64dc2cd48e44aa3f10611cb942}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorA}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_afc14de7e3e182c07715a4f252c3848a7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_afc14de7e3e182c07715a4f252c3848a7}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorB}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_abd3e53f2ebbb8db45932abd93ac2b52d}{Axis}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The axis at which the suspension moves. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a8b58278603844f860cb83a5bd8b7527f}{Local\+XAxis}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The axis in local coordinates relative to BodyA \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a6caea008e6fd298fa07e391d001d0bb5}{Motor\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The desired motor speed in radians per second. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a1539cdc5a1710a020f4b03ad94e7b9f1}{Max\+Motor\+Torque}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The maximum motor torque, usually in N-\/m. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a76b0bc8ba19359d9633e80aff3fa0cc7}{Frequency}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Suspension frequency, zero indicates no suspension \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a50425ea95c9ff1fe0cb64f94cff1396c}{Damping\+Ratio}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Suspension damping ratio, one indicates critical damping \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a598655851e456e2fa695e47ff9616000}{Joint\+Translation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the translation along the axis \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_abad644276c539efc9e26d212b2e3938f}{Joint\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the angular velocity of the joint \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a5373580533904708e3216828345419a9}{Motor\+Enabled}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Enable/disable the joint motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A wheel joint. This joint provides two degrees of freedom\+: translation along an axis fixed in bodyA and rotation in the plane. You can use a joint limit to restrict the range of motion and a joint motor to drive the rotation or to model rotational friction. This joint is designed for vehicle suspensions. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_af85606e2f291f5a3795d6c3e28004fed}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_af85606e2f291f5a3795d6c3e28004fed}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!WheelJoint@{WheelJoint}}
+\index{WheelJoint@{WheelJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{WheelJoint()}{WheelJoint()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Wheel\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyB,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchor,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{axis,  }\item[{bool}]{use\+World\+Coordinates = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint}{Wheel\+Joint}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bodyA} & The first body\\
+\hline
+{\em bodyB} & The second body\\
+\hline
+{\em anchor} & The anchor point\\
+\hline
+{\em axis} & The axis\\
+\hline
+{\em use\+World\+Coordinates} & Set to true if you are using world coordinates as anchors.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a62b1490ad6c246b8eb400e0361661dc0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a62b1490ad6c246b8eb400e0361661dc0}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!GetMotorTorque@{GetMotorTorque}}
+\index{GetMotorTorque@{GetMotorTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{GetMotorTorque()}{GetMotorTorque()}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Get\+Motor\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})}
+
+
+
+Gets the torque of the motor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & inverse delta time\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a59e34701c6a1ce497b5276d99b5c6555}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a59e34701c6a1ce497b5276d99b5c6555}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!GetReactionForce@{GetReactionForce}}
+\index{GetReactionForce@{GetReactionForce}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionForce()}{GetReactionForce()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Get\+Reaction\+Force (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction force on body at the joint anchor in Newtons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_af2c9a28af88d5c656660a9f4232d4f66}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_aab53bd0d88a91bb39066a9a57beb73ca}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_aab53bd0d88a91bb39066a9a57beb73ca}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!GetReactionTorque@{GetReactionTorque}}
+\index{GetReactionTorque@{GetReactionTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionTorque()}{GetReactionTorque()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Get\+Reaction\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction torque on the body at the joint anchor in N$\ast$m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_aaba06d8a94a8bcb20963d6e34ec22ba6}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_abd3e53f2ebbb8db45932abd93ac2b52d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_abd3e53f2ebbb8db45932abd93ac2b52d}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!Axis@{Axis}}
+\index{Axis@{Axis}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{Axis}{Axis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Axis\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The axis at which the suspension moves. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a50425ea95c9ff1fe0cb64f94cff1396c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a50425ea95c9ff1fe0cb64f94cff1396c}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!DampingRatio@{DampingRatio}}
+\index{DampingRatio@{DampingRatio}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{DampingRatio}{DampingRatio}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Damping\+Ratio\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Suspension damping ratio, one indicates critical damping 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a76b0bc8ba19359d9633e80aff3fa0cc7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a76b0bc8ba19359d9633e80aff3fa0cc7}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{Frequency}{Frequency}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Frequency\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Suspension frequency, zero indicates no suspension 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_abad644276c539efc9e26d212b2e3938f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_abad644276c539efc9e26d212b2e3938f}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!JointSpeed@{JointSpeed}}
+\index{JointSpeed@{JointSpeed}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{JointSpeed}{JointSpeed}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Joint\+Speed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the angular velocity of the joint 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a598655851e456e2fa695e47ff9616000}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a598655851e456e2fa695e47ff9616000}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!JointTranslation@{JointTranslation}}
+\index{JointTranslation@{JointTranslation}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{JointTranslation}{JointTranslation}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Joint\+Translation\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the translation along the axis 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_adaf564beda415ab1b55ae4365fe40ee0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_adaf564beda415ab1b55ae4365fe40ee0}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!LocalAnchorA@{LocalAnchorA}}
+\index{LocalAnchorA@{LocalAnchorA}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorA}{LocalAnchorA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Local\+AnchorA\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyA 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a607874b75f27417d6a788097a5b952e1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a607874b75f27417d6a788097a5b952e1}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!LocalAnchorB@{LocalAnchorB}}
+\index{LocalAnchorB@{LocalAnchorB}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorB}{LocalAnchorB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Local\+AnchorB\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyB 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a8b58278603844f860cb83a5bd8b7527f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a8b58278603844f860cb83a5bd8b7527f}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!LocalXAxis@{LocalXAxis}}
+\index{LocalXAxis@{LocalXAxis}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{LocalXAxis}{LocalXAxis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Local\+XAxis\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The axis in local coordinates relative to BodyA 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a1539cdc5a1710a020f4b03ad94e7b9f1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a1539cdc5a1710a020f4b03ad94e7b9f1}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!MaxMotorTorque@{MaxMotorTorque}}
+\index{MaxMotorTorque@{MaxMotorTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{MaxMotorTorque}{MaxMotorTorque}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Max\+Motor\+Torque\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The maximum motor torque, usually in N-\/m. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a5373580533904708e3216828345419a9}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a5373580533904708e3216828345419a9}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!MotorEnabled@{MotorEnabled}}
+\index{MotorEnabled@{MotorEnabled}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{MotorEnabled}{MotorEnabled}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Motor\+Enabled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Enable/disable the joint motor. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a6caea008e6fd298fa07e391d001d0bb5}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_wheel_joint_a6caea008e6fd298fa07e391d001d0bb5}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}!MotorSpeed@{MotorSpeed}}
+\index{MotorSpeed@{MotorSpeed}!tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.WheelJoint}}
+\doxysubsubsection{\texorpdfstring{MotorSpeed}{MotorSpeed}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Wheel\+Joint.\+Motor\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The desired motor speed in radians per second. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Dynamics/\+Joints/Wheel\+Joint.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,943 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::MathUtils</compoundname>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1_1_float_converter" prot="private">tainicom::Aether::Physics2D::Common::MathUtils::FloatConverter</innerclass>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a206e14ff241ca100f1a4bb9db771e08b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(ref Vector2 a, ref Vector2 b)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="40" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a128bb09bff54c13d5f9da2b464eb0ff2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(Vector2 a, Vector2 b)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="45" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1af90a001b5660564beb0e367807655e6f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>static Vector3 tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(ref Vector3 a, ref Vector3 b)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Perform the cross product on two vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="51" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="51" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a96e31a18c813783d127609ff5c8bc5f5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(Vector2 a, float s)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="58" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ad09dbd9c7e8092a50bf3a9f8962a8f9f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Rot270</definition>
+        <argsstring>(ref Vector2 a)</argsstring>
+        <name>Rot270</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="63" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a385efaf351ac4946d4b421e4f4282965" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(float s, ref Vector2 a)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="68" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a9b483c4c56a48d4098814c0519437667" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Rot90</definition>
+        <argsstring>(ref Vector2 a)</argsstring>
+        <name>Rot90</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="73" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a72da63fe3785cca3ed0c7aad556b7a75" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Abs</definition>
+        <argsstring>(Vector2 v)</argsstring>
+        <name>Abs</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="78" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="78" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a4e2629f60e8ec9d1627c09e9b4087192" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Mul</definition>
+        <argsstring>(ref Mat22 A, Vector2 v)</argsstring>
+        <name>Mul</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="83" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a2582907451c96e68a06197ff078a4d01" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Mul</definition>
+        <argsstring>(ref Mat22 A, ref Vector2 v)</argsstring>
+        <name>Mul</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="88" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a93118bf5cea53d6345bcea2f89e19355" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.MulT</definition>
+        <argsstring>(ref Mat22 A, Vector2 v)</argsstring>
+        <name>MulT</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="93" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="93" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ab20e01a443a91bb88e16ebbd332901a0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.MulT</definition>
+        <argsstring>(ref Mat22 A, ref Vector2 v)</argsstring>
+        <name>MulT</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="98" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1abbffa19e75efff4ecdcd795ce2dae2d9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.MathUtils.MulT</definition>
+        <argsstring>(ref Mat22 A, ref Mat22 B, out Mat22 C)</argsstring>
+        <name>MulT</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat22" kindref="compound">Mat22</ref></type>
+          <declname>C</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="105" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="105" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a04cade029af63a16cc084ccdb16fde71" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>static Vector3 tainicom.Aether.Physics2D.Common.MathUtils.Mul</definition>
+        <argsstring>(Mat33 A, Vector3 v)</argsstring>
+        <name>Mul</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33" kindref="compound">Mat33</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Multiply a matrix times a vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="115" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a98b7dc9dd69b6342b8510a226494b314" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.MathUtils.Swap&lt; T &gt;</definition>
+        <argsstring>(ref T a, ref T b)</argsstring>
+        <name>Swap&lt; T &gt;</name>
+        <param>
+          <type>ref T</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref T</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="120" column="23" bodyfile="Physics2D/Common/Math.cs" bodystart="120" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a5079c3292ea56d2c2c4eed7e70595c5a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Mul22</definition>
+        <argsstring>(Mat33 A, Vector2 v)</argsstring>
+        <name>Mul22</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33" kindref="compound">Mat33</ref></type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+<para>Multiply a matrix times a vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="128" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="128" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a26e36aa1b2ccc1e558ff652cf4d4ce1a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Skew</definition>
+        <argsstring>(Vector2 input)</argsstring>
+        <name>Skew</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Get the skew vector such that dot(skew_vec, other) == cross(vec, other) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="134" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="134" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a169f82552b5b4270c9812f1864f04a08" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.MathUtils.IsValid</definition>
+        <argsstring>(float x)</argsstring>
+        <name>IsValid</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>This function is used to ensure that a floating point number is not a NaN or infinity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the specified x is valid; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="147" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="147" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ab27a4eaa195e22154ef623ee4f95c2a6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.MathUtils.IsValid</definition>
+        <argsstring>(this Vector2 x)</argsstring>
+        <name>IsValid</name>
+        <param>
+          <type>this <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="158" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1af623cc924d06a131c5bc3444496c7949" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.InvSqrt</definition>
+        <argsstring>(float x)</argsstring>
+        <name>InvSqrt</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>This is a approximate yet fast inverse square-root. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="168" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="168" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a39c1a823eb7a94d2ed0fda530b00b3ed" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int tainicom.Aether.Physics2D.Common.MathUtils.Clamp</definition>
+        <argsstring>(int a, int low, int high)</argsstring>
+        <name>Clamp</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>high</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="179" column="27" bodyfile="Physics2D/Common/Math.cs" bodystart="179" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a9a068be03318d7219bec3aedfe72a873" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Clamp</definition>
+        <argsstring>(float a, float low, float high)</argsstring>
+        <name>Clamp</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>high</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="184" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="184" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a9c199761afe65fbb2e195c9aac6fd017" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>static Vector2 tainicom.Aether.Physics2D.Common.MathUtils.Clamp</definition>
+        <argsstring>(Vector2 a, Vector2 low, Vector2 high)</argsstring>
+        <name>Clamp</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>high</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="189" column="31" bodyfile="Physics2D/Common/Math.cs" bodystart="189" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a1b0ea98fd77862d0df67e247c2e186c3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(ref Vector2 a, ref Vector2 b, out float c)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>out float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="196" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a931da0bdad25513fad8f1e3096e952b2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tainicom.Aether.Physics2D.Common.MathUtils.VectorAngle</definition>
+        <argsstring>(ref Vector2 p1, ref Vector2 p2)</argsstring>
+        <name>VectorAngle</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+<para>Return the angle between two vectors on a plane The angle is from vector 1 to vector 2, positive anticlockwise The result is between -pi -&gt; pi </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="206" column="30" bodyfile="Physics2D/Common/Math.cs" bodystart="206" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a36fe2b250eaec6c23f782822f47ea14b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Dot</definition>
+        <argsstring>(Vector3 a, Vector3 b)</argsstring>
+        <name>Dot</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3" kindref="compound">Vector3</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Perform the dot product on two vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="220" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a500d378d4804d37c4861673b88d3133b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Dot</definition>
+        <argsstring>(Vector2 a, ref Vector2 b)</argsstring>
+        <name>Dot</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Perform the dot product on two vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="226" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="226" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ab5332e74374d5ee0133bfa968b20785f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>static double tainicom.Aether.Physics2D.Common.MathUtils.VectorAngle</definition>
+        <argsstring>(Vector2 p1, Vector2 p2)</argsstring>
+        <name>VectorAngle</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="231" column="30" bodyfile="Physics2D/Common/Math.cs" bodystart="231" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1aec457191c5d64ecda873ce470b765b78" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Area</definition>
+        <argsstring>(Vector2 a, Vector2 b, Vector2 c)</argsstring>
+        <name>Area</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Returns a positive number if c is to the left of the line going from a to b. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Positive number if point is left, negative if point is right, and 0 if points are collinear.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="241" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="241" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a7c6acf58d0af29e94012d6ef47c211ba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Common.MathUtils.Area</definition>
+        <argsstring>(ref Vector2 a, ref Vector2 b, ref Vector2 c)</argsstring>
+        <name>Area</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Returns a positive number if c is to the left of the line going from a to b. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Positive number if point is left, negative if point is right, and 0 if points are collinear.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="251" column="29" bodyfile="Physics2D/Common/Math.cs" bodystart="251" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a6b27de2b1211b0ac94e490d0d8b8e84b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.MathUtils.IsCollinear</definition>
+        <argsstring>(ref Vector2 a, ref Vector2 b, ref Vector2 c, float tolerance=0)</argsstring>
+        <name>IsCollinear</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tolerance</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Determines if three vertices are collinear (ie. on a straight line) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First vertex</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second vertex</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Third vertex</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tolerance</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="264" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="264" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1aeeb277565ebabd6826c30c3502b7b18f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Common.MathUtils.Cross</definition>
+        <argsstring>(float s, ref Vector2 a, out Vector2 b)</argsstring>
+        <name>Cross</name>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="269" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="269" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a21741f82246c1710155a5798951e5044" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.MathUtils.FloatEquals</definition>
+        <argsstring>(float value1, float value2)</argsstring>
+        <name>FloatEquals</name>
+        <param>
+          <type>float</type>
+          <declname>value1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="274" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="274" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a23fad75ce9c5bff0752b6d7760bf9e1e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.MathUtils.FloatEquals</definition>
+        <argsstring>(float value1, float value2, float delta)</argsstring>
+        <name>FloatEquals</name>
+        <param>
+          <type>float</type>
+          <declname>value1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a floating point Value is equal to another, within a certain tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first floating point Value.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second floating point Value.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The floating point tolerance.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the values are &quot;equal&quot;, false otherwise.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="287" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="287" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1aa189a8b4a1d222bd05d5e259aeeb1e7a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.MathUtils.FloatInRange</definition>
+        <argsstring>(float value, float min, float max)</argsstring>
+        <name>FloatInRange</name>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>min</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a floating point Value is within a specified range of values (inclusive). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Value to check.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum Value.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum Value.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the Value is within the range specified, false otherwise.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Math.cs" line="301" column="28" bodyfile="Physics2D/Common/Math.cs" bodystart="301" bodyend="304"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Math.cs" line="38" column="19" bodyfile="Physics2D/Common/Math.cs" bodystart="39" bodyend="319"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a72da63fe3785cca3ed0c7aad556b7a75" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Abs</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1aec457191c5d64ecda873ce470b765b78" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Area</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a7c6acf58d0af29e94012d6ef47c211ba" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Area</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a39c1a823eb7a94d2ed0fda530b00b3ed" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Clamp</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a9a068be03318d7219bec3aedfe72a873" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Clamp</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a9c199761afe65fbb2e195c9aac6fd017" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Clamp</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a206e14ff241ca100f1a4bb9db771e08b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a128bb09bff54c13d5f9da2b464eb0ff2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1af90a001b5660564beb0e367807655e6f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a96e31a18c813783d127609ff5c8bc5f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a385efaf351ac4946d4b421e4f4282965" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a1b0ea98fd77862d0df67e247c2e186c3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1aeeb277565ebabd6826c30c3502b7b18f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Cross</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a36fe2b250eaec6c23f782822f47ea14b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Dot</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a500d378d4804d37c4861673b88d3133b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Dot</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a21741f82246c1710155a5798951e5044" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>FloatEquals</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a23fad75ce9c5bff0752b6d7760bf9e1e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>FloatEquals</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1aa189a8b4a1d222bd05d5e259aeeb1e7a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>FloatInRange</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1af623cc924d06a131c5bc3444496c7949" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>InvSqrt</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a6b27de2b1211b0ac94e490d0d8b8e84b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>IsCollinear</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a169f82552b5b4270c9812f1864f04a08" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>IsValid</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ab27a4eaa195e22154ef623ee4f95c2a6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>IsValid</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a4e2629f60e8ec9d1627c09e9b4087192" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Mul</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a2582907451c96e68a06197ff078a4d01" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Mul</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a04cade029af63a16cc084ccdb16fde71" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Mul</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a5079c3292ea56d2c2c4eed7e70595c5a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Mul22</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a93118bf5cea53d6345bcea2f89e19355" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>MulT</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ab20e01a443a91bb88e16ebbd332901a0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>MulT</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1abbffa19e75efff4ecdcd795ce2dae2d9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>MulT</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ad09dbd9c7e8092a50bf3a9f8962a8f9f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Rot270</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a9b483c4c56a48d4098814c0519437667" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Rot90</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a26e36aa1b2ccc1e558ff652cf4d4ce1a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Skew</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a98b7dc9dd69b6342b8510a226494b314" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>Swap&lt; T &gt;</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1a931da0bdad25513fad8f1e3096e952b2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>VectorAngle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_math_utils_1ab5332e74374d5ee0133bfa968b20785f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::MathUtils</scope><name>VectorAngle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

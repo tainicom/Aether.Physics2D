@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_constant" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::Constant</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_constant_1afca8f38fd1d36754f7d9005a27247a22" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Common.Constant.Pi</definition>
+        <argsstring></argsstring>
+        <name>Pi</name>
+        <initializer>= (float)Math.PI</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Constant.cs" line="9" column="28" bodyfile="Physics2D/Common/Constant.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_constant_1a9b0f38b46fa2176ee286503b02bf07b8" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Common.Constant.Tau</definition>
+        <argsstring></argsstring>
+        <name>Tau</name>
+        <initializer>= (float)(Math.PI * 2.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Constant.cs" line="10" column="28" bodyfile="Physics2D/Common/Constant.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Constant.cs" line="7" column="12" bodyfile="Physics2D/Common/Constant.cs" bodystart="8" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_constant_1afca8f38fd1d36754f7d9005a27247a22" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Constant</scope><name>Pi</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_constant_1a9b0f38b46fa2176ee286503b02bf07b8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Constant</scope><name>Tau</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

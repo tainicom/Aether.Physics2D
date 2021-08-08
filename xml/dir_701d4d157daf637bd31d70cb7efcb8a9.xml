@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_701d4d157daf637bd31d70cb7efcb8a9" kind="dir">
+    <compoundname>Physics2D/Collision/Shapes</compoundname>
+    <innerfile refid="_chain_shape_8cs">ChainShape.cs</innerfile>
+    <innerfile refid="_circle_shape_8cs">CircleShape.cs</innerfile>
+    <innerfile refid="_edge_shape_8cs">EdgeShape.cs</innerfile>
+    <innerfile refid="_polygon_shape_8cs">PolygonShape.cs</innerfile>
+    <innerfile refid="_shape_8cs">Shape.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Collision/Shapes/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_3be1eab9ac5942d4be9203681e078c75" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::PointOnEdgeException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">NotImplementedException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_3be1eab9ac5942d4be9203681e078c75_1ad3c9605440d67d865c3bd95ba2276d92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.PointOnEdgeException.PointOnEdgeException</definition>
+        <argsstring>(string message)</argsstring>
+        <name>PointOnEdgeException</name>
+        <param>
+          <type>string</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/PointOnEdgeException.cs" line="43" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/PointOnEdgeException.cs" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.PointOnEdgeException</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NotImplementedException</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Delaunay.Sweep.PointOnEdgeException</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>NotImplementedException</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/PointOnEdgeException.cs" line="41" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Delaunay/Sweep/PointOnEdgeException.cs" bodystart="42" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_3be1eab9ac5942d4be9203681e078c75_1ad3c9605440d67d865c3bd95ba2276d92" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep::PointOnEdgeException</scope><name>PointOnEdgeException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

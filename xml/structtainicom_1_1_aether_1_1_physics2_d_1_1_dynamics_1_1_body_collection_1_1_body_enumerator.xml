@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IEnumerator&lt; Body &gt;</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1afa34717294609167cbacd964f3567656" prot="private" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection" kindref="compound">BodyCollection</ref></type>
+        <definition>BodyCollection tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator._collection</definition>
+        <argsstring></argsstring>
+        <name>_collection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="104" column="36" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1ae77535fefd13a6ae7a0e36e20b3f5e2d" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref> &gt;</type>
+        <definition>List&lt;Body&gt; tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator._list</definition>
+        <argsstring></argsstring>
+        <name>_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="105" column="26" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a038b99a618dcd3ab08ee2dc2809eced0" prot="private" static="no" mutable="no">
+        <type>readonly int</type>
+        <definition>readonly int tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator._versionStamp</definition>
+        <argsstring></argsstring>
+        <name>_versionStamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="106" column="34" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1acb08a84a68e750afd0e7126e3d9233ea" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.i</definition>
+        <argsstring></argsstring>
+        <name>i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="107" column="17" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a196ff57ab8abee1c32dd51de6c9a44f4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+        <definition>Body tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.Current</definition>
+        <argsstring></argsstring>
+        <name>Current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="117" column="25" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="118" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a74f78d6398d34ee5d3bbfb8ec0e8d428" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref> IEnumerator&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref> &gt;.</type>
+        <definition>Body IEnumerator&lt;Body&gt;. tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.Current</definition>
+        <argsstring></argsstring>
+        <name>Current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="129" column="29" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="130" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1aa1f7452d185648c08ec3d01dca165e35" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>object IEnumerator.</type>
+        <definition>object IEnumerator. tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.Current</definition>
+        <argsstring></argsstring>
+        <name>Current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="151" column="31" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="152" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a89b616fdeba2a1c140337d16b7d992b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.BodyEnumerator</definition>
+        <argsstring>(BodyCollection collection, List&lt; Body &gt; list)</argsstring>
+        <name>BodyEnumerator</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection" kindref="compound">BodyCollection</ref></type>
+          <declname>collection</declname>
+        </param>
+        <param>
+          <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref> &gt;</type>
+          <declname>list</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="109" column="20" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="109" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1af4e28303190fa6b449d33642243bf678" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.MoveNext</definition>
+        <argsstring>()</argsstring>
+        <name>MoveNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="142" column="25" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="142" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1aa240ccaa8b79919eace9299b8a620580" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void IDisposable.</type>
+        <definition>void IDisposable. tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.Dispose</definition>
+        <argsstring>()</argsstring>
+        <name>Dispose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="162" column="29" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="162" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1ae3690a6887ea0eaf71d1b7b115cb6452" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void IEnumerator.</type>
+        <definition>void IEnumerator. tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator.Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/BodyCollection.cs" line="169" column="29" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="169" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IEnumerator&lt; Body &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.BodyCollection.BodyEnumerator</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IEnumerator&lt; Body &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/BodyCollection.cs" line="102" column="15" bodyfile="Physics2D/Dynamics/BodyCollection.cs" bodystart="103" bodyend="174"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1afa34717294609167cbacd964f3567656" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>_collection</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1ae77535fefd13a6ae7a0e36e20b3f5e2d" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>_list</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a038b99a618dcd3ab08ee2dc2809eced0" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>_versionStamp</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a89b616fdeba2a1c140337d16b7d992b9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>BodyEnumerator</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a196ff57ab8abee1c32dd51de6c9a44f4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>Current</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1a74f78d6398d34ee5d3bbfb8ec0e8d428" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>Current</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1aa1f7452d185648c08ec3d01dca165e35" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>Current</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1aa240ccaa8b79919eace9299b8a620580" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>Dispose</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1acb08a84a68e750afd0e7126e3d9233ea" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>i</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1af4e28303190fa6b449d33642243bf678" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>MoveNext</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection_1_1_body_enumerator_1ae3690a6887ea0eaf71d1b7b115cb6452" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::BodyCollection::BodyEnumerator</scope><name>Reset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

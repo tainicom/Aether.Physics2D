@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex" kind="struct" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Collision::SimplexVertex</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a2d9e8d6cfa3407a47fb1fda522cd61c3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.SimplexVertex.A</definition>
+        <argsstring></argsstring>
+        <name>A</name>
+        <briefdescription>
+<para>Barycentric coordinate for closest point </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="221" column="22" bodyfile="Physics2D/Collision/Distance.cs" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a8157840455bbe0a3d456b3338e5d8d7e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.SimplexVertex.IndexA</definition>
+        <argsstring></argsstring>
+        <name>IndexA</name>
+        <briefdescription>
+<para>wA index </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="226" column="20" bodyfile="Physics2D/Collision/Distance.cs" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a28a02710b3fc34356e78ac97850995e9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.SimplexVertex.IndexB</definition>
+        <argsstring></argsstring>
+        <name>IndexB</name>
+        <briefdescription>
+<para>wB index </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="231" column="20" bodyfile="Physics2D/Collision/Distance.cs" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1af95b77bebb1a4dab4ff2632eb37217de" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.SimplexVertex.W</definition>
+        <argsstring></argsstring>
+        <name>W</name>
+        <briefdescription>
+<para>wB - wA </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="236" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1ae15a985b4e21e125daa1028f1c792811" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.SimplexVertex.WA</definition>
+        <argsstring></argsstring>
+        <name>WA</name>
+        <briefdescription>
+<para>Support point in proxyA </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="241" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a8919af204f6d4a10c3f53eace385f22d" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.SimplexVertex.WB</definition>
+        <argsstring></argsstring>
+        <name>WB</name>
+        <briefdescription>
+<para>Support point in proxyB </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Distance.cs" line="246" column="24" bodyfile="Physics2D/Collision/Distance.cs" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.SimplexVertex</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>W</edgelabel>
+          <edgelabel>WA</edgelabel>
+          <edgelabel>WB</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Distance.cs" line="216" column="13" bodyfile="Physics2D/Collision/Distance.cs" bodystart="217" bodyend="247"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a2d9e8d6cfa3407a47fb1fda522cd61c3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SimplexVertex</scope><name>A</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a8157840455bbe0a3d456b3338e5d8d7e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SimplexVertex</scope><name>IndexA</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a28a02710b3fc34356e78ac97850995e9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SimplexVertex</scope><name>IndexB</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1af95b77bebb1a4dab4ff2632eb37217de" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SimplexVertex</scope><name>W</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1ae15a985b4e21e125daa1028f1c792811" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SimplexVertex</scope><name>WA</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_vertex_1a8919af204f6d4a10c3f53eace385f22d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SimplexVertex</scope><name>WB</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

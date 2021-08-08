@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Collision::Shapes</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_chain_shape" prot="public">tainicom::Aether::Physics2D::Collision::Shapes::ChainShape</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape" prot="public">tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_edge_shape" prot="public">tainicom::Aether::Physics2D::Collision::Shapes::EdgeShape</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape" prot="public">tainicom::Aether::Physics2D::Collision::Shapes::PolygonShape</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_mass_data" prot="public">tainicom::Aether::Physics2D::Collision::Shapes::MassData</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape" prot="public">tainicom::Aether::Physics2D::Collision::Shapes::Shape</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ShapeType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2a88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2a30954d90085f6eaaf5817917fc5fecb3" prot="public">
+          <name>Circle</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2ae4a297a0f76119a442c2595ac040673e" prot="public">
+          <name>Edge</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2a4c0a11247d92f73fb84baa51e37a3263" prot="public">
+          <name>Polygon</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2a5320550175ad6f79ad658943b9c013a7" prot="public">
+          <name>Chain</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1a7ad2f609bde7c2c09913fc767b6b67b2a834c072a52bcf98866ed2eadaaa861a1" prot="public">
+          <name>TypeCount</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/Shape.cs" line="113" column="11" bodyfile="Physics2D/Collision/Shapes/Shape.cs" bodystart="114" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Collision/Shapes/ChainShape.cs" line="34" column="1"/>
+  </compounddef>
+</doxygen>

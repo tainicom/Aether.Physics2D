@@ -1,0 +1,108 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Velocity\+Limit\+Controller Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}\index{tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}}
+
+
+Put a limit on the linear (translation -\/ the movespeed) and angular (rotation) velocity of bodies added to this controller.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Velocity\+Limit\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aa7edc78925a6f0f82668eb1444a845e4}{Velocity\+Limit\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}{Velocity\+Limit\+Controller}} class. Sets the max linear velocity to Settings.\+Max\+Translation Sets the max angular velocity to Settings.\+Max\+Rotation \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a657a291f1f80d1ca1925b947e7b87b36}{Velocity\+Limit\+Controller}} (float max\+Linear\+Velocity, float max\+Angular\+Velocity)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}{Velocity\+Limit\+Controller}} class. Pass in 0 or float.\+Max\+Value to disable the limit. max\+Angular\+Velocity = 0 will disable the angular velocity limit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aa82345aea17a0441f895b0e660569d4a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aa82345aea17a0441f895b0e660569d4a}} 
+override void {\bfseries Update} (float dt)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aebbd5ee3386dc7b760f3b36aabae2cf2}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aebbd5ee3386dc7b760f3b36aabae2cf2}} 
+void {\bfseries Add\+Body} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_af27ebb278ce10d7fa8bf393c1938e1c9}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_af27ebb278ce10d7fa8bf393c1938e1c9}} 
+void {\bfseries Remove\+Body} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_acb51cf67d6cdc1ffd8923ee9d98feee3}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_acb51cf67d6cdc1ffd8923ee9d98feee3}} 
+bool {\bfseries Limit\+Angular\+Velocity} = true
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a7deb2f6d7c0af9fef468dbfcf65e668d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a7deb2f6d7c0af9fef468dbfcf65e668d}} 
+bool {\bfseries Limit\+Linear\+Velocity} = true
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a2cf4fa0388d9f258a50e910862735b19}{Max\+Angular\+Velocity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the max angular velocity. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a9d816e25a98e531a798d5dee3cbef6d9}{Max\+Linear\+Velocity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the max linear velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Put a limit on the linear (translation -\/ the movespeed) and angular (rotation) velocity of bodies added to this controller. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aa7edc78925a6f0f82668eb1444a845e4}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_aa7edc78925a6f0f82668eb1444a845e4}} 
+\index{tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}!VelocityLimitController@{VelocityLimitController}}
+\index{VelocityLimitController@{VelocityLimitController}!tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}}
+\doxysubsubsection{\texorpdfstring{VelocityLimitController()}{VelocityLimitController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Velocity\+Limit\+Controller.\+Velocity\+Limit\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}{Velocity\+Limit\+Controller}} class. Sets the max linear velocity to Settings.\+Max\+Translation Sets the max angular velocity to Settings.\+Max\+Rotation 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a657a291f1f80d1ca1925b947e7b87b36}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a657a291f1f80d1ca1925b947e7b87b36}} 
+\index{tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}!VelocityLimitController@{VelocityLimitController}}
+\index{VelocityLimitController@{VelocityLimitController}!tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}}
+\doxysubsubsection{\texorpdfstring{VelocityLimitController()}{VelocityLimitController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Velocity\+Limit\+Controller.\+Velocity\+Limit\+Controller (\begin{DoxyParamCaption}\item[{float}]{max\+Linear\+Velocity,  }\item[{float}]{max\+Angular\+Velocity }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller}{Velocity\+Limit\+Controller}} class. Pass in 0 or float.\+Max\+Value to disable the limit. max\+Angular\+Velocity = 0 will disable the angular velocity limit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Linear\+Velocity} & The max linear velocity.\\
+\hline
+{\em max\+Angular\+Velocity} & The max angular velocity.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a2cf4fa0388d9f258a50e910862735b19}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a2cf4fa0388d9f258a50e910862735b19}} 
+\index{tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}!MaxAngularVelocity@{MaxAngularVelocity}}
+\index{MaxAngularVelocity@{MaxAngularVelocity}!tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}}
+\doxysubsubsection{\texorpdfstring{MaxAngularVelocity}{MaxAngularVelocity}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Velocity\+Limit\+Controller.\+Max\+Angular\+Velocity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the max angular velocity. 
+
+The max angular velocity.\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a9d816e25a98e531a798d5dee3cbef6d9}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller_a9d816e25a98e531a798d5dee3cbef6d9}} 
+\index{tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}!MaxLinearVelocity@{MaxLinearVelocity}}
+\index{MaxLinearVelocity@{MaxLinearVelocity}!tainicom.Aether.Physics2D.Controllers.VelocityLimitController@{tainicom.Aether.Physics2D.Controllers.VelocityLimitController}}
+\doxysubsubsection{\texorpdfstring{MaxLinearVelocity}{MaxLinearVelocity}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Velocity\+Limit\+Controller.\+Max\+Linear\+Velocity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the max linear velocity. 
+
+The max linear velocity.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Controllers/Velocity\+Limit\+Controller.\+cs\end{DoxyCompactItemize}

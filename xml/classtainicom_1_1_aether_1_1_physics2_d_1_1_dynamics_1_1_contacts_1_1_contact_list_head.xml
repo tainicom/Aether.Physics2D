@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Dynamics.Contacts.Contact</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IEnumerable&lt; Contact &gt;</basecompoundref>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1_1_contact_enumerator" prot="private">tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead::ContactEnumerator</innerclass>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1a8b657c8179ff9d0c245b6ceda9ca0ddc" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead.ContactListHead</definition>
+        <argsstring>()</argsstring>
+        <name>ContactListHead</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactListHead.cs" line="14" column="18" bodyfile="Physics2D/Dynamics/Contacts/ContactListHead.cs" bodystart="14" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1afed068032496f64e565fd1d2ad94bd61" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref> &gt; IEnumerable&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref> &gt;.</type>
+        <definition>IEnumerator&lt;Contact&gt; IEnumerable&lt;Contact&gt;. tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactListHead.cs" line="20" column="32" bodyfile="Physics2D/Dynamics/Contacts/ContactListHead.cs" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1a05f350b363c334cd14baa9605aa32fef" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator IEnumerable.</type>
+        <definition>IEnumerator IEnumerable. tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactListHead.cs" line="25" column="32" bodyfile="Physics2D/Dynamics/Contacts/ContactListHead.cs" bodystart="25" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Head of a circular doubly linked list. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+      </node>
+      <node id="3">
+        <label>IEnumerable&lt; Contact &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Manifold</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>_nodeA</edgelabel>
+          <edgelabel>_nodeB</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge"/>
+      </node>
+      <node id="8">
+        <label>IEnumerable&lt; Contact &gt;</label>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/Contacts/ContactListHead.cs" line="12" column="11" bodyfile="Physics2D/Dynamics/Contacts/ContactListHead.cs" bodystart="13" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a0eac1e1dc6b3deee20f36317b170e070" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>_nodeA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a584860d2a7f6c39463aa00bb52587412" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>_nodeB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a2f9f524a7b04c9acd98b70e45395eb13" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>_toi</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1aabf2eca51482adc2f26fe5ed826b3ec7" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>_toiCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a2a4c150251e5ad383c93c9a5dc4dfc55" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>ChildIndexA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a4d499f0655ab78d1caa5b3d73e4e9fb4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>ChildIndexB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1abb9b941950e515c5f5a0e3be6cac0ba1" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Contact</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1a8b657c8179ff9d0c245b6ceda9ca0ddc" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>ContactListHead</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a8457653871d232ccc9b5d68e7d9f2cb1" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Create</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1af95d7e7f7b91a25a6bf208eb267e3dc5" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Destroy</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1acce49bc3e1f312105af41f0ee847da09" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Enabled</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1af6740f320ee089b713ef85783bf0d1a8" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>FilterFlag</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a50c0bcc8c6781029e7cf9f1959167373" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>FixtureA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1ae4a899986c1100c1eab0b885df4520e9" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>FixtureB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a21c47d079a4fdcc6d40211ca5316422d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Friction</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1afed068032496f64e565fd1d2ad94bd61" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>GetEnumerator</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head_1a05f350b363c334cd14baa9605aa32fef" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>GetEnumerator</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a3a35797abc80e5ef65e7b3f91b72edec" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>GetWorldManifold</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1aadf1296da0a7551fab9b86fe85165799" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>IslandFlag</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a0cdd0563434d26e8f530ee01d254d728" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>IsTouching</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a7893f3de5340c30b582b032b783a0196" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Manifold</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a20b223027771b26d94b035739fd61a95" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Next</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a4af03fad546ad6197cc4d04e9941590e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Prev</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a7feb1e66c721cc3dbdef706921db0822" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>ResetFriction</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a235c04ec8e531f16da8e8ade2344cb3d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>ResetRestitution</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1ab08eaf582dc40632deb82b79c8ca3812" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Restitution</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1ab641d8441ca597209cfe89851eb6ee01" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>TangentSpeed</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a1743122c056bff69571f090196dd562c" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>TOIFlag</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_1a4384f4328a301b2cd34953910ee93c72" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactListHead</scope><name>Update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

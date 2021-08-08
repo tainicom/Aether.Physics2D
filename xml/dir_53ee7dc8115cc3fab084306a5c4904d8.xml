@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_53ee7dc8115cc3fab084306a5c4904d8" kind="dir">
+    <compoundname>Physics2D/Dynamics/Joints</compoundname>
+    <innerfile refid="_angle_joint_8cs">AngleJoint.cs</innerfile>
+    <innerfile refid="_distance_joint_8cs">DistanceJoint.cs</innerfile>
+    <innerfile refid="_fixed_mouse_joint_8cs">FixedMouseJoint.cs</innerfile>
+    <innerfile refid="_friction_joint_8cs">FrictionJoint.cs</innerfile>
+    <innerfile refid="_gear_joint_8cs">GearJoint.cs</innerfile>
+    <innerfile refid="_joint_8cs">Joint.cs</innerfile>
+    <innerfile refid="_joint_factory_8cs">JointFactory.cs</innerfile>
+    <innerfile refid="_motor_joint_8cs">MotorJoint.cs</innerfile>
+    <innerfile refid="_prismatic_joint_8cs">PrismaticJoint.cs</innerfile>
+    <innerfile refid="_pulley_joint_8cs">PulleyJoint.cs</innerfile>
+    <innerfile refid="_revolute_joint_8cs">RevoluteJoint.cs</innerfile>
+    <innerfile refid="_rope_joint_8cs">RopeJoint.cs</innerfile>
+    <innerfile refid="_weld_joint_8cs">WeldJoint.cs</innerfile>
+    <innerfile refid="_wheel_joint_8cs">WheelJoint.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/Joints/"/>
+  </compounddef>
+</doxygen>

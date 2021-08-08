@@ -1,0 +1,392 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller}\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a6d090fd622c0b2c60b743b56248faa9f}{Decay\+Modes}} \{ \newline
+{\bfseries None}
+, {\bfseries Step}
+, {\bfseries Linear}
+, {\bfseries Inverse\+Square}
+, \newline
+{\bfseries Curve}
+ \}
+\begin{DoxyCompactList}\small\item\em Modes for Decay. Actual Decay must be implemented in inheriting classes \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a05607c36c5199aa31dcec667e997ab25}{Force\+Types}} \{ {\bfseries Point}
+, {\bfseries Line}
+, {\bfseries Area}
+ \}
+\begin{DoxyCompactList}\small\item\em Forcetypes are used in the decay math to properly get the distance. They are also used to draw a representation in Debug\+View \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}{Timing\+Modes}} \{ {\bfseries Switched}
+, {\bfseries Triggered}
+, {\bfseries Curve}
+ \}
+\begin{DoxyCompactList}\small\item\em Timing Modes Switched\+: Standard on/off mode using the baseclass enabled property Triggered\+: When the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aff3ed1786c39dd0f51403db6f0314c8c}{Trigger()}} method is called the force is active for a specified Impulse Length Curve\+: Still to be defined. The basic idea is having a Trigger combined with a curve for the strength \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a758e535e6aee95ca50e8af449deacd78}{Abstract\+Force\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aa29a7ca3df154a7ceeb2f60d308a0085}{Abstract\+Force\+Controller}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}{Timing\+Modes}} mode)
+\begin{DoxyCompactList}\small\item\em Overloaded Contstructor with supplying Timing Mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aff3ed1786c39dd0f51403db6f0314c8c}{Trigger}} ()
+\begin{DoxyCompactList}\small\item\em Triggers the trigger modes (Trigger and Curve) \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a99a3709db57029d6b84a91917d14cf95}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Inherited from \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller}{Controller}} Depending on the Timing\+Mode perform timing logic and call \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_acec5828ff517ab7b3f448452240ff16d}{Apply\+Force()}} \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_acec5828ff517ab7b3f448452240ff16d}{Apply\+Force}} (float dt, float strength)
+\begin{DoxyCompactList}\small\item\em Apply the force supplying strength (wich is modified in \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a99a3709db57029d6b84a91917d14cf95}{Update()}} according to the Timing\+Mode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Curve \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a51712095f4b9bcf1c5a1a9f1412535ff}{Decay\+Curve}}
+\begin{DoxyCompactList}\small\item\em Curve to be used for Decay in Curve mode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a05607c36c5199aa31dcec667e997ab25}{Force\+Types}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_af3a2e1aff1943503d55e9daaf8671f95}{Force\+Type}}
+\begin{DoxyCompactList}\small\item\em The Forcetype of the instance \end{DoxyCompactList}\item 
+Curve \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a888a7d19d2870b6b0c228645a5b35624}{Strength\+Curve}}
+\begin{DoxyCompactList}\small\item\em Curve used by Curve Mode as an animated multiplier for the force strength. Only positions between 0 and 1 are considered as that range is stretched to have Impulse\+Length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a5a359b1279e26e5fe5c4a97154bbb515}{Get\+Decay\+Multiplier}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} body)
+\begin{DoxyCompactList}\small\item\em Calculate the Decay for a given body. Meant to ease force development and stick to the DRY principle and provide unified and predictable decay math. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Random \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a376496cb5a6694f0fddde3ac564a6430}{Randomize}}
+\begin{DoxyCompactList}\small\item\em Provided for reuse to provide Variation functionality in inheriting classes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a606270f93d8dffa695ff2c99e5d96a95}{Strength}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Global Strength of the force to be applied \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a2061c1bc7a96e98ac4dcba59f2924eb8}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Position of the Force. Can be ignored (left at (0,0) for forces that are not position-\/dependent \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a131329cb0179d30ee9cc67eaa1a618bc}{Maximum\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Maximum speed of the bodies. Bodies that are travelling faster are supposed to be ignored \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a7992d643e4056057a97175512f83b3c6}{Maximum\+Force}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Maximum Force to be applied. As opposed to Maximum Speed this is independent of the velocity of the affected body \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}{Timing\+Modes}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_ad4a45ff7e9eb1acabe6f2ba6864701d0}{Timing\+Mode}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Timing Mode of the force instance \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_af29f4694840d9479b1c85f064292f42f}{Impulse\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Time of the current impulse. Incremented in update till Impulse\+Length is reached \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a37fc6ca61c176299d892cea393da349f}{Impulse\+Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Length of a triggered impulse. Used in both Triggered and Curve Mode \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a98f03bda557ae26c4e599986fa293f71}{Triggered}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicating if we are currently during an Impulse (Triggered and Curve Mode) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a972a1f2cd488aaf647fb2431d9934f90}{Variation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Variation of the force applied to each body affected !! Must be used in inheriting classes properly !! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a6d090fd622c0b2c60b743b56248faa9f}{Decay\+Modes}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a801529e1b98d731e9ed0240c89a66212}{Decay\+Mode}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em See Decay\+Modes \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a9f8830751c1a0e7f6086cab96898d5db}{Decay\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Start of the distance based Decay. To set a non decaying area \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a157fb8f0464b43ef264bef9d38a192ec}{Decay\+End}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Maximum distance a force should be applied \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a6d090fd622c0b2c60b743b56248faa9f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a6d090fd622c0b2c60b743b56248faa9f}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!DecayModes@{DecayModes}}
+\index{DecayModes@{DecayModes}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{DecayModes}{DecayModes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a6d090fd622c0b2c60b743b56248faa9f}{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Decay\+Modes}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Modes for Decay. Actual Decay must be implemented in inheriting classes 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a05607c36c5199aa31dcec667e997ab25}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a05607c36c5199aa31dcec667e997ab25}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!ForceTypes@{ForceTypes}}
+\index{ForceTypes@{ForceTypes}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{ForceTypes}{ForceTypes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a05607c36c5199aa31dcec667e997ab25}{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Force\+Types}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Forcetypes are used in the decay math to properly get the distance. They are also used to draw a representation in Debug\+View 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!TimingModes@{TimingModes}}
+\index{TimingModes@{TimingModes}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{TimingModes}{TimingModes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Timing\+Modes}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Timing Modes Switched\+: Standard on/off mode using the baseclass enabled property Triggered\+: When the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aff3ed1786c39dd0f51403db6f0314c8c}{Trigger()}} method is called the force is active for a specified Impulse Length Curve\+: Still to be defined. The basic idea is having a Trigger combined with a curve for the strength 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a758e535e6aee95ca50e8af449deacd78}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a758e535e6aee95ca50e8af449deacd78}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!AbstractForceController@{AbstractForceController}}
+\index{AbstractForceController@{AbstractForceController}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{AbstractForceController()}{AbstractForceController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Abstract\+Force\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aa29a7ca3df154a7ceeb2f60d308a0085}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aa29a7ca3df154a7ceeb2f60d308a0085}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!AbstractForceController@{AbstractForceController}}
+\index{AbstractForceController@{AbstractForceController}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{AbstractForceController()}{AbstractForceController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Abstract\+Force\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}{Timing\+Modes}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Overloaded Contstructor with supplying Timing Mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_acec5828ff517ab7b3f448452240ff16d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_acec5828ff517ab7b3f448452240ff16d}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!ApplyForce@{ApplyForce}}
+\index{ApplyForce@{ApplyForce}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{ApplyForce()}{ApplyForce()}}
+{\footnotesize\ttfamily abstract void tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Apply\+Force (\begin{DoxyParamCaption}\item[{float}]{dt,  }\item[{float}]{strength }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply the force supplying strength (wich is modified in \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a99a3709db57029d6b84a91917d14cf95}{Update()}} according to the Timing\+Mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+{\em strength} & The strength\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_simple_wind_force_a9b74870dbf87532bcb573455347f5cbe}{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Simple\+Wind\+Force}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a5a359b1279e26e5fe5c4a97154bbb515}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a5a359b1279e26e5fe5c4a97154bbb515}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!GetDecayMultiplier@{GetDecayMultiplier}}
+\index{GetDecayMultiplier@{GetDecayMultiplier}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{GetDecayMultiplier()}{GetDecayMultiplier()}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Get\+Decay\+Multiplier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate the Decay for a given body. Meant to ease force development and stick to the DRY principle and provide unified and predictable decay math. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & The body to calculate decay for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A multiplier to multiply the force with to add decay support in inheriting classes
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aff3ed1786c39dd0f51403db6f0314c8c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aff3ed1786c39dd0f51403db6f0314c8c}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Trigger@{Trigger}}
+\index{Trigger@{Trigger}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Trigger()}{Trigger()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Trigger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Triggers the trigger modes (Trigger and Curve) 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a99a3709db57029d6b84a91917d14cf95}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a99a3709db57029d6b84a91917d14cf95}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Update@{Update}}
+\index{Update@{Update}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily override void tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Update (\begin{DoxyParamCaption}\item[{float}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inherited from \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller}{Controller}} Depending on the Timing\+Mode perform timing logic and call \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_acec5828ff517ab7b3f448452240ff16d}{Apply\+Force()}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller}{tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Controller}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a51712095f4b9bcf1c5a1a9f1412535ff}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a51712095f4b9bcf1c5a1a9f1412535ff}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!DecayCurve@{DecayCurve}}
+\index{DecayCurve@{DecayCurve}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{DecayCurve}{DecayCurve}}
+{\footnotesize\ttfamily Curve tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Decay\+Curve}
+
+
+
+Curve to be used for Decay in Curve mode 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_af3a2e1aff1943503d55e9daaf8671f95}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_af3a2e1aff1943503d55e9daaf8671f95}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!ForceType@{ForceType}}
+\index{ForceType@{ForceType}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{ForceType}{ForceType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a05607c36c5199aa31dcec667e997ab25}{Force\+Types}} tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Force\+Type}
+
+
+
+The Forcetype of the instance 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a376496cb5a6694f0fddde3ac564a6430}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a376496cb5a6694f0fddde3ac564a6430}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Randomize@{Randomize}}
+\index{Randomize@{Randomize}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Randomize}{Randomize}}
+{\footnotesize\ttfamily Random tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Randomize\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Provided for reuse to provide Variation functionality in inheriting classes 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a888a7d19d2870b6b0c228645a5b35624}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a888a7d19d2870b6b0c228645a5b35624}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!StrengthCurve@{StrengthCurve}}
+\index{StrengthCurve@{StrengthCurve}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{StrengthCurve}{StrengthCurve}}
+{\footnotesize\ttfamily Curve tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Strength\+Curve}
+
+
+
+Curve used by Curve Mode as an animated multiplier for the force strength. Only positions between 0 and 1 are considered as that range is stretched to have Impulse\+Length. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a157fb8f0464b43ef264bef9d38a192ec}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a157fb8f0464b43ef264bef9d38a192ec}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!DecayEnd@{DecayEnd}}
+\index{DecayEnd@{DecayEnd}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{DecayEnd}{DecayEnd}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Decay\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Maximum distance a force should be applied 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a801529e1b98d731e9ed0240c89a66212}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a801529e1b98d731e9ed0240c89a66212}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!DecayMode@{DecayMode}}
+\index{DecayMode@{DecayMode}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{DecayMode}{DecayMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a6d090fd622c0b2c60b743b56248faa9f}{Decay\+Modes}} tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Decay\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+See Decay\+Modes 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a9f8830751c1a0e7f6086cab96898d5db}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a9f8830751c1a0e7f6086cab96898d5db}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!DecayStart@{DecayStart}}
+\index{DecayStart@{DecayStart}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{DecayStart}{DecayStart}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Decay\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Start of the distance based Decay. To set a non decaying area 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a37fc6ca61c176299d892cea393da349f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a37fc6ca61c176299d892cea393da349f}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!ImpulseLength@{ImpulseLength}}
+\index{ImpulseLength@{ImpulseLength}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{ImpulseLength}{ImpulseLength}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Impulse\+Length\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Length of a triggered impulse. Used in both Triggered and Curve Mode 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_af29f4694840d9479b1c85f064292f42f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_af29f4694840d9479b1c85f064292f42f}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!ImpulseTime@{ImpulseTime}}
+\index{ImpulseTime@{ImpulseTime}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{ImpulseTime}{ImpulseTime}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Impulse\+Time\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Time of the current impulse. Incremented in update till Impulse\+Length is reached 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a7992d643e4056057a97175512f83b3c6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a7992d643e4056057a97175512f83b3c6}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!MaximumForce@{MaximumForce}}
+\index{MaximumForce@{MaximumForce}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{MaximumForce}{MaximumForce}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Maximum\+Force\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Maximum Force to be applied. As opposed to Maximum Speed this is independent of the velocity of the affected body 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a131329cb0179d30ee9cc67eaa1a618bc}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a131329cb0179d30ee9cc67eaa1a618bc}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!MaximumSpeed@{MaximumSpeed}}
+\index{MaximumSpeed@{MaximumSpeed}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{MaximumSpeed}{MaximumSpeed}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Maximum\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Maximum speed of the bodies. Bodies that are travelling faster are supposed to be ignored 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a2061c1bc7a96e98ac4dcba59f2924eb8}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a2061c1bc7a96e98ac4dcba59f2924eb8}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Position@{Position}}
+\index{Position@{Position}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily Vector2 tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Position of the Force. Can be ignored (left at (0,0) for forces that are not position-\/dependent 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a606270f93d8dffa695ff2c99e5d96a95}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a606270f93d8dffa695ff2c99e5d96a95}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Strength@{Strength}}
+\index{Strength@{Strength}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Strength}{Strength}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Strength\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Global Strength of the force to be applied 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_ad4a45ff7e9eb1acabe6f2ba6864701d0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_ad4a45ff7e9eb1acabe6f2ba6864701d0}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!TimingMode@{TimingMode}}
+\index{TimingMode@{TimingMode}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{TimingMode}{TimingMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_aded11d253622aac130c1f1a88ea61cac}{Timing\+Modes}} tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Timing\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Timing Mode of the force instance 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a98f03bda557ae26c4e599986fa293f71}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a98f03bda557ae26c4e599986fa293f71}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Triggered@{Triggered}}
+\index{Triggered@{Triggered}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Triggered}{Triggered}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Triggered\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Indicating if we are currently during an Impulse (Triggered and Curve Mode) 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a972a1f2cd488aaf647fb2431d9934f90}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller_a972a1f2cd488aaf647fb2431d9934f90}} 
+\index{tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}!Variation@{Variation}}
+\index{Variation@{Variation}!tainicom.Aether.Physics2D.Controllers.AbstractForceController@{tainicom.Aether.Physics2D.Controllers.AbstractForceController}}
+\doxysubsubsection{\texorpdfstring{Variation}{Variation}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Controllers.\+Abstract\+Force\+Controller.\+Variation\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Variation of the force applied to each body affected !! Must be used in inheriting classes properly !! 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Controllers/Abstract\+Force\+Controller.\+cs\end{DoxyCompactItemize}

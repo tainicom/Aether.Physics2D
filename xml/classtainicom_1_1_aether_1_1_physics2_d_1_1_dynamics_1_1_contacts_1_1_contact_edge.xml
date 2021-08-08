@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactEdge</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a8a93ff37a7a7cc77cf15de842dc7b4a5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact" kindref="compound">Contact</ref></type>
+        <definition>Contact tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge.Contact</definition>
+        <argsstring></argsstring>
+        <name>Contact</name>
+        <briefdescription>
+<para>The contact </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/Contact.cs" line="53" column="24" bodyfile="Physics2D/Dynamics/Contacts/Contact.cs" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a9dae249f98fe74adac0ec2e3e9fcc0a3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+        <definition>Body tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge.Other</definition>
+        <argsstring></argsstring>
+        <name>Other</name>
+        <briefdescription>
+<para>Provides quick access to the other body attached. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/Contact.cs" line="58" column="21" bodyfile="Physics2D/Dynamics/Contacts/Contact.cs" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a9b1c3bf34c2e474aed504d9a8db26800" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge" kindref="compound">ContactEdge</ref></type>
+        <definition>ContactEdge tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge.Next</definition>
+        <argsstring></argsstring>
+        <name>Next</name>
+        <briefdescription>
+<para>The next contact edge in the body&apos;s contact list </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/Contact.cs" line="63" column="28" bodyfile="Physics2D/Dynamics/Contacts/Contact.cs" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a78d7c19a4f37cf5dd55b15153e7c58d3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge" kindref="compound">ContactEdge</ref></type>
+        <definition>ContactEdge tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge.Prev</definition>
+        <argsstring></argsstring>
+        <name>Prev</name>
+        <briefdescription>
+<para>The previous contact edge in the body&apos;s contact list </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/Contact.cs" line="68" column="28" bodyfile="Physics2D/Dynamics/Contacts/Contact.cs" bodystart="68" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A contact edge is used to connect bodies and contacts together in a contact graph where each body is a node and each contact is an edge. A contact edge belongs to a doubly linked list maintained in each attached body. Each contact has two contact nodes, one for each attached body. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/Contacts/Contact.cs" line="48" column="18" bodyfile="Physics2D/Dynamics/Contacts/Contact.cs" bodystart="49" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a8a93ff37a7a7cc77cf15de842dc7b4a5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactEdge</scope><name>Contact</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a9b1c3bf34c2e474aed504d9a8db26800" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactEdge</scope><name>Next</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a9dae249f98fe74adac0ec2e3e9fcc0a3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactEdge</scope><name>Other</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge_1a78d7c19a4f37cf5dd55b15153e7c58d3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactEdge</scope><name>Prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1_1_position_solver_manifold" kind="class" language="C#" prot="private">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver::PositionSolverManifold</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1_1_position_solver_manifold_1a5ea545de762a0fc6486d56c222656199" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Dynamics.Contacts.ContactSolver.PositionSolverManifold.Initialize</definition>
+        <argsstring>(ContactPositionConstraint pc, ref Transform xfA, ref Transform xfB, int index, out Vector2 normal, out Vector2 point, out float separation)</argsstring>
+        <name>Initialize</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_position_constraint" kindref="compound">ContactPositionConstraint</ref></type>
+          <declname>pc</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" kindref="compound">Transform</ref></type>
+          <declname>xfA</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" kindref="compound">Transform</ref></type>
+          <declname>xfB</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>normal</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>point</declname>
+        </param>
+        <param>
+          <type>out float</type>
+          <declname>separation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="1112" column="32" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="1112" bodyend="1164"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/Contacts/ContactSolver.cs" line="1110" column="24" bodyfile="Physics2D/Dynamics/Contacts/ContactSolver.cs" bodystart="1111" bodyend="1165"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_solver_1_1_position_solver_manifold_1a5ea545de762a0fc6486d56c222656199" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Contacts::ContactSolver::PositionSolverManifold</scope><name>Initialize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

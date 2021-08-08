@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Collision.Shapes.Shape</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1abfdd75f730935c279eedd654a6487cda" prot="package" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.Shapes.CircleShape._position</definition>
+        <argsstring></argsstring>
+        <name>_position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="42" column="26" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a2debb659337b734bfbcaf06ae60d0501" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>override int</type>
+        <definition>override int tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.ChildCount</definition>
+        <argsstring></argsstring>
+        <name>ChildCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="68" column="29" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1ad935d07b67b3e94926fd4da31921000c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.Position</definition>
+        <argsstring></argsstring>
+        <name>Position</name>
+        <briefdescription>
+<para>Get or set the position of the circle </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="76" column="24" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="77" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a16ddc7c13ed62e62ebb453005b8bd8a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.CircleShape</definition>
+        <argsstring>(float radius, float density)</argsstring>
+        <name>CircleShape</name>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>density</declname>
+        </param>
+        <briefdescription>
+<para>Create a new circle with the desired radius and density. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The radius of the circle.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>density</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The density of the circle.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="49" column="16" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="49" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1af1402b6fd96364da447d3454f90d1117" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.TestPoint</definition>
+        <argsstring>(ref Transform transform, ref Vector2 point)</argsstring>
+        <name>TestPoint</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a4898b0a304aacdd16ec6e875ae5de249">TestPoint</reimplements>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" kindref="compound">Transform</ref></type>
+          <declname>transform</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>Test a point for containment in this shape. Note: This only works for convex shapes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>transform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The shape world transform.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point in world coordinates.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the point is inside the shape</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="86" column="30" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="86" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a17958da9b76a51d85ed1507b0c355823" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override bool</type>
+        <definition>override bool tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.RayCast</definition>
+        <argsstring>(out RayCastOutput output, ref RayCastInput input, ref Transform transform, int childIndex)</argsstring>
+        <name>RayCast</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a0d0442cf6e5e47488b5151e46bffdbc4">RayCast</reimplements>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_output" kindref="compound">RayCastOutput</ref></type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref></type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" kindref="compound">Transform</ref></type>
+          <declname>transform</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>childIndex</declname>
+        </param>
+        <briefdescription>
+<para>Cast a ray against a child shape. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ray-cast results.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ray-cast input parameters.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The transform to be applied to the shape.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>childIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child shape index.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the ray-cast hits the shape</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="93" column="30" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="93" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a3dbcf9e292cd642813af627269e3c8fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.ComputeAABB</definition>
+        <argsstring>(out AABB aabb, ref Transform transform, int childIndex)</argsstring>
+        <name>ComputeAABB</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1aba253f85e4da9fa220a0dd99b1d8ee87">ComputeAABB</reimplements>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>aabb</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" kindref="compound">Transform</ref></type>
+          <declname>transform</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>childIndex</declname>
+        </param>
+        <briefdescription>
+<para>Given a transform, compute the associated axis aligned bounding box for a child shape. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aabb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The aabb results.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The world transform of the shape.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>childIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The child shape index.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="136" column="30" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="136" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a92afd434bc08b6e3511c1584f950cb84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override float</type>
+        <definition>override float tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.ComputeSubmergedArea</definition>
+        <argsstring>(ref Vector2 normal, float offset, ref Transform xf, out Vector2 sc)</argsstring>
+        <name>ComputeSubmergedArea</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a83295af89a1298b43d7e9c4c6f0e06e1">ComputeSubmergedArea</reimplements>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>normal</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform" kindref="compound">Transform</ref></type>
+          <declname>xf</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>sc</declname>
+        </param>
+        <briefdescription>
+<para>Used for the buoyancy controller </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="161" column="31" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="161" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1ac57fce6722b58685069ee0836befd52f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.CompareTo</definition>
+        <argsstring>(CircleShape shape)</argsstring>
+        <name>CompareTo</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape" kindref="compound">CircleShape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <briefdescription>
+<para>Compare the circle to another circle </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shape</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The other circle</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if the two circles are the same size and have the same position</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="195" column="21" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a4278c2d8e1fd089c28a7e07920595dbb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape" kindref="compound">Shape</ref></type>
+        <definition>override Shape tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.Clone</definition>
+        <argsstring>()</argsstring>
+        <name>Clone</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a21f97ac7d3fbb104aad7d7aaffb807b8">Clone</reimplements>
+        <briefdescription>
+<para>Clone the concrete shape </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A clone of the shape</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="200" column="31" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="200" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a1aac0b30f3d95a75715d38e0473c418d" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.CircleShape</definition>
+        <argsstring>()</argsstring>
+        <name>CircleShape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="60" column="18" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="60" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a09ca26a9c6858b448ebcc6c7b9f6497e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override sealed void</type>
+        <definition>override sealed void tainicom.Aether.Physics2D.Collision.Shapes.CircleShape.ComputeProperties</definition>
+        <argsstring>()</argsstring>
+        <name>ComputeProperties</name>
+        <reimplements refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1aa39c4ce412e776f5f27fed7542bde00a">ComputeProperties</reimplements>
+        <briefdescription>
+<para>Compute the mass properties of this shape using its dimensions and density. The inertia tensor is computed about the local origin, not the centroid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="150" column="40" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="150" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A circle shape. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.Shapes.CircleShape</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Shape</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.Shapes.CircleShape</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_position</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; MassData &gt;</label>
+      </node>
+      <node id="2">
+        <label>Shape</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>MassData</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Collision.Shapes.MassData</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_mass_data"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Shapes/CircleShape.cs" line="40" column="11" bodyfile="Physics2D/Collision/Shapes/CircleShape.cs" bodystart="41" bodyend="211"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a749177478fd5dad5077fbc60e41d95e2" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>_2radius</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1ac7c6eca1b040e0ba1c4e40f83cfb01ea" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>_density</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1abfdd75f730935c279eedd654a6487cda" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>_position</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a13b7dc006ffd3d4af51cc52265c0e9ee" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>_radius</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a2debb659337b734bfbcaf06ae60d0501" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>ChildCount</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a16ddc7c13ed62e62ebb453005b8bd8a1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>CircleShape</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a1aac0b30f3d95a75715d38e0473c418d" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>CircleShape</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a4278c2d8e1fd089c28a7e07920595dbb" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>Clone</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1ac57fce6722b58685069ee0836befd52f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>CompareTo</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a3dbcf9e292cd642813af627269e3c8fb" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>ComputeAABB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a09ca26a9c6858b448ebcc6c7b9f6497e" prot="protected" virt="virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>ComputeProperties</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a92afd434bc08b6e3511c1584f950cb84" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>ComputeSubmergedArea</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a614f1b5a2bc528686bbc14f8a941ec8e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>Density</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a42902f0e0b0412455913d6a456455876" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>MassData</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1ad935d07b67b3e94926fd4da31921000c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>Position</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a9040394cf542432b04d8ec2993ded2c2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>Radius</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1a17958da9b76a51d85ed1507b0c355823" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>RayCast</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1a601cafb41a8763154cfae4a2616b1bba" prot="protected" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>Shape</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_1ab075176597a7a613be7c1c24e2c6070f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>ShapeType</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape_1af1402b6fd96364da447d3454f90d1117" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Collision::Shapes::CircleShape</scope><name>TestPoint</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

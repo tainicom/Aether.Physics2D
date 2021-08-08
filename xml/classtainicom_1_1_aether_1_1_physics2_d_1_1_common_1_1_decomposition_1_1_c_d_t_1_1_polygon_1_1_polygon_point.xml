@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.Decomposition.CDT.TriangulationPoint</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point_1a060696307965f6c6e5d6b4f9352bece1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PolygonPoint</type>
+        <definition>PolygonPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.PolygonPoint.Next</definition>
+        <argsstring></argsstring>
+        <name>Next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" line="50" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="property" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point_1a7a24dbc8f495a948cb8c0c1c1f49b4c4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>PolygonPoint</type>
+        <definition>PolygonPoint tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.PolygonPoint.Previous</definition>
+        <argsstring></argsstring>
+        <name>Previous</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" line="51" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" bodystart="51" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point_1a5704289cb19258df811cba2cf227b92c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.PolygonPoint.PolygonPoint</definition>
+        <argsstring>(double x, double y)</argsstring>
+        <name>PolygonPoint</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" line="46" column="16" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" bodystart="46" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>TriangulationPoint</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.PolygonPoint</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>TriangulationPoint</label>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Polygon.PolygonPoint</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" line="44" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Polygon/PolygonPoint.cs" bodystart="45" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1a19b903aa78d9d0c80b50ffb9b1d15501" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>AddEdge</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1a82723c72bc82b2aa96028e74b723306e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>Edges</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1a233ff1f9151a5fc0fdf539e4bd2c8e6a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>HasEdges</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point_1a060696307965f6c6e5d6b4f9352bece1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>Next</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point_1a5704289cb19258df811cba2cf227b92c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>PolygonPoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_polygon_1_1_polygon_point_1a7a24dbc8f495a948cb8c0c1c1f49b4c4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>Previous</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1a89a5496cda6a674e4c33e519178294be" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>ToString</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1a45597297b26b588b66ad11bf19b5b242" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>TriangulationPoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1ad0b0a6060bc76f0fa4a9bee97d5c4a40" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>X</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1a7a034b4130d1d465f434a45c954082e1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>Xf</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_triangulation_point_1aafee42dc8f90776cf8272444361be177" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Polygon::PolygonPoint</scope><name>Yf</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

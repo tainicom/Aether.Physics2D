@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_delaunay_triangle" prot="package">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::DelaunayTriangle</innerclass>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_delaunay_1_1_sweep">tainicom::Aether::Physics2D::Common::Decomposition::CDT::Delaunay::Sweep</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/CDT/Delaunay/DelaunayTriangle.cs" line="52" column="1"/>
+  </compounddef>
+</doxygen>

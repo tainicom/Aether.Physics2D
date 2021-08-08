@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_43dce756a2a5bbdec80603087f8e5e95" kind="dir">
+    <compoundname>Physics2D/Dynamics/Contacts</compoundname>
+    <innerfile refid="_contact_8cs">Contact.cs</innerfile>
+    <innerfile refid="_contact_list_head_8cs">ContactListHead.cs</innerfile>
+    <innerfile refid="_contact_solver_8cs">ContactSolver.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Dynamics/Contacts/"/>
+  </compounddef>
+</doxygen>

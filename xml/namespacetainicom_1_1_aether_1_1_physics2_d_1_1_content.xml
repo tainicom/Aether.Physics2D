@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_content" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Content</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_fixture_template" prot="public">tainicom::Aether::Physics2D::Content::FixtureTemplate</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_template" prot="public">tainicom::Aether::Physics2D::Content::BodyTemplate</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_container" prot="public">tainicom::Aether::Physics2D::Content::BodyContainer</innerclass>
+    <innerclass refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon" prot="public">tainicom::Aether::Physics2D::Content::Polygon</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_container" prot="public">tainicom::Aether::Physics2D::Content::PolygonContainer</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_body_container_reader" prot="public">tainicom::Aether::Physics2D::Content::BodyContainerReader</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_content_1_1_polygon_container_reader" prot="public">tainicom::Aether::Physics2D::Content::PolygonContainerReader</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Content/BodyContainer.cs" line="10" column="1"/>
+  </compounddef>
+</doxygen>

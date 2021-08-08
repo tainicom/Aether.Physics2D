@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::SeparationFunction</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a38b9083f3dfe069f233698e7960d1932" prot="private" static="yes" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.SeparationFunction._axis</definition>
+        <argsstring></argsstring>
+        <name>_axis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="74" column="32" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a77d8ebbbd1294138069dc329c3834332" prot="private" static="yes" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.SeparationFunction._localPoint</definition>
+        <argsstring></argsstring>
+        <name>_localPoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="76" column="32" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a7abced10dffb87e682ce8a6f918ace0a" prot="private" static="yes" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy" kindref="compound">DistanceProxy</ref></type>
+        <definition>DistanceProxy tainicom.Aether.Physics2D.Collision.SeparationFunction._proxyA</definition>
+        <argsstring></argsstring>
+        <name>_proxyA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="78" column="38" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a31ccae3e02a674fc3ad1065fd4626479" prot="private" static="yes" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy" kindref="compound">DistanceProxy</ref></type>
+        <definition>DistanceProxy tainicom.Aether.Physics2D.Collision.SeparationFunction._proxyB</definition>
+        <argsstring></argsstring>
+        <name>_proxyB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="80" column="38" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a68035301d3da2d220ec016d793bfc8c9" prot="private" static="yes" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep" kindref="compound">Sweep</ref></type>
+        <definition>Sweep tainicom.Aether.Physics2D.Collision.SeparationFunction._sweepA</definition>
+        <argsstring></argsstring>
+        <name>_sweepA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="82" column="30" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a8eabc6c6d825b59a8ba83c005a3ef40c" prot="private" static="yes" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep" kindref="compound">Sweep</ref></type>
+        <definition>Sweep tainicom.Aether.Physics2D.Collision.SeparationFunction._sweepB</definition>
+        <argsstring></argsstring>
+        <name>_sweepB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="82" column="38" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a2ff2cc3710ff9b6a4633988cb79cd97a" prot="private" static="yes" mutable="no">
+        <type>SeparationFunctionType</type>
+        <definition>SeparationFunctionType tainicom.Aether.Physics2D.Collision.SeparationFunction._type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="84" column="47" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1aa36867baf3ff86f65bd1f0e1b31cb8ca" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void tainicom.Aether.Physics2D.Collision.SeparationFunction.Set</definition>
+        <argsstring>(ref SimplexCache cache, ref DistanceProxy proxyA, ref Sweep sweepA, ref DistanceProxy proxyB, ref Sweep sweepB, float t1)</argsstring>
+        <name>Set</name>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_simplex_cache" kindref="compound">SimplexCache</ref></type>
+          <declname>cache</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy" kindref="compound">DistanceProxy</ref></type>
+          <declname>proxyA</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep" kindref="compound">Sweep</ref></type>
+          <declname>sweepA</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy" kindref="compound">DistanceProxy</ref></type>
+          <declname>proxyB</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep" kindref="compound">Sweep</ref></type>
+          <declname>sweepB</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="86" column="28" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="86" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1abba537e536f097864ee51ad4c6e18ad1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Collision.SeparationFunction.FindMinSeparation</definition>
+        <argsstring>(out int indexA, out int indexB, float t)</argsstring>
+        <name>FindMinSeparation</name>
+        <param>
+          <type>out int</type>
+          <declname>indexA</declname>
+        </param>
+        <param>
+          <type>out int</type>
+          <declname>indexB</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="161" column="29" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="161" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1aab1d0969d533b6a8ee1d4e949bb2b42b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>static float tainicom.Aether.Physics2D.Collision.SeparationFunction.Evaluate</definition>
+        <argsstring>(int indexA, int indexB, float t)</argsstring>
+        <name>Evaluate</name>
+        <param>
+          <type>int</type>
+          <declname>indexA</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>indexB</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/TimeOfImpact.cs" line="229" column="29" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="229" bodyend="274"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Collision/TimeOfImpact.cs" line="71" column="19" bodyfile="Physics2D/Collision/TimeOfImpact.cs" bodystart="72" bodyend="275"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a38b9083f3dfe069f233698e7960d1932" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_axis</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a77d8ebbbd1294138069dc329c3834332" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_localPoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a7abced10dffb87e682ce8a6f918ace0a" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_proxyA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a31ccae3e02a674fc3ad1065fd4626479" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_proxyB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a68035301d3da2d220ec016d793bfc8c9" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_sweepA</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a8eabc6c6d825b59a8ba83c005a3ef40c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_sweepB</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1a2ff2cc3710ff9b6a4633988cb79cd97a" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>_type</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1aab1d0969d533b6a8ee1d4e949bb2b42b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>Evaluate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1abba537e536f097864ee51ad4c6e18ad1" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>FindMinSeparation</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_separation_function_1aa36867baf3ff86f65bd1f0e1b31cb8ca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::SeparationFunction</scope><name>Set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

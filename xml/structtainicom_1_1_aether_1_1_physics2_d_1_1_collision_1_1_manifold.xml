@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::Manifold</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a086a0d8db6795ac2b52b429f0c933ba8" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.Manifold.LocalNormal</definition>
+        <argsstring></argsstring>
+        <name>LocalNormal</name>
+        <briefdescription>
+<para>Not use for Type.SeparationFunction.Points </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="159" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a3f80990aa0f2042cfb841a8fd4266a31" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.Manifold.LocalPoint</definition>
+        <argsstring></argsstring>
+        <name>LocalPoint</name>
+        <briefdescription>
+<para>Usage depends on manifold type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="164" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a77b3efe280262ee0fcc378a4c11fed1b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.Manifold.PointCount</definition>
+        <argsstring></argsstring>
+        <name>PointCount</name>
+        <briefdescription>
+<para>The number of manifold points </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="169" column="20" bodyfile="Physics2D/Collision/Collision.cs" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a8822522b2921ea93c72ad0ae53cc7efd" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2" kindref="compound">FixedArray2</ref>&lt; <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point" kindref="compound">ManifoldPoint</ref> &gt;</type>
+        <definition>FixedArray2&lt;ManifoldPoint&gt; tainicom.Aether.Physics2D.Collision.Manifold.Points</definition>
+        <argsstring></argsstring>
+        <name>Points</name>
+        <briefdescription>
+<para>The points of contact </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="174" column="28" bodyfile="Physics2D/Collision/Collision.cs" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1ad49518c2018cf726a2f12dce1457a8ee" prot="public" static="no" mutable="no">
+        <type>ManifoldType</type>
+        <definition>ManifoldType tainicom.Aether.Physics2D.Collision.Manifold.Type</definition>
+        <argsstring></argsstring>
+        <name>Type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="176" column="29" bodyfile="Physics2D/Collision/Collision.cs" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A manifold for two touching convex <ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes" kindref="compound">Shapes</ref>. Box2D supports multiple types of contact: </para>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Clip point versus plane with radius</para>
+</listitem><listitem><para>Point versus point with radius (circles) The local point usage depends on the manifold type:</para>
+</listitem><listitem><para>ShapeType.Circles: the local center of circleA</para>
+</listitem><listitem><para>SeparationFunction.FaceA: the center of faceA</para>
+</listitem><listitem><para>SeparationFunction.FaceB: the center of faceB Similarly the local normal usage:</para>
+</listitem><listitem><para>ShapeType.Circles: not used</para>
+</listitem><listitem><para>SeparationFunction.FaceA: the normal on polygonA</para>
+</listitem><listitem><para>SeparationFunction.FaceB: the normal on polygonB We store contacts in this way so that position correction can account for movement, which is critical for continuous physics. All contact scenarios must be expressed in one of these types. This structure is stored across time steps, so we keep it small.</para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Collision.cs" line="154" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="155" bodyend="177"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a086a0d8db6795ac2b52b429f0c933ba8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Manifold</scope><name>LocalNormal</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a3f80990aa0f2042cfb841a8fd4266a31" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Manifold</scope><name>LocalPoint</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a77b3efe280262ee0fcc378a4c11fed1b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Manifold</scope><name>PointCount</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1a8822522b2921ea93c72ad0ae53cc7efd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Manifold</scope><name>Points</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_1ad49518c2018cf726a2f12dce1457a8ee" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::Manifold</scope><name>Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

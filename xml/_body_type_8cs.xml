@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="_body_type_8cs" kind="file" language="C#">
+    <compoundname>BodyType.cs</compoundname>
+    <innernamespace refid="namespacetainicom">tainicom</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether">tainicom::Aether</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d">tainicom::Aether::Physics2D</innernamespace>
+    <innernamespace refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics">tainicom::Aether::Physics2D::Dynamics</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>Original<sp/>source<sp/>Farseer<sp/>Physics<sp/>Engine:</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2014<sp/>Ian<sp/>Qvist,<sp/>http://farseerphysics.codeplex.com</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Microsoft<sp/>Permissive<sp/>License<sp/>(Ms-PL)<sp/>v1.1</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/>Farseer<sp/>Physics<sp/>Engine:</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/>Copyright<sp/>(c)<sp/>2012<sp/>Ian<sp/>Qvist</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/>Original<sp/>source<sp/>Box2D:</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/>Copyright<sp/>(c)<sp/>2006-2011<sp/>Erin<sp/>Catto<sp/>http://www.box2d.org<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/>This<sp/>software<sp/>is<sp/>provided<sp/>&apos;as-is&apos;,<sp/>without<sp/>any<sp/>express<sp/>or<sp/>implied<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/>warranty.<sp/><sp/>In<sp/>no<sp/>event<sp/>will<sp/>the<sp/>authors<sp/>be<sp/>held<sp/>liable<sp/>for<sp/>any<sp/>damages<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/>arising<sp/>from<sp/>the<sp/>use<sp/>of<sp/>this<sp/>software.<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/>Permission<sp/>is<sp/>granted<sp/>to<sp/>anyone<sp/>to<sp/>use<sp/>this<sp/>software<sp/>for<sp/>any<sp/>purpose,<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/>including<sp/>commercial<sp/>applications,<sp/>and<sp/>to<sp/>alter<sp/>it<sp/>and<sp/>redistribute<sp/>it<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*<sp/>freely,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>restrictions:<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*<sp/>1.<sp/>The<sp/>origin<sp/>of<sp/>this<sp/>software<sp/>must<sp/>not<sp/>be<sp/>misrepresented;<sp/>you<sp/>must<sp/>not<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*<sp/>claim<sp/>that<sp/>you<sp/>wrote<sp/>the<sp/>original<sp/>software.<sp/>If<sp/>you<sp/>use<sp/>this<sp/>software<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*<sp/>in<sp/>a<sp/>product,<sp/>an<sp/>acknowledgment<sp/>in<sp/>the<sp/>product<sp/>documentation<sp/>would<sp/>be<sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment">*<sp/>appreciated<sp/>but<sp/>is<sp/>not<sp/>required.<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*<sp/>2.<sp/>Altered<sp/>source<sp/>versions<sp/>must<sp/>be<sp/>plainly<sp/>marked<sp/>as<sp/>such,<sp/>and<sp/>must<sp/>not<sp/>be<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="comment">*<sp/>misrepresented<sp/>as<sp/>being<sp/>the<sp/>original<sp/>software.<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="comment">*<sp/>3.<sp/>This<sp/>notice<sp/>may<sp/>not<sp/>be<sp/>removed<sp/>or<sp/>altered<sp/>from<sp/>any<sp/>source<sp/>distribution.<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics" kindref="compound">tainicom.Aether.Physics2D.Dynamics</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1a6e7d1615336b3770adf0713570b7dc09" kindref="member">BodyType</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1a6e7d1615336b3770adf0713570b7dc09a84a8921b25f505d0d2077aeb5db4bc16" kindref="member">Static</ref>,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1a6e7d1615336b3770adf0713570b7dc09a40c78b58b86002ee38fad2d3c9dd787e" kindref="member">Kinematic</ref>,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1a6e7d1615336b3770adf0713570b7dc09a971fd8cc345d8bd9f92e9f7d88fdf20c" kindref="member">Dynamic</ref>,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Physics2D/Dynamics/BodyType.cs"/>
+  </compounddef>
+</doxygen>

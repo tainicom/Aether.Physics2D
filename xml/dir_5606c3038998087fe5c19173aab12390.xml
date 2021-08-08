@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dir_5606c3038998087fe5c19173aab12390" kind="dir">
+    <compoundname>Physics2D/Fluids/2</compoundname>
+    <innerfile refid="_fluid_system2_8cs">FluidSystem2.cs</innerfile>
+    <innerfile refid="_spartial_table_8cs">SpartialTable.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Fluids/2/"/>
+  </compounddef>
+</doxygen>

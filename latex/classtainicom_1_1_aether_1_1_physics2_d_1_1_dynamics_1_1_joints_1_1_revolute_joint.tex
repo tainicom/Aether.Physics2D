@@ -1,0 +1,315 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+
+
+A revolute joint constrains to bodies to share a common point while they are free to rotate about the point. The relative rotation about the shared point is the joint angle. You can limit the relative rotation with a joint limit that specifies a lower and upper angle. You can use a motor to drive the relative rotation about the shared point. A maximum motor torque is provided so that infinite forces are not generated.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ad66ec932ddeaba1c62f8a0ee4983294b}{Revolute\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyB, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchorA, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchorB, bool use\+World\+Coordinates=false)
+\begin{DoxyCompactList}\small\item\em Constructor of \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}{Revolute\+Joint}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2ff3a5a4af056f103d39876d19a55021}{Revolute\+Joint}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyA, \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}} bodyB, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} anchor, bool use\+World\+Coordinates=false)
+\begin{DoxyCompactList}\small\item\em Constructor of \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}{Revolute\+Joint}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a798117c7c0bee1b8126267c84f668b43}{Set\+Limits}} (float lower, float upper)
+\begin{DoxyCompactList}\small\item\em Set the joint limits, usually in meters. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2dae3a3bf2d13ab141341061ceb2ffc5}{Get\+Motor\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Gets the motor torque in N-\/m. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a6736f35ea40f05f2b1222ba9248651fc}{Get\+Reaction\+Force}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction force on body at the joint anchor in Newtons. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ada339835638c6fd2523837fb1a78d6ef}{Get\+Reaction\+Torque}} (float inv\+Dt)
+\begin{DoxyCompactList}\small\item\em Get the reaction torque on the body at the joint anchor in N$\ast$m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab8ceb22b49450acb33c22de18843274e}{Local\+AnchorA}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyA \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a87326cc0c5252a6ab83d5ce0e5a150e4}{Local\+AnchorB}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The local anchor point on BodyB \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab6a927b7f163a81f6a02bf9033765431}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab6a927b7f163a81f6a02bf9033765431}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorA}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_afabd7b209ac42e080e1af8143f842cf3}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_afabd7b209ac42e080e1af8143f842cf3}} 
+override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries World\+AnchorB}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a54fc4ad8bbb405e53aaccdce7e1582be}{Reference\+Angle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The referance angle computed as BodyB angle minus BodyA angle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a3a9019dbeaeea27d009d015e7d148f9a}{Joint\+Angle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the current joint angle in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab739e97592687f061907b530294af89a}{Joint\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the current joint angle speed in radians per second. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ad557b83f6ffb89d755312bb21bcdf274}{Limit\+Enabled}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Is the joint limit enabled? \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a84abcadc2723fe77fdf22c740ddad3b1}{Lower\+Limit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the lower joint limit in radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a299d11280b7e3eaa1cc1880cf1176ee7}{Upper\+Limit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get the upper joint limit in radians. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a466910ac8cb817ab6c26481500e819dd}{Motor\+Enabled}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Is the joint motor enabled? \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_afeffce6db00de0dd93ac2e97d92418bb}{Motor\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get or set the motor speed in radians per second. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2b847cca8722cdaf6912746942bad2fa}{Max\+Motor\+Torque}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get or set the maximum motor torque, usually in N-\/m. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a3b132ce182585ab4b04a8bf7889eee74}{Motor\+Impulse}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Get or set the current motor impulse, usually in N-\/m. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A revolute joint constrains to bodies to share a common point while they are free to rotate about the point. The relative rotation about the shared point is the joint angle. You can limit the relative rotation with a joint limit that specifies a lower and upper angle. You can use a motor to drive the relative rotation about the shared point. A maximum motor torque is provided so that infinite forces are not generated. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ad66ec932ddeaba1c62f8a0ee4983294b}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ad66ec932ddeaba1c62f8a0ee4983294b}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!RevoluteJoint@{RevoluteJoint}}
+\index{RevoluteJoint@{RevoluteJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{RevoluteJoint()}{RevoluteJoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Revolute\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyB,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchorA,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchorB,  }\item[{bool}]{use\+World\+Coordinates = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor of \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}{Revolute\+Joint}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bodyA} & The first body.\\
+\hline
+{\em bodyB} & The second body.\\
+\hline
+{\em anchorA} & The first body anchor.\\
+\hline
+{\em anchorB} & The second anchor.\\
+\hline
+{\em use\+World\+Coordinates} & Set to true if you are using world coordinates as anchors.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2ff3a5a4af056f103d39876d19a55021}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2ff3a5a4af056f103d39876d19a55021}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!RevoluteJoint@{RevoluteJoint}}
+\index{RevoluteJoint@{RevoluteJoint}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{RevoluteJoint()}{RevoluteJoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Revolute\+Joint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyA,  }\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body}{Body}}}]{bodyB,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{anchor,  }\item[{bool}]{use\+World\+Coordinates = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor of \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint}{Revolute\+Joint}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bodyA} & The first body.\\
+\hline
+{\em bodyB} & The second body.\\
+\hline
+{\em anchor} & The shared anchor.\\
+\hline
+{\em use\+World\+Coordinates} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2dae3a3bf2d13ab141341061ceb2ffc5}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2dae3a3bf2d13ab141341061ceb2ffc5}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!GetMotorTorque@{GetMotorTorque}}
+\index{GetMotorTorque@{GetMotorTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{GetMotorTorque()}{GetMotorTorque()}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Get\+Motor\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})}
+
+
+
+Gets the motor torque in N-\/m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a6736f35ea40f05f2b1222ba9248651fc}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a6736f35ea40f05f2b1222ba9248651fc}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!GetReactionForce@{GetReactionForce}}
+\index{GetReactionForce@{GetReactionForce}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionForce()}{GetReactionForce()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Get\+Reaction\+Force (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction force on body at the joint anchor in Newtons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_af2c9a28af88d5c656660a9f4232d4f66}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ada339835638c6fd2523837fb1a78d6ef}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ada339835638c6fd2523837fb1a78d6ef}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!GetReactionTorque@{GetReactionTorque}}
+\index{GetReactionTorque@{GetReactionTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{GetReactionTorque()}{GetReactionTorque()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Get\+Reaction\+Torque (\begin{DoxyParamCaption}\item[{float}]{inv\+Dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the reaction torque on the body at the joint anchor in N$\ast$m. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inv\+Dt} & The inverse delta time.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_aaba06d8a94a8bcb20963d6e34ec22ba6}{tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Joint}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a798117c7c0bee1b8126267c84f668b43}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a798117c7c0bee1b8126267c84f668b43}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!SetLimits@{SetLimits}}
+\index{SetLimits@{SetLimits}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{SetLimits()}{SetLimits()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Set\+Limits (\begin{DoxyParamCaption}\item[{float}]{lower,  }\item[{float}]{upper }\end{DoxyParamCaption})}
+
+
+
+Set the joint limits, usually in meters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lower} & The lower limit\\
+\hline
+{\em upper} & The upper limit\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a3a9019dbeaeea27d009d015e7d148f9a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a3a9019dbeaeea27d009d015e7d148f9a}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!JointAngle@{JointAngle}}
+\index{JointAngle@{JointAngle}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{JointAngle}{JointAngle}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Joint\+Angle\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the current joint angle in radians. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab739e97592687f061907b530294af89a}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab739e97592687f061907b530294af89a}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!JointSpeed@{JointSpeed}}
+\index{JointSpeed@{JointSpeed}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{JointSpeed}{JointSpeed}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Joint\+Speed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Get the current joint angle speed in radians per second. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ad557b83f6ffb89d755312bb21bcdf274}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ad557b83f6ffb89d755312bb21bcdf274}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!LimitEnabled@{LimitEnabled}}
+\index{LimitEnabled@{LimitEnabled}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{LimitEnabled}{LimitEnabled}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Limit\+Enabled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Is the joint limit enabled? 
+
+{\ttfamily true} if \mbox{[}limit enabled\mbox{]}; otherwise, {\ttfamily false}.\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab8ceb22b49450acb33c22de18843274e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_ab8ceb22b49450acb33c22de18843274e}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!LocalAnchorA@{LocalAnchorA}}
+\index{LocalAnchorA@{LocalAnchorA}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorA}{LocalAnchorA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Local\+AnchorA\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyA 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a87326cc0c5252a6ab83d5ce0e5a150e4}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a87326cc0c5252a6ab83d5ce0e5a150e4}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!LocalAnchorB@{LocalAnchorB}}
+\index{LocalAnchorB@{LocalAnchorB}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{LocalAnchorB}{LocalAnchorB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Local\+AnchorB\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The local anchor point on BodyB 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a84abcadc2723fe77fdf22c740ddad3b1}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a84abcadc2723fe77fdf22c740ddad3b1}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!LowerLimit@{LowerLimit}}
+\index{LowerLimit@{LowerLimit}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{LowerLimit}{LowerLimit}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Lower\+Limit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get the lower joint limit in radians. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2b847cca8722cdaf6912746942bad2fa}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a2b847cca8722cdaf6912746942bad2fa}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!MaxMotorTorque@{MaxMotorTorque}}
+\index{MaxMotorTorque@{MaxMotorTorque}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{MaxMotorTorque}{MaxMotorTorque}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Max\+Motor\+Torque\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get or set the maximum motor torque, usually in N-\/m. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a466910ac8cb817ab6c26481500e819dd}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a466910ac8cb817ab6c26481500e819dd}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!MotorEnabled@{MotorEnabled}}
+\index{MotorEnabled@{MotorEnabled}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{MotorEnabled}{MotorEnabled}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Motor\+Enabled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Is the joint motor enabled? 
+
+{\ttfamily true} if \mbox{[}motor enabled\mbox{]}; otherwise, {\ttfamily false}.\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a3b132ce182585ab4b04a8bf7889eee74}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a3b132ce182585ab4b04a8bf7889eee74}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!MotorImpulse@{MotorImpulse}}
+\index{MotorImpulse@{MotorImpulse}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{MotorImpulse}{MotorImpulse}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Motor\+Impulse\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get or set the current motor impulse, usually in N-\/m. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_afeffce6db00de0dd93ac2e97d92418bb}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_afeffce6db00de0dd93ac2e97d92418bb}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!MotorSpeed@{MotorSpeed}}
+\index{MotorSpeed@{MotorSpeed}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{MotorSpeed}{MotorSpeed}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Motor\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get or set the motor speed in radians per second. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a54fc4ad8bbb405e53aaccdce7e1582be}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a54fc4ad8bbb405e53aaccdce7e1582be}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!ReferenceAngle@{ReferenceAngle}}
+\index{ReferenceAngle@{ReferenceAngle}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{ReferenceAngle}{ReferenceAngle}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Reference\+Angle\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The referance angle computed as BodyB angle minus BodyA angle. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a299d11280b7e3eaa1cc1880cf1176ee7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint_a299d11280b7e3eaa1cc1880cf1176ee7}} 
+\index{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}!UpperLimit@{UpperLimit}}
+\index{UpperLimit@{UpperLimit}!tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint@{tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint}}
+\doxysubsubsection{\texorpdfstring{UpperLimit}{UpperLimit}}
+{\footnotesize\ttfamily float tainicom.\+Aether.\+Physics2\+D.\+Dynamics.\+Joints.\+Revolute\+Joint.\+Upper\+Limit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Get the upper joint limit in radians. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Dynamics/\+Joints/Revolute\+Joint.\+cs\end{DoxyCompactItemize}

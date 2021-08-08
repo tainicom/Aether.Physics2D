@@ -1,0 +1,231 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+
+
+Represents a simple non-\/selfintersecting convex polygon. Create a convex hull from the given array of points.  
+
+
+Inheritance diagram for tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ae3be8500e0ec029424ddab01101aa32d}{Polygon\+Shape}} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}} vertices, float density)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}{Polygon\+Shape}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a6ba7ec96bed1aefb263db5e6aad40540}{Polygon\+Shape}} (float density)
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}{Polygon\+Shape}} with the specified density. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a0cc3448e10b382d4c2d98ee05ba0feef}{Test\+Point}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}} transform, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} point)
+\begin{DoxyCompactList}\small\item\em Test a point for containment in this shape. Note\+: This only works for convex shapes. \end{DoxyCompactList}\item 
+override bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a922e0c31cf1d84019d9207da5041dd3e}{Ray\+Cast}} (out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_output}{Ray\+Cast\+Output}} output, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input}{Ray\+Cast\+Input}} input, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}} transform, int child\+Index)
+\begin{DoxyCompactList}\small\item\em Cast a ray against a child shape. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a31efce2ff4e172ad6941613ddb614e14}{Compute\+AABB}} (out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}} aabb, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}} transform, int child\+Index)
+\begin{DoxyCompactList}\small\item\em Given a transform, compute the associated axis aligned bounding box for a child shape. \end{DoxyCompactList}\item 
+override float \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ac93a714083ee3a76c6291041e865a95c}{Compute\+Submerged\+Area}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} normal, float offset, ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}} xf, out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} sc)
+\begin{DoxyCompactList}\small\item\em Used for the buoyancy controller \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ab70e031af3d78f754c1f0e5bcafd2c8d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ab70e031af3d78f754c1f0e5bcafd2c8d}} 
+bool {\bfseries Compare\+To} (\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}{Polygon\+Shape}} shape)
+\item 
+override \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape}{Shape}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a12dd34e34981649c5d7a3a8e131c8114}{Clone}} ()
+\begin{DoxyCompactList}\small\item\em Clone the concrete shape \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a02907d18e86a6073810404a3449d801e}{Compute\+Properties}} ()
+\begin{DoxyCompactList}\small\item\em Compute the mass properties of this shape using its dimensions and density. The inertia tensor is computed about the local origin, not the centroid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}}? \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a987e8acd4ee7b6234017a8f418390457}{Vertices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Create a convex hull from the given array of local points. The number of vertices must be in the range \mbox{[}3, Settings.\+Max\+Polygon\+Vertices\mbox{]}. Warning\+: the points may be re-\/ordered, even if they form a convex polygon Warning\+: collinear points are handled but not removed. Collinear points may lead to poor stacking behavior. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a3774da92c741893dc53bdd2886f6735c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a3774da92c741893dc53bdd2886f6735c}} 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}} {\bfseries Normals}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a9ca7ba6f3a5f53e475f07146897be184}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a9ca7ba6f3a5f53e475f07146897be184}} 
+override int {\bfseries Child\+Count}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a simple non-\/selfintersecting convex polygon. Create a convex hull from the given array of points. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ae3be8500e0ec029424ddab01101aa32d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ae3be8500e0ec029424ddab01101aa32d}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!PolygonShape@{PolygonShape}}
+\index{PolygonShape@{PolygonShape}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{PolygonShape()}{PolygonShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Polygon\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}}}]{vertices,  }\item[{float}]{density }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}{Polygon\+Shape}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & The vertices.\\
+\hline
+{\em density} & The density.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a6ba7ec96bed1aefb263db5e6aad40540}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a6ba7ec96bed1aefb263db5e6aad40540}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!PolygonShape@{PolygonShape}}
+\index{PolygonShape@{PolygonShape}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{PolygonShape()}{PolygonShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Polygon\+Shape (\begin{DoxyParamCaption}\item[{float}]{density }\end{DoxyParamCaption})}
+
+
+
+Create a new \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape}{Polygon\+Shape}} with the specified density. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em density} & The density.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a12dd34e34981649c5d7a3a8e131c8114}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a12dd34e34981649c5d7a3a8e131c8114}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!Clone@{Clone}}
+\index{Clone@{Clone}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape}{Shape}} tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clone the concrete shape 
+
+\begin{DoxyReturn}{Returns}
+A clone of the shape
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_a21f97ac7d3fbb104aad7d7aaffb807b8}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Shape}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a31efce2ff4e172ad6941613ddb614e14}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a31efce2ff4e172ad6941613ddb614e14}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!ComputeAABB@{ComputeAABB}}
+\index{ComputeAABB@{ComputeAABB}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{ComputeAABB()}{ComputeAABB()}}
+{\footnotesize\ttfamily override void tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Compute\+AABB (\begin{DoxyParamCaption}\item[{out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b}{AABB}}}]{aabb,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}}}]{transform,  }\item[{int}]{child\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given a transform, compute the associated axis aligned bounding box for a child shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aabb} & The aabb results.\\
+\hline
+{\em transform} & The world transform of the shape.\\
+\hline
+{\em child\+Index} & The child shape index.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_aba253f85e4da9fa220a0dd99b1d8ee87}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Shape}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a02907d18e86a6073810404a3449d801e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a02907d18e86a6073810404a3449d801e}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!ComputeProperties@{ComputeProperties}}
+\index{ComputeProperties@{ComputeProperties}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{ComputeProperties()}{ComputeProperties()}}
+{\footnotesize\ttfamily override void tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Compute\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Compute the mass properties of this shape using its dimensions and density. The inertia tensor is computed about the local origin, not the centroid. 
+
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_aa39c4ce412e776f5f27fed7542bde00a}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Shape}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ac93a714083ee3a76c6291041e865a95c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_ac93a714083ee3a76c6291041e865a95c}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!ComputeSubmergedArea@{ComputeSubmergedArea}}
+\index{ComputeSubmergedArea@{ComputeSubmergedArea}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{ComputeSubmergedArea()}{ComputeSubmergedArea()}}
+{\footnotesize\ttfamily override float tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Compute\+Submerged\+Area (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{normal,  }\item[{float}]{offset,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}}}]{xf,  }\item[{out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{sc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Used for the buoyancy controller 
+
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_a83295af89a1298b43d7e9c4c6f0e06e1}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Shape}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a922e0c31cf1d84019d9207da5041dd3e}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a922e0c31cf1d84019d9207da5041dd3e}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!RayCast@{RayCast}}
+\index{RayCast@{RayCast}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{RayCast()}{RayCast()}}
+{\footnotesize\ttfamily override bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Ray\+Cast (\begin{DoxyParamCaption}\item[{out \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_output}{Ray\+Cast\+Output}}}]{output,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input}{Ray\+Cast\+Input}}}]{input,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}}}]{transform,  }\item[{int}]{child\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cast a ray against a child shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The ray-\/cast results.\\
+\hline
+{\em input} & The ray-\/cast input parameters.\\
+\hline
+{\em transform} & The transform to be applied to the shape.\\
+\hline
+{\em child\+Index} & The child shape index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray-\/cast hits the shape
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_a0d0442cf6e5e47488b5151e46bffdbc4}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Shape}}.
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a0cc3448e10b382d4c2d98ee05ba0feef}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a0cc3448e10b382d4c2d98ee05ba0feef}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!TestPoint@{TestPoint}}
+\index{TestPoint@{TestPoint}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{TestPoint()}{TestPoint()}}
+{\footnotesize\ttfamily override bool tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Test\+Point (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform}{Transform}}}]{transform,  }\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Test a point for containment in this shape. Note\+: This only works for convex shapes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & The shape world transform.\\
+\hline
+{\em point} & A point in world coordinates.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is inside the shape
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape_a4898b0a304aacdd16ec6e875ae5de249}{tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Shape}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a987e8acd4ee7b6234017a8f418390457}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape_a987e8acd4ee7b6234017a8f418390457}} 
+\index{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}!Vertices@{Vertices}}
+\index{Vertices@{Vertices}!tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape@{tainicom.Aether.Physics2D.Collision.Shapes.PolygonShape}}
+\doxysubsubsection{\texorpdfstring{Vertices}{Vertices}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}}? tainicom.\+Aether.\+Physics2\+D.\+Collision.\+Shapes.\+Polygon\+Shape.\+Vertices\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Create a convex hull from the given array of local points. The number of vertices must be in the range \mbox{[}3, Settings.\+Max\+Polygon\+Vertices\mbox{]}. Warning\+: the points may be re-\/ordered, even if they form a convex polygon Warning\+: collinear points are handled but not removed. Collinear points may lead to poor stacking behavior. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Collision/\+Shapes/Polygon\+Shape.\+cs\end{DoxyCompactItemize}

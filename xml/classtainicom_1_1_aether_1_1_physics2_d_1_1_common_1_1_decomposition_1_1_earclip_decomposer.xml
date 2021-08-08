@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1_1_triangle" prot="private">tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer::Triangle</innerclass>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1aa3ca206d10494a2045b3552def100612" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.ConvexPartition</definition>
+        <argsstring>(Vertices vertices, float tolerance=0.001f)</argsstring>
+        <name>ConvexPartition</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tolerance</declname>
+          <defval>0.001f</defval>
+        </param>
+        <briefdescription>
+<para>Decompose the polygon into several smaller non-concave polygon. Each resulting polygon will have no more than Settings.MaxPolygonVertices vertices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertices</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertices.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tolerance.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="56" column="28" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="56" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1ad8a923b5cd559fef818d5cf86f16b975" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.TriangulatePolygon</definition>
+        <argsstring>(Vertices vertices, float tolerance)</argsstring>
+        <name>TriangulatePolygon</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+<para>Triangulates a polygon using simple ear-clipping algorithm. Returns size of Triangle array unless the polygon can&apos;t be triangulated. This should only happen if the polygon self-intersects, though it will not <emphasis>always</emphasis> return null for a bad polygon - it is the caller&apos;s responsibility to check for self-intersection, and if it doesn&apos;t, it should at least check that the return value is non-null before using. You&apos;re warned! </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Triangles may be degenerate, especially if you have identical points in the input to the algorithm. Check this before you use them.</para>
+<para>This is totally unoptimized, so for large polygons it should not be part of the simulation loop.</para>
+<para>Only works on simple polygons. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="82" column="29" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="82" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1abde3ae57408bb79e9a4cb6c35e62246c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.ResolvePinchPoint</definition>
+        <argsstring>(Vertices pin, out Vertices poutA, out Vertices poutB, float tolerance)</argsstring>
+        <name>ResolvePinchPoint</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>out <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>poutA</declname>
+        </param>
+        <param>
+          <type>out <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>poutB</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tolerance</declname>
+        </param>
+        <briefdescription>
+<para>Finds and fixes &quot;pinch points,&quot; points where two polygon vertices are at the same point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If a pinch point is found, pin is broken up into poutA and poutB and true is returned; otherwise, returns false.</para>
+<para>Mostly for internal use.</para>
+<para>O(N^2) time, which sucks...</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pin.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>poutA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pout A.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>poutB</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pout B.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="234" column="29" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="234" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1a2e6eb1233450999d8a922038f2022a38" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.Remainder</definition>
+        <argsstring>(int x, int modulus)</argsstring>
+        <name>Remainder</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>modulus</declname>
+        </param>
+        <briefdescription>
+<para>Fix for obnoxious behavior for the % operator for negative numbers... </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>modulus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The modulus.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="287" column="28" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="287" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1a4d1c1f697afef5a25618890e0765690c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.EarclipDecomposer.IsEar</definition>
+        <argsstring>(int i, float[] xv, float[] yv, int xvLength)</argsstring>
+        <name>IsEar</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>float[]</type>
+          <declname>xv</declname>
+        </param>
+        <param>
+          <type>float[]</type>
+          <declname>yv</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xvLength</declname>
+        </param>
+        <briefdescription>
+<para>Checks if vertex i is the tip of an ear in polygon defined by xv[] and yv[]. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The i.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The xv.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The yv.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xvLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length of the xv.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+<para>Assumes clockwise orientation of polygon. </para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the specified i is ear; otherwise, <computeroutput>false</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="310" column="29" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="310" bodyend="358"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Convex decomposition algorithm using ear clipping </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Properties:<itemizedlist>
+<listitem><para>Only works on simple polygons.</para>
+</listitem><listitem><para>Does not support holes.</para>
+</listitem><listitem><para>Running time is O(n^2), n = number of vertices.</para>
+</listitem></itemizedlist>
+</para>
+<para>Source: <ulink url="http://www.ewjordan.com/earClip/">http://www.ewjordan.com/earClip/</ulink></para>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/EarclipDecomposer.cs" line="46" column="21" bodyfile="Physics2D/Common/Decomposition/EarclipDecomposer.cs" bodystart="47" bodyend="410"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1aa3ca206d10494a2045b3552def100612" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer</scope><name>ConvexPartition</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1a4d1c1f697afef5a25618890e0765690c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer</scope><name>IsEar</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1a2e6eb1233450999d8a922038f2022a38" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer</scope><name>Remainder</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1abde3ae57408bb79e9a4cb6c35e62246c" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer</scope><name>ResolvePinchPoint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_earclip_decomposer_1ad8a923b5cd559fef818d5cf86f16b975" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::EarclipDecomposer</scope><name>TriangulatePolygon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

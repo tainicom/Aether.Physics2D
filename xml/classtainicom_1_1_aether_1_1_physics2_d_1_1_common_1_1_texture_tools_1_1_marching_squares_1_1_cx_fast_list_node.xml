@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node" kind="class" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</compoundname>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1a664c8a0d29ac588495a42d10538b869a" prot="package" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.CxFastListNode&lt; T &gt;._elt</definition>
+        <argsstring></argsstring>
+        <name>_elt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="747" column="24" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="747" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1a09d42abdd99b64c6fc339a383f6a73de" prot="package" static="no" mutable="no">
+        <type>CxFastListNode&lt; T &gt;</type>
+        <definition>CxFastListNode&lt;T&gt; tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.CxFastListNode&lt; T &gt;._next</definition>
+        <argsstring></argsstring>
+        <name>_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="748" column="37" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="748" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1af6f7bf7a779ababcd0d83e95eccb505c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.CxFastListNode&lt; T &gt;.CxFastListNode</definition>
+        <argsstring>(T obj)</argsstring>
+        <name>CxFastListNode</name>
+        <param>
+          <type>T</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="750" column="20" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="750" bodyend="753"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1ad593d5c1cb4aa7bc0611b5a9b12471aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.CxFastListNode&lt; T &gt;.Elem</definition>
+        <argsstring>()</argsstring>
+        <name>Elem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="755" column="22" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="755" bodyend="758"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1af020bc172f497f5b397bac37ec9c6e66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>CxFastListNode&lt; T &gt;</type>
+        <definition>CxFastListNode&lt;T&gt; tainicom.Aether.Physics2D.Common.TextureTools.MarchingSquares.CxFastListNode&lt; T &gt;.Next</definition>
+        <argsstring>()</argsstring>
+        <name>Next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="760" column="35" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="760" bodyend="763"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/TextureTools/MarchingSquares.cs" line="745" column="17" bodyfile="Physics2D/Common/TextureTools/MarchingSquares.cs" bodystart="746" bodyend="764"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1a664c8a0d29ac588495a42d10538b869a" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</scope><name>_elt</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1a09d42abdd99b64c6fc339a383f6a73de" prot="package" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</scope><name>_next</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1af6f7bf7a779ababcd0d83e95eccb505c" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</scope><name>CxFastListNode</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1ad593d5c1cb4aa7bc0611b5a9b12471aa" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</scope><name>Elem</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_texture_tools_1_1_marching_squares_1_1_cx_fast_list_node_1af020bc172f497f5b397bac37ec9c6e66" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::TextureTools::MarchingSquares::CxFastListNode</scope><name>Next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

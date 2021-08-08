@@ -1,0 +1,127 @@
+\hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33 Struct Reference}
+\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33}\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+
+
+A 3-\/by-\/3 matrix. Stored in column-\/major order.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a43c512d720094d8e1fe40cfc63d0b659}{Mat33}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} c1, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} c2, \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} c3)
+\begin{DoxyCompactList}\small\item\em Construct this matrix using columns. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_aad3cfcb44129fc2b774e8eb09fce18e9}{Set\+Zero}} ()
+\begin{DoxyCompactList}\small\item\em Set this matrix to all zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_af2ea7dfaee9083a25098b5cfa02b3055}{Solve33}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} b)
+\begin{DoxyCompactList}\small\item\em Solve A $\ast$ x = b, where b is a column vector. This is more efficient than computing the inverse in one-\/shot cases. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_aca49a10eb03f1d85355e62fc3a0875ff}{Solve22}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} b)
+\begin{DoxyCompactList}\small\item\em Solve A $\ast$ x = b, where b is a column vector. This is more efficient than computing the inverse in one-\/shot cases. Solve only the upper 2-\/by-\/2 matrix equation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_ad6c7ed8a6a4cd01ecc5b9640aedc7525}{Get\+Inverse22}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33}{Mat33}} M)
+\item 
+void \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a394d1d9242088a68cabb650923c355bf}{Get\+Sym\+Inverse33}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33}{Mat33}} M)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a5cdd2d9257e1e61fe9cd7cd7225714ae}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a5cdd2d9257e1e61fe9cd7cd7225714ae}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} {\bfseries ex}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a04d25e2a4cc7133003dd8bc568a8c797}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a04d25e2a4cc7133003dd8bc568a8c797}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} {\bfseries ey}
+\item 
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a9375e457317b2b51152be8e2661309b5}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a9375e457317b2b51152be8e2661309b5}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} {\bfseries ez}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A 3-\/by-\/3 matrix. Stored in column-\/major order. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a43c512d720094d8e1fe40cfc63d0b659}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a43c512d720094d8e1fe40cfc63d0b659}} 
+\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}!Mat33@{Mat33}}
+\index{Mat33@{Mat33}!tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+\doxysubsubsection{\texorpdfstring{Mat33()}{Mat33()}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33.\+Mat33 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}}}]{c1,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}}}]{c2,  }\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}}}]{c3 }\end{DoxyParamCaption})}
+
+
+
+Construct this matrix using columns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & The c1.\\
+\hline
+{\em c2} & The c2.\\
+\hline
+{\em c3} & The c3.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_ad6c7ed8a6a4cd01ecc5b9640aedc7525}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_ad6c7ed8a6a4cd01ecc5b9640aedc7525}} 
+\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}!GetInverse22@{GetInverse22}}
+\index{GetInverse22@{GetInverse22}!tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+\doxysubsubsection{\texorpdfstring{GetInverse22()}{GetInverse22()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33.\+Get\+Inverse22 (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33}{Mat33}}}]{M }\end{DoxyParamCaption})}
+
+Get the inverse of this matrix as a 2-\/by-\/2. Returns the zero matrix if singular. \mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a394d1d9242088a68cabb650923c355bf}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_a394d1d9242088a68cabb650923c355bf}} 
+\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}!GetSymInverse33@{GetSymInverse33}}
+\index{GetSymInverse33@{GetSymInverse33}!tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+\doxysubsubsection{\texorpdfstring{GetSymInverse33()}{GetSymInverse33()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33.\+Get\+Sym\+Inverse33 (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33}{Mat33}}}]{M }\end{DoxyParamCaption})}
+
+Get the symmetric inverse of this matrix as a 3-\/by-\/3. Returns the zero matrix if singular. \mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_aad3cfcb44129fc2b774e8eb09fce18e9}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_aad3cfcb44129fc2b774e8eb09fce18e9}} 
+\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}!SetZero@{SetZero}}
+\index{SetZero@{SetZero}!tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+\doxysubsubsection{\texorpdfstring{SetZero()}{SetZero()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33.\+Set\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set this matrix to all zeros. 
+
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_aca49a10eb03f1d85355e62fc3a0875ff}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_aca49a10eb03f1d85355e62fc3a0875ff}} 
+\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}!Solve22@{Solve22}}
+\index{Solve22@{Solve22}!tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+\doxysubsubsection{\texorpdfstring{Solve22()}{Solve22()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33.\+Solve22 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Solve A $\ast$ x = b, where b is a column vector. This is more efficient than computing the inverse in one-\/shot cases. Solve only the upper 2-\/by-\/2 matrix equation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The b.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_af2ea7dfaee9083a25098b5cfa02b3055}\label{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_mat33_af2ea7dfaee9083a25098b5cfa02b3055}} 
+\index{tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}!Solve33@{Solve33}}
+\index{Solve33@{Solve33}!tainicom.Aether.Physics2D.Common.Mat33@{tainicom.Aether.Physics2D.Common.Mat33}}
+\doxysubsubsection{\texorpdfstring{Solve33()}{Solve33()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Mat33.\+Solve33 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Solve A $\ast$ x = b, where b is a column vector. This is more efficient than computing the inverse in one-\/shot cases. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The b.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Common/Math.\+cs\end{DoxyCompactItemize}

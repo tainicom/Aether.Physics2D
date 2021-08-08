@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_melkman" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::ConvexHull::Melkman</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_melkman_1a549de801eb689549a9570a39f2cf9f1a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+        <definition>static Vertices tainicom.Aether.Physics2D.Common.ConvexHull.Melkman.GetConvexHull</definition>
+        <argsstring>(Vertices vertices)</argsstring>
+        <name>GetConvexHull</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <briefdescription>
+<para>Returns a convex hull from the given vertices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A convex hull in counter clockwise winding order.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/ConvexHull/Melkman.cs" line="32" column="32" bodyfile="Physics2D/Common/ConvexHull/Melkman.cs" bodystart="32" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Creates a convex hull. Note: </para>
+    </briefdescription>
+    <detaileddescription>
+<para><orderedlist>
+<listitem><para><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> must be of a simple polygon, i.e. edges do not overlap.</para>
+</listitem><listitem><para>Melkman does not work on point clouds</para>
+</listitem></orderedlist>
+</para>
+<para>Implemented using Melkman&apos;s Convex Hull Algorithm - O(n) time complexity. Reference: <ulink url="http://www.ams.sunysb.edu/~jsbm/courses/345/melkman.pdf">http://www.ams.sunysb.edu/~jsbm/courses/345/melkman.pdf</ulink> </para>
+    </detaileddescription>
+    <location file="Physics2D/Common/ConvexHull/Melkman.cs" line="24" column="19" bodyfile="Physics2D/Common/ConvexHull/Melkman.cs" bodystart="25" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_convex_hull_1_1_melkman_1a549de801eb689549a9570a39f2cf9f1a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::ConvexHull::Melkman</scope><name>GetConvexHull</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

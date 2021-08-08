@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::ManifoldPoint</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1af6794bbf950a177d36cb67b7b6ea4f37" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_i_d" kindref="compound">ContactID</ref></type>
+        <definition>ContactID tainicom.Aether.Physics2D.Collision.ManifoldPoint.Id</definition>
+        <argsstring></argsstring>
+        <name>Id</name>
+        <briefdescription>
+<para>Uniquely identifies a contact point between two <ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes" kindref="compound">Shapes</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="111" column="26" bodyfile="Physics2D/Collision/Collision.cs" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1a2b6e20651e50240a5420a4e8a22a8088" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.ManifoldPoint.LocalPoint</definition>
+        <argsstring></argsstring>
+        <name>LocalPoint</name>
+        <briefdescription>
+<para>Usage depends on manifold type </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="116" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1a789485be0a6daac74ebe003bc85905dd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.ManifoldPoint.NormalImpulse</definition>
+        <argsstring></argsstring>
+        <name>NormalImpulse</name>
+        <briefdescription>
+<para>The non-penetration impulse </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="121" column="22" bodyfile="Physics2D/Collision/Collision.cs" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1a0af0394e9e284a81ced150ff3bc06da6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.ManifoldPoint.TangentImpulse</definition>
+        <argsstring></argsstring>
+        <name>TangentImpulse</name>
+        <briefdescription>
+<para>The friction impulse </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="126" column="22" bodyfile="Physics2D/Collision/Collision.cs" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A manifold point is a contact point belonging to a contact manifold. It holds details related to the geometry and dynamics of the contact points. The local point usage depends on the manifold type: -ShapeType.Circles: the local center of circleB -SeparationFunction.FaceA: the local center of cirlceB or the clip point of polygonB -SeparationFunction.FaceB: the clip point of polygonA This structure is stored across time steps, so we keep it small. Note: the impulses are used for internal caching and may not provide reliable contact forces, especially for high speed collisions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Collision.ContactID</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_i_d"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>Features</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.ManifoldPoint</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Id</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Collision.ContactFeature</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_contact_feature"/>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Collision.cs" line="106" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="107" bodyend="127"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1af6794bbf950a177d36cb67b7b6ea4f37" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ManifoldPoint</scope><name>Id</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1a2b6e20651e50240a5420a4e8a22a8088" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ManifoldPoint</scope><name>LocalPoint</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1a789485be0a6daac74ebe003bc85905dd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ManifoldPoint</scope><name>NormalImpulse</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold_point_1a0af0394e9e284a81ced150ff3bc06da6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::ManifoldPoint</scope><name>TangentImpulse</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

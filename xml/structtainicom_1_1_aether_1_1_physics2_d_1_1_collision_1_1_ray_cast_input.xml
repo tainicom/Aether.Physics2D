@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kind="struct" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::RayCastInput</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input_1a4091aed0c5f680af0febd89ecff47f67" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Collision.RayCastInput.MaxFraction</definition>
+        <argsstring></argsstring>
+        <name>MaxFraction</name>
+        <briefdescription>
+<para>The ray extends from p1 to p1 + maxFraction * (p2 - p1). If you supply a max fraction of 1, the ray extends from p1 to p2. A max fraction of 0.5 makes the ray go from p1 and half way to p2. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="224" column="22" bodyfile="Physics2D/Collision/Collision.cs" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input_1ad0edaca299ddbd25ca47b7b5ffc848d8" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.RayCastInput.Point1</definition>
+        <argsstring></argsstring>
+        <name>Point1</name>
+        <briefdescription>
+<para>The starting point of the ray. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="229" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input_1a3e656d2d0ffbf2bd6d853e8b2bc73809" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Collision.RayCastInput.Point2</definition>
+        <argsstring></argsstring>
+        <name>Point2</name>
+        <briefdescription>
+<para>The ending point of the ray. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/Collision.cs" line="234" column="24" bodyfile="Physics2D/Collision/Collision.cs" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Ray-cast input data. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.RayCastInput</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Point1</edgelabel>
+          <edgelabel>Point2</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Collision/Collision.cs" line="217" column="11" bodyfile="Physics2D/Collision/Collision.cs" bodystart="218" bodyend="235"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input_1a4091aed0c5f680af0febd89ecff47f67" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::RayCastInput</scope><name>MaxFraction</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input_1ad0edaca299ddbd25ca47b7b5ffc848d8" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::RayCastInput</scope><name>Point1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input_1a3e656d2d0ffbf2bd6d853e8b2bc73809" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::RayCastInput</scope><name>Point2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

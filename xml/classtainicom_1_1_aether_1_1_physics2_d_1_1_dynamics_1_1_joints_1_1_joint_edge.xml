@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::Joints::JointEdge</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a703f187b804d473d4ccff47761426be0" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint" kindref="compound">Joint</ref></type>
+        <definition>Joint tainicom.Aether.Physics2D.Dynamics.Joints.JointEdge.Joint</definition>
+        <argsstring></argsstring>
+        <name>Joint</name>
+        <briefdescription>
+<para>The joint. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/Joint.cs" line="85" column="22" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a760cc5254ccf062366de16e7ef3f6ddb" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge" kindref="compound">JointEdge</ref></type>
+        <definition>JointEdge tainicom.Aether.Physics2D.Dynamics.Joints.JointEdge.Next</definition>
+        <argsstring></argsstring>
+        <name>Next</name>
+        <briefdescription>
+<para>The next joint edge in the body&apos;s joint list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/Joint.cs" line="90" column="26" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a8986051c5313dab06ef7ada61a009f1e" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body" kindref="compound">Body</ref></type>
+        <definition>Body tainicom.Aether.Physics2D.Dynamics.Joints.JointEdge.Other</definition>
+        <argsstring></argsstring>
+        <name>Other</name>
+        <briefdescription>
+<para>Provides quick access to the other body attached. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/Joint.cs" line="95" column="21" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a6c9c39b13507ca44c769a43d23be53b6" prot="public" static="no" mutable="no">
+        <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge" kindref="compound">JointEdge</ref></type>
+        <definition>JointEdge tainicom.Aether.Physics2D.Dynamics.Joints.JointEdge.Prev</definition>
+        <argsstring></argsstring>
+        <name>Prev</name>
+        <briefdescription>
+<para>The previous joint edge in the body&apos;s joint list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/Joints/Joint.cs" line="100" column="26" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A joint edge is used to connect bodies and joints together in a joint graph where each body is a node and each joint is an edge. A joint edge belongs to a doubly linked list maintained in each attached body. Each joint has two joint nodes, one for each attached body. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="32">
+        <label>tainicom.Aether.Physics2D.Common.Transform</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>p</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>q</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>IEnumerable&lt; Joint &gt;</label>
+      </node>
+      <node id="30">
+        <label>ICollection&lt; Fixture &gt;</label>
+      </node>
+      <node id="18">
+        <label>tainicom.Aether.Physics2D.Dynamics.ControllerCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_controller_collection"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Dynamics.World</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>JointList</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>ContactManager</edgelabel>
+        </childnode>
+        <childnode refid="18" relation="usage">
+          <edgelabel>ControllerList</edgelabel>
+        </childnode>
+        <childnode refid="22" relation="usage">
+          <edgelabel>BodyList</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>ICollection&lt; Controller &gt;</label>
+      </node>
+      <node id="11">
+        <label>tainicom.Aether.Physics2D.Collision.Manifold</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_manifold"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>Points</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>LocalNormal</edgelabel>
+          <edgelabel>LocalPoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
+        <label>tainicom.Aether.Physics2D.Common.FixedArray2&lt; tainicom.Aether.Physics2D.Collision.ManifoldPoint &gt;</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_fixed_array2"/>
+      </node>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.Joints.JointEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>Next</edgelabel>
+          <edgelabel>Prev</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>Joint</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>Other</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>tainicom.Aether.Physics2D.Dynamics.BodyCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body_collection"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>IList&lt; Fixture &gt;</label>
+      </node>
+      <node id="19">
+        <label>IEnumerable&lt; Controller &gt;</label>
+      </node>
+      <node id="9">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactListHead</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_list_head"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>tainicom.Aether.Physics2D.Common.Sweep</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep"/>
+        <childnode refid="13" relation="usage">
+          <edgelabel>C</edgelabel>
+          <edgelabel>C0</edgelabel>
+          <edgelabel>LocalCenter</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Dynamics.Joints.Joint</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>EdgeA</edgelabel>
+          <edgelabel>EdgeB</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_world</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>IEnumerable&lt; Body &gt;</label>
+      </node>
+      <node id="28">
+        <label>tainicom.Aether.Physics2D.Dynamics.FixtureCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_collection"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>IList&lt; Controller &gt;</label>
+      </node>
+      <node id="10">
+        <label>Contact</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>Manifold</edgelabel>
+        </childnode>
+        <childnode refid="15" relation="usage">
+          <edgelabel>_nodeA</edgelabel>
+          <edgelabel>_nodeB</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>IList&lt; Body &gt;</label>
+      </node>
+      <node id="7">
+        <label>IList&lt; Joint &gt;</label>
+      </node>
+      <node id="15">
+        <label>tainicom.Aether.Physics2D.Dynamics.Contacts.ContactEdge</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contacts_1_1_contact_edge"/>
+      </node>
+      <node id="33">
+        <label>tainicom.Aether.Physics2D.Common.Complex</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_complex"/>
+      </node>
+      <node id="16">
+        <label>IEnumerable&lt; Contact &gt;</label>
+      </node>
+      <node id="29">
+        <label>IEnumerable&lt; Fixture &gt;</label>
+      </node>
+      <node id="4">
+        <label>tainicom.Aether.Physics2D.Dynamics.JointCollection</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joint_collection"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>tainicom.Aether.Physics2D.Dynamics.Body</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>_sweep</edgelabel>
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>FixtureList</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>_force</edgelabel>
+          <edgelabel>_linearVelocity</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
+          <edgelabel>_xf</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>_world</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ICollection&lt; Joint &gt;</label>
+      </node>
+      <node id="13">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>ICollection&lt; Body &gt;</label>
+      </node>
+      <node id="17">
+        <label>tainicom.Aether.Physics2D.Collision.IBroadPhase</label>
+        <link refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase"/>
+      </node>
+      <node id="14">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+      <node id="8">
+        <label>tainicom.Aether.Physics2D.Dynamics.ContactManager</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_contact_manager"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>ContactList</edgelabel>
+          <edgelabel>_contactPoolList</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>BroadPhase</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/Joints/Joint.cs" line="80" column="18" bodyfile="Physics2D/Dynamics/Joints/Joint.cs" bodystart="81" bodyend="101"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a703f187b804d473d4ccff47761426be0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointEdge</scope><name>Joint</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a760cc5254ccf062366de16e7ef3f6ddb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointEdge</scope><name>Next</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a8986051c5313dab06ef7ada61a009f1e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointEdge</scope><name>Other</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge_1a6c9c39b13507ca44c769a43d23be53b6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::Joints::JointEdge</scope><name>Prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

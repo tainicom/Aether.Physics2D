@@ -1,0 +1,260 @@
+\hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{}\doxysection{tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path Class Reference}
+\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+
+
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}}\+: Very similar to \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}}, but this class contains vectors describing control points on a Catmull-\/\+Rom curve.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a10fd2cad714bf82230202d83fba8c099}{Path}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ab384d9424bc62883a1553d513ea6077f}{Path}} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}\mbox{[}$\,$\mbox{]} vertices)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a43786c7b6714340e0ae82e0f3743f2a0}{Path}} (IList$<$ \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} $>$ vertices)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_afca21ec05625c035748e1cdbcc7988b4}{Next\+Index}} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the next index of a controlpoint \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a27e56f7d3434bdfb4fabb65dfb9b89c9}{Previous\+Index}} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the previous index of a controlpoint \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ac561adbb24e7c0426b00a49ca640cd11}{Translate}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} vector)
+\begin{DoxyCompactList}\small\item\em Translates the control points by the specified vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ac61a49caa55cbe2fd68df6d4f47331f7}{Scale}} (ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} value)
+\begin{DoxyCompactList}\small\item\em Scales the control points by the specified vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_abbe8a46aeeba5c1da447145a302a0d82}{Rotate}} (float value)
+\begin{DoxyCompactList}\small\item\em Rotate the control points by the defined value in radians. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a890988bd63fbbe5444af983150538fcc}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a890988bd63fbbe5444af983150538fcc}} 
+override string {\bfseries To\+String} ()
+\item 
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a2f86e3bdf051addb4aa44d41f64a4046}{Get\+Vertices}} (int divisions)
+\begin{DoxyCompactList}\small\item\em Returns a set of points defining the curve with the specifed number of divisions between each control point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a15a72584845f6809c1df67e454445f0d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a15a72584845f6809c1df67e454445f0d}} 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} {\bfseries Get\+Position} (float time)
+\item 
+\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ab33438c56b3512d06bae2aa02c41845f}{Get\+Position\+Normal}} (float time)
+\begin{DoxyCompactList}\small\item\em Gets the normal for the given time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_acadb6f6e51dbeffb16c86e02603d63c5}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_acadb6f6e51dbeffb16c86e02603d63c5}} 
+void {\bfseries Add} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} point)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_aaaeab503d81ac1ac771aaa4b39c8e56d}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_aaaeab503d81ac1ac771aaa4b39c8e56d}} 
+void {\bfseries Remove} (\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} point)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ad237bfd28001753cdec2df207dc7f4e7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ad237bfd28001753cdec2df207dc7f4e7}} 
+void {\bfseries Remove\+At} (int index)
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a5cc5d33e8a0b516474ab9fecb254e632}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a5cc5d33e8a0b516474ab9fecb254e632}} 
+float {\bfseries Get\+Length} ()
+\item 
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a5743363c0bc21e9d34270c6b1c51dfd6}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a5743363c0bc21e9d34270c6b1c51dfd6}} 
+List$<$ \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector3}{Vector3}} $>$ {\bfseries Subdivide\+Evenly} (int divisions)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} $>$ \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_abbdf39c176553a3ed6a59166fd7b31d0}{Control\+Points}}
+\begin{DoxyCompactList}\small\item\em All the points that makes up the curve \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_adc18fbf44cf89b4299cf05b6f95cae5c}{Closed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em True if the curve is closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}}\+: Very similar to \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}}, but this class contains vectors describing control points on a Catmull-\/\+Rom curve. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a10fd2cad714bf82230202d83fba8c099}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a10fd2cad714bf82230202d83fba8c099}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Path@{Path}}
+\index{Path@{Path}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}} class. 
+
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ab384d9424bc62883a1553d513ea6077f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ab384d9424bc62883a1553d513ea6077f}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Path@{Path}}
+\index{Path@{Path}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}\mbox{[}$\,$\mbox{]}}]{vertices }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & The vertices to created the path from.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a43786c7b6714340e0ae82e0f3743f2a0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a43786c7b6714340e0ae82e0f3743f2a0}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Path@{Path}}
+\index{Path@{Path}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Path()}{Path()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Path (\begin{DoxyParamCaption}\item[{IList$<$ \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} $>$}]{vertices }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path}{Path}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & The vertices to created the path from.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ab33438c56b3512d06bae2aa02c41845f}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ab33438c56b3512d06bae2aa02c41845f}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!GetPositionNormal@{GetPositionNormal}}
+\index{GetPositionNormal@{GetPositionNormal}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{GetPositionNormal()}{GetPositionNormal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Get\+Position\+Normal (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+Gets the normal for the given time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & The time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The normal.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a2f86e3bdf051addb4aa44d41f64a4046}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a2f86e3bdf051addb4aa44d41f64a4046}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!GetVertices@{GetVertices}}
+\index{GetVertices@{GetVertices}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{GetVertices()}{GetVertices()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices}{Vertices}} tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Get\+Vertices (\begin{DoxyParamCaption}\item[{int}]{divisions }\end{DoxyParamCaption})}
+
+
+
+Returns a set of points defining the curve with the specifed number of divisions between each control point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em divisions} & Number of divisions between each control point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_afca21ec05625c035748e1cdbcc7988b4}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_afca21ec05625c035748e1cdbcc7988b4}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!NextIndex@{NextIndex}}
+\index{NextIndex@{NextIndex}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{NextIndex()}{NextIndex()}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Next\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Gets the next index of a controlpoint 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a27e56f7d3434bdfb4fabb65dfb9b89c9}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_a27e56f7d3434bdfb4fabb65dfb9b89c9}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!PreviousIndex@{PreviousIndex}}
+\index{PreviousIndex@{PreviousIndex}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{PreviousIndex()}{PreviousIndex()}}
+{\footnotesize\ttfamily int tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Previous\+Index (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Gets the previous index of a controlpoint 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_abbe8a46aeeba5c1da447145a302a0d82}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_abbe8a46aeeba5c1da447145a302a0d82}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Rotate (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Rotate the control points by the defined value in radians. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The amount to rotate by in radians.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ac61a49caa55cbe2fd68df6d4f47331f7}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ac61a49caa55cbe2fd68df6d4f47331f7}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Scale@{Scale}}
+\index{Scale@{Scale}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Scale()}{Scale()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Scale (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{value }\end{DoxyParamCaption})}
+
+
+
+Scales the control points by the specified vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The Value.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ac561adbb24e7c0426b00a49ca640cd11}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_ac561adbb24e7c0426b00a49ca640cd11}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Translate@{Translate}}
+\index{Translate@{Translate}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily void tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Translate (\begin{DoxyParamCaption}\item[{ref \mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}}]{vector }\end{DoxyParamCaption})}
+
+
+
+Translates the control points by the specified vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The vector.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_abbdf39c176553a3ed6a59166fd7b31d0}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_abbdf39c176553a3ed6a59166fd7b31d0}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!ControlPoints@{ControlPoints}}
+\index{ControlPoints@{ControlPoints}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{ControlPoints}{ControlPoints}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2}{Vector2}}$>$ tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Control\+Points}
+
+
+
+All the points that makes up the curve 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_adc18fbf44cf89b4299cf05b6f95cae5c}\label{classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_path_adc18fbf44cf89b4299cf05b6f95cae5c}} 
+\index{tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}!Closed@{Closed}}
+\index{Closed@{Closed}!tainicom.Aether.Physics2D.Common.Path@{tainicom.Aether.Physics2D.Common.Path}}
+\doxysubsubsection{\texorpdfstring{Closed}{Closed}}
+{\footnotesize\ttfamily bool tainicom.\+Aether.\+Physics2\+D.\+Common.\+Path.\+Closed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+True if the curve is closed. 
+
+{\ttfamily true} if closed; otherwise, {\ttfamily false}.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Physics2\+D/\+Common/Path.\+cs\end{DoxyCompactItemize}

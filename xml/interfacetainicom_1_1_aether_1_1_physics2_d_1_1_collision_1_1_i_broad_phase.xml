@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase" kind="interface" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Collision::IBroadPhase</compoundname>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Collision.DynamicTreeBroadPhase</derivedcompoundref>
+    <derivedcompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Collision.QuadTreeBroadPhase</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a2f2f187911ec42d8bacd3a2f611208e6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.IBroadPhase.ProxyCount</definition>
+        <argsstring></argsstring>
+        <name>ProxyCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="17" column="13" bodyfile="Physics2D/Collision/IBroadPhase.cs" bodystart="17" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a8f70667f51c54061433785591b5be827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.UpdatePairs</definition>
+        <argsstring>(BroadphaseDelegate callback)</argsstring>
+        <name>UpdatePairs</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a6afa591065d3f58d64ce09d36a80fa19">UpdatePairs</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1acb119b7e24dcb4919109ef1a3de06943">UpdatePairs</reimplementedby>
+        <param>
+          <type>BroadphaseDelegate</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="18" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1aa96b9feb5ffc6d0a2e4c16c94f3fce07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Collision.IBroadPhase.TestOverlap</definition>
+        <argsstring>(int proxyIdA, int proxyIdB)</argsstring>
+        <name>TestOverlap</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a3458f5b8627079056bb15d4638f26107">TestOverlap</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1abd3f9922457ef551b899f7772cb82b96">TestOverlap</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyIdA</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proxyIdB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="20" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1af687a49a5cb04cfb5208bbf4fff78de3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Collision.IBroadPhase.AddProxy</definition>
+        <argsstring>(ref AABB aabb)</argsstring>
+        <name>AddProxy</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1abbb5d134e4aea1019ef88caa41602d44">AddProxy</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1ac833bde5204f7fa88cab10f8a3d7d060">AddProxy</reimplementedby>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>aabb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="22" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1afe21045dd655725a4678efa90be4c086" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.RemoveProxy</definition>
+        <argsstring>(int proxyId)</argsstring>
+        <name>RemoveProxy</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a5636516d3c4efb16af4f1690821e93d6">RemoveProxy</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1ae9e5629cfed8501b57704fb80c2e57a4">RemoveProxy</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="24" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ac33d194ef3d916457070b707d4ed6463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.MoveProxy</definition>
+        <argsstring>(int proxyId, ref AABB aabb, Vector2 displacement)</argsstring>
+        <name>MoveProxy</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1af210682a973110de69e2ad969bb0ce98">MoveProxy</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1ab513273d9145754dc898219a7e8ccdcc">MoveProxy</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>aabb</declname>
+        </param>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>displacement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="26" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a8b9ee1ca1aaf84c3368a3474f18471d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.SetProxy</definition>
+        <argsstring>(int proxyId, ref FixtureProxy proxy)</argsstring>
+        <name>SetProxy</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1abd52f48786dbe30690ca63206d2aed09">SetProxy</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1a521eb162823023dccd173acac9ceb843">SetProxy</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_proxy" kindref="compound">FixtureProxy</ref></type>
+          <declname>proxy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="28" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a08a3faf4dc4231abb5a389b7329f11a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_proxy" kindref="compound">FixtureProxy</ref></type>
+        <definition>FixtureProxy tainicom.Aether.Physics2D.Collision.IBroadPhase.GetProxy</definition>
+        <argsstring>(int proxyId)</argsstring>
+        <name>GetProxy</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a3524c8a850aa0dc94b1a109464b24f42">GetProxy</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1ab3bb9460e75e9068191ea1f1c594d9b9">GetProxy</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="30" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1acd8d12afadc367a1b24d0503f99e8612" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.TouchProxy</definition>
+        <argsstring>(int proxyId)</argsstring>
+        <name>TouchProxy</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a63aba709fca292e3d6faf64c08282d2f">TouchProxy</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1ad788ddbc7331984adbc1295d74094813">TouchProxy</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="32" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ae883cb8dfc5da1639b26374cee8be339" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.GetFatAABB</definition>
+        <argsstring>(int proxyId, out AABB aabb)</argsstring>
+        <name>GetFatAABB</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1ab81462c9f1db365d410bce0144ae5d06">GetFatAABB</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1ad25c01e3387ebedcbd0682338efbd4cd">GetFatAABB</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>proxyId</declname>
+        </param>
+        <param>
+          <type>out <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>aabb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="34" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ad4113da7b47984551b75a9c415bde5f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.Query</definition>
+        <argsstring>(BroadPhaseQueryCallback callback, ref AABB aabb)</argsstring>
+        <name>Query</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a7f672c515f043a8ec16a4f2873622633">Query</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1a9eaa4bf31c4dfe48ea482297738549f9">Query</reimplementedby>
+        <param>
+          <type>BroadPhaseQueryCallback</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_a_a_b_b" kindref="compound">AABB</ref></type>
+          <declname>aabb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="36" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a09c85e80369a1026b8903936a776c27f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.RayCast</definition>
+        <argsstring>(BroadPhaseRayCastCallback callback, ref RayCastInput input)</argsstring>
+        <name>RayCast</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1acdfb141de14d6e3757d090a1511c5fa9">RayCast</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1aa00b592d60ccb72232d8d422fd658a7f">RayCast</reimplementedby>
+        <param>
+          <type>BroadPhaseRayCastCallback</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>ref <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_ray_cast_input" kindref="compound">RayCastInput</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="38" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ae547938af5833632a7dc5921de814943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Collision.IBroadPhase.ShiftOrigin</definition>
+        <argsstring>(Vector2 newOrigin)</argsstring>
+        <name>ShiftOrigin</name>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase_1a0bbf69d56257452bd6711ec8631c055c">ShiftOrigin</reimplementedby>
+        <reimplementedby refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase_1a06203642056cde1d20c7f5756dbafb6d">ShiftOrigin</reimplementedby>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>newOrigin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Collision/IBroadPhase.cs" line="40" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Collision.IBroadPhase</label>
+        <link refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase"/>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Collision.DynamicTreeBroadPhase</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_dynamic_tree_broad_phase"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tainicom.Aether.Physics2D.Collision.QuadTreeBroadPhase</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_quad_tree_broad_phase"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="Physics2D/Collision/IBroadPhase.cs" line="15" column="22" bodyfile="Physics2D/Collision/IBroadPhase.cs" bodystart="16" bodyend="41"/>
+    <listofallmembers>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1af687a49a5cb04cfb5208bbf4fff78de3" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>AddProxy</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ae883cb8dfc5da1639b26374cee8be339" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>GetFatAABB</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a08a3faf4dc4231abb5a389b7329f11a2" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>GetProxy</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ac33d194ef3d916457070b707d4ed6463" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>MoveProxy</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a2f2f187911ec42d8bacd3a2f611208e6" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>ProxyCount</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ad4113da7b47984551b75a9c415bde5f7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>Query</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a09c85e80369a1026b8903936a776c27f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>RayCast</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1afe21045dd655725a4678efa90be4c086" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>RemoveProxy</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a8b9ee1ca1aaf84c3368a3474f18471d0" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>SetProxy</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1ae547938af5833632a7dc5921de814943" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>ShiftOrigin</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1aa96b9feb5ffc6d0a2e4c16c94f3fce07" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>TestOverlap</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1acd8d12afadc367a1b24d0503f99e8612" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>TouchProxy</name></member>
+      <member refid="interfacetainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_i_broad_phase_1a8f70667f51c54061433785591b5be827" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Collision::IBroadPhase</scope><name>UpdatePairs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

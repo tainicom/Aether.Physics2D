@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</compoundname>
+    <basecompoundref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic" prot="public" virt="non-virtual">tainicom.Aether.Physics2D.Common.PhysicsLogic.PhysicsLogic</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1abe5b7d900d88af5e3dfd62524caa4725" prot="private" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.MaxEdgeOffset</definition>
+        <argsstring></argsstring>
+        <name>MaxEdgeOffset</name>
+        <initializer>= Constant.Pi / 90</initializer>
+        <briefdescription>
+<para>Two degrees: maximum angle from edges to first ray tested </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="74" column="29" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1af13b336a4cf60145a90a59ced6dd6b04" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.EdgeRatio</definition>
+        <argsstring></argsstring>
+        <name>EdgeRatio</name>
+        <initializer>= 1.0f / 40.0f</initializer>
+        <briefdescription>
+<para>Ratio of arc length to angle from edges to first ray tested. Defaults to 1/40. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="80" column="22" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a77a05bc05f436092ce752aa1448d1932" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.IgnoreWhenInsideShape</definition>
+        <argsstring></argsstring>
+        <name>IgnoreWhenInsideShape</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Ignore Explosion if it happens inside a shape. Default value is false. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="86" column="21" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1ae3d18ec82c37f17871d949fab4f25aaf" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.MaxAngle</definition>
+        <argsstring></argsstring>
+        <name>MaxAngle</name>
+        <initializer>= Constant.Pi / 15</initializer>
+        <briefdescription>
+<para>Max angle between rays (used when segment is large). Defaults to 15 degrees </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="92" column="22" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a2803e9db3a15d49e905a2b545e6bea90" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.MaxShapes</definition>
+        <argsstring></argsstring>
+        <name>MaxShapes</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+<para>Maximum number of shapes involved in the explosion. Defaults to 100 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="98" column="20" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a8a03db9aef5c57b3b0dccef33cffe33a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.MinRays</definition>
+        <argsstring></argsstring>
+        <name>MinRays</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>How many rays per shape/body/segment. Defaults to 5 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="104" column="20" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1ae83c717f01a4928f53b3168c9d65986f" prot="private" static="no" mutable="no">
+        <type>List&lt; ShapeData &gt;</type>
+        <definition>List&lt;ShapeData&gt; tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion._data</definition>
+        <argsstring></argsstring>
+        <name>_data</name>
+        <initializer>= new List&lt;ShapeData&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="106" column="22" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1acf636a94f1d488cca0b93fdd6ce8edd6" prot="private" static="no" mutable="no">
+        <type>RayDataComparer</type>
+        <definition>RayDataComparer tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion._rdc</definition>
+        <argsstring></argsstring>
+        <name>_rdc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="107" column="33" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1ab8e5f1e29afc0778217c68b09b5a669b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.RealExplosion</definition>
+        <argsstring>(World world)</argsstring>
+        <name>RealExplosion</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world" kindref="compound">World</ref></type>
+          <declname>world</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="109" column="16" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a6404688db0c180b400202b63a85c7f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Dictionary&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture" kindref="compound">Fixture</ref>, <ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref> &gt;</type>
+        <definition>Dictionary&lt;Fixture, Vector2&gt; tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion.Activate</definition>
+        <argsstring>(Vector2 pos, float radius, float maxForce)</argsstring>
+        <name>Activate</name>
+        <param>
+          <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>maxForce</declname>
+        </param>
+        <briefdescription>
+<para>Activate the explosion at the specified position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The position where the explosion happens </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>radius</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The explosion radius </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maxForce</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The explosion force at the explosion point (then is inversely proportional to the square of the distance)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of bodies and the amount of force that was applied to them.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="122" column="27" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="122" bodyend="421"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Creates a realistic explosion based on raycasting. Objects in the open will be affected, but objects behind static bodies will not. A body that is half in cover, half in the open will get half the force applied to the end in the open. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="2">
+        <label>PhysicsLogic</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.PhysicsLogic.RealExplosion</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>FilterData</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data"/>
+      </node>
+      <node id="2">
+        <label>PhysicsLogic</label>
+        <link refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/PhysicsLogic/RealExplosion.cs" line="69" column="18" bodyfile="Physics2D/Common/PhysicsLogic/RealExplosion.cs" bodystart="70" bodyend="422"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1ae83c717f01a4928f53b3168c9d65986f" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>_data</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1acf636a94f1d488cca0b93fdd6ce8edd6" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>_rdc</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a6404688db0c180b400202b63a85c7f68" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>Activate</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a0c67bc735e81298b08db05161f5ce33d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>AddDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1ad4b4f1a12b0ca07272bca503bc3cedeb" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>AddEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ad6c089104b831a6bd4921d09f272d52d" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>ControllerCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a2c43bbd612e1b91d74a7730e807a58f5" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>DisabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8ea4ad655cf58505be4ea05629c36129" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>DisabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1af13b336a4cf60145a90a59ced6dd6b04" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>EdgeRatio</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a34e34e8ea50c84c31e8be3d8694daaee" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>EnabledOnCategories</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec28e1af73b3b5c2aab51fd5860db8ac" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>EnabledOnGroup</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a77a05bc05f436092ce752aa1448d1932" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>IgnoreWhenInsideShape</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1ace3da2a2b286f78feb77af8aeabd0a59" prot="public" virt="virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>IsActiveOn</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a67f9813c805b3c12a8f6b59442fe1aca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>IsInDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a8422e2802fac58d53fc75e32cc4c8ab7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>IsInEnabledInCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1ae3d18ec82c37f17871d949fab4f25aaf" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>MaxAngle</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1abe5b7d900d88af5e3dfd62524caa4725" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>MaxEdgeOffset</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a2803e9db3a15d49e905a2b545e6bea90" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>MaxShapes</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1a8a03db9aef5c57b3b0dccef33cffe33a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>MinRays</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1a9cb1e22e8ddac1b7e43cafa42ec5d67f" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>PhysicsLogic</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion_1ab8e5f1e29afc0778217c68b09b5a669b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>RealExplosion</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1a207af74af2351b2e409d673272eef031" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>RemoveDisabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data_1aec5dd33678fbdad8fb7da68d769c0658" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>RemoveEnabledCategory</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic_1a8cb47b1ea97c5ca22fdbd200085dc172" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::PhysicsLogic::RealExplosion</scope><name>World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

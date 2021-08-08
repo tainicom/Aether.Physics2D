@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_controllers" kind="namespace" language="C#">
+    <compoundname>tainicom::Aether::Physics2D::Controllers</compoundname>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_abstract_force_controller" prot="public">tainicom::Aether::Physics2D::Controllers::AbstractForceController</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_buoyancy_controller" prot="public">tainicom::Aether::Physics2D::Controllers::BuoyancyController</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_controller" prot="public">tainicom::Aether::Physics2D::Controllers::Controller</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_gravity_controller" prot="public">tainicom::Aether::Physics2D::Controllers::GravityController</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_simple_wind_force" prot="public">tainicom::Aether::Physics2D::Controllers::SimpleWindForce</innerclass>
+    <innerclass refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1_1_velocity_limit_controller" prot="public">tainicom::Aether::Physics2D::Controllers::VelocityLimitController</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1a1c6c7b8b22c192ff923954dee0b7fac3" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GravityType</name>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1a1c6c7b8b22c192ff923954dee0b7fac3a32a843da6ea40ab3b17a3421ccdf671b" prot="public">
+          <name>Linear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_controllers_1a1c6c7b8b22c192ff923954dee0b7fac3ab5950247badd257aa18269aa0e183c6a" prot="public">
+          <name>DistanceSquared</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Controllers/GravityController.cs" line="17" column="11" bodyfile="Physics2D/Controllers/GravityController.cs" bodystart="18" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Controllers/AbstractForceController.cs" line="15" column="1"/>
+  </compounddef>
+</doxygen>

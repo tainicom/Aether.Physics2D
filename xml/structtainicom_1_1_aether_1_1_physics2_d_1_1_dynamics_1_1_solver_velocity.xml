@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_velocity" kind="struct" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Dynamics::SolverVelocity</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_velocity_1a4f766d46193607a154d6044efe9ee2f7" prot="public" static="no" mutable="no">
+        <type><ref refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 tainicom.Aether.Physics2D.Dynamics.SolverVelocity.v</definition>
+        <argsstring></argsstring>
+        <name>v</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/TimeStep.cs" line="68" column="24" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_velocity_1adf67c9ba191e750d450d0cf0b6bd98d7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float tainicom.Aether.Physics2D.Dynamics.SolverVelocity.w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Dynamics/TimeStep.cs" line="69" column="22" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is an internal structure. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Dynamics.SolverVelocity</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>v</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tainicom.Aether.Physics2D.Common.Vector2</label>
+        <link refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>IEquatable&lt; Vector2 &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Dynamics/TimeStep.cs" line="66" column="13" bodyfile="Physics2D/Dynamics/TimeStep.cs" bodystart="67" bodyend="70"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_velocity_1a4f766d46193607a154d6044efe9ee2f7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverVelocity</scope><name>v</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_solver_velocity_1adf67c9ba191e750d450d0cf0b6bd98d7" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Dynamics::SolverVelocity</scope><name>w</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

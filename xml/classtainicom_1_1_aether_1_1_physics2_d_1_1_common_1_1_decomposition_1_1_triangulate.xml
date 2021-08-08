@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_triangulate" kind="class" language="C#" prot="public">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::Triangulate</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_triangulate_1acfb90d47790a124953ee348aa0a6c7ca" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref> &gt;</type>
+        <definition>static List&lt;Vertices&gt; tainicom.Aether.Physics2D.Common.Decomposition.Triangulate.ConvexPartition</definition>
+        <argsstring>(Vertices vertices, TriangulationAlgorithm algorithm, bool discardAndFixInvalid=true, float tolerance=0.001f, bool skipSanityChecks=false)</argsstring>
+        <name>ConvexPartition</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>vertices</declname>
+        </param>
+        <param>
+          <type><ref refid="namespacetainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1aa2b1cda235a52272a12b9522898e850c" kindref="member">TriangulationAlgorithm</ref></type>
+          <declname>algorithm</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>discardAndFixInvalid</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>tolerance</declname>
+          <defval>0.001f</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>skipSanityChecks</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>skipSanityChecks</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set this to true to skip sanity checks in the engine. This will speed up the tools by removing the overhead of the checks, but you will need to handle checks yourself where it is needed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Triangulate.cs" line="82" column="28" bodyfile="Physics2D/Common/Decomposition/Triangulate.cs" bodystart="82" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_triangulate_1a1ebe12b171a191b4e0e510edb6f289b5" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool tainicom.Aether.Physics2D.Common.Decomposition.Triangulate.ValidatePolygon</definition>
+        <argsstring>(Vertices polygon)</argsstring>
+        <name>ValidatePolygon</name>
+        <param>
+          <type><ref refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices" kindref="compound">Vertices</ref></type>
+          <declname>polygon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/Triangulate.cs" line="151" column="29" bodyfile="Physics2D/Common/Decomposition/Triangulate.cs" bodystart="151" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Physics2D/Common/Decomposition/Triangulate.cs" line="75" column="19" bodyfile="Physics2D/Common/Decomposition/Triangulate.cs" bodystart="76" bodyend="169"/>
+    <listofallmembers>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_triangulate_1acfb90d47790a124953ee348aa0a6c7ca" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Triangulate</scope><name>ConvexPartition</name></member>
+      <member refid="classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_triangulate_1a1ebe12b171a191b4e0e510edb6f289b5" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::Triangulate</scope><name>ValidatePolygon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

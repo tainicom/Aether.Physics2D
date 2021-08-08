@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3" kind="struct" language="C#" prot="package">
+    <compoundname>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IEnumerable&lt; T &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1aea530b0b990979b4c3fb146b0eb111a4" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;._0</definition>
+        <argsstring></argsstring>
+        <name>_0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="45" column="18" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1afa4e95f73f6a4bf913a773557c40cd73" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;._1</definition>
+        <argsstring></argsstring>
+        <name>_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="45" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1ace9eceb3089422a8b45894fefe29c302" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;._2</definition>
+        <argsstring></argsstring>
+        <name>_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="45" column="24" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a34c0754d31a715ddfc39775e34c37d46" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>T</type>
+        <definition>T tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.this[int index]</definition>
+        <argsstring></argsstring>
+        <name>this[int index]</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="47" column="18" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="48" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a90f4b0c5498460a7755d0f0b0cbd67fd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator&lt; T &gt;</type>
+        <definition>IEnumerator&lt;T&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="84" column="28" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a717fee7a51b5c61f9cf1b763070edf20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerator IEnumerable.</type>
+        <definition>IEnumerator IEnumerable. tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.GetEnumerator</definition>
+        <argsstring>()</argsstring>
+        <name>GetEnumerator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="89" column="32" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="89" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1abf2379b2c3bfffbf3207cd39a789b85b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.Contains</definition>
+        <argsstring>(T value)</argsstring>
+        <name>Contains</name>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="96" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a8ad66bc70dd65e46283fbb8c38e5d39e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.IndexOf</definition>
+        <argsstring>(T value)</argsstring>
+        <name>IndexOf</name>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="102" column="20" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a1e656307b6f10f3283b7092d03ed405a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.Clear</definition>
+        <argsstring>()</argsstring>
+        <name>Clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="108" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1aa62887ce08445e689ca4e7ab24e54284" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.Clear</definition>
+        <argsstring>(T value)</argsstring>
+        <name>Clear</name>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="113" column="21" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="113" bodyend="116"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1adbd5d4948af4906dd7566b0541685d87" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>IEnumerable&lt; T &gt;</type>
+        <definition>IEnumerable&lt;T&gt; tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;.Enumerate</definition>
+        <argsstring>()</argsstring>
+        <name>Enumerate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="118" column="29" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="118" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IEnumerable&lt; T &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tainicom.Aether.Physics2D.Common.Decomposition.CDT.Util.FixedArray3&lt; T &gt;</label>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>IEnumerable&lt; T &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" line="43" column="13" bodyfile="Physics2D/Common/Decomposition/CDT/Util/FixedArray3.cs" bodystart="44" bodyend="122"/>
+    <listofallmembers>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1aea530b0b990979b4c3fb146b0eb111a4" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>_0</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1afa4e95f73f6a4bf913a773557c40cd73" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>_1</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1ace9eceb3089422a8b45894fefe29c302" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>_2</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a1e656307b6f10f3283b7092d03ed405a" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>Clear</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1aa62887ce08445e689ca4e7ab24e54284" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>Clear</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1abf2379b2c3bfffbf3207cd39a789b85b" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>Contains</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1adbd5d4948af4906dd7566b0541685d87" prot="private" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>Enumerate</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a90f4b0c5498460a7755d0f0b0cbd67fd" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>GetEnumerator</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a717fee7a51b5c61f9cf1b763070edf20" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>GetEnumerator</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a8ad66bc70dd65e46283fbb8c38e5d39e" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>IndexOf</name></member>
+      <member refid="structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_decomposition_1_1_c_d_t_1_1_util_1_1_fixed_array3_1a34c0754d31a715ddfc39775e34c37d46" prot="public" virt="non-virtual"><scope>tainicom::Aether::Physics2D::Common::Decomposition::CDT::Util::FixedArray3</scope><name>this[int index]</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
