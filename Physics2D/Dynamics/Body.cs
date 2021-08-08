@@ -88,7 +88,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Get the parent World of this body. This is null if the body is not attached.
         /// </summary>
         public World World { get {return _world; } }
-        
+
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public int IslandIndex { get; internal set; }
 
@@ -1191,13 +1192,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
             add { onSeparationEventHandler += value; }
             remove { onSeparationEventHandler -= value; }
         }
-        
-        
+
+
         /// <summary>
         /// Set restitution on all fixtures.
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
         /// <param name="restitution"></param>
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public void SetRestitution(float restitution)
         {
@@ -1210,6 +1212,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
         /// <param name="friction"></param>
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public void SetFriction(float friction)
         {
@@ -1220,6 +1223,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public void SetCollisionCategories(Category category)
         {
@@ -1230,6 +1234,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public void SetCollidesWith(Category category)
         {
@@ -1240,6 +1245,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public void SetCollisionGroup(short collisionGroup)
         {
@@ -1250,6 +1256,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// <summary>
         /// Warning: This method applies the value on existing Fixtures. It's not a property of Body.
         /// </summary>
+        /// <remarks>Deprecated in version 1.6</remarks>
         [Obsolete]
         public void SetIsSensor(bool isSensor)
         {
