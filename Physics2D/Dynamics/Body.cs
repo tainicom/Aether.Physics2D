@@ -84,6 +84,9 @@ namespace tainicom.Aether.Physics2D.Dynamics
             BodyType = BodyType.Static;
         }
 
+        /// <summary>
+        /// Get the parent World of this body. This is null if the body is not attached.
+        /// </summary>
         public World World { get {return _world; } }
         
         public int IslandIndex { get; set; }

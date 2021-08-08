@@ -141,6 +141,9 @@ namespace tainicom.Aether.Physics2D.Dynamics.Joints
             BodyA = body;
         }
 
+        /// <summary>
+        /// Get the parent World of this joint. This is null if the joint is not attached.
+        /// </summary>
         public World World { get { return _world; } }
 
         /// <summary>
