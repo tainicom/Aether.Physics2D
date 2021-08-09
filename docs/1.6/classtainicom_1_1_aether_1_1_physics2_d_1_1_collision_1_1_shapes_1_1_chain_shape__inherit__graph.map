@@ -1,0 +1,4 @@
+<map id="ChainShape" name="ChainShape">
+<area shape="rect" id="node1" title="A chain shape is a free form sequence of line segments. The chain has two&#45;sided collision,..." alt="" coords="5,83,115,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape.html" title="A shape is used for collision detection. You can create a shape however you like. Shapes used for sim..." alt="" coords="26,5,94,35"/>
+</map>

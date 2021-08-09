@@ -1,0 +1,6 @@
+<map id="FrictionJoint" name="FrictionJoint">
+<area shape="rect" id="node1" title="Friction joint. This is used for top&#45;down friction. It provides 2D translational friction and angular..." alt="" coords="5,215,112,244"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="87,100,142,129"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge.html" title="A joint edge is used to connect bodies and joints together in a joint graph where each body is a node..." alt="" coords="136,215,229,244"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world.html" title="The world class manages all physics entities, dynamic simulation, and asynchronous queries." alt="" coords="83,5,146,35"/>
+</map>

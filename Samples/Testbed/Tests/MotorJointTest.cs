@@ -40,12 +40,13 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         MotorJointTest()
         {
-            Body ground = World.CreateEdge(new Vector2(-20, 0), new Vector2(20, 0));
+            Body ground = World.CreateBody();
+            ground.CreateEdge(new Vector2(-20, 0), new Vector2(20, 0));
 
             // Define motorized body
-            Body body = World.CreateRectangle(4, 1, 2, new Vector2(0, 8));
-            body.BodyType = BodyType.Dynamic;
-            body.SetFriction(0.6f);
+            Body body = World.CreateBody(new Vector2(0, 8), 0, BodyType.Dynamic);
+            var bfixture = body.CreateRectangle(4, 1, 2, Vector2.Zero);
+            bfixture.Friction = 0.6f;
 
             _joint = new MotorJoint(ground, body);
             _joint.MaxForce = 1000.0f;

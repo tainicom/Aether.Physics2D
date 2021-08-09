@@ -31,12 +31,12 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             CreateBody(LoadNextDataFile());
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.T))
+            if (input.IsKeyPressed(Keys.T))
                 CreateBody(LoadNextDataFile());
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         private void CreateBody(Vertices vertices)

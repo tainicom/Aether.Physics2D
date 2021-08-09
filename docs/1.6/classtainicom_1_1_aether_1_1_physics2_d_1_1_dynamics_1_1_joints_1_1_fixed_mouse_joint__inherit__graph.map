@@ -1,0 +1,4 @@
+<map id="FixedMouseJoint" name="FixedMouseJoint">
+<area shape="rect" id="node1" title="A mouse joint is used to make a point on a body track a specified world point. This a soft constraint..." alt="" coords="5,83,147,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="49,5,103,35"/>
+</map>

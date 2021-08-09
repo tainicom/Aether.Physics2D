@@ -95,10 +95,8 @@ namespace tainicom.Aether.Physics2D.Controllers
                 float area = 0;
                 float mass = 0;
 
-                for (int j = 0; j < body.FixtureList.Count; j++)
+                foreach (Fixture fixture in body.FixtureList)
                 {
-                    Fixture fixture = body.FixtureList[j];
-
                     if (fixture.Shape.ShapeType != ShapeType.Polygon && fixture.Shape.ShapeType != ShapeType.Circle)
                         continue;
 

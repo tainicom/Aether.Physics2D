@@ -1,3 +1,5 @@
+//   Copyright 2021 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -41,23 +43,25 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
     /// </summary>
     public class Game1 : Game
     {
-        private TestEntry _entry;
+
         private GraphicsDeviceManager _graphics;
-        private KeyboardManager _keyboardManager = new KeyboardManager();
-        private Vector2 _lower;
-        private GamePadState _oldGamePad;
-        private MouseState _oldMouseState;
+        Point windowedSize = new Point(1024, 768);
+        private InputState _inputState = new InputState();
+
         public Matrix Projection;
-        private GameSettings _settings = new GameSettings();
+        public Matrix View;
+        private Vector2 _viewCenter;
+        private float _viewZoom;
+        private Vector2 _mouseMoveBeginViewCenter;
+        private MouseState? _mouseMoveBeginState;
+
+        private TestEntry _entry;
         private Test _test;
         private int _testCount;
         private int _testIndex;
-        private int _testSelection;
-        private Vector2 _upper;
-        public Matrix View;
-        private Vector2 _viewCenter;
 
-        private float _viewZoom;
+        private GameSettings _settings = new GameSettings();
+        private ControlPanel _controlPanel;
 
         public Game1()
         {
@@ -102,11 +106,15 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         /// </summary>
         protected override void Initialize()
         {
+            _controlPanel = new ControlPanel(this);
+            Components.Add(_controlPanel);
+
             base.Initialize();
 
             //Set window defaults. Parent game can override in constructor
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += WindowClientSizeChanged;
+
 
             //Default projection and view
             ResetCamera();
@@ -118,7 +126,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             }
 
             _testIndex = MathUtils.Clamp(_testIndex, 0, _testCount - 1);
-            _testSelection = _testIndex;
             StartTest(_testIndex);
         }
 
@@ -126,9 +133,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         private void StartTest(int index)
         {
             // save previous flags
-            DebugViewFlags flags = (DebugViewFlags)0;
+            DebugViewFlags prevFlags = DebugViewFlags.None;
             if (_test != null)
-                flags = _test.DebugView.Flags;
+                prevFlags = _test.DebugView.Flags;
 
             _entry = TestEntries.TestList[index];
             _test = _entry.CreateTest();
@@ -136,7 +143,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             _test.Initialize();
 
             // re-enable previous flags
-            _test.DebugView.Flags |= flags;
+            _test.DebugView.Flags |= prevFlags;
         }
 
         /// <summary>
@@ -145,9 +152,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         /// </summary>
         protected override void LoadContent()
         {
-            _keyboardManager._oldKeyboardState = Keyboard.GetState();
-            _oldMouseState = Mouse.GetState();
-            _oldGamePad = GamePad.GetState(PlayerIndex.One);
         }
 
         /// <summary>
@@ -160,92 +164,126 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             // clear graphics here because some tests already draw during update
             GraphicsDevice.Clear(Color.Black);
 
+            _inputState.Update(this.IsActive);
+
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (_inputState.IsButtonPressed(Buttons.Back))
                 Exit();
+            
+            if (_inputState.IsKeyReleased(Keys.F11))
+                ToggleFullscreen();
 
-            _keyboardManager._newKeyboardState = Keyboard.GetState();
-            GamePadState newGamePad = GamePad.GetState(PlayerIndex.One);
-            MouseState newMouseState = Mouse.GetState();
-
-            if (_keyboardManager.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
+            if (_inputState.IsKeyDown(Keys.Z)) // Press 'z' to zoom out.
                 ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
-            else if (_keyboardManager.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
+            else if (_inputState.IsKeyDown(Keys.X)) // Press 'x' to zoom in.
                 ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
-            else if (_keyboardManager.IsKeyDown(Keys.Subtract)) // Press '-' to zoom out.
+            else if (_inputState.IsKeyDown(Keys.Subtract)) // Press '-' to zoom out.
                 ViewZoom = Math.Min((float)Math.Pow(Math.E, -0.05f) * ViewZoom, 20.0f);
-            else if (_keyboardManager.IsKeyDown(Keys.Add)) // Press 'x' to zoom in.
+            else if (_inputState.IsKeyDown(Keys.Add)) // Press '+' to zoom in.
                 ViewZoom = Math.Max((float)Math.Pow(Math.E, +0.05f) * ViewZoom, 0.02f);
-            else if (newMouseState.ScrollWheelValue != _oldMouseState.ScrollWheelValue) // Mouse Wheel to Zoom.
+            else if (_inputState.ScrollWheelDelta != 0) // Mouse Wheel to Zoom.
             {
-                var wheelDelta = (newMouseState.ScrollWheelValue - _oldMouseState.ScrollWheelValue)/120f;
+                var wheelDelta = _inputState.ScrollWheelDelta /120f;
                 var zoomFactor = (float)Math.Pow(Math.E, 0.05f * wheelDelta);
                 ViewZoom = Math.Min(Math.Max(zoomFactor * ViewZoom, 0.02f), 20.0f);
             }
-            else if (_keyboardManager.IsNewKeyPress(Keys.R)) // Press 'r' to reset.
+            else if (_inputState.IsKeyPressed(Keys.R)) // Press 'r' to reset.
                 Restart();
-            else if (_keyboardManager.IsNewKeyPress(Keys.P) || newGamePad.IsButtonDown(Buttons.Start) && _oldGamePad.IsButtonUp(Buttons.Start)) // Press I to prev test.
+            else if (_inputState.IsKeyPressed(Keys.P) || _inputState.IsButtonPressed(Buttons.Start))
                 _settings.Pause = !_settings.Pause;
-            else if (_keyboardManager.IsNewKeyPress(Keys.I) || newGamePad.IsButtonDown(Buttons.LeftShoulder) && _oldGamePad.IsButtonUp(Buttons.LeftShoulder))
+            else if (_inputState.IsKeyPressed(Keys.I) || _inputState.IsButtonPressed(Buttons.LeftShoulder)) // Press I to prev test.
             {
-                --_testSelection;
-                if (_testSelection < 0)
-                    _testSelection = _testCount - 1;
-            }
-            else if (_keyboardManager.IsNewKeyPress(Keys.O) || newGamePad.IsButtonDown(Buttons.RightShoulder) && _oldGamePad.IsButtonUp(Buttons.RightShoulder)) // Press O to next test.
-            {
-                ++_testSelection;
-                if (_testSelection == _testCount)
-                    _testSelection = 0;
-            }
-            if (_keyboardManager.IsKeyDown(Keys.Left)) // Press left to pan left.
-                ViewCenter = new Vector2(ViewCenter.X - 0.5f, ViewCenter.Y);
-            else if (_keyboardManager.IsKeyDown(Keys.Right)) // Press right to pan right.
-                ViewCenter = new Vector2(ViewCenter.X + 0.5f, ViewCenter.Y);
-            if (_keyboardManager.IsKeyDown(Keys.Down)) // Press down to pan down.
-                ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y - 0.5f);
-            else if (_keyboardManager.IsKeyDown(Keys.Up)) // Press up to pan up.
-                ViewCenter = new Vector2(ViewCenter.X, ViewCenter.Y + 0.5f);
-            if (_keyboardManager.IsNewKeyPress(Keys.Home)) // Press home to reset the view.
+                --_testIndex;
+                _testIndex = (_testIndex+_testCount) %_testCount;
+
+                StartTest(_testIndex);
                 ResetCamera();
-            else if (_keyboardManager.IsNewKeyPress(Keys.F1))
-                EnableOrDisableFlag(DebugViewFlags.Shape);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F2))
-                EnableOrDisableFlag(DebugViewFlags.DebugPanel);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F3))
-                EnableOrDisableFlag(DebugViewFlags.PerformanceGraph);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F4))
-                EnableOrDisableFlag(DebugViewFlags.AABB);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F5))
-                EnableOrDisableFlag(DebugViewFlags.CenterOfMass);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F6))
-                EnableOrDisableFlag(DebugViewFlags.Joint);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F7))
-            {
-                EnableOrDisableFlag(DebugViewFlags.ContactPoints);
-                EnableOrDisableFlag(DebugViewFlags.ContactNormals);
             }
-            else if (_keyboardManager.IsNewKeyPress(Keys.F8))
-                EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
-            else if (_keyboardManager.IsNewKeyPress(Keys.F9))
-                EnableOrDisableFlag(DebugViewFlags.PolygonPoints);
+            else if (_inputState.IsKeyPressed(Keys.O) || _inputState.IsButtonPressed(Buttons.RightShoulder)) // Press O to next test.
+            {
+                ++_testIndex;
+                _testIndex = _testIndex % _testCount;
+
+                StartTest(_testIndex);
+                ResetCamera();
+            }
+            
+
+            if (_inputState.IsKeyDown(Keys.Left)) // Press left to pan left.
+                ViewCenter += -Vector2.UnitX * 0.5f;
+            else if (_inputState.IsKeyDown(Keys.Right)) // Press right to pan right.
+                ViewCenter +=  Vector2.UnitX * 0.5f;
+            if (_inputState.IsKeyDown(Keys.Down)) // Press down to pan down.
+                ViewCenter += -Vector2.UnitY * 0.5f;
+            else if (_inputState.IsKeyDown(Keys.Up)) // Press up to pan up.
+                ViewCenter +=  Vector2.UnitY * 0.5f;
+            if (_inputState.IsKeyPressed(Keys.Home)) // Press home to reset the view.
+                ResetCamera();
+            else if (_inputState.IsKeyPressed(Keys.F2))
+                ToggleDebugDrawFlag(DebugViewFlags.DebugPanel);
+            else if (_inputState.IsKeyPressed(Keys.F3))
+                ToggleDebugDrawFlag(DebugViewFlags.PerformanceGraph);
+            else if (_inputState.IsKeyPressed(Keys.F4))
+                ToggleDebugDrawFlag(DebugViewFlags.Shape);
+            else if (_inputState.IsKeyPressed(Keys.F5))
+                ToggleDebugDrawFlag(DebugViewFlags.AABB);
+            else if (_inputState.IsKeyPressed(Keys.F6))
+                ToggleDebugDrawFlag(DebugViewFlags.CenterOfMass);
+            else if (_inputState.IsKeyPressed(Keys.F7))
+                ToggleDebugDrawFlag(DebugViewFlags.Joint);
+            else if (_inputState.IsKeyPressed(Keys.F8))
+            {
+                ToggleDebugDrawFlag(DebugViewFlags.ContactPoints);
+                ToggleDebugDrawFlag(DebugViewFlags.ContactNormals);
+            }
+            else if (_inputState.IsKeyPressed(Keys.F9))
+                ToggleDebugDrawFlag(DebugViewFlags.PolygonPoints);
             else
             {
                 if (_test != null)
-                    _test.Keyboard(_keyboardManager);
+                    _test.Keyboard(_inputState);
             }
 
             if (_test != null)
-                _test.Mouse(newMouseState, _oldMouseState);
+                _test.Mouse(_inputState);
 
-            if (_test != null && newGamePad.IsConnected)
-                _test.Gamepad(newGamePad, _oldGamePad);
+            // move camera with Right mouse button
+            if (_inputState.IsRightButtonPressed())
+            {
+                _mouseMoveBeginState = _inputState.MouseState;
+                _mouseMoveBeginViewCenter = ViewCenter;
+                IsMouseVisible = false;
+            }
+            if (_inputState.IsRightButtonReleased())
+            {
+                _mouseMoveBeginState = null;
+                _mouseMoveBeginViewCenter = Vector2.Zero;
+                IsMouseVisible = true;
+            }
+            if (_mouseMoveBeginState.HasValue)
+            {
+                var beginView = Matrix.CreateLookAt(new Vector3(_mouseMoveBeginViewCenter, 1), new Vector3(_mouseMoveBeginViewCenter, 0), Vector3.Up);
+
+                Vector3 beginPos = new Vector3(_mouseMoveBeginState.Value.X, _mouseMoveBeginState.Value.Y, 0f);
+                Vector3 pos = new Vector3(_inputState.MouseState.X, _inputState.MouseState.Y, 0f);
+
+                if (Mouse.IsRawInputAvailable)
+                {
+                    beginPos = new Vector3(_mouseMoveBeginState.Value.RawX, _mouseMoveBeginState.Value.RawY, 0f);
+                    pos = new Vector3(_inputState.MouseState.RawX, _inputState.MouseState.RawY, 0f);
+                }
+
+                beginPos = GraphicsDevice.Viewport.Unproject(beginPos, Projection, beginView, Matrix.Identity);
+                pos = GraphicsDevice.Viewport.Unproject(pos, Projection, beginView, Matrix.Identity);                    
+                Vector3 offset = beginPos - pos;
+
+                ViewCenter = _mouseMoveBeginViewCenter + new Vector2(offset.X, offset.Y);
+            }
+
+            if (_test != null && _inputState.GamePadState.IsConnected)
+                _test.Gamepad(_inputState);
 
             base.Update(gameTime);
-
-            _keyboardManager._oldKeyboardState = _keyboardManager._newKeyboardState;
-            _oldMouseState = newMouseState;
-            _oldGamePad = newGamePad;
 
             if (_test != null)
             {
@@ -256,7 +294,27 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             _test.DebugView.UpdatePerformanceGraph(_test.World.UpdateTime);
         }
 
-        private void EnableOrDisableFlag(DebugViewFlags flag)
+        private void ToggleFullscreen()
+        {
+            if (!_graphics.IsFullScreen)
+            {
+                windowedSize.X = GraphicsDevice.PresentationParameters.BackBufferWidth;
+                windowedSize.Y = GraphicsDevice.PresentationParameters.BackBufferHeight;
+                _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+                _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+                _graphics.IsFullScreen = true;
+                _graphics.ApplyChanges();
+            }
+            else
+            {
+                _graphics.PreferredBackBufferWidth = windowedSize.X;
+                _graphics.PreferredBackBufferHeight = windowedSize.Y;
+                _graphics.IsFullScreen = false;
+                _graphics.ApplyChanges();
+            }
+        }
+
+        private void ToggleDebugDrawFlag(DebugViewFlags flag)
         {
             if ((_test.DebugView.Flags & flag) == flag)
                 _test.DebugView.RemoveFlags(flag);
@@ -272,13 +330,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         {
             _test.DrawTitle(50, 15, _entry.Name);
 
-            if (_testSelection != _testIndex)
-            {
-                _testIndex = _testSelection;
-                StartTest(_testIndex);
-                ResetCamera();
-            }
-
             _test.DrawDebugView(gameTime, ref Projection, ref View);
 
             base.Draw(gameTime);
@@ -292,11 +343,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private void UpdateProjection()
         {
-            _lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
-            _upper =  new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+            var lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+            var upper =  new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
 
             // L/R/B/T
-            Projection = Matrix.CreateOrthographicOffCenter(_lower.X, _upper.X, _lower.Y, _upper.Y, 0f, 2f);
+            Projection = Matrix.CreateOrthographicOffCenter(lower.X, upper.X, lower.Y, upper.Y, 0f, 2f);
         }
 
         private void UpdateView()
@@ -323,12 +374,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private void WindowClientSizeChanged(object sender, EventArgs e)
         {
-            if (Window.ClientBounds.Width > 0 && Window.ClientBounds.Height > 0)
-            {
-                _graphics.PreferredBackBufferWidth = Window.ClientBounds.Width;
-                _graphics.PreferredBackBufferHeight = Window.ClientBounds.Height;
-            }
-
             //We want to keep aspec ratio. Recalcuate the projection matrix.
             UpdateProjection();
         }

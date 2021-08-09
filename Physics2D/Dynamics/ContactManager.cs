@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Kastellanos Nikolaos
+﻿// Copyright (c) 2021 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -67,7 +67,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         /// </summary>
         public BeginContactDelegate BeginContact;
 
-        public IBroadPhase BroadPhase;
+        public readonly IBroadPhase BroadPhase;
 
         public readonly ContactListHead ContactList;
         public int ContactCount { get; private set; }
@@ -120,7 +120,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _contactPoolList = new ContactListHead();
 
             BroadPhase = broadPhase;
-            OnBroadphaseCollision = AddPair;
+            OnBroadphaseCollision += AddPair;
         }
 
         // Broad-phase callback.
@@ -177,15 +177,21 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 return;
 
             // Check user filtering.
-            if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
-                return;
+            var contactFilterHandler = ContactFilter;
+            if (contactFilterHandler != null)
+                if (contactFilterHandler(fixtureA, fixtureB) == false)
+                    return;
 
             //FPE feature: BeforeCollision delegate
-            if (fixtureA.BeforeCollision != null && fixtureA.BeforeCollision(fixtureA, fixtureB) == false)
-                return;
+            var beforeCollisionHandlerA = fixtureA.BeforeCollision;
+            if (beforeCollisionHandlerA != null)
+                if (beforeCollisionHandlerA(fixtureA, fixtureB) == false)
+                    return;
 
-            if (fixtureB.BeforeCollision != null && fixtureB.BeforeCollision(fixtureB, fixtureA) == false)
-                return;
+            var beforeCollisionHandlerB = fixtureB.BeforeCollision;
+            if (beforeCollisionHandlerB != null)
+                if (beforeCollisionHandlerB(fixtureB, fixtureA) == false)
+                    return;
 
             // Call the factory.
             Contact c = Contact.Create(this, fixtureA, indexA, fixtureB, indexB);
@@ -258,25 +264,30 @@ namespace tainicom.Aether.Physics2D.Dynamics
             if (contact.IsTouching)
             {
                 //Report the separation to both participants:
-                if (fixtureA != null && fixtureA.OnSeparation != null)
-                    fixtureA.OnSeparation(fixtureA, fixtureB, contact);
+                var onFixtureSeparationHandlerA = fixtureA.OnSeparation;
+                if (onFixtureSeparationHandlerA != null)
+                    onFixtureSeparationHandlerA(fixtureA, fixtureB, contact);
 
                 //Reverse the order of the reported fixtures. The first fixture is always the one that the
                 //user subscribed to.
-                if (fixtureB != null && fixtureB.OnSeparation != null)
-                    fixtureB.OnSeparation(fixtureB, fixtureA, contact);
+                var onFixtureSeparationHandlerB = fixtureB.OnSeparation;
+                if (onFixtureSeparationHandlerB != null)
+                    onFixtureSeparationHandlerB(fixtureB, fixtureA, contact);
 
                 //Report the separation to both bodies:
-                if (fixtureA != null && fixtureA.Body != null && fixtureA.Body.onSeparationEventHandler != null)
-                    fixtureA.Body.onSeparationEventHandler(fixtureA, fixtureB, contact);
+                var onBodySeparationHandlerA = bodyA.onSeparationEventHandler;
+                if (onBodySeparationHandlerA != null)
+                    onBodySeparationHandlerA(fixtureA, fixtureB, contact);
 
                 //Reverse the order of the reported fixtures. The first fixture is always the one that the
                 //user subscribed to.
-                if (fixtureB != null && fixtureB.Body != null && fixtureB.Body.onSeparationEventHandler != null)
-                    fixtureB.Body.onSeparationEventHandler(fixtureB, fixtureA, contact);
+                var onBodySeparationHandlerB = bodyB.onSeparationEventHandler;
+                if (onBodySeparationHandlerB != null)
+                    onBodySeparationHandlerB(fixtureB, fixtureA, contact);
 
-                if (EndContact != null)
-                    EndContact(contact);
+                var endContactHandler = EndContact;
+                if (endContactHandler != null)
+                    endContactHandler(contact);
             }
 
             // Remove from the world.
@@ -369,12 +380,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     }
 
                     // Check user filtering.
-                    if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
+                    var contactFilterHandler = ContactFilter;
+                    if (contactFilterHandler != null)
                     {
-                        Contact cNuke = c;
-                        c = c.Next;
-                        Destroy(cNuke);
-                        continue;
+                        if (contactFilterHandler(fixtureA, fixtureB) == false)
+                        {
+                            Contact cNuke = c;
+                            c = c.Next;
+                            Destroy(cNuke);
+                            continue;
+                        }
                     }
 
                     // Clear the filtering flag.
@@ -475,12 +490,16 @@ namespace tainicom.Aether.Physics2D.Dynamics
                     }
 
                     // Check user filtering.
-                    if (ContactFilter != null && ContactFilter(fixtureA, fixtureB) == false)
+                    var contactFilterHandler = ContactFilter;
+                    if (contactFilterHandler != null)
                     {
-                        Contact cNuke = c;
-                        c = c.Next;
-                        Destroy(cNuke);
-                        continue;
+                        if (contactFilterHandler(fixtureA, fixtureB) == false)
+                        {
+                            Contact cNuke = c;
+                            c = c.Next;
+                            Destroy(cNuke);
+                            continue;
+                        }
                     }
 
                     // Clear the filtering flag.

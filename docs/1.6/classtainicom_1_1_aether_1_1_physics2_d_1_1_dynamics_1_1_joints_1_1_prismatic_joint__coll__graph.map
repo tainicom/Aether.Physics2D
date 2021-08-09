@@ -1,0 +1,6 @@
+<map id="PrismaticJoint" name="PrismaticJoint">
+<area shape="rect" id="node1" title="A prismatic joint. This joint provides one degree of freedom: translation along an axis fixed in body..." alt="" coords="5,215,127,244"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="103,100,157,129"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge.html" title="A joint edge is used to connect bodies and joints together in a joint graph where each body is a node..." alt="" coords="151,215,245,244"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world.html" title="The world class manages all physics entities, dynamic simulation, and asynchronous queries." alt="" coords="99,5,161,35"/>
+</map>

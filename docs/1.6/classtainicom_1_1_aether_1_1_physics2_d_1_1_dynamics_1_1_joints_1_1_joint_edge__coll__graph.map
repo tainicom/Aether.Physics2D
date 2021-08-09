@@ -1,0 +1,10 @@
+<map id="JointEdge" name="JointEdge">
+<area shape="rect" id="node1" title="A joint edge is used to connect bodies and joints together in a joint graph where each body is a node..." alt="" coords="109,332,202,361"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="44,447,99,476"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world.html" title="The world class manages all physics entities, dynamic simulation, and asynchronous queries." alt="" coords="5,137,68,167"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body.html" title=" " alt="" coords="174,235,233,264"/>
+<area shape="rect" id="node5" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep.html" title="This describes the motion of a body/shape for TOI computation. Shapes are defined with respect to the..." alt="" coords="261,137,332,167"/>
+<area shape="rect" id="node6" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2.html" title=" " alt="" coords="247,5,325,35"/>
+<area shape="rect" id="node8" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform.html" title="A transform contains translation and rotation. It is used to represent the position and orientation o..." alt="" coords="356,137,448,167"/>
+<area shape="rect" id="node7" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture_collection.html" title=" " alt="" coords="473,137,611,167"/>
+</map>

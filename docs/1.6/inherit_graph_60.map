@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape.html" title="A shape is used for collision detection. You can create a shape however you like. Shapes used for sim..." alt="" coords="5,85,73,115"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_chain_shape.html" title="A chain shape is a free form sequence of line segments. The chain has two&#45;sided collision,..." alt="" coords="129,5,238,35"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape.html" title="A circle shape." alt="" coords="129,59,238,88"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_edge_shape.html" title="A line segment (edge) shape. These can be connected in chains or loops to other edge shapes...." alt="" coords="130,112,237,141"/>
+<area shape="rect" id="node5" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape.html" title="Represents a simple non&#45;selfintersecting convex polygon. Create a convex hull from the given array of..." alt="" coords="121,165,245,195"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="SimpleExplosion" name="SimpleExplosion">
+<area shape="rect" id="node1" title="Creates a simple explosion that ignores other bodies hiding behind static bodies." alt="" coords="5,160,144,189"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_physics_logic.html" title=" " alt="" coords="17,83,132,112"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data.html" title="Contains filter data that can determine whether an object should be processed or not." alt="" coords="29,5,120,35"/>
+</map>

@@ -153,11 +153,11 @@ namespace tainicom.Aether.Physics2D.Common
             }
 
             _writer.WriteStartElement("Bindings");
-            for (int i = 0; i < body.FixtureList.Count; i++)
+            for (int i = 0; i < body.FixtureList._list.Count; i++)
             {
                 _writer.WriteStartElement("Pair");
-                _writer.WriteAttributeString("FixtureId", fixtures.IndexOf(body.FixtureList[i]).ToString());
-                _writer.WriteAttributeString("ShapeId", shapes.IndexOf(body.FixtureList[i].Shape).ToString());
+                _writer.WriteAttributeString("FixtureId", fixtures.IndexOf(body.FixtureList._list[i]).ToString());
+                _writer.WriteAttributeString("ShapeId", shapes.IndexOf(body.FixtureList._list[i].Shape).ToString());
                 _writer.WriteEndElement();
             }
 
@@ -340,33 +340,6 @@ namespace tainicom.Aether.Physics2D.Common
         private static string FloatToString(float value)
         {
             return value.ToString(System.Globalization.CultureInfo.InvariantCulture);
-        }
-
-        private static String Join(List<Fixture> fixtures, IEnumerable<Fixture> values)
-        {
-            using (var en = values.GetEnumerator())
-            {
-                if (!en.MoveNext())
-                    return String.Empty;
-
-                StringBuilder result = new StringBuilder();
-                if (en.Current != null)
-                {
-                    var fixture = en.Current;
-                    var fixtureId = fixtures.IndexOf(fixture);
-                    result.Append(fixtureId.ToString());
-                }
-
-                while (en.MoveNext())
-                {
-                    result.Append("|");
-
-                    var fixture = en.Current;
-                    var fixtureId = fixtures.IndexOf(fixture);
-                    result.Append(fixtureId.ToString());
-                }
-                return result.ToString();
-            }
         }
 
         internal static void Serialize(World world, Stream stream)

@@ -68,10 +68,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             float[] friction = { 0.75f, 0.45f, 0.28f, 0.17f, 0.0f };
             for (int i = 0; i < 5; ++i)
             {
-                _rectangle[i] = World.CreateRectangle(1.5f, 1.5f, 1f);
-                _rectangle[i].BodyType = BodyType.Dynamic;
-                _rectangle[i].Position = new Vector2(-18f + 5.2f * i, 13.0f - 1.282f * i);
-                _rectangle[i].SetFriction(friction[i]);
+                _rectangle[i] = World.CreateBody(new Vector2(-18f + 5.2f * i, 13.0f - 1.282f * i), 0, BodyType.Dynamic);
+                var rfixture = _rectangle[i].CreateRectangle(1.5f, 1.5f, 1f, Vector2.Zero);
+                rfixture.Friction= friction[i];
             }
 
             // Create sprite based on body
@@ -92,7 +91,10 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
             ScreenManager.LineBatch.Begin(Camera.Projection, Camera.View);
             for (int i = 0; i < _ramps.Count; ++i)
             {
-                ScreenManager.LineBatch.DrawLineShape(_ramps[i].FixtureList[0].Shape, Color.Black);
+                foreach (Fixture fixture in _ramps[i].FixtureList)
+                {
+                    ScreenManager.LineBatch.DrawLineShape(fixture.Shape, Color.Black);
+                }
             }
             ScreenManager.LineBatch.End();
 

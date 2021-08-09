@@ -64,9 +64,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
 
             {
-                Body ball = World.CreateCircle(3.0f, 5.0f, new Vector2(5.0f, 30.0f));
-                ball.BodyType = BodyType.Dynamic;
-                ball.SetCollisionCategories(Category.Cat1);
+                Body ball = World.CreateBody(new Vector2(5.0f, 30.0f), 0, BodyType.Dynamic);
+                var bfixture = ball.CreateCircle(3.0f, 5.0f);
+                bfixture.CollisionCategories = Category.Cat1;
 
                 Vertices polygonVertices = PolygonTools.CreateRectangle(10.0f, 0.2f, new Vector2(-10.0f, 0.0f), 0.0f);
 
@@ -94,15 +94,15 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.L))
+            if (input.IsKeyPressed(Keys.L))
                 _joint.LimitEnabled = !_joint.LimitEnabled;
 
-            if (keyboardManager.IsNewKeyPress(Keys.M))
+            if (input.IsKeyPressed(Keys.M))
                 _joint.MotorEnabled = !_joint.MotorEnabled;
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

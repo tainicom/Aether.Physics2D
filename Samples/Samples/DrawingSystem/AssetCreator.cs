@@ -45,12 +45,12 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
             Vector2 lBound = new Vector2(float.MaxValue);
             Transform trans = b.GetTransform();
 
-            for (int i = 0; i < b.FixtureList.Count; ++i)
+            foreach (Fixture fixture in b.FixtureList)
             {
-                for (int j = 0; j < b.FixtureList[i].Shape.ChildCount; ++j)
+                for (int j = 0; j < fixture.Shape.ChildCount; ++j)
                 {
                     AABB bounds;
-                    b.FixtureList[i].Shape.ComputeAABB(out bounds, ref trans, j);
+                    fixture.Shape.ComputeAABB(out bounds, ref trans, j);
                     Vector2.Min(ref lBound, ref bounds.LowerBound, out lBound);
                 }
             }

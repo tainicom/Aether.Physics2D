@@ -106,20 +106,20 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.A))
             {
                 _leftJoint.MotorSpeed = 20.0f;
                 _rightJoint.MotorSpeed = -20.0f;
             }
-            if (keyboardManager.IsKeyUp(Keys.A))
+            if (input.IsKeyUp(Keys.A))
             {
                 _leftJoint.MotorSpeed = -10.0f;
                 _rightJoint.MotorSpeed = 10.0f;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

@@ -18,6 +18,11 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         /// <summary>
         /// Draw shapes.
         /// </summary>
+        None = (0 << 0),
+
+        /// <summary>
+        /// Draw shapes.
+        /// </summary>
         Shape = (1 << 0),
 
         /// <summary>

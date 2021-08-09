@@ -2,6 +2,8 @@
 
 Aether.Physics2D is a 2D collision detection system.
 
+[![Discord](https://img.shields.io/discord/780484381961093172?style=flat)](https://discord.gg/95nPEjZ6mu)
+
 ![3DCameraDemo](Documentation//Images/3DCameraDemo.png)
 
 # Features
@@ -27,8 +29,17 @@ Aether.Physics2D is a 2D collision detection system.
 
 https://www.nuget.org/packages/Aether.Physics2D
 
-https://www.nuget.org/packages/Aether.Physics2D.Diagnostics
+**NOTE** From v1.5 the nuget package `Aether.Physics2D` contain the standalone library 
+with no dependencies to 3rd party math libraries. For the monogame library (Vector2, Vector3 etc)
+and the monogame based diagnostics use `Aether.Physics2D.MG` and `Aether.Physics2D.Diagnostics.MG`.
 
-https://github.com/tainicom/Aether.Physics2D/releases/tag/v1.4
+https://www.nuget.org/packages/Aether.Physics2D.MG
+
+https://www.nuget.org/packages/Aether.Physics2D.Diagnostics.MG
+
+https://www.nuget.org/packages/Aether.Physics2D.Diagnostics
+ 
+
+https://github.com/tainicom/Aether.Physics2D/releases/tag/v1.5
 
 ![LightAndShadowsDemo](Documentation//Images/LightAndShadowsDemo.png)

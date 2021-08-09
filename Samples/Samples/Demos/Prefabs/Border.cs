@@ -44,8 +44,11 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             borders.Add(new Vector2(-halfWidth, -halfHeight));
 
             _anchor = world.CreateLoopShape(borders);
-            _anchor.SetCollisionCategories(Category.All);
-            _anchor.SetCollidesWith(Category.All);
+            foreach (Fixture fixture in _anchor.FixtureList)
+            {
+                fixture.CollisionCategories = Category.All;
+                fixture.CollidesWith = Category.All;
+            }
 
             _basicEffect = new BasicEffect(screenManager.GraphicsDevice);
             _basicEffect.VertexColorEnabled = true;
@@ -103,7 +106,8 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             device.DrawUserPrimitives(PrimitiveType.TriangleList, _borderVerts, 0, 8);
 
             batch.Begin(_camera.Projection, _camera.View);
-            batch.DrawLineShape(_anchor.FixtureList[0].Shape);
+            foreach (Fixture fixture in _anchor.FixtureList)
+                batch.DrawLineShape(fixture.Shape);
             batch.End();
         }
     }

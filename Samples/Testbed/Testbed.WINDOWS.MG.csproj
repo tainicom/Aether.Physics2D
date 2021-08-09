@@ -42,8 +42,9 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Framework\ControlPanel.cs" />
     <Compile Include="Framework\GameSettings.cs" />
-    <Compile Include="Framework\KeyboardManager.cs" />
+    <Compile Include="Framework\InputState.cs" />
     <Compile Include="Framework\Rand.cs" />
     <Compile Include="Framework\Test.cs" />
     <Compile Include="Framework\TestEntry.cs" />
@@ -133,7 +134,7 @@
     <Compile Include="Tests\YuPengPolygonTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.7.9012">
+    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.8.9008">
     </PackageReference>
     <Reference Include="System" />
   </ItemGroup>

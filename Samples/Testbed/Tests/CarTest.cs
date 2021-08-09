@@ -76,7 +76,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     x += dx;
                 }
 
-                ground.CreateEdge(new Vector2(x, 0.0f), new Vector2(x + 40.0f, 0.0f));
+                var f1 = ground.CreateEdge(new Vector2(x, 0.0f), new Vector2(x + 40.0f, 0.0f));
+                f1.Friction = 0.6f; 
                 x += 80.0f;
                 ground.CreateEdge(new Vector2(x, 0.0f), new Vector2(x + 40.0f, 0.0f));
                 x += 40.0f;
@@ -86,7 +87,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 x += 40.0f;
                 ground.CreateEdge(new Vector2(x, 0.0f), new Vector2(x, 20.0f));
 
-                ground.SetFriction(0.6f);
+                foreach (Fixture fixture in ground.FixtureList)
+                    fixture.Restitution = 0.6f;
             }
 
             // Teeter
@@ -177,22 +179,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
                 CircleShape circle = new CircleShape(0.4f, 1);
 
-                _car = World.CreateBody();
-                _car.BodyType = BodyType.Dynamic;
-                _car.Position = new Vector2(0.0f, 1.0f);
-                _car.CreateFixture(chassis);
+                _car = World.CreateBody(new Vector2(0.0f, 1.0f), 0, BodyType.Dynamic);
+                var cfixture = _car.CreateFixture(chassis);
 
-                _wheel1 = World.CreateBody();
-                _wheel1.BodyType = BodyType.Dynamic;
-                _wheel1.Position = new Vector2(-1.0f, 0.35f);
-                _wheel1.CreateFixture(circle);
-                _wheel1.SetFriction(0.9f);
+                _wheel1 = World.CreateBody(new Vector2(-1.0f, 0.35f), 0, BodyType.Dynamic);
+                var w1fixture = _wheel1.CreateFixture(circle);
+                w1fixture.Friction = 0.9f;
 
-                _wheel2 = World.CreateBody();
-                _wheel2.BodyType = BodyType.Dynamic;
-                _wheel2.Position = new Vector2(1.0f, 0.4f);
-                _wheel2.CreateFixture(circle);
-                _wheel2.SetFriction(0.9f);
+                _wheel2 = World.CreateBody(new Vector2(1.0f, 0.4f), 0, BodyType.Dynamic);
+                var w2fixture = _wheel2.CreateFixture(circle);
+                w2fixture.Friction = 0.9f;
 
                 Vector2 axis = new Vector2(0.0f, 1.0f);
                 _spring1 = new WheelJoint(_car, _wheel1, _wheel1.Position, axis, true);
@@ -213,34 +209,34 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
             {
                 _spring1.MotorSpeed = _speed;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.S))
+            else if (input.IsKeyPressed(Keys.S))
             {
                 _spring1.MotorSpeed = 0.0f;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.D))
+            else if (input.IsKeyPressed(Keys.D))
             {
                 _spring1.MotorSpeed = -_speed;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.Q))
+            else if (input.IsKeyPressed(Keys.Q))
             {
                 _hz = Math.Max(0.0f, _hz - 1.0f);
                 _spring1.Frequency = _hz;
                 _spring2.Frequency = _hz;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.E))
+            else if (input.IsKeyPressed(Keys.E))
             {
                 _hz += 1.0f;
                 _spring1.Frequency = _hz;
                 _spring2.Frequency = _hz;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

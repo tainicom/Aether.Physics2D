@@ -66,11 +66,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Initialize();
         }
 
-        public override void Mouse(MouseState state, MouseState oldState)
+        public override void Mouse(InputState input)
         {
-            Vector2 position = GameInstance.ConvertScreenToWorld(state.X, state.Y);
+            Vector2 position = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
 
-            if (state.RightButton == ButtonState.Pressed)
+            if (input.IsKeyDown(Keys.LeftShift) && input.MouseState.LeftButton == ButtonState.Pressed)
             {
                 DrawCircleOnMap(position, -1);
                 _terrain.RegenerateTerrain();
@@ -79,7 +79,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 DebugView.DrawSolidCircle(position, _circleRadius, Vector2.UnitY, Color.Blue * 0.5f);
                 DebugView.EndCustomDraw();
             }
-            else if (state.LeftButton == ButtonState.Pressed)
+            else if (input.IsKeyUp(Keys.LeftShift) && input.MouseState.LeftButton == ButtonState.Pressed)
             {
                 DrawCircleOnMap(position, 1);
                 _terrain.RegenerateTerrain();
@@ -88,7 +88,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 DebugView.DrawSolidCircle(position, _circleRadius, Vector2.UnitY, Color.Red * 0.5f);
                 DebugView.EndCustomDraw();
             }
-            else if (state.MiddleButton == ButtonState.Pressed)
+            else if (input.MouseState.MiddleButton == ButtonState.Pressed)
             {
                 Body circle = World.CreateCircle(1, 1);
                 circle.BodyType = BodyType.Dynamic;
@@ -96,21 +96,21 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.G))
+            if (input.IsKeyDown(Keys.G))
                 _circleRadius += 0.05f;
-            else if (keyboardManager.IsKeyDown(Keys.H))
+            else if (input.IsKeyDown(Keys.H))
                 _circleRadius -= 0.05f;
 
-            if (keyboardManager.IsNewKeyPress(Keys.T))
+            if (input.IsKeyPressed(Keys.T))
             {
                 _terrain.Decomposer++;
 
                 if (_terrain.Decomposer > TriangulationAlgorithm.Seidel)
                     _terrain.Decomposer--;
             }
-            else if (keyboardManager.IsNewKeyPress(Keys.Y))
+            else if (input.IsKeyPressed(Keys.Y))
             {
                 _terrain.Decomposer--;
 
@@ -118,7 +118,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                     _terrain.Decomposer++;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         private void DrawCircleOnMap(Vector2 center, sbyte value)
@@ -144,7 +144,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DebugView.EndCustomDraw();
 
             DrawString("Left click and drag the mouse to destroy terrain!");
-            DrawString("Right click and drag the mouse to create terrain!");
+            DrawString("Left Shift + Left click and drag the mouse to create terrain!");
             DrawString("Middle click to create circles!");
             DrawString("Press t or y to cycle between decomposers: " + _terrain.Decomposer);
             TextLine += 25;

@@ -127,9 +127,14 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
 
             foreach (Body b in _world.BodyList)
             {
-                if (b.Enabled && b.FixtureList.Count > 0 && b.FixtureList[0].Shape.ShapeType == ShapeType.Circle)
+                if (b.Enabled)
                 {
-                    batch.Draw(_goo.Texture, b.Position, null, Color.White, 0f, _goo.Origin, new Vector2(2f * _radius) * _goo.TexelSize, SpriteEffects.FlipVertically, 0f);
+                    if (b.FixtureList.Count > 0)
+                    {
+                        var fixture = b.FixtureList[0];
+                        if (fixture.Shape.ShapeType == ShapeType.Circle)
+                            batch.Draw(_goo.Texture, b.Position, null, Color.White, 0f, _goo.Origin, new Vector2(2f * _radius) * _goo.TexelSize, SpriteEffects.FlipVertically, 0f);
+                    }
                 }
             }
         }

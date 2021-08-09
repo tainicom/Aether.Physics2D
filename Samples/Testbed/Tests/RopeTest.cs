@@ -104,9 +104,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.J))
+            if (input.IsKeyPressed(Keys.J))
             {
                 if (_useRopeJoint)
                 {
@@ -120,7 +120,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 }
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

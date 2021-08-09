@@ -19,14 +19,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         {
         }
 
-        public override void Mouse(MouseState state, MouseState oldState)
+        public override void Mouse(InputState input)
         {
-            Vector2 worldPosition = GameInstance.ConvertScreenToWorld(state.X, state.Y);
+            Vector2 worldPosition = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
 
-            if (state.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released)
+            if (input.IsLeftButtonPressed())
                 _vertices.Add(worldPosition);
 
-            base.Mouse(state, oldState);
+            base.Mouse(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

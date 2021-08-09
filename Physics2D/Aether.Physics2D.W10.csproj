@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>15</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -138,15 +138,19 @@
     <Compile Include="Controllers\VelocityLimitController.cs" />
     <Compile Include="Dynamics\Body.cs" />
     <Compile Include="Dynamics\Body.Factory.cs" />
+    <Compile Include="Dynamics\BodyCollection.cs" />
     <Compile Include="Dynamics\BodyType.cs" />
     <Compile Include="Dynamics\Category.cs" />
     <Compile Include="Dynamics\ContactManager.cs" />
     <Compile Include="Dynamics\Contacts\Contact.cs" />
     <Compile Include="Dynamics\Contacts\ContactListHead.cs" />
     <Compile Include="Dynamics\Contacts\ContactSolver.cs" />
+    <Compile Include="Dynamics\ControllerCollection.cs" />
     <Compile Include="Dynamics\Fixture.cs" />
+    <Compile Include="Dynamics\FixtureCollection.cs" />
     <Compile Include="Dynamics\FixtureProxy.cs" />
     <Compile Include="Dynamics\Island.cs" />
+    <Compile Include="Dynamics\JointCollection.cs" />
     <Compile Include="Dynamics\Joints\AngleJoint.cs" />
     <Compile Include="Dynamics\Joints\DistanceJoint.cs" />
     <Compile Include="Dynamics\Joints\FixedMouseJoint.cs" />

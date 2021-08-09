@@ -212,18 +212,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.A))
+            if (input.IsKeyPressed(Keys.A))
                 _motorJoint.MotorSpeed = -_motorSpeed;
-            if (keyboardManager.IsNewKeyPress(Keys.S))
+            if (input.IsKeyPressed(Keys.S))
                 _motorJoint.MotorSpeed = 0.0f;
-            if (keyboardManager.IsNewKeyPress(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
                 _motorJoint.MotorSpeed = _motorSpeed;
-            if (keyboardManager.IsNewKeyPress(Keys.M))
+            if (input.IsKeyPressed(Keys.M))
                 _motorJoint.MotorEnabled = !_motorJoint.MotorEnabled;
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         internal static Test Create()

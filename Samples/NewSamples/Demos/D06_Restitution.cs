@@ -62,9 +62,9 @@ namespace tainicom.Aether.Physics2D.Samples.Demos
 
             for (int i = 0; i < 6; ++i)
             {
-                _circle[i] = World.CreateCircle(1.5f, 1f, position);
-                _circle[i].BodyType = BodyType.Dynamic;
-                _circle[i].SetRestitution(restitution);
+                _circle[i] = World.CreateBody(position, 0, BodyType.Dynamic);
+                var cfixture = _circle[i].CreateCircle(1.5f, 1f);
+                cfixture.Restitution = restitution;
                 position.X += 6f;
                 restitution += 0.2f;
             }

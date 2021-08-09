@@ -105,34 +105,34 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 DrawString("[IsRunningSlowly]");
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
 
             var cMgr = World.ContactManager;         
 
-            if (keyboardManager.IsNewKeyPress(Keys.D1))
+            if (input.IsKeyPressed(Keys.D1))
                 cMgr.VelocityConstraintsMultithreadThreshold = 0;
-            if (keyboardManager.IsNewKeyPress(Keys.D2))
+            if (input.IsKeyPressed(Keys.D2))
                 cMgr.VelocityConstraintsMultithreadThreshold = 256;
-            if (keyboardManager.IsNewKeyPress(Keys.D3))
+            if (input.IsKeyPressed(Keys.D3))
                 cMgr.VelocityConstraintsMultithreadThreshold = int.MaxValue;
 
-            if (keyboardManager.IsNewKeyPress(Keys.D4))
+            if (input.IsKeyPressed(Keys.D4))
                 cMgr.PositionConstraintsMultithreadThreshold = 0;
-            if (keyboardManager.IsNewKeyPress(Keys.D5))
+            if (input.IsKeyPressed(Keys.D5))
                 cMgr.PositionConstraintsMultithreadThreshold = 256;
-            if (keyboardManager.IsNewKeyPress(Keys.D6))
+            if (input.IsKeyPressed(Keys.D6))
                 cMgr.PositionConstraintsMultithreadThreshold = int.MaxValue;
             
-            if (keyboardManager.IsNewKeyPress(Keys.D7))
+            if (input.IsKeyPressed(Keys.D7))
                 cMgr.CollideMultithreadThreshold = 0;
-            if (keyboardManager.IsNewKeyPress(Keys.D8))
+            if (input.IsKeyPressed(Keys.D8))
                 cMgr.CollideMultithreadThreshold = 256;
-            if (keyboardManager.IsNewKeyPress(Keys.D9))
+            if (input.IsKeyPressed(Keys.D9))
                 cMgr.CollideMultithreadThreshold = int.MaxValue;
 
-            if (keyboardManager.IsNewKeyPress(Keys.Space))
+            if (input.IsKeyPressed(Keys.Space))
             {
                 if (cMgr.VelocityConstraintsMultithreadThreshold == int.MaxValue)
                     cMgr.VelocityConstraintsMultithreadThreshold = 0;

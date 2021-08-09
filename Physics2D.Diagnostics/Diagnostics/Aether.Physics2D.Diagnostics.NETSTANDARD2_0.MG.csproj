@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.Portable" Version="3.2.99.1-Beta">
+    <PackageReference Include="MonoGame.Framework.Portable.9000" Version="3.8.9008">
       <ExcludeAssets>*</ExcludeAssets>
       <NoWarn>NU1701</NoWarn>
     </PackageReference>

@@ -1,0 +1,6 @@
+<map id="MotorJoint" name="MotorJoint">
+<area shape="rect" id="node1" title="A motor joint is used to control the relative motion between two bodies. A typical usage is to contro..." alt="" coords="5,215,100,244"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="76,100,131,129"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge.html" title="A joint edge is used to connect bodies and joints together in a joint graph where each body is a node..." alt="" coords="125,215,218,244"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world.html" title="The world class manages all physics entities, dynamic simulation, and asynchronous queries." alt="" coords="72,5,135,35"/>
+</map>

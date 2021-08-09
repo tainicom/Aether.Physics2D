@@ -1,0 +1,4 @@
+<map id="MotorJoint" name="MotorJoint">
+<area shape="rect" id="node1" title="A motor joint is used to control the relative motion between two bodies. A typical usage is to contro..." alt="" coords="5,83,100,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="25,5,80,35"/>
+</map>

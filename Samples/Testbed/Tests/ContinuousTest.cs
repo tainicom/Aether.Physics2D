@@ -91,11 +91,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 Launch();
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
 
-            if (keyboardManager.IsNewKeyPress(Keys.C))
+            if (input.IsKeyPressed(Keys.C))
                 _ground.IgnoreCCD = !_ground.IgnoreCCD;
         }
 

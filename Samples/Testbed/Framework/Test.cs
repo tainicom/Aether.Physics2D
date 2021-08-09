@@ -103,19 +103,19 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
                 ++StepCount;
         }
 
-        public virtual void Keyboard(KeyboardManager keyboardManager)
+        public virtual void Keyboard(InputState input)
         {
-            if (keyboardManager.IsNewKeyPress(Keys.F11))
+            if (input.IsKeyDown(Keys.LeftControl) && input.IsKeyPressed(Keys.F11))
             {
-                using (Stream stream = new FileStream("out.xml", FileMode.Create))
+                using (Stream stream = new FileStream(this.GetType().Name + ".xml", FileMode.Create))
                 {
                     WorldSerializer.Serialize(World, stream);
                 }
             }
 
-            if (keyboardManager.IsNewKeyPress(Keys.F12))
+            if (input.IsKeyDown(Keys.LeftControl) && input.IsKeyPressed(Keys.F12))
             {
-                using (Stream stream = new FileStream("out.xml", FileMode.Open))
+                using (Stream stream = new FileStream(this.GetType().Name + ".xml", FileMode.Open))
                 {
                     World = WorldSerializer.Deserialize(stream);
                 }
@@ -123,17 +123,17 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
             }
         }
 
-        public virtual void Gamepad(GamePadState state, GamePadState oldState)
+        public virtual void Gamepad(InputState input)
         {
         }
 
-        public virtual void Mouse(MouseState state, MouseState oldState)
+        public virtual void Mouse(InputState input)
         {
-            Vector2 position = GameInstance.ConvertScreenToWorld(state.X, state.Y);
+            Vector2 position = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
 
-            if (state.LeftButton == ButtonState.Released && oldState.LeftButton == ButtonState.Pressed)
+            if (input.IsLeftButtonReleased())
                 MouseUp();
-            else if (state.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released)
+            if (input.IsLeftButtonReleased())
                 MouseDown(position);
 
             MouseMove(position);

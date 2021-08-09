@@ -159,12 +159,12 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             Transform transform;
             body.GetTransform(out transform);
 
-            for (int i = 0; i < body.FixtureList.Count; i++)
+            foreach (Fixture fixture in body.Fixtures)
             {
-                for (int j = 0; j < body.FixtureList[i].Shape.ChildCount; j++)
+                for (int j = 0; j < fixture.Shape.ChildCount; j++)
                 {
                     AABB bounds;
-                    body.FixtureList[i].Shape.ComputeAABB(out bounds, ref transform, j);
+                    fixture.Shape.ComputeAABB(out bounds, ref transform, j);
                     Vector2.Min(ref lowerBound, ref bounds.LowerBound, out lowerBound);
                 }
             }

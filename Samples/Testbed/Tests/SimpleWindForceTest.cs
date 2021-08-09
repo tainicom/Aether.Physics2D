@@ -41,12 +41,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             {
                 for (int y = 0; y < countY; y++)
                 {
-                    Body currentFixture = World.CreateRectangle(1f, 1f, 5f,
-                                                                      new Vector2(x * 2 - countX, y * 2 + 5));
-                    //Fixture currentFixture = World.CreateCircle(0.2f, 10f, new Vector2(x - countX, y  + 5));
-                    currentFixture.BodyType = BodyType.Dynamic;
-                    currentFixture.SetFriction(0.5f);
-                    currentFixture.SetTransform(currentFixture.Position, 0.6f);
+                    Body currentBody = World.CreateBody(new Vector2(x * 2 - countX, y * 2 + 5), 0.6f, BodyType.Dynamic);
+                    var currentFixture = currentBody.CreateRectangle(1f, 1f, 5f, Vector2.Zero);
+                    //Body currentBody = World.CreateBody(new Vector2(x - countX, y + 5), 0.6f, BodyType.Dynamic);
+                    //var currentFixture = currentBody.CreateCircle(0.2f, 10f);
+                    currentFixture.Friction=0.5f;
                     //currentFixture.CollidesWith = Category.Cat10;
                 }
             }
@@ -56,10 +55,14 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             Body right = World.CreateRectangle(1, 100, 1, new Vector2(35, 0));
             Body left = World.CreateRectangle(1, 100, 1, new Vector2(-35, 0));
 
-            floor.SetFriction(0.2f);
-            ceiling.SetFriction(0.2f);
-            right.SetFriction(0.2f);
-            left.SetFriction(0.2f);
+            foreach (var fixture in floor.FixtureList)
+                fixture.Friction = 0.2f;
+            foreach (var fixture in ceiling.FixtureList)
+                fixture.Friction = 0.2f;
+            foreach (var fixture in right.FixtureList)
+                fixture.Friction = 0.2f;
+            foreach (var fixture in left.FixtureList)
+                fixture.Friction = 0.2f;
         }
 
         public void DrawPointForce()
@@ -96,35 +99,34 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.Q))
+            if (input.IsKeyDown(Keys.Q))
                 _strength += 1f;
 
-            if (keyboardManager.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.A))
                 _strength -= 1f;
 
-            if (keyboardManager.IsKeyDown(Keys.W))
+            if (input.IsKeyDown(Keys.W))
                 _simpleWind.Variation += 0.1f;
 
-            if (keyboardManager.IsKeyDown(Keys.S))
+            if (input.IsKeyDown(Keys.S))
                 _simpleWind.Variation -= 0.1f;
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
-        public override void Mouse(MouseState state, MouseState oldState)
+        public override void Mouse(InputState input)
         {
-            //base.Mouse(state, oldState);
-            Vector2 mouseWorld = GameInstance.ConvertScreenToWorld(state.X, state.Y);
+            //base.Mouse(input);
+            Vector2 mouseWorld = GameInstance.ConvertScreenToWorld(input.MouseState.X, input.MouseState.Y);
             _simpleWind.Direction = mouseWorld - _simpleWind.Position;
             _simpleWind.Strength = _strength;
 
-            if (state.LeftButton == ButtonState.Pressed && oldState.LeftButton == ButtonState.Released)
+            if (input.IsLeftButtonPressed())
             {
                 _simpleWind.Position = mouseWorld;
                 _simpleWind.Direction = mouseWorld + new Vector2(0, 1);
-                Microsoft.Xna.Framework.Input.Mouse.SetPosition(state.X, state.Y + 10);
             }
         }
 

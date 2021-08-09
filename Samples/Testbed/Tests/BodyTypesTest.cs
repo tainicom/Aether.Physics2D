@@ -54,10 +54,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             // Define platform
             {
-                _platform = World.CreateRectangle(8.0f, 1f, 2);
-                _platform.BodyType = BodyType.Dynamic;
-                _platform.Position = new Vector2(0.0f, 5.0f);
-                _platform.SetFriction(0.6f);
+                _platform = World.CreateBody(new Vector2(0.0f, 5.0f), 0, BodyType.Dynamic);
+                Fixture fixture = _platform.CreateRectangle(8.0f, 1f, 2, Vector2.Zero);
+                fixture.Friction = 0.6f;
 
                 RevoluteJoint rjd = new RevoluteJoint(_attachment, _platform, new Vector2(0, 5), true);
                 rjd.MaxMotorTorque = 50.0f;
@@ -78,27 +77,26 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             // Create a payload
             {
-                Body body = World.CreateRectangle(1.5f, 1.5f, 2);
-                body.BodyType = BodyType.Dynamic;
-                body.Position = new Vector2(0.0f, 8.0f);
-                body.SetFriction(0.6f);
+                Body body = World.CreateBody(new Vector2(0.0f, 8.0f), 0, BodyType.Dynamic);
+                Fixture fixture = body.CreateRectangle(1.5f, 1.5f, 2, Vector2.Zero);
+                fixture.Friction =0.6f;
             }
         }
 
-        public override void Keyboard(KeyboardManager keyboardManager)
+        public override void Keyboard(InputState input)
         {
-            if (keyboardManager.IsKeyDown(Keys.D))
+            if (input.IsKeyPressed(Keys.D))
                 _platform.BodyType = BodyType.Dynamic;
-            if (keyboardManager.IsKeyDown(Keys.S))
+            if (input.IsKeyPressed(Keys.S))
                 _platform.BodyType = BodyType.Static;
-            if (keyboardManager.IsKeyDown(Keys.K))
+            if (input.IsKeyPressed(Keys.K))
             {
                 _platform.BodyType = BodyType.Kinematic;
                 _platform.LinearVelocity = new Vector2(-_speed, 0.0f);
                 _platform.AngularVelocity = 0.0f;
             }
 
-            base.Keyboard(keyboardManager);
+            base.Keyboard(input);
         }
 
         public override void Update(GameSettings settings, GameTime gameTime)

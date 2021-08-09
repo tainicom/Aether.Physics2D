@@ -37,16 +37,17 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private ChainTest()
         {
             //Ground
-            Body ground = World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
+            Body ground = World.CreateBody();
+            ground.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 
             {
                 const float y = 25.0f;
                 Body prevBody = ground;
                 for (int i = 0; i < 30; ++i)
                 {
-                    Body body = World.CreateRectangle(1.2f, 0.25f, 20, new Vector2(0.5f + i, y));
-                    body.BodyType = BodyType.Dynamic;
-                    body.SetFriction(0.2f);
+                    Body body = World.CreateBody(new Vector2(0.5f + i, y), 0, BodyType.Dynamic);
+                    var bfixture = body.CreateRectangle(1.2f, 0.25f, 20, Vector2.Zero);
+                    bfixture.Friction = 0.2f;
 
                     Vector2 anchor = new Vector2(i, y);
                     RevoluteJoint joint = new RevoluteJoint(prevBody, body, anchor, true);

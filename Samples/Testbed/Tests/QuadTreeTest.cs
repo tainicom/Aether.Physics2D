@@ -52,8 +52,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             borders.Add(new Vector2(-halfWidth, -halfHeight));
 
             Body anchor = World.CreateLoopShape(borders);
-            anchor.SetCollisionCategories(Category.All);
-            anchor.SetCollidesWith(Category.All);
+            foreach (Fixture fixture in anchor.FixtureList)
+            {
+                fixture.CollisionCategories = Category.All;
+                fixture.CollidesWith = Category.All;
+            }
 
             //
             //box

@@ -44,9 +44,6 @@ namespace tainicom.Aether.Physics2D.Common.PhysicsLogic
             if (body == null || !body.Enabled || body.BodyType == BodyType.Static)
                 return false;
 
-            if (body.FixtureList == null)
-                return false;
-
             foreach (Fixture fixture in body.FixtureList)
             {
                 //Disable
