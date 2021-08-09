@@ -3,7 +3,7 @@
   <metadata>
     <id>Aether.Physics2D</id>
     <title>Aether.Physics2D</title>
-    <version>1.5.0.0</version>
+    <version>1.6.0.0</version>
     <authors>Kastellanos Nikolaos</authors>
     <owners>Kastellanos Nikolaos</owners>
     <licenseUrl>https://github.com/tainicom/Aether.Physics2D/blob/master/LICENSE</licenseUrl>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Aether.Physics2D is a 2D collision detection system.</description>
     <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
-    <copyright>Copyright © Kastellanos Nikolaos 2015-2020</copyright>
+    <copyright>Copyright © Kastellanos Nikolaos 2015-2021</copyright>
     <tags>C# Physics 2D game box2d farseerPhysics farseer</tags>
 
     <!--
