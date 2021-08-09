@@ -75,11 +75,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private Vector2 _testPointPointTmp;
         private Fixture _testPointFixtureTmp;
         private QueryReportFixtureDelegate _testPointDelegateCache;
-#if XNAAPI
-        private Vector2 _testPointAllPointTmp;
-        private List<Fixture> _testPointAllFixturesTmp;
-        private QueryReportFixtureDelegate _testPointAllDelegateCache;
-#endif
         private Stopwatch _watch = new Stopwatch();
         private RayCastReportFixtureDelegate _rayCastDelegateTmp;
         private BroadPhaseRayCastCallback _rayCastCallbackCache;
@@ -169,9 +164,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _queryCallbackCache = new BroadPhaseQueryCallback(QueryAABBCallback);
             _rayCastCallbackCache = new BroadPhaseRayCastCallback(RayCastCallback);
             _testPointDelegateCache = new QueryReportFixtureDelegate(this.TestPointCallback);
-#if XNAAPI
-            _testPointAllDelegateCache = new QueryReportFixtureDelegate(this.TestPointAllCallback);
-#endif
 
 #if LEGACY_FLUIDS
             Fluid = new tainicom.Aether.Physics2D.Fluids.FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
