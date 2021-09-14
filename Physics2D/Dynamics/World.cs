@@ -942,7 +942,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             body._world = this;
             BodyList._list.Add(body);
-            BodyList._versionStamp++;
+            BodyList._generationStamp++;
 
 
             // Update transform
@@ -1021,7 +1021,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             body._world = null;
             BodyList._list.Remove(body);
-            BodyList._versionStamp++;
+            BodyList._generationStamp++;
 
             var bodyRemovedHandler = BodyRemoved;
             if (bodyRemovedHandler != null)
@@ -1052,7 +1052,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Connect to the world list.
             joint._world = this;
             JointList._list.Add(joint);
-            JointList._versionStamp++;
+            JointList._generationStamp++;
 
             // Connect to the bodies' doubly linked lists.
             joint.EdgeA.Joint = joint;
@@ -1126,7 +1126,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Remove from the world list.
             joint._world = null;
             JointList._list.Remove(joint);
-            JointList._versionStamp++;
+            JointList._generationStamp++;
 
             // Disconnect from island graph.
             Body bodyA = joint.BodyA;
@@ -1595,7 +1595,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             controller.World = this;
             ControllerList._list.Add(controller);
-            ControllerList._versionStamp++;
+            ControllerList._generationStamp++;
 
             var controllerAddedHandler = ControllerAdded;
             if (controllerAddedHandler != null)
@@ -1617,7 +1617,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             controller.World = null;
             ControllerList._list.Remove(controller);
-            ControllerList._versionStamp++;
+            ControllerList._generationStamp++;
 
             var controllerRemovedHandler = ControllerRemoved;
             if (controllerRemovedHandler != null)

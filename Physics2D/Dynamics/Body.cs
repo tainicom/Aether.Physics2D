@@ -598,7 +598,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             fixture.Body = this;
             FixtureList._list.Add(fixture);
-            FixtureList._versionStamp++;
+            FixtureList._generationStamp++;
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
@@ -671,7 +671,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             fixture.Body = null;
             FixtureList._list.Remove(fixture);
-            FixtureList._versionStamp++;
+            FixtureList._generationStamp++;
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = false;
