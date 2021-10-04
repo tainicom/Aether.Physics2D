@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2018 Kastellanos Nikolaos
+﻿// Copyright (c) 2018-2021 Kastellanos Nikolaos
 
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
@@ -40,7 +40,7 @@ namespace tainicom.Aether.Physics2D.Collision
     /// <summary>
     /// A node in the dynamic tree. The client does not interact with this directly.
     /// </summary>
-    internal struct TreeNode<T>
+    internal struct TreeNode<TNode>
     {
         /// <summary>
         /// Enlarged AABB
@@ -64,12 +64,12 @@ namespace tainicom.Aether.Physics2D.Collision
             set { Parent = value; }
         }
 
-        internal T UserData;
+        internal TNode UserData;
 
 
         internal bool IsLeaf()
         {
-            return Child1 == DynamicTree<T>.NullNode;
+            return Child1 == DynamicTree<TNode>.NullNode;
         }
     }
 
@@ -82,14 +82,14 @@ namespace tainicom.Aether.Physics2D.Collision
     ///
     /// Nodes are pooled and relocatable, so we use node indices rather than pointers.
     /// </summary>
-    public class DynamicTree<T>
+    public class DynamicTree<TNode>
     {
         private Stack<int> _raycastStack = new Stack<int>(256);
         private Stack<int> _queryStack = new Stack<int>(256);
         private int _freeList;
         private int _nodeCapacity;
         private int _nodeCount;
-        private TreeNode<T>[] _nodes;
+        private TreeNode<TNode>[] _nodes;
         private int _root;
         internal const int NullNode = -1;
 
@@ -102,7 +102,7 @@ namespace tainicom.Aether.Physics2D.Collision
 
             _nodeCapacity = 16;
             _nodeCount = 0;
-            _nodes = new TreeNode<T>[_nodeCapacity];
+            _nodes = new TreeNode<TNode>[_nodeCapacity];
 
             // Build a linked list for the free list.
             for (int i = 0; i < _nodeCapacity - 1; ++i)
@@ -290,7 +290,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <typeparam name="T"></typeparam>
         /// <param name="proxyId">The proxy id.</param>
         /// <param name="userData">The proxy user data.</param>
-        public void SetUserData(int proxyId, T userData)
+        public void SetUserData(int proxyId, TNode userData)
         {
             _nodes[proxyId].UserData = userData;
         }
@@ -301,7 +301,7 @@ namespace tainicom.Aether.Physics2D.Collision
         /// <typeparam name="T"></typeparam>
         /// <param name="proxyId">The proxy id.</param>
         /// <returns>the proxy user data or 0 if the id is invalid.</returns>
-        public T GetUserData(int proxyId)
+        public TNode GetUserData(int proxyId)
         {
             Debug.Assert(0 <= proxyId && proxyId < _nodeCapacity);
             return _nodes[proxyId].UserData;
@@ -482,9 +482,9 @@ namespace tainicom.Aether.Physics2D.Collision
                 Debug.Assert(_nodeCount == _nodeCapacity);
 
                 // The free list is empty. Rebuild a bigger pool.
-                TreeNode<T>[] oldNodes = _nodes;
+                TreeNode<TNode>[] oldNodes = _nodes;
                 _nodeCapacity *= 2;
-                _nodes = new TreeNode<T>[_nodeCapacity];
+                _nodes = new TreeNode<TNode>[_nodeCapacity];
                 Array.Copy(oldNodes, _nodes, _nodeCount);
 
                 // Build a linked list for the free list.
@@ -507,7 +507,7 @@ namespace tainicom.Aether.Physics2D.Collision
             _nodes[nodeId].Child1 = NullNode;
             _nodes[nodeId].Child2 = NullNode;
             _nodes[nodeId].Height = 0;
-            _nodes[nodeId].UserData = default(T);
+            _nodes[nodeId].UserData = default(TNode);
             ++_nodeCount;
             return nodeId;
         }
@@ -608,7 +608,7 @@ namespace tainicom.Aether.Physics2D.Collision
             int oldParent = _nodes[sibling].Parent;
             int newParent = AllocateNode();
             _nodes[newParent].Parent = oldParent;
-            _nodes[newParent].UserData = default(T);
+            _nodes[newParent].UserData = default(TNode);
             _nodes[newParent].AABB.Combine(ref leafAABB, ref _nodes[sibling].AABB);
             _nodes[newParent].Height = _nodes[sibling].Height + 1;
 
