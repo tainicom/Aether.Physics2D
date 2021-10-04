@@ -1,4 +1,6 @@
-﻿/* Original source Farseer Physics Engine:
+﻿// Copyright (c) 2021 Kastellanos Nikolaos
+
+/* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
  */
@@ -12,7 +14,12 @@ using Vector2 = Microsoft.Xna.Framework.Vector2;
 
 namespace tainicom.Aether.Physics2D.Collision
 {
-    public interface IBroadPhase
+    public interface IBroadPhase : IBroadPhase<FixtureProxy>
+    {
+    }
+
+    public interface IBroadPhase<TNode>
+        where TNode : struct
     {
         int ProxyCount { get; }
         void UpdatePairs(BroadphaseDelegate callback);
@@ -25,9 +32,9 @@ namespace tainicom.Aether.Physics2D.Collision
 
         void MoveProxy(int proxyId, ref AABB aabb, Vector2 displacement);
 
-        void SetProxy(int proxyId, ref FixtureProxy proxy);
+        void SetProxy(int proxyId, ref TNode proxy);
 
-        FixtureProxy GetProxy(int proxyId);
+        TNode GetProxy(int proxyId);
 
         void TouchProxy(int proxyId);
 
