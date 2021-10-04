@@ -12,32 +12,32 @@ using Vector2 = Microsoft.Xna.Framework.Vector2;
 
 namespace tainicom.Aether.Physics2D.Collision
 {
-    public class Element<T>
+    public class Element<TNode>
     {
-        public QuadTree<T> Parent;
+        public QuadTree<TNode> Parent;
         public AABB Span;
-        public T Value;
+        public TNode Value;
 
         public Element(AABB span)
         {
             Span = span;
-            Value = default(T);
+            Value = default(TNode);
             Parent = null;
         }
     }
 
-    public class QuadTree<T>
+    public class QuadTree<TNode>
     {
         public int MaxBucket;
         public int MaxDepth;
-        public List<Element<T>> Nodes;
+        public List<Element<TNode>> Nodes;
         public AABB Span;
-        public QuadTree<T>[] SubTrees;
+        public QuadTree<TNode>[] SubTrees;
 
         public QuadTree(AABB span, int maxbucket, int maxdepth)
         {
             Span = span;
-            Nodes = new List<Element<T>>();
+            Nodes = new List<Element<TNode>>();
 
             MaxBucket = maxbucket;
             MaxDepth = maxdepth;
@@ -64,7 +64,7 @@ namespace tainicom.Aether.Physics2D.Collision
             return 0;
         }
 
-        public void AddNode(Element<T> node)
+        public void AddNode(Element<TNode> node)
         {
             if (!IsPartitioned)
             {
@@ -75,16 +75,16 @@ namespace tainicom.Aether.Physics2D.Collision
                     //
                     Nodes.Add(node); //treat new node just like other nodes for partitioning
 
-                    SubTrees = new QuadTree<T>[4];
-                    SubTrees[0] = new QuadTree<T>(Span.Q1, MaxBucket, MaxDepth - 1);
-                    SubTrees[1] = new QuadTree<T>(Span.Q2, MaxBucket, MaxDepth - 1);
-                    SubTrees[2] = new QuadTree<T>(Span.Q3, MaxBucket, MaxDepth - 1);
-                    SubTrees[3] = new QuadTree<T>(Span.Q4, MaxBucket, MaxDepth - 1);
+                    SubTrees = new QuadTree<TNode>[4];
+                    SubTrees[0] = new QuadTree<TNode>(Span.Q1, MaxBucket, MaxDepth - 1);
+                    SubTrees[1] = new QuadTree<TNode>(Span.Q2, MaxBucket, MaxDepth - 1);
+                    SubTrees[2] = new QuadTree<TNode>(Span.Q3, MaxBucket, MaxDepth - 1);
+                    SubTrees[3] = new QuadTree<TNode>(Span.Q4, MaxBucket, MaxDepth - 1);
 
-                    List<Element<T>> remNodes = new List<Element<T>>();
+                    List<Element<TNode>> remNodes = new List<Element<TNode>>();
                     //nodes that are not fully contained by any quadrant
 
-                    foreach (Element<T> n in Nodes)
+                    foreach (Element<TNode> n in Nodes)
                     {
                         switch (Partition(Span, n.Span))
                         {
@@ -180,32 +180,32 @@ namespace tainicom.Aether.Physics2D.Collision
             return false;
         }
 
-        public void QueryAABB(Func<Element<T>, bool> callback, ref AABB searchR)
+        public void QueryAABB(Func<Element<TNode>, bool> callback, ref AABB searchR)
         {
-            Stack<QuadTree<T>> stack = new Stack<QuadTree<T>>();
+            Stack<QuadTree<TNode>> stack = new Stack<QuadTree<TNode>>();
             stack.Push(this);
 
             while (stack.Count > 0)
             {
-                QuadTree<T> qt = stack.Pop();
+                QuadTree<TNode> qt = stack.Pop();
                 if (!AABB.TestOverlap(ref searchR, ref qt.Span))
                     continue;
 
-                foreach (Element<T> n in qt.Nodes)
+                foreach (Element<TNode> n in qt.Nodes)
                     if (AABB.TestOverlap(ref searchR, ref n.Span))
                     {
                         if (!callback(n)) return;
                     }
 
                 if (qt.IsPartitioned)
-                    foreach (QuadTree<T> st in qt.SubTrees)
+                    foreach (QuadTree<TNode> st in qt.SubTrees)
                         stack.Push(st);
             }
         }
 
-        public void RayCast(Func<RayCastInput, Element<T>, float> callback, ref RayCastInput input)
+        public void RayCast(Func<RayCastInput, Element<TNode>, float> callback, ref RayCastInput input)
         {
-            Stack<QuadTree<T>> stack = new Stack<QuadTree<T>>();
+            Stack<QuadTree<TNode>> stack = new Stack<QuadTree<TNode>>();
             stack.Push(this);
 
             float maxFraction = input.MaxFraction;
@@ -214,12 +214,12 @@ namespace tainicom.Aether.Physics2D.Collision
 
             while (stack.Count > 0)
             {
-                QuadTree<T> qt = stack.Pop();
+                QuadTree<TNode> qt = stack.Pop();
 
                 if (!RayCastAABB(qt.Span, p1, p2))
                     continue;
 
-                foreach (Element<T> n in qt.Nodes)
+                foreach (Element<TNode> n in qt.Nodes)
                 {
                     if (!RayCastAABB(n.Span, p1, p2))
                         continue;
@@ -240,27 +240,27 @@ namespace tainicom.Aether.Physics2D.Collision
                     p2 = p1 + (input.Point2 - input.Point1) * maxFraction; //update segment endpoint
                 }
                 if (qt.IsPartitioned)
-                    foreach (QuadTree<T> st in qt.SubTrees)
+                    foreach (QuadTree<TNode> st in qt.SubTrees)
                         stack.Push(st);
             }
         }
 
-        public void GetAllNodesR(ref List<Element<T>> nodes)
+        public void GetAllNodesR(ref List<Element<TNode>> nodes)
         {
             nodes.AddRange(Nodes);
 
             if (IsPartitioned)
-                foreach (QuadTree<T> st in SubTrees) st.GetAllNodesR(ref nodes);
+                foreach (QuadTree<TNode> st in SubTrees) st.GetAllNodesR(ref nodes);
         }
 
-        public void RemoveNode(Element<T> node)
+        public void RemoveNode(Element<TNode> node)
         {
             node.Parent.Nodes.Remove(node);
         }
 
         public void Reconstruct()
         {
-            List<Element<T>> allNodes = new List<Element<T>>();
+            List<Element<TNode>> allNodes = new List<Element<TNode>>();
             GetAllNodesR(ref allNodes);
 
             Clear();
