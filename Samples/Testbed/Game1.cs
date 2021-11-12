@@ -57,7 +57,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private TestEntry _entry;
         private Test _test;
-        private int _testCount;
         private int _testIndex;
 
         private GameSettings _settings = new GameSettings();
@@ -119,13 +118,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             //Default projection and view
             ResetCamera();
 
-            _testCount = 0;
-            while (TestEntries.TestList[_testCount].CreateTest != null)
-            {
-                ++_testCount;
-            }
-
-            _testIndex = MathUtils.Clamp(_testIndex, 0, _testCount - 1);
+            _testIndex = MathUtils.Clamp(_testIndex, 0, TestEntries.TestList.Length - 1);
             StartTest(_testIndex);
             UpdateProjection();
         }
@@ -195,7 +188,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             else if (_inputState.IsKeyPressed(Keys.I) || _inputState.IsButtonPressed(Buttons.LeftShoulder)) // Press I to prev test.
             {
                 --_testIndex;
-                _testIndex = (_testIndex+_testCount) %_testCount;
+                _testIndex = (_testIndex+ TestEntries.TestList.Length) % TestEntries.TestList.Length;
 
                 StartTest(_testIndex);
                 ResetCamera();
@@ -204,7 +197,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
             else if (_inputState.IsKeyPressed(Keys.O) || _inputState.IsButtonPressed(Buttons.RightShoulder)) // Press O to next test.
             {
                 ++_testIndex;
-                _testIndex = _testIndex % _testCount;
+                _testIndex = _testIndex % TestEntries.TestList.Length;
 
                 StartTest(_testIndex);
                 ResetCamera();

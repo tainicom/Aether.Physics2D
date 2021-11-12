@@ -123,8 +123,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 #endif
             new TestEntry {Name = "Check polygon", CreateTest = CheckPolygonTest.Create},
             new TestEntry {Name = "Fluids", CreateTest = FluidsTest.Create},
-
-            new TestEntry {Name = null, CreateTest = null}
         };
     }
 }
