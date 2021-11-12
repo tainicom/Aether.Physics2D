@@ -133,7 +133,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 
             if (input.IsLeftButtonReleased())
                 MouseUp();
-            if (input.IsLeftButtonReleased())
+            if (input.IsLeftButtonPressed())
                 MouseDown(position);
 
             MouseMove(position);
