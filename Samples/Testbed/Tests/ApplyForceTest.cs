@@ -40,7 +40,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private Body _body;
 
-        private ApplyForceTest()
+        public ApplyForceTest()
         {
             World.Gravity = Vector2.Zero;
 
@@ -154,9 +154,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Keyboard(input);
         }
 
-        internal static Test Create()
-        {
-            return new ApplyForceTest();
-        }
     }
 }

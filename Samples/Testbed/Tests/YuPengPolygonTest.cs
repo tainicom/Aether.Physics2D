@@ -27,6 +27,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vertices _selected;
         private Vertices _subject;
 
+        public YuPengPolygonTest()
+        {
+
+        }
+
         public override void Initialize()
         {
             Vector2 trans = new Vector2();
@@ -273,9 +278,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _polygons.Add(verts);
         }
 
-        public static Test Create()
-        {
-            return new YuPengPolygonTest();
-        }
     }
 }

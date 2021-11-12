@@ -37,7 +37,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int Depth = 4;
         private int _counter;
 
-        private MobileBalancedTest()
+        public MobileBalancedTest()
         {
             Body ground = World.CreateBody(new Vector2(0, 20f));
 
@@ -78,9 +78,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             return body;
         }
 
-        public static Test Create()
-        {
-            return new MobileBalancedTest();
-        }
     }
 }

@@ -23,7 +23,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private SpriteBatch _spriteBatch;
         private Texture2D _pixel;
 
-        private FluidsTest()
+        public FluidsTest()
         {
             World = new World(new Vector2(0f, -10f));
 
@@ -76,9 +76,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Mouse(input);
         }
 
-        internal static Test Create()
-        {
-            return new FluidsTest();
-        }
     }
 }

@@ -17,7 +17,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         private float _strength;
 
-        private SimpleWindForceTest()
+        public SimpleWindForceTest()
         {
             _simpleWind = new SimpleWindForce();
             _simpleWind.Direction = new Vector2(0.7f, 0.2f);
@@ -130,9 +130,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new SimpleWindForceTest();
-        }
     }
 }

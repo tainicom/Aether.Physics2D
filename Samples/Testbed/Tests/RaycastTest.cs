@@ -48,7 +48,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private PolygonShape[] _polygons = new PolygonShape[4];
 
 
-        private RayCastTest()
+        public RayCastTest()
         {
             {
                 Vertices vertices = new Vertices(3);
@@ -334,12 +334,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
             _bodyIndex = (_bodyIndex + 1) % MaxBodies;
         }
-
-        internal static Test Create()
-        {
-            return new RayCastTest();
-        }
-
+        
         #region Nested type: RayCastMode
 
         private enum RayCastMode

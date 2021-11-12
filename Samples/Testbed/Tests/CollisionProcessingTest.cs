@@ -39,7 +39,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private List<Body> _removeBodies = new List<Body>();
 
-        private CollisionProcessingTest()
+        public CollisionProcessingTest()
         {
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -147,9 +147,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _removeBodies.Clear();
         }
 
-        internal static Test Create()
-        {
-            return new CollisionProcessingTest();
-        }
     }
 }

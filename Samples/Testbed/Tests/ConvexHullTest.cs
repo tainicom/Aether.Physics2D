@@ -17,7 +17,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vector2[] _points = new Vector2[Settings.MaxPolygonVertices];
         private bool _auto;
 
-        private ConvexHullTest()
+        public ConvexHullTest()
         {
             Generate();
             _auto = false;
@@ -79,9 +79,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public static Test Create()
-        {
-            return new ConvexHullTest();
-        }
     }
 }

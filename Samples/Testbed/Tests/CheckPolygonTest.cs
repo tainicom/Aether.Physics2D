@@ -15,7 +15,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private Vertices _vertices = new Vertices();
 
-        private CheckPolygonTest()
+        public CheckPolygonTest()
         {
         }
 
@@ -64,9 +64,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new CheckPolygonTest();
-        }
     }
 }

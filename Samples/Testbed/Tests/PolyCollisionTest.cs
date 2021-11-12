@@ -45,7 +45,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Transform _transformA;
         private Transform _transformB;
 
-        private PolyCollisionTest()
+        public PolyCollisionTest()
         {
             {
                 _polygonA.Vertices = PolygonTools.CreateRectangle(0.2f, 0.4f);
@@ -61,12 +61,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _transformB = new Transform(_positionB, _angleB);
             }
         }
-
-        internal static Test Create()
-        {
-            return new PolyCollisionTest();
-        }
-
+        
         public override void Update(GameSettings settings, GameTime gameTime)
         {
             Manifold manifold = new Manifold();

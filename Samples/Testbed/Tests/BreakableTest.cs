@@ -47,7 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private PolygonShape _shape2;
         private Vector2 _velocity;
 
-        private BreakableTest()
+        public BreakableTest()
         {
             // Ground body
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -149,9 +149,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new BreakableTest();
-        }
     }
 }

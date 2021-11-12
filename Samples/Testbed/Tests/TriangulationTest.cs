@@ -24,6 +24,12 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body[] _bodies = new Body[6];
         private string[] _names = new[] { "Seidel", "Seidel (trapezoids)", "Delauny", "Earclip", "Flipcode", "Bayazit" };
 
+
+        public TriangulationTest()
+        {
+
+        }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -114,10 +120,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public static Test Create()
-        {
-            return new TriangulationTest();
-        }
     }
 }
 #endif

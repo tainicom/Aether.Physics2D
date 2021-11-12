@@ -38,17 +38,12 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private PolygonShape _shapeA = new PolygonShape(1);
         private PolygonShape _shapeB = new PolygonShape(1);
 
-        private TimeOfImpactTest()
+        public TimeOfImpactTest()
         {
             _shapeA.Vertices = PolygonTools.CreateRectangle(25.0f, 5.0f);
             _shapeB.Vertices = PolygonTools.CreateRectangle(2.5f, 2.5f);
         }
-
-        internal static Test Create()
-        {
-            return new TimeOfImpactTest();
-        }
-
+        
         public override void Update(GameSettings settings, GameTime gameTime)
         {
             base.Update(settings, gameTime);

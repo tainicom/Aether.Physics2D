@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private RevoluteJoint _joint;
 
-        private RevoluteTest()
+        public RevoluteTest()
         {
             //Ground
             Body ground = World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -111,9 +111,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Keys: (l) limits on/off, (m) motor on/off");
         }
 
-        internal static Test Create()
-        {
-            return new RevoluteTest();
-        }
     }
 }

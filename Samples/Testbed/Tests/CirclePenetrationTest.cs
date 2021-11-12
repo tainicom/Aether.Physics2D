@@ -13,7 +13,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class CirclePenetrationTest : Test
     {
-        private CirclePenetrationTest()
+        public CirclePenetrationTest()
         {
             World.Gravity = Vector2.Zero;
 
@@ -50,9 +50,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             circle.ApplyLinearImpulse(new Vector2(200, 50));
         }
 
-        internal static Test Create()
-        {
-            return new CirclePenetrationTest();
-        }
     }
 }

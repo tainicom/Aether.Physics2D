@@ -21,7 +21,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Terrain _terrain;
         private AABB _terrainArea;
 
-        private DestructibleTerrainTest()
+        public DestructibleTerrainTest()
         {
             World = new World(new Vector2(0, -10));
 
@@ -153,10 +153,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new DestructibleTerrainTest();
-        }
     }
 }
 #endif

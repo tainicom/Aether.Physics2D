@@ -19,7 +19,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private bool _save = true;
         private float _time;
 
-        private SerializationTest()
+        public SerializationTest()
         {
             Body ground = World.CreateEdge(new Vector2(-20, 0), new Vector2(20, 0));
 
@@ -205,9 +205,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new SerializationTest();
-        }
     }
 }

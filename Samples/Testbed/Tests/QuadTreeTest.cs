@@ -17,6 +17,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private Vector2 _worldSize;
 
+        public QuadTreeTest()
+        {
+
+        }
+
         public override void Initialize()
         {
             Settings.VelocityIterations = 2;
@@ -103,9 +108,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new QuadTreeTest();
-        }
     }
 }

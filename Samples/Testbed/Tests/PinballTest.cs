@@ -44,7 +44,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private RevoluteJoint _leftJoint;
         private RevoluteJoint _rightJoint;
 
-        private PinballTest()
+        public PinballTest()
         {
             // Ground body
             Body ground;
@@ -128,9 +128,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Press 'a' to control the flippers");
         }
 
-        internal static Test Create()
-        {
-            return new PinballTest();
-        }
     }
 }

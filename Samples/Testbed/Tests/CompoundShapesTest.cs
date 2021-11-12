@@ -35,7 +35,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class CompoundShapesTest : Test
     {
-        private CompoundShapesTest()
+        public CompoundShapesTest()
         {
             World.CreateEdge(new Vector2(50.0f, 0.0f), new Vector2(-50.0f, 0.0f));
 
@@ -135,9 +135,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new CompoundShapesTest();
-        }
     }
 }

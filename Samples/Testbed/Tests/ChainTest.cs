@@ -34,7 +34,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class ChainTest : Test
     {
-        private ChainTest()
+        public ChainTest()
         {
             //Ground
             Body ground = World.CreateBody();
@@ -61,9 +61,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new ChainTest();
-        }
     }
 }

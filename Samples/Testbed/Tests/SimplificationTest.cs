@@ -19,6 +19,10 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vertices _lowerRight;
         private Vertices _twoShape;
 
+        public SimplificationTest()
+        {
+        }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -153,9 +157,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public static Test Create()
-        {
-            return new SimplificationTest();
-        }
     }
 }

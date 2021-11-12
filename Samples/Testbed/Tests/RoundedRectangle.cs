@@ -14,7 +14,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private int _segments = 3;
 
-        private RoundedRectangle()
+        public RoundedRectangle()
         {
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -78,9 +78,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Segments: " + _segments + "\nPress: 'A' to increase segments, 'S' decrease segments\n'D' to create rectangle. 'F' to create capsule.");
         }
 
-        internal static Test Create()
-        {
-            return new RoundedRectangle();
-        }
     }
 }

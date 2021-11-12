@@ -47,8 +47,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         float dT = 0.0016666f;
         int collisions = 0;
         int separations = 0;
-        
-        private CollisionTest()
+
+        public CollisionTest()
         {
             World.Gravity = Vector2.Zero;
 
@@ -167,9 +167,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 ball.IgnoreCCD = !ball.IgnoreCCD;
         }
 
-        internal static Test Create()
-        {
-            return new CollisionTest();
-        }
     }
 }

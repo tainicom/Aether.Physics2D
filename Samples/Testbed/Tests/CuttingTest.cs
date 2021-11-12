@@ -23,7 +23,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vector2 _start = new Vector2(-6, 5);
         private bool _switched;
 
-        private CuttingTest()
+        public CuttingTest()
         {
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -156,9 +156,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Gamepad(input);
         }
 
-        public static CuttingTest Create()
-        {
-            return new CuttingTest();
-        }
     }
 }

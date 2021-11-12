@@ -17,7 +17,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         Stack<Body> bodyPool = new Stack<Body>();
 
-        private BodyPoolTest()
+        public BodyPoolTest()
         {
             //Ground body
             Body ground = World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -71,9 +71,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public static Test Create()
-        {
-            return new BodyPoolTest();
-        }
     }
 }

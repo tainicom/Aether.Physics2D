@@ -37,7 +37,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private const int Count = 20;
 
-        private PyramidTest()
+        public PyramidTest()
         {
             //Create ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -67,9 +67,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public static Test Create()
-        {
-            return new PyramidTest();
-        }
     }
 }

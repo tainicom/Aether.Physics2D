@@ -44,7 +44,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private int _removedBodies;
         private int _removedJoints;
 
-        private WebTest()
+        public WebTest()
         {
             World.JointRemoved += JointRemovedFired;
             World.BodyRemoved += BodyRemovedFired;
@@ -182,9 +182,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.JointRemoved(sender, joint);
         }
 
-        internal static Test Create()
-        {
-            return new WebTest();
-        }
     }
 }

@@ -37,7 +37,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private Fixture _platform;
 
-        ConveyorBeltTest()
+        public ConveyorBeltTest()
         {
             // Ground
             {
@@ -78,9 +78,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new ConveyorBeltTest();
-        }
     }
 }

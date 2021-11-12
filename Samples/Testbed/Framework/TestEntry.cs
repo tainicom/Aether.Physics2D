@@ -9,7 +9,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
 {
     public struct TestEntry
     {
-        public Func<Test> CreateTest;
-        public string Name;
+        public readonly string Name;
+        public readonly Type TestType;
+
+        public TestEntry(string name, Type testType)
+        {
+            this.Name = name;
+            this.TestType = testType;
+        }
+
+        public Test CreateTest()
+        {
+            return (Test)Activator.CreateInstance(TestType);
+        }
     }
 }

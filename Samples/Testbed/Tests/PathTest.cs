@@ -19,7 +19,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         private float _time;
 
-        private PathTest()
+        public PathTest()
         {
             //Single body that moves around path
             _movingBody = World.CreateBody();
@@ -82,9 +82,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new PathTest();
-        }
     }
 }

@@ -35,7 +35,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class AngleJointTest : Test
     {
-        private AngleJointTest()
+        public AngleJointTest()
         {
             World.CreateEdge(new Vector2(-40, 0), new Vector2(40, 0));
 
@@ -56,9 +56,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             fC.FixedRotation = true; // Or set the Inertia to float.MaxValue
         }
 
-        internal static Test Create()
-        {
-            return new AngleJointTest();
-        }
     }
 }

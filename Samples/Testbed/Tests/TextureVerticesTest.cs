@@ -17,6 +17,11 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private Stopwatch _sw = new Stopwatch();
 
+        public TextureVerticesTest()
+        {
+
+        }
+
         public override void Initialize()
         {
             base.Initialize();
@@ -60,9 +65,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public static Test Create()
-        {
-            return new TextureVerticesTest();
-        }
     }
 }
