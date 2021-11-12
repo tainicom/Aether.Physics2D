@@ -1,3 +1,5 @@
+//   Copyright 2021 Kastellanos Nikolaos
+
 /* Original source Farseer Physics Engine:
  * Copyright (c) 2014 Ian Qvist, http://farseerphysics.codeplex.com
  * Microsoft Permissive License (Ms-PL) v1.1
@@ -45,6 +47,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
         internal World World;
         private FixedMouseJoint _fixedMouseJoint;
         internal int TextLine;
+
+        public virtual Vector2 Bounds { get { return new Vector2(84, 64); } }
 
         protected Test()
         {

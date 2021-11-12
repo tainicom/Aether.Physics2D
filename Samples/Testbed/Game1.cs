@@ -127,6 +127,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
             _testIndex = MathUtils.Clamp(_testIndex, 0, _testCount - 1);
             StartTest(_testIndex);
+            UpdateProjection();
         }
 
 
@@ -198,6 +199,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
                 StartTest(_testIndex);
                 ResetCamera();
+                UpdateProjection();
             }
             else if (_inputState.IsKeyPressed(Keys.O) || _inputState.IsButtonPressed(Buttons.RightShoulder)) // Press O to next test.
             {
@@ -206,6 +208,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
                 StartTest(_testIndex);
                 ResetCamera();
+                UpdateProjection();
             }
             
 
@@ -337,14 +340,18 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
 
         private void ResetCamera()
         {
-            ViewZoom = 0.8f;
+            ViewZoom = 1f;
             ViewCenter = new Vector2(0.0f, 20.0f);
         }
 
         private void UpdateProjection()
         {
-            var lower = -new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
-            var upper =  new Vector2(25.0f * GraphicsDevice.Viewport.AspectRatio, 25.0f) / ViewZoom;
+            Vector2 bounds = new Vector2(84, 64)/2f;
+            if (_test != null)
+                bounds = _test.Bounds/2f;
+
+            var lower = -new Vector2(bounds.Y * GraphicsDevice.Viewport.AspectRatio, bounds.Y) / ViewZoom;
+            var upper =  new Vector2(bounds.Y * GraphicsDevice.Viewport.AspectRatio, bounds.Y) / ViewZoom;
 
             // L/R/B/T
             Projection = Matrix.CreateOrthographicOffCenter(lower.X, upper.X, lower.Y, upper.Y, 0f, 2f);
