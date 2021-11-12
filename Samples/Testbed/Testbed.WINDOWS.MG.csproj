@@ -89,7 +89,6 @@
     <Compile Include="Tests\EdgeShapesTest.cs" />
     <Compile Include="Tests\EdgeTest.cs" />
     <Compile Include="Tests\ExplosionTest.cs" />
-    <Compile Include="Tests\FluidsTest.cs" />
     <Compile Include="Tests\GearsTest.cs" />
     <Compile Include="Tests\GravityControllerTest.cs" />
     <Compile Include="Tests\MobileBalancedTest.cs" />

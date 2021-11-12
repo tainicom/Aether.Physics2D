@@ -123,7 +123,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry("Destructible Terrain Test", typeof(DestructibleTerrainTest)),
 #endif
             new TestEntry("Check polygon", typeof(CheckPolygonTest)),
-            new TestEntry("Fluids", typeof(FluidsTest)),
         };
     }
 }

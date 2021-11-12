@@ -89,9 +89,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
 #endif
 
-#if LEGACY_FLUIDS
-        public tainicom.Aether.Physics2D.Fluids.FluidSystem2 Fluid { get; private set; }
-#endif
 
         /// <summary>
         /// Set the user data. Use this to store your application specific data.
@@ -165,9 +162,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _rayCastCallbackCache = new BroadPhaseRayCastCallback(RayCastCallback);
             _testPointDelegateCache = new QueryReportFixtureDelegate(this.TestPointCallback);
 
-#if LEGACY_FLUIDS
-            Fluid = new tainicom.Aether.Physics2D.Fluids.FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
-#endif
 
             ContactManager = new ContactManager(new DynamicTreeBroadPhase());
             Gravity = new Vector2(0f, -9.80665f);
@@ -1458,11 +1452,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 }
                 if (Settings.EnableDiagnostics)
                     ContinuousPhysicsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
-
-#if LEGACY_FLUIDS
-                if (step.dt > 0.0f)
-                    Fluid.Update(dt);
-#endif
 
                 if (Settings.AutoClearForces)
                     ClearForces();

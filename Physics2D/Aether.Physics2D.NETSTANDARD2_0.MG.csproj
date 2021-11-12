@@ -11,13 +11,13 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETSTANDARD2_0</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;LEGACY_ASYNCADDREMOVE;XNAAPI;NETSTANDARD2_0</DefineConstants>
     <OutputPath>..\bin\Debug\MG.netstandard2.0\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETSTANDARD2_0</DefineConstants>
+    <DefineConstants>TRACE;LEGACY_ASYNCADDREMOVE;XNAAPI;NETSTANDARD2_0</DefineConstants>
     <OutputPath>..\bin\Release\MG.netstandard2.0\</OutputPath>
   </PropertyGroup>
 
@@ -146,14 +146,6 @@
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />
     <Compile Include="Dynamics\WorldCallbacks.cs" />
-    <Compile Include="Fluids\1\FluidDefinition.cs" />
-    <Compile Include="Fluids\1\FluidParticle.cs" />
-    <Compile Include="Fluids\1\FluidSystem1.cs" />
-    <Compile Include="Fluids\1\Spring.cs" />
-    <Compile Include="Fluids\1\SpringHash.cs" />
-    <Compile Include="Fluids\1\HashGrid.cs" />
-    <Compile Include="Fluids\2\FluidSystem2.cs" />
-    <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
 

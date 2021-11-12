@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\MG.Android\</OutputPath>
-    <DefineConstants>DEBUG;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;ANDROID PORTABLE</DefineConstants>
+    <DefineConstants>DEBUG;LEGACY_ASYNCADDREMOVE;XNAAPI;ANDROID PORTABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\MG.Android\</OutputPath>
-    <DefineConstants>LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;ANDROID</DefineConstants>
+    <DefineConstants>LEGACY_ASYNCADDREMOVE;XNAAPI;ANDROID</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -162,14 +162,6 @@
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />
     <Compile Include="Dynamics\WorldCallbacks.cs" />
-    <Compile Include="Fluids\1\FluidDefinition.cs" />
-    <Compile Include="Fluids\1\FluidParticle.cs" />
-    <Compile Include="Fluids\1\FluidSystem1.cs" />
-    <Compile Include="Fluids\1\Spring.cs" />
-    <Compile Include="Fluids\1\SpringHash.cs" />
-    <Compile Include="Fluids\1\HashGrid.cs" />
-    <Compile Include="Fluids\2\FluidSystem2.cs" />
-    <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
 
