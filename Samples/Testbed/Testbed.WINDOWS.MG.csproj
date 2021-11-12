@@ -105,7 +105,6 @@
     <Compile Include="Tests\PrismaticTest.cs" />
     <Compile Include="Tests\PulleysTest.cs" />
     <Compile Include="Tests\PyramidTest.cs" />
-    <Compile Include="Tests\QuadTreeTest.cs" />
     <Compile Include="Tests\RaycastTest.cs" />
     <Compile Include="Tests\RevoluteTest.cs" />
     <Compile Include="Tests\RopeTest.cs" />

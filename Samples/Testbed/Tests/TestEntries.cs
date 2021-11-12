@@ -116,7 +116,6 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry("Buoyancy test", typeof(BuoyancyTest)),
             new TestEntry("Convex hull test", typeof(ConvexHullTest2)),
             new TestEntry("Simple Wind Force Test", typeof(SimpleWindForceTest)),
-            new TestEntry("Quad Tree BroadPhase test", typeof(QuadTreeTest)),
             new TestEntry("Simplification", typeof(SimplificationTest)),
 #if WINDOWS
             //new TestEntry("Triangulation", typeof(TriangulationTest)), // Test fails
