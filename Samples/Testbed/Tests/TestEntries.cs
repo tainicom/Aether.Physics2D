@@ -93,6 +93,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry("Body Pool", typeof(BodyPoolTest)),
             new TestEntry("Collision Test", typeof(CollisionTest)),
             new TestEntry("The Leaning Tower of Lire Test", typeof(TheLeaningTowerofLireTest)),
+            new TestEntry("Boids Test", typeof(BoidsTest)),
             new TestEntry("Sparse bodies Test", typeof(SparseBodiesTest)),
             new TestEntry("Sparse bodies with many fixtures Test", typeof(SparseBodiesWithManyFixturesTest)),
 
