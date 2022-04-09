@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <ProjectGuid>{AB279FE5-6D8D-480C-8B93-D0312CFE7D3B}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>tainicom.Aether.Physics2D.Samples.Samples</RootNamespace>
-    <AssemblyName>Samples.Samples</AssemblyName>
+    <RootNamespace>tainicom.Aether.Physics2D.Samples.NewSamples</RootNamespace>
+    <AssemblyName>Samples.NewSamples</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -42,63 +42,17 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Demos\AdvancedDemo1.cs" />
-    <Compile Include="Demos\AdvancedDemo2.cs" />
-    <Compile Include="Demos\AdvancedDemo3.cs" />
-    <Compile Include="Demos\AdvancedDemo4.cs" />
-    <Compile Include="Demos\AdvancedDemo5.cs" />
-    <Compile Include="Demos\AdvancedDemo6.cs" />
-    <Compile Include="DrawingSystem\ShadowBatch.cs" />
-    <Compile Include="Demos\GameDemo1.cs" />
-    <Compile Include="Demos\Prefabs\Agent.cs" />
-    <Compile Include="Demos\Prefabs\Border.cs" />
-    <Compile Include="Demos\Prefabs\Objects.cs" />
-    <Compile Include="Demos\Prefabs\Pyramid.cs" />
-    <Compile Include="Demos\Prefabs\Ragdoll.cs" />
-    <Compile Include="Demos\Prefabs\Spider.cs" />
-    <Compile Include="Demos\Prefabs\Spiderweb.cs" />
-    <Compile Include="Demos\Prefabs\TheoJansen.cs" />
-    <Compile Include="Demos\SimpleDemo1.cs" />
-    <Compile Include="Demos\SimpleDemo10.cs" />
-    <Compile Include="Demos\SimpleDemo2.cs" />
-    <Compile Include="Demos\SimpleDemo3.cs" />
-    <Compile Include="Demos\SimpleDemo4.cs" />
-    <Compile Include="Demos\SimpleDemo5.cs" />
-    <Compile Include="Demos\SimpleDemo6.cs" />
-    <Compile Include="Demos\SimpleDemo7.cs" />
-    <Compile Include="Demos\SimpleDemo8.cs" />
-    <Compile Include="Demos\SimpleDemo9.cs" />
-    <Compile Include="DrawingSystem\AssetCreator.cs" />
-    <Compile Include="DrawingSystem\LineBatch.cs" />
-    <Compile Include="DrawingSystem\ShadowMap2D.cs" />
-    <Compile Include="DrawingSystem\Sprite.cs" />
-    <Compile Include="Game1.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenSystem\BackgroundScreen.cs" />
-    <Compile Include="ScreenSystem\Camera2D.cs" />
-    <Compile Include="ScreenSystem\FramerateCounterComponent.cs" />
-    <Compile Include="ScreenSystem\GameScreen.cs" />
-    <Compile Include="ScreenSystem\IDemoScreen.cs" />
-    <Compile Include="ScreenSystem\InputHelper.cs" />
-    <Compile Include="ScreenSystem\LogoScreen.cs" />
-    <Compile Include="ScreenSystem\MenuButton.cs" />
-    <Compile Include="ScreenSystem\MenuEntry.cs" />
-    <Compile Include="ScreenSystem\MenuScreen.cs" />
-    <Compile Include="ScreenSystem\MessageBoxScreen.cs" />
-    <Compile Include="ScreenSystem\PhysicsGameScreen.cs" />
-    <Compile Include="ScreenSystem\ScreenManagerComponent.cs" />
-    <Compile Include="ScreenSystem\SpriteFonts.cs" />
-    <Compile Include="ScreenSystem\VirtualButton.cs" />
-    <Compile Include="ScreenSystem\VirtualStick.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Game1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.8.9012">
+    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.8.9013">
     </PackageReference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="..\SamplesContent\SamplesContent.mgcb">
+    <MonoGameContentReference Include="..\NewSamplesContent\NewSamplesContent.mgcb">
       <Link>Content\SamplesContent.mgcb</Link>
     </MonoGameContentReference>
     <None Include="app.config" />
@@ -113,6 +67,7 @@
       <Name>Aether.Physics2D.WINDOWS.MG</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\NewSamples\NewSamples.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>72DCF07D-A710-4BB9-84D4-B5C11313929C</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>tainicom.Aether.Physics2D.Samples.Samples</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\AdvancedDemo1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\AdvancedDemo2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\AdvancedDemo3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\AdvancedDemo4.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\AdvancedDemo5.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\AdvancedDemo6.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrawingSystem\ShadowBatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\GameDemo1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Agent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Border.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Objects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Pyramid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Ragdoll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Spider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Spiderweb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\TheoJansen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo10.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo3.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo4.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo5.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo6.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo7.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo8.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\SimpleDemo9.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrawingSystem\AssetCreator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrawingSystem\LineBatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrawingSystem\ShadowMap2D.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DrawingSystem\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\BackgroundScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\Camera2D.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\FramerateCounterComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\GameScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\IDemoScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\InputHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\LogoScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MenuButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MenuEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MenuScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MessageBoxScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\PhysicsGameScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\ScreenManagerComponent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\SpriteFonts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\VirtualButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\VirtualStick.cs" />
+  </ItemGroup>
+</Project>

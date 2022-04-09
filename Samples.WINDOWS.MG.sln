@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testbed.WINDOWS.MG", "Samples\Testbed\Testbed.WINDOWS.MG.csproj", "{7D0489E0-B912-43F8-8859-6C015C5B93F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testbed.WINDOWS.MG", "Samples\Testbed.WindowsDX\Testbed.WINDOWS.MG.csproj", "{7D0489E0-B912-43F8-8859-6C015C5B93F6}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Testbed", "Samples\Testbed\Testbed.shproj", "{4A534FA0-4CF4-4CBD-98E3-1FDC22A5770B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.Diagnostics.WINDOWS.MG", "Physics2D.Diagnostics\Diagnostics\Aether.Physics2D.Diagnostics.WINDOWS.MG.csproj", "{2ED9AD24-DFBA-441D-BCFB-EAA9520D804D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.WINDOWS.MG", "Samples\Samples\Samples.WINDOWS.MG.csproj", "{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.WINDOWS.MG", "Samples\Samples.WindowsDX\Samples.WINDOWS.MG.csproj", "{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aether.Physics2D.WINDOWS.MG", "Physics2D\Aether.Physics2D.WINDOWS.MG.csproj", "{58A4F378-3FC5-4616-BC62-5FF5DF676627}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{95CC7850-C716-48DC-84EC-4735CDABF818}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Samples", "Samples\Samples\Samples.shproj", "{72DCF07D-A710-4BB9-84D4-B5C11313929C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagnostics", "Diagnostics", "{CC5F7843-BD51-469F-B2F0-9071A7B9202D}"
 EndProject
@@ -19,9 +23,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aether.Content.Pipeline", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Physics2DImporters.WINDOWS.MG", "Content.Pipeline\Physics2DImporters\Physics2DImporters.WINDOWS.MG.csproj", "{14B7BD4A-BD70-4564-BD11-8F0036BA20E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.WINDOWS.MG", "Samples\HelloWorld\HelloWorld.WINDOWS.MG.csproj", "{F2DDED87-5B5C-4E2C-A675-30D72DEF897E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.WINDOWS.MG", "Samples\HelloWorld.WindowsDX\HelloWorld.WINDOWS.MG.csproj", "{F2DDED87-5B5C-4E2C-A675-30D72DEF897E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HelloWorld", "Samples\HelloWorld\HelloWorld.shproj", "{9788674C-C031-4604-ADF8-86FF678FCAB1}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Samples\Testbed\Testbed.projitems*{4a534fa0-4cf4-4cbd-98e3-1fdc22a5770b}*SharedItemsImports = 13
+		Samples\Samples\Samples.projitems*{72dcf07d-a710-4bb9-84d4-b5c11313929c}*SharedItemsImports = 13
+		Samples\Testbed\Testbed.projitems*{7d0489e0-b912-43f8-8859-6c015c5b93f6}*SharedItemsImports = 4
+		Samples\HelloWorld\HelloWorld.projitems*{9788674c-c031-4604-adf8-86ff678fcab1}*SharedItemsImports = 13
+		Samples\Samples\Samples.projitems*{e4bbd53b-8677-4c90-9ca2-9b8fc186e8fd}*SharedItemsImports = 4
+		Samples\HelloWorld\HelloWorld.projitems*{f2dded87-5b5c-4e2c-a675-30d72def897e}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -61,5 +75,11 @@ Global
 		{E4BBD53B-8677-4C90-9CA2-9B8FC186E8FD} = {95CC7850-C716-48DC-84EC-4735CDABF818}
 		{14B7BD4A-BD70-4564-BD11-8F0036BA20E7} = {647EE16B-DEB6-4BB0-9383-9F9BF714BEB1}
 		{F2DDED87-5B5C-4E2C-A675-30D72DEF897E} = {95CC7850-C716-48DC-84EC-4735CDABF818}
+		{4A534FA0-4CF4-4CBD-98E3-1FDC22A5770B} = {95CC7850-C716-48DC-84EC-4735CDABF818}
+		{72DCF07D-A710-4BB9-84D4-B5C11313929C} = {95CC7850-C716-48DC-84EC-4735CDABF818}
+		{9788674C-C031-4604-ADF8-86FF678FCAB1} = {95CC7850-C716-48DC-84EC-4735CDABF818}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A47FC0B-72D2-48AA-941E-83B5F7BF4498}
 	EndGlobalSection
 EndGlobal
