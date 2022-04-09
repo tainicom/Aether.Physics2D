@@ -9,6 +9,6 @@
     <Import_RootNamespace>tainicom.Aether.Physics2D.Samples.HelloWorld</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-  
+    <Compile Include="$(MSBuildThisFileDirectory)HelloWorldComponent.cs" />
   </ItemGroup>
 </Project>
