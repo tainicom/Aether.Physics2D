@@ -4,10 +4,10 @@
  */
 
 using System;
-using tainicom.Aether.Physics2D.Samples.Demos;
-using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using tainicom.Aether.Physics2D.Samples.Demos;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples
 {
@@ -21,26 +21,16 @@ namespace tainicom.Aether.Physics2D.Samples
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
-            _graphics.PreparingDeviceSettings += _graphics_PreparingDeviceSettings;
             _graphics.PreferMultiSampling = true;
-#if WINDOWS
+            _graphics.IsFullScreen = false;
+            _graphics.PreparingDeviceSettings += _graphics_PreparingDeviceSettings;
             _graphics.PreferredBackBufferWidth = 1280;
             _graphics.PreferredBackBufferHeight = 720;
-            IsFixedTimeStep = true;
-#elif WINDOWS_PHONE
-            _graphics.PreferredBackBufferWidth = 800;
-            _graphics.PreferredBackBufferHeight = 480;
-            ConvertUnits.SetDisplayUnitToSimUnitRatio(16f);
-            IsFixedTimeStep = false;
-#endif
-#if WINDOWS
-            _graphics.IsFullScreen = false;
-#elif WINDOWS_PHONE
-            _graphics.IsFullScreen = true;
-#endif
 
-            Content.RootDirectory = "Content";
+            IsFixedTimeStep = true;
+
 
             //new-up components and add to Game.Components
             ScreenManager = new ScreenManager(this);

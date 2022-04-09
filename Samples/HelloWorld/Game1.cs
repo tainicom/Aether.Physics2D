@@ -19,11 +19,10 @@ namespace tainicom.Aether.Physics2D.Samples
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.GraphicsProfile = GraphicsProfile.Reach;
-            _graphics.PreferredBackBufferWidth = 800;
-            _graphics.PreferredBackBufferHeight = 480;
-
             Content.RootDirectory = "Content";
+            _graphics.GraphicsProfile = GraphicsProfile.Reach;
+            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = 768;
 
         }
 

@@ -6,11 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using tainicom.Aether.Physics2D.Samples.MediaSystem;
-using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using tainicom.Aether.Physics2D.Samples.MediaSystem;
+using tainicom.Aether.Physics2D.Samples.ScreenSystem;
 
 namespace tainicom.Aether.Physics2D.Samples
 {
@@ -32,16 +32,15 @@ namespace tainicom.Aether.Physics2D.Samples
 
         private bool _isExiting;
 
-#if WINDOWS
         private FrameRateCounter _counter;
         private bool _showFPS;
-#endif
 
         public Game1()
         {
             Window.Title = "Samples";
 
             _graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
             _graphics.PreparingDeviceSettings += _graphics_PreparingDeviceSettings;
             _graphics.PreferMultiSampling = true;
@@ -51,7 +50,6 @@ namespace tainicom.Aether.Physics2D.Samples
             
             _graphics.IsFullScreen = false;
 
-            Content.RootDirectory = "Content";
         }
 
         void _graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
@@ -67,10 +65,10 @@ namespace tainicom.Aether.Physics2D.Samples
         protected override void Initialize()
         {
             _input = new InputHelper();
-#if WINDOWS
+
             _counter = new FrameRateCounter();
             _showFPS = false;
-#endif
+
             _isExiting = false;
 
             base.Initialize();
@@ -90,9 +88,9 @@ namespace tainicom.Aether.Physics2D.Samples
             _quadRenderer = new QuadRenderer(GraphicsDevice);
 
             _input.LoadContent(GraphicsDevice.Viewport);
-#if WINDOWS
+
             _counter.LoadContent();
-#endif
+
 
             // Create rendertarget for transitions
             PresentationParameters pp = GraphicsDevice.PresentationParameters;
@@ -187,18 +185,18 @@ namespace tainicom.Aether.Physics2D.Samples
             // Read the keyboard and gamepad.
             _input.Update(gameTime);
             // Update the framerate counter
-#if WINDOWS
+
             _counter.Update(gameTime);
-#endif
+
             if ((_input.IsNewButtonPress(Buttons.Y) || _input.IsNewKeyPress(Keys.F5)) && !(_screens[_screens.Count - 1] is OptionsScreen))
                 AddScreen(new OptionsScreen());
-#if WINDOWS
+
             if (_input.IsNewKeyPress(Keys.F11))
                 _showFPS = !_showFPS;
 
             if (_input.IsNewKeyPress(Keys.F12))
                 _graphics.ToggleFullScreen();
-#endif
+
             // Make a copy of the master screen list, to avoid confusion if
             // the process of updating one screen adds or removes others.
             _screensToUpdate.Clear();
@@ -296,12 +294,12 @@ namespace tainicom.Aether.Physics2D.Samples
             }
 
             _input.Draw(_spriteBatch);
-#if WINDOWS
+
             if (_showFPS)
             {
                 _counter.Draw(_spriteBatch);
             }
-#endif
+
             base.Draw(gameTime);
         }
 

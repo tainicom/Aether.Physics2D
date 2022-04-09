@@ -28,13 +28,13 @@
 */
 
 using System;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Diagnostics;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
 using tainicom.Aether.Physics2D.Samples.Testbed.Tests;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace tainicom.Aether.Physics2D.Samples.Testbed
 {
@@ -65,16 +65,16 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
             _graphics.GraphicsProfile = GraphicsProfile.Reach;
             _graphics.PreferMultiSampling = true;
+            _graphics.SynchronizeWithVerticalRetrace = true;
             _graphics.PreferredBackBufferWidth = 1024;
             _graphics.PreferredBackBufferHeight = 768;
 
-            Content.RootDirectory = "Content";
             IsMouseVisible = true;
-
             IsFixedTimeStep = true;
-            _graphics.SynchronizeWithVerticalRetrace = true;
+
         }
 
         public float ViewZoom
