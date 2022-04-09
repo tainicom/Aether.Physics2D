@@ -90,7 +90,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.8.9012">
+    <PackageReference Include="MonoGame.Framework.WindowsDX.9000" Version="3.8.9013">
     </PackageReference>
     <Reference Include="System" />
   </ItemGroup>
