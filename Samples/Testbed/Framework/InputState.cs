@@ -46,7 +46,9 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
         public MouseState PrevMouseState { get { return _prevMouseState; } }
 
         public int ScrollWheelDelta { get { return MouseState.ScrollWheelValue - PrevMouseState.ScrollWheelValue; } }
+#if MG
         public int HScrollWheelDelta { get { return MouseState.HorizontalScrollWheelValue - PrevMouseState.HorizontalScrollWheelValue; } }
+#endif
 
 
         #endregion

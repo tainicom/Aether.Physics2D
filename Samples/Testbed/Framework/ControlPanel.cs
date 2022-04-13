@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Framework
             Viewport vp = GraphicsDevice.Viewport;
             Vector2 pos = new Vector2(vp.Width - 180,20);
 
-            _sb.Begin(SpriteSortMode.Deferred);
+            _sb.Begin(SpriteSortMode.Deferred, null);
             
             _sb.DrawString(_font, "(F1) - Help", pos, color);
             pos.Y += _font.LineSpacing;

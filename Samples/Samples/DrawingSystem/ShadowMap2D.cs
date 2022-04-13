@@ -100,11 +100,13 @@ namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
             effect.Parameters["WorldViewProjection"].SetValue(Matrix.Identity * cameraView * cameraProjection);
             effect.Parameters["LightRadius"].SetValue(LightRadius);
             effect.Parameters["LightPosition"].SetValue(body.Position);
-            effect.Parameters["ShadowMapTexelSize"].SetValue(1f / ShadowMapSize);
             effect.Parameters["ShadowMapU"].SetValue(ShadowMapU);
             effect.Parameters["ShadowMapR"].SetValue(ShadowMapR);
             effect.Parameters["ShadowMapD"].SetValue(ShadowMapD);
             effect.Parameters["ShadowMapL"].SetValue(ShadowMapL);
+            var shadowMapTexelSizeParam = effect.Parameters["ShadowMapTexelSize"];
+            if (shadowMapTexelSizeParam != null)
+                shadowMapTexelSizeParam.SetValue(1f / ShadowMapSize);
         }
 
     }

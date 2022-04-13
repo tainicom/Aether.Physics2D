@@ -133,7 +133,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vector2 ToLocal(Point mousePos)
         {
             //TODO: Unproject
-            return mousePos.ToVector2();
+            return new Vector2(mousePos.X, mousePos.Y);
         }
 
         public void Advance(GameTime gameTime)
