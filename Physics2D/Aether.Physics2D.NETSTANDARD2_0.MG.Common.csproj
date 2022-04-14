@@ -12,13 +12,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>DEBUG;TRACE;LEGACY_ASYNCADDREMOVE;XNAAPI;NETSTANDARD2_0</DefineConstants>
-    <OutputPath>..\bin\Debug\MG.netstandard2.0\</OutputPath>
+    <OutputPath>..\bin\Debug\MG.Common.netstandard2.0\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>TRACE;LEGACY_ASYNCADDREMOVE;XNAAPI;NETSTANDARD2_0</DefineConstants>
-    <OutputPath>..\bin\Release\MG.netstandard2.0\</OutputPath>
+    <OutputPath>..\bin\Release\MG.Common.netstandard2.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -150,7 +150,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="tainicom.xna.Framework" Version="3.8.9012">
+    <PackageReference Include="tainicom.xna.Framework" Version="3.8.9013">
       <ExcludeAssets>*</ExcludeAssets>
       <NoWarn>NU1701</NoWarn>
     </PackageReference>
