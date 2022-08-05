@@ -58,10 +58,10 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         private TimeSpan _min;
         private TimeSpan _max;
         private TimeSpan _avg;
-        private StringBuilder _graphSbMax = new StringBuilder();   
-        private StringBuilder _graphSbAvg = new StringBuilder();   
-        private StringBuilder _graphSbMin = new StringBuilder();   
-        private StringBuilder _debugPanelSbObjects = new StringBuilder();        
+        private StringBuilder _graphSbMax = new StringBuilder();
+        private StringBuilder _graphSbAvg = new StringBuilder();
+        private StringBuilder _graphSbMin = new StringBuilder();
+        private StringBuilder _debugPanelSbObjects = new StringBuilder();
         private StringBuilder _debugPanelSbUpdate = new StringBuilder();
 
         //Performance graph
@@ -74,10 +74,13 @@ namespace tainicom.Aether.Physics2D.Diagnostics
         public Rectangle PerformancePanelBounds = new Rectangle(330, 100, 200, 100);
         private Vector2[] _background = new Vector2[4];
         public bool Enabled = true;
-        
+
         public const int CircleSegments = 32;
         private Complex circleSegmentRotation = Complex.FromAngle((float)(Math.PI * 2.0 / CircleSegments));
 
+
+        private Category _debuggableCategories;
+        public bool EnableDebugFiltering = true;
         public DebugView(World world)
             : base(world)
         {
@@ -87,7 +90,16 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             AppendFlags(DebugViewFlags.Shape);
             AppendFlags(DebugViewFlags.Controllers);
             AppendFlags(DebugViewFlags.Joint);
+
+
+            _debuggableCategories = Category.All;
+
         }
+
+        public void AddDebugCategory(Category cat) => _debuggableCategories |= cat;
+        public void RemoveDebugCategory(Category cat) => _debuggableCategories &= ~cat;
+ 
+
 
         #region IDisposable Members
 
@@ -143,6 +155,11 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                     Transform xf = b.GetTransform();
                     foreach (Fixture f in b.FixtureList)
                     {
+                        if (EnableDebugFiltering)
+                            if (!_debuggableCategories.HasFlag(f.CollisionCategories))
+                                continue;
+
+
                         if (b.Enabled == false)
                             DrawShape(f, xf, InactiveShapeColor);
                         else if (b.BodyType == BodyType.Static)
@@ -187,6 +204,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 {
                     foreach (Fixture f in body.FixtureList)
                     {
+                        if (EnableDebugFiltering)
+                            if (!_debuggableCategories.HasFlag(f.CollisionCategories))
+                                continue;
                         PolygonShape polygon = f.Shape as PolygonShape;
                         if (polygon != null)
                         {
@@ -222,6 +242,9 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
                     foreach (Fixture f in body.FixtureList)
                     {
+                        if (EnableDebugFiltering)
+                            if (!_debuggableCategories.HasFlag(f.CollisionCategories))
+                                continue;
                         for (int t = 0; t < f.ProxyCount; ++t)
                         {
                             FixtureProxy proxy = f.Proxies[t];
@@ -273,7 +296,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
                 _min = TimeSpan.MaxValue;
                 _max = TimeSpan.Zero;
                 _avg = TimeSpan.Zero;
-                for (int i = 0; i<_graphValues.Count; i++)
+                for (int i = 0; i < _graphValues.Count; i++)
                 {
                     var val = _graphValues[i];
                     _min = TimeSpan.FromTicks(Math.Min(_min.Ticks, val.Ticks));
@@ -349,25 +372,25 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             int x = (int)DebugPanelPosition.X;
             int y = (int)DebugPanelPosition.Y;
-            
+
             _debugPanelSbObjects.Clear();
             _debugPanelSbObjects.Append("Objects:").AppendLine();
             _debugPanelSbObjects.Append("- Bodies:   ").AppendNumber(World.BodyList.Count).AppendLine();
             _debugPanelSbObjects.Append("- Fixtures: ").AppendNumber(fixtureCount).AppendLine();
             _debugPanelSbObjects.Append("- Contacts: ").AppendNumber(World.ContactCount).AppendLine();
-            _debugPanelSbObjects.Append("- Proxies:  ").AppendNumber(World.ProxyCount).AppendLine();  
+            _debugPanelSbObjects.Append("- Proxies:  ").AppendNumber(World.ProxyCount).AppendLine();
             _debugPanelSbObjects.Append("- Joints:   ").AppendNumber(World.JointList.Count).AppendLine();
             _debugPanelSbObjects.Append("- Controllers: ").AppendNumber(World.ControllerList.Count).AppendLine();
             DrawString(x, y, _debugPanelSbObjects);
-            
+
             _debugPanelSbUpdate.Clear();
             _debugPanelSbUpdate.Append("Update time:").AppendLine();
-            _debugPanelSbUpdate.Append("- Body:    ").AppendNumber(  (float)World.SolveUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Contact: ").AppendNumber(  (float)World.ContactsUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- CCD:     ").AppendNumber(  (float)World.ContinuousPhysicsTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Joint:   ").AppendNumber(  (float)World.Island.JointUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Body:    ").AppendNumber((float)World.SolveUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Contact: ").AppendNumber((float)World.ContactsUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- CCD:     ").AppendNumber((float)World.ContinuousPhysicsTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Joint:   ").AppendNumber((float)World.Island.JointUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
             _debugPanelSbUpdate.Append("- Controller:").AppendNumber((float)World.ControllersUpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
-            _debugPanelSbUpdate.Append("- Total:   ").AppendNumber(  (float)World.UpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
+            _debugPanelSbUpdate.Append("- Total:   ").AppendNumber((float)World.UpdateTime.TotalMilliseconds, 3).Append(" ms").AppendLine();
             DrawString(x + 110, y, _debugPanelSbUpdate);
         }
 
@@ -598,7 +621,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
 
             Color colorFill = color * 0.5f;
 
-            for (int i = 0; i < CircleSegments-1; i++)
+            for (int i = 0; i < CircleSegments - 1; i++)
             {
                 Vector2 v1 = v2;
                 var center_v1 = center_v2;
@@ -641,7 +664,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             var xAxis = transform.q.ToVector2();
             Vector2 p2 = p1 + axisScale * xAxis;
             DrawSegment(p1, p2, Color.Red);
-            
+
             var yAxis = new Vector2(-transform.q.Imaginary, transform.q.Real);
             p2 = p1 + axisScale * yAxis;
             DrawSegment(p1, p2, Color.Green);
