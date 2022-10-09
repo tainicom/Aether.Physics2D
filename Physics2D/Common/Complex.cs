@@ -141,7 +141,7 @@ namespace tainicom.Aether.Physics2D.Common
 
         public static Complex Negate(ref Complex value)
         {
-            return new Complex(-value.Real, -value.Real);
+            return new Complex(-value.Real, -value.Imaginary);
         }
 
         public static Complex Normalize(ref Complex value)
