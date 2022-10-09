@@ -13,15 +13,15 @@ namespace tainicom.Aether.Physics2D.Common
         private static readonly Complex _one = new Complex(1, 0);
         private static readonly Complex _imaginaryOne = new Complex(0, 1);
 
-        public float Real;
-        public float Imaginary;
+        public float R;
+        public float i;
 
         public static Complex One { get { return _one; } }
         public static Complex ImaginaryOne { get { return _imaginaryOne; } }
 
         public float Phase
         {
-            get { return (float)Math.Atan2(Imaginary, Real); }
+            get { return (float)Math.Atan2(i, R); }
             set 
             {
                 if (value == 0)
@@ -29,8 +29,8 @@ namespace tainicom.Aether.Physics2D.Common
                     this = Complex.One;
                     return;
                 }
-                this.Real      = (float)Math.Cos(value);
-                this.Imaginary = (float)Math.Sin(value);
+                this.R = (float)Math.Cos(value);
+                this.i = (float)Math.Sin(value);
             }
         }
 
@@ -42,8 +42,8 @@ namespace tainicom.Aether.Physics2D.Common
 
         public Complex(float real, float imaginary)
         {
-            Real = real;
-            Imaginary = imaginary;
+            R = real;
+            i = imaginary;
         }
                 
         public static Complex FromAngle(float angle)
@@ -58,101 +58,101 @@ namespace tainicom.Aether.Physics2D.Common
 
         public void Conjugate()
         {
-            Imaginary = -Imaginary;
+            i = -i;
         }
                 
         public void Negate()
         {
-            Real = -Real;
-            Imaginary = -Imaginary;
+            R = -R;
+            i = -i;
         }
 
         public float MagnitudeSquared()
         {
-            return (Real * Real) + (Imaginary * Imaginary);
+            return (R * R) + (i * i);
         }
 
         public void Normalize()
         {
             var mag = Magnitude;
-            Real = Real / mag;
-            Imaginary = Imaginary / mag;            
+            R = R / mag;
+            i = i / mag;            
         }
 
         public Vector2 ToVector2()
         {
-            return new Vector2(Real, Imaginary);
+            return new Vector2(R, i);
         }
         
         public static Complex Multiply(ref Complex left, ref Complex right)
         {
-            return new Complex( left.Real      * right.Real  - left.Imaginary * right.Imaginary,
-                                left.Imaginary * right.Real  + left.Real      * right.Imaginary);
+            return new Complex( left.R * right.R  - left.i * right.i,
+                                left.i * right.R  + left.R * right.i);
         }
 
         public static Complex Divide(ref Complex left, ref Complex right)
         {
-            return new Complex( right.Real * left.Real + right.Imaginary * left.Imaginary,
-                                right.Real * left.Imaginary - right.Imaginary * left.Real);
+            return new Complex( right.R * left.R + right.i * left.i,
+                                right.R * left.i - right.i * left.R);
         }
         public static void Divide(ref Complex left, ref Complex right, out Complex result)
         {
-            result = new Complex(right.Real * left.Real + right.Imaginary * left.Imaginary,
-                                 right.Real * left.Imaginary - right.Imaginary * left.Real);
+            result = new Complex(right.R * left.R + right.i * left.i,
+                                 right.R * left.i - right.i * left.R);
         }
 
         public static Vector2 Multiply(ref Vector2 left, ref Complex right)
         {
-            return new Vector2(left.X * right.Real - left.Y * right.Imaginary,
-                               left.Y * right.Real + left.X * right.Imaginary);
+            return new Vector2(left.X * right.R - left.Y * right.i,
+                               left.Y * right.R + left.X * right.i);
         }
         public static void Multiply(ref Vector2 left, ref Complex right, out Vector2 result)
         {
-            result = new Vector2(left.X * right.Real - left.Y * right.Imaginary,
-                                 left.Y * right.Real + left.X * right.Imaginary);
+            result = new Vector2(left.X * right.R - left.Y * right.i,
+                                 left.Y * right.R + left.X * right.i);
         }
         public static Vector2 Multiply(Vector2 left, ref Complex right)
         {
-            return new Vector2(left.X * right.Real - left.Y * right.Imaginary,
-                               left.Y * right.Real + left.X * right.Imaginary);
+            return new Vector2(left.X * right.R - left.Y * right.i,
+                               left.Y * right.R + left.X * right.i);
         }
 
         public static Vector2 Divide(ref Vector2 left, ref Complex right)
         {
-            return new Vector2(left.X * right.Real + left.Y * right.Imaginary,
-                               left.Y * right.Real - left.X * right.Imaginary);
+            return new Vector2(left.X * right.R + left.Y * right.i,
+                               left.Y * right.R - left.X * right.i);
         }
 
         public static Vector2 Divide(Vector2 left, ref Complex right)
         {
-            return new Vector2(left.X * right.Real + left.Y * right.Imaginary,
-                               left.Y * right.Real - left.X * right.Imaginary);
+            return new Vector2(left.X * right.R + left.Y * right.i,
+                               left.Y * right.R - left.X * right.i);
         }
         public static void Divide(Vector2 left, ref Complex right, out Vector2 result)
         {
-            result = new Vector2(left.X * right.Real + left.Y * right.Imaginary,
-                                 left.Y * right.Real - left.X * right.Imaginary);
+            result = new Vector2(left.X * right.R + left.Y * right.i,
+                                 left.Y * right.R - left.X * right.i);
         }
         
         public static Complex Conjugate(ref Complex value)
         {
-            return new Complex(value.Real, -value.Imaginary);
+            return new Complex(value.R, -value.i);
         }
 
         public static Complex Negate(ref Complex value)
         {
-            return new Complex(-value.Real, -value.Imaginary);
+            return new Complex(-value.R, -value.i);
         }
 
         public static Complex Normalize(ref Complex value)
         {
             var mag = value.Magnitude;
-            return new Complex(value.Real / mag, -value.Imaginary / mag);
+            return new Complex(value.R / mag, -value.i / mag);
         }
         
         public override string ToString()
         {
-            return String.Format("{{Real: {0} Imaginary: {1} Phase: {2} Magnitude: {3}}}", Real, Imaginary, Phase, Magnitude);
+            return String.Format("{{R: {0} i: {1} Phase: {2} Magnitude: {3}}}", R, i, Phase, Magnitude);
         }
     }
 }

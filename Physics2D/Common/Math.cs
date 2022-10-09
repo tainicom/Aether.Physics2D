@@ -585,8 +585,8 @@ namespace tainicom.Aether.Physics2D.Common
         {
             // Opt: var result = Complex.Multiply(left, right.q) + right.p;
             return new Vector2(
-                (left.X * right.q.Real - left.Y * right.q.Imaginary) + right.p.X,
-                (left.Y * right.q.Real + left.X * right.q.Imaginary) + right.p.Y);
+                (left.X * right.q.R - left.Y * right.q.i) + right.p.X,
+                (left.Y * right.q.R + left.X * right.q.i) + right.p.Y);
         }
 
         public static Vector2 Divide(Vector2 left, ref Transform right)
@@ -600,8 +600,8 @@ namespace tainicom.Aether.Physics2D.Common
             float px = left.X - right.p.X;
             float py = left.Y - right.p.Y;
             return new Vector2(
-                (px * right.q.Real + py * right.q.Imaginary),
-                (py * right.q.Real - px * right.q.Imaginary));
+                (px * right.q.R + py * right.q.i),
+                (py * right.q.R - px * right.q.i));
         }
 
         public static void Divide(Vector2 left, ref Transform right, out Vector2 result)
@@ -609,8 +609,8 @@ namespace tainicom.Aether.Physics2D.Common
             // Opt: var result = Complex.Divide(left - right.p, right);
             float px = left.X - right.p.X;
             float py = left.Y - right.p.Y;
-            result.X = (px * right.q.Real + py * right.q.Imaginary);
-            result.Y = (py * right.q.Real - px * right.q.Imaginary);
+            result.X = (px * right.q.R + py * right.q.i);
+            result.Y = (py * right.q.R - px * right.q.i);
         }
 
         public static Transform Multiply(ref Transform left, ref Transform right)
