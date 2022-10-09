@@ -150,7 +150,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="nkast.xna.Framework" Version="3.8.9100">
+    <PackageReference Include="nkast.xna.Framework" Version="3.8.9101">
       <ExcludeAssets>*</ExcludeAssets>
       <NoWarn>NU1701</NoWarn>
     </PackageReference>
