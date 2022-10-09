@@ -29,6 +29,7 @@ using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Common.ConvexHull;
 #if XNAAPI
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif
 

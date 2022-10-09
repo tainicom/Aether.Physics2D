@@ -31,6 +31,7 @@ using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 

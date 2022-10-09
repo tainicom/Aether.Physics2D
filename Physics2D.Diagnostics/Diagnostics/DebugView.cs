@@ -16,6 +16,7 @@ using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
