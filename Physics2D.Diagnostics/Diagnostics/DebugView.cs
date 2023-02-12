@@ -643,7 +643,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             Vector2 p2 = p1 + axisScale * xAxis;
             DrawSegment(p1, p2, Color.Red);
             
-            var yAxis = new Vector2(-transform.q.Imaginary, transform.q.Real);
+            var yAxis = new Vector2(-transform.q.i, transform.q.R);
             p2 = p1 + axisScale * yAxis;
             DrawSegment(p1, p2, Color.Green);
         }
