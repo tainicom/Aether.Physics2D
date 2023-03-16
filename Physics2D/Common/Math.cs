@@ -161,22 +161,6 @@ namespace tainicom.Aether.Physics2D.Common
             return IsValid(x.X) && IsValid(x.Y);
         }
 
-        /// <summary>
-        /// This is a approximate yet fast inverse square-root.
-        /// </summary>
-        /// <param name="x">The x.</param>
-        /// <returns></returns>
-        public static float InvSqrt(float x)
-        {
-            FloatConverter convert = new FloatConverter();
-            convert.x = x;
-            float xhalf = 0.5f * x;
-            convert.i = 0x5f3759df - (convert.i >> 1);
-            x = convert.x;
-            x = x * (1.5f - xhalf * x * x);
-            return x;
-        }
-
         public static int Clamp(int a, int low, int high)
         {
             return Math.Max(low, Math.Min(a, high));
@@ -303,19 +287,6 @@ namespace tainicom.Aether.Physics2D.Common
         {
             return (value >= min && value <= max);
         }
-
-        #region Nested type: FloatConverter
-
-        [StructLayout(LayoutKind.Explicit)]
-        private struct FloatConverter
-        {
-            [FieldOffset(0)]
-            public float x;
-            [FieldOffset(0)]
-            public int i;
-        }
-
-        #endregion
 
     }
 
