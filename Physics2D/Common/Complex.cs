@@ -36,7 +36,7 @@ namespace tainicom.Aether.Physics2D.Common
 
         public float Magnitude
         {
-            get { return (float)Math.Round(Math.Sqrt(MagnitudeSquared())); }
+            get { return (float)Math.Sqrt(MagnitudeSquared()); }
         }
 
 
