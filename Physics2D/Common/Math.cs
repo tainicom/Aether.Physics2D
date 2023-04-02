@@ -105,7 +105,6 @@ namespace tainicom.Aether.Physics2D.Common
         // A^T * B
         public static void MulT(ref Mat22 A, ref Mat22 B, out Mat22 C)
         {
-            C = new Mat22();
             C.ex.X = A.ex.X * B.ex.X + A.ex.Y * B.ex.Y;
             C.ex.Y = A.ey.X * B.ex.X + A.ey.Y * B.ex.Y;
             C.ey.X = A.ex.X * B.ey.X + A.ex.Y * B.ey.Y;
@@ -253,7 +252,8 @@ namespace tainicom.Aether.Physics2D.Common
 
         public static void Cross(float s, ref Vector2 a, out Vector2 b)
         {
-            b = new Vector2(-s * a.Y, s * a.X);
+            b.X = -s * a.Y;
+            b.Y =  s * a.X;
         }
 
         public static bool FloatEquals(float value1, float value2)
@@ -317,8 +317,10 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="a22">The a22.</param>
         public Mat22(float a11, float a12, float a21, float a22)
         {
-            ex = new Vector2(a11, a21);
-            ey = new Vector2(a12, a22);
+            ex.X = a11;
+            ex.Y = a21;
+            ey.X = a12;
+            ey.Y = a22;
         }
 
         public Mat22 Inverse
@@ -332,7 +334,7 @@ namespace tainicom.Aether.Physics2D.Common
                     det = 1.0f / det;
                 }
 
-                Mat22 result = new Mat22();
+                Mat22 result;
                 result.ex.X = det * d;
                 result.ex.Y = -det * c;
 
@@ -657,11 +659,10 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="beta">beta is a factor in [0,1], where 0 indicates alpha0.</param>
         public void GetTransform(out Transform xfb, float beta)
         {
-            xfb = new Transform();
             xfb.p.X = (1.0f - beta) * C0.X + beta * C.X;
             xfb.p.Y = (1.0f - beta) * C0.Y + beta * C.Y;
             float angle = (1.0f - beta) * A0 + beta * A;
-            xfb.q.Phase = angle;
+            xfb.q = Complex.FromAngle(angle);
 
             // Shift to origin
             xfb.p -= Complex.Multiply(ref LocalCenter, ref xfb.q);
