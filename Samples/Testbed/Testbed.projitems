@@ -82,6 +82,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tests\SparseBodiesTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\SparseBodiesWithManyFixturesTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\SphereStackTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SPH1Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SPH2Test.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\TestEntries.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\TextureVerticesTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\TheLeaningTowerofLireTest.cs" />

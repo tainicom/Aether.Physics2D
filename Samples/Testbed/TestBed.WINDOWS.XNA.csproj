@@ -177,6 +177,8 @@
     <Compile Include="Tests\SparseBodiesWithManyFixturesTest.cs" />
     <Compile Include="Tests\CircleBenchmarkTest.cs" />
     <Compile Include="Tests\SphereStackTest.cs" />
+    <Compile Include="Tests\SPH1Test.cs" />
+    <Compile Include="Tests\SPH2Test.cs" />
     <Compile Include="Tests\TestEntries.cs">
       <SubType>Code</SubType>
     </Compile>

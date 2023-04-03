@@ -130,6 +130,7 @@
     <Compile Include="Controllers\BuoyancyController.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\GravityController.cs" />
+    <Compile Include="Controllers\ParticleHydrodynamicsController.cs" />
     <Compile Include="Controllers\VelocityLimitController.cs" />
     <Compile Include="Dynamics\Body.cs" />
     <Compile Include="Dynamics\Body.Factory.cs" />

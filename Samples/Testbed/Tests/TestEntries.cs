@@ -96,6 +96,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             new TestEntry("Boids Test", typeof(BoidsTest)),
             new TestEntry("Sparse bodies Test", typeof(SparseBodiesTest)),
             new TestEntry("Sparse bodies with many fixtures Test", typeof(SparseBodiesWithManyFixturesTest)),
+            new TestEntry("SPH1", typeof(SPH1Test)),
+            new TestEntry("SPH2", typeof(SPH2Test)),
 
             //FPE tests
             new TestEntry("YuPeng Polygon", typeof(YuPengPolygonTest)),
