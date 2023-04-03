@@ -1,0 +1,4 @@
+<map id="FrictionJoint" name="FrictionJoint">
+<area shape="rect" id="node1" title="Friction joint. This is used for top&#45;down friction. It provides 2D translational friction and angular..." alt="" coords="5,83,112,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="31,5,86,35"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="GearJoint" name="GearJoint">
+<area shape="rect" id="node1" title="A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic join..." alt="" coords="5,83,96,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="23,5,78,35"/>
+</map>

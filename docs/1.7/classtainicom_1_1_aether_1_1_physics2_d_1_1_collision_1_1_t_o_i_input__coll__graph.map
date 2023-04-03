@@ -1,0 +1,7 @@
+<map id="TOIInput" name="TOIInput">
+<area shape="rect" id="node1" title="Input parameters for CalculateTimeOfImpact" alt="" coords="67,247,146,276"/>
+<area shape="rect" id="node2" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_sweep.html" title="This describes the motion of a body/shape for TOI computation. Shapes are defined with respect to the..." alt="" coords="9,135,79,164"/>
+<area shape="rect" id="node3" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2.html" title=" " alt="" coords="5,5,83,35"/>
+<area shape="rect" id="node4" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy.html" title="A distance proxy is used by the GJK algorithm. It encapsulates any shape." alt="" coords="104,135,227,164"/>
+<area shape="rect" id="node5" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices.html" title=" " alt="" coords="125,5,205,35"/>
+</map>

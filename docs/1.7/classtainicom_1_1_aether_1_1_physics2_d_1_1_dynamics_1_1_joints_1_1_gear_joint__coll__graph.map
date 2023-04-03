@@ -1,0 +1,6 @@
+<map id="GearJoint" name="GearJoint">
+<area shape="rect" id="node1" title="A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic join..." alt="" coords="5,215,96,244"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="71,100,126,129"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint_edge.html" title="A joint edge is used to connect bodies and joints together in a joint graph where each body is a node..." alt="" coords="120,215,213,244"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_world.html" title="The world class manages all physics entities, dynamic simulation, and asynchronous queries." alt="" coords="67,5,130,35"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="DistanceInput" name="DistanceInput">
+<area shape="rect" id="node1" title="Input for Distance.ComputeDistance(). You have to option to use the shape radii in the computation." alt="" coords="79,212,195,241"/>
+<area shape="rect" id="node2" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_distance_proxy.html" title="A distance proxy is used by the GJK algorithm. It encapsulates any shape." alt="" coords="5,100,128,129"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vertices.html" title=" " alt="" coords="27,5,107,35"/>
+<area shape="rect" id="node4" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_transform.html" title="A transform contains translation and rotation. It is used to represent the position and orientation o..." alt="" coords="153,100,245,129"/>
+<area shape="rect" id="node5" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_vector2.html" title=" " alt="" coords="145,5,223,35"/>
+<area shape="rect" id="node6" href="$structtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_complex.html" title=" " alt="" coords="247,5,331,35"/>
+</map>
