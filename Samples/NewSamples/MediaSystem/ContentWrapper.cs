@@ -159,7 +159,7 @@ namespace tainicom.Aether.Physics2D.Samples.MediaSystem
             Transform transform;
             body.GetTransform(out transform);
 
-            foreach (Fixture fixture in body.Fixtures)
+            foreach (Fixture fixture in body.FixtureList)
             {
                 for (int j = 0; j < fixture.Shape.ChildCount; j++)
                 {

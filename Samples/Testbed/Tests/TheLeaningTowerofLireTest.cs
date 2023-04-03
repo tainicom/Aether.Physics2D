@@ -14,8 +14,8 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int blockWidth = 8;
         private const float blockHeight = 1f;
         private const float blockCount = 32;
-        
-        private TheLeaningTowerofLireTest()
+
+        public TheLeaningTowerofLireTest()
         {   
             var ground = World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 
@@ -45,9 +45,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, halfGameTime);
         }
 
-        public static Test Create()
-        {
-            return new TheLeaningTowerofLireTest();
-        }
     }
 }

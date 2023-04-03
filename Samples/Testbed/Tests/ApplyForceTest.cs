@@ -31,6 +31,7 @@ using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 using tainicom.Aether.Physics2D.Samples.Testbed.Framework;
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
@@ -40,7 +41,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private Body _body;
 
-        private ApplyForceTest()
+        public ApplyForceTest()
         {
             World.Gravity = Vector2.Zero;
 
@@ -154,9 +155,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Keyboard(input);
         }
 
-        internal static Test Create()
-        {
-            return new ApplyForceTest();
-        }
     }
 }

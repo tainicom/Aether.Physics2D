@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("tainicom LTD")]
 [assembly: AssemblyProduct("Aether.Physics2D")]
-[assembly: AssemblyCopyright("Copyright Ian Qvist © 2013, Copyright © Kastellanos Nikolaos 2015-2021")]
+[assembly: AssemblyCopyright("Copyright Ian Qvist © 2013, Copyright © Kastellanos Nikolaos 2015-2023")]
 [assembly: AssemblyTrademark("Aether Engine (tm)")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.6.1.0")]
-[assembly: AssemblyFileVersion("1.6.1.0")]
+[assembly: AssemblyVersion("1.7.0.0")]
+[assembly: AssemblyFileVersion("1.7.0.0")]

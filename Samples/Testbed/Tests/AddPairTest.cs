@@ -33,7 +33,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class AddPairTest : Test
     {
-        private AddPairTest()
+        public AddPairTest()
         {
             World.Gravity = Vector2.Zero;
 
@@ -56,9 +56,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public static Test Create()
-        {
-            return new AddPairTest();
-        }
     }
 }

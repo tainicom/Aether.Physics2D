@@ -29,6 +29,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 #if XNAAPI
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Vector3 = Microsoft.Xna.Framework.Vector3;
 #endif
@@ -104,7 +105,6 @@ namespace tainicom.Aether.Physics2D.Common
         // A^T * B
         public static void MulT(ref Mat22 A, ref Mat22 B, out Mat22 C)
         {
-            C = new Mat22();
             C.ex.X = A.ex.X * B.ex.X + A.ex.Y * B.ex.Y;
             C.ex.Y = A.ey.X * B.ex.X + A.ey.Y * B.ex.Y;
             C.ey.X = A.ex.X * B.ey.X + A.ex.Y * B.ey.Y;
@@ -158,22 +158,6 @@ namespace tainicom.Aether.Physics2D.Common
         public static bool IsValid(this Vector2 x)
         {
             return IsValid(x.X) && IsValid(x.Y);
-        }
-
-        /// <summary>
-        /// This is a approximate yet fast inverse square-root.
-        /// </summary>
-        /// <param name="x">The x.</param>
-        /// <returns></returns>
-        public static float InvSqrt(float x)
-        {
-            FloatConverter convert = new FloatConverter();
-            convert.x = x;
-            float xhalf = 0.5f * x;
-            convert.i = 0x5f3759df - (convert.i >> 1);
-            x = convert.x;
-            x = x * (1.5f - xhalf * x * x);
-            return x;
         }
 
         public static int Clamp(int a, int low, int high)
@@ -268,7 +252,8 @@ namespace tainicom.Aether.Physics2D.Common
 
         public static void Cross(float s, ref Vector2 a, out Vector2 b)
         {
-            b = new Vector2(-s * a.Y, s * a.X);
+            b.X = -s * a.Y;
+            b.Y =  s * a.X;
         }
 
         public static bool FloatEquals(float value1, float value2)
@@ -303,19 +288,6 @@ namespace tainicom.Aether.Physics2D.Common
             return (value >= min && value <= max);
         }
 
-        #region Nested type: FloatConverter
-
-        [StructLayout(LayoutKind.Explicit)]
-        private struct FloatConverter
-        {
-            [FieldOffset(0)]
-            public float x;
-            [FieldOffset(0)]
-            public int i;
-        }
-
-        #endregion
-
     }
 
     /// <summary>
@@ -345,8 +317,10 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="a22">The a22.</param>
         public Mat22(float a11, float a12, float a21, float a22)
         {
-            ex = new Vector2(a11, a21);
-            ey = new Vector2(a12, a22);
+            ex.X = a11;
+            ex.Y = a21;
+            ey.X = a12;
+            ey.Y = a22;
         }
 
         public Mat22 Inverse
@@ -360,7 +334,7 @@ namespace tainicom.Aether.Physics2D.Common
                     det = 1.0f / det;
                 }
 
-                Mat22 result = new Mat22();
+                Mat22 result;
                 result.ex.X = det * d;
                 result.ex.Y = -det * c;
 
@@ -584,8 +558,8 @@ namespace tainicom.Aether.Physics2D.Common
         {
             // Opt: var result = Complex.Multiply(left, right.q) + right.p;
             return new Vector2(
-                (left.X * right.q.Real - left.Y * right.q.Imaginary) + right.p.X,
-                (left.Y * right.q.Real + left.X * right.q.Imaginary) + right.p.Y);
+                (left.X * right.q.R - left.Y * right.q.i) + right.p.X,
+                (left.Y * right.q.R + left.X * right.q.i) + right.p.Y);
         }
 
         public static Vector2 Divide(Vector2 left, ref Transform right)
@@ -599,8 +573,8 @@ namespace tainicom.Aether.Physics2D.Common
             float px = left.X - right.p.X;
             float py = left.Y - right.p.Y;
             return new Vector2(
-                (px * right.q.Real + py * right.q.Imaginary),
-                (py * right.q.Real - px * right.q.Imaginary));
+                (px * right.q.R + py * right.q.i),
+                (py * right.q.R - px * right.q.i));
         }
 
         public static void Divide(Vector2 left, ref Transform right, out Vector2 result)
@@ -608,8 +582,8 @@ namespace tainicom.Aether.Physics2D.Common
             // Opt: var result = Complex.Divide(left - right.p, right);
             float px = left.X - right.p.X;
             float py = left.Y - right.p.Y;
-            result.X = (px * right.q.Real + py * right.q.Imaginary);
-            result.Y = (py * right.q.Real - px * right.q.Imaginary);
+            result.X = (px * right.q.R + py * right.q.i);
+            result.Y = (py * right.q.R - px * right.q.i);
         }
 
         public static Transform Multiply(ref Transform left, ref Transform right)
@@ -685,11 +659,10 @@ namespace tainicom.Aether.Physics2D.Common
         /// <param name="beta">beta is a factor in [0,1], where 0 indicates alpha0.</param>
         public void GetTransform(out Transform xfb, float beta)
         {
-            xfb = new Transform();
             xfb.p.X = (1.0f - beta) * C0.X + beta * C.X;
             xfb.p.Y = (1.0f - beta) * C0.Y + beta * C.Y;
             float angle = (1.0f - beta) * A0 + beta * A;
-            xfb.q.Phase = angle;
+            xfb.q = Complex.FromAngle(angle);
 
             // Shift to origin
             xfb.p -= Complex.Multiply(ref LocalCenter, ref xfb.q);

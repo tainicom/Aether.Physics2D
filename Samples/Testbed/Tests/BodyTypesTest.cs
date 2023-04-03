@@ -40,7 +40,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body _platform;
         private float _speed;
 
-        private BodyTypesTest()
+        public BodyTypesTest()
         {
             //Ground
             Body ground = World.CreateEdge(new Vector2(-20.0f, 0.0f), new Vector2(20.0f, 0.0f));
@@ -120,9 +120,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Keys: (d) dynamic, (s) static, (k) kinematic");
         }
 
-        internal static Test Create()
-        {
-            return new BodyTypesTest();
-        }
     }
 }

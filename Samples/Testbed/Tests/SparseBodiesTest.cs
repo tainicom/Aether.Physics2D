@@ -15,7 +15,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const float blockDistanse = 100;
         private const float gridSize = 7000;
 
-        private SparseBodiesTest()
+        public SparseBodiesTest()
         {
             float angularVelocity = 0;
             for (float x = -(gridSize/2f); x <= (gridSize/2f); x+=blockDistanse)
@@ -39,9 +39,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         }
 
-        public static Test Create()
-        {
-            return new SparseBodiesTest();
-        }
     }
 }

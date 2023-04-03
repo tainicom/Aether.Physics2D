@@ -25,7 +25,6 @@ Documentation: https://tainicom.github.io/Aether.Physics2D/
 - Controllers (gravity, force generators)
 - Tools to decompose concave polygons, find convex hulls and boolean operations
 - Factories to simplify the creation of bodies
-- Fluid dynamics
 
 # Downloads
 

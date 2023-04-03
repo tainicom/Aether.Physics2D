@@ -40,7 +40,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private bool _collision;
         private Body _character;
 
-        private CharacterCollisionTest()
+        public CharacterCollisionTest()
         {
             //Ground body
             Body ground = World.CreateBody();
@@ -167,9 +167,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public static Test Create()
-        {
-            return new CharacterCollisionTest();
-        }
     }
 }

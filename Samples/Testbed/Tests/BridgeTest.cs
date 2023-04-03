@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private const int Count = 30;
 
-        private BridgeTest()
+        public BridgeTest()
         {
             Body ground;
             {
@@ -101,9 +101,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new BridgeTest();
-        }
     }
 }

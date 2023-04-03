@@ -13,7 +13,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class BuoyancyTest : Test
     {
-        private BuoyancyTest()
+        public BuoyancyTest()
         {
             World.Gravity = new Vector2(0, -9.82f);
 
@@ -41,9 +41,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             World.Add(buoyancy);
         }
 
-        internal static Test Create()
-        {
-            return new BuoyancyTest();
-        }
     }
 }

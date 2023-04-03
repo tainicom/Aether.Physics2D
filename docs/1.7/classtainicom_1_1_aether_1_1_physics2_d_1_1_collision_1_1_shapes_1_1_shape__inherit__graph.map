@@ -1,0 +1,7 @@
+<map id="Shape" name="Shape">
+<area shape="rect" id="node1" title="A shape is used for collision detection. You can create a shape however you like. Shapes used for sim..." alt="" coords="225,5,293,35"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_chain_shape.html" title="A chain shape is a free form sequence of line segments. The chain has two&#45;sided collision,..." alt="" coords="5,83,115,112"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_circle_shape.html" title="A circle shape." alt="" coords="139,83,248,112"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_edge_shape.html" title="A line segment (edge) shape. These can be connected in chains or loops to other edge shapes...." alt="" coords="272,83,379,112"/>
+<area shape="rect" id="node5" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_polygon_shape.html" title="Represents a simple non&#45;selfintersecting convex polygon. Create a convex hull from the given array of..." alt="" coords="403,83,527,112"/>
+</map>

@@ -16,6 +16,7 @@ using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -642,7 +643,7 @@ namespace tainicom.Aether.Physics2D.Diagnostics
             Vector2 p2 = p1 + axisScale * xAxis;
             DrawSegment(p1, p2, Color.Red);
             
-            var yAxis = new Vector2(-transform.q.Imaginary, transform.q.Real);
+            var yAxis = new Vector2(-transform.q.i, transform.q.R);
             p2 = p1 + axisScale * yAxis;
             DrawSegment(p1, p2, Color.Green);
         }

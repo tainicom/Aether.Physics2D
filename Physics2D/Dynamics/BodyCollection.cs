@@ -11,7 +11,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
     {
         private readonly World _world;
         internal readonly List<Body> _list = new List<Body>(32);
-        internal int _versionStamp = 0;
+        internal int _generationStamp = 0;
 
         public BodyCollection(World world)
         {
@@ -103,14 +103,14 @@ namespace tainicom.Aether.Physics2D.Dynamics
         {
             private BodyCollection _collection;
             private List<Body> _list;
-            private readonly int _versionStamp;
+            private readonly int _generationStamp;
             int i;
 
             public BodyEnumerator(BodyCollection collection, List<Body> list)
             {
                 this._collection = collection;
                 this._list = list;
-                this._versionStamp = collection._versionStamp;
+                this._generationStamp = collection._generationStamp;
                 i = -1;
             }
 
@@ -118,7 +118,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 get
                 {
-                    if (_versionStamp == _collection._versionStamp)
+                    if (_generationStamp == _collection._generationStamp)
                         return _list[i];
                     else
                         throw new InvalidOperationException("Collection was modified.");
@@ -130,7 +130,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 get
                 {
-                    if (_versionStamp == _collection._versionStamp)
+                    if (_generationStamp == _collection._generationStamp)
                         return _list[i];
                     else
                         throw new InvalidOperationException("Collection was modified.");
@@ -141,7 +141,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             #region IEnumerator
             public bool MoveNext()
             {
-                if (_versionStamp != _collection._versionStamp)
+                if (_generationStamp != _collection._generationStamp)
                     throw new InvalidOperationException("Collection was modified.");
 
                 return (++i < _list.Count);
@@ -152,7 +152,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             {
                 get
                 {
-                    if (_versionStamp == _collection._versionStamp)
+                    if (_generationStamp == _collection._generationStamp)
                         return _list[i];
                     else
                         throw new InvalidOperationException();

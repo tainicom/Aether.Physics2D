@@ -47,7 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body _wheel2;
         private float _zeta;
 
-        private CarTest()
+        public CarTest()
         {
             _hz = 4.0f;
             _zeta = 0.7f;
@@ -253,9 +253,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new CarTest();
-        }
     }
 }

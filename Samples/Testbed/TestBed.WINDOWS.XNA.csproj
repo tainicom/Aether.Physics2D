@@ -81,6 +81,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Graphics.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Input.Touch, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Input.Touch.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
@@ -106,6 +110,7 @@
     <Compile Include="Tests\ApplyForceTest.cs" />
     <Compile Include="Tests\BodyPoolTest.cs" />
     <Compile Include="Tests\BodyTypesTest.cs" />
+    <Compile Include="Tests\BoidsTest.cs" />
     <Compile Include="Tests\BreakableBodyTest.cs" />
     <Compile Include="Tests\BreakableTest.cs" />
     <Compile Include="Tests\BridgeTest.cs" />
@@ -131,7 +136,6 @@
     <Compile Include="Tests\CheckPolygonTest.cs" />
     <Compile Include="Tests\SimplificationTest.cs" />
     <Compile Include="Tests\TriangulationTest.cs" />
-    <Compile Include="Tests\FluidsTest.cs" />
     <Compile Include="Tests\TumblerTest.cs" />
     <Compile Include="Tests\MobileBalancedTest.cs" />
     <Compile Include="Tests\MobileTest.cs" />
@@ -164,7 +168,6 @@
     <Compile Include="Tests\PyramidTest.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Tests\QuadTreeTest.cs" />
     <Compile Include="Tests\RaycastTest.cs" />
     <Compile Include="Tests\RevoluteTest.cs" />
     <Compile Include="Tests\SensorTest.cs" />

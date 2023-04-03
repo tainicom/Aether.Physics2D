@@ -29,6 +29,7 @@ using System;
 using System.Diagnostics;
 using tainicom.Aether.Physics2D.Common;
 #if XNAAPI
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif
 
@@ -136,8 +137,8 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
             // OPT: Vector2 p = transform.p + Complex.Multiply(ref _position, ref transform.q);
-            var pX = (_position.X * transform.q.Real - _position.Y * transform.q.Imaginary) + transform.p.X;
-            var pY = (_position.Y * transform.q.Real + _position.X * transform.q.Imaginary) + transform.p.Y;
+            var pX = (_position.X * transform.q.R - _position.Y * transform.q.i) + transform.p.X;
+            var pY = (_position.Y * transform.q.R + _position.X * transform.q.i) + transform.p.Y;
 
             // OPT: aabb.LowerBound = new Vector2(p.X - Radius, p.Y - Radius);
             // OPT: aabb.UpperBound = new Vector2(p.X + Radius, p.Y + Radius);

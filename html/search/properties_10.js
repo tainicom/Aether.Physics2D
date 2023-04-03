@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['radius_1048',['Radius',['../classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape.html#a9040394cf542432b04d8ec2993ded2c2',1,'tainicom::Aether::Physics2D::Collision::Shapes::Shape']]],
-  ['ratio_1049',['Ratio',['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_gear_joint.html#a51f4ad63c8d49c75be943faa626e91f6',1,'tainicom.Aether.Physics2D.Dynamics.Joints.GearJoint.Ratio()'],['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_pulley_joint.html#ae274c7a76f831b62a9934f5f153c40b2',1,'tainicom.Aether.Physics2D.Dynamics.Joints.PulleyJoint.Ratio()']]],
-  ['referenceangle_1050',['ReferenceAngle',['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_prismatic_joint.html#a9b078c8dcbecfe08a4252f4eff8c0500',1,'tainicom.Aether.Physics2D.Dynamics.Joints.PrismaticJoint.ReferenceAngle()'],['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_revolute_joint.html#a54fc4ad8bbb405e53aaccdce7e1582be',1,'tainicom.Aether.Physics2D.Dynamics.Joints.RevoluteJoint.ReferenceAngle()'],['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_weld_joint.html#a315b32986aab9a84d3a384a9fe1cf20a',1,'tainicom.Aether.Physics2D.Dynamics.Joints.WeldJoint.ReferenceAngle()']]],
-  ['restitution_1051',['Restitution',['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_fixture.html#a735154c197532b341766f37060382595',1,'tainicom::Aether::Physics2D::Dynamics::Fixture']]],
-  ['revolutions_1052',['Revolutions',['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body.html#ab7728cea6929d173a9d70f96f3bb1390',1,'tainicom::Aether::Physics2D::Dynamics::Body']]],
-  ['rotation_1053',['Rotation',['../classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_body.html#a082b27980f52180dc8c460dd782dd63e',1,'tainicom::Aether::Physics2D::Dynamics::Body']]]
-];

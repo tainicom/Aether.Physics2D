@@ -74,9 +74,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             return body;
         }
 
-        public static Test Create()
-        {
-            return new MobileTest();
-        }
     }
 }

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>636BBB3D-346B-41F6-8F7E-7E26A11C4BEE</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>tainicom.Aether.Physics2D.Samples.NewSamples</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D17_SVGtoBody.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D16_SVGtoPolygon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D08_DistanceAngleJoint.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MediaSystem\LineBatch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MediaSystem\ContentWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MediaSystem\QuadRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D15_TextureToShapes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D11_SoftBody.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D13_TheoJansenWalker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D12_WebOfGoo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D18_BreakableBody.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\LogoScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\OptionEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\OptionsScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\FrameRateCounter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MediaSystem\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D14_RacingCar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Agent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Border.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Objects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Pyramid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\Ragdoll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\JumpySpider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\WebOfGoo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\Prefabs\TheoJansenWalker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\Camera2D.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\GameScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\InputHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\PhysicsDemoScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\BackgroundScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MenuSlider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MenuEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\MenuScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ScreenSystem\DescriptionBoxScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D01_SingleFixture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D02_MultipleFixtures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D03_StaticBodies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D04_StackedBodies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D05_CollisionCategories.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D09_DynamicJoints.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D10_Ragdoll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D06_Restitution.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Demos\D07_Friction.cs" />
+  </ItemGroup>
+</Project>

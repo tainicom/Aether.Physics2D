@@ -36,9 +36,9 @@ namespace tainicom.Aether.Physics2D.Common
         internal static Vector3 Cross(Vector3 left, Vector3 right)
         {
             Vector3 result;
-            result.X =   left.Y * right.Z - left.Z * right.Y;
-            result.Y =   left.Z * right.X - left.X * right.Z;
-            result.Z =   left.X * right.Y - left.Y * right.X;
+            result.X = left.Y * right.Z - left.Z * right.Y;
+            result.Y = left.Z * right.X - left.X * right.Z;
+            result.Z = left.X * right.Y - left.Y * right.X;
             return result;
 
         }

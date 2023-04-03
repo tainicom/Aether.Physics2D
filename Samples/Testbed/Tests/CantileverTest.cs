@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
     {
         private const int Count = 8;
 
-        private CantileverTest()
+        public CantileverTest()
         {
             Body ground = World.CreateEdge(new Vector2(-40, 0), new Vector2(40, 0));
 
@@ -165,9 +165,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new CantileverTest();
-        }
     }
 }

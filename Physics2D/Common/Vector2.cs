@@ -36,16 +36,16 @@ namespace tainicom.Aether.Physics2D.Common
 
         internal static float Distance(Vector2 v1, Vector2 v2)
         {
-            v1.X = v1.X - v2.X;
-            v1.Y = v1.Y - v2.Y;
-            return (float)Math.Sqrt(v1.X * v1.X + v1.Y * v1.Y);
+            float dX = v1.X - v2.X;
+            float dY = v1.Y - v2.Y;
+            return (float)Math.Sqrt(dX * dX + dY * dY);
         }
 
         internal static float DistanceSquared(Vector2 v1, Vector2 v2)
         {
-            v1.X = v1.X - v2.X;
-            v1.Y = v1.Y - v2.Y;
-            return (v1.X * v1.X + v1.Y * v1.Y);
+            float dX = v1.X - v2.X;
+            float dY = v1.Y - v2.Y;
+            return (dX * dX + dY * dY);
         }
 
         public float Length()

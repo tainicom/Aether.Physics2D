@@ -14,7 +14,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class CloneTest : Test
     {
-        private CloneTest()
+        public CloneTest()
         {
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -65,9 +65,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Initialize();
         }
 
-        public static CloneTest Create()
-        {
-            return new CloneTest();
-        }
     }
 }

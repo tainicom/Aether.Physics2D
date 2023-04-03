@@ -41,7 +41,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body _box;
         private Body _ground;
 
-        private ContinuousTest()
+        public ContinuousTest()
         {
             List<Vertices> list = new List<Vertices>();
             list.Add(PolygonTools.CreateLine(new Vector2(-10.0f, 0.0f), new Vector2(10.0f, 0.0f)));
@@ -99,9 +99,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
                 _ground.IgnoreCCD = !_ground.IgnoreCCD;
         }
 
-        internal static Test Create()
-        {
-            return new ContinuousTest();
-        }
     }
 }

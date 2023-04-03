@@ -88,7 +88,7 @@ namespace tainicom.Aether.Physics2D.Samples.Demos.Prefabs
             _graphics.DrawUserIndexedPrimitives(PrimitiveType.TriangleList, _borderVertices, 0, 8, _indexBuffer, 0, 8);
 
             _lines.Begin(projection, view);
-            foreach (Fixture fixture in _anchor.Fixtures)
+            foreach (Fixture fixture in _anchor.FixtureList)
                 _lines.DrawLineShape(fixture.Shape);
             _lines.End();
         }

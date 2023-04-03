@@ -39,6 +39,7 @@ using tainicom.Aether.Physics2D.Controllers;
 using tainicom.Aether.Physics2D.Dynamics.Contacts;
 using tainicom.Aether.Physics2D.Dynamics.Joints;
 #if XNAAPI
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif
 
@@ -598,7 +599,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             fixture.Body = this;
             FixtureList._list.Add(fixture);
-            FixtureList._versionStamp++;
+            FixtureList._generationStamp++;
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = true;
@@ -671,7 +672,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             fixture.Body = null;
             FixtureList._list.Remove(fixture);
-            FixtureList._versionStamp++;
+            FixtureList._generationStamp++;
 #if DEBUG
             if (fixture.Shape.ShapeType == ShapeType.Polygon)
                 ((PolygonShape)fixture.Shape).Vertices.AttachedToBody = false;

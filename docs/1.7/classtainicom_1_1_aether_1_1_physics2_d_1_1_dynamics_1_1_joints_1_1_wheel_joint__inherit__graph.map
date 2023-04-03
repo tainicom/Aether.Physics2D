@@ -1,0 +1,4 @@
+<map id="WheelJoint" name="WheelJoint">
+<area shape="rect" id="node1" title="A wheel joint. This joint provides two degrees of freedom: translation along an axis fixed in bodyA a..." alt="" coords="5,83,104,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="27,5,82,35"/>
+</map>

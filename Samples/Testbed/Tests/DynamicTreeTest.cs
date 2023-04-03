@@ -47,7 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private DynamicTree<Actor> _tree = new DynamicTree<Actor>();
         private float _worldExtent;
 
-        private DynamicTreeTest()
+        public DynamicTreeTest()
         {
             _worldExtent = 15.0f;
             _proxyExtent = 0.5f;
@@ -358,9 +358,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         #endregion
 
-        internal static Test Create()
-        {
-            return new DynamicTreeTest();
-        }
     }
 }

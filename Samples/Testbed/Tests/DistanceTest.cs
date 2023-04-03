@@ -43,7 +43,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Transform _transformA;
         private Transform _transformB;
 
-        private DistanceTest()
+        public DistanceTest()
         {
             {
                 _transformA = Transform.Identity;
@@ -127,9 +127,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Keyboard(input);
         }
 
-        internal static Test Create()
-        {
-            return new DistanceTest();
-        }
     }
 }

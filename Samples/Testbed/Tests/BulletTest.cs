@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body _bullet;
         private float _x;
 
-        private BulletTest()
+        public BulletTest()
         {
             World.CreateEdge(new Vector2(-10, 0), new Vector2(10, 0));
             World.CreateRectangle(0.4f, 2f, 0, new Vector2(0.5f, 1.0f));
@@ -105,9 +105,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             TimeOfImpact.TOIMaxRootIters = 0;
         }
 
-        internal static Test Create()
-        {
-            return new BulletTest();
-        }
     }
 }

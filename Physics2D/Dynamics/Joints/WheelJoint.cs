@@ -28,6 +28,7 @@
 using System;
 using tainicom.Aether.Physics2D.Common;
 #if XNAAPI
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Vector3 = Microsoft.Xna.Framework.Vector3;
 #endif

@@ -42,7 +42,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         const float A = 1.0f;
         const float B = 2.0f;
 
-        private PulleysTest()
+        public PulleysTest()
         {
             //Ground
             Body ground = World.CreateBody();
@@ -83,9 +83,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 
         }
 
-        internal static Test Create()
-        {
-            return new PulleysTest();
-        }
     }
 }

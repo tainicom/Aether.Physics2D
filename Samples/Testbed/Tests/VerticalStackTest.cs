@@ -43,7 +43,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body _bullet;
         private int[] _indices = new int[RowCount * ColumnCount];
 
-        private VerticalStackTest()
+        public VerticalStackTest()
         {
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -139,9 +139,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             //
         }
 
-        internal static Test Create()
-        {
-            return new VerticalStackTest();
-        }
     }
 }

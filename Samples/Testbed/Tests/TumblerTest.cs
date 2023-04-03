@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int Count = 200;
         private int _count;
 
-        TumblerTest()
+        public TumblerTest()
         {
             Body ground = World.CreateBody();
 
@@ -70,9 +70,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
         
-        public static Test Create()
-        {
-            return new TumblerTest();
-        }
     }
 }

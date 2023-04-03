@@ -42,7 +42,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private RevoluteJoint _joint2;
         private RevoluteJoint _joint1;
 
-        private GearsTest()
+        public GearsTest()
         {
             Body ground = World.CreateEdge(new Vector2(50.0f, 0.0f), new Vector2(-50.0f, 0.0f));
 
@@ -130,9 +130,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString(string.Format("theta2 + {0} * delta = {1}", ratio, value));
         }
 
-        internal static Test Create()
-        {
-            return new GearsTest();
-        }
     }
 }

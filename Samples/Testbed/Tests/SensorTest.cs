@@ -40,7 +40,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Fixture _sensor;
         private bool[] _touching = new bool[Count];
 
-        private SensorTest()
+        public SensorTest()
         {
             World.ContactManager.BeginContact += BeginContact;
             World.ContactManager.EndContact += EndContact;
@@ -147,9 +147,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new SensorTest();
-        }
     }
 }

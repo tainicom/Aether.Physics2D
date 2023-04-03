@@ -1,0 +1,4 @@
+<map id="RopeJoint" name="RopeJoint">
+<area shape="rect" id="node1" title="A rope joint enforces a maximum distance between two points on two bodies. It has no other effect...." alt="" coords="5,83,99,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_dynamics_1_1_joints_1_1_joint.html" title=" " alt="" coords="25,5,79,35"/>
+</map>

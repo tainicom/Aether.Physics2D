@@ -50,7 +50,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private RopeJoint _rj;
         private bool _useRopeJoint = true;
 
-        private RopeTest()
+        public RopeTest()
         {
             Body ground = World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
 
@@ -131,9 +131,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new RopeTest();
-        }
     }
 }

@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private MotorJoint _joint;
         private float _time;
 
-        MotorJointTest()
+        public MotorJointTest()
         {
             Body ground = World.CreateBody();
             ground.CreateEdge(new Vector2(-20, 0), new Vector2(20, 0));
@@ -72,9 +72,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _joint.AngularOffset = angularOffset;
         }
 
-        public static Test Create()
-        {
-            return new MotorJointTest();
-        }
     }
 }

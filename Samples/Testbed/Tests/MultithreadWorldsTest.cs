@@ -16,7 +16,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         World world2, world3, world4;
         DebugView debugView2, debugView3, debugView4;
 
-        private MultithreadWorldsTest()
+        public MultithreadWorldsTest()
         {
             world2 = new Dynamics.World();
             world3 = new Dynamics.World();
@@ -111,10 +111,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             debugView4.RenderDebugData(ref projection, ref view, ref worldMtx);
         }
 
-
-        internal static Test Create()
-        {
-            return new MultithreadWorldsTest();
-        }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using tainicom.Aether.Physics2D.Collision.Shapes;
 using tainicom.Aether.Physics2D.Common;
 using tainicom.Aether.Physics2D.Dynamics;
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 
 namespace tainicom.Aether.Physics2D.Samples.DrawingSystem
 {

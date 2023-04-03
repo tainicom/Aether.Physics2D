@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4A534FA0-4CF4-4CBD-98E3-1FDC22A5770B</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>tainicom.Aether.Physics2D.Samples.Testbed</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\ControlPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\GameSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\InputState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\Rand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Framework\TestEntry.cs" />        
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\AddPairTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\AngleJointTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ApplyForceTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BodyPoolTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BodyTypesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BoidsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BreakableBodyTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BreakableTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BridgeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BulletTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\BuoyancyTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CantileverTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CarTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ChainTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CharacterCollisionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CheckPolygonTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CircleBenchmarkTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CirclePenetrationTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CloneTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CollisionFilteringTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CollisionProcessingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CollisionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CompoundShapesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ConfinedTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ContinuousTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ConvexHullTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ConvexHullTest2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ConveyorBeltTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\CuttingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\DeletionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\DestructibleTerrainTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\DistanceTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\DominosTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\DynamicTreeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\EdgeShapeBenchmarkTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\EdgeShapesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\EdgeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ExplosionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\GearsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\GravityControllerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\MobileBalancedTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\MobileTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\MotorJointTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\Multithread1Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\Multithread2Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\MultithreadWorldsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\OneSidedPlatformTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PathTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PinballTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PolyCollisionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PolyShapesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PrismaticTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PulleysTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\PyramidTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\RaycastTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\RevoluteTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\RopeTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\RoundedRectangle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SensorTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SerializationTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\ShapeEditingTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SimpleWindForceTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SimplificationTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SliderCrankTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SparseBodiesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SparseBodiesWithManyFixturesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\SphereStackTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TestEntries.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TextureVerticesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TheLeaningTowerofLireTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TheoJansenTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TilesTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TimeOfImpactTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TriangulationTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\TumblerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\VaryingFrictionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\VaryingRestitutionTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\VerticalStackTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\WebTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\YuPengPolygonTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    
+    <None Include="$(MSBuildThisFileDirectory)Data\2.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\bird.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\debug.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\diamond.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\dude.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\funny.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\kzer-za.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\nazca_monkey.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\star.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Data\strange.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

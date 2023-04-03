@@ -44,7 +44,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         BreakableBody _breakableBody;
         private Vector2 _velocity;
 
-        private BreakableBodyTest()
+        public BreakableBodyTest()
         {
             // Ground body
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -76,9 +76,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             _breakableBody.Update();
         }
 
-        internal static Test Create()
-        {
-            return new BreakableBodyTest();
-        }
     }
 }

@@ -1,0 +1,6 @@
+<map id="PhysicsLogic" name="PhysicsLogic">
+<area shape="rect" id="node1" title=" " alt="" coords="87,83,201,112"/>
+<area shape="rect" id="node3" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_real_explosion.html" title="Creates a realistic explosion based on raycasting. Objects in the open will be affected,..." alt="" coords="5,160,128,189"/>
+<area shape="rect" id="node4" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_simple_explosion.html" title="Creates a simple explosion that ignores other bodies hiding behind static bodies." alt="" coords="152,160,291,189"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_common_1_1_physics_logic_1_1_filter_data.html" title="Contains filter data that can determine whether an object should be processed or not." alt="" coords="99,5,189,35"/>
+</map>

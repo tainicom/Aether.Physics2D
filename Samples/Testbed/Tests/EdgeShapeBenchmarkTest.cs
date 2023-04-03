@@ -17,7 +17,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private int _count;
         private PolygonShape _polyShape;
 
-        private EdgeShapeBenchmarkTest()
+        public EdgeShapeBenchmarkTest()
         {
             // Ground body
             {
@@ -77,9 +77,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new EdgeShapeBenchmarkTest();
-        }
     }
 }

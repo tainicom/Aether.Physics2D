@@ -40,7 +40,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int Count = 600;
         private int _count;
 
-        Multithread2Test()
+        public Multithread2Test()
         {
             // enable multithreading
             World.ContactManager.VelocityConstraintsMultithreadThreshold = 256;
@@ -144,9 +144,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public static Test Create()
-        {
-            return new Multithread2Test();
-        }
     }
 }

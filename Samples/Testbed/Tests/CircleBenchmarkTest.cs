@@ -37,7 +37,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int XCount = 30;
         private const int YCount = 15;
 
-        private CircleBenchmarkTest()
+        public CircleBenchmarkTest()
         {
             Body ground = World.CreateBody();
 
@@ -72,9 +72,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        public static Test Create()
-        {
-            return new CircleBenchmarkTest();
-        }
     }
 }

@@ -36,7 +36,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Body _body;
         private Fixture _fixture2;
 
-        private ShapeEditingTest()
+        public ShapeEditingTest()
         {
             //Ground
             World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -79,9 +79,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             
         }
 
-        internal static Test Create()
-        {
-            return new ShapeEditingTest();
-        }
     }
 }

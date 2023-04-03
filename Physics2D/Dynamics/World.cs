@@ -89,9 +89,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
         private HashSet<Joint> _jointRemoveList = new HashSet<Joint>();
 #endif
 
-#if LEGACY_FLUIDS
-        public tainicom.Aether.Physics2D.Fluids.FluidSystem2 Fluid { get; private set; }
-#endif
 
         /// <summary>
         /// Set the user data. Use this to store your application specific data.
@@ -165,9 +162,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
             _rayCastCallbackCache = new BroadPhaseRayCastCallback(RayCastCallback);
             _testPointDelegateCache = new QueryReportFixtureDelegate(this.TestPointCallback);
 
-#if LEGACY_FLUIDS
-            Fluid = new tainicom.Aether.Physics2D.Fluids.FluidSystem2(new Vector2(0, -1), 5000, 150, 150);
-#endif
 
             ContactManager = new ContactManager(new DynamicTreeBroadPhase());
             Gravity = new Vector2(0f, -9.80665f);
@@ -942,7 +936,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             body._world = this;
             BodyList._list.Add(body);
-            BodyList._versionStamp++;
+            BodyList._generationStamp++;
 
 
             // Update transform
@@ -1021,7 +1015,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             body._world = null;
             BodyList._list.Remove(body);
-            BodyList._versionStamp++;
+            BodyList._generationStamp++;
 
             var bodyRemovedHandler = BodyRemoved;
             if (bodyRemovedHandler != null)
@@ -1052,7 +1046,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Connect to the world list.
             joint._world = this;
             JointList._list.Add(joint);
-            JointList._versionStamp++;
+            JointList._generationStamp++;
 
             // Connect to the bodies' doubly linked lists.
             joint.EdgeA.Joint = joint;
@@ -1126,7 +1120,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
             // Remove from the world list.
             joint._world = null;
             JointList._list.Remove(joint);
-            JointList._versionStamp++;
+            JointList._generationStamp++;
 
             // Disconnect from island graph.
             Body bodyA = joint.BodyA;
@@ -1459,11 +1453,6 @@ namespace tainicom.Aether.Physics2D.Dynamics
                 if (Settings.EnableDiagnostics)
                     ContinuousPhysicsTime = TimeSpan.FromTicks(_watch.ElapsedTicks) - (AddRemoveTime + NewContactsTime + ControllersUpdateTime + ContactsUpdateTime + SolveUpdateTime);
 
-#if LEGACY_FLUIDS
-                if (step.dt > 0.0f)
-                    Fluid.Update(dt);
-#endif
-
                 if (Settings.AutoClearForces)
                     ClearForces();
             }
@@ -1595,7 +1584,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             controller.World = this;
             ControllerList._list.Add(controller);
-            ControllerList._versionStamp++;
+            ControllerList._generationStamp++;
 
             var controllerAddedHandler = ControllerAdded;
             if (controllerAddedHandler != null)
@@ -1617,7 +1606,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
             controller.World = null;
             ControllerList._list.Remove(controller);
-            ControllerList._versionStamp++;
+            ControllerList._generationStamp++;
 
             var controllerRemovedHandler = ControllerRemoved;
             if (controllerRemovedHandler != null)

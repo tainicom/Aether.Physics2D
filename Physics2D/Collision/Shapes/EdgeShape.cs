@@ -27,6 +27,7 @@
 
 using tainicom.Aether.Physics2D.Common;
 #if XNAAPI
+using Complex = tainicom.Aether.Physics2D.Common.Complex;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 #endif
 
@@ -209,11 +210,11 @@ namespace tainicom.Aether.Physics2D.Collision.Shapes
         public override void ComputeAABB(out AABB aabb, ref Transform transform, int childIndex)
         {
             // OPT: Vector2 v1 = Transform.Multiply(ref _vertex1, ref transform);            
-            float v1X = (_vertex1.X * transform.q.Real - _vertex1.Y * transform.q.Imaginary) + transform.p.X;
-            float v1Y = (_vertex1.Y * transform.q.Real + _vertex1.X * transform.q.Imaginary) + transform.p.Y;
+            float v1X = (_vertex1.X * transform.q.R - _vertex1.Y * transform.q.i) + transform.p.X;
+            float v1Y = (_vertex1.Y * transform.q.R + _vertex1.X * transform.q.i) + transform.p.Y;
             // OPT: Vector2 v2 = Transform.Multiply(ref _vertex2, ref transform);
-            float v2X = (_vertex2.X * transform.q.Real - _vertex2.Y * transform.q.Imaginary) + transform.p.X;
-            float v2Y = (_vertex2.Y * transform.q.Real + _vertex2.X * transform.q.Imaginary) + transform.p.Y;
+            float v2X = (_vertex2.X * transform.q.R - _vertex2.Y * transform.q.i) + transform.p.X;
+            float v2Y = (_vertex2.Y * transform.q.R + _vertex2.X * transform.q.i) + transform.p.Y;
 
             // OPT: aabb.LowerBound = Vector2.Min(v1, v2);
             // OPT: aabb.UpperBound = Vector2.Max(v1, v2);

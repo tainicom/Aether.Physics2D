@@ -46,7 +46,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private int _fixtureCount;
         private long _createTime;
 
-        private TilesTest()
+        public TilesTest()
         {
             Stopwatch timer = new Stopwatch();
             timer.Start();
@@ -119,9 +119,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new TilesTest();
-        }
     }
 }

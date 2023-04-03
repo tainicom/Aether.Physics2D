@@ -44,7 +44,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vector2 _offset;
         private Body _wheel;
 
-        private TheoJansenTest()
+        public TheoJansenTest()
         {
             _offset = new Vector2(0.0f, 8.0f);
             _motorSpeed = 2.0f;
@@ -226,9 +226,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Keyboard(input);
         }
 
-        internal static Test Create()
-        {
-            return new TheoJansenTest();
-        }
     }
 }

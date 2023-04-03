@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\MG.W10\AnyCPU\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;W10</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;W10</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -34,7 +34,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\bin\Release\MG.W10\AnyCPU\</OutputPath>
-    <DefineConstants>TRACE;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;W10</DefineConstants>
+    <DefineConstants>TRACE;LEGACY_ASYNCADDREMOVE;XNAAPI;NETFX_CORE;W10</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -51,8 +51,6 @@
     <Compile Include="Collision\DynamicTree.cs" />
     <Compile Include="Collision\DynamicTreeBroadPhase.cs" />
     <Compile Include="Collision\IBroadPhase.cs" />
-    <Compile Include="Collision\QuadTree.cs" />
-    <Compile Include="Collision\QuadTreeBroadPhase.cs" />
     <Compile Include="Collision\Shapes\ChainShape.cs" />
     <Compile Include="Collision\Shapes\CircleShape.cs" />
     <Compile Include="Collision\Shapes\EdgeShape.cs" />
@@ -170,14 +168,6 @@
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />
     <Compile Include="Dynamics\WorldCallbacks.cs" />
-    <Compile Include="Fluids\1\FluidDefinition.cs" />
-    <Compile Include="Fluids\1\FluidParticle.cs" />
-    <Compile Include="Fluids\1\FluidSystem1.cs" />
-    <Compile Include="Fluids\1\Spring.cs" />
-    <Compile Include="Fluids\1\SpringHash.cs" />
-    <Compile Include="Fluids\1\HashGrid.cs" />
-    <Compile Include="Fluids\2\FluidSystem2.cs" />
-    <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
 

@@ -1,0 +1,4 @@
+<map id="PolygonShape" name="PolygonShape">
+<area shape="rect" id="node1" title="Represents a simple non&#45;selfintersecting convex polygon. Create a convex hull from the given array of..." alt="" coords="5,83,129,112"/>
+<area shape="rect" id="node2" href="$classtainicom_1_1_aether_1_1_physics2_d_1_1_collision_1_1_shapes_1_1_shape.html" title="A shape is used for collision detection. You can create a shape however you like. Shapes used for sim..." alt="" coords="33,5,101,35"/>
+</map>

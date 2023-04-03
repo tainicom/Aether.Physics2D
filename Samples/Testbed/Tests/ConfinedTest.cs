@@ -38,7 +38,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private const int ColumnCount = 0;
         private const int RowCount = 0;
 
-        private ConfinedTest()
+        public ConfinedTest()
         {
             {
                 Body ground = World.CreateBody();
@@ -149,9 +149,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             
         }
 
-        internal static Test Create()
-        {
-            return new ConfinedTest();
-        }
     }
 }

@@ -12,7 +12,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
 {
     public class DeletionTest : Test
     {
-        private DeletionTest()
+        public DeletionTest()
         {
             //Ground body
             Body ground = World.CreateEdge(new Vector2(-40.0f, 0.0f), new Vector2(40.0f, 0.0f));
@@ -40,9 +40,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        public static Test Create()
-        {
-            return new DeletionTest();
-        }
     }
 }

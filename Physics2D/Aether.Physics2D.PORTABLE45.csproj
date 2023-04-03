@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\MG.Portable45\</OutputPath>
-    <DefineConstants>DEBUG;LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;PORTABLE45</DefineConstants>
+    <DefineConstants>DEBUG;LEGACY_ASYNCADDREMOVE;XNAAPI;PORTABLE45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -29,7 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <DefineConstants>LEGACY_FLUIDS;LEGACY_ASYNCADDREMOVE;XNAAPI;PORTABLE45</DefineConstants>
+    <DefineConstants>LEGACY_ASYNCADDREMOVE;XNAAPI;PORTABLE45</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,8 +38,6 @@
     <Compile Include="Collision\DynamicTree.cs" />
     <Compile Include="Collision\DynamicTreeBroadPhase.cs" />
     <Compile Include="Collision\IBroadPhase.cs" />
-    <Compile Include="Collision\QuadTree.cs" />
-    <Compile Include="Collision\QuadTreeBroadPhase.cs" />
     <Compile Include="Collision\Shapes\ChainShape.cs" />
     <Compile Include="Collision\Shapes\CircleShape.cs" />
     <Compile Include="Collision\Shapes\EdgeShape.cs" />
@@ -157,14 +155,6 @@
     <Compile Include="Dynamics\World.cs" />
     <Compile Include="Dynamics\World.Factory.cs" />
     <Compile Include="Dynamics\WorldCallbacks.cs" />
-    <Compile Include="Fluids\1\FluidDefinition.cs" />
-    <Compile Include="Fluids\1\FluidParticle.cs" />
-    <Compile Include="Fluids\1\FluidSystem1.cs" />
-    <Compile Include="Fluids\1\Spring.cs" />
-    <Compile Include="Fluids\1\SpringHash.cs" />
-    <Compile Include="Fluids\1\HashGrid.cs" />
-    <Compile Include="Fluids\2\FluidSystem2.cs" />
-    <Compile Include="Fluids\2\SpartialTable.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
 

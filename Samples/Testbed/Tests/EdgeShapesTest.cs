@@ -47,7 +47,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vector2 _point;
         private PolygonShape[] _polygons = new PolygonShape[4];
 
-        private EdgeShapesTest()
+        public EdgeShapesTest()
         {
             // Ground body
             {
@@ -237,9 +237,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             }
         }
 
-        internal static Test Create()
-        {
-            return new EdgeShapesTest();
-        }
     }
 }

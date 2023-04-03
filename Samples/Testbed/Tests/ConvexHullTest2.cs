@@ -21,7 +21,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private Vertices _pointCloud2;
         private Vertices _pointCloud3;
 
-        private ConvexHullTest2()
+        public ConvexHullTest2()
         {
             _pointCloud1 = new Vertices(PointCount);
 
@@ -71,9 +71,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             base.Update(settings, gameTime);
         }
 
-        internal static Test Create()
-        {
-            return new ConvexHullTest2();
-        }
     }
 }

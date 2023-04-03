@@ -43,7 +43,7 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
         private RevoluteJoint _joint1;
         private PrismaticJoint _joint2;
 
-        private SliderCrankTest()
+        public SliderCrankTest()
         {
             Body ground;
             {
@@ -154,9 +154,5 @@ namespace tainicom.Aether.Physics2D.Samples.Testbed.Tests
             DrawString("Motor Torque = " + torque);
         }
 
-        internal static Test Create()
-        {
-            return new SliderCrankTest();
-        }
     }
 }
