@@ -166,6 +166,8 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         /// <summary>
         /// Get or sets the linear velocity of the center of mass.
+        /// 
+        /// BodyType is static by default, change it to Kinematic or Dynamic for movement.
         /// </summary>
         /// <value>The linear velocity.</value>
         public Vector2 LinearVelocity
