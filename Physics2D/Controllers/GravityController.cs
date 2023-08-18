@@ -50,6 +50,9 @@ namespace tainicom.Aether.Physics2D.Controllers
 
         public override void Update(float dt)
         {
+            if (!Enabled)
+                return;
+
             Vector2 f = Vector2.Zero;
 
             foreach (Body worldBody in World.BodyList)

@@ -76,6 +76,9 @@ namespace tainicom.Aether.Physics2D.Controllers
 
         public override void Update(float dt)
         {
+            if (!Enabled)
+                return;
+
             _uniqueBodies.Clear();
             World.QueryAABB(fixture =>
                                 {

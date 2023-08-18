@@ -84,6 +84,9 @@ namespace tainicom.Aether.Physics2D.Controllers
 
         public override void Update(float dt)
         {
+            if (!Enabled)
+                return;
+
             foreach (Body body in _bodies)
             {
                 if (!IsActiveOn(body))
