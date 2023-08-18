@@ -165,7 +165,7 @@ namespace tainicom.Aether.Physics2D.Dynamics
         }
 
         /// <summary>
-        /// Get or sets the linear velocity of the center of mass.
+        /// Get or sets the linear velocity of the center of mass. Property has no effect on <see cref="BodyType.Static"/> bodies.
         /// </summary>
         /// <value>The linear velocity.</value>
         public Vector2 LinearVelocity
