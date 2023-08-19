@@ -55,19 +55,19 @@ namespace tainicom.Aether.Physics2D.Dynamics
 
         public int Count { get { return _list.Count; } }
 
-        void ICollection<Fixture>.Add(Fixture item)
+        public void Add(Fixture item)
         {
-            throw new NotSupportedException();
+            _list.Add(item);
         }
 
-        bool ICollection<Fixture>.Remove(Fixture item)
+        public bool Remove(Fixture item)
         {
-            throw new NotSupportedException();
+            _list.Remove(item);
         }
 
-        void ICollection<Fixture>.Clear()
+        public void Clear()
         {
-            throw new NotSupportedException();
+            _list.Clear();
         }
 
         public bool Contains(Fixture item)
