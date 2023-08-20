@@ -52,6 +52,10 @@ namespace tainicom.Aether.Physics2D.Dynamics
             return CreateFixture(shape);
         }
 
+        /// <summary>
+        /// See <see cref="PolygonTools.CreateRectangle"> if you want to create a rectangle
+        /// fixture that's been rotated at an angle.
+        /// </summary>
         public Fixture CreateRectangle(float width, float height, float density, Vector2 offset)
         {
             Vertices rectangleVertices = PolygonTools.CreateRectangle(width / 2, height / 2);
