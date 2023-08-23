@@ -2,6 +2,8 @@
 
 Aether.Physics2D is a 2D collision detection system.
 
+# **NEW HOME: https://github.com/nkast/Aether.Physics2D/releases**
+
 [![Discord](https://img.shields.io/discord/780484381961093172?style=flat)](https://discord.gg/95nPEjZ6mu)
 
 Documentation: https://tainicom.github.io/Aether.Physics2D/
